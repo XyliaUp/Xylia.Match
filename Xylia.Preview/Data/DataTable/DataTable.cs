@@ -11,10 +11,10 @@ using System.Xml.Linq;
 
 using Xylia.bns.Modules.DataFormat.Analyse;
 using Xylia.bns.Modules.DataFormat.Analyse.DeSerialize;
-using Xylia.bns.Modules.DataFormat.Analyse.Static;
-using Xylia.bns.Modules.DataFormat.Analyse.Static.Output;
-using Xylia.bns.Modules.DataFormat.Analyse.Value.Derive;
-using Xylia.bns.Modules.DataFormat.BinData.Entity.BDAT;
+using Xylia.bns.Modules.DataFormat.Analyse.Enums;
+using Xylia.bns.Modules.DataFormat.Analyse.Output;
+using Xylia.bns.Modules.DataFormat.Bin;
+using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 using Xylia.Preview.Project.Common.Interface;
@@ -203,11 +203,6 @@ namespace Xylia.Preview.Data
 			}
 		}
 
-		protected virtual void LoadCache(XElement xElement, int CurID, Lazy<T> data)
-		{
-
-		}
-
 
 		/// <summary>
 		/// 加载外部配置文件
@@ -270,8 +265,6 @@ namespace Xylia.Preview.Data
 				//数据编号
 				if (!int.TryParse(CurElement.Attribute("id")?.Value, out int CurID)) CurID = x + 1;
 				this.ht_id[CurID] = this.data[x];
-
-				LoadCache(CurElement, CurID, this.data[x]);
 			}
 
 			Trace.WriteLine($"[{ DateTime.Now }] 完成信息载入: { FileName } ({ this.data.Length }项)");
@@ -280,7 +273,7 @@ namespace Xylia.Preview.Data
 
 
 
-		public void LoadGame()
+		private void LoadGame()
 		{
 			string content = ConfigContent;
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
@@ -293,10 +286,11 @@ namespace Xylia.Preview.Data
 			}
 
 			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);
-			this.LoadGame(FileCacheData.Data.GameData, TableInfo);
+			if (TableInfo.DataType == DataType.Local) this.LoadGame(FileCacheData.Data.LocalData, TableInfo);
+			else this.LoadGame(FileCacheData.Data.GameData, TableInfo);
 		}
 
-		private void LoadGame(GameData GameData, TableInfo TableInfo)
+		private void LoadGame(BinData GameData, TableInfo TableInfo)
 		{
 			this.DeSerializer = new DeSerializer()
 			{
@@ -347,7 +341,7 @@ namespace Xylia.Preview.Data
 				if (!this.HasData) return null;
 
 				#region 通过别名表获取对象信息
-				var AliasTable = FileCacheData.Data.GameData.BinHandle._content.Head.AliasTable.List[typeof(T).Name];
+				var AliasTable = FileCacheData.Data.GameData._content.Head.AliasTable.List[typeof(T).Name];
 				if (AliasTable is null) return null;
 
 				var AliasInfo = AliasTable[Alias];

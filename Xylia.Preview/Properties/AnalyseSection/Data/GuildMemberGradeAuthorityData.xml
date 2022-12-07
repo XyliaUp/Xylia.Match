@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="guild-member-grade-authority" version="0.11" rule="cpl" >
 		<record alias="authority" name="" extra="Byte1" type="id" >
 			<case alias="none" name="" />

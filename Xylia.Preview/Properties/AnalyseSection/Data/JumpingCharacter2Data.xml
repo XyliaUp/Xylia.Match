@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="CombatData" type="JumpingCharacter2" version="0.1" rule="cpl | extra" >
 		<record alias="required-level" type="Byte" />
 		<record alias="required-preceding-epic-quest" type="Quest" link="id" />	

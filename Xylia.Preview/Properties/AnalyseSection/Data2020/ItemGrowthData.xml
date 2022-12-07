@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list id="166" alias="ItemGrowth" module="ItemData" type="ItemGrowth" version="0.5" rule="" >
 		<record alias="id" type="id" name=""/>
 		<record alias="level" type="Int32" name="" start="0" />

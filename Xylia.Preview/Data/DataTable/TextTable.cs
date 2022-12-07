@@ -3,14 +3,15 @@ using System.Text.RegularExpressions;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Properties.AnalyseSection;
 
 namespace Xylia.Preview.Data
 {
-	public class TextData : DataTable<Text>
+	public class TextTable : DataTable<Text>
 	{
-		protected override bool LoadFromGame => false;
+		protected override string ConfigContent => DataRes.TextData;
 
-		#region 处理方法
+
 		private bool HasMessage = false;
 
 		/// <summary>
@@ -38,14 +39,13 @@ namespace Xylia.Preview.Data
 			#endregion
 
 
-			Lazy<Text> Record = null;
+			Lazy<Text> Record;
 			if (int.TryParse(Alias, out int id) && this.ht_id.Contains(id)) Record = (Lazy<Text>)this.ht_id[id];
 			else if (this.ht_alias.Contains(Alias)) Record = (Lazy<Text>)this.ht_alias[Alias];
 			else return null;
 
 			return Record.Value;
 		}
-		#endregion
 	}
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<!--  -->
 	<list alias="MapUnitData" module="ZoneData0" type="mapunit" version="1.62" rule="cpl | unsort" check-version="y" >
 

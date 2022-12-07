@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list id="146" alias="GuildUniformPreset" module="ItemData" type="GuildUniformPreset" version="0.1" rule="cpl" >
 		<record alias="index" name="" type="ID" />
 		<record alias="preset-type" name="" type="Byte" >

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ZoneData0" type="partychatchannel" version="0.6" rule="cpl" side="client" >
 		<record alias="id" type="id" extra="Short1" />
 		<record alias="type" type="type" >

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<table release-side="local" version="1.01">
-
-	<list module="LocalizationData" type="text" version="0.6" >
-		<record alias="id" type="ID" />
-		<record alias="alias" type="Index" />
-		<record alias="text" type="TextIndex" use-cdata="y" />
-	</list>
-</table>

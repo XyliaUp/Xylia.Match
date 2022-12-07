@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="item-event" version="0.2" rule="cpl | extra" >
 		<record alias="alias" type="Index" name="索引" />
 		<record alias="event-expiration-time" type="Time64" name="时间戳" />

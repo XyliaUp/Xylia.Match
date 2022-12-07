@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
   <!-- 探险日志 -->
   <list module="ItemData" type="worldaccountexpedition" version="0.10">
         <record alias="id" name="" type="Id" extra="Short1" />

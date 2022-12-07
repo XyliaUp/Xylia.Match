@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="CombatData" type="sealed-dungeon-level" version="0.10" rule="cpl" >
 		<record alias="sealed-level" name="" type="ID" />
 		<record alias="sealed-exp" name="" type="Long" showzero="y" />

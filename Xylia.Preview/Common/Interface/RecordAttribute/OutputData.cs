@@ -3,7 +3,7 @@ using System.Linq;
 
 using NPOI.SS.Formula.Functions;
 
-using Xylia.bns.Modules.DataFormat.Analyse.Static.Output;
+using Xylia.bns.Modules.DataFormat.Analyse.Output;
 
 namespace Xylia.Preview.Common.Interface.RecordAttribute
 {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="CombatData" type="JumpingCharacter" version="0.5" rule="cpl" >
 		<record alias="job" type="Id" extra="Byte1" seq="$job_20" />
 		<record alias="condition-level" type="Id" extra="Byte2" />

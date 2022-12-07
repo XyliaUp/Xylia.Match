@@ -9,8 +9,7 @@ using System.Windows.Forms;
 
 using NPOI.SS.UserModel;
 
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.DatData;
+using Xylia.bns.Modules.DataFormat.Dat;
 using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Files.Xml;

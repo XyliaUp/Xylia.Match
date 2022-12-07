@@ -118,7 +118,7 @@ namespace Xylia.Preview.Project.Core.Skill
 
 
 
-			return skill.Select(o => FileCacheData.Data.Skill3.GetInfo(o.Key, o.Value)).Where(o => o is not null).ToList();
+			return skill.Select(o => FileCacheData.Data.Skill3[o.Key, o.Value]).Where(o => o is not null).ToList();
 		}
 		#endregion
 

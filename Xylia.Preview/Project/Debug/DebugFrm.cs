@@ -4,13 +4,8 @@ using System.Windows.Forms;
 
 using CSCore.SoundOut;
 
-using Xylia.bns.Modules.DataFormat.Analyse;
-using Xylia.bns.Modules.DataFormat.Analyse.Static;
 using Xylia.Extension;
-using Xylia.Preview.Data;
-using Xylia.Preview.Project.Common.Interface;
 using Xylia.Preview.Project.Core.Quest.Preview.SubGroup;
-using Xylia.Preview.Properties.AnalyseSection;
 
 namespace Xylia.Preview
 {
@@ -38,27 +33,23 @@ namespace Xylia.Preview
 			//_soundOut.Play();
 
 
-			FileCacheData.Data.IconTexture.LoadGame();
-			var Object = FileCacheData.Data.IconTexture.GetObject(16813, 0);
-			if (Object != null)
-			{
-				foreach (var a in Object.Cells) System.Diagnostics.Trace.WriteLine(a.Alias + "   " + a.OutputVal);
-			}
+			FileCacheData.Data.TextData.TryLoad();
+			System.Diagnostics.Trace.WriteLine("34".GetText());
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
-			this.Controls.Remove<CaseInfoPanel>();
+			//this.Controls.Remove<CaseInfoPanel>();
 
-			int height = 25;
-			var cs = MissionPanel.LoadTalkMessage(new Xylia.bns.Modules.GameData.CommonTable.NpcResponse(this.textBox1.Text), new WaveOut());
-			foreach (var o in cs)
-			{
-				if (!this.Controls.Contains(o)) this.Controls.Add(o);
+			//int height = 25;
+			//var cs = MissionPanel.LoadTalkMessage(new Xylia.bns.Modules.GameData.CommonTable.NpcResponse(this.textBox1.Text), new WaveOut());
+			//foreach (var o in cs)
+			//{
+			//	if (!this.Controls.Contains(o)) this.Controls.Add(o);
 
-				o.Location = new Point(GroupBase.ContentStartX + 10, height);
-				height = o.Bottom;
-			}
+			//	o.Location = new Point(GroupBase.ContentStartX + 10, height);
+			//	height = o.Bottom;
+			//}
 		}
 	}
 }

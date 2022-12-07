@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="random-store-item" version="0.10">
 		<record alias="id" name="" type="ID" apply="auto" />
 		<record alias="alias" name="" type="Index" />

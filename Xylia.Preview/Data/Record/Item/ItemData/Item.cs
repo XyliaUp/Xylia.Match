@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Linq;
 
-using Xylia.bns.Modules.DataFormat.Analyse.Static.Output;
 using Xylia.bns.Modules.GameData.Enums;
 
 using Xylia.Drawing;

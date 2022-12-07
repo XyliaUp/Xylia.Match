@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="duel-bot-training-room-version" version="0.2" rule="cpl | extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="version" name="" type="Short" />

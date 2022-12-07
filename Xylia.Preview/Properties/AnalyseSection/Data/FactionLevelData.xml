@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="LocalizationData" type="faction-level" version="0.4" rule="cpl" >
 		<record alias="level" type="id" name="" />
 		<record alias="reputation" type="Int32" name="" />	

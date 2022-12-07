@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="CombatData" type="race" version="0.7" rule="cpl" >
 		<record alias="race" type="id" extra="Byte1" seq="$race" name="" />
 

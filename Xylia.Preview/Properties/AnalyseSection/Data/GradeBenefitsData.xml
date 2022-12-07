@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list id="132" module="LocalizationData" type="GradeBenefits" version="0.24" rule="cpl" >
 		<record alias="benefit-type" type="ID" extra="Byte1" name="" >
 			<case alias="none" name="" />

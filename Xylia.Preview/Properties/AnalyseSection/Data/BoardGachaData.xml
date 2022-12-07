@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="board-gacha" version="0.1" rule="cpl | extra" >
 		<record alias="square-matrix-n" name="" type="Byte" />
 		<record alias="round-duration" name="" type="Short" />

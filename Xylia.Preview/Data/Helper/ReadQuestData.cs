@@ -4,11 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.DatData;
+using Xylia.bns.Modules.DataFormat.Dat;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Files.Xml;
-using Xylia.Preview.Data.Helper;
 using Xylia.Preview.Properties;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;

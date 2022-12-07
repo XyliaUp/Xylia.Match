@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="CombatData" type="duel-bot-challenge-strategic-tool" version="0.7" rule="cpl | extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="pc-effect" name="" ref="Effect" repeat="2" />

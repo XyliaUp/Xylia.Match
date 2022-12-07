@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list id="127" alias="FriendNotiLocation" module="ZoneData0" type="friend-noti-location" version="0.3" rule="cpl" >
 		<record alias="id" name="" type="id" extra="Short1" />
 		<record alias="alias" name="" type="Index" />

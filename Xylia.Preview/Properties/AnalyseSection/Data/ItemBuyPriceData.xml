@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="item-buy-price" version="3.0" rule="cpl | extra" >
 		<record alias="alias" name="" major="y" type="Index" />
 		<record alias="money" name="" type="Int32" />

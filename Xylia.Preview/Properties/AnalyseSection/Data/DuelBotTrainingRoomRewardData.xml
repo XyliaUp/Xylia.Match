@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="duel-bot-training-room-reward" version="0.4" rule="cpl" >
 		<record alias="job" name="" type="id" extra="Byte1" seq="$job_20" />
 		<record alias="grade" name="" type="id" extra="Short2" />

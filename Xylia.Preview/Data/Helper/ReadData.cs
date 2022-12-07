@@ -3,9 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.BinData.Data.Dat;
-using Xylia.bns.Modules.DataFormat.DatData;
+using Xylia.bns.Modules.DataFormat.Dat;
 using Xylia.bns.Read;
 using Xylia.bns.Read.Util;
 using Xylia.Extension;

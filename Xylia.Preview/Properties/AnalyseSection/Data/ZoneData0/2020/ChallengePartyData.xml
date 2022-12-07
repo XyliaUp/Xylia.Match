@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ZoneData0" type="challenge-party" version="0.14" rule="cpl | extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone" name="" ref="Zone" />

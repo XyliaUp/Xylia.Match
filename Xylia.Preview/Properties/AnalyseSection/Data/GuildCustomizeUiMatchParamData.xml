@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="GuildCustomizeUiMatchParam" version="0.1" rule="cpl" >
 		<record alias="ui-index" name="" type="ID" extra="Short1" />
 		<record alias="sub-name" name="" type="TextAlias" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="itemgearscore" version="0.2" rule="cpl" >
 		<record alias="level" name="" type="ID" extra="Byte1" />
 		<record alias="mastery-level" name="" type="ID" extra="Byte2" />

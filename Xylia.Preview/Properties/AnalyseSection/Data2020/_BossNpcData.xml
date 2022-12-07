@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list alias="BossNpc" module="AIData" type="BossNpc" version="0.29" rule="cpl | extra" check-version="y" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="sp-point" name="" type="Short" repeat="3" />

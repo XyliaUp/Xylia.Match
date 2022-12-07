@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 using Xylia.Extension;
 using Xylia.Preview.Project.Core.Item.Cell;
-using Xylia.Preview.Data.Record;
+
 using RewardData = Xylia.Preview.Data.Record.Reward;
-using System.Xml.Linq;
-using Xylia.bns.Modules.DataFormat.Analyse.Static.Output;
 
 namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 {

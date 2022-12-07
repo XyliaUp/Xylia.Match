@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list id="109" idx="113" alias="ExpandInventoryData" module="ItemData" type="expand-inventory" version="0.14" rule="cpl" >
 		<record alias="inventory-type" type="id" extra="Byte1" name="" >
 		    <case alias="inventory" name="" />

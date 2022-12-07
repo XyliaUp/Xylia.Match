@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 <!--
      normal和random组是互斥关系，通过use-random选择
 	 normal和rare组是互存关系（成功概率总和最大值为1000，类似G1/G2）

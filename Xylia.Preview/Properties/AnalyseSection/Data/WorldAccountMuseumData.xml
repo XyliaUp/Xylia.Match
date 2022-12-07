@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
   <!-- 万象录现象委托 -->
   <list module="ItemData" type="world-account-museum" version="0.10">
     <record alias="alias" name="" type="Index" />

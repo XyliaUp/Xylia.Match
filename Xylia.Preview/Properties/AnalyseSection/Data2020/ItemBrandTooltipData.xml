@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list alias="ItemBrandTooltip" module="ItemData" rule="cpl" server-side="none" type="item-brand-tooltip" version="0.3">
 		<record alias="brand-id" name="" type="id" />
 		<record start="0" alias="item-condition-type" name="" seq="$condition-type" type="Seq" />

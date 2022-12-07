@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<!-- quest 控制任务步骤显示，npc控制任务接取与提交显示  -->
 	<list alias="MapUnitData" module="ZoneData0" type="mapunit" version="1.74" rule="cpl | unsort" >
 		<record alias="type" type="type" >

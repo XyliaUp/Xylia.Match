@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" rule="cpl" type="ChallengeList" version="0.8">
 		<record alias="grade" name="" type="dictionary" >
 			<case alias="none" name="" default="y" />

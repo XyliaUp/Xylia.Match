@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list id="144" alias="GuildUniformComponent" module="ItemData" type="GuildUniformComponent" version="0.8" rule="cpl" >
 		<record alias="param-type" name="" type="ID" />
 		<record start="0" alias="param-value" name="" type="Int32" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="LocalizationData" type="account-level" version="0.20" rule="cpl" >
 		<record alias="level" name="" type="id" />
 

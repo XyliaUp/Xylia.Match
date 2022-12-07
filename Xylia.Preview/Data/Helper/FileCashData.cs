@@ -1,8 +1,9 @@
 ﻿using System.Collections.Concurrent;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 
-using Xylia.bns.Modules.DataFormat.Analyse;
+using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.Extension;
 using Xylia.Preview.Data;
 using Xylia.Preview.Data.Record;
@@ -21,15 +22,25 @@ public static class FileCacheData
 /// </summary>
 public class DataTableSet
 {
-	GameData _GameData;
+	BinData _GameData;
 
-	public GameData GameData
+	BinData _LocalData;
+
+	public BinData GameData
 	{
 		get
 		{
-			if (_GameData is null) _GameData = GameData.LoadData(@"D:\剑灵\BNSR\Content\local\Tencent\data\xml64.dat");
-
+			if (_GameData is null) _GameData = new(@"D:\剑灵\BNSR\Content\local\Tencent\data\xml64.dat");
 			return _GameData;
+		}
+	}
+
+	public BinData LocalData
+	{
+		get
+		{
+			if (_LocalData is null) _LocalData = new(@"D:\剑灵\BNSR\Content\local\Tencent\ChineseS\data\local64.dat");
+			return _LocalData;
 		}
 	}
 
@@ -137,7 +148,7 @@ public class DataTableSet
 
 	public DataTable<SetItem> SetItem { get; } = new();
 
-	public SkillTable Skill3 { get; } = new();
+	public DataTable<Skill3> Skill3 { get; } = new();
 
 
 	public DataTable<SkillByEquipment> SkillByEquipment { get; } = new();
@@ -162,7 +173,7 @@ public class DataTableSet
 	/// <summary>
 	/// 汉化文本
 	/// </summary>
-	public TextData TextData { get; } = new();
+	public TextTable TextData { get; } = new();
 
 
 	public DataTable<UnlocatedStore> UnlocatedStore { get; } = new();

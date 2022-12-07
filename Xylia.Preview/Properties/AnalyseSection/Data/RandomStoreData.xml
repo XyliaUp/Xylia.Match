@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="ItemData" type="RandomStore" version="0.6">
 		<record alias="random-store-number" name="" type="id" extra="Byte1">
 			<case alias="invalid-number" name="" />

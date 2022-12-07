@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="AIData" type="summoned" version="0.24" rule="cpl" check-verison="y" >
 		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
 		<record alias="job" type="ID" extra="Byte2" name="" seq="$job" />

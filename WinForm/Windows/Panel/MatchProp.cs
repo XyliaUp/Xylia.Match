@@ -13,7 +13,6 @@ using HZH_Controls.Forms;
 
 using Xylia.bns.Modules.DataFormat.Analyse;
 using Xylia.bns.Modules.DataFormat.Analyse.DeSerialize;
-using Xylia.bns.Modules.DataFormat.Analyse.Static;
 using Xylia.bns.Read.Util;
 using Xylia.Configure;
 using Xylia.CustomException.User;

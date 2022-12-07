@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="local" version="1.01">
+<table data-type="local">
 	<list module="LocalizationData" type="user-command" version="0.4" rule="cpl | extra" check-version="y" >
 		<record alias="text" name="" type="TextAlias" />
 		<record alias="type" name="" type="type" >	

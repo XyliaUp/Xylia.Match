@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list module="CombatData" type="effect" version="20.0" rule="cpl" check-size="y" >
 		<record alias="id" name="" type="id" />
 		<record alias="type" name="类型，由于版本问题差异很多类型。所以隐藏错误信息" type="type" seq="$type-seq_20" error-type="Jump" />

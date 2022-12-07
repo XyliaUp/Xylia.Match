@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="data" version="1.01">
+<table>
 	<list alias="BoastEvent" module="ItemData" type="boast-event" version="1.6" rule="complete" check-version="y" >
 		<record alias="type" type="type" name="" >
 			<case alias="transform-item" name="" />
