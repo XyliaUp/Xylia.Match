@@ -75,6 +75,7 @@
 			this.ucBtnExt16 = new HZH_Controls.Controls.UCBtnExt();
 			this.Timer = new System.Windows.Forms.Timer(this.components);
 			this.Open = new System.Windows.Forms.OpenFileDialog();
+			this.Switch_Mode = new HZH_Controls.Controls.UCSwitch();
 			this.TabControl.SuspendLayout();
 			this.MainPage.SuspendLayout();
 			this.PreviewPage_Item.SuspendLayout();
@@ -115,7 +116,6 @@
 			this.MainPage.Controls.Add(this.File_Searcher);
 			this.MainPage.Controls.Add(this.ucBtnFillet1);
 			this.MainPage.HorizontalScrollbarBarColor = true;
-			this.MainPage.HorizontalScrollbarHighlightOnWheel = false;
 			this.MainPage.HorizontalScrollbarSize = 14;
 			this.MainPage.Location = new System.Drawing.Point(4, 36);
 			this.MainPage.Margin = new System.Windows.Forms.Padding(4);
@@ -124,7 +124,6 @@
 			this.MainPage.TabIndex = 0;
 			this.MainPage.Text = "物品数据";
 			this.MainPage.VerticalScrollbarBarColor = true;
-			this.MainPage.VerticalScrollbarHighlightOnWheel = false;
 			this.MainPage.VerticalScrollbarSize = 12;
 			this.MainPage.Visible = false;
 			// 
@@ -239,7 +238,7 @@
 			this.Btn_StartMatch.BtnBackColor = System.Drawing.Color.Empty;
 			this.Btn_StartMatch.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_StartMatch.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.Btn_StartMatch.BtnText = "匹配";
+			this.Btn_StartMatch.BtnText = "生成数据";
 			this.Btn_StartMatch.ConerRadius = 8;
 			this.Btn_StartMatch.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Btn_StartMatch.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -363,6 +362,7 @@
 			// PreviewPage_Item
 			// 
 			this.PreviewPage_Item.BackColor = System.Drawing.Color.Transparent;
+			this.PreviewPage_Item.Controls.Add(this.Switch_Mode);
 			this.PreviewPage_Item.Controls.Add(this.ucBtnExt19);
 			this.PreviewPage_Item.Controls.Add(this.ItemPreview_Search);
 			this.PreviewPage_Item.Controls.Add(this.ucBtnExt7);
@@ -375,7 +375,6 @@
 			this.PreviewPage_Item.Controls.Add(this.label2);
 			this.PreviewPage_Item.Controls.Add(this.ucBtnExt3);
 			this.PreviewPage_Item.HorizontalScrollbarBarColor = true;
-			this.PreviewPage_Item.HorizontalScrollbarHighlightOnWheel = false;
 			this.PreviewPage_Item.HorizontalScrollbarSize = 14;
 			this.PreviewPage_Item.Location = new System.Drawing.Point(4, 36);
 			this.PreviewPage_Item.Margin = new System.Windows.Forms.Padding(4);
@@ -384,7 +383,6 @@
 			this.PreviewPage_Item.TabIndex = 1;
 			this.PreviewPage_Item.Text = "物品预览";
 			this.PreviewPage_Item.VerticalScrollbarBarColor = true;
-			this.PreviewPage_Item.VerticalScrollbarHighlightOnWheel = false;
 			this.PreviewPage_Item.VerticalScrollbarSize = 12;
 			this.PreviewPage_Item.Visible = false;
 			// 
@@ -403,7 +401,7 @@
 			this.ucBtnExt19.IsRadius = true;
 			this.ucBtnExt19.IsShowRect = true;
 			this.ucBtnExt19.IsShowTips = false;
-			this.ucBtnExt19.Location = new System.Drawing.Point(142, 51);
+			this.ucBtnExt19.Location = new System.Drawing.Point(141, 126);
 			this.ucBtnExt19.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt19.Name = "ucBtnExt19";
 			this.ucBtnExt19.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -607,7 +605,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label2.Location = new System.Drawing.Point(10, 10);
+			this.label2.Location = new System.Drawing.Point(9, 85);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(186, 21);
@@ -629,7 +627,7 @@
 			this.ucBtnExt3.IsRadius = true;
 			this.ucBtnExt3.IsShowRect = true;
 			this.ucBtnExt3.IsShowTips = false;
-			this.ucBtnExt3.Location = new System.Drawing.Point(19, 51);
+			this.ucBtnExt3.Location = new System.Drawing.Point(18, 126);
 			this.ucBtnExt3.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt3.Name = "ucBtnExt3";
 			this.ucBtnExt3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -646,7 +644,6 @@
 			this.PreviewPage_Else.Controls.Add(this.groupBox2);
 			this.PreviewPage_Else.Controls.Add(this.groupBox1);
 			this.PreviewPage_Else.HorizontalScrollbarBarColor = true;
-			this.PreviewPage_Else.HorizontalScrollbarHighlightOnWheel = false;
 			this.PreviewPage_Else.HorizontalScrollbarSize = 14;
 			this.PreviewPage_Else.Location = new System.Drawing.Point(4, 36);
 			this.PreviewPage_Else.Margin = new System.Windows.Forms.Padding(4);
@@ -655,7 +652,6 @@
 			this.PreviewPage_Else.TabIndex = 2;
 			this.PreviewPage_Else.Text = "其他预览";
 			this.PreviewPage_Else.VerticalScrollbarBarColor = true;
-			this.PreviewPage_Else.VerticalScrollbarHighlightOnWheel = false;
 			this.PreviewPage_Else.VerticalScrollbarSize = 12;
 			// 
 			// groupBox2
@@ -1024,6 +1020,25 @@
 			// 
 			this.Timer.Interval = 500;
 			// 
+			// Switch_Mode
+			// 
+			this.Switch_Mode.BackColor = System.Drawing.Color.Transparent;
+			this.Switch_Mode.Checked = true;
+			this.Switch_Mode.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+			this.Switch_Mode.FalseTextColr = System.Drawing.Color.White;
+			this.Switch_Mode.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.Switch_Mode.Location = new System.Drawing.Point(18, 14);
+			this.Switch_Mode.Name = "Switch_Mode";
+			this.Switch_Mode.Size = new System.Drawing.Size(120, 48);
+			this.Switch_Mode.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
+			this.Switch_Mode.TabIndex = 126;
+			this.Switch_Mode.Texts = new string[] {
+        "实时读取",
+        "外部读取"};
+			this.Switch_Mode.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.Switch_Mode.TrueTextColr = System.Drawing.Color.Black;
+			this.Switch_Mode.CheckedChanged += new System.EventHandler(this.Switch_Mode_CheckedChanged);
+			// 
 			// MatchProp
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1094,5 +1109,6 @@
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt19;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt10;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt20;
+		private HZH_Controls.Controls.UCSwitch Switch_Mode;
 	}
 }

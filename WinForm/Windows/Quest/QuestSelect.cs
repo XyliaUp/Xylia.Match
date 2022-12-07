@@ -9,6 +9,7 @@ using Xylia.Extension;
 using Xylia.Preview;
 using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Helper;
+using Xylia.Preview.Project.Core.Quest.Preview;
 using Xylia.Resources;
 using Xylia.Windows.Forms;
 
@@ -54,7 +55,7 @@ namespace Xylia.Match.Windows
 			thread?.Interrupt();
 
 			MySet.Core.Quest_Select = SelItem.id;
-			Execute.MyShowDialog(new QuestFrm(SelItem));
+			Execute.MyShowDialog(new QuestPreview(SelItem));
 		}
 
 		private void ListBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -149,7 +150,7 @@ namespace Xylia.Match.Windows
 			this.listBox1.Items.Clear();
 
 
-			foreach (var info in FileCacheData.Data.Quest.Values.Where(info => info.Name2.GetText()?.Contains(textBoxEx1.Text) ?? false))
+			foreach (var info in FileCache.Data.Quest.Values.Where(info => info.Name2.GetText()?.Contains(textBoxEx1.Text) ?? false))
 			{
 				listBox1.Items.Add(info);
 			}
@@ -164,10 +165,10 @@ namespace Xylia.Match.Windows
 		/// </summary>
 		public void LoadData()
 		{
-			FileCacheData.Data.TextData.TryLoad();
+			FileCache.Data.TextData.TryLoad();
 
-			if (FileCacheData.Data.Quest is null)
-				FileCacheData.Data.Quest = ReadQuestData.GetQuests();
+			if (FileCache.Data.Quest is null)
+				FileCache.Data.Quest = ReadQuestData.GetQuests();
 
 			this.RefreshList();
 		}
@@ -179,13 +180,13 @@ namespace Xylia.Match.Windows
 		{
 			//向列表增加元素
 			this.listBox1.Items.Clear();
-			this.listBox1.Items.AddRange(FileCacheData.Data.Quest.Values.OrderBy(info => info.id).ToArray());
+			this.listBox1.Items.AddRange(FileCache.Data.Quest.Values.OrderBy(info => info.id).ToArray());
 
 			this.textBoxEx1.Visible = true;
 			this.textBoxEx1.Text = LastSearchRule;
 
 			//恢复上次选择任务的位置
-			if (MySet.Core.Quest_Select != null && FileCacheData.Data.Quest.ContainsKey(MySet.Core.Quest_Select.Value))
+			if (MySet.Core.Quest_Select != null && FileCache.Data.Quest.ContainsKey(MySet.Core.Quest_Select.Value))
 			{
 				for (int idx = 0; idx < this.listBox1.Items.Count; idx++)
 				{

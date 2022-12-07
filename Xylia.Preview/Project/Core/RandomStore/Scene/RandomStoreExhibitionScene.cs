@@ -49,7 +49,7 @@ namespace Xylia.Preview.Project.RunForm
 			var StoreItems = new List<ListCell>();
 
 			//读取为实例
-			var RandomStoreItemDisplay = FileCacheData.Data.RandomStoreItemDisplay;
+			var RandomStoreItemDisplay = FileCache.Data.RandomStoreItemDisplay;
 			//RandomStoreItemDisplay.Sort(new RandomStoreItemDisplaySort());
 
 			foreach (var Record in RandomStoreItemDisplay.Where(a => a.RandomStoreNumber == RandomStoreType))

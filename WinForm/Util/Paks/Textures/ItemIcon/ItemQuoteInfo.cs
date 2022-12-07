@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
-using Xylia.bns.Util;
-using Xylia.bns.Modules.DataFormat.BinData.Handle;
-using Xylia.bns.Modules.DataFormat.BinData.Handle.Local;
 using Xylia.Drawing;
-using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 
 

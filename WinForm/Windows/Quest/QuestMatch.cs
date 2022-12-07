@@ -3,6 +3,7 @@ using System.Threading;
 using System.Windows.Forms;
 
 using Xylia.Preview.Data.Helper;
+using Xylia.Preview.Project.Core.Quest.Preview;
 
 namespace Xylia.Match.Windows.Panel
 {
@@ -12,7 +13,7 @@ namespace Xylia.Match.Windows.Panel
 		public QuestMatch()
 		{
 			InitializeComponent();
-			Logger.Write($"启用任务模块");
+			//Logger.Write($"启用任务模块");
 			CheckForIllegalCrossThreadCalls = false;
 
 			//读取上一次的选择
@@ -47,8 +48,8 @@ namespace Xylia.Match.Windows.Panel
 				if (temp is null) return;
 
 				//创建界面
-				var Frm = new Xylia.Preview.QuestFrm();
-				Frm.QuestPreview.Data = temp;
+				var Frm = new QuestPreview();
+				Frm.Data = temp;
 				Frm.ShowDialog();
 			});
 

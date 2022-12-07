@@ -102,7 +102,7 @@ namespace Xylia.Preview.Data.Record
 					foreach (var skill in skills.Where(a => a != null))
 					{
 						//获取技能文本
-						var SearchResult = FileCacheData.Data.Skill3.Find(info => info.ID == skill.Value);
+						var SearchResult = FileCache.Data.Skill3.Find(info => info.ID == skill.Value);
 						if (SearchResult != null) Result += SearchResult.NameText() + "，";
 					}
 

@@ -8,7 +8,6 @@ using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
 
-
 namespace Xylia.Preview.Project.Core.Map.Scene
 {
 	public partial class MapInfoScene : Form
@@ -24,15 +23,22 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		}
 		#endregion
 
+		#region 方法
 		public void LoadData(string Rule)
 		{
-			var MapInfo = FileCacheData.Data.MapInfo[Rule];
+			var MapInfo = FileCache.Data.MapInfo[Rule];
 			if (MapInfo is null) return;
+
+			var MapGroup1 = FileCache.Data.MapGroup1[MapInfo.MapGroup1];
+			var MapGroup2 = FileCache.Data.MapGroup2[MapInfo.MapGroup2];
+
+
+			Trace.WriteLine(MapInfo.Attributes);
 
 			this.Text = $"[{MapInfo.Name2.GetText()}]";
 			this.pictureBox1.Image = MapInfo.Imageset.GetImageset();
 
-			foreach (var mapunit in FileCacheData.Data.MapUnit.Where(d => d.Mapid == MapInfo.ID))
+			foreach (var mapunit in FileCache.Data.MapUnit.Where(d => d.Mapid == MapInfo.ID))
 			{
 				if (mapunit.Type == MapUnit.TypeSeq.Quest) continue;
 
@@ -50,7 +56,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 					BackColor = Color.Transparent,
 					SizeMode = PictureBoxSizeMode.AutoSize,
 
-					Location = TestPoint(mapunit.PositionX, mapunit.PositionY, MapInfo),
+					Location = GetPoint(mapunit.PositionX, mapunit.PositionY, MapInfo),
 				};
 
 				string Tooltip = mapunit.Name2.GetText();
@@ -73,7 +79,14 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		}
 
 
-		public Point TestPoint(float PositionX, float PositionY, MapInfo MapInfo)
+		/// <summary>
+		/// 转换为当前坐标点
+		/// </summary>
+		/// <param name="PositionX"></param>
+		/// <param name="PositionY"></param>
+		/// <param name="MapInfo"></param>
+		/// <returns></returns>
+		public static Point GetPoint(float PositionX, float PositionY, MapInfo MapInfo)
 		{
 			float PointX = MapInfo.ImageSize * (0 + (PositionY - MapInfo.LocalAxisY) / (MapInfo.Scale * MapInfo.ImageSize));     //1050
 			float PointY = MapInfo.ImageSize * (1 - (PositionX - MapInfo.LocalAxisX) / (MapInfo.Scale * MapInfo.ImageSize));     //1000
@@ -81,12 +94,12 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			return new Point((int)PointX, (int)PointY);
 		}
 
-
 		private void pictureBox1_DoubleClick(object sender, EventArgs e)
 		{
 			var me = e as MouseEventArgs;
 
 			Debug.WriteLine(me.X + "  " + me.Y);
 		}
+		#endregion
 	}
 }

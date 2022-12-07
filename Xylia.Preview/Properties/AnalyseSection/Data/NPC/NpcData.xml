@@ -21,8 +21,8 @@
         </record>
 		<record alias="offensive" type="Bool" name="" />
 		<record alias="immune-skill-attribute" type="Seq" name="" seq="$skill-attribute" repeat="8" />
-		<record alias="immune-effect-attribute" type="Short" name="" seq="$effect-attribute" repeat="20" />
-		<record alias="immune-breaker-attribute" type="Short" name="" seq="$effect-attribute" repeat="8" />
+		<record alias="immune-effect-attribute" type="Seq16" name="" seq="$effect-attribute" repeat="20" />
+		<record alias="immune-breaker-attribute" type="Seq16" name="" seq="$effect-attribute" repeat="8" />
 		<record alias="immune-breaker-count" type="Byte" name="" />
         <record alias="immune-breaker-init-duration" type="Msec" name="" />
 		<record alias="immune-breaker-show" type="Index" name="" server="n" repeat="8" />
@@ -31,7 +31,7 @@
 		<record alias="store2" name="" ref="Store2" repeat="6" />
 		<record alias="teleport" name="" ref="Teleport" />
 		<record alias="repairer" type="Bool" name="" />
-		<record alias="production" type="Byte" name="" seq="$production-type" />		
+		<record alias="production" type="Seq" name="" seq="$production-type" />		
 		<record alias="market" type="Bool" name="" />		
 		<record alias="post-office" type="Bool" name="" />	
 		<record alias="exchange-faction-score" type="Bool" name="" />
@@ -97,18 +97,18 @@
 		<record alias="action-name" type="TextAlias" name="" server="n" />
 		<record alias="action-desc" type="TextAlias" name="" server="n" />
         <record alias="manipulate-transit-zone" name="" ref="Zone" />
-		<record alias="forwarding-types" type="Byte" name="" seq="$forwarding-type" server="n" repeat="80" />
+		<record alias="forwarding-types" type="Seq" name="" seq="$forwarding-type" server="n" repeat="80" />
 		<record alias="quests" type="Quest" name="" server="n" repeat="80" />
 		<record alias="missions" type="Byte" name="" server="n" repeat="80" />
 		<record alias="cases" type="Byte" name="" server="n" repeat="80" />
 		<record alias="case-subtypes" type="Short" name="" server="n" repeat="80" />
 
-		<record alias="loot-forwarding-types" type="Byte" name="" seq="$forwarding-type" server="n" repeat="8" />
+		<record alias="loot-forwarding-types" type="Seq" name="" seq="$forwarding-type" server="n" repeat="8" />
 		<record alias="loot-quests" type="Quest" name="" server="n" repeat="8" />
 		<record alias="loot-missions" type="Byte" name="" server="n" repeat="8" />
 		<record alias="loot-cases" type="Byte" name="" server="n" repeat="8" />
 		<record alias="loot-item" name="" ref="Item" server="n" repeat="8" />
-		<record alias="finish-blow-forwarding-types" type="Byte" name="" seq="$forwarding-type" server="n" repeat="21" />
+		<record alias="finish-blow-forwarding-types" type="Seq" name="" seq="$forwarding-type" server="n" repeat="21" />
 		<record alias="finish-blow-quests" type="Quest" name="" server="n" repeat="21" />
 		<record alias="finish-blow-missions" type="Byte" name="" server="n" repeat="21" />
 		<record alias="finish-blow-cases" type="Byte" name="" server="n" repeat="21" />

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Xml;
 
 using CSCore.SoundOut;
 
@@ -17,21 +16,27 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 	/// <summary>
 	/// 任务预览组件
 	/// </summary>
-	public partial class QuestPreview : UserControl
+	public partial class QuestPreview : Form
 	{
 		#region 构造
 		public QuestPreview()
 		{
 			InitializeComponent();
 
-			this.BackColor = Color.Transparent;
 			this.AutoSize = false;
-
-
 			this.rewardInfo = new SubGroup.RewardInfo();
 			this.Controls.Add(this.rewardInfo);
 		}
+
+
+		public QuestPreview(QuestData QuestData) : this()
+		{
+			this.Data = QuestData;
+		}
 		#endregion
+
+
+
 
 		#region 字段
 		WaveOut SoundOut = new() { Latency = 100 };
@@ -87,18 +92,17 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 		#region 方法
 		private void QuestPreview_Load(object sender, EventArgs e)
 		{
-			//测试模式
-			if (!HZH_Controls.ControlHelper.IsDesignMode && _data is null)
-			{
-				//XmlDocument xd = new();
-				//xd.LoadXml(Properties.Resources.xmlfile1);
-
-				//this.Data = new QuestData(xd.DocumentElement);
-			}
-
 			this.SwitchTestMode.Checked = TestMode;
 			this.Refresh();
 		}
+
+		private void QuestPreview_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			if (this.SoundOut.PlaybackState != PlaybackState.Stopped)
+				this.SoundOut.Stop();
+		}
+
+
 
 		public override void Refresh()
 		{

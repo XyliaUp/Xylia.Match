@@ -17,7 +17,7 @@
     <Compile Update="Project\Controls\ContentPanel\ContentPanel_Paint.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\Mission\CaseInfoPanel.cs">
+    <Compile Update="Project\Core\Quest\Preview\Task\Mission\CaseInfoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Skill\SkillPreview\SkillTooltipPanel.cs">
@@ -185,46 +185,46 @@
     <Compile Update="Project\Core\Npc\Scene\SearcherScene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\QuestPreview.cs">
+    <Compile Update="Project\Core\Quest\Scene\QuestPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\ContentInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\ContentInfo.cs">
+    <Compile Update="Project\Core\Quest\Preview\GroupBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\GroupBase.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\QuestBonusReward\QuestBonusRewardPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\QuestBonusReward\QuestBonusRewardPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\Base\PriceBase.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\Base\PriceBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\Base\RewardCellBase.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\Base\RewardCellBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\FixedItem.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\FixedItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\HonorExp.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\HonorExp.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\Money.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\Money.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\OptionaItem.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\OptionaItem.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardInfo.cs">
+    <Compile Update="Project\Core\Quest\Preview\Reward\RewardInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\Mission\MissionPanel.cs">
+    <Compile Update="Project\Core\Quest\Preview\Task\Mission\MissionPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\Mission\MissionStepPanel.cs">
+    <Compile Update="Project\Core\Quest\Preview\Task\Mission\MissionStepPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\TaskInfo.cs">
+    <Compile Update="Project\Core\Quest\Preview\Task\TaskInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\RandomStore\Cell\DisplayItemCell.cs">

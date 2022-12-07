@@ -54,8 +54,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			{
 				foreach (var step in MissionStep)
 				{
-					var Reward1 = FileCacheData.Data.QuestReward.GetInfo(step.Reward1);
-					var Reward2 = FileCacheData.Data.QuestReward.GetInfo(step.Reward2);
+					var Reward1 = FileCache.Data.QuestReward.GetInfo(step.Reward1);
+					var Reward2 = FileCache.Data.QuestReward.GetInfo(step.Reward2);
 
 					if (Reward1 != null)
 					{
@@ -81,7 +81,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 
 			//载入追加奖励信息
-			var QuestBonusRewardSetting = FileCacheData.Data.QuestBonusRewardSetting.Where(o => o.Quest == Quest.Alias);
+			var QuestBonusRewardSetting = FileCache.Data.QuestBonusRewardSetting.Where(o => o.Quest == Quest.Alias);
 			if (QuestBonusRewardSetting.Any())
 			{
 				this.GroupText += " (当前任务包含特别奖励，尚未支持处理)";
@@ -114,7 +114,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				{
 					if (value.ContainsAttribute($"fixed-skill3-{i}", out string AttrVal))
 					{
-						var SkillInfo = FileCacheData.Data.Skill3[AttrVal];
+						var SkillInfo = FileCache.Data.Skill3[AttrVal];
 						if (SkillInfo is null) continue;
 
 						FixedCommonObjs.Add(new ItemIconCell()
@@ -268,7 +268,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				#region 封魔录奖励
 				if (value.ContainsAttribute("sealed-dungeon-reward", out string tmp) && int.TryParse(tmp, out var SealedDungeonReward))
 				{
-					foreach (var reward in FileCacheData.Data.QuestSealedDungeonReward.Where(o => o.ID == SealedDungeonReward))
+					foreach (var reward in FileCache.Data.QuestSealedDungeonReward.Where(o => o.ID == SealedDungeonReward))
 					{
 						var Name = reward.Level + "层";
 

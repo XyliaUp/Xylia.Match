@@ -34,7 +34,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestPreview));
 			this.Quest_ICON = new System.Windows.Forms.PictureBox();
 			this.Quest_Group = new System.Windows.Forms.Label();
-			this.QuestName = new ContentPanel();
+			this.QuestName = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.ContentInfo = new Xylia.Preview.Project.Core.Quest.Preview.SubGroup.ContentInfo();
 			this.taskInfo = new Xylia.Preview.Project.Core.Quest.Preview.SubGroup.TaskInfo();
 			this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -71,6 +71,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// QuestName
 			// 
 			this.QuestName.BackColor = System.Drawing.Color.Transparent;
+			this.QuestName.BasicLineHeight = 26;
 			this.QuestName.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.QuestName.ForeColor = System.Drawing.Color.LightGreen;
 			this.QuestName.Location = new System.Drawing.Point(48, 29);
@@ -88,11 +89,11 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.ContentInfo.Location = new System.Drawing.Point(4, 66);
 			this.ContentInfo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.ContentInfo.Name = "ContentInfo";
-			this.ContentInfo.Size = new System.Drawing.Size(110, 71);
+			this.ContentInfo.Size = new System.Drawing.Size(110, 59);
 			this.ContentInfo.TabIndex = 12;
 			this.ContentInfo.Text = "进行书信对话";
 			// 
-			// taskInfo1
+			// taskInfo
 			// 
 			this.taskInfo.AutoSize = true;
 			this.taskInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -100,7 +101,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.taskInfo.GroupText = "任务";
 			this.taskInfo.Location = new System.Drawing.Point(4, 162);
 			this.taskInfo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-			this.taskInfo.Name = "taskInfo1";
+			this.taskInfo.Name = "taskInfo";
 			this.taskInfo.Size = new System.Drawing.Size(58, 26);
 			this.taskInfo.TabIndex = 10;
 			// 
@@ -142,17 +143,24 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScroll = true;
 			this.AutoSize = true;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Black;
+			this.ClientSize = new System.Drawing.Size(627, 337);
 			this.ContextMenuStrip = this.MenuStrip;
 			this.Controls.Add(this.QuestName);
 			this.Controls.Add(this.ContentInfo);
 			this.Controls.Add(this.Quest_Group);
 			this.Controls.Add(this.Quest_ICON);
 			this.Controls.Add(this.taskInfo);
+			this.ForeColor = System.Drawing.Color.DimGray;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "QuestPreview";
-			this.Size = new System.Drawing.Size(789, 196);
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.Text = "任务预览";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuestPreview_FormClosing);
 			this.Load += new System.EventHandler(this.QuestPreview_Load);
 			((System.ComponentModel.ISupportInitialize)(this.Quest_ICON)).EndInit();
 			this.MenuStrip.ResumeLayout(false);

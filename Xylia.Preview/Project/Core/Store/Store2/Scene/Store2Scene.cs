@@ -79,7 +79,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 		{
 			#region 读取数据
 			var StoreInfoList = new List<StoreInfo>();
-			FileCacheData.Data.Store2.ForEach(Store2 =>
+			FileCache.Data.Store2.ForEach(Store2 =>
 			{
 				#region 初始化
 				var Store2Alias = Store2.Alias;
@@ -92,7 +92,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 				int? Order = null;
 
 				//远程商店设定
-				var UnlocatedStore = FileCacheData.Data.UnlocatedStore.Find(o => o.Store2 == Store2Alias);
+				var UnlocatedStore = FileCache.Data.UnlocatedStore.Find(o => o.Store2 == Store2Alias);
 				if (UnlocatedStore != null)
 				{
 					#region 判断商店类型
@@ -156,7 +156,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			#region 初始化数据
 			if (InLoading) return;
 
-			var Store2 = FileCacheData.Data.Store2[StoreAlias];
+			var Store2 = FileCache.Data.Store2[StoreAlias];
 			if (Store2 is null)
 			{
 				InLoading = false;
@@ -195,7 +195,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 				//获取物品职业限制，如果未通过筛选则不进行下一操作
 				if (!ItemInfo.CheckEquipJob(SelectedJob)) continue;
 
-				var ItemBuyPrice = FileCacheData.Data.ItemBuyPrice[BuyPrice];
+				var ItemBuyPrice = FileCache.Data.ItemBuyPrice[BuyPrice];
 				this.ListPreview.Invoke(new Action(() => ItemCells.Add(new Store2ItemCell(ItemInfo, ItemBuyPrice))));   //保证控件不会跨线程调用
 			}
 
@@ -222,7 +222,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			//如果搜索条件是物品信息，那么再搜索可购买物品
 			if (FilterRule is ItemData FilterItem && this.Filter.Contains(FilterTag.Item))
 			{
-				var Store2 = FileCacheData.Data.Store2.GetInfo(NodeInfo.AliasText);
+				var Store2 = FileCache.Data.Store2.GetInfo(NodeInfo.AliasText);
 				if (Store2 is null) return false;
 
 				//遍历可购买物品字段

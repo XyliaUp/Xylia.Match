@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="CombatData" type="skill3" version="10" rule="cpl" is64="y" check-size="y" >
+	<list module="CombatData" type="skill3" version="10.0" rule="cpl" is64="y" check-size="y" >
 		<record alias="type" type="type" >
 			<case alias="active-skill" />
 			<case alias="passive-skill" />
@@ -15,7 +15,7 @@
 		<record alias="skill-modify-limit" name="" ref="SkillModifyLimit" />
 		<record alias="is-ego-skill" name="" type="Bool" />
 		<record alias="use-ego-skill-training-sequence" name="" type="Bool" default="y" />
-		<record alias="systematization" name="" ref="SkillSystematization" type="Int32" repeat="16" />
+		<record alias="systematization" name="" ref="SkillSystematization" repeat="16" />
 		<record alias="damage-rate-pvp" name="" type="Short" default="1000" />
 		<record alias="damage-rate-standard-stats" name="" type="Short" default="1000" />
 		<record alias="quest" name="" type="Quest" />

@@ -27,13 +27,13 @@ namespace Xylia.Preview.Project.Core.RandomStore
 		/// </summary>
 		public void LoadData()
 		{
-			var RandomStore = FileCacheData.Data.RandomStore.Find(a => a.RandomStoreNumber == RandomStoreNumber.RandomStore1);
+			var RandomStore = FileCache.Data.RandomStore.Find(a => a.RandomStoreNumber == RandomStoreNumber.RandomStore1);
 
 			this.PromotionName.Text = "UI.RandomStore.PromotionName".GetText();
 			this.label3.Text += $"（可以获得{ RandomStore?.AcquireDrawRewardSetRepeatCount }轮）";
 
 			int LocY = 185;
-			foreach (var Info in FileCacheData.Data.RandomStoreDrawReward.OrderBy(a => a.RequiredDrawCount))
+			foreach (var Info in FileCache.Data.RandomStoreDrawReward.OrderBy(a => a.RequiredDrawCount))
 			{
 				var DrawRewardCell = new Cell.DrawRewardCell();
 

@@ -61,10 +61,10 @@ namespace Xylia.Preview.Data.Record
 			#region 采集信息
 			var TextList = new List<string>
 			{
-				FileCacheData.Data.SkillModifyInfo[this.SkillModifyInfo1]?.ToString(),
-				FileCacheData.Data.SkillModifyInfo[this.SkillModifyInfo2]?.ToString(),
-				FileCacheData.Data.SkillModifyInfo[this.SkillModifyInfo3]?.ToString(),
-				FileCacheData.Data.SkillModifyInfo[this.SkillModifyInfo4]?.ToString(),
+				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo1]?.ToString(),
+				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo2]?.ToString(),
+				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo3]?.ToString(),
+				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo4]?.ToString(),
 			};
 			#endregion
 

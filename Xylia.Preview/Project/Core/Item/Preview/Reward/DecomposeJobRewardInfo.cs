@@ -10,7 +10,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 	/// <summary>
 	/// 奖励信息
 	/// </summary>
-	public class DecomposeJobRewardInfo : DecomposeRewardInfo
+	public sealed class DecomposeJobRewardInfo : DecomposeRewardInfo
 	{
 		#region 构造
 		/// <summary>

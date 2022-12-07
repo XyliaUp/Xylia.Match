@@ -249,7 +249,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadPreview(new SetItemPreview().LoadInfo(this.ItemInfo));
 
 			//加载技能变更信息
-			this.LoadPreview(new SkillByEquipmentTooltip().LoadInfo("skill-by-equipment", FileCacheData.Data.SkillByEquipment, this.ItemInfo));
+			this.LoadPreview(new SkillByEquipmentTooltip().LoadInfo("skill-by-equipment", FileCache.Data.SkillByEquipment, this.ItemInfo));
 
 			//奖励处理
 			this.LoadReward();
@@ -258,7 +258,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadPreview(new SealPreview().LoadInfo(this.ItemInfo));
 
 			//加载刻印书信息
-			this.LoadPreview(new SlateScrollTooltip().LoadInfo("slate-scroll", FileCacheData.Data.SlateScroll, this.ItemInfo));
+			this.LoadPreview(new SlateScrollTooltip().LoadInfo("slate-scroll", FileCache.Data.SlateScroll, this.ItemInfo));
 
 			//加载描述4~6
 			this.LoadPreview(LoadDescription(this.ItemInfo.Description4Title, this.ItemInfo.Description4));
@@ -272,7 +272,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadPreview(this.LoadExtraInfo());
 
 			//加载事件信息
-			this.LoadPreview(new EventTimePreview().LoadInfo("event-info", FileCacheData.Data.ItemEvent, this.ItemInfo));
+			this.LoadPreview(new EventTimePreview().LoadInfo("event-info", FileCache.Data.ItemEvent, this.ItemInfo));
 
 			//可成长八卦牌属性测试
 			this.AttributePreview.LoadInfo(this.ItemInfo);
@@ -292,7 +292,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			#endregion
 
 			#region 可用技能测试
-			var Skill3Data = FileCacheData.Data.Skill3.GetInfo(this.ItemInfo.Attributes["skill3"]);
+			var Skill3Data = FileCache.Data.Skill3.GetInfo(this.ItemInfo.Attributes["skill3"]);
 			if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
 			#endregion
 		}
@@ -347,7 +347,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		{
 			for (int i = 1; i <= 4; i++)
 			{
-				var EffectEquip = FileCacheData.Data.Effect.GetInfo(this.ItemInfo.Attributes[$"effect-equip-{i}"]);
+				var EffectEquip = FileCache.Data.Effect.GetInfo(this.ItemInfo.Attributes[$"effect-equip-{i}"]);
 				if (EffectEquip is not null)
 				{
 					//显示附加效果文本提示信息
@@ -433,7 +433,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			if (this.ItemInfo.ContainsAttribute("account-post-charge", out string accountpostcharge))
 			{
-				var AccountPostCharge = FileCacheData.Data.AccountPostCharge[accountpostcharge];
+				var AccountPostCharge = FileCache.Data.AccountPostCharge[accountpostcharge];
 				if (AccountPostCharge != null)
 				{
 					var ChargeItem1 = AccountPostCharge.ChargeItem1.GetItemInfo();

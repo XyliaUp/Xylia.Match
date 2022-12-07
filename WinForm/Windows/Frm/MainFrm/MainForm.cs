@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -78,14 +77,7 @@ namespace Xylia.Match.Windows
 			thread.SetApartmentState(ApartmentState.STA);
 			thread.Start();
 
-
 			MySet.ClearMemory();
-
-
-			if (ExistLock == false)
-			{
-				Tip.Message("您正在非开发环境下运行待评估版本，可能发生异常错误\n\n如遇崩溃问题请及时上报日志文件");
-			}
 		}
 
 		private void MainForm2_FormClosing(object sender, FormClosingEventArgs e)
@@ -257,26 +249,10 @@ namespace Xylia.Match.Windows
 		#endregion
 
 
-
-
 		private void AddControl(Control c)
 		{
 			this.Panel.Controls.Clear();
 			this.Panel.Controls.Add(c);
-		}
-
-
-		/// <summary>
-		/// 是否存在测试文件
-		/// </summary>
-		private bool? ExistLock
-		{
-			get
-			{
-				if (Program.GetVerType != VerType.开发版本) return null;
-
-				return File.Exists("Xylia.Match.lock");
-			}
 		}
 
 		/// <summary>

@@ -61,7 +61,7 @@ namespace Xylia.Preview.Third.Content
 				CurRow.AddCell(ItemInfo.EquipType.GetAttribute<Chinese>()?.Description ?? ItemInfo.EquipType.ToString());
 
 				CurRow.AddCell(ItemInfo.ClosetGroupId);
-				CurRow.AddCell(FileCacheData.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.category.GetDescription());
+				CurRow.AddCell(FileCache.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.category.GetDescription());
 
 				return CurRow;
 			}
@@ -81,7 +81,7 @@ namespace Xylia.Preview.Third.Content
 			TitleRow.AddCell("定制类型");
 
 
-			foreach (var item in FileCacheData.Data.Item.Where(item =>
+			foreach (var item in FileCache.Data.Item.Where(item =>
 				(item.Type == ItemType.costume ||
 				(item.Type == ItemType.accessory && item.accessoryType == AccessoryType.CostumeAttach))
 				&& item.UsableDuration == 0))
@@ -101,7 +101,7 @@ namespace Xylia.Preview.Third.Content
 			var PetSheet = CreateSheet("幻影石", out _);
 
 			RowIdx = 1;
-			foreach (var item in FileCacheData.Data.Item.Where(item =>
+			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.weapon &&
 				item.weaponType == WeaponType.Pet1 &&
 				item.UsableDuration == 0 &&
@@ -114,7 +114,7 @@ namespace Xylia.Preview.Third.Content
 			var WeaponSheet = CreateSheet("武器", out var TitleRow3);
 			TitleRow3.AddCell("职业");
 
-			foreach (var item in FileCacheData.Data.Item.Where(item =>
+			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.weapon &&
 				item.weaponType != WeaponType.Pet1 &&
 				item.UsableDuration == 0 &&
@@ -127,7 +127,7 @@ namespace Xylia.Preview.Third.Content
 
 			#region 坐骑
 			var VehicleSheet = CreateSheet("坐骑", out _);
-			foreach (var item in FileCacheData.Data.Item.Where(item =>
+			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.accessory &&
 				item.accessoryType == AccessoryType.Vehicle))
 				CreateRow(item, VehicleSheet);
@@ -135,7 +135,7 @@ namespace Xylia.Preview.Third.Content
 
 			#region 外观道具
 			var AppearanceItem = CreateSheet("外观道具", out _);
-			foreach (var item in FileCacheData.Data.Item.Where(item =>
+			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.accessory &&
 				item.ContainsAttribute("appearance", out _)))
 				CreateRow(item, AppearanceItem);

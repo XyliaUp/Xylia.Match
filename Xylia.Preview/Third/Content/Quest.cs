@@ -62,7 +62,7 @@ namespace Xylia.Preview.Third.Content
 
 			#region 读取关联副本信息
 			var DungeonNameGroup = new Dictionary<string, string>(StringComparer.CurrentCultureIgnoreCase);
-			foreach (var Dungeon in FileCacheData.Data.Dungeon)
+			foreach (var Dungeon in FileCache.Data.Dungeon)
 			{
 				var DungeonName = Dungeon.NameText();
 
@@ -75,7 +75,7 @@ namespace Xylia.Preview.Third.Content
 				}
 			}
 
-			foreach (var Dungeon in FileCacheData.Data.RaidDungeon)
+			foreach (var Dungeon in FileCache.Data.RaidDungeon)
 			{
 				var DungeonName = Dungeon.NameText();
 

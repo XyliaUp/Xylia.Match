@@ -34,7 +34,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 
 		public void LoadData(DifficultyType ChallengeNpcDifficulty, string ChallengeNpcKill, ChallengeListData.Grade ChallengeQuestGrade, string Attraction, string ChallengeNpcQuest)
 		{
-			var KillNpc = FileCacheData.Data.Npc[ChallengeNpcKill];
+			var KillNpc = FileCache.Data.Npc[ChallengeNpcKill];
 
 
 			this.AttractionInfo.Text = Attraction.GetObject().GetName();

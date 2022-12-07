@@ -8,7 +8,6 @@ using System.Windows.Forms;
 
 using NPOI.SS.UserModel;
 
-using Xylia.bns.Modules.DataFormat.BinData.Handle.Local;
 using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Match.Util.ItemMatch.Util;
@@ -66,7 +65,7 @@ namespace Xylia.Match.Util.ItemList
 		}
 
 		/// <summary>
-		/// 快速匹配函数
+		/// 快速输出方法
 		/// </summary>
 		/// <param name="StartTime"></param>
 		public void StartMatch_Fast(DateTime StartTime)

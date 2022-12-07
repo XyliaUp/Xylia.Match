@@ -16,11 +16,9 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 		#region 构造
 		public RewardData DecomposeReward;
 
-		public DecomposeRewardInfo(RewardData Reward)
-		{
-			this.DecomposeReward = Reward;
-		}
+		public DecomposeRewardInfo(RewardData Reward) => this.DecomposeReward = Reward;
 		#endregion
+
 
 
 
@@ -34,13 +32,13 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				if (_preview is null)
 				{
 					_preview = new();
-
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.Fixed));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.g1));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.g2));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.rare));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.g3));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.selected));
+					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.Random));
 
 					//物品实例化
 					_preview.ForEach(c => c.ItemInstace());
@@ -53,7 +51,6 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 		}
 
 
-
 		/// <summary>
 		/// 生成预览信息
 		/// </summary>
@@ -64,15 +61,14 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			var result = new List<RewardCell>();
 			if (this.DecomposeReward is null) return result;
 
-
 			string RewardAttr = null, CountMinAttr = null, CountMaxAttr = null, Extra = null;
 
 			//设置职业标记
 			if (this is DecomposeJobRewardInfo jobReward)
 				Extra = jobReward.Signal.GetDescription();
+			#endregion
 
-
-			#region 生成奖励字段名称
+			#region 获取奖励字段名称
 			switch (RewardGroup)
 			{
 				case RewardCell.CellGroup.Fixed:
@@ -116,6 +112,14 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				}
 				break;
 
+				case RewardCell.CellGroup.Random:
+				{
+					RewardAttr = "random-item-";
+					Extra = "Random";
+				}
+				break;
+
+
 				case RewardCell.CellGroup.selected:
 				{
 					RewardAttr = "selected-item-";
@@ -126,13 +130,12 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				default: throw new Exception("未知的奖励类型: " + RewardGroup);
 			}
 			#endregion
-			#endregion
+
 
 
 			#region 遍历属性
 			foreach (var attribute in this.DecomposeReward.Attributes)
 			{
-				//用于统计时间
 				DateTime dt = DateTime.Now;
 
 				if (!attribute.Key.RegexMatch(RewardAttr + @"[0-9]*$")) continue;
@@ -143,8 +146,8 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				#region	获得数量信息
 				string Count = null, Count_Max = null;
 
-				bool ExistMin = !CountMinAttr.IsNull();
-				bool ExistMax = !CountMaxAttr.IsNull();
+				bool ExistMin = CountMinAttr != null;
+				bool ExistMax = CountMaxAttr != null;
 
 				if (ExistMin || ExistMax)
 				{
@@ -154,7 +157,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 						if (ExistMin) Count = this.DecomposeReward.Attributes[CountMinAttr + WithinIdx];
 						if (ExistMax) Count_Max = this.DecomposeReward.Attributes[CountMaxAttr + WithinIdx];
 					}
-					else Console.WriteLine("转换组失败 <- " + attribute.Key.RemovePrefixString(RewardAttr));
+					else Console.WriteLine("转换组失败 -> " + attribute.Key.RemovePrefixString(RewardAttr));
 				}
 				#endregion
 
@@ -171,7 +174,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 
 
 #if DEBUG
-				Console.WriteLine($"[Debug] 初始化奖励元素 => { ItemAlias }，耗时{ (DateTime.Now - dt).TotalMilliseconds }ms");
+				//System.Diagnostics.Debug.WriteLine($"[Debug] 初始化奖励元素 => { ItemAlias }，耗时{ (DateTime.Now - dt).TotalMilliseconds }ms");
 #endif
 			}
 			#endregion

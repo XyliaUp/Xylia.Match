@@ -99,7 +99,7 @@ namespace Xylia.Preview.Data.Record
 			#region 获取势力信息
 			if(this.Faction != null)
 			{
-				var faction = FileCacheData.Data.Faction[this.Faction];
+				var faction = FileCache.Data.Faction[this.Faction];
 				groupName += faction?.NameText() ?? this.Faction;
 			}
 			#endregion

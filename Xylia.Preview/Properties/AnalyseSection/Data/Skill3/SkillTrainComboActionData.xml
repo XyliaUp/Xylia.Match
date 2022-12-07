@@ -17,7 +17,7 @@
 			<case alias="blue" name="" />
 			<case alias="green" name="" />
 			<case alias="yellow" name="" />
-                                </record>
+		</record>
 		<record alias="skill-id" name="" type="Int32" repeat="10" />
 		<record alias="variation-id" name="" type="Byte" repeat="10" />
 		<record alias="condition-icon-normal-text" name="" type="TextAlias" repeat="10" />

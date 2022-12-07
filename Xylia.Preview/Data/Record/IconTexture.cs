@@ -7,7 +7,6 @@ using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Common.Interface;
 
-
 namespace Xylia.Preview.Data.Record
 {
 	[Signal("icon-texture")]
@@ -15,7 +14,7 @@ namespace Xylia.Preview.Data.Record
 	{
 		#region 属性字段
 		[Description("icon-texture")]
-		public string icontexture;
+		public string iconTexture;
 
 		[Description("icon-height")]
 		public short IconHeight;
@@ -43,7 +42,25 @@ public static class IconTextureExt
 	public static PakData PakData = new();
 
 
+
 	#region 方法
+	public static Bitmap GetTextureData(this IconTexture IconTexture)
+	{
+		if (IconTexture.Alias != null && Data.Contains(IconTexture.Alias)) return Data[IconTexture.Alias];
+
+		var TextureData = IconTexture?.iconTexture.GetImage();
+		if (TextureData != null)
+		{
+			if (IconTexture.Alias != null) Data.Add(IconTexture.Alias, TextureData);
+			return TextureData;
+		}
+
+		System.Diagnostics.Debug.WriteLine($"读取失败: " + IconTexture.Alias);
+		return null;
+	}
+
+
+
 	/// <summary>
 	/// 获得图标信息
 	/// </summary>
@@ -75,7 +92,7 @@ public static class IconTextureExt
 	public static Bitmap GetIcon(this string TextureAlias, short IconIndex)
 	{
 		//获取贴图数据
-		var IconTexture = FileCacheData.Data.IconTexture[TextureAlias];
+		var IconTexture = FileCache.Data.IconTexture[TextureAlias];
 		if (IconTexture is null) return null;
 
 		return GetIcon(IconTexture, IconIndex);
@@ -83,52 +100,36 @@ public static class IconTextureExt
 
 	public static Bitmap GetIcon(this IconTexture IconTexture, short IconIndex)
 	{
-		#region 获取贴图数据
-		Bitmap TextureData;
-		if (Data != null && Data.Contains(IconTexture.Alias)) TextureData = Data[IconTexture.Alias];
-		else
-		{
-			TextureData = IconTexture?.icontexture.GetImage();
-			if (TextureData != null) Data.Add(IconTexture.Alias, TextureData);
-		}
-		#endregion
+		Bitmap TextureData = GetTextureData(IconTexture);
+		if (TextureData is null) return null;
 
 
 		#region 裁剪内容
-		if (TextureData is not null)
+		//获取每行与每列的数量
+		int AmountRow = IconTexture.TextureWidth / IconTexture.IconWidth;
+
+		int Row = IconIndex % AmountRow;
+		int Column = IconIndex / AmountRow;
+
+		//计算行列索引
+		//整除表示是最后一个对象
+		if (Row == 0) Row = AmountRow;
+		else Column += 1;
+
+		if (false && IconIndex != 1)
+			System.Diagnostics.Debug.WriteLine($"{IconIndex} => {Column} - {Row}");
+
+		//锁定对象，防止异步异常
+		lock (TextureData)
 		{
-			//获取每行与每列的数量
-			int AmountRow = IconTexture.TextureWidth / IconTexture.IconWidth;
-
-			int Row = IconIndex % AmountRow;
-			int Column = IconIndex / AmountRow;
-
-			//计算行列索引
-			//整除表示是最后一个对象
-			if (Row == 0) Row = AmountRow;
-			else Column += 1;
-
-			if (false && IconIndex != 1)
-				System.Diagnostics.Debug.WriteLine($"{IconIndex} => {Column} - {Row}");
-
-			//锁定对象，防止异步异常
-			lock (TextureData)
-			{
-				//返回裁剪结果
-				return TextureData.Clone(new Rectangle(
-					(Row - 1) * IconTexture.IconWidth,
-					(Column - 1) * IconTexture.IconHeight,
-					IconTexture.IconWidth, IconTexture.IconHeight), TextureData.PixelFormat);
-			}
+			//返回裁剪结果
+			return TextureData.Clone(new Rectangle(
+				(Row - 1) * IconTexture.IconWidth,
+				(Column - 1) * IconTexture.IconHeight,
+				IconTexture.IconWidth, IconTexture.IconHeight), TextureData.PixelFormat);
 		}
 		#endregion
-
-
-		System.Diagnostics.Debug.WriteLine($"读取失败: " + IconTexture.Alias);
-		return null;
 	}
-
-
 
 
 	/// <summary>

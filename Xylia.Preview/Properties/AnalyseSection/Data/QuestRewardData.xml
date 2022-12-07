@@ -4,40 +4,12 @@
 	<public >
 		<record alias="optional-group" type="struct" >
 			<record alias="faction" name="" ref="Faction" />
-			<record alias="job-1" name="" seq="$job_20" type="Seq" />
-			<record alias="job-2" name="" seq="$job_20" type="Seq" />
-			<record alias="job-3" name="" seq="$job_20" type="Seq" />
-			<record alias="job-4" name="" seq="$job_20" type="Seq" />
-			<record alias="job-5" name="" seq="$job_20" type="Seq" />
-			<record alias="job-6" name="" seq="$job_20" type="Seq" />
-			<record alias="job-7" name="" seq="$job_20" type="Seq" />
-			<record alias="job-8" name="" seq="$job_20" type="Seq" />
-			<record alias="job-9" name="" seq="$job_20" type="Seq" />
-			<record alias="job-10" name="" seq="$job_20" type="Seq" />
-			<record alias="job-11" name="" seq="$job_20" type="Seq" />
-			<record alias="job-12" name="" seq="$job_20" type="Seq" />
-			<record alias="job-13" name="" seq="$job_20" type="Seq" />
-			<record alias="job-14" name="" seq="$job_20" type="Seq" />
-			<record alias="job-15" name="" seq="$job_20" type="Seq" />
-			<record alias="job-16" name="" seq="$job_20" type="Seq" />
-
-			<record alias="sex-1" name="" seq="$sex" type="Byte" />
-			<record alias="sex-2" name="" seq="$sex" type="Byte" />
-			<record alias="sex-3" name="" seq="$sex" type="Byte" />
-			<record alias="sex-4" name="" seq="$sex" type="Byte" />
-			<record alias="race-1" name="" seq="$race" type="Byte" />
-			<record alias="race-2" name="" seq="$race" type="Byte" />
-			<record alias="race-3" name="" seq="$race" type="Byte" />
-			<record alias="race-4" name="" seq="$race" type="Byte" />
-			<record alias="difficulty-type" name="" seq="$difficulty-type" type="Byte" default="none" />
-			<record alias="slot-1" name="" type="Int32" use-group="y" />
-			<record alias="slot-2" name="" type="Int32" use-group="y" />
-			<record alias="slot-3" name="" type="Int32" use-group="y" />
-			<record alias="slot-4" name="" type="Int32" use-group="y" />
-			<record alias="item-count-1" name="" out-cond="Exist: *slot-1" type="Byte" />
-			<record alias="item-count-2" name="" out-cond="Exist: *slot-2" type="Byte" />
-			<record alias="item-count-3" name="" out-cond="Exist: *slot-3" type="Byte" />
-			<record alias="item-count-4" name="" out-cond="Exist: *slot-4" type="Byte" />
+			<record alias="job" name="" seq="$job" type="Seq" repeat="16"/>
+			<record alias="sex" name="" seq="$sex" type="Seq" repeat="4"/>
+			<record alias="race" name="" seq="$race" type="Seq" repeat="4"/>
+			<record alias="difficulty-type" name="" seq="$difficulty-type" type="Seq" />
+			<record alias="slot" name="" use-group="y" repeat="4"/>
+			<record alias="item-count" name="" out-cond="Exist: $slot-*" type="Byte" repeat="4"/>
 		</record>
 
 		<record alias="fixed-group" type="struct" parent="optional-group" >
@@ -53,7 +25,7 @@
 	<list module="QuestData" rule="cpl" type="QuestReward" version="5.0" check-version="y" >
 		<record alias="id" name="" type="id" />
 		<record alias="alias" name="" type="Index" />
-		<record alias="quest-first-progress" name="" type="Byte" >
+		<record alias="quest-first-progress" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="y" name="" />
 			<case alias="n" name="" />

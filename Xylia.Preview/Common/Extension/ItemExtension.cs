@@ -48,7 +48,7 @@ namespace Xylia.Preview.Data.Record
 		#region 物品处理
 		public static Item GetItemInfo(this string _alias, bool IgnoreError = true)
 		{
-			var Info = FileCacheData.Data.Item.GetInfo(_alias);
+			var Info = FileCache.Data.Item.GetInfo(_alias);
 			if (Info is null && !IgnoreError) throw new Exception($"物品查询无效 ({ _alias })");
 
 			return Info;
@@ -60,12 +60,12 @@ namespace Xylia.Preview.Data.Record
 			rule = rule.Trim();  //去除前后空格
 
 			//尝试获取道具信息，搜索失败则进行模糊搜索
-			var Record = FileCacheData.Data.Item[rule];
+			var Record = FileCache.Data.Item[rule];
 			if (false && Record is null && !int.TryParse(rule, out _))
 			{
 				BlockingCollection<Item> lst = new();
 
-				Parallel.ForEach(FileCacheData.Data.Item, Info =>
+				Parallel.ForEach(FileCache.Data.Item, Info =>
 				{
 					string ItemName = Info.Attributes["name2"].GetText();
 					if (ItemName != null)

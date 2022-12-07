@@ -22,14 +22,14 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.QuestBonusRew
 			foreach (var setting in QuestBonusRewardSettings)
 			{
 				//重置数据
-				var ContentsReset = FileCacheData.Data.ContentsReset[setting.ContentsReset1];
+				var ContentsReset = FileCache.Data.ContentsReset[setting.ContentsReset1];
 				//System.Diagnostics.Trace.WriteLine(ContentsReset.Attributes["reset-item-1"].GetItemInfo().NameText());
 
 
 				System.Diagnostics.Trace.WriteLine(setting.Alias + "  " + setting.type);
 
 				//额外奖励数据
-				var BonusReward = FileCacheData.Data.QuestBonusReward[setting.Reward];
+				var BonusReward = FileCache.Data.QuestBonusReward[setting.Reward];
 				//System.Diagnostics.Trace.WriteLine(BonusReward?.Property.OuterText);
 
 				if(BonusReward.NormalBonusRewardTotalCount !=0)

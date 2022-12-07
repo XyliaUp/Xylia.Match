@@ -23,14 +23,14 @@ namespace Xylia.Preview.Third.Content
 			int ColumnIdx = -1;
 
 			//获取所有ID的集合
-			foreach (var id in FileCacheData.Data.ItemImproveOption.Select(a => a.ID).Distinct())
+			foreach (var id in FileCache.Data.ItemImproveOption.Select(a => a.ID).Distinct())
 			{
 				ColumnIdx++;
 
 				int RowIdx = 1;
 
 				//获取随等级提高的选项对象集合
-				var OptionLevel = FileCacheData.Data.ItemImproveOption.Where(a => a.ID == id).ToList();
+				var OptionLevel = FileCache.Data.ItemImproveOption.Where(a => a.ID == id).ToList();
 				foreach (var option in OptionLevel)
 				{
 					//获取行位置

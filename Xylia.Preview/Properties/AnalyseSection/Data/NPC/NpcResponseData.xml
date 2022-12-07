@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="npcresponse" version="0.2" rule="cpl" side="client" >
-		<record alias="alias" type="Index" name="索引" />
+	<list module="AIData" type="NpcResponse" version="0.5" rule="cpl" side="client" >
+		<record alias="alias" type="Index" name="" />
 		<record alias="faction-check-type" type="Seq" name="" >
 			<case alias="is" name="" default="y" />
 			<case alias="is-not" name="" />
@@ -10,7 +10,7 @@
 		<record alias="faction-1" name="" ref="Faction" />
 		<record alias="faction-2" name="" ref="Faction" />		
 		<record alias="required-complete-quest" type="Quest" name="" />	
-		<record alias="faction-level-check-type" type="Byte" name="" >
+		<record alias="faction-level-check-type" type="Seq" name="" >
 			<case alias="none" name="" default="y" />
 			<case alias="check-for-success" name="" />
 			<case alias="check-for-fail" name="" />

@@ -2,7 +2,8 @@
 <table>
 	<list module="ZoneData0" type="map-group-1" version="0.5" rule="cpl" index="y">
 		<record alias="alias" type="Index" />	
-		<record alias="name2" type="TextAlias" />	
+		<record alias="name2" type="TextAlias" />
+		<record alias="expedition" name="" ref="MapGroup1Expedition" />
 		<record alias="talk-to-self-quests" type="Quest" name="" repeat="127" />
 		<record alias="talk-to-self-quests2" type="Quest" name="" repeat="127" />
 	</list>

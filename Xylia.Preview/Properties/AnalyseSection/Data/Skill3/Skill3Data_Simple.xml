@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" rule="" type="skill3" version="3.294" >
+	<list module="CombatData" rule="" type="skill3" version="10.0" >
 		<record alias="type" type="type" >
 			<case alias="active-skill" />
 			<case alias="passive-skill" />
@@ -10,11 +10,11 @@
 		<record alias="id" type="id" />
 		<record alias="variation-id" name="" start="0" type="Variation" />
 		<record alias="alias" name="" type="Index" />
-		<record alias="revised-effect-equip-probability-in-exec" name="" type="Short" default="100" repeat="5" min="0" max="10000" />
-		<record alias="skill-modify-limit" name="" ref="SkillModifyLimit" type="Int32" output="n" />
-		<record alias="is-ego-skill" name="" type="Bool" output="n" />
-		<record alias="use-ego-skill-training-sequence" name="" type="Bool" default="y" output="n" />
-		<record alias="systematization" name="" ref="SkillSystematization" type="Int32" repeat="16" output="n" />
+		<record alias="revised-effect-equip-probability-in-exec" name="" type="Short" repeat="5" default="100" min="0" max="10000" />
+		<record alias="skill-modify-limit" name="" ref="SkillModifyLimit" />
+		<record alias="is-ego-skill" name="" type="Bool" />
+		<record alias="use-ego-skill-training-sequence" name="" type="Bool" default="y" />
+		<record alias="systematization" name="" ref="SkillSystematization" repeat="16" />
 		<record alias="damage-rate-pvp" name="" type="Short" default="1000" />
 		<record alias="damage-rate-standard-stats" name="" type="Short" default="1000" />
 		<record alias="quest" name="" type="Quest" />
@@ -23,9 +23,7 @@
 		<record alias="forwardingtype" name="" type="Byte" />
 		<record alias="name" name="" type="Index" server="n" />
 		<record alias="name2" name="" type="Text" server="n" />
-		<record alias="ui-stance-1" name="" type="Seq" seq="$stance" server="n" />
-		<record alias="ui-stance-2" name="" type="Seq" seq="$stance" server="n" />
-		<record alias="ui-stance-3" name="" type="Seq" seq="$stance" server="n" />
+		<record alias="ui-stance" name="" type="Seq" seq="$stance" server="n" repeat="3"/>
 		<record alias="short-cut-key" name="" type="Seq16" seq="$key-command" server="n" />
 		<record alias="short-cut-key-classic" name="" type="Seq16" seq="$key-command" server="n" />
 		<record alias="short-cut-key-simple-context" name="" type="Seq16" seq="$key-command" server="n" />
@@ -60,16 +58,5 @@
 		<record alias="icon-texture" name="" ref="IconTexture" server="n" />
 		<record alias="icon-index" name="" type="Short" server="n" />
 		<record alias="icon" name="" type="Icon" server="n" />
-		<record alias="main-info-1" name="" type="TextAlias" server="n" />
-		<record alias="main-info-2" name="" type="TextAlias" server="n" />
-		<record alias="sub-info" name="" type="TextAlias" server="n" />
-		<record alias="main-info1-diff" name="" type="TextAlias" server="n" />
-		<record alias="main-info2-diff" name="" type="TextAlias" server="n" />
-		<record alias="sub-info-diff" name="" type="TextAlias" server="n" />
-		<record alias="main-tooltip-1" name="" ref="0" server="n" repeat="5" />
-		<record alias="main-tooltip-2" name="" ref="0" server="n" repeat="5" />
-		<record alias="sub-tooltip" name="" ref="0" server="n" repeat="10" />
-		<record alias="stance-tooltip" name="" ref="0" server="n" repeat="5" />
-		<record alias="condition-tooltip" name="" ref="0" server="n" repeat="5" />
 	</list>
 </table>

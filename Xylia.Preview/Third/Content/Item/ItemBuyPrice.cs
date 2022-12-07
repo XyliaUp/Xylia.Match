@@ -52,7 +52,7 @@ namespace Xylia.Preview.Third.Content
 			#endregion
 
 			#region 输出内容
-			FileCacheData.Data.ItemBuyPrice.ForEach(Info =>
+			FileCache.Data.ItemBuyPrice.ForEach(Info =>
 			{
 				#region	初始化
 				var CurRow = MainSheet.CreateRow(Info.Index + 1);
@@ -71,8 +71,8 @@ namespace Xylia.Preview.Third.Content
 				else
 				{
 					//搜索对象
-					var ItemBrand = FileCacheData.Data.ItemBrand[Info.RequiredItembrand];
-					var ItemTooltip = FileCacheData.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Info.RequiredItembrandConditionType);
+					var ItemBrand = FileCache.Data.ItemBrand[Info.RequiredItembrand];
+					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Info.RequiredItembrandConditionType);
 
 					//物品组信息 (tooltip获取出现问题会导致输出异常)
 					var ItemBrandInfo = ItemTooltip?.NameText() ?? Info.RequiredItembrand;
@@ -108,7 +108,7 @@ namespace Xylia.Preview.Third.Content
 
 				#region 获取成就名称
 				string AchievementName = null;
-				if (Info.RequiredAchievementId != 0) AchievementName = FileCacheData.Data.Achievement.Find(o => o.ID == Info.RequiredAchievementId && o.Step == Info.RequiredAchievementStepMin)?.NameText();
+				if (Info.RequiredAchievementId != 0) AchievementName = FileCache.Data.Achievement.Find(o => o.ID == Info.RequiredAchievementId && o.Step == Info.RequiredAchievementStepMin)?.NameText();
 				CurCells[CurCellIdx++].SetCellValue(AchievementName);
 				#endregion
 

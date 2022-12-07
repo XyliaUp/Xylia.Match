@@ -46,7 +46,7 @@
 		<record alias="immune-attribute-value-2" type="Long" name="" />
 		<record alias="immune-attribute-value-3" type="Long" name="" />
 		<record alias="flag" type="Seq16" name="" seq="$flag" repeat="4" />
-		<record alias="max-stack-flag" type="Short" name="" seq="$flag" />
+		<record alias="max-stack-flag" type="Seq16" name="" seq="$flag" />
 		<record alias="function" type="Seq" name="" seq="$function" repeat="10" />
 		<record alias="drop-field-item" type="Bool" name="" />
 		<record alias="drop-weapon-field-item" type="Bool" name="" />
@@ -103,7 +103,7 @@
 		<record alias="modify-ability" type="Seq16" name="" seq="$creature_field" repeat="8" />
 		<record alias="modify-ability-diff" type="Long" name="" repeat="8" />
 		<record alias="modify-ability-percent" type="Short" name="" repeat="8" />
-		<record alias="passive-moveanim-idle" type="Byte" name="" server="n" >
+		<record alias="passive-moveanim-idle" type="Seq" name="" server="n" >
 			<case alias="normal" name="" default="y" />
 			<case alias="dead" name="" />
 			<case alias="dead-hide" name="" />
@@ -171,7 +171,7 @@
 			<case alias="long-term" name="" />
 			<case alias="buff-disable" name="" />
 		</record>
-		<record alias="ui-category" type="Byte" name="" server="n" >
+		<record alias="ui-category" type="Seq" name="" server="n" >
 			<case alias="none" name="" default="y" />
 			<case alias="attraction" name="" />
 			<case alias="item-event" name="" />
@@ -181,12 +181,11 @@
 		</record>
 
 		<record alias="use-extra-skill-stack-count" type="Bool" name="" server="n" />
-		<record alias="combat-job-1" type="Byte" name="" seq="$job_20" server="n" />
-		<record alias="combat-job-2" type="Byte" name="" seq="$job_20" server="n" />
+		<record alias="combat-job" type="Seq" name="" seq="$job" server="n" repeat="2" />
 		<record alias="ui-difficult" type="Bool" name="" server="n" />
 		<record alias="is-transform-effect" type="Bool" name="" server="n" />
 		<record alias="is-reuse-standby-effect" type="Bool" name="" server="n" />
-		<record alias="item-type" type="Byte" name="" server="n" >
+		<record alias="item-type" type="Seq" name="" server="n" >
 			<case alias="none" name="" default="y" />
 			<case alias="soul" name="" />
 			<case alias="weapon" name="" />

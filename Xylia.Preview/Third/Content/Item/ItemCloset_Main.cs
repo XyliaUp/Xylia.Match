@@ -44,7 +44,7 @@ namespace Xylia.Preview.Third.Content
 			int RowIdx = 1;
 
 			//FileCacheData.Data.Item.Sort(new MySort());
-			FileCacheData.Data.Item.ForEach(Info =>
+			FileCache.Data.Item.ForEach(Info =>
 			{
 				#region 初始化
 				//指示是否需要输出
@@ -75,7 +75,7 @@ namespace Xylia.Preview.Third.Content
 
 				if (Info.ClosetGroupId != 0)
 				{
-					CurRow.AddCell(FileCacheData.Data.ClosetGroup[Info.ClosetGroupId]?.category.GetDescription());
+					CurRow.AddCell(FileCache.Data.ClosetGroup[Info.ClosetGroupId]?.category.GetDescription());
 				}
 			});
 			#endregion

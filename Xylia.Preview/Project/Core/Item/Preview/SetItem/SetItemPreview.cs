@@ -42,7 +42,7 @@ namespace Xylia.Preview.Project.Core.Item
 		{
 			#region 初始化
 			var Item = record as ItemData;
-			var Record = FileCacheData.Data.SetItem[record.Attributes["set-item"]];
+			var Record = FileCache.Data.SetItem[record.Attributes["set-item"]];
 			if (Record is null)
 			{
 				INVALID = true;
@@ -100,7 +100,7 @@ namespace Xylia.Preview.Project.Core.Item
 				{
 					UseSetItemEffect = true;
 
-					var Effect1 = FileCacheData.Data.Effect[Record.Attributes[$"count-{idx}-effect-1"]];
+					var Effect1 = FileCache.Data.Effect[Record.Attributes[$"count-{idx}-effect-1"]];
 					SetItemEffect.Text = OriginalText = Effect1?.Description2.GetText();
 				}
 				
@@ -108,7 +108,7 @@ namespace Xylia.Preview.Project.Core.Item
 				{
 					UseSetItemEffect = true;
 
-					var Effect2 = FileCacheData.Data.Effect[Record.Attributes[$"count-{idx}-effect-2"]];
+					var Effect2 = FileCache.Data.Effect[Record.Attributes[$"count-{idx}-effect-2"]];
 					SetItemEffect.Text = OriginalText = Effect2?.Description2.GetText();
 				}
 				#endregion
@@ -117,7 +117,7 @@ namespace Xylia.Preview.Project.Core.Item
 				var SkillModifyInfoGroup = new Dictionary<byte, SkillModifyInfoGroup>();
 				for (byte idx2 = 1; idx2 <= 10; idx2++)
 				{
-					SkillModifyInfoGroup[idx2] = FileCacheData.Data.SkillModifyInfoGroup[Record.Attributes[$"count-{idx}-skill-modify-info-group-{idx2}"]];
+					SkillModifyInfoGroup[idx2] = FileCache.Data.SkillModifyInfoGroup[Record.Attributes[$"count-{idx}-skill-modify-info-group-{idx2}"]];
 					if (SkillModifyInfoGroup[idx2] != null) this.JobStyleSelect.Visible = UseSetItemEffect = true;
 				}
 

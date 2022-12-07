@@ -44,7 +44,7 @@ namespace Xylia.Preview.Third.Content
 
 			#region 输出内容
 			int RowIdx = 1;
-			FileCacheData.Data.ItemTransformRecipe.ForEach(Info =>
+			FileCache.Data.ItemTransformRecipe.ForEach(Info =>
 			{
 				#region 初始化当前行
 				var CurRow = MainSheet.CreateRow(RowIdx++);
@@ -67,7 +67,7 @@ namespace Xylia.Preview.Third.Content
 					{
 						if (MainIngredient is ItemBrand)
 						{
-							var ItemBrandTooltip = FileCacheData.Data.ItemBrandTooltip.Find(d => d.ID == MainIngredient.ID && d.ItemConditionType == Info.MainIngredientConditionType);
+							var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip.Find(d => d.ID == MainIngredient.ID && d.ItemConditionType == Info.MainIngredientConditionType);
 							MainIngredient = ItemBrandTooltip;
 
 							if (ItemBrandTooltip != null) CurCells[CurCellIdx].SetCellValue(ItemBrandTooltip.Name2);

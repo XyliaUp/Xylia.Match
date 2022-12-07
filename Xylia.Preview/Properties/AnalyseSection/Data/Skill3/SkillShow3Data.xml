@@ -15,20 +15,20 @@
 			<case alias="none-chain" name="" default="y" />
 			<case alias="chain" name="" />
 			<case alias="chain-loop" name="" />
-                                </record>
+		</record>
 		<record alias="create-phantom-type" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="cast-start-stance" name="" />
 			<case alias="fire-start-stance" name="" />
 			<case alias="cast-start-instance" name="" />
 			<case alias="fire-start-instance" name="" />
-                                </record>
+		</record>
 		<record alias="phantom-shoot-type" name="" type="Seq" >
 			<case alias="phantom-shoot-right" name="" default="y" />
 			<case alias="phantom-shoot-left" name="" />
 			<case alias="phantom-shoot-double-side" name="" />
 			<case alias="phantom-shoot-bit-flags-index" name="" />
-                                </record>
+		</record>
 
 		<record alias="lyn-phantom-count" name="" type="Byte" />
 		<record alias="succession-next-skill" name="" type="Bool" />

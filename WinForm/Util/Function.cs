@@ -9,9 +9,8 @@ using System.Xml;
 using HtmlAgilityPack;
 
 using Xylia.Attribute;
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.BinData.Handle;
-using Xylia.bns.Modules.DataFormat.BinData.Handle.Local;
+using Xylia.bns.Modules.DataFormat.Bin;
+using Xylia.bns.Modules.DataFormat.Bin.Handle.Local;
 using Xylia.Extension;
 using Xylia.Match.Util.HtmlSupport;
 
@@ -38,18 +37,17 @@ namespace Xylia.Match.Util
 		{
 			#region 初始化
 			step(2);
-
-			var Data = new HandleData(SourcePath, true);
-			var Sinicization = Data.BinHandle.ExtractLocal();
-
+			var Local = new TextBinData(SourcePath).data;
 			step(3);
 
-			if (Sinicization.Count == 0)
+			if (!Local.Any())
 			{
 				Tip.Message("解析文件失败");
 				return;
 			}
 			#endregion
+
+
 
 			#region 输出内容
 			if (Path.GetExtension(OutPath) == ".html")
@@ -58,7 +56,7 @@ namespace Xylia.Match.Util
 
 				int i = 0, index = 1;
 
-				foreach (var item in Sinicization)
+				foreach (var item in Local)
 				{
 					i++;
 
@@ -92,8 +90,8 @@ namespace Xylia.Match.Util
 			}
 			else
 			{
-				using StreamWriter Out_Main = new StreamWriter(OutPath);
-				foreach (var item in Sinicization)
+				using StreamWriter Out_Main = new(OutPath);
+				foreach (var item in Local)
 				{
 					if (IsTest)
 					{
@@ -113,8 +111,8 @@ namespace Xylia.Match.Util
 			#endregion
 
 			step(4);
-			Sinicization.Clear();
-			Sinicization = null;
+			Local.Clear();
+			Local = null;
 
 			GetAction?.Invoke("输出汉化内容完成\n");
 			Console.WriteLine("输出汉化内容完成");
@@ -142,18 +140,15 @@ namespace Xylia.Match.Util
 				XmlDocument XmlDoc = new();
 				XmlDoc.Load(FilePath);
 
-				foreach (XmlNode reccord in XmlDoc.SelectNodes("table/record"))
-				{
-					var Alias = reccord.Attributes["alias"]?.Value;
-					var Text = reccord.Attributes["text"]?.Value ?? reccord.InnerText;
-
-					result.Add(new LocalInfo(0, Alias, Text));
-				}
+				result.AddRange(from XmlNode reccord in XmlDoc.SelectNodes("table/record")
+								let Alias = reccord.Attributes["alias"]?.Value
+								let Text = reccord.Attributes["text"]?.Value ?? reccord.InnerText
+								select new LocalInfo(0, Alias, Text));
 
 				return result;
 			}
-
-			else return new HandleData(FilePath, true).BinHandle.ExtractLocal();
+			
+			return new TextBinData(FilePath).data;
 		}
 
 
@@ -170,9 +165,7 @@ namespace Xylia.Match.Util
 		{
 			#region 初始化
 			if (!Directory.Exists(Path.GetDirectoryName(outPath)))
-			{
 				Directory.CreateDirectory(Path.GetDirectoryName(outPath));
-			}
 
 
 			action(2);

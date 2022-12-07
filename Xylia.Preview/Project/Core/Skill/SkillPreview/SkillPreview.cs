@@ -30,7 +30,7 @@ namespace Xylia.Preview.Project.Core.Skill
 		}
 
 
-		public void LoadData(string SkillAlias) => LoadData(FileCacheData.Data.Skill3[SkillAlias]);
+		public void LoadData(string SkillAlias) => LoadData(FileCache.Data.Skill3[SkillAlias]);
 
 		public void LoadData(Skill3 Skill)
 		{
@@ -62,7 +62,7 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.DamageRatePvp.Text = ((float)Skill.DamageRatePvp / 1000).ToString("F3");
 
 			//读取提示信息
-			foreach (var Tooltip in FileCacheData.Data.SkillTooltip.Where(tooltip => tooltip.Skill == Skill.Alias))
+			foreach (var Tooltip in FileCache.Data.SkillTooltip.Where(tooltip => tooltip.Skill == Skill.Alias))
 			{
 				#region 获取组信息
 				var group = Tooltip.tooltipGroup switch
@@ -102,7 +102,7 @@ namespace Xylia.Preview.Project.Core.Skill
 				#endregion
 
 				#region 获取属性 
-				var ConditionAttribute = FileCacheData.Data.SkillTooltipAttribute[Tooltip.ConditionAttribute];
+				var ConditionAttribute = FileCache.Data.SkillTooltipAttribute[Tooltip.ConditionAttribute];
 				if (ConditionAttribute != null)
 				{
 					//实例化对象
@@ -118,7 +118,7 @@ namespace Xylia.Preview.Project.Core.Skill
 					panels.Add(CondContent);
 				}
 
-				var TargetAttribute = FileCacheData.Data.SkillTooltipAttribute[Tooltip.TargetAttribute];
+				var TargetAttribute = FileCache.Data.SkillTooltipAttribute[Tooltip.TargetAttribute];
 				if (TargetAttribute != null)
 				{
 					panels.Add(new ContentPanel()
@@ -130,7 +130,7 @@ namespace Xylia.Preview.Project.Core.Skill
 					});
 				}
 
-				var AfterStanceAttribute = FileCacheData.Data.SkillTooltipAttribute[Tooltip.AfterStanceAttribute];
+				var AfterStanceAttribute = FileCache.Data.SkillTooltipAttribute[Tooltip.AfterStanceAttribute];
 				if (AfterStanceAttribute != null)
 				{
 					panels.Add(new ContentPanel()
@@ -142,7 +142,7 @@ namespace Xylia.Preview.Project.Core.Skill
 					});
 				}
 
-				var BeforeStanceAttribute = FileCacheData.Data.SkillTooltipAttribute[Tooltip.BeforeStanceAttribute];
+				var BeforeStanceAttribute = FileCache.Data.SkillTooltipAttribute[Tooltip.BeforeStanceAttribute];
 				if (BeforeStanceAttribute != null)
 				{
 					panels.Add(new ContentPanel()
@@ -154,7 +154,7 @@ namespace Xylia.Preview.Project.Core.Skill
 					});
 				}
 
-				var EffectAttribute = FileCacheData.Data.SkillTooltipAttribute[Tooltip.EffectAttribute];
+				var EffectAttribute = FileCache.Data.SkillTooltipAttribute[Tooltip.EffectAttribute];
 				if (EffectAttribute != null)
 				{
 					ContentPanel EffectContent = new(EffectAttribute.Text.GetText())
@@ -191,17 +191,17 @@ namespace Xylia.Preview.Project.Core.Skill
 				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg, "0", Tooltip.SkillAttackAttributeCoefficientPercent),
 				SkillTooltipAttribute.ArgType.Time => (float)ValueConvert / 1000 + "秒",
 				SkillTooltipAttribute.ArgType.StackCount => ValueConvert,
-				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.UI.Label_LightYellow_12\">{ FileCacheData.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
+				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.UI.Label_LightYellow_12\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
 				SkillTooltipAttribute.ArgType.HealPercent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.DrainPercent => null,
-				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.UI.Label_LightYellow_12\">{ FileCacheData.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
+				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.UI.Label_LightYellow_12\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
 				SkillTooltipAttribute.ArgType.ConsumePercent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.ProbabilityPercent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.StanceType => Arg.ToEnum<Stance>().GetDescription(),
 				SkillTooltipAttribute.ArgType.Percent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.Counter => ValueConvert + "次",
 				SkillTooltipAttribute.ArgType.Distance => (float)ValueConvert / 100 + "米",
-				SkillTooltipAttribute.ArgType.KeyCommand => FileCacheData.Data.Skill3[Arg]?.ShortCutKey.GetDescription(),
+				SkillTooltipAttribute.ArgType.KeyCommand => FileCache.Data.Skill3[Arg]?.ShortCutKey.GetDescription(),
 				SkillTooltipAttribute.ArgType.Number => ValueConvert,
 				SkillTooltipAttribute.ArgType.TextAlias => Arg.GetText(),
 

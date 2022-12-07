@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="ZoneData0" type="map-group-1-expedition" version="0.5" rule="cpl" index="y">
+		<record alias="unk-" ref="MapGroup1" />
+		<record alias="unk-" type="Text" />
+		<record alias="unk-" type="Index" />	
+	</list>
+</table>

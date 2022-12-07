@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -7,10 +8,9 @@ using CSCore;
 using CSCore.SoundOut;
 
 using FModel.Views.Resources.Controls.Aup;
-using System.Linq;
+
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
-using NPOI.POIFS.Crypt.Dsig;
 
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 {
@@ -51,8 +51,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				//单独播放
 				if (StepIdx > 1)
 				{
-					var data = GetWave(NpcTalkMessage.GetStepShow(StepIdx));
-					if (data is null) this.pictureBox1.Enabled = false;
+					var data = GetWave(NpcTalkMessage.GetStepShow(StepIdx), StepIdx);
+					if (data is null) DisableBtn();
 					else Play(data);
 				}
 
@@ -60,23 +60,23 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				else
 				{
 					List<byte[]> datas = new();
-					for (int i = 1; i <= 30; i++)
+					for (int idx = 1; idx <= 30; idx++)
 					{
-						var StepShow = NpcTalkMessage.GetStepShow(i);
+						var StepShow = NpcTalkMessage.GetStepShow(idx);
 						if (StepShow is null) break;
 
-						datas.Add(GetWave(StepShow));
+						datas.Add(GetWave(StepShow, idx));
 					}
 
 
 					var Valid = datas.Where(data => data != null);
-					if (!Valid.Any()) this.pictureBox1.Enabled = false;
+					if (!Valid.Any()) DisableBtn();
 					else
 					{
 						foreach (var data in Valid)
 						{
 							Thread.Sleep(Play(data));
-							Thread.Sleep(1000);
+							Thread.Sleep(800);
 						}
 					}
 				}
@@ -85,8 +85,19 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			thread.Start();
 		}
 
-		public byte[] GetWave(string StepShow) => StepShow.GetUObject().GetWave(this.StepIdx - 1);
+		private void DisableBtn()
+		{
+			this.pictureBox1.Enabled = false;
+			this.pictureBox1.Image = Properties.Resources.Image2;
+		}
 
+
+		/// <summary>
+		/// 获取音频数据
+		/// </summary>
+		/// <param name="StepShow"></param>
+		/// <returns></returns>
+		public byte[] GetWave(string StepShow, int StepIdx) => StepShow.GetUObject().GetWave(StepIdx - 1);
 
 		/// <summary>
 		/// 播放音频

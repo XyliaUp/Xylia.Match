@@ -2,7 +2,7 @@
 <table>
 	<list id="231" alias="PcData" module="LocalizationData" type="pc" version="0.57" rule="cpl" >
 		<record alias="race" name="" type="ID" extra="Byte1" seq="$race" />   
-        <record alias="job" name="" type="ID" extra="Byte2" seq="$job_20" />   
+        <record alias="job" name="" type="ID" extra="Byte2" seq="$job" />   
 		<record alias="level" name="" type="ID" extra="Byte3" />   
 		<record alias="contents-type" name="" type="ID" extra="Byte4" >
 			<case alias="invalid" name="" />
@@ -16,98 +16,10 @@
 		<record alias="unk-" name="" type="Bool" default="y" output="n" />   
 		<record alias="radius" name="" type="distance" output="n" />   
 
-		<record alias="skill-1" name="" ref="Skill" output="n" />   
-		<record alias="skill-2" name="" ref="Skill" output="n" />   
-		<record alias="skill-3" name="" ref="Skill" output="n" />   
-		<record alias="skill-4" name="" ref="Skill" output="n" />   
-		<record alias="skill-5" name="" ref="Skill" output="n" />   
-		<record alias="skill-6" name="" ref="Skill" output="n" />   
-		<record alias="skill-7" name="" ref="Skill" output="n" />   
-		<record alias="skill-8" name="" ref="Skill" output="n" />   
-		<record alias="skill-9" name="" ref="Skill" output="n" />   
-		<record alias="skill-10" name="" ref="Skill" output="n" />   
-		<record alias="skill-11" name="" ref="Skill" output="n" />   
-		<record alias="skill-12" name="" ref="Skill" output="n" />   
-		<record alias="skill-13" name="" ref="Skill" output="n" />   
-		<record alias="skill-14" name="" ref="Skill" output="n" />   
-		<record alias="skill-15" name="" ref="Skill" output="n" />   
-		<record alias="skill-16" name="" ref="Skill" output="n" />   
-		<record alias="skill-17" name="" ref="Skill" output="n" />   
-		<record alias="skill-18" name="" ref="Skill" output="n" />   
-		<record alias="skill-19" name="" ref="Skill" output="n" />   
-		<record alias="skill-20" name="" ref="Skill" output="n" />   
-		<record alias="skill-21" name="" ref="Skill" output="n" />   
-		<record alias="skill-22" name="" ref="Skill" output="n" />   
-		<record alias="skill-23" name="" ref="Skill" output="n" />   
-		<record alias="skill-24" name="" ref="Skill" output="n" />   
-		<record alias="skill-25" name="" ref="Skill" output="n" />   
-		<record alias="skill-26" name="" ref="Skill" output="n" />   
-		<record alias="skill-27" name="" ref="Skill" output="n" />   
-		<record alias="skill-28" name="" ref="Skill" output="n" />   
-		<record alias="skill-29" name="" ref="Skill" output="n" />   
-		<record alias="skill-30" name="" ref="Skill" output="n" />   
-		<record alias="skill-31" name="" ref="Skill" output="n" />   
-		<record alias="skill-32" name="" ref="Skill" output="n" />   
-		<record alias="skill-33" name="" ref="Skill" output="n" />   
-		<record alias="skill-34" name="" ref="Skill" output="n" />   
-		<record alias="skill-35" name="" ref="Skill" output="n" />   
-		<record alias="skill-36" name="" ref="Skill" output="n" />   
-		<record alias="skill-37" name="" ref="Skill" output="n" />   
-		<record alias="skill-38" name="" ref="Skill" output="n" />   
-		<record alias="skill-39" name="" ref="Skill" output="n" />   
-		<record alias="skill-40" name="" ref="Skill" output="n" />   
-		<record alias="skill3-1" name="" ref="skill3" output="n" />   
-		<record alias="skill3-2" name="" ref="skill3" output="n" />   
-		<record alias="skill3-3" name="" ref="skill3" output="n" />   
-		<record alias="skill3-4" name="" ref="skill3" output="n" />   
-		<record alias="skill3-5" name="" ref="skill3" output="n" />   
-		<record alias="skill3-6" name="" ref="skill3" output="n" />   
-		<record alias="skill3-7" name="" ref="skill3" output="n" />   
-		<record alias="skill3-8" name="" ref="skill3" output="n" />   
-		<record alias="skill3-9" name="" ref="skill3" output="n" />   
-		<record alias="skill3-10" name="" ref="skill3" output="n" />   
-		<record alias="skill3-11" name="" ref="skill3" output="n" />   
-		<record alias="skill3-12" name="" ref="skill3" output="n" />   
-		<record alias="skill3-13" name="" ref="skill3" output="n" />   
-		<record alias="skill3-14" name="" ref="skill3" output="n" />   
-		<record alias="skill3-15" name="" ref="skill3" output="n" />   
-		<record alias="skill3-16" name="" ref="skill3" output="n" />   
-		<record alias="skill3-17" name="" ref="skill3" output="n" />   
-		<record alias="skill3-18" name="" ref="skill3" output="n" />   
-		<record alias="skill3-19" name="" ref="skill3" output="n" />   
-		<record alias="skill3-20" name="" ref="skill3" output="n" />   
-		<record alias="skill3-21" name="" ref="skill3" output="n" />   
-		<record alias="skill3-22" name="" ref="skill3" output="n" />   
-		<record alias="skill3-23" name="" ref="skill3" output="n" />   
-		<record alias="skill3-24" name="" ref="skill3" output="n" />   
-		<record alias="skill3-25" name="" ref="skill3" output="n" />   
-		<record alias="skill3-26" name="" ref="skill3" output="n" />   
-		<record alias="skill3-27" name="" ref="skill3" output="n" />   
-		<record alias="skill3-28" name="" ref="skill3" output="n" />   
-		<record alias="skill3-29" name="" ref="skill3" output="n" />   
-		<record alias="skill3-30" name="" ref="skill3" output="n" />   
-		<record alias="skill3-31" name="" ref="skill3" output="n" />   
-		<record alias="skill3-32" name="" ref="skill3" output="n" />   
-		<record alias="skill3-33" name="" ref="skill3" output="n" />   
-		<record alias="skill3-34" name="" ref="skill3" output="n" />   
-		<record alias="skill3-35" name="" ref="skill3" output="n" />   
-		<record alias="skill3-36" name="" ref="skill3" output="n" />   
-		<record alias="skill3-37" name="" ref="skill3" output="n" />   
-		<record alias="skill3-38" name="" ref="skill3" output="n" />   
-		<record alias="skill3-39" name="" ref="skill3" output="n" />   
-		<record alias="skill3-40" name="" ref="skill3" output="n" />   
-		<record alias="pc-skill3-1" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-skill3-2" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-1" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-2" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-3" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-4" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-5" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-6" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-7" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-8" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-9" name="" ref="PcSkill3" input="n" />   
-		<record alias="pc-job-style-skill3-10" name="" ref="PcSkill3" input="n" />   
+		<record alias="skill" name="" ref="Skill" output="n" repeat="40" />
+		<record alias="skill3" name="" ref="skill3" output="n" repeat="40" />
+		<record alias="pc-skill3" name="" ref="PcSkill3" input="n" repeat="2" />
+		<record alias="pc-job-style-skill3" name="" ref="PcSkill3" input="n" repeat="10" /> 
 		<record alias="skill-build-up-level-max" name="" type="Byte" output="n" />   
 		<record alias="skill-build-up-point" name="" type="Short" showzero="y" output="n" />   
 		<record alias="max-hp" name="" type="Long" output="n" />   

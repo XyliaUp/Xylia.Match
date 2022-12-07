@@ -85,7 +85,7 @@ namespace Xylia.Preview.Data.Record
 			var GatherType = Skill.ExecGatherType1;
 
 			//GatherRange控制范围信息，但是距离和范围形状由技能本身控制
-			var GatherRange = FileCacheData.Data.SkillGatherRange3.GetInfo(Skill.GatherRange);
+			var GatherRange = FileCache.Data.SkillGatherRange3.GetInfo(Skill.GatherRange);
 
 
 			//Console.WriteLine(GatherRange?.XElement);

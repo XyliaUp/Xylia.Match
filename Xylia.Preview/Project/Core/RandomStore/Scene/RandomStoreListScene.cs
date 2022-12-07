@@ -21,7 +21,6 @@ namespace Xylia.Preview.Project.Core.Store.RandomStore
 		private readonly Dictionary<GroupType, TreeNode> MainNode = new();
 		#endregion
 
-
 		#region 构造
 		public RandomStoreListScene() : base()
 		{
@@ -48,15 +47,10 @@ namespace Xylia.Preview.Project.Core.Store.RandomStore
 
 
 		#region 方法
-		private void RandomStoreListScene_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		public override void LoadData()
 		{
 			//先进行分组
-			foreach (var Record in FileCacheData.Data.RandomStoreItem)
+			foreach (var Record in FileCache.Data.RandomStoreItem)
 			{
 				if (Record.Alias.RegexMatch("[0-9]*$", out string Result))
 				{

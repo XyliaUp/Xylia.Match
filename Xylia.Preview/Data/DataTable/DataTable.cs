@@ -18,6 +18,7 @@ using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Properties;
 using Xylia.Preview.Properties.AnalyseSection;
 
 
@@ -70,7 +71,7 @@ namespace Xylia.Preview.Data
 		/// <returns></returns>
 		public bool VaildPath(string Path, out string PathCopy)
 		{
-			PathCopy = ResFilesSet.WorkingDirectory + @"\" + Path;
+			PathCopy = CommonPath.WorkingDirectory + @"\" + Path;
 
 			//判断是否存在测试模式文件
 			if (true)
@@ -129,8 +130,10 @@ namespace Xylia.Preview.Data
 		private readonly List<string> ErrorConfigPath = new();
 		#endregion
 
+
+
 		#region 加载方法
-		protected virtual bool LoadFromGame => true;
+		protected virtual bool LoadFromGame => CommonPath.DataLoadMode;
 
 		/// <summary>
 		/// 配置内容
@@ -191,7 +194,7 @@ namespace Xylia.Preview.Data
 					}
 					catch (Exception ex)
 					{
-						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex.Message}");
+						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex}");
 					}
 
 					//资源清理
@@ -278,7 +281,7 @@ namespace Xylia.Preview.Data
 			string content = ConfigContent;
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
-			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_simple");
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_Simple");
 			if (content is null)
 			{
 				Trace.WriteLine($"[{ DateTime.Now }] 加载配置文件失败: { typeof(T).Name }");
@@ -286,8 +289,8 @@ namespace Xylia.Preview.Data
 			}
 
 			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);
-			if (TableInfo.DataType == DataType.Local) this.LoadGame(FileCacheData.Data.LocalData, TableInfo);
-			else this.LoadGame(FileCacheData.Data.GameData, TableInfo);
+			if (TableInfo.DataType == DataType.Local) this.LoadGame(FileCache.Data.LocalData, TableInfo);
+			else this.LoadGame(FileCache.Data.GameData, TableInfo);
 		}
 
 		private void LoadGame(BinData GameData, TableInfo TableInfo)
@@ -300,6 +303,7 @@ namespace Xylia.Preview.Data
 
 			this.TableInfo = TableInfo;
 			this.ListData = DeSerializer.GetList(TableInfo);
+
 
 			//只创建空数组
 			if (this.ListData is null) this.data = Array.Empty<Lazy<T>>();
@@ -341,7 +345,7 @@ namespace Xylia.Preview.Data
 				if (!this.HasData) return null;
 
 				#region 通过别名表获取对象信息
-				var AliasTable = FileCacheData.Data.GameData._content.Head.AliasTable.List[typeof(T).Name];
+				var AliasTable = FileCache.Data.GameData._content.Head.AliasTable.List[typeof(T).Name];
 				if (AliasTable is null) return null;
 
 				var AliasInfo = AliasTable[Alias];
@@ -361,7 +365,7 @@ namespace Xylia.Preview.Data
 			#endregion
 
 
-			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败 （alias: {Alias}");
+			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  alias: {Alias}");
 			return null;
 		}
 
@@ -370,7 +374,6 @@ namespace Xylia.Preview.Data
 			#region 初始化
 			if (!this.HasData) this.Load();
 			#endregion
-
 
 			#region 获取对象
 			if (this.LoadFromGame)
@@ -381,9 +384,14 @@ namespace Xylia.Preview.Data
 			else if (this.ht_id.ContainsKey(MainID)) return (Lazy<T>)this.ht_id[MainID];
 			#endregion
 
-			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败 （id: {MainID}");
+			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID}");
 			return null;
 		}
+
+
+
+
+
 
 
 		private T CreateNew(Output o)
@@ -404,8 +412,36 @@ namespace Xylia.Preview.Data
 			return temp;
 		}
 
-		private IEnumerable<T> CreateTest => DeSerializer?.GetDatas(this.ListData, this.TableInfo).Select(o => CreateNew(o)) ?? Array.Empty<T>();
+
+
+		bool FullLoad = false;
+
+		private IEnumerable<T> CreateTest
+		{
+			get
+			{	
+				if (DeSerializer is null) return Array.Empty<T>();
+
+
+				if (!FullLoad)
+				{
+					var Objects = DeSerializer.GetDatas(this.ListData, this.TableInfo);
+					for (var x = 0; x < Objects.Count; x++)
+					{
+						var obj = Objects[x];
+						this.data[x] = new Lazy<T>(() => CreateNew(obj));
+					}
+
+					FullLoad = true;
+				}
+
+				return this.data.Select(o => o.Value);
+			}
+		}
 		#endregion
+
+
+
 
 		#region 处理类方法
 		/// <summary>
@@ -415,9 +451,10 @@ namespace Xylia.Preview.Data
 		/// <returns></returns>
 		public T Find(Predicate<T> SearchRule)
 		{
-			var data = this.Data;
+			if (!this.HasData) this.Load();
+
 			if (this.LoadFromGame) return CreateTest.FirstOrDefault(Info => SearchRule(Info));
-			else return data.FirstOrDefault(Info => SearchRule(Info.Value))?.Value;
+			else return this.Data.FirstOrDefault(Info => SearchRule(Info.Value))?.Value;
 		}
 
 		/// <summary>
@@ -427,10 +464,10 @@ namespace Xylia.Preview.Data
 		/// <returns></returns>
 		public IEnumerable<T> Where(Predicate<T> SearchRule)
 		{
-			var data = this.Data;
+			if (!this.HasData) this.Load();
 
 			if (this.LoadFromGame) return CreateTest.Where(Info => SearchRule(Info));
-			else return data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
+			else return this.Data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
 		}
 
 		/// <summary>
@@ -439,16 +476,14 @@ namespace Xylia.Preview.Data
 		/// <param name="action"></param>
 		public void ForEach(Action<T> action)
 		{
-			var data = this.Data;
+			if (!this.HasData) this.Load();
 
 			if (this.LoadFromGame)
 			{
 				foreach (var t in CreateTest) action(t);
 			}
-			else foreach (var t in data) action(t.Value);
+			else foreach (var t in this.Data) action(t.Value);
 		}
-
-
 
 
 
@@ -472,8 +507,10 @@ namespace Xylia.Preview.Data
 		#region 接口方法
 		public IEnumerator<T> GetEnumerator()
 		{
-			foreach (var info in this.Data)
-				yield return info.Value;
+			if (!this.HasData) this.Load();
+
+			if (this.LoadFromGame) foreach (var info in this.CreateTest) yield return info;
+			else foreach(var info in this.Data) yield return info.Value;
 
 			//结束迭代
 			yield break;

@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
-using Xylia.Match.Properties;
 using Xylia.Match.Util.Writer;
 
 // 有关程序集的一般信息由以下
@@ -56,24 +55,11 @@ public static partial class Program
 				//GetVerType = VerType.开发版本;
 #endif
 			}
-			else
-			{
-#if DEBUG
-				if (GetVerType == VerType.Undefine)
-				{
-					if (Xylia.Net.Url.Exists(Url.Update_Test)) GetVerType = VerType.开发版本;
-					else GetVerType = VerType.测试版本;
-				}
-#elif TRACE
-					if (GetVerType == VerType.Undefine) GetVerType = VerType.正式版本;
-#else
-					if (GetVerType == VerType.Undefine) GetVerType = VerType.测试版本;
-#endif
-			}
+
 			#endregion
 
-			Logger.Write($"创建进程成功，当前应用是{ GetVerType }。");
-			Console.WriteLine($"当前版本为 { GetVerType }（版本号{ Program.PublishVersion })");
+			Logger.Write($"创建进程成功。");
+			Console.WriteLine($"当前版本号{ Program.PublishVersion }");
 		}
 		catch (Exception ee)
 		{

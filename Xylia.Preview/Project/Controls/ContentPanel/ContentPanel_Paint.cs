@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+using NPOI.SS.Formula;
+
 using Xylia.Attribute;
 using Xylia.Drawing;
 using Xylia.Extension;
@@ -64,7 +66,7 @@ namespace Xylia.Preview.Project.Controls
 				if (o.Parent is not UserControl c || c.AutoSizeMode != AutoSizeMode.GrowAndShrink)
 				{
 					var e = o.Parent;
-					MaxWidth = e.Width - o.Left - (o.Parent is Form ? 20 : 5);   
+					MaxWidth = e.Width - o.Left - (o.Parent is Form ? 20 : 5);
 				}
 			}
 
@@ -73,6 +75,7 @@ namespace Xylia.Preview.Project.Controls
 
 			return MaxWidth;
 		}
+
 
 
 		/// <summary>
@@ -90,7 +93,6 @@ namespace Xylia.Preview.Project.Controls
 		{
 			float CurExpextWidth = 0;
 			void TryExtendWidth(float ExpextWidth) => CurExpextWidth = Math.Max(CurExpextWidth, ExpextWidth);
-
 
 			#region 初始化
 			var doc = new HtmlAgilityPack.HtmlDocument();
@@ -159,11 +161,9 @@ namespace Xylia.Preview.Project.Controls
 					{
 						TryExtendWidth(LocX);
 
-						//增加对应的行高
+						//增加对应的行高并重置为基本行高
 						LocX = this.Signal is null ? 0 : SignalWidth;
 						LocY += CurLineHeight;
-
-						//重置为基本行高
 						CurLineHeight = BasicLineHeight;
 					}
 					break;
@@ -190,6 +190,11 @@ namespace Xylia.Preview.Project.Controls
 
 						//绘制文本内容
 						TryExtendWidth(this.Execute(param, Node.InnerHtml, ref LocX, ref LocY, ref CurLineHeight));
+
+						//创建新行
+						LocX = this.Signal is null ? 0 : SignalWidth;
+						LocY += CurLineHeight;
+						CurLineHeight = BasicLineHeight;
 					}
 					break;
 
@@ -297,6 +302,7 @@ namespace Xylia.Preview.Project.Controls
 
 			return CurExpextWidth;
 		}
+
 
 
 

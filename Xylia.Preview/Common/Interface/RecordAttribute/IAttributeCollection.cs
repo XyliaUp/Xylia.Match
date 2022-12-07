@@ -24,7 +24,7 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 			foreach (var attribute in this.Attributes)
 			{
 				if (attribute is XAttribute Attr) yield return new KeyValuePair<string, string>(Attr.Name.LocalName, Attr.Value);
-				else if (attribute is OutputCell output) yield return new KeyValuePair<string, string>(output.Name, output.OutputVal);
+				else if (attribute is OutputCell output) yield return new KeyValuePair<string, string>(output.Alias, output.OutputVal);
 			}
 
 			//结束迭代

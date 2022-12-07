@@ -70,12 +70,6 @@
       <HintPath>..\..\..\..\net_winform_custom_control\HZH_Controls\HZH_Controls\bin\Release\net5.0-windows\HZH_Controls.dll</HintPath>
       <Private>true</Private>
     </Reference>
-    <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\..\..\..\Publish\Release\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Design">
-      <HintPath>..\..\..\..\..\..\..\Publish\Release\MetroFramework.Design.dll</HintPath>
-    </Reference>
     <Reference Include="Xylia">
       <HintPath>..\..\..\..\..\..\..\Publish\Bin\Xylia.dll</HintPath>
     </Reference>
@@ -168,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="HtmlAgilityPack" Version="1.11.40" />
+    <PackageReference Include="MetroFramework" Version="1.2.0.3" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="NPOI" Version="2.5.2" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />

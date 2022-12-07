@@ -29,28 +29,7 @@ public static partial class Program
 	/// 指定标题名称
 	/// </summary>
 	public static string Title => Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyTitleAttribute>().Title;  
-
-	/// <summary>
-	/// 公共版本类型
-	/// </summary>
-	public static VerType GetVerType = VerType.正式版本;
 }
-
-
-/// <summary>
-/// 版本类型枚举
-/// </summary>
-public enum VerType
-{
-	Undefine = 0,
-
-	开发版本,
-	测试版本,
-
-	正式版本,
-	特殊版本,
-}
-
 
 
 /// <summary>

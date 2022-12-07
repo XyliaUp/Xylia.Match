@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="NpcTalkMessage" version="0.2" rule="cpl" side="client" >
+	<list module="AIData" type="NpcTalkMessage" version="0.6" rule="cpl" side="client" >
 		<record alias="type" type="type" name="" >
 			<case alias="branch" name="" />
 			<case alias="questmessage" name="" />
