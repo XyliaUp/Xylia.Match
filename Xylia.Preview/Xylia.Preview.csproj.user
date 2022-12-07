@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>zh-CN</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Data\Package\SoundWave\MusicPlayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\ContentPanel\ContentPanel_Paint.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\Mission\CaseInfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Skill\SkillPreview\SkillTooltipPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Skill\SkillPreview\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Common\Interface\PreviewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\Paging\PageBtn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\Paging\Paging.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Skill\SkillTraitPreview\TraitTier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Skill\SkillTraitPreview\TraitTierCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Base\Preview\ListCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\ContentPanel\ContentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\PanelEx\TitleContentPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\PanelEx\TitlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\ScrollBar\HideScrollBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\ScrollBar\ScrollBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\ScrollBar\ScrollBarPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\Currency\PriceCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ChallengeList\Cell\ChallengeCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Cell\FeedItemIconCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Cell\ItemPreviewCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Page\ItemGrowth2Page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Preview\FixedIngredientPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Preview\MoneyCostPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Preview\ResultWeaponPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Preview\SubIngredientPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Preview\WarningPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Scene\ItemGrowthScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Cell\AttributeInfoCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Cell\Basic\ItemIconCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Cell\Basic\ItemNameCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Cell\Basic\ItemShowCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Cell\GemCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Exchange\ProcessComparisonCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Reward\RewardCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\JobStyleSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SetItem\SetItemEffect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Cell\SkillModifyCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SlateScroll\SlateScrollCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\AttributePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\DurabilityPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\EventTimePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Exchange\ExchangePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\GemPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Reward\RewardPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SealPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SetItem\SetItemPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Skill\SkillByEquipmentTooltip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SlateScroll\SlateScrollTooltip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Scene\DataGridScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Scene\ItemFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Scene\ItemFrm_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Scene\SearcherScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Scene\UserOperPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Map\Scene\MapInfoScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Npc\Cell\InfoCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Npc\Scene\SearcherScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\QuestPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\ContentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\GroupBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\QuestBonusReward\QuestBonusRewardPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\Base\PriceBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\Base\RewardCellBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\FixedItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\HonorExp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\Money.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\OptionaItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\Mission\MissionPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\Mission\MissionStepPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Task\TaskInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\RandomStore\Cell\DisplayItemCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\RandomStore\Cell\DrawRewardCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\RandomStore\Preview\DrawRewardPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\RandomStore\Scene\RandomStoreExhibitionScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\RandomStore\Scene\RandomStoreListScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Base\Scene\Searcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Store2\Cell\BuyPriceCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Base\Preview\ItemListCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Base\Preview\StoreListPreview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Base\Scene\StoreScene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Store2\Cell\Store2ItemCell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\Store2\Scene\Store2Scene.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Helper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Project\Core\ItemGrowth\Page\ItemGrowth2Page.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Project\Core\Item\Preview\GemPreview.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

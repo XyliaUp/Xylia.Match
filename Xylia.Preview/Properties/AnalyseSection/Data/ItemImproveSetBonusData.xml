@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ItemData" type="item-improve-set-bonus" version="2.0" rule="cpl" >
+		<record alias="id" type="id" name="" />
+		<record alias="alias" type="Index" name="" />
+		<record alias="name" type="TextAlias" name="" />
+		<record alias="target-item" name="" repeat="12" use-group="y" />
+		<record alias="target-item-condition-type" name="" type="Seq" seq="$condition-type" repeat="12" />
+		<record alias="target-equip-pos" name="" type="Seq" repeat="12" >
+			<case alias="none" name="" default="y" />
+			<case alias="hand" name="" />
+			<case alias="body" name="" />
+			<case alias="ear" name="" />
+			<case alias="eye" name="" />
+			<case alias="head" name="" />
+			<case alias="finger" name="" />
+			<case alias="neck" name="" />
+			<case alias="gem-1" name="" />
+			<case alias="gem-2" name="" />
+			<case alias="gem-3" name="" />
+			<case alias="gem-4" name="" />
+			<case alias="gem-5" name="" />
+			<case alias="gem-6" name="" />
+			<case alias="gem-7" name="" />
+			<case alias="gem-8" name="" />
+			<case alias="wrist" name="" />
+			<case alias="waist" name="" />
+			<case alias="body-attach" name="" />
+			<case alias="summoned-body" name="" />
+			<case alias="summoned-head" name="" />
+			<case alias="summoned-attach" name="" />
+			<case alias="soul" name="" />
+			<case alias="preset-gem-1" name="" />
+			<case alias="preset-gem-2" name="" />
+			<case alias="preset-gem-3" name="" />
+			<case alias="preset-gem-4" name="" />
+			<case alias="preset-gem-5" name="" />
+			<case alias="preset-gem-6" name="" />
+			<case alias="preset-gem-7" name="" />
+			<case alias="preset-gem-8" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="gloves" name="" />
+			<case alias="pet-1" name="" />
+			<case alias="pet-2" name="" />
+			<case alias="rune-1" name="" />
+			<case alias="rune-2" name="" />
+			<case alias="nova" name="" />
+			<case alias="vehicle" name="" />
+			<case alias="preset-hand" name="" />
+			<case alias="preset-ear" name="" />
+			<case alias="preset-finger" name="" />
+			<case alias="preset-neck" name="" />
+			<case alias="preset-wrist" name="" />
+			<case alias="preset-waist" name="" />
+			<case alias="preset-soul" name="" />
+			<case alias="preset-soul-2" name="" />
+			<case alias="preset-gloves" name="" />
+			<case alias="preset-pet-1" name="" />
+			<case alias="preset-pet-2" name="" />
+			<case alias="preset-rune-1" name="" />
+			<case alias="preset-rune-2" name="" />
+			<case alias="preset-nova" name="" />
+			<case alias="preset-vehicle" name="" />
+		</record>
+
+		<record alias="target-equip-pos-icon" name="" repeat="12" type="Icon" />
+		<record alias="min-item-grade" type="Byte" name="" max="8" min="0" />
+	
+		<record alias="total-improve-level" type="Short" name="" repeat="30" />	
+		<record alias="total-improve-level-effect" ref="Effect" name="" repeat="30" />	
+		<record alias="total-improve-level-effect-description" type="TextAlias" name="" repeat="30" />	
+		<record alias="total-improve-level-ability" name="" type="Seq" seq="$attach-ability" repeat="30" />
+		<record alias="total-improve-level-ability-value" type="Int32" name="" repeat="30" />	
+		<record alias="total-improve-level-condition-event" ref="ConditionEvent" name="" repeat="30" />	
+		
+		<record alias="min-improve-level" type="Short" name="" repeat="30" />	
+		<record alias="min-improve-level-effect" ref="Effect" name="" repeat="30" />	
+		<record alias="min-improve-level-effect-description" type="TextAlias" name="" repeat="30" />	
+		<record alias="min-improve-level-ability" name="" type="Seq" seq="$attach-ability" repeat="30" />
+		<record alias="min-improve-level-ability-value" type="Int32" name="" repeat="30" />	
+		<record alias="min-improve-level-condition-event" ref="ConditionEvent" name="" repeat="30" />	
+	</list>
+</table>

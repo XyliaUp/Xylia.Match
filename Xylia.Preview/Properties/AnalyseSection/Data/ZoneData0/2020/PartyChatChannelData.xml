@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="PartyChatChannel" version="0.6" rule="cpl" side="client" >
+		<record alias="type" name="" type="type" >
+			<case alias="normal" name="" />
+			<case alias="main-faction" name="" />
+                                </record>
+
+		<record alias="id" name="" type="id" extra="Short1" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="chnnelid" name="" type="seq" >
+			<case alias="none" name="" />
+			<case alias="1" name="" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+			<case alias="6" name="" />
+                                </record>
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="district" name="" ref="District" />
+		<record alias="map-group-1" name="" ref="MapGroup1" />
+		<record alias="arrange-type" name="" type="seq" >
+			<case alias="district" name="" default="y" />
+			<case alias="group-name" name="" />
+                                </record>
+
+		<record alias="group-name" name="" type="TextAlias" />
+		<record alias="grade" name="" type="Byte" />
+		<record alias="auto-recruittime" name="" type="Short" default="10" />
+		<record alias="use-team-type" name="" type="Bool" />
+		<record alias="use-difficulty-type" name="" type="Bool" repeat="3" />
+		<record alias="interdungeon" name="" ref="InterDungeonList" />
+		<record alias="party-match" name="" ref="PartyMatch" />
+
+		<record alias="faction-1-party-match" name="" ref="PartyMatch" filter="main-faction" />
+		<record alias="faction-2-party-match" name="" ref="PartyMatch" filter="main-faction" />
+	</list>
+</table>

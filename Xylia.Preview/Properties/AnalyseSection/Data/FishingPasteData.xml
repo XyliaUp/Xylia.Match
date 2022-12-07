@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="Fishing-Paste" version="0.4" rule="cpl" >
+		<record alias="id" type="id" apply="auto" />
+		<record alias="alias" type="Index" />
+		<record alias="item" ref="Item" />
+		<record alias="use-auto-fishing" type="bool" server="n" />
+
+		<record alias="additional-fish-grade-selection-value" type="Int32" client="n" />
+	</list>
+</table>

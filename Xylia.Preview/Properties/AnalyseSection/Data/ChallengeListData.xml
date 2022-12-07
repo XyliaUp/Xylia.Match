@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" rule="cpl" type="ChallengeList" version="0.8">
+		<record alias="grade" name="" type="dictionary" >
+			<case alias="none" name="" default="y" />
+			<case alias="grade1" name="" />
+			<case alias="grade2" name="" />
+			<case alias="grade3" name="" />
+		</record>
+
+		<record alias="challenge-type" name="" type="id" >
+			<case alias="none" name="" default="y" />
+			<case alias="sun" name="" />
+			<case alias="mon" name="" />
+			<case alias="tue" name="" />
+			<case alias="wed" name="" />
+			<case alias="thu" name="" />
+			<case alias="fri" name="" />
+			<case alias="sat" name="" />
+			<case alias="week1" name="" />
+			<case alias="week2" name="" />
+			<case alias="week3" name="" />
+			<case alias="week4" name="" />
+			<case alias="week5" name="" />
+			<case alias="week6" name="" />
+			<case alias="week7" name="" />
+			<case alias="week8" name="" />
+			<case alias="week9" name="" />
+			<case alias="week10" name="" />
+		</record>
+
+		<record alias="type" name="类型" type="type"  >
+			<case alias="dayofweek" name="" />
+			<case alias="week" name="" />
+		</record>
+
+		<record alias="required-level" name="" type="Byte" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="challenge-quest-basic" name="任务挑战" type="Quest" repeat="20" />
+		<record alias="challenge-quest-expansion" type="Quest" name="" repeat="20" />
+		<record alias="challenge-quest-grade" type="Seq" name="" seq="$grade" server="n" repeat="20" />
+		<record alias="challenge-quest-complete-count" type="Byte" name="" server="n" />
+		<record alias="challenge-quest-attraction" name="" use-group="y" server="n" repeat="20" />
+		<record alias="challenge-quest-count" name="" type="Byte" server="n" />
+		<record alias="challenge-npc-difficulty" name="挑战副本课题模式" seq="$difficulty-type" type="Seq" out-cond="Exist: challenge-npc-kill-*" apply="must" repeat="20" />
+		<record alias="challenge-npc-kill" name="" ref="Npc" repeat="20" />
+		<record alias="challenge-npc-attraction" name="" use-group="y" server="n" repeat="20" />
+		<record alias="challenge-npc-grade" type="Seq" name="" seq="$grade" server="n" repeat="20" />
+		<record alias="challenge-npc-quest" name="副本挑战关联任务" type="Quest" server="n" repeat="20" />
+		<record alias="challenge-npc-total-count" name="" type="Byte" server="n" />
+		<record alias="challenge-reward-total-count" name="" type="Byte" server="n" />
+		<record alias="challenge-count-for-reward" name="阶段需要完成课题数量" type="Byte" repeat="20" />
+		<record alias="reward" name="阶段奖励" ref="ChallengeListReward" repeat="20" />
+		
+		<record alias="week-start-date-time" name="" type="Time64" filter="week" />
+	</list>
+</table>

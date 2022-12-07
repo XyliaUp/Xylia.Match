@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+  <list module="ItemData" rule="cpl" type="newbie-care" version="0.31">
+    <record alias="id" type="ID" name="" apply="auto" />
+    <record alias="alias" type="Index" name="" />
+    <record alias="dungeon" name="" ref="dungeon" server="n" />
+    <record alias="achievement-register" name="" ref="achievement-register" />
+    <record alias="reward-default" name="" ref="reward" />
+    <record alias="reward-difficulty-type" name="" ref="reward" repeat="3" />
+    <record alias="attraction-quest" type="Quest" name="" server="n" />
+  </list>
+</table>

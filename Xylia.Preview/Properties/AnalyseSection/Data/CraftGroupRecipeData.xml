@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft-group-recipe" version="0.4" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="group-item" name="" ref="Item" server="n" />
+		<record alias="craft-union-type" name="" type="Byte" default="none" >
+			<case alias="none" name="" />
+			<case alias="production-type-1" name="" />
+			<case alias="production-type-2" name="" />
+			<case alias="production-type-3" name="" />
+			<case alias="production-type-4" name="" />
+			<case alias="production-type-5" name="" />
+			<case alias="production-type-6" name="" />
+			<case alias="production-type-7" name="" />
+			<case alias="gathering-type-1" name="" />
+			<case alias="gathering-type-2" name="" />
+			<case alias="gathering-type-3" name="" />
+			<case alias="gathering-type-4" name="" />
+			<case alias="gathering-type-5" name="" />
+			<case alias="gathering-type-6" name="" />
+			<case alias="gathering-type-7" name="" />
+
+		</record>
+		<record alias="craft-union-sub-type" name="" type="Byte" default="none" >
+			<case alias="none" name="" />
+			<case alias="gathering" name="" />
+			<case alias="production-normal" name="" />
+			<case alias="production-transaction" name="" />
+			<case alias="production-expert" name="" />
+		</record>
+		<record alias="display-index" name="" type="Short" server="n" />
+		<record alias="required-craft-exp" name="" type="Short" showzero="y" />
+		<record alias="required-completion-quest" name="" type="Quest" />		
+	</list>
+</table>

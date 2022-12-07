@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<!-- 内容限制 -->
+	<list alias="ContentQuota" module="ItemData" type="content-quota" version="0.9" rule="cpl" check-version="n" >
+		<record alias="type" type="type" name="" >
+			<case alias="vitality" name="" />
+			<case alias="shop-sale" name="" />
+			<case alias="guild-battle-field" name="" />
+			<case alias="public-raid" name="" />
+			<case alias="mentor-quest" name="" />
+			<case alias="mentee-quest" name="" />
+			<case alias="life-contents" name="" />
+			<case alias="quest-reward-hongmoon" name="" />
+			<case alias="quest-reward-membership" name="" />
+			<case alias="quest-reward-pccafe" name="" />
+			<case alias="item-buy-1" name="" />
+			<case alias="item-buy-2" name="" />
+			<case alias="item-buy-3" name="" />
+			<case alias="item-buy-4" name="" />
+			<case alias="item-buy-5" name="" />
+			<case alias="item-buy-6" name="" />
+			<case alias="item-buy-7" name="" />
+			<case alias="item-buy-8" name="" />
+			<case alias="item-buy-9" name="" />
+			<case alias="item-buy-10" name="" />
+			<case alias="item-buy-11" name="" />
+			<case alias="item-buy-12" name="" />
+			<case alias="item-buy-13" name="" />
+			<case alias="item-buy-14" name="" />
+			<case alias="item-buy-15" name="" />
+			<case alias="item-buy-16" name="" />
+			<case alias="item-buy-17" name="" />
+			<case alias="item-buy-18" name="" />
+			<case alias="item-buy-19" name="" />
+			<case alias="item-buy-20" name="" />
+			<case alias="item-buy-21" name="" />
+			<case alias="item-buy-22" name="" />
+			<case alias="item-buy-23" name="" />
+			<case alias="item-buy-24" name="" />
+			<case alias="item-buy-25" name="" />
+			<case alias="item-buy-26" name="" />
+			<case alias="item-buy-27" name="" />
+			<case alias="item-buy-28" name="" />
+			<case alias="item-buy-29" name="" />
+			<case alias="item-buy-30" name="" />
+			<case alias="item-buy-31" name="" />
+			<case alias="item-buy-32" name="" />
+			<case alias="item-buy-33" name="" />
+			<case alias="item-buy-34" name="" />
+			<case alias="item-buy-35" name="" />
+			<case alias="item-buy-36" name="" />
+			<case alias="item-buy-37" name="" />
+			<case alias="item-buy-38" name="" />
+			<case alias="item-buy-39" name="" />
+			<case alias="item-buy-40" name="" />
+			<case alias="item-buy-41" name="" />
+			<case alias="item-buy-42" name="" />
+			<case alias="item-buy-43" name="" />
+			<case alias="item-buy-44" name="" />
+			<case alias="item-buy-45" name="" />
+			<case alias="item-buy-46" name="" />
+			<case alias="item-buy-47" name="" />
+			<case alias="item-buy-48" name="" />
+			<case alias="item-buy-49" name="" />
+			<case alias="item-buy-50" name="" />
+			<case alias="item-buy-51" name="" />
+			<case alias="item-buy-52" name="" />
+			<case alias="item-buy-53" name="" />
+			<case alias="item-buy-54" name="" />
+			<case alias="item-buy-55" name="" />
+			<case alias="item-buy-56" name="" />
+			<case alias="item-buy-57" name="" />
+			<case alias="item-buy-58" name="" />
+			<case alias="item-buy-59" name="" />
+			<case alias="item-buy-60" name="" />
+			<case alias="item-buy-61" name="" />
+			<case alias="item-buy-62" name="" />
+			<case alias="item-buy-63" name="" />
+			<case alias="item-buy-64" name="" />
+			<case alias="item-buy-65" name="" />
+			<case alias="item-buy-66" name="" />
+			<case alias="item-buy-67" name="" />
+			<case alias="item-buy-68" name="" />
+			<case alias="item-buy-69" name="" />
+			<case alias="item-buy-70" name="" />
+			<case alias="item-buy-71" name="" />
+			<case alias="item-buy-72" name="" />
+			<case alias="item-buy-73" name="" />
+			<case alias="item-buy-74" name="" />
+			<case alias="item-buy-75" name="" />
+			<case alias="item-buy-76" name="" />
+			<case alias="item-buy-77" name="" />
+			<case alias="item-buy-78" name="" />
+			<case alias="item-buy-79" name="" />
+			<case alias="item-buy-80" name="" />
+			<case alias="item-buy-81" name="" />
+			<case alias="item-buy-82" name="" />
+			<case alias="item-buy-83" name="" />
+			<case alias="item-buy-84" name="" />
+			<case alias="item-buy-85" name="" />
+			<case alias="item-buy-86" name="" />
+			<case alias="item-buy-87" name="" />
+			<case alias="item-buy-88" name="" />
+			<case alias="item-buy-89" name="" />
+			<case alias="item-buy-90" name="" />
+			<case alias="item-buy-91" name="" />
+			<case alias="item-buy-92" name="" />
+			<case alias="item-buy-93" name="" />
+			<case alias="item-buy-94" name="" />
+			<case alias="item-buy-95" name="" />
+			<case alias="item-buy-96" name="" />
+			<case alias="item-buy-97" name="" />
+			<case alias="item-buy-98" name="" />
+			<case alias="item-buy-99" name="" />
+			<case alias="item-buy-100" name="" />
+			<case alias="item-buy-101" name="" />
+			<case alias="item-buy-102" name="" />
+			<case alias="item-buy-103" name="" />
+			<case alias="item-buy-104" name="" />
+			<case alias="item-buy-105" name="" />
+			<case alias="item-buy-106" name="" />
+			<case alias="item-buy-107" name="" />
+			<case alias="item-buy-108" name="" />
+			<case alias="item-buy-109" name="" />
+			<case alias="item-buy-110" name="" />
+			<case alias="item-buy-111" name="" />
+			<case alias="item-buy-112" name="" />
+			<case alias="item-buy-113" name="" />
+			<case alias="item-buy-114" name="" />
+			<case alias="item-buy-115" name="" />
+			<case alias="item-buy-116" name="" />
+			<case alias="item-buy-117" name="" />
+			<case alias="item-buy-118" name="" />
+			<case alias="item-buy-119" name="" />
+			<case alias="item-buy-120" name="" />
+	
+			<case alias="daily-contents-reset" name="" />
+			<case alias="weekly-contents-reset" name="" />
+			<case alias="contents-reset" name="" />
+		</record>
+		<record alias="id" type="id" name="" />
+
+		<record alias="alias" type="Index" name="" />
+		<record alias="min-value" type="Long" name="" />
+		<record alias="max-value" type="Long" name="" />
+		<record alias="version" type="Short" name="" />
+		<record alias="target-type" type="Seq" name="" >
+			<case alias="character" name="" />
+			<case alias="account" name="" />
+		</record>
+		<record alias="expiration-time" type="Time64" name="" />
+		<record alias="charge-interval" type="Seq" name="" >
+			<case alias="none" name="" default="y" />
+			<case alias="hourly" name="" />
+			<case alias="daily" name="" />
+			<case alias="weekly" name="" />
+		</record>
+
+		<record alias="charge-day-of-week" type="Seq" name="" out-cond="Equal: charge-interval : weekly" >
+			<case alias="sun" name="" />
+			<case alias="mon" name="" />
+			<case alias="tue" name="" />
+			<case alias="wed" name="" />
+			<case alias="thu" name="" />	
+			<case alias="fri" name="" />
+			<case alias="sat" name="" />
+		</record>
+		<record alias="charge-time" type="Byte" name="" />
+		<record alias="charge-amount-per-interval" type="Long" name="" />
+		<record alias="consume-key-record" type="Bool" name="" />
+		<record alias="consume-order" name="" ref="this" repeat="4" />
+        <!-- ================================================= -->
+		<record alias="following" name="" ref="this" filter="Vitality" />
+		<record alias="delayed" name="" ref="this" filter="Vitality" />
+		<record alias="exp-boost-ratio" type="Int32" name="" default="100" filter="Vitality" />
+        <!-- ================================================= -->
+	</list>
+</table>

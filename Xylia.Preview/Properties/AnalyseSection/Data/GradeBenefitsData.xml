@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="132" module="LocalizationData" type="GradeBenefits" version="0.24" rule="cpl" >
+		<record alias="benefit-type" type="ID" extra="Byte1" name="" >
+			<case alias="none" name="" />
+			<case alias="restoration-time" name="" />
+			<case alias="nameplate-icon" name="" />
+			<case alias="nameplate-icon2" name="" />
+			<case alias="use-nameplate-font" name="" />
+			<case alias="use-hypermove-special-effect" name="" />
+			<case alias="use-hypermove-special-effect2" name="" />
+			<case alias="broadcast-reserved-7" name="" />
+			<case alias="broadcast-reserved-8" name="" />
+			<case alias="effect-1" name="" />
+			<case alias="effect-2" name="" />
+			<case alias="effect-3" name="" />
+			<case alias="effect-4" name="" />
+			<case alias="effect-5" name="" />
+			<case alias="effect-6" name="" />
+			<case alias="effect-7" name="" />
+			<case alias="effect-8" name="" />
+			<case alias="achievement-1" name="" />
+			<case alias="achievement-2" name="" />
+			<case alias="achievement-3" name="" />
+			<case alias="achievement-4" name="" />
+			<case alias="achievement-5" name="" />
+			<case alias="max-vitality2-bonus" name="" />
+			<case alias="quest-reward-money-bonus" name="" />
+			<case alias="unlocated-store" name="" />
+			<case alias="unlocated-warehouse" name="" />
+			<case alias="closet" name="" />
+			<case alias="auction-escrow" name="" />
+			<case alias="concurrent-sale-count-bonus" name="" />
+			<case alias="accumulated-sale-count-bonus" name="" />
+			<case alias="market-register-amount-tax-discount-rate" name="" />
+			<case alias="money-market-concurrent-sale-count-bonus" name="" />
+			<case alias="money-market-accumulated-sale-count-bonus" name="" />
+			<case alias="weapon-accessory-transform-money-cost-discount-rate" name="" />
+			<case alias="weapon-gem-transform-money-cost-discount-rate" name="" />
+			<case alias="weapon-repair-item-count-discount-rate" name="" />
+			<case alias="item-awakening-money-cost-discount-rate" name="" />
+			<case alias="random-store-prob-group" name="" />
+			<case alias="npc-looting-money-reward-percent" name="" />
+			<case alias="npc-looting-money-reward-percent-bonus" name="" />
+			<case alias="detach-weapon-gem-money-cost-discount-rate" name="" />
+			<case alias="ingameshop-daily-free-purchase" name="" />
+			<case alias="ingameshop-discount" name="" />
+			<case alias="purify-item-discount-rate" name="" />
+			<case alias="membership-mileage" name="" />
+			<case alias="daily-or-attraction-quest-reward-exp-bonus-percent" name="" />
+			<case alias="game-mileage-bonus-percent" name="" />
+			<case alias="weapon-appearance-change-cost-money-discount-percent" name="" />
+			<case alias="production-exp-bonus-percent" name="" />
+			<case alias="teleport-limit-time-decrease-second" name="" />
+			<case alias="additional-unlocated-store" name="" />
+			<case alias="duel-point-bonus-percent" name="" />
+			<case alias="party-battle-point-bonus-percent" name="" />
+			<case alias="field-play-point-bonus-percent" name="" />
+			<case alias="duel-exp-bonus-percent" name="" />
+			<case alias="party-battle-exp-bonus-percent" name="" />
+			<case alias="daily-game-cash" name="" />
+			<case alias="membership-only-product-purchase" name="" />
+			<case alias="premium-depository" name="" />
+			<case alias="quest-reward-hongmoon" name="" />
+			<case alias="quest-reward-membership" name="" />
+			<case alias="quest-reward-account-exp-bonus-percent" name="" />
+			<case alias="tendency-quest-reward-account-exp-bonus-percent" name="" />
+			<case alias="challenge-reward-account-exp-bonus-percent" name="" />
+			<case alias="challenge-reward-money-bonus-percent" name="" />
+			<case alias="apply-min-energy-point-multiple-value" name="" />
+			<case alias="etc-benefits" name="" />
+			<case alias="external-daily-membership-mileage]" name="" />
+		</record>
+		
+		<record alias="level" type="ID" extra="Byte2" name="" />
+		
+		<record alias="game-grade-key" type="Int32" name="" />
+		<record alias="value" type="Int32" name="" />		
+		<record alias="string-value" type="Int32" name="" />			
+		<record alias="effect" name="" ref="Effect" />
+		<record alias="nameplate-icon" type="Index" name="" server="n" />			
+		<record alias="enable-in-arena-duel" type="Bool" name="" showzero="y" />			
+		<record alias="achievement" type="Int32" name="" ref="Achievement" repeat="4" />	
+		<record alias="icon-image-set" type="Index" name="" server="n" />	
+		<record alias="font-set" type="Index" name="" server="n" />			
+	</list>
+</table>

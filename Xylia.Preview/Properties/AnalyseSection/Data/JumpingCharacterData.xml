@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="JumpingCharacter" version="0.5" rule="cpl" >
+		<record alias="job" type="Id" extra="Byte1" seq="$job_20" />
+		<record alias="condition-level" type="Id" extra="Byte2" />
+		
+		<record alias="alias" type="Index" />
+		<record alias="jumping-level" type="Byte" />
+		<record alias="tutorial-zone-1" ref="Zone" />
+		<record alias="tutorial-zone-2" ref="Zone" />
+		<record alias="tutorial-zone-3" ref="Zone" />
+		<record alias="tutorial-zone-4" ref="Zone" />		
+		<record alias="train-quest" type="Quest" />
+		<record alias="skip-msg-achievement" ref="Achievement" />
+		<record alias="creation-enable" type="Bool" showzero="y" />
+		
+		<record alias="equip-costume" ref="Item" client="n" />
+		<record alias="equip-weapon" ref="Item" client="n" />
+	</list>
+</table>

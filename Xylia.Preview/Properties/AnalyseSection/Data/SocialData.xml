@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="QuestData" type="social" version="0.24" rule="cpl" index="y">
+		<record alias="alias" type="Index" name="" />
+		<record alias="duration" type="Msec" name="" />			
+		<record alias="balloon-text" type="TextAlias" name="" server="n" error-type="Suggestion" />	
+		<record alias="voice-sync" type="Bool" name="" server="n" />	
+		<record alias="show" type="Index" name="" server="n" />	
+		<record alias="balloon-duration" type="Msec" name="" server="n" />	
+		<record alias="kismet-start-time" type="Msec" name="" server="n" />	
+		<record alias="kismet" type="Index" name="" server="n" />	
+		<record alias="rotate" type="Seq" name="" server="n" >
+		    <case alias="keep" default="y" />
+		    <case alias="server-yaw" />			
+		    <case alias="toplayer" />				
+		</record>
+		<record alias="spawn-cinematic" name="" ref="Cinematic" />	
+		<record alias="game-message" name="" ref="GameMessage" server="n" />			
+		<record alias="message-target-type" type="Seq" name="" server="n" >
+		    <case alias="none" default="y" />
+		    <case alias="activated-faction-1" />	
+		    <case alias="activated-faction-2" />		
+		</record>
+		<record alias="message-contents-type" type="Seq" name="" server="n" >
+		    <case alias="none" default="y" />
+		    <case alias="faction-stage-in-volume" />		
+		</record>
+	</list>
+</table>

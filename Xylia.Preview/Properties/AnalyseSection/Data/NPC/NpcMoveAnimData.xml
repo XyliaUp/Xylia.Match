@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="npcmoveanim" version="1.12" rule="cpl" index="y">
+		<record alias="alias" type="Index" />
+		<record alias="upper-idle" name="" type="Index" />
+		<record alias="lower-idle" name="" type="Index" />
+		<record alias="upper-walk-front" name="" type="Index" />
+		<record alias="lower-walk-front" name="" type="Index" />
+		<record alias="upper-walk-back" name="" type="Index" />
+		<record alias="lower-walk-back" name="" type="Index" />
+		<record alias="upper-walk-left" name="" type="Index" />
+		<record alias="lower-walk-left" name="" type="Index" />
+		<record alias="upper-walk-right" name="" type="Index" />
+		<record alias="lower-walk-right" name="" type="Index" />
+		<record alias="upper-walk-leftback" name="" type="Index" />
+		<record alias="lower-walk-leftback" name="" type="Index" />
+		<record alias="upper-walk-rightback" name="" type="Index" />
+		<record alias="lower-walk-rightback" name="" type="Index" />
+		<record alias="upper-run-front" name="" type="Index" />
+		<record alias="lower-run-front" name="" type="Index" />
+		<record alias="upper-run-back" name="" type="Index" />
+		<record alias="lower-run-back" name="" type="Index" />
+		<record alias="upper-run-left" name="" type="Index" />
+		<record alias="lower-run-left" name="" type="Index" />
+		<record alias="upper-run-right" name="" type="Index" />
+		<record alias="lower-run-right" name="" type="Index" />
+		<record alias="upper-run-leftback" name="" type="Index" />
+		<record alias="lower-run-leftback" name="" type="Index" />
+		<record alias="upper-run-rightback" name="" type="Index" />
+		<record alias="lower-run-rightback" name="" type="Index" />
+		<record alias="upper-jump-front" name="" type="Index" />
+		<record alias="lower-jump-front" name="" type="Index" />
+		<record alias="upper-jump-left" name="" type="Index" />
+		<record alias="lower-jump-left" name="" type="Index" />
+		<record alias="upper-jump-right" name="" type="Index" />
+		<record alias="lower-jump-right" name="" type="Index" />
+		<record alias="pullout-weapon" name="" type="Index" />
+		<record alias="putin-weapon" name="" type="Index" />
+		<record alias="putin-bare-hand" name="" type="Index" />
+		<record alias="upper-turn-left" name="" type="Index" />
+		<record alias="lower-turn-left" name="" type="Index" />
+		<record alias="upper-turn-right" name="" type="Index" />
+		<record alias="lower-turn-right" name="" type="Index" />
+		<record alias="upper-jtoi" name="" type="Index" />
+		<record alias="lower-jtoi" name="" type="Index" />
+		<record alias="upper-jtomfront" name="" type="Index" />
+		<record alias="lower-jtomfront" name="" type="Index" />
+		<record alias="upper-jtomleft" name="" type="Index" />
+		<record alias="lower-jtomleft" name="" type="Index" />
+		<record alias="upper-jtomright" name="" type="Index" />
+		<record alias="lower-jtomright" name="" type="Index" />
+		<record alias="upper-jtomback" name="" type="Index" />
+		<record alias="lower-jtomback" name="" type="Index" />
+		<record alias="upper-mtojfront" name="" type="Index" />
+		<record alias="lower-mtojfront" name="" type="Index" />
+		<record alias="upper-mtojleft" name="" type="Index" />
+		<record alias="lower-mtojleft" name="" type="Index" />
+		<record alias="upper-mtojright" name="" type="Index" />
+		<record alias="lower-mtojright" name="" type="Index" />
+		<record alias="upper-mtoi" name="" type="Index" />
+		<record alias="lower-mtoi" name="" type="Index" />
+		<record alias="upper-ltor" name="" type="Index" />
+		<record alias="lower-ltor" name="" type="Index" />
+		<record alias="upper-rtol" name="" type="Index" />
+		<record alias="lower-rtol" name="" type="Index" />
+	</list>
+</table>

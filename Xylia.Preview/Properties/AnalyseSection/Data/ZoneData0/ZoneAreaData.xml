@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData1" type="ZoneArea" version="0.55" retired="n" rule="cpl" >
+		<record alias="zone" name="" type="id" />
+		<record alias="id" name="" type="Short" start="0" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="box" name="" type="Box" />
+		<record alias="description" name="" type="Index" />
+		<record alias="areacolor" name="" type="Color" default="1,122,189" />
+		<record alias="pos" name="" type="Vector32" />
+		<record alias="scale-x" name="" type="Float32" />
+		<record alias="scale-y" name="" type="Float32" />
+		<record alias="scale-z" name="" type="Float32" />
+
+		<record alias="overlap" name="" type="Bool" default="n" apply="must" client="n" />
+	</list>
+</table>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+
+	<list alias="AttractionRewardSummary" module="ItemData" type="attractionrewardsummy" version="0.35" rule="cpl | extra" >
+		<record alias="alias" type="Index" name="" />
+		<record alias="category" type="Dictionary" name="" >
+			<case alias="none" name="" default="y" />
+			<case alias="costume" name="" />
+			<case alias="weapon" name="" />
+			<case alias="equip-gem" name="" />
+			<case alias="accessory" name="" />
+			<case alias="etc" name="" />
+		</record>
+		
+		<record alias="reward-item" name="" use-group="y" repeat="24" client="n" />
+		<record alias="reward-item-category" type="Seq" name="" seq="$category" repeat="24" client="n" />
+		<record alias="reward-item-condition-type" type="Seq" name="" seq="$condition-type" repeat="24" client="n" />
+		<record alias="reward-item-common" name="" use-group="y" repeat="24" />
+		<record alias="reward-item-common-category" type="Seq" name="" seq="$category" repeat="24" />
+		<record alias="reward-item-common-condition-type" type="Seq" name="" seq="$condition-type" repeat="24" />
+		<record alias="reward-item-normal" name="" use-group="y" repeat="24" />
+		<record alias="reward-item-normal-category" type="Seq" name="" seq="$category" repeat="24" />
+		<record alias="reward-item-normal-condition-type" type="Seq" name="" seq="$condition-type" repeat="24" />
+		<record alias="reward-item-hard" name="" use-group="y" repeat="24" />
+		<record alias="reward-item-hard-category" type="Seq" name="" seq="$category" repeat="24" />
+		<record alias="reward-item-hard-condition-type" type="Seq" name="" seq="$condition-type" repeat="24" />
+		<record alias="reward-item-easy" name="" use-group="y" repeat="24" />
+		<record alias="reward-item-easy-category" type="Seq" name="" seq="$category" repeat="24" />
+		<record alias="reward-item-easy-condition-type" type="Seq" name="" seq="$condition-type" repeat="24" />
+		<record alias="main-reward-item-normal" name="" use-group="y" repeat="5" />
+		<record alias="main-reward-item-hard" name="" use-group="y" repeat="5" />
+		<record alias="main-reward-item-easy" name="" use-group="y" repeat="5" />
+		<record alias="additional-reward-item" name="" use-group="y" repeat="24" />
+		<record alias="additional-reward-item-category" type="Seq" name="" seq="$category" repeat="24" />
+		<record alias="additional-reward-item-condition-type" type="Seq" name="" seq="$condition-type" repeat="24" />
+	</list>
+</table>

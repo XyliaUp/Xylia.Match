@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="ItemData" type="RankingRewardGroupData" version="0.4" rule="cpl" >
+    <record alias="reward-group-id" type="ID" />
+    <record alias="reward-group-alias" type="Index" />
+    <!-- ===================================================== -->
+    <record alias="reward-group-top" name="" type="Int32" repeat="20" />
+    <record alias="reward-group-bottom" name="" type="Int32" repeat="20" />
+    <record alias="reward-data" ref="RankingReward" name="" repeat="20" />
+    <!-- ===================================================== -->
+    <record alias="default-job-ranking-imageset-large" name="" type="Index" server="n" />
+    <record alias="default-job-ranking-imageset" name="" type="Index" server="n" />
+    <record alias="job-ranking-imageset-large" name="" type="Index" server="n" repeat="20" />
+    <record alias="job-ranking-imageset" name="" type="Index" server="n" repeat="20" />
+    <!-- ===================================================== -->
+    <record alias="default-total-ranking-imageset-large" name="" type="Index" server="n" />
+    <record alias="default-total-ranking-imageset" name="" type="Index" server="n" />
+    <record alias="total-ranking-imageset-large" name="" type="Index" server="n" repeat="20" />
+    <record alias="total-ranking-imageset" name="" type="Index" server="n" repeat="20" />
+    <record alias="ranking-buff-imageset" name="" type="Index" server="n" repeat="20" />
+  </list>
+</table>

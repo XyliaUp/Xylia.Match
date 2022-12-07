@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	
+	<list module="CombatData" type="skill-by-equipment" version="0.10" rule="cpl | extra" >
+		<record alias="alias" type="Index" />
+		<record alias="skill3-id-1" type="Int32" />
+		<record alias="skill3-id-2" type="Int32" />
+		<record alias="skill3-id-3" type="Int32" />
+		<record alias="skill3-id-4" type="Int32" />
+		<record alias="block-skill3-id-1" type="Int32" server="n" />
+		<record alias="block-skill3-id-2" type="Int32" server="n" />
+		<record alias="block-skill3-id-3" type="Int32" server="n" />
+		<record alias="block-skill3-id-4" type="Int32" server="n" />
+		<record alias="skill-tree-id-1" type="Int32" server="n" />
+		<record alias="skill-tree-id-2" type="Int32" server="n" />
+		<record alias="skill-tree-id-3" type="Int32" server="n" />
+		<record alias="skill-tree-id-4" type="Int32" server="n" />
+		<record alias="context-script-1" type="ContextScript" server="n" />
+		<record alias="context-script-2" type="ContextScript" server="n" />
+		<record alias="context-script-3" type="ContextScript" server="n" />
+		<record alias="context-script-4" type="ContextScript" server="n" />
+		<record alias="tooltip-text-1" type="TextAlias" server="n" />
+		<record alias="tooltip-text-2" type="TextAlias" server="n" />
+		<record alias="tooltip-text-3" type="TextAlias" server="n" />
+		<record alias="tooltip-text-4" type="TextAlias" server="n" />
+		<record alias="skill-attack-power-min-param1-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param1-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param1-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param1-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param1-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param1-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param1-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param1-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param2-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param2-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param2-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param2-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param2-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param2-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param2-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param2-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param3-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param3-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param3-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param3-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param3-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param3-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param3-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param3-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param4-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param4-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param4-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-min-param4-slot-4" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param4-slot-1" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param4-slot-2" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param4-slot-3" type="Int32" name="" server="n" />
+		<record alias="skill-attack-power-max-param4-slot-4" type="Int32" name="" server="n" />
+	</list>	
+</table>

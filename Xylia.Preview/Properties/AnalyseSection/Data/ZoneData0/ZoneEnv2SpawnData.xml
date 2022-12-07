@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData0" type="ZoneEnv2Spawn" version="0.9" retired="n" rule="cpl" index="y">
+		<record alias="zone" name="" type="id" />
+		<record alias="id" name="" type="Short" start="0" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="env2" name="" ref="ZoneEnv2" />
+		<record alias="env2place" name="" ref="ZoneEnv2Place" />
+		<record alias="env2spawnrandomgroup" name="" ref="ZoneEnv2SpawnRandomGroup" />
+		<record alias="required-env2" name="" ref="ZoneEnv2" />
+		<record alias="mapunit-map-depth" name="" type="Byte" default="2" />
+		<record alias="mapunit-arena-dungeon-map-depth" name="" type="Byte" default="2" />
+	</list>
+</table>

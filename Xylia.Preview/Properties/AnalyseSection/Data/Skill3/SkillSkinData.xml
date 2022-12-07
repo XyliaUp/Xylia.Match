@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="SkillSkin" version="1.0" rule="cpl" >
+		<record alias="id" name="" type="ID" extra="Short1" />
+		
+		<record alias="alias" name="" type="Index" />
+		<record alias="skill-skin-type" name="" type="seq" >
+			<case alias="none" name="" />
+			<case alias="use-grocery" name="" />
+			<case alias="equip-item" name="" />
+			<case alias="equip-set-item" name="" />
+		</record>
+		<record alias="name" name="" type="TextAlias" server="n" />
+		<record alias="icon" name="" type="Icon" server="n" />
+		<record alias="iteminfo" name="" ref="Item" repeat="20" server="n" />
+		<record alias="grade" name="" type="Byte" default="1" server="n" />
+		<record alias="skill-skin-play-bink" name="" type="Index" repeat="20" server="n" />
+		<record alias="background-image" name="" type="Index" server="n" />
+	</list>
+</table>

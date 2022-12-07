@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="skill-training-room-subject" version="0.11" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="type" name="" type="type" >
+			<case alias="class-training" />
+		    <case alias="boss-training" />
+        </record>
+		
+		
+		<record alias="subject-name" name="" type="TextAlias" server="n" />
+		<record alias="group-data-id" name="" ref="SkillTrainingRoomGroup" server="n" />
+		<record alias="system-msg" name="" ref="GameMessage" server="n" />
+		<record alias="start-kismet-name-1" name="" type="Index" server="n" />
+		<record alias="start-kismet-name-2" name="" type="Index" server="n" />
+		<record alias="end-kismet-name-1" name="" type="Index" server="n" />
+		<record alias="end-kismet-name-2" name="" type="Index" server="n" />
+		<record alias="sort-number" name="" type="Short" server="n" />
+		
+		<record alias="subject-stage" name="" type="" client="n" />
+		<record alias="support-npc" name="" type="" client="n" />
+		<record alias="pc-effect-1" name="" type="" client="n" />
+		<record alias="pc-effect-2" name="" type="" client="n" />
+		<record alias="pc-effect-3" name="" type="" client="n" />
+		<record alias="pc-effect-4" name="" type="" client="n" />
+		<!-- ============================================================= -->
+		<record alias="boss-npc" name="" ref="Npc" filter="boss-training" server="n" />
+		<record alias="boss-desc" name="" type="TextAlias" filter="boss-training" server="n" />
+		<record alias="boss-combat-desc" name="" type="TextAlias" filter="boss-training" server="n" />
+		<record alias="boss-combat-tips-desc" name="" type="TextAlias" filter="boss-training" server="n" />		
+		<record alias="boss-image" name="" type="Index" filter="boss-training" server="n" />
+		<record alias="dungeon-name" name="" type="TextAlias" filter="boss-training" server="n" />
+		<record alias="dungeon-group" name="" type="Byte" filter="boss-training" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="party" name="" />
+			<case alias="team" name="" />
+        </record>
+		<!-- ============================================================= -->
+		
+		<!-- ============================================================= -->	
+		<record alias="main-skill" name="" ref="Skill3" filter="class-training" server="n" />
+		<record alias="skill-combo-desc" name="" type="TextAlias" filter="class-training" server="n" />
+		<record alias="skill-combo-tips-main" name="" type="TextAlias" filter="class-training" server="n" />
+		<record alias="skill-combo-tips-desc" name="" type="TextAlias" filter="class-training" server="n" />
+		<record alias="skill-training-sequence" name="" type="SkillTrainingSequence" filter="class-training" server="n" />
+		<record alias="guide-text" name="" type="TextAlias" filter="class-training" server="n" />
+		<record alias="base-job-style" name="" type="Seq" seq="$job-style" filter="class-training" server="n" />
+		<record alias="advanced-job-style" name="" type="Seq" seq="$job-style" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-1" name="" type="Byte" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-2" name="" type="Byte" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-3" name="" type="Byte" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-4" name="" type="Byte" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-5" name="" type="Byte" filter="class-training" server="n" />
+		
+		<record alias="flag-op" name="" type="Dictionary" >
+		    <case alias="equal" default="y" />
+			<case alias="not" />
+		</record>
+		
+		<record alias="advanced-tier-variation-flag-op-1" name="" type="Seq" seq="$flag-op" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-flag-op-2" name="" type="Seq" seq="$flag-op" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-flag-op-3" name="" type="Seq" seq="$flag-op" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-flag-op-4" name="" type="Seq" seq="$flag-op" filter="class-training" server="n" />
+		<record alias="advanced-tier-variation-flag-op-5" name="" type="Seq" seq="$flag-op" filter="class-training" server="n" />
+		<!-- ============================================================= -->
+	</list>
+</table>

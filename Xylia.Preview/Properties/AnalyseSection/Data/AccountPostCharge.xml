@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="account-post-charge" version="0.1" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="charge-money" name="" type="Int32" />
+		<record alias="charge-item-1" ref="Item" name="" />
+		<record alias="charge-item-2" ref="Item" name="" />
+		<record alias="charge-item-amount-1" name="" out-cond="Exist: charge-item-1" type="Int32" />
+		<record alias="charge-item-amount-2" name="" out-cond="Exist: charge-item-2" type="Int32" />
+	</list>
+</table>

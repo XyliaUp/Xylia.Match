@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="tendency-field" version="0.19" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="type" name="" type="type" >
+		     <case alias="normal" />
+		     <case alias="buyudo" />		 
+		</record>
+
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="main-zone" name="" ref="Zone" />
+		<record alias="sub-zone" name="" ref="Zone" repeat="7" />
+
+		<record alias="enable-change-channel" name="" type="Bool" />
+		<record alias="required-level" name="" type="Byte" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="required-preceding-quest-1" name="" type="Quest" />
+		<record alias="required-preceding-quest-2" name="" type="Quest" />
+		<record alias="required-preceding-quest-3" name="" type="Quest" />
+		<record alias="required-preceding-quest-check" name="" type="seq" >
+			<case alias="and" name="" default="y" />
+			<case alias="or" name="" />
+		</record>
+		<record alias="required-activated-main-faction" name="" type="Bool" />
+		<record alias="restrict-enter-zone-when-manifest-tendency" name="" type="Bool" />
+		<record alias="stand-by-duration-minute" name="" type="Short" />
+		<record alias="in-progress-duration-minute" name="" type="Int32" />
+		<record alias="tendency-1-max-play-value" name="" type="Byte" default="1" />
+		<record alias="tendency-2-max-play-value" name="" type="Byte" default="1" />
+		<record alias="tendency-3-max-play-value" name="" type="Byte" default="1" />
+		
+		<record alias="tendency-reset-score-type" name="" type="dictionary" >
+			<case alias="none" name="" />
+			<case alias="tendency-1" name="" />
+			<case alias="tendency-2" name="" />
+			<case alias="tendency-3" name="" />
+			<case alias="tendency-1-2" name="" />
+			<case alias="tendency-1-3" name="" />
+			<case alias="tendency-2-3" name="" />
+			<case alias="tendency-1-2-3" name="" default="y" />
+		</record>
+		
+		<record alias="tendency-1-reset-score-type" name="" type="seq" seq="$tendency-reset-score-type" />
+		<record alias="tendency-2-reset-score-type" name="" type="seq" seq="$tendency-reset-score-type" />
+		<record alias="tendency-3-reset-score-type" name="" type="seq" seq="$tendency-reset-score-type" />
+		<record alias="quest-pack-simple-quest-refresh-money" name="" type="Long" />
+		<record alias="weekly-time-table-for-added-reward-1" name="" ref="WeeklyTimeTable" />
+		<record alias="weekly-time-table-for-added-reward-2" name="" ref="WeeklyTimeTable" />	
+		<record alias="weekly-bonus-point-percent-1" name="" type="Int32" />
+		<record alias="weekly-bonus-point-percent-2" name="" type="Int32" />		
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="enable-infinite-hyper-energy" name="" type="Bool" />
+		<record alias="disable-move-to-arena" name="" type="Bool" />
+		<record alias="disable-move-to-skill-training-room" name="" type="Bool" />
+		<record alias="enable-change-faction-costume" name="" type="Bool" default="y" />
+		<record alias="enable-set-guild-meeting-place" name="" type="Bool" default="y" />
+		<record alias="enable-warp-to-guild-member" name="" type="Bool" default="y" />
+		<record alias="tendency-start-kismet-name-1" name="" type="Index" />
+		<record alias="tendency-start-kismet-name-2" name="" type="Index" />
+		<record alias="tendency-start-kismet-name-3" name="" type="Index" />
+		<record alias="tendency-end-kismet-name-1" name="" type="Index" />
+		<record alias="tendency-end-kismet-name-2" name="" type="Index" />
+		<record alias="tendency-end-kismet-name-3" name="" type="Index" />		
+		<record alias="tendency-field-name2" name="" type="TextAlias" />
+		<record alias="tendency-field-desc" name="" type="TextAlias" />
+		<record alias="reward-summary" name="" ref="AttractionRewardSummary" />
+		<record alias="ui-text-grade" name="" type="Byte" />
+
+		<record alias="tendency-standby-msg" name="" ref="GameMessage" repeat="3" />
+		<record alias="tendency-start-msg" name="" ref="GameMessage" repeat="3" />	
+		<record alias="tendency-timeup-alarm-msg" name="" ref="GameMessage" repeat="3" />
+		<record alias="tendency-end-msg" name="" ref="GameMessage" repeat="3" />	
+		<record alias="guide-standby-msg" name="" ref="GameMessage" repeat="3" />
+		<record alias="guide-start-msg" name="" ref="GameMessage" repeat="3" />	
+		<record alias="guide-timeup-alarm-msg" name="" ref="GameMessage" repeat="3" />
+		<record alias="guide-end-msg" name="" ref="GameMessage" repeat="3" />
+
+		<record alias="recommand-level-min" name="" type="Byte" />
+		<record alias="recommand-level-max" name="" type="Byte" />
+		<record alias="recommand-mastery-level-min" name="" type="Byte" />
+		<record alias="recommand-mastery-level-max" name="" type="Byte" />
+		<record alias="recommend-attack-power" name="" type="Short" />
+		<record alias="standard-gear-weapon" name="" ref="Item" />
+
+		<record alias="display-quests" name="" type="Quest" repeat="12" />
+		<record alias="tactic" name="" type="TextAlias" />
+		<record alias="recommend-alias" name="" ref="ContentsJournalRecommendItem" />
+		
+		<record alias="check-score-interval-minute" name="" type="Byte" client="n" />
+		<record alias="check-score-required-tendency-score-1" name="" type="Int32" client="n" />		
+		<record alias="check-score-required-tendency-score-2" name="" type="Int32" client="n" />		
+		<record alias="check-score-number-of-repetition" name="" type="Int32" client="n" />		
+
+		<record alias="quest-pack-simple-quest-explicit-refresh-bonus-prob" name="" type="Byte" client="n" repeat="6" />		
+		<record alias="quest-pack-simple-quest-explicit-refresh-bonus-multiple" name="" type="Byte" client="n" repeat="6" />
+		<record alias="quest-pack-simple-quest-implicit-refresh-bonus-prob" name="" type="Byte" client="n" repeat="6" />		
+		<record alias="quest-pack-simple-quest-implicit-refresh-bonus-multiple" name="" type="Byte" client="n" repeat="6" />
+		<record alias="tendency-1-npc-reset-stage-start" name="" type="" client="n" repeat="5" />
+		<record alias="tendency-2-npc-reset-stage-start" name="" type="" client="n" repeat="5" />
+		<record alias="tendency-3-npc-reset-stage-start" name="" type="" client="n" repeat="5" />
+		<record alias="tendency-1-npc-reset-stage-finish" name="" type="" client="n" repeat="5" />
+		<record alias="tendency-2-npc-reset-stage-finish" name="" type="" client="n" repeat="5" />
+		<record alias="tendency-3-npc-reset-stage-finish" name="" type="" client="n" repeat="5" />
+		
+		<!-- ================================================================== -->
+		<record alias="playable-time" name="" ref="WeeklyTimeTable" filter="buyudo" />
+		<record alias="check-score-required-min-faction-member-count" name="" type="Short" default="6" filter="buyudo" />
+		<record alias="tendency-1-faction1-warfare-boss" name="" ref="Npc" filter="buyudo" repeat="5" />
+		<record alias="tendency-1-faction2-warfare-boss" name="" ref="Npc" filter="buyudo" repeat="5" />
+		<record alias="tendency-2-faction1-warfare-boss" name="" ref="Npc" filter="buyudo" repeat="5" />
+		<record alias="tendency-2-faction2-warfare-boss" name="" ref="Npc" filter="buyudo" repeat="5" />
+		<record alias="tendency-3-warfare-boss" name="" ref="Npc" filter="buyudo" repeat="5" />
+
+		<record alias="tendency-1-faction1-warfare-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-1-faction2-warfare-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-2-faction1-warfare-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-2-faction2-warfare-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-3-faction1-warfare-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-3-faction2-warfare-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+
+		<record alias="tendency-1-faction1-sub-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-1-faction2-sub-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-2-faction1-sub-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-2-faction2-sub-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-3-faction1-sub-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+		<record alias="tendency-3-faction2-sub-quest" name="" type="Quest" filter="buyudo" repeat="5" />
+
+		<record alias="faction1-kill-quest" name="" type="Quest" filter="buyudo" />
+		<record alias="faction2-kill-quest" name="" type="Quest" filter="buyudo" />
+		<record alias="defeat-field-play-point-bonus-percent" name="" type="Int32" filter="buyudo" />
+		<record alias="defeat-faction-score-bonus-percent" name="" type="Int32" filter="buyudo" />
+		<record alias="defeat-bonus-point-percent" name="" type="Int32" filter="buyudo" />
+		<record alias="reentrance-faction1-spawn" name="" ref="ZonePcSpawn" filter="buyudo" />
+		<record alias="reentrance-faction2-spawn" name="" ref="ZonePcSpawn" filter="buyudo" />
+		
+		<record alias="warfare-draw-simple-quest-pack-play-section-1" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-draw-simple-quest-pack-play-section-2" name="" type="Byte" filter="buyudo" client="n" />	
+		
+		<record alias="warfare-defeat-faction-light-user-simple-quest-pack-play-section-1" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-defeat-faction-light-user-simple-quest-pack-play-section-2" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-defeat-faction-hard-user-simple-quest-pack-play-section-1" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-defeat-faction-hard-user-simple-quest-pack-play-section-2" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-victory-faction-light-user-simple-quest-pack-play-section-1" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-victory-faction-light-user-simple-quest-pack-play-section-2" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-victory-faction-hard-user-simple-quest-pack-play-section-1" name="" type="Byte" filter="buyudo" client="n" />
+		<record alias="warfare-victory-faction-hard-user-simple-quest-pack-play-section-2" name="" type="Byte" filter="buyudo" client="n" />
+		
+		<record alias="victory-npc-reset-stage-tendency-1" name="" type="" filter="buyudo" client="n" />
+		<record alias="victory-npc-reset-stage-tendency-2" name="" type="" filter="buyudo" client="n" />
+		
+		<record alias="defeat-faction-separation-faction-score" name="" type="" filter="buyudo" client="n" />
+		<record alias="victory-faction-separation-faction-score" name="" type="" filter="buyudo" client="n" />	
+	</list>
+</table>

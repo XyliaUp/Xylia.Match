@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="Fish" version="0.15" rule="cpl" >
+		<record alias="id" type="id" apply="auto" />
+
+		<record alias="alias" type="Index" />
+		<record alias="fish-grade" name="" type="Byte" default="1" />
+		<record alias="size-min" name="" type="Int32" />
+		<record alias="size-max" name="" type="Int32" />
+		<record alias="acquire-life-contents-point" name="" type="Short" />
+		<record alias="reduce-life-contents-cq-amount" name="" type="Byte" />
+		<record alias="name" name="" type="TextAlias" server="n" />
+		<record alias="mesh" name="" type="Index" server="n" />
+		<record alias="icon" name="" type="icon" server="n" />
+		<record alias="col" name="" type="Index" server="n" />
+		<record alias="desc" name="" type="Index" server="n" />
+		<record alias="sort-num" name="" type="Short" server="n" />
+		<record alias="hide" name="" type="Bool" server="n" />
+		<record alias="fishing-field-group" name="" ref="FishingFieldGroup" repeat="20" server="n" />
+        <!-- ====================================================================== -->
+		<record alias="hookset-available-time-min" name="" type="Msec" client="n" />
+		<record alias="hookset-available-time-max" name="" type="Msec" client="n" />
+		<record alias="distribution-type" name="" default="Fish_0001" apply="must" ref="RandomDistribution" client="n" />
+	</list>
+</table>

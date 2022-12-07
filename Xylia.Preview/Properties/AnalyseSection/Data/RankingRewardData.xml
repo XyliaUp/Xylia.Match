@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="ItemData" rule="cpl" server-side="rank | server" type="RankingReward" version="0.4" >
+	<record alias="id" type="id" apply="auto" />
+    <record alias="alias" type="Index" />
+    <!-- ===================================================== -->
+    <record alias="week-reward-exp" name="" type="Int32" />
+    <record alias="week-reward-money" name="" show-zero="y" type="Money" />
+    <record alias="week-reward-item" ref="Item" name="周奖励物品" repeat="4" />
+    <record alias="week-reward-item-amount" name="周奖励物品数量" type="Int32" repeat="4" />
+    <!-- ===================================================== -->
+    <record alias="season-reward-exp" name="" type="Int32" />
+    <record alias="season-reward-money" name="" show-zero="y" type="Money" />
+    <record alias="season-reward-item" ref="Item" name="赛季奖励物品" repeat="4" />
+    <record alias="season-reward-item-amount" name="赛季奖励物品数量" type="Int32" repeat="4" />
+    <!-- ===================================================== -->
+    <record alias="week-reward-combat-exp-bonus-rate" name="" type="short" />
+    <record alias="week-reward-duel-point-bonus-rate" name="" type="short" />
+    <record alias="week-reward-party-battle-point-bonus-rate" name="" type="short" />
+    <record alias="week-reward-field-point-bonus-rate" name="" type="short" />
+    <record alias="season-reward-combat-exp-bonus-rate" name="" type="short" />
+    <record alias="season-reward-duel-point-bonus-rate" name="" type="short" />
+    <record alias="season-reward-party-battle-point-bonus-rate" name="" type="short" />
+    <record alias="season-reward-field-point-bonus-rate" name="" type="short" />
+    <!-- ===================================================== -->
+    <record alias="season-reward-guild-bank-money" name="" type="Money" />
+    <record alias="season-reward-guild-bank-item" name="" type="Seq" repeat="5" >
+		<case alias="none" name="" default="y" />
+		<case alias="gemstone" name="" />
+		<case alias="moonstone" name="" />
+		<case alias="tokeniron" name="" />
+		<case alias="tokensilver" name="" />
+		<case alias="tokengold" name="" />
+	</record>    
+    <record alias="season-reward-guild-bank-item-amount" name="" type="Int32" repeat="5" />
+    <record alias="guild-ranking-reward-effect" ref="Effect" name="" />
+  </list>
+</table>

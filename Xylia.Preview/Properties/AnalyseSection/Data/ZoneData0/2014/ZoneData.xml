@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <!-- 
+    编辑者：    Xylia 
+	内容说明：
+	更新时间：
+	版本说明：               
+-->
+  <list module="ZoneData1" retired="n" rule="cpl" type="zone" version="0.132" check-version="y" >
+    <!-- 将根据id进行分类 -->
+    <record alias="id" sort-by="n" type="id" />
+
+    <record alias="alias" name="alias" type="Index" />
+    <record alias="deprecated-zone" name="" type="Bool" />
+    <record alias="transfer-pcspawn-by-deprecated" ref="ZonePcSpawn" name="" type="Int32" input="n" />
+    <record alias="chat-channel" ref="StaticChatChannel" name="" type="Int32" />
+    <record alias="zone-type" name="" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="persistant" name="" />
+			<case alias="single" name="" />
+			<case alias="instant" name="" />
+			<case alias="dungeon" name="" />
+			<case alias="arena" name="" />
+			<case alias="single-dungeon" name="" />
+			<case alias="duel" name="" />	  
+	</record>
+
+    <record alias="attraction" name="" server="n" type="Int32" use-group="y" />
+    <record alias="district" ref="district" name="" type="Int32" input="n" />
+    <record alias="sector-xmin" name="" type="Short" />
+    <record alias="sector-xmax" name="" type="Short" />
+    <record alias="sector-ymin" name="" type="Short" />
+    <record alias="sector-ymax" name="" type="Short" />
+    <record alias="pc-max" name="" type="Short" />
+    <record alias="pc-max-by-main-faction" name="" type="Short" />
+    <record alias="recommend-pc-count" name="" type="Short" />
+    <record alias="npc-max" name="" type="Short" />
+    <record alias="cube-xysize" name="" type="Short" client="n" default="y" />
+    <record alias="sight-cube" name="" type="Bool" default="y" />
+    <record alias="terrain" name="" type="Short" />
+    <record alias="region" name="" type="Short" input="n" />
+    <record alias="respawn" ref="ZoneRespawn" name="" input="n" />
+    <record alias="basecamp" ref="ZoneBasecamp" name="" />
+    <record alias="description2" name="" type="TextAlias" />
+	
+    <record alias="kismet-name" type="Index" />
+    <record alias="enter-kismet-name" type="Index" />
+    <record alias="leave-kismet-name" type="Index" />
+    <record alias="aiid" type="Index" />
+    <record alias="reentrance-pcspawn" ref="ZonePcSpawn" name="" type="Int32" input="n" />
+    <record alias="reentrance-pcspawn-in-arena" ref="ZonePcSpawn" name="" type="Int32" input="n" />
+    <record alias="map" ref="MapInfo" name="" type="Int32" server="n" />
+    <record alias="area" ref="MapArea" name="" type="Int32" server="n" />
+    <record alias="effect-link-type" name="" type="Byte" >
+      <case alias="effect-persistant" name="" default="y" />
+      <case alias="effect-single" name="" />
+      <case alias="effect-instant" name="" />
+      <case alias="effect-conflictarea" name="" />
+      <case alias="effect-dungeon-wayin" name="" />
+      <case alias="effect-dungeon" name="" />
+      <case alias="effect-blocked" name="" />
+      <case alias="effect-single-normal" name="" />
+      <case alias="effect-single-higher" name="" />
+      <case alias="effect-single-veryhigher" name="" />
+      <case alias="effect-single-hero" name="" />
+      <case alias="effect-instant-normal" name="" />
+      <case alias="effect-instant-higher" name="" />
+      <case alias="effect-instant-veryhigher" name="" />
+      <case alias="effect-raid-dungeon" name="" />
+    </record>
+    <record alias="tutorial" name="" type="Bool" />
+    <record alias="sharable-combatmode" name="" type="Bool" />
+    <record alias="use-perfmon" name="" type="Bool" />
+    <record alias="recharge-exp-boost" name="" type="Bool" />
+    <record alias="available-sextet-party" name="" type="Bool" />
+    <record alias="write-equipinfo-log" name="" type="Bool" />
+    <record alias="phase-quest-count" name="" server="n" type="Byte" />
+    <record alias="phase-quest" name="" server="n" type="Long" repeat="24" />
+    <record alias="phase-id" name="" server="n" type="Byte" repeat="24" />
+    <record alias="phase-zone" ref="this" name="" repeat="9" />
+    <record alias="default-phase-zone" default="y" name="" type="Bool" />
+    <record alias="phase-main-zone" ref="this" name="" server="n" type="Int32" />
+    <record alias="default-phase-pc-spawn-id" name="" type="Short" />
+    <record alias="dungeon-step" name="" server="n" type="Byte" />
+    <record alias="is-arena-entrance" name="" type="Bool" />
+  </list>
+</table>

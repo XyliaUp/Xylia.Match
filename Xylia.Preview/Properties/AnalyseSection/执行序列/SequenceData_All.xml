@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+  <sequence alias="Text" name="汉化关联信息序列队列" >
+
+    <step target="DifficultyTypeModify" type="Table" />
+    <step target="LobbyPc" type="Table" />	
+    <step target="PcAppearance" type="Table" />
+    <step target="SoulMaskSet" type="Table" />
+    <step target="SummonedAppearance" type="Table" />
+    <step target="Summoned" type="Table" />
+
+    <!-- 主要数据建议单独处理 -->
+    <step target="Text" type="Table" retired="y" />
+    <step target="Item" type="Table" retired="y" />
+
+    <step target="Effect" type="Table" retired="n" priority="2" />
+    <step target="Skill3" type="Table" retired="n" priority="3" />
+    <step target="Npc" type="Table" retired="n" priority="3" />
+    <step target="Achievement" type="Table" />
+    <step target="AchievementRegister" type="Table" priority="2" />
+    <step target="Boast" type="Table" />
+    <step target="BossChallenge" type="Table" />
+    <step target="ChallengeParty" type="Table" />
+    <step target="ClassicFieldZone" type="Table" />
+    <step target="Emoticon" type="Table" />
+    <step target="GuildBattleFieldZone" type="Table" />
+    <step target="MapUnit" type="Table" />
+
+
+    <step target="TendencyField" type="Table" />
+    <step target="ZoneEnv2" type="Table" />
+	
+    <step target="AccountLevel" type="Table" />
+    <step target="AcquireRoute" type="Table" />
+    <step target="BadgeSetItem" type="Table" />
+    <step target="BattleMessage" type="Table" />
+    <step target="BattleFieldGrade" type="Table" />
+    <step target="BattleRoyalField" type="Table" />
+    <step target="BossNpc" type="Table" />
+    <step target="Campfire" type="Table" />
+    <step target="Cave2" type="Table" />
+    <step target="ClosetCollectingGrade" type="Table" />
+    <step target="Collecting" type="Table" />
+    <step target="ContentsGuide" type="Table" />
+    <step target="ContentsJournal2Noti" type="Table" />
+    <step target="CraftCaseRecipe" type="Table" />
+    <step target="CraftIntroduction" type="Table" />	
+    <step target="CraftRecipe" type="Table" />
+    <step target="Craft" type="Table" />
+    <step target="Craft2" type="Table" />
+    <step target="CustomizingDesignerPreset" type="Table" />
+    <step target="CustomizingDetailIcon" type="Table" />
+    <step target="CustomizingPreset" type="Table" />
+    <step target="CustomizingPreview" type="Table" />
+    <step target="CustomizingUiMatchParam" type="Table" />	
+    <step target="DifficultyType" type="Table" retired="y" describe="跳过" />
+    <step target="DuelBotChallengeStrategicTool" type="Table" />	
+    <step target="DuelBotChallenge" type="Table" />
+    <step target="DuelBotTrainingRoomVersion" type="Table" />	
+    <step target="DuelBotTrainingRoom" type="Table" />	
+    <step target="DuelBot" type="Table" />
+    <step target="DuelGrade" type="Table" />
+    <step target="Duel" type="Table" />
+    <step target="Dungeon" type="Table" />
+    <step target="FactionLevel" type="Table" />	
+    <step target="Faction" type="Table" />
+    <step target="FactionBattleFieldZone" type="Table" />
+    <step target="FieldZone" type="Table" />
+    <step target="FieldItem" type="Table" />
+    <step target="Fish" type="Table" />
+    <step target="FishGrade" type="Table" />	
+    <step target="FishingFieldGroup" type="Table" />	
+    <step target="FriendNotiLocation" type="Table" />	
+    <step target="GameMessage" type="Table" priority="2" />
+    <step target="GuildCustomizeUiMatchParam" type="Table" />	
+    <step target="GuildLevel" type="Table" />
+    <step target="GuildUniformComponent" type="Table" />
+    <step target="GuildUniformPreset" type="Table" />	
+    <step target="IndicatorSocial" type="Table" />	
+    <step target="ItemBrandTooltip" type="Table" />
+    <step target="ItemEvent" type="Table" />
+    <step target="ItemPouchMesh" type="Table" />
+    <step target="ItemPouchMesh2" type="Table" />
+    <step target="ItemUsableGroup" type="Table" />	
+    <step target="ItemSkill" type="Table" />
+    <step target="ItemTransformRecipe" type="Table" />	
+    <step target="JackpotBossZone" type="Table" />	
+    <step target="Job" type="Table" />	
+    <step target="KeyCap" type="Table" />		
+    <step target="KeyCommand" type="Table" />	
+    <step target="MapArea" type="Table" />
+    <step target="MapGroup1" type="Table" />
+    <step target="MapInfo" type="Table" />
+    <step target="MasteryStatPointPick" type="Table" />
+    <step target="MasteryStatPoint" type="Table" />
+    <step target="Mentoring" type="Table" />
+	
+    <step target="NpcTalkMessage" type="Table" priority="2" />
+    <step target="NpcResponse" type="Table" />
+	
+    <step target="PartyBattleFieldZone" type="Table" />
+    <step target="PartyChatChannel" type="Table" />
+    <step target="PublicRaid" type="Table" />	
+	
+    <step target="PartyMatch" type="Table" />	
+    <step target="PcVoice" type="Table" />
+    <step target="Race" type="Table" />	
+    <step target="RaidDungeon" type="Table" />		
+    <step target="RandomboxPreview" type="Table" />	
+    <step target="SetItem" type="Table" />	
+    <step target="SimpleField" type="Table" />	
+    <step target="SkillByEquipment" type="Table" />
+    <step target="SkillCombo2" type="Table" />	
+    <step target="SkillMessage" type="Table" />
+
+    <step target="SkillBuildUp" type="Table" />	
+    <step target="SkillModifyInfo" type="Table" priority="3" />
+    <step target="SkillModifyInfoGroup" type="Table" />
+
+
+    <step target="SkillTrainingRoomSubject" type="Table" />	
+    <step target="SkillTrainComboAction" type="Table" />	
+    <step target="SkillTrainSimpleContextFlow" type="Table" />
+    <step target="SkillTrainingRoomGroup" type="Table" />
+    <step target="SkillTrainingRoom" type="Table" />
+    <step target="SkillTrait" type="Table" />
+    <step target="SkillSkin" type="Table" />
+    <step target="SkillSystematization" type="Table" />	
+    <step target="SkillSystematizationGroup" type="Table" />
+    <step target="SkillTooltip" type="Table" />	
+    <step target="SkillTooltipAttribute" type="Table" />
+    <step target="SlateStone" type="Table" />
+    <step target="Social" type="Table" />
+    <step target="SoulNpcSkill" type="Table" />	
+    <step target="Stance" type="Table" />	
+    <step target="StaticChatChannel" type="Table" />
+    <step target="Store2" type="Table" />
+    <step target="TalkSocial" type="Table" />
+    <step target="Teleport" type="Table" />	
+    <step target="UiCommand" type="Table" />
+    <step target="VirtualItem" type="Table" />
+    <step target="Zone" type="Table" retired="y" />
+    <step target="ZoneTriggerEventCond" type="Table" priority="2" />
+    <step target="ZoneTriggerEventStage" type="Table" />
+  </sequence>
+</table>

@@ -1,0 +1,24 @@
+﻿<!--汉化类-->
+    
+ <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib"
+                    xml:space="preserve">
+    
+    <!--To use a new line: &#x0d; or CarriageReturn + NewLine: &#x0d;&#x0a; or &#10;--> 
+    <!--You can use the zero-width-divider to suggest where the word should be divided when there's no space &#8203;-->
+    <!--Special texts like {0}, are place holders for dynamic values, such as numbers.-->
+    
+    <!--General-->
+    <s:String x:Key="Ok">确定</s:String>
+    <s:String x:Key="Back">返回</s:String>
+    <s:String x:Key="Cancel">取消</s:String>
+    <s:String x:Key="Yes">是</s:String>
+    <s:String x:Key="No">否</s:String>
+    <s:String x:Key="S.Add">添加</s:String>
+    <s:String x:Key="S.Edit">编辑</s:String>
+     
+     
+     <!--Title-->
+    <s:String x:Key="Title.StartUp">请选择执行操作</s:String>
+</ResourceDictionary>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+
+	<!-- 刻印系统 -->
+	<list module="ItemData" type="SlateScroll" version="0.4" rule="cpl | extra" >
+		<record alias="alias" type="Index" name ="" />
+		<record alias="ingredient-item" name ="" ref="Item" repeat="5" />
+		<record alias="ingredient-count" type="Short" name ="" repeat="5" />
+
+		<record alias="secondary-cash-enable" type="Bool" name ="" show-zero="y" />
+		<record alias="ingredient-money" type="Money" name ="" min="0" max="2000000000" />
+		<record alias="secondary-cash" name="" ref="Item" />
+	</list>
+</table>

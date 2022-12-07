@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="weapon-appearance-change-cost" version="1.0" rule="cpl" >
+		<record alias="item-grade" name="" type="ID" extra="Byte1" />
+		<record alias="growth-efficient-level" name="" type="ID" extra="Byte2" />		
+		<record alias="weapon-cost-type" name="" type="ID" extra="Byte3" >	
+             <case alias="weapon" />
+             <case alias="pet-1" />			 
+             <case alias="pet-2" />			 
+        </record>		
+		<record alias="cost-apply-item-1" name="" ref="Item" />		
+		<record alias="cost-apply-item-2" name="" ref="Item" />		
+		<record alias="cost-apply-item-amount-1" name="" type="Short" />
+		<record alias="cost-apply-item-amount-2" name="" type="Short" />
+		<record alias="cost-apply-money" name="" type="Int32" />
+		<record alias="cost-remove-separable" name="" type="Bool" />		
+		<record alias="cost-remove-item-1" name="" ref="Item" />
+		<record alias="cost-remove-item-2" name="" ref="Item" />		
+		<record alias="cost-remove-item-amount-1" name="" type="Short" />
+		<record alias="cost-remove-item-amount-2" name="" type="Short" />
+		<record alias="cost-remove-money" name="" type="Int32" />
+	</list>
+</table>

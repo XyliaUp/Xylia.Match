@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData2" type="ZoneCampfire" version="0.3" retired="n" rule="cpl" >
+		<record type="id" alias="zone" sort-by="y" />
+		<record start="0" alias="id" type="Short" />
+
+		<record alias="alias" type="Index" />
+		<record alias="campfire" ref="Campfire" input="n" />
+		<record alias="position" type="Vector32" />
+	</list>
+</table>

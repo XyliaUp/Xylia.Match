@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+    <!--  -->
+	<list module="AIData" type="npc-reset-stage" version="0.25" side="server" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="clear-npc-reg" name="" type="Bool" />
+		<record alias="clear-party-reg" name="" type="Bool" />
+
+		<record alias="spawn-delay" name="" type="Msec" repeat="10" />
+		<record alias="spawn-my-party" name="" type="Bool" />
+		<record alias="spawn-npc-group" name="" type="Ref" ref="ZoneNpcSquadData" repeat="10" />
+		<record alias="spawn-npc-min-id" name="" type="Short" />
+		<record alias="spawn-npc-max-id" name="" type="Short" />
+
+		<record alias="despawn-force" name="" type="Bool" repeat="10" />
+		<record alias="despawn-my-party" name="" type="Bool" />
+		<record alias="despawn-npc-group" name="" type="Ref" ref="ZoneNpcSquadData" repeat="10" />
+		<record alias="despawn-npc-min-id" name="" type="Short" />
+		<record alias="despawn-npc-max-id" name="" type="Short" />
+		<record alias="respawn-after-despawn" name="" type="Bool" repeat="10" />
+		<record alias="set-env-operation" name="" type="Seq" seq="$env-operation" repeat="40" />
+		<record alias="set-env2-target" name="" type="Ref" ref="ZoneEnv2" repeat="40" />
+	</list>
+</table>

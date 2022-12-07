@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft-introduction" version="0.1" rule="cpl" >
+	    <record alias="category" type="id" seq="$production-type" extra="Byte1" />
+		<record alias="title-icon" name="" type="Icon" />
+		<record alias="normal-icon" name="" type="Icon" />
+		<record alias="slogan" name="" type="TextAlias" />
+		<record alias="introduction-description" name="" type="TextAlias" />
+		<record alias="associated-craft" name="" type="seq" seq="$production-type" repeat="2" />
+		<record alias="representative-product-item" name="" ref="Item" repeat="8" />
+		<record alias="representative-product-label" name="" type="TextAlias" repeat="8" />
+		<record alias="special-product-item" name="" ref="Item" repeat="4" />
+		<record alias="special-product-label" name="" type="TextAlias" repeat="4" />
+	</list>
+</table>

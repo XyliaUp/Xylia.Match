@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+
+	<list module="ItemData" side="" type="randombox-preview" version="0.20" rule="cpl | extra" >
+		<record alias="condition" type="Dictionary" name="" >
+			<case alias="none" name="" default="y" />
+			<case alias="variation-1" name="" />
+			<case alias="variation-2" name="" />
+			<case alias="variation-3" name="" />
+			<case alias="variation-4" name="" />
+			<case alias="variation-5" name="" />
+			<case alias="variation-6" name="" />
+			<case alias="variation-7" name="" />
+			<case alias="variation-8" name="" />
+			<case alias="jump" name="" />
+			<case alias="change-group" name="" />
+			<case alias="exchange" name="" />
+			<case alias="black-sky" name="" />
+			<case alias="down" name="" />
+			<case alias="hide-line" name="" />
+			<case alias="hide-line-and-tooltip" name="" />
+			<case alias="hide-tooltip" name="" />
+		</record>
+
+		<record alias="alias" type="Index" name="" />
+
+		<record alias="fixed-item" name="" use-group="y" repeat="8" />
+		<record alias="fixed-item-condition" type="Seq" name="" seq="$condition" repeat="8" />
+		<record alias="selected-item" name="" use-group="y" repeat="20" />
+		<record alias="selected-item-condition" type="Seq" name="" seq="$condition" repeat="20" />
+		<record alias="random-item" name="" use-group="y" repeat="20" />
+		<record alias="random-item-condition" type="Seq" name="" seq="$condition" repeat="20" />
+
+		<record alias="description" type="TextAlias" name="" />		
+		<!-- ================================================================ -->
+	</list>
+</table>

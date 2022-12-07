@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="auto-combat-skill" version="0.1" rule="cpl | unsort" >
+		<record alias="parent-skill-id" name="" type="ID" />
+		<record start="0" alias="variation-id" name="" type="Byte" />
+
+		<record alias="name" name="" type="Index" />
+		<record alias="priority" name="" type="Byte" />
+		<record alias="cast-condition" name="" ref="AutoCombatSkillCastCondition" repeat="2" />	
+		<record alias="cast-condition-op" name="" type="Byte" >
+			<case alias="or" name="" default="y" />
+			<case alias="and" name="" />
+		</record>
+	</list>
+</table>

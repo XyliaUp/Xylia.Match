@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="collecting" version="0.10" rule="cpl" >
+
+		<record alias="type" name="" type="type" > 
+			<case alias="closet" name="" />
+		</record>
+		
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		
+		
+		<record alias="name" name="" type="TextAlias" server="n" />
+		<record alias="category" name="" type="Seq" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="category1" name="" />
+			<case alias="category2" name="" />
+			<case alias="category3" name="" />
+			<case alias="category4" name="" />
+			<case alias="category5" name="" />
+			<case alias="category6" name="" />
+			<case alias="category7" name="" />
+			<case alias="category8" name="" />
+			<case alias="category9" name="" />
+			<case alias="category10" name="" />
+			<case alias="category-special" name="" />
+		</record>
+
+		<record alias="collect-closet" name="" ref="ClosetGroupData" repeat="8" link="id" />
+		<record alias="collect-closet-replace" name="" ref="ClosetGroupData" repeat="8" link="id" />
+		<record alias="collect-closet-subreplace" name="" ref="ClosetGroupData" repeat="8" link="id" />
+		<record alias="collect-skill-skin" name="" ref="SkillSkin" repeat="4" />
+		<record alias="reward-item" name="" ref="Item" repeat="6" />
+		<record alias="reward-item-count" name="" type="Short" repeat="6" />
+		<record alias="reward-money" name="" type="Int32" />
+		<record alias="reward-collecting-score" name="" type="Int32" />
+		
+		<record alias="ability" name="" type="Seq" repeat="3" seq="$attach-ability" />
+		<record alias="ability-value" name="" type="Int32" max="1000000" repeat="3" />
+
+		<record alias="expiration-time" name="" type="Time64" />
+		<record alias="can-not-used" name="" type="Bool" />
+	</list>
+</table>

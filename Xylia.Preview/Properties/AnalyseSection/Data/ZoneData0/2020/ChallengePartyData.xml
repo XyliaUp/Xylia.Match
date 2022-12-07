@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="challenge-party" version="0.14" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="zone" name="" ref="Zone" />
+		<record alias="name2" name="" type="TextAlias" />
+		<record alias="arena-minimap" name="" type="Index" />
+		<record alias="required-item" name="" ref="Item" repeat="2" />
+		<record alias="required-item-count" name="" type="Short" repeat="2" default="1" />
+		<record alias="use-training-mode" name="" type="Bool" />
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="play-time" name="" type="Msec" />
+		<record alias="pattern-time" name="" type="Msec" repeat="8" />
+		<record alias="score-per-evaluate" name="" type="Int32" default="100000" />
+		<record alias="kill-score" name="" type="Int32" input="n" />
+		<!-- ================================================================= -->
+	</list>
+</table>

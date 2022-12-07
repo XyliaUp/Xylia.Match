@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="public-raid-event" version="0.3" check-version="y" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="type" name="" type="type" >
+             <case alias="score-event" name="" />
+        </record>		
+		
+		<record alias="alias" name="" type="Index" />
+		<record alias="event-duration" name="" type="msec" />
+		<record alias="event-type" name="" type="seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="clash" name="" />
+			<case alias="escape" name="" />
+		</record>
+
+        <!-- ====================================================================== -->
+		<record alias="start-score-amount" name="" type="Short" filter="score-event" />
+		<record alias="add-score-amount" name="" type="Short" filter="score-event" />
+		<record alias="reduce-score-amount" name="" type="Short" filter="score-event" />
+		<record alias="final-score-1" name="" type="Short" filter="score-event" />
+		<record alias="final-score-2" name="" type="Short" filter="score-event" />
+		<record alias="final-score-3" name="" type="Short" filter="score-event" />
+		<record alias="final-score-4" name="" type="Short" filter="score-event" />
+		<record alias="final-score-5" name="" type="Short" filter="score-event" />
+		<record alias="final-score-6" name="" type="Short" filter="score-event" />
+		<record alias="add-score-recycle-duration" name="" type="msec" filter="score-event" />
+	</list>
+</table>

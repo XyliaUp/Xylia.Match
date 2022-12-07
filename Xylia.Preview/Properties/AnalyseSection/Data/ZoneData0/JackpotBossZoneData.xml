@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+  <list module="AIData" rule="cpl" type="jackpot-boss-zone" version="0.5">
+    <record alias="id" name="" type="ID" />
+
+    <record alias="alias" name="" type="Index" />
+    <record alias="zone" ref="Zone" name="" />
+    <record alias="group" ref="AttractionGroup" name="" />
+    <record alias="transfer-jackpot-percent" name="" type="Short" />
+    <record alias="boss-max-faction-score" name="" type="Int32" />
+    <record alias="spawn-boss-faction-score" name="" type="Int32" />
+    <record alias="boss-npc-faction" ref="Npc" name="" repeat="2" />
+    <record alias="despawn-force-faction-1" default="y" name="" type="Bool" input="n" />
+    <record alias="respawn-after-despawn-faction-1" name="" type="Bool" input="n" />
+    <record alias="spawn-delay-faction-1" name="" type="msec" input="n" />
+    <record alias="despawn-force-faction-2" default="y" name="" type="Bool" input="n" />
+    <record alias="respawn-after-despawn-faction-2" name="" type="Bool" input="n" />
+    <record alias="spawn-delay-faction-2" name="" type="Msec" input="n" />
+    <record alias="attraction-quest" name="" type="Quest" repeat="5" />
+    <record alias="ui-filter-attraction-quest-only" name="" type="Bool" />
+    <record alias="name2" name="" type="TextAlias" />
+    <record alias="desc" name="" type="TextAlias" />
+    <record alias="ui-text-grade" name="" type="Byte" />
+    <record alias="reward-summary" ref="AttractionRewardSummary" name="" />
+	
+	<!-- ================================================================= -->
+    <record alias="despawn-npc-group-faction-1" name="" type="" client="n" />
+    <record alias="despawn-npc-group-faction-2" name="" type="" client="n" />
+    <record alias="spawn-npc-group-faction-1" name="" type="" client="n" />
+    <record alias="spawn-npc-group-faction-2" name="" type="" client="n" />
+	<!-- ================================================================= -->
+  </list>
+</table>

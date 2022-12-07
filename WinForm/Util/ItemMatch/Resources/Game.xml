@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Game>
+      <!-- 手动添加名称缺失道具，仅ID与Alias项会被读取。-->
+      <General ID="100" Alias="Test_N-ShopAccountShippingItem" Name2="N-Shop帐号配送物品" />
+      <General ID="101" Alias="Test_N-ShopCharacterShippingItem" Name2="N-Shop角色配送物品" />
+      <General ID="1338" Alias="BabaB2_0146" Name2="哈迪斯（NPC武器）" />
+      <General ID="1339" Alias="BabaC_0147" Name2="哈迪斯（NPC武器）" />
+      <General ID="1340" Alias="InsectTribeGrasshopperA_0148" Name2="哈迪斯（NPC武器）" />
+      <General ID="1341" Alias="InsectTribeGrasshopperB_0149" Name2="哈迪斯（NPC武器）" />
+      <General ID="1342" Alias="Flazard_0150" Name2="哈迪斯（NPC武器）" />
+      <General ID="1343" Alias="DoubleAxe_0151" Name2="哈迪斯（NPC武器）" />
+      <General ID="1369" Alias="AncientMechTwinsA_0001" Name2="哈迪斯（NPC武器）" />
+      <General ID="1370" Alias="AncientMechTwinsB_0001" Name2="哈迪斯（NPC武器）" />
+      <General ID="11206" Alias="Test_Movespeed_Lv1" Name2="传说级的敏捷恢复药" />
+      <General ID="11214" Alias="Test_Sword_Type4_Lv01_101" Name2="（英雄）测试用剑Lv50" />
+      <General ID="11215" Alias="Test_Sword_Type4_Lv02_101" Name2="（英雄）测试用剑Lv50" />
+      <General ID="11302" Alias="Weapon_GS_Legendry" Name2="勇士巨剑" />
+  
+  
+      <General ID="301338" Alias="Lobby_Sword" Name2="哈迪斯（等候室演示剑）" />
+      <General ID="301339" Alias="Lobby_Gauntlet" Name2="哈迪斯（等候室演示拳套）" />
+      <General ID="301340" Alias="Lobby_Aura-Bangle" Name2="哈迪斯（等候室演示彩绫）" />
+      <General ID="301341" Alias="Lobby_Staff" Name2="哈迪斯（等候室演示法杖）" />
+      <General ID="301342" Alias="Lobby_Dagger" Name2="哈迪斯（等候室演示斧头）" />
+      <General ID="301343" Alias="Lobby_Axe" Name2="哈迪斯（等候室演示短刀）" />
+      <General ID="301344" Alias="Lobby_Gun" Name2="哈迪斯（等候室演示枪）" />
+      <General ID="301345" Alias="Lobby_Great-Sword" Name2="哈迪斯（等候室演示巨剑）" />
+      <General ID="301346" Alias="Lobby_Longbow" Name2="哈迪斯（等候室演示弓）" />
+	  <General ID="301347" Alias="Lobby_Orb" Name2="哈迪斯（等候室演示宝珠）" />
+	
+	
+	
+  
+      <General ID="730092" Alias="General_FeedGem_0003_Test" Name2="（废弃）测试用成长牌" />
+      <General ID="730093" Alias="General_FeedGem_0004_Test" Name2="（废弃）测试用成长牌" />
+  
+  
+      <General ID="800024" Alias="Quest_Grocery_SundryItem_0024" Name2="史福的工钱袋" />
+      <General ID="800196" Alias="Quest_Scroll_EliteSkill_0058" Name2="破招式一篇" />
+      <General ID="800197" Alias="Quest_Scroll_EliteSkill_0059" Name2="截拳一篇" />
+      <General ID="800198" Alias="Quest_Scroll_EliteSkill_0060" Name2="蒲公英一篇" />
+      <General ID="800199" Alias="Quest_Scroll_EliteSkill_0061" Name2="极限空破一篇" />
+      <General ID="800200" Alias="Quest_Scroll_EliteSkill_0062" Name2="狂风一篇" />
+      <General ID="800201" Alias="Quest_Scroll_EliteSkill_0063" Name2="替身术一篇" />
+      <General ID="800202" Alias="Quest_Scroll_EliteSkill_0064" Name2="流风斩一篇" />
+      <General ID="800203" Alias="Quest_Scroll_EliteSkill_0065" Name2="刺剑式一篇" />
+      <General ID="800204" Alias="Quest_Scroll_EliteSkill_0066" Name2="暴拳一篇" />
+      <General ID="800205" Alias="Quest_Scroll_EliteSkill_0067" Name2="马蜂一篇" />
+      <General ID="800206" Alias="Quest_Scroll_EliteSkill_0068" Name2="炎龙啸一篇" />
+      <General ID="800207" Alias="Quest_Scroll_EliteSkill_0069" Name2="毁灭一篇" />
+      <General ID="800208" Alias="Quest_Scroll_EliteSkill_0070" Name2="震天雷篇" />
+      <General ID="800209" Alias="Quest_Scroll_EliteSkill_0071" Name2="断水流一篇" />
+      <General ID="800210" Alias="Quest_Scroll_EliteSkill_0072" Name2="天隙流光一篇" />
+      <General ID="800211" Alias="Quest_Scroll_EliteSkill_0073" Name2="冲拳一篇" />
+      <General ID="800212" Alias="Quest_Scroll_EliteSkill_0074" Name2="下段斩篇" />
+      <General ID="800213" Alias="Quest_Scroll_EliteSkill_0075" Name2="火莲掌一篇" />
+      <General ID="800214" Alias="Quest_Scroll_EliteSkill_0076" Name2="顿足一篇" />
+      <General ID="800215" Alias="Quest_Scroll_EliteSkill_0077" Name2="斩影一篇" />
+      <General ID="800216" Alias="Quest_Scroll_EliteSkill_0078" Name2="天隙流光一篇" />
+      <General ID="800217" Alias="Quest_Scroll_EliteSkill_0079" Name2="刺剑式二篇" />
+      <General ID="800218" Alias="Quest_Scroll_EliteSkill_0080" Name2="暴拳二篇" />
+      <General ID="800219" Alias="Quest_Scroll_EliteSkill_0081" Name2="马蜂二篇" />
+      <General ID="800220" Alias="Quest_Scroll_EliteSkill_0082" Name2="炎龙啸二篇" />
+      <General ID="800221" Alias="Quest_Scroll_EliteSkill_0083" Name2="毁灭二篇" />
+      <General ID="800222" Alias="Quest_Scroll_EliteSkill_0084" Name2="刺心篇" />
+      <General ID="800223" Alias="Quest_Scroll_EliteSkill_0085" Name2="断水流二篇" />
+      <General ID="800224" Alias="Quest_Scroll_EliteSkill_0086" Name2="天隙流光二篇" />
+      <General ID="800225" Alias="Quest_Scroll_EliteSkill_0087" Name2="冲拳二篇" />
+      <General ID="800226" Alias="Quest_Scroll_EliteSkill_0088" Name2="冲天雷篇" />
+      <General ID="800227" Alias="Quest_Scroll_EliteSkill_0089" Name2="火莲掌二篇" />
+      <General ID="800228" Alias="Quest_Scroll_EliteSkill_0090" Name2="顿足二篇" />
+      <General ID="800229" Alias="Quest_Scroll_EliteSkill_0091" Name2="斩影二篇" />
+      <General ID="800230" Alias="Quest_Scroll_EliteSkill_0092" Name2="天隙流光二篇" />
+      <General ID="800231" Alias="Quest_Scroll_EliteSkill_0093" Name2="格挡二篇" />
+      <General ID="800232" Alias="Quest_Scroll_EliteSkill_0094" Name2="截拳二篇" />
+      <General ID="800233" Alias="Quest_Scroll_EliteSkill_0095" Name2="蒲公英二篇" />
+      <General ID="800234" Alias="Quest_Scroll_EliteSkill_0096" Name2="极限空破二篇" />
+      <General ID="800235" Alias="Quest_Scroll_EliteSkill_0097" Name2="狂风二篇" />
+      <General ID="800236" Alias="Quest_Scroll_EliteSkill_0098" Name2="替身术二篇" />
+      <General ID="800237" Alias="Quest_Scroll_EliteSkill_0099" Name2="流风斩二篇" />
+      <General ID="800238" Alias="Quest_Scroll_EliteSkill_0100" Name2="落剑式一篇" />
+      <General ID="800239" Alias="Quest_Scroll_EliteSkill_0101" Name2="正拳一篇" />
+      <General ID="800240" Alias="Quest_Scroll_EliteSkill_0102" Name2="玫瑰一篇" />
+      <General ID="800241" Alias="Quest_Scroll_EliteSkill_0103" Name2="烈火掌一篇" />
+      <General ID="800242" Alias="Quest_Scroll_EliteSkill_0104" Name2="削骨一篇" />
+      <General ID="800243" Alias="Quest_Scroll_EliteSkill_0105" Name2="迷雾斩一篇" />
+      <General ID="800244" Alias="Quest_Scroll_EliteSkill_0106" Name2="落剑式一篇" />
+      <General ID="800245" Alias="Quest_Scroll_EliteSkill_0107" Name2="落剑式二篇" />
+      <General ID="800246" Alias="Quest_Scroll_EliteSkill_0108" Name2="正拳二篇" />
+      <General ID="800247" Alias="Quest_Scroll_EliteSkill_0109" Name2="玫瑰二篇" />
+      <General ID="800248" Alias="Quest_Scroll_EliteSkill_0110" Name2="烈火掌二篇" />
+      <General ID="800249" Alias="Quest_Scroll_EliteSkill_0111" Name2="削骨二篇" />
+      <General ID="800250" Alias="Quest_Scroll_EliteSkill_0112" Name2="迷雾斩二篇" />
+      <General ID="800251" Alias="Quest_Scroll_EliteSkill_0113" Name2="落剑式二篇" />
+      <General ID="800371" Alias="Quest_Scroll_Epic10Sub_0001" Name2="（废弃）任务卷轴" />
+      <General ID="800372" Alias="Quest_Scroll_Epic10Sub_0002" Name2="（废弃）任务卷轴" />
+      <General ID="800373" Alias="Quest_Scroll_Epic10Sub_0003" Name2="（废弃）任务卷轴" />
+      <General ID="828193" Alias="General_Grocery_Box_2379" Name2="（废弃）未知守护石" />
+
+      <General ID="2021127" Alias="GB_General_Accessory_Necklace_0031_701" Name2="（废弃）项链" />
+	
+      <General ID="2024194" Alias="GB_Event_Grocery_Box_0073" Name2="（租借）祝福·无形武器箱" />
+      <General ID="2024195" Alias="GB_Event_Grocery_Box_0074" Name2="2周年礼物箱" />
+      <General ID="2024199" Alias="GB_Event_Grocery_Box_0076" Name2="（废弃）玄武帝2星战利品" />
+      <General ID="2024200" Alias="GB_Event_Grocery_Box_0077" Name2="（废弃）玄武帝3星战利品" />
+      <General ID="2024201" Alias="GB_Event_Grocery_Box_0078" Name2="（废弃）玄武帝4星战利品" />
+      <General ID="2024202" Alias="GB_Event_Grocery_Box_0079" Name2="（废弃）玄武帝5星战利品" />
+      <General ID="2024203" Alias="GB_Event_Grocery_Box_0080" Name2="（废弃）玄武帝6星战利品" />
+      <General ID="2024204" Alias="GB_Event_Grocery_Box_0081" Name2="月夜树战利品" />
+      <General ID="2027059" Alias="Test_General_Grocery_Box_0001" Name2="测试用箱子" />
+      <General ID="2027469" Alias="GB_General_Grocery_DisplayBox_0035" Name2="（废弃）随机成长显示箱子" />
+      <General ID="2029572" Alias="GB_Event_Grocery_Box_0651" Name2="甜中带苦聚宝盆" />
+	
+      <General ID="2032669" Alias="GB_Event_Grocery_Coin_0296" Name2="洪门户牌（旧）" />
+      <General ID="2033512" Alias="GB_General_Grocery_Sealed_3665" Name2="（废弃）封印的雪山宝珠" />
+      <General ID="2033513" Alias="GB_General_Grocery_Sealed_3666" Name2="（废弃）封印的狂暴宝珠" />
+      <General ID="2033514" Alias="GB_General_Grocery_Sealed_3667" Name2="（废弃）封印的狂暴宝珠" />	
+	
+	
+	
+	
+      <General ID="2060001" Alias="GB_Test_Weapon_Sword_0001" Name2="（废弃）测试用万魂剑" />
+      <General ID="2060002" Alias="GB_Test_Weapon_Gauntlet_0001" Name2="（废弃）测试用万魂拳甲" />
+      <General ID="2060003" Alias="GB_Test_Weapon_Staff_0001" Name2="（废弃）测试用万魂法杖" />
+      <General ID="2060004" Alias="GB_Test_Weapon_Aura-bangle_0001" Name2="（废弃）测试用万魂彩绫" />
+      <General ID="2060005" Alias="GB_Test_Weapon_Axe_0001" Name2="（废弃）测试用万魂短刀" />
+      <General ID="2060006" Alias="GB_Test_Weapon_Dagger_0001" Name2="（废弃）测试用万魂斧头" />
+
+
+      <General ID="2060007" Alias="GB_Test_Weapon_RynSword_0001" Name2="（废弃）测试用万魂灵剑" />
+	
+	
+      <General ID="2060598" Alias="GB_General_Pet1_Skin_0051_100_BM" Name2="（废弃）火龙幻影石" />	
+	
+	
+	
+      <General ID="2080003" Alias="GB_Cache_Grocery_Test" Name2="（废弃）测试用百年雪莲露" />
+      <General ID="2082001" Alias="RS_Cache_Grocery_ReviveTalisman_0001" Name2="（废弃）外服道具" />
+      <General ID="2082002" Alias="RS_Cache_Grocery_ReviveTalisman_0002" Name2="（废弃）外服道具" />
+      <General ID="2082003" Alias="RS_Cache_Grocery_RepairTool_0001" Name2="（废弃）外服道具" />
+      <General ID="2082004" Alias="RS_Cache_Grocery_Test" Name2="（废弃）外服道具" />
+      <General ID="2082005" Alias="RS_Cache_Grocery_HealPotion_0002" Name2="（废弃）外服道具" />
+      <General ID="2082006" Alias="RS_Cache_Grocery_HealPotion_0003" Name2="（废弃）外服道具" />
+      <General ID="2082007" Alias="RS_Cache_Grocery_Potion_0001" Name2="（废弃）外服道具" />
+      <General ID="2082008" Alias="RS_Cache_Grocery_Potion_0002" Name2="（废弃）外服道具" />
+      <General ID="2082009" Alias="RS_Cache_Grocery_Potion_0003" Name2="（废弃）外服道具" />
+      <General ID="2082010" Alias="RS_Cache_Grocery_Food_0001" Name2="（废弃）外服道具" />
+      <General ID="2082011" Alias="RS_Cache_Grocery_Food_0002" Name2="（废弃）外服道具" />
+      <General ID="2082012" Alias="RS_Cache_Grocery_Food_0003" Name2="（废弃）外服道具" />
+      <General ID="2082013" Alias="RS_Cache_Grocery_Food_0004" Name2="（废弃）外服道具" />
+      <General ID="2082014" Alias="RS_Cache_Grocery_Food_0005" Name2="（废弃）外服道具" />
+      <General ID="2082015" Alias="RS_Cache_Grocery_Food_0006" Name2="（废弃）外服道具" />
+      <General ID="2082016" Alias="RS_Cache_Grocery_Alcohol_0001" Name2="（废弃）外服道具" />
+      <General ID="2082017" Alias="RS_Cache_Grocery_Alcohol_0002" Name2="（废弃）外服道具" />
+      <General ID="2082018" Alias="RS_Cache_Grocery_Box_0001" Name2="（废弃）外服道具" />
+      <General ID="2082019" Alias="RS_Cache_Grocery_Box_0002_vip" Name2="（废弃）外服道具" />
+      <General ID="2082020" Alias="RS_Cache_Grocery_Food_0007_candy" Name2="（废弃）外服道具" />
+      <General ID="2082021" Alias="RS_Cache_Grocery_Food_0008_candy" Name2="（废弃）外服道具" />
+      <General ID="2082022" Alias="RS_Cache_Grocery_Food_0009_candy" Name2="（废弃）外服道具" />
+      <General ID="2082023" Alias="RS_Cache_Grocery_Key_0001" Name2="（废弃）外服道具" />
+      <General ID="2082024" Alias="RS_Cache_Grocery_Box_0003_vip" Name2="（废弃）外服道具" />
+      <General ID="2082025" Alias="RS_Cache_Grocery_Box_0004" Name2="（废弃）外服道具" />
+      <General ID="2082026" Alias="RS_Cache_Grocery_Box_0005_vip" Name2="（废弃）外服道具" />
+      <General ID="2082027" Alias="RS_Cache_Grocery_Box_0006_vip" Name2="（废弃）外服道具" />
+      <General ID="2082028" Alias="RS_Cache_Grocery_Box_0007_vip" Name2="（废弃）外服道具" />
+      <General ID="2082029" Alias="RS_Cache_Grocery_Box_0008_vip" Name2="（废弃）外服道具" />
+      <General ID="2082030" Alias="RS_Cache_Grocery_Box_0009_vip" Name2="（废弃）外服道具" />
+      <General ID="2082031" Alias="RS_Cache_Grocery_Box_0010" Name2="（废弃）外服道具" />
+      <General ID="2082032" Alias="RS_Cache_Grocery_Box_0011" Name2="（废弃）外服道具" />
+      <General ID="2082033" Alias="RS_Cache_Grocery_Box_0012" Name2="（废弃）外服道具" />
+      <General ID="2082034" Alias="RS_Cache_Grocery_Food_0010" Name2="（废弃）外服道具" />
+      <General ID="2082035" Alias="RS_Cache_Grocery_RepairTool_0002" Name2="（废弃）外服道具" />
+      <General ID="2082036" Alias="RS_Cache_Grocery_expandInventory_0001" Name2="（废弃）外服道具" />
+      <General ID="2082037" Alias="RS_Cache_Grocery_HealPotion_0001" Name2="（废弃）外服道具" />
+      <General ID="2090941" Alias="GB_Costume_Dress_Timelimit_Test02_1Min" Name2="服装时限测试" />
+      <General ID="2090942" Alias="GB_Costume_Dress_Timelimit_Test02_5Min" Name2="服装时限测试" />
+      <General ID="2093284" Alias="Test_Cache_Costume_Dress_0003_None" Name2="测试用服装" />
+      <General ID="2093392" Alias="Test_Cache_Costume_Dress_0004_None" Name2="测试用服装" />
+      <General ID="2614113" Alias="Test_General_Weapon_Sword_0001_101" Name2="（废弃）测试用剑" />
+      <General ID="2615688" Alias="GB_General_Weapon_RynSword_0348_BM" Name2="（废弃）幻影灵剑" />
+      <General ID="2615694" Alias="GB_General_Weapon_Gauntlet_0349_BM" Name2="（废弃）幻影拳甲" />
+      <General ID="2616271" Alias="GB_General_Weapon_Sword_0370" Name2="（废弃）幻影剑" />
+      <General ID="2616272" Alias="GB_General_Weapon_Gauntlet_0370" Name2="（废弃）幻影拳甲" />
+      <General ID="2616273" Alias="GB_General_Weapon_Staff_0370" Name2="（废弃）幻影法杖" />
+      <General ID="2616274" Alias="GB_General_Weapon_Aura-bangle_0370" Name2="（废弃）幻影彩绫" />
+      <General ID="2616275" Alias="GB_General_Weapon_Axe_0370" Name2="（废弃）幻影短刀" />
+      <General ID="2616276" Alias="GB_General_Weapon_Dagger_0370" Name2="（废弃）幻影斧头" />
+      <General ID="2616277" Alias="GB_General_Weapon_RynSword_0370" Name2="（废弃）幻影灵剑" />
+      <General ID="2616278" Alias="GB_General_Weapon_WarDagger_0370" Name2="（废弃）幻影佩刀" />
+      <General ID="2616279" Alias="GB_General_Weapon_SoulGauntlet_0370" Name2="（废弃）幻影玄甲" />
+      <General ID="2616280" Alias="GB_General_Weapon_Gun_0370" Name2="（废弃）幻影枪" />
+      <General ID="2616281" Alias="GB_General_Weapon_GreatSword_0370" Name2="（废弃）幻影巨剑" />
+      <General ID="2810001" Alias="RS_Grocery_Box_0001_money" Name2="（废弃）礼物箱" />
+      <General ID="2810002" Alias="RS_Grocery_doll_0001" Name2="（废弃）红色木偶" />
+      <General ID="2810003" Alias="RS_Grocery_doll_0002" Name2="（废弃）蓝色木偶" />
+      <General ID="2810004" Alias="RS_Grocery_doll_0003" Name2="（废弃）绿色木偶" />
+      <General ID="2810005" Alias="RS_Grocery_CostumeChange_0001_duel" Name2="（废弃）服装交换券" />
+      <General ID="2810006" Alias="RS_Grocery_money_1Gold" Name2="1金" />
+      <General ID="2820082" Alias="GB_General_Grocery_Growth_1002" Name2="（废弃）水月平原合金" />
+      <General ID="2820211" Alias="GB_Event_Grocery_Coin_0020" Name2="（废弃）红心使用硬币" />
+      <General ID="2841431" Alias="Test_General_Accessory_ring_0001_101" Name2="（废弃）测试用戒指" />
+
+	  <General ID="2843102" Alias="GB_General_Accessory_Bracelet3_Axe_0098_101" Name2="（废弃）力士的幻天手镯1段" />
+	  <General ID="2843102" Alias="GB_General_Accessory_Bracelet3_Axe_0099_101" Name2="（废弃）力士的幻天手镯2段" />
+	  <General ID="2843102" Alias="GB_General_Accessory_Bracelet3_Axe_0100_101" Name2="（废弃）力士的幻天手镯3段" />
+	  <General ID="2843102" Alias="GB_General_Accessory_Bracelet3_Axe_0101_101" Name2="（废弃）力士的幻天手镯4段" />
+
+</Game>
+

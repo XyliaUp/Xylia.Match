@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="duel-bot-training-room" version="0.10" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="zone" name="" ref="Zone" link="id" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="required-level" name="" type="Byte" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
+		<record alias="required-preceding-quest-check" name="" type="seq" >
+			<case alias="and" name="" default="y" />
+			<case alias="or" name="" />
+		</record>
+		<record alias="match-select-delay-duration" name="" type="msec" />
+		<record alias="spawn-kismet-delay-duration" name="" type="msec" />
+		<record alias="finish-delay-duration" name="" type="msec" />
+		<record alias="blade-master-spawn-kismet-name" name="" type="Index" />
+		<record alias="kung-fu-fighter-spawn-kismet-name" name="" type="Index" />
+		<record alias="force-master-spawn-kismet-name" name="" type="Index" />
+		<record alias="destroyer-spawn-kismet-name" name="" type="Index" />
+		<record alias="summoner-spawn-kismet-name" name="" type="Index" />
+		<record alias="assassin-spawn-kismet-name" name="" type="Index" />
+		<record alias="sword-master-spawn-kismet-name" name="" type="Index" />
+		<record alias="warlock-spawn-kismet-name" name="" type="Index" />
+		<record alias="soul-fighter-spawn-kismet-name" name="" type="Index" />
+		<record alias="shooter-spawn-kismet-name" name="" type="Index" />
+		<record alias="warrior-spawn-kismet-name" name="" type="Index" />
+		<record alias="archer-spawn-kismet-name" name="" type="Index" />
+		<record alias="spear-master-spawn-kismet-name" name="" type="Index" />
+		<record alias="thunderer-spawn-kismet-name" name="" type="Index" />
+		<record alias="timeout-duration-second" name="" type="Short" />
+		<record alias="achievement-time-limit-second" name="" type="Short" repeat="2" />
+		<record alias="ui-text-grade" name="" type="Byte" />
+		<record alias="dungeon-name2" name="" type="TextAlias" />
+		<record alias="dungeon-desc" name="" type="TextAlias" />
+		<record alias="arena-minimap" name="" type="Index" />
+		<record alias="reward-summary" name="" ref="AttractionRewardSummary" />
+		<record alias="recommand-level-min" name="" type="Byte" />
+		<record alias="recommand-level-max" name="" type="Byte" />
+		<record alias="recommand-mastery-level-min" name="" type="Byte" />
+		<record alias="recommand-mastery-level-max" name="" type="Byte" />
+		<record alias="recommend-attack-power" name="" type="Short" />
+		<record alias="standard-gear-weapon" name="" ref="Item" />
+		<record alias="display-quests" name="" type="Quest" repeat="12" />
+		<record alias="tactic" name="" type="TextAlias" />
+		<record alias="recommend-alias" name="" ref="ContentsJournalRecommendItem" />
+	</list>
+</table>

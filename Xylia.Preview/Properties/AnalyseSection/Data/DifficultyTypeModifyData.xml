@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<!-- 副本难度变更设定 -->
+	<list module="AIData" type="difficulty-type-modify" version="0.2" rule="cpl | extra" index="y">
+		<record alias="alias" type="Index" name="" />
+		<record alias="berserk-sequence-invoke-time" type="Msec" name="" repeat="3" />
+         <!-- ========================================================= -->
+		<record alias="difficulty-type-damage-percent" type="Byte" name="" repeat="3" client="n" />
+		<record alias="mysterious-store-spawn-difficulty-type" ref="ZoneNpcSpawn" name="" repeat="3" client="n" />
+		<record alias="mysterious-store-spawn-prob-difficulty-type" type="Byte" name="" repeat="3" client="n" />
+	</list>
+</table>

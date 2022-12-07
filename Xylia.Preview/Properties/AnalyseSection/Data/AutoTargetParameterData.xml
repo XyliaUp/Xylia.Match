@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="20" alias="AutoTargetParameter" module="CombatData" type="autotargetparameter" version="0.10" rule="cpl" >
+		<record alias="stance-type" name="" type="ID" extra="Byte1" seq="$stance" />
+		<record alias="sensitivity-level" name="" type="ID" extra="Byte2" >
+			<case alias="low" name="" />
+			<case alias="medium" name="" />
+			<case alias="high" name="" />
+                                </record>
+
+		<record alias="target-angle" name="" type="Float32" repeat="4" default="16" />
+		<record alias="target-beam-width" name="" type="Float32" repeat="4" default="1.4" />
+		<record alias="target-band-first" name="" type="Float32" repeat="4" default="5.0" />
+		<record alias="target-band-second" name="" type="Float32" repeat="4" default="15.0" />
+		<record alias="band-check-limit" name="" type="Short" repeat="4" default="3" max="3" />
+		<record alias="target-change-delay" name="" type="Float32" repeat="4" default="1.0" />
+		<record alias="threshold-min" name="" type="Float32" repeat="4" />
+		<record alias="threshold-max" name="" type="Float32" repeat="4" />
+		<record alias="empty-delay" name="" type="Float32" repeat="4" default="1.0" />
+		<record alias="target-gather-angle" name="" type="Float32" default="30" />
+		<record alias="stun-delay" name="" type="Float32" default="1.0" />
+		<record alias="kneel-delay" name="" type="Float32" default="1.0" />
+		<record alias="down-delay" name="" type="Float32" default="1.0" />
+		<record alias="mid-air-delay" name="" type="Float32" default="1.0" />
+		<record alias="swoon-delay" name="" type="Float32" default="1.0" />
+	</list>
+</table>

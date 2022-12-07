@@ -1,0 +1,561 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>falst</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <EnableDefaultCompileItems>true</EnableDefaultCompileItems>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\..\..\..\..\..\Publish\Update\Xylia.Preview\Debug\</OutputPath>
+    <LangVersion>9.0</LangVersion>
+    <Deterministic>False</Deterministic>
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineConstants>$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+	  <OutputPath>..\..\..\..\..\..\..\Publish\Update\Xylia.Preview\Release\</OutputPath>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <DocumentationFile>bin\Release\Xylia.Preview.xml</DocumentationFile>
+    <Deterministic>False</Deterministic>
+    <DefineConstants>$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Xylia.Preview.Program</StartupObject>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Properties\AnalyseSection\Data\ClosetGroup\**" />
+    <Compile Remove="Properties\AnalyseSection\Data\CombatData\**" />
+    <Compile Remove="Properties\AnalyseSection\Data\JobStyleData\**" />
+    <Compile Remove="Properties\AnalyseSection\Data\Stance\**" />
+    <EmbeddedResource Remove="Properties\AnalyseSection\Data\ClosetGroup\**" />
+    <EmbeddedResource Remove="Properties\AnalyseSection\Data\CombatData\**" />
+    <EmbeddedResource Remove="Properties\AnalyseSection\Data\JobStyleData\**" />
+    <EmbeddedResource Remove="Properties\AnalyseSection\Data\Stance\**" />
+    <None Remove="Properties\AnalyseSection\Data\ClosetGroup\**" />
+    <None Remove="Properties\AnalyseSection\Data\CombatData\**" />
+    <None Remove="Properties\AnalyseSection\Data\JobStyleData\**" />
+    <None Remove="Properties\AnalyseSection\Data\Stance\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CUE4Parse">
+      <HintPath>..\..\..\..\UE4\FModel_xylia\CUE4Parse\CUE4Parse\bin\Release\net5.0\CUE4Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="CUE4Parse-Conversion">
+      <HintPath>..\..\..\..\UE4\FModel_xylia\CUE4Parse\CUE4Parse-Conversion\bin\Release\net5.0\CUE4Parse-Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\..\..\..\Publish\Bin\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HZH_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\net_winform_custom_control\HZH_Controls\HZH_Controls\bin\Release\HZH_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\..\..\..\..\..\Publish\Release\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\UE4\FModel_xylia\FModel\bin\Release\net5.0-windows\win-x64\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Publish\Bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Publish\Bin\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog">
+      <HintPath>..\..\..\..\UE4\FModel_xylia\FModel\bin\Release\net5.0-windows\win-x64\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Xylia">
+      <HintPath>..\..\..\..\..\..\..\Publish\Bin\Xylia.dll</HintPath>
+    </Reference>
+    <Reference Include="Xylia.bns">
+      <HintPath>..\..\..\..\..\..\..\Publish\Debug\Xylia.bns.dll</HintPath>
+    </Reference>
+    <Reference Include="Xylia.Drawing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Publish\Bin\Xylia.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Xylia.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\core\Xylia.Win32\bin\Debug\Xylia.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Xylia.Resources">
+      <HintPath>..\..\..\..\..\..\..\Publish\Bin\Xylia.Resources.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-decrement-arrow-disabled.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-decrement-arrow-hover.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-decrement-arrow.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-increment-arrow-disabled.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-increment-arrow-hover.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-increment-arrow.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-thumb-bg.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-thumb-bottom.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-thumb-top.png" />
+    <Content Include="Project\Controls\ScrollBar\Vertical\vertical-track.png" />
+    <Content Include="Project\Core\ItemGrowth\Resources\GameUI_ItemGrowth2_Transform.png" />
+    <Content Include="Properties\AnalyseSection\Data\AccountLevelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AccountPostCharge.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AcquireRouteData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AcquireRouteListData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ArenaMatchingRuleData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ArenaPortalData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AttendanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AttractionGroup.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AttractionRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AttractionRewardSummaryData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AttractionShortcutData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AutoCombatSkillCastConditionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\AutoCombatSkillData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BadgeAppearanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BadgeSynthesisCostData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BadgeSynthesisRecipeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BattleFieldGradeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BattleMessageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BoardGachaData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BoardGachaReward.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BoastData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BoastEventData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BossChallengeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BossChallengeRoundData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\BossNpcData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CampfireData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CinematicData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ClosetGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CollectingData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ContentsGuideData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ContentsJournal2NotiData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ContentsJournalData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ContentsJournalRecommendItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ContributionRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Craft2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CraftCaseRecipeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CraftData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CraftGroupRecipeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CraftIntroductionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CraftRecipeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CraftRecipeStepData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CreatureAppearanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CustomDressDesignCostData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CustomDressDesignTypeInfoData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CustomizingDesignerPresetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CustomizingDetailIconData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\CustomizingPreviewData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DifficultyTypeModifyData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelBotChallengeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelBotChallengeStrategicToolData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelBotData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelBotTrainingRoomData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelBotTrainingRoomRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelBotTrainingRoomVersionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelGradeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelMatchingRuleData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\DuelMemberDisplaySkillData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\EquipGemPieceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ExpandInventoryData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ExpandRandomStoreData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ExpandSkillPageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FactionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FactionLevelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FeedBackBossNpc.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FeedBack.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FeedBackSkillScore.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FieldItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FieldItemDropData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\FilterData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FilterData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FishData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FishGradeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FishingFieldData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FishingFieldGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FishingPasteData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\FriendNotiLocationData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GameMessageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GlyphData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GlyphPageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GlyphRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GoodsIconData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GradeBenefitsData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildActionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildBandItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildCraftRecipeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildCustomizeUiMatchParamData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildDiscountData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildLevelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildMemberGradeAuthorityData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildUniformComponentData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildUniformParamTypeCategoryData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildUniformPresetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildUniformRecipeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildUniformRegistrationQuotaData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\GuildUniformSliderData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\InterDungeonListData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemCombatData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemEventData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemExchangeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemGearScoreData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemGraphData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemGraphSeedGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemImproveData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemImproveOptionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemImproveOptionListData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemPouchMesh2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemPouchMeshData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemSkillData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemSpiritData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemTransformUpgradeItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemUsableGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemUsableRelationData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JobData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JobQuestData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JobStyleStandIdleData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JumpingCharacter2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JumpingCharacterData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JumpingQuest2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JumpingQuestData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JumpingTeleport2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\JumpingTeleportData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\KeyCapData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\KeyCommandData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\LevelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\LinkMoveAnimData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\LoadingImageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\LobbyPcData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MapAreaData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MapGroup1Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MapGroup2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\MapUnitData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MasteryLevelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MasteryStatPointData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MasteryStatPointPickData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MentoringData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MoveAnimData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NewbieCareData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PartyMatchData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PcAppearanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PcData_tmp.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PcRaceSexJobData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PcSkill3Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PcVoiceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PcVoiceSetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PetFoodRecoveryData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\PublicRaidEvnetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\QuestBonusRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\QuestBonusRewardSettingData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\QuestRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\QuestSealedDungeonRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RaceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RandomboxPreviewData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RandomStoreData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RandomStoreDrawRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RandomStoreItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RandomStoreItemDisplayData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RandomStoreItemGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RankingRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\RankingRewardGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SealedDungeonGimmickData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SealedDungeonLevelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SealedDungeonModifyData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SimpleFieldData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SocialData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SoulMaskSetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\SoulMaskSetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SoulNpcSkillData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SpecialSkillGaugeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\StaticChatChannelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Store2.xml" />
+    <Content Include="Properties\AnalyseSection\Data\StoreByItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\StoreData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\SurveyData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\TalkSocialData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\TextData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\TreasureBoardRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\UiCommandData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\UnlocatedStoreData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\UserCommandData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\VirtualItemData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\WarFieldData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\WeaponAppearanceChangeCostData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\WeeklyTimeTableData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ItemData\ItemData_2020.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcBrainParamtersData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcCombatMoveAnimData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcConvoyData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcData_simple.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcIndicatorMoveAnimData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcMoveAnimData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcResetStageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcResponseData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcSealedDungeonReward.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcTalkMessageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\Skill3Data_Simple.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillCombo2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillDashAttribute3Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillInheritanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillMessageData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillModifyInfoData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillModifyInfoGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillResultControll3Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillSkinData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillSystematizationData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillSystematizationGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTargetFilter3Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTooltipAttributeData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTooltipData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTrainComboActionData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTrainingRoomData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTrainingRoomGroupData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTrainingRoomSubjectData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTrainSimpleContextFlowData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Skill3\SkillTraitData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedAppearanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedAppearanceData_20.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedBeautyShopData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedData_20.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedDesignerPresetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\Summoned\SummonedPresetData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\CaveData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\ClassicFieldZoneData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\FactionBattleFieldZoneData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2020\Cave2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2020\ChallengePartyData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2020\DungeonData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2020\FactionBattleFieldZoneData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2020\PartyChatChannelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2020\ZoneData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2021\Cave2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2021\DungeonData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2021\PartyChatChannelData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2021\ZoneData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\ZoneData0\2021\ZoneEnv2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\BadgeAppearanceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\BoastEventData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\ContentsJournalData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\InterDungeonListData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\ItemBrandData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\ItemBuyPriceData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\ItemGrowthData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\MapUnitData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\QuestRewardData.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\Store2Data.xml" />
+    <Content Include="Properties\AnalyseSection\Data2020\UnlocatedStoreData.xml" />
+    <Content Include="Properties\AnalyseSection\Public.xml" />
+    <Content Include="Resources\General\Img_UICommand_Icon_Lock.png" />
+    <Content Include="Resources\General\Img_UICommand_Icon_Unlock.png" />
+    <Content Include="Resources\General\ItemIcon_Bg_Quest.png" />
+    <Content Include="Resources\General\legend_cn.png" />
+    <Content Include="Resources\General\ue3\ItemError.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_1.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_2.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_3.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_4.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_5.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_6.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_7.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_8.png" />
+    <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_9.png" />
+    <Content Include="Resources\General\ue3\Sewing.png" />
+    <Content Include="Resources\General\ue3\Sewing2.png" />
+    <Content Include="Resources\General\ue3\SlotItem_marketBusiness.png" />
+    <Content Include="Resources\General\ue3\SlotItem_New.png" />
+    <Content Include="Resources\General\ue3\SlotItem_privateSale.png" />
+    <Content Include="Resources\General\ue3\unuseable_AccountContents.png" />
+    <Content Include="Resources\General\ue3\unuseable_Achievement.png" />
+    <Content Include="Resources\General\ue3\unuseable_Area.png" />
+    <Content Include="Resources\General\ue3\unuseable_Awaken.png" />
+    <Content Include="Resources\General\ue3\unuseable_DuelRating.png" />
+    <Content Include="Resources\General\ue3\unuseable_expired.png" />
+    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughGem.png" />
+    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughgrowth.png" />
+    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughItem.png" />
+    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughLevel.png" />
+    <Content Include="Resources\General\ue3\unuseable_KeyLock.png" />
+    <Content Include="Resources\General\ue3\unuseable_lock.png" />
+    <Content Include="Resources\General\ue3\unuseable_lock_2.png" />
+    <Content Include="Resources\General\ue3\unuseable_olditem_1.png" />
+    <Content Include="Resources\General\ue3\unuseable_olditem_2.png" />
+    <Content Include="Resources\General\ue3\unuseable_olditem_3.png" />
+    <Content Include="Resources\General\ue3\unuseable_package.png" />
+    <Content Include="Resources\General\ue3\unuseable_PcRoomOnly.png" />
+    <Content Include="Resources\General\ue3\unuseable_seal.png" />
+    <Content Include="Resources\General\ue3\unuseable_X1.png" />
+    <Content Include="Resources\General\ue3\unuseable_X2.png" />
+    <Content Include="Resources\General\ue3\useable_PcRoomOnly.png" />
+    <Content Include="Resources\General\ue3\Weapon_Lock_01.png" />
+    <Content Include="Resources\General\ue3\Weapon_Lock_02.png" />
+    <Content Include="Resources\General\ue3\Weapon_Lock_03.png" />
+    <Content Include="Resources\General\ue3\Weapon_Lock_04.png" />
+    <Content Include="Resources\General\ue3\Weapon_Lock_05.png" />
+    <Content Include="Resources\General\ue3\Weapon_Lock_06.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_1_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_2_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_3_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_4_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_5_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_6_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_7_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_8_ue4.png" />
+    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_9_ue4.png" />
+    <Content Include="Resources\General\ue4\unuseable_AccountContents_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_Achievement_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_Area_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_Awaken_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_DuelRating_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_expired_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_growth_NotEnoughItem_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_growth_NotEnoughLevel_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_KeyLock_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_lock_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_lock_2_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_olditem_1_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_olditem_2_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_olditem_3_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_package_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_PcRoomOnly_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_seal_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_X1_128.png" />
+    <Content Include="Resources\General\ue4\unuseable_X2_128.png" />
+    <Content Include="Resources\General\ue4\useable_PcRoomOnly_128.png" />
+    <Content Include="Resources\General\ue4\Weapon_Lock_01_128.png" />
+    <Content Include="Resources\General\ue4\Weapon_Lock_02_128.png" />
+    <Content Include="Resources\General\ue4\Weapon_Lock_03_128.png" />
+    <Content Include="Resources\General\ue4\Weapon_Lock_04_128.png" />
+    <Content Include="Resources\General\ue4\Weapon_Lock_05_128.png" />
+    <Content Include="Resources\General\ue4\Weapon_Lock_06_128.png" />
+    <Content Include="Resources\Images\Circle.png" />
+    <Content Include="Resources\Images\Circle2.png" />
+    <Content Include="Resources\Images\FrameImg1.png" />
+    <Content Include="Resources\Images\icPager_Next.png" />
+    <Content Include="Resources\Images\icPager_Prev.png" />
+    <Content Include="Resources\Images\FeedItem.png" />
+    <Content Include="Resources\Text\helper.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CSCore" Version="1.2.1.2" />
+    <PackageReference Include="DotNetZip" Version="1.16.0" />
+    <PackageReference Include="K4os.Compression.LZ4.Streams" Version="1.2.16" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.3" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+    <PackageReference Include="Unity.Abstractions" Version="5.11.7" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.3.261602">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Project\ItemForm.cs" />
+    <Compile Remove="Project\ItemForm.Designer.cs" />
+    <EmbeddedResource Remove="Project\ItemForm.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-decrement-arrow-disabled.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-decrement-arrow-hover.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-decrement-arrow.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-increment-arrow-disabled.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-increment-arrow-hover.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-increment-arrow.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-bg.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-bottom.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-top.png" />
+    <None Remove="Project\Controls\ScrollBar\Vertical\vertical-track.png" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Project\Core\Skill\SkillTrainCategoryPreview\SkillTrainCategoryPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Skill\SkillTraitPreview\SkillTraitPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Debug\DebugFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Skill\SkillTooltipPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Quest\Scene\QuestFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\PanelEx\TitleContentPanel.cs" />
+    <Compile Update="Project\Core\Quest\Preview\SubGroup\Reward\RewardCell\FixedItem.cs" />
+    <Compile Update="Project\Core\Skill\SkillPreview\SkillPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Properties\AnalyseSection\DataRes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataRes.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resource_BNSR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource_BNSR.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DataRes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

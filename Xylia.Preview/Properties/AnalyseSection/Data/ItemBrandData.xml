@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" rule="cpl" type="item-brand" version="0.3">
+		<record alias="id" name="" type="id" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="ui-item-transform" name="" ref="Item" />
+		<record alias="ui-item-blade-master" name="" ref="Item" />
+		<record alias="ui-item-kung-fu-fighter" name="" ref="Item" />
+		<record alias="ui-item-force-master" name="" ref="Item" />
+		<record alias="ui-item-shooter" name="" ref="Item" />
+		<record alias="ui-item-destroyer" name="" ref="Item" />
+		<record alias="ui-item-summoner" name="" ref="Item" />
+		<record alias="ui-item-assassin" name="" ref="Item" />
+		<record alias="ui-item-sword-master" name="" ref="Item" />
+		<record alias="ui-item-warlock" name="" ref="Item" />
+		<record alias="ui-item-soul-fighter" name="" ref="Item" />
+		<record alias="ui-item-warrior" name="" ref="Item" />
+		<record alias="ui-item-archer" name="" ref="Item" />
+		<record alias="ui-item-spear" name="" ref="Item" />
+		<record alias="ui-item-thunderer" name="" ref="Item" />
+		<record alias="ui-item-dual-sword" name="" ref="Item" />
+	</list>
+</table>

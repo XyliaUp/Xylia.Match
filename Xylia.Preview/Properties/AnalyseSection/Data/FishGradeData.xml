@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="fishgrade" version="0.3" rule="cpl" >
+		<record alias="id" name="" type="id" extra="Byte1" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="grade-symbol" name="" type="Index" />
+		<record alias="grade" name="" type="seq" >
+			<case alias="fish-grade-1" name="" />
+			<case alias="fish-grade-2" name="" />
+			<case alias="fish-grade-3" name="" />
+			<case alias="fish-grade-4" name="" />
+			<case alias="fish-grade-5" name="" />
+			<case alias="fish-grade-6" name="" />
+			<case alias="fish-grade-7" name="" />
+			<case alias="fish-grade-8" name="" />
+			<case alias="fish-grade-9" name="" />
+			<case alias="fish-grade-10" name="" />
+                                 </record>
+		<record alias="boundary-min" name="" type="Short" />
+		<record alias="rare" name="" type="Bool" />
+		<record alias="cannot-use" name="" type="Bool" />
+	</list>
+</table>

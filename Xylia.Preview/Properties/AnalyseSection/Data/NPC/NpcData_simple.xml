@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+
+	<list module="AIData" type="npc" version="2.12" rule="simple">
+		<record alias="alias" type="Index" name="" />
+		<record alias="name" type="Index" name="" server="n" output="n" />
+		<record alias="title" type="Index" name="" server="n" output="n" />		
+		<record alias="name2" type="Text" name="" server="n" />
+		<record alias="title2" type="Text" name="" server="n" />
+
+
+		<record start="216" alias="store2-1" ref="Store2" />
+		<record alias="store2-2" ref="Store2" name="" />
+		<record alias="store2-3" ref="Store2" name="" />
+		<record alias="store2-4" ref="Store2" name="" />
+		<record alias="store2-5" ref="Store2" name="" />
+		<record alias="store2-6" ref="Store2" name="" />
+
+		<record start="2100" alias="max-hp" type="Long" name="" />
+	</list>
+</table>

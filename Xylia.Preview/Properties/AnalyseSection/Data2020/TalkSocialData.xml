@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list alias="TalkSocial" module="LocalizationData" type="talksocial" version="0.1" rule="cpl | extra" check-version="y" >
+		<record alias="alias" type="Index" />
+		<record alias="name" type="TextAlias"/>
+		<record alias="use-at-dead" type="Bool" />
+		<record alias="use-at-exhaustion" type="Bool" />
+		<record alias="use-at-restoration" type="Bool" />
+		<record alias="use-at-not-dead" type="Bool" default="y" />
+		<record alias="se-in-chat-input" type="Bool" default="y" />
+		<record alias="use-at-equip-costume" type="Bool" />
+		<record alias="use-at-achievement-title" type="Bool" />
+		<record alias="use-at-equip-setitem" type="Bool" />
+		<record alias="use-at-equip-paircostume" type="Bool" />
+		<record alias="msg" ref="GameMessage" />
+		<record alias="msg-target" ref="GameMessage" />
+		<record alias="can-move" type="Bool" default="y" />
+		<record alias="can-sit" type="Bool" default="y" />	
+		<record alias="duration" type="Msec" default="1000" />
+		<record alias="common-show" type="Index" />
+		<record alias="jin-female-show" type="Index" />
+		<record alias="jin-male-show" type="Index" />
+		<record alias="lyn-female-show" type="Index" />
+		<record alias="lyn-male-show" type="Index" />
+		<record alias="gon-female-show" type="Index" />
+		<record alias="gon-male-show" type="Index" />
+		<record alias="kun-show" type="Index" />
+		<record alias="social-mode-group-index" type="Byte" />
+		<record alias="social-mode-slot-index" type="Byte" />
+		<record alias="icon" type="Icon" />
+		<record alias="summoned-show-1" type="Index" />
+		<record alias="summoned-show-2" type="Index" />
+		<record alias="summoned-show-3" type="Index" />
+	</list>
+</table>

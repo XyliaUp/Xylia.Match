@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="static-chat-channel" version="0.1" rule="cpl | extra" >
+		<record alias="alias" type="Index" />
+		<record alias="name2" type="TextAlias" />
+		<record alias="partychanneltype" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="1" name="" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+			<case alias="6" name="" />
+		</record>
+	</list>
+</table>

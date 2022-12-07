@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="RandomStoreDrawReward" version="0.10">
+		<record alias="id" extra="Short1" type="id" />
+		<record alias="random-store-number" type="id" extra="Byte3" >
+			<case alias="invalid-number" name="" />
+			<case alias="random-store-1" name="" />
+			<case alias="random-store-2" name="" />
+		</record>
+		
+		<record start="0" alias="required-draw-count" name="需要开启次数" type="Int32" />
+		<record alias="alias" name="" type="Index" />
+		
+		<record alias="fixed-reward" name="固定奖励" ref="Item" repeat="4" />
+		<record alias="fixed-reward-count" name="" type="Byte" repeat="4" />
+		<record alias="optional-reward" name="可选奖励" ref="Item" repeat="8" />
+		<record alias="optional-reward-count" name="" type="Byte" repeat="8" />
+	</list>
+</table>

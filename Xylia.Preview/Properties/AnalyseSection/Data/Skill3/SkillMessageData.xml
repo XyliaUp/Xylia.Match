@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skill-message" version="0.4" rule="cpl" >
+		<record alias="skill3-id" type="ID" name="" />
+		<record alias="variation-id" type="Byte" name="" start="0" />
+
+		<record alias="alias" type="Index" name="" />
+		<record alias="message-1" ref="GameMessage" />
+		<record alias="message-2" ref="GameMessage" />
+		<record alias="message-3" ref="GameMessage" />
+		<record alias="message-4" ref="GameMessage" />
+		<record alias="probability-1" type="Short" name="" />
+		<record alias="probability-2" type="Short" name="" />
+		<record alias="probability-3" type="Short" name="" />
+		<record alias="probability-4" type="Short" name="" />
+	</list>
+</table>

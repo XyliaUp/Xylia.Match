@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skill-combo-2" version="0.4" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="group" name="" type="seq" >
+			<case alias="none" name="" />
+			<case alias="target-down" name="" />
+			<case alias="target-stun" name="" />
+			<case alias="target-kneel" name="" />
+			<case alias="target-midair-1" name="" />
+			<case alias="target-midair-2" name="" />
+			<case alias="target-back" name="" />
+			<case alias="target-hit-critical" name="" />
+			<case alias="player-down" name="" />
+			<case alias="player-sprint-jump" name="" />
+			<case alias="player-gliding" name="" />
+			<case alias="player-dodge" name="" />
+			<case alias="player-parry" name="" />
+			<case alias="r-combo" name="" />
+			<case alias="success-skill-counter" name="" />
+			<case alias="success-skill-triplekick" name="" />
+			<case alias="success-skill-slidestep" name="" />
+			<case alias="success-skill-right" name="" />
+			<case alias="success-skill-takedown" name="" />
+                                </record>
+		<record alias="sort-no" name="" type="Short" />
+		<record alias="name2" name="" type="TextAlias" />
+		<record alias="action-desc" name="" type="TextAlias" />
+		<record alias="combo-desc" name="" type="TextAlias" />
+		<record alias="video" name="" type="Index" />
+		<record alias="skill" name="" type="Int32" repeat="5" />
+		<record alias="skill-slot-type" name="" type="seq" repeat="5" >
+			<case alias="none" name="" default="y" />
+			<case alias="skill-start" name="" />
+			<case alias="combo" name="" />
+                                </record>
+	</list>
+</table>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="AIData" type="appearance" version="0.6" rule="cpl" >
+		<record alias="alias" type="Index" name="" />
+		<record alias="race" type="Seq" seq="$race" name="" />
+		<record alias="sex" type="Seq" seq="$sex" name="" />
+		<record alias="face-anim-set-name" name="" type="Index" />
+		<record alias="anim-tree-name" name="" type="Index" />
+		<record alias="face-mesh-name" name="" type="Index" />
+		<record alias="body-mesh-name" name="" type="Index" />
+		<record alias="voice-set-name" name="" type="Index" />
+		<record alias="npc-dialogue-set" name="" type="Index" />
+		<record alias="attach-effect" name="" type="Index" />
+		<record alias="body-material-name" name="" type="Index" />
+		<record alias="face-material-name" name="" type="Index" />
+		<record alias="npcattach1" name="" type="Index" />
+		<record alias="npcattach2" name="" type="Index" />
+		<record alias="npcattach-material1" name="" type="Index" />
+		<record alias="npcattach-material2" name="" type="Index" />
+		<record alias="enable-physbrst" name="" type="Bool" default="y" />
+		<record alias="unique-soundcue" name="" type="Index" />
+		<record alias="unique-soundculldist" name="" type="Float32" />
+		<record alias="unique-soundfadetime" name="" type="Float32" />
+		<record alias="sound-attenuation-scale" name="" type="Float32" default="1.0"/>
+		<record alias="sound-volume-scale" name="" type="Float32" default="1.0" />
+		<record alias="param8" name="" type="Int8" default="0" repeat="92" />
+		<record alias="decal-radius" name="" type="Float32" default="1.0" />
+                                <!-- ======================================== -->
+		<record alias="pc-customize" name="2022年新增" type="Bool" />
+	</list>
+</table>

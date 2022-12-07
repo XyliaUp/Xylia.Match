@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<!-- 每日挑战阶段奖励 -->  
+	<list module="ItemData" version="1.01" type="ChallengeListReward" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="reward-item" name="奖励" ref="Item" repeat="6" />
+		<record alias="reward-item-count" name="奖励数量" out-cond="Exist: reward-item-*" type="Short" repeat="6" />
+		<record alias="reward-money" name="基础金币" type="Money" />
+		<record alias="reward-account-exp" name="侠义团经验" type="Int32" />
+	</list>
+</table>

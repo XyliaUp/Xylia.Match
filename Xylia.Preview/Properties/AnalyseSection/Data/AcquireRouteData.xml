@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="acquire-route" version="0.10" rule="cpl" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="category" name="" type="Byte" >
+			<case alias="None" name="" />
+			<case alias="NormalQuest" name="" />
+			<case alias="FactionQuest" name="" />
+			<case alias="EpicQuest" name="" />
+			<case alias="JobQuest" name="" />
+			<case alias="NormalDailyQuest" name="" />
+			<case alias="NormalWeeklyQuest" name="" />
+			<case alias="FactionDailyQuest" name="" />
+			<case alias="FactionWeeklyQuest" name="" />
+			<case alias="AttractionQuest" name="" />
+			<case alias="Production" name="" />
+			<case alias="GuildCraft" name="" />
+			<case alias="PieceTransform" name="" />
+			<case alias="MysteriousStore" name="" />
+			<case alias="DuelBotChallenge" name="" />
+			<case alias="SpecialTransform" name="" />
+			<case alias="WeaponGemTransform" name="" />
+			<case alias="MaterialTransform" name="" />
+			<case alias="CostumeTransform" name="" />
+			<case alias="PetLegendTransform" name="" />
+			<case alias="ChallengeToday" name="" />
+			<case alias="FieldStore" name="" />
+			<case alias="AttractionStore" name="" />
+			<case alias="DungeonStore" name="" />
+			<case alias="Store" name="" />
+			<case alias="RefinerEnv" name="" />
+			<case alias="FieldEnv" name="" />
+			<case alias="RankingReward" name="" />
+			<case alias="FieldNpc" name="" />
+			<case alias="DungeonNpc" name="" />
+			<case alias="RaidNpc" name="" />
+			<case alias="LegendaryBox" name="" />
+			<case alias="Deduction_Attraction" name="" />
+			<case alias="Deduction_Dungeon" name="" />
+			<case alias="Deduction_Field" name="" />
+			<case alias="Deduction_Worldmap" name="" />
+		</record>
+		<record alias="route-text-1" name="" type="TextAlias" />
+		<record alias="route-text-2" name="" type="TextAlias" />
+		<record alias="route-text-3" name="" type="TextAlias" />
+		<record alias="route-text-4" name="" type="TextAlias" />
+		<record alias="route-text-5" name="" type="TextAlias" />	
+		<record alias="route-ref-1" name="" type="Int32" use-group="y" />
+		<record alias="route-ref-2" name="" type="Int32" use-group="y" />
+		<record alias="route-ref-3" name="" type="Int32" use-group="y" />
+		<record alias="route-ref-4" name="" type="Int32" use-group="y" />
+		<record alias="route-ref-5" name="" type="Int32" use-group="y" />
+	</list>
+</table>

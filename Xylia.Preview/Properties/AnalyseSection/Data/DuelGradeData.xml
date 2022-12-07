@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="duel-grade" version="0.3" rule="cpl" >
+		<record alias="grade" name="" type="id" extra="Byte1" />
+		<record alias="score" name="" type="Int32" showzero="y" />
+		<record alias="duel-point-bonus-percent" name="" type="Short" showzero="y" />
+		<record alias="name2" name="" type="TextAlias" />
+		<record alias="icon" name="" type="Icon" />
+		<record alias="medium-icon" name="" type="Icon" />
+		<record alias="small-icon" name="" type="Icon" />
+		<record alias="extrasmall-icon" name="" type="Icon" />
+		<record alias="grade-level-up-message" name="" ref="GameMessage" />
+		<record alias="grade-level-down-message" name="" ref="GameMessage" />
+	</list>
+</table>

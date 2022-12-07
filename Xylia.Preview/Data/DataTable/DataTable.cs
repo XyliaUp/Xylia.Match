@@ -1,0 +1,491 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+using Xylia.bns.Modules.DataFormat.Analyse;
+using Xylia.bns.Modules.DataFormat.Analyse.DeSerialize;
+using Xylia.bns.Modules.DataFormat.Analyse.Static;
+using Xylia.bns.Modules.DataFormat.Analyse.Static.Output;
+using Xylia.bns.Modules.DataFormat.Analyse.Value.Derive;
+using Xylia.bns.Modules.DataFormat.BinData.Entity.BDAT;
+using Xylia.Extension;
+using Xylia.Preview.Common.Interface.RecordAttribute;
+using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Properties.AnalyseSection;
+
+
+namespace Xylia.Preview.Data
+{
+	/// <summary>
+	/// 数据表
+	/// </summary>
+	public class DataTable<T> : IEnumerable<T>, IEnumerable where T : IRecord, new()
+	{
+		#region 字段
+		/// <summary>
+		/// 公共读取属性
+		/// </summary>
+		public virtual bool PublicSet { get; set; } = true;
+
+		/// <summary>
+		/// 是否显示调试信息
+		/// </summary>
+		internal virtual bool ShowDebugInfo => true;
+
+
+
+
+		public string DefaultPath;
+
+		public string ResFilePath
+		{
+			get
+			{
+				//获取相对路径
+				var RelativeFilePath = DefaultPath is null ? typeof(T).Name : DefaultPath?.Trim();
+
+				string IPath = null;
+				bool Success = false;
+
+				//逐次查询
+				if (!Success) Success = VaildPath(RelativeFilePath, out IPath);
+				if (!Success) Success = VaildPath(RelativeFilePath + ".xml", out IPath);
+				if (!Success) Success = VaildPath(RelativeFilePath + "Data.xml", out IPath);
+
+				//if (!Success) Console.WriteLine("配置文件不存在: " + RelativeFilePath);
+				return IPath;
+			}
+		}
+
+		/// <summary>
+		/// 路径验证
+		/// </summary>
+		/// <returns></returns>
+		public bool VaildPath(string Path, out string PathCopy)
+		{
+			PathCopy = ResFilesSet.WorkingDirectory + @"\" + Path;
+
+			//判断是否存在测试模式文件
+			if (true)
+			{
+				string TempPath = System.IO.Path.GetDirectoryName(PathCopy) + @"\" +
+					   System.IO.Path.GetFileNameWithoutExtension(PathCopy) + "_test" +
+					   System.IO.Path.GetExtension(PathCopy);
+
+				if (File.Exists(TempPath))
+				{
+					Console.WriteLine("目前读取的是测试用文件");
+
+					PathCopy = TempPath;
+					return true;
+				}
+			}
+
+			return File.Exists(PathCopy);
+		}
+		#endregion
+
+
+		#region 数据处理
+		/// <summary>
+		/// 正在加载状态中
+		/// </summary>
+		public bool InLoading = false;
+
+		/// <summary>
+		/// 判断是否有数据
+		/// </summary>
+		public virtual bool HasData => !InLoading && this.data != null && this.data.Length != 0;
+
+
+		private Lazy<T>[] data;
+
+		protected Lazy<T>[] Data
+		{
+			set => this.data = value;
+			get
+			{
+				if (!this.HasData) this.Load();
+
+				return this.data;
+			}
+		}
+
+
+		protected readonly Hashtable ht_alias = new(StringComparer.Create(CultureInfo.InvariantCulture, true));
+		protected readonly Hashtable ht_id = new();
+
+		/// <summary>
+		/// 错误配置路径
+		/// </summary>
+
+		private readonly List<string> ErrorConfigPath = new();
+		#endregion
+
+		#region 加载方法
+		protected virtual bool LoadFromGame => true;
+
+		/// <summary>
+		/// 配置内容
+		/// </summary>
+		protected virtual string ConfigContent => null;
+
+		BDAT_LIST ListData;
+
+		DeSerializer DeSerializer;
+
+		TableInfo TableInfo;
+
+
+
+		/// <summary>
+		/// 尝试载入数据
+		/// 用于需要事先载入数据的场景
+		/// </summary>
+		public void TryLoad() => this.Load();
+
+		/// <summary>
+		/// 加载资源
+		/// </summary>
+		/// <param name="Path"></param>
+		/// <param name="Reload">指示在存在数据时，是否可以重新加载</param>
+		protected void Load(bool Reload = false, string Path = null)
+		{
+			#region 初始化
+			//如果是设计器模式，则不进行处理
+			if (HZH_Controls.ControlHelper.IsDesignMode) return;
+
+			//如果正在加载状态，等待到数据加载完成
+			if (this.InLoading)
+			{
+				//等待到加载完成，所以要注意这个等待标志值不能发生异常
+				//可能的异常原因：结束后不解除标志、在同一线程上多次请求加载
+				while (this.InLoading) Thread.Sleep(100);
+				return;
+			}
+
+			//如果有数据且并非要求重载，返回
+			if (this.data != null && this.data.Length > 0 && !Reload) return;
+			#endregion
+
+
+			//进入加载状态
+			this.InLoading = true;
+			this.data = null;
+
+			lock (this)
+			{
+				var task = new Task(() =>
+				{
+					try
+					{
+						if (!LoadFromGame) this.LoadXml(Path);
+						else this.LoadGame();
+					}
+					catch (Exception ex)
+					{
+						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex.Message}");
+					}
+
+					//资源清理
+					InLoading = false;
+				});
+
+				task.Start();
+				task.Wait();
+			}
+		}
+
+		protected virtual void LoadCache(XElement xElement, int CurID, Lazy<T> data)
+		{
+
+		}
+
+
+		/// <summary>
+		/// 加载外部配置文件
+		/// </summary>
+		/// <param name="Path"></param>
+		private void LoadXml(string Path)
+		{
+			#region 路径判断
+			if (string.IsNullOrWhiteSpace(Path)) Path = ResFilePath;
+
+			if (!File.Exists(Path))
+			{
+				//限制配置文件不存在提示仅首次提示
+				if (!ErrorConfigPath.Contains(Path))
+				{
+					ErrorConfigPath.Add(Path);
+					Trace.WriteLine($"路径 { Path } 不存在");
+				}
+
+				//防止出现异常
+				this.data = Array.Empty<Lazy<T>>();
+				this.InLoading = false;
+				return;
+			}
+
+			var FileName = System.IO.Path.GetFileNameWithoutExtension(Path);
+			#endregion
+
+			#region 载入数据
+			var xElements = (from ele in XElement.Load(Path).Elements() select ele).ToArray();
+
+			this.data = new Lazy<T>[xElements.Length];
+			for (var x = 0; x < this.data.Length; x++)
+			{
+				int CurIndex = x;
+				var CurElement = xElements[x];
+				this.data[x] = new Lazy<T>(() =>
+				{
+					//实例化对象
+					var Obejct = new T()
+					{
+						Index = CurIndex,
+						Attributes = new XElementData(CurElement),
+					};
+
+					//向成员赋值
+					if (this.PublicSet)
+					{
+						foreach (var Attr in CurElement.Attributes())
+							Obejct.SetMember(Attr.Name.LocalName, Attr.Value, true, ShowDebugInfo ? null : true);
+					}
+
+					return Obejct;
+				});
+
+				//对象别名
+				string CurAlias = CurElement.Attribute("alias")?.Value;
+				if (CurAlias != null) this.ht_alias[CurAlias] = this.data[x];
+
+				//数据编号
+				if (!int.TryParse(CurElement.Attribute("id")?.Value, out int CurID)) CurID = x + 1;
+				this.ht_id[CurID] = this.data[x];
+
+				LoadCache(CurElement, CurID, this.data[x]);
+			}
+
+			Trace.WriteLine($"[{ DateTime.Now }] 完成信息载入: { FileName } ({ this.data.Length }项)");
+			#endregion
+		}
+
+
+
+		public void LoadGame()
+		{
+			string content = ConfigContent;
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_simple");
+			if (content is null)
+			{
+				Trace.WriteLine($"[{ DateTime.Now }] 加载配置文件失败: { typeof(T).Name }");
+				return;
+			}
+
+			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);
+			this.LoadGame(FileCacheData.Data.GameData, TableInfo);
+		}
+
+		private void LoadGame(GameData GameData, TableInfo TableInfo)
+		{
+			this.DeSerializer = new DeSerializer()
+			{
+				GameData = GameData,
+				LocalData = null,
+			};
+
+			this.TableInfo = TableInfo;
+			this.ListData = DeSerializer.GetList(TableInfo);
+
+			//只创建空数组
+			if (this.ListData is null) this.data = Array.Empty<Lazy<T>>();
+			else this.data = new Lazy<T>[this.ListData.ObjectCount];
+		}
+
+		public Output GetObject(int MainID, int VariationID = 0) => DeSerializer?.GetData(ListData, TableInfo, MainID, VariationID);
+		#endregion
+
+
+
+
+		#region 获取对象信息
+		public T this[string Alias] => this.GetInfo(Alias);
+
+		public T this[int MainID, int Variation = 0] => this.GetLazyInfo(MainID, Variation)?.Value;
+
+
+		/// <summary>
+		/// 获得信息
+		/// </summary>
+		/// <param name="Alias"></param>
+		/// <returns></returns>
+		public T GetInfo(string Alias) => GetLazyInfo(Alias)?.Value;
+
+
+		protected virtual Lazy<T> GetLazyInfo(string Alias)
+		{
+			#region 初始化
+			if (string.IsNullOrWhiteSpace(Alias)) return null;
+			if (int.TryParse(Alias, out int result)) return GetLazyInfo(result, 0);
+
+			if (!this.HasData) this.Load();
+			#endregion
+
+			#region 获取对象
+			if (this.LoadFromGame)
+			{
+				if (!this.HasData) return null;
+
+				#region 通过别名表获取对象信息
+				var AliasTable = FileCacheData.Data.GameData.BinHandle._content.Head.AliasTable.List[typeof(T).Name];
+				if (AliasTable is null) return null;
+
+				var AliasInfo = AliasTable[Alias];
+				if (AliasInfo is null) return null;
+				#endregion
+
+				#region 返回最终结果
+				//Debug.WriteLine($"[{Alias}] {AliasInfo.MainID} { AliasInfo.Variation}");
+
+				var o = this.GetObject(AliasInfo.MainID, AliasInfo.Variation);
+				if (o != null) return new Lazy<T>(() => CreateNew(o));
+				#endregion
+			}
+
+			//判断alias对应数组
+			else if (this.ht_alias.ContainsKey(Alias)) return (Lazy<T>)this.ht_alias[Alias];
+			#endregion
+
+
+			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败 （alias: {Alias}");
+			return null;
+		}
+
+		protected virtual Lazy<T> GetLazyInfo(int MainID, int Variation)
+		{
+			#region 初始化
+			if (!this.HasData) this.Load();
+			#endregion
+
+
+			#region 获取对象
+			if (this.LoadFromGame)
+			{
+				var o = this.GetObject(MainID, Variation);
+				if (o != null) return new Lazy<T>(() => CreateNew(o));
+			}
+			else if (this.ht_id.ContainsKey(MainID)) return (Lazy<T>)this.ht_id[MainID];
+			#endregion
+
+			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败 （id: {MainID}");
+			return null;
+		}
+
+
+		private T CreateNew(Output o)
+		{
+			//新建一个对象，需要进行缓存
+			var temp = new T()
+			{
+				Attributes = new OutputData(o),
+			};
+
+			//向成员赋值
+			if (this.PublicSet)
+			{
+				foreach (var Attr in o.Cells)
+					temp.SetMember(Attr.Alias, Attr.OutputVal, true, ShowDebugInfo ? null : true);
+			}
+
+			return temp;
+		}
+
+		private IEnumerable<T> CreateTest => DeSerializer?.GetDatas(this.ListData, this.TableInfo).Select(o => CreateNew(o)) ?? Array.Empty<T>();
+		#endregion
+
+		#region 处理类方法
+		/// <summary>
+		/// 搜寻第一个符合规则的对象，不存在时返回默认值。
+		/// </summary>
+		/// <param name="SearchRule"></param>
+		/// <returns></returns>
+		public T Find(Predicate<T> SearchRule)
+		{
+			var data = this.Data;
+			if (this.LoadFromGame) return CreateTest.FirstOrDefault(Info => SearchRule(Info));
+			else return data.FirstOrDefault(Info => SearchRule(Info.Value))?.Value;
+		}
+
+		/// <summary>
+		/// 搜寻所有符合规则的对象
+		/// </summary>
+		/// <param name="SearchRule"></param>
+		/// <returns></returns>
+		public IEnumerable<T> Where(Predicate<T> SearchRule)
+		{
+			var data = this.Data;
+
+			if (this.LoadFromGame) return CreateTest.Where(Info => SearchRule(Info));
+			else return data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
+		}
+
+		/// <summary>
+		///  对每个元素执行指定操作。
+		/// </summary>
+		/// <param name="action"></param>
+		public void ForEach(Action<T> action)
+		{
+			var data = this.Data;
+
+			if (this.LoadFromGame)
+			{
+				foreach (var t in CreateTest) action(t);
+			}
+			else foreach (var t in data) action(t.Value);
+		}
+
+
+
+
+
+		/// <summary>
+		/// 清除数据
+		/// </summary>
+		public void Clear() => this.Data = null;
+
+		/// <summary>
+		/// 重写哈希函数，使其调用清除数据方法
+		/// </summary>
+		/// <returns></returns>
+		public override int GetHashCode()
+		{
+			this.Clear();
+			return base.GetHashCode();
+		}
+		#endregion
+
+
+		#region 接口方法
+		public IEnumerator<T> GetEnumerator()
+		{
+			foreach (var info in this.Data)
+				yield return info.Value;
+
+			//结束迭代
+			yield break;
+		}
+
+		IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
+		#endregion
+	}
+}

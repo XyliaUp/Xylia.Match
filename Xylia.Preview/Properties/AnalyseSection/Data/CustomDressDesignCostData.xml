@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="custom-dress-design-cost" version="0.3" rule="cpl" >
+		<record alias="item-type" name="" type="ID" extra="byte1" >
+			<case alias="none" name="" default="y" />
+			<case alias="costume" name="" />
+			<case alias="costume-attach" name="" />
+			<case alias="head-attach" name="" />
+			<case alias="face-attach" name="" />
+		</record>
+		<record alias="customize-id" name="" type="ID" extra="byte2" />
+		<record alias="resource-index" name="" type="ID" extra="byte3" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="icon" name="" type="Icon" server="n" />
+		<record alias="name" name="" type="TextAlias" server="n" />		
+		<record alias="desc" name="" type="TextAlias" server="n" />	
+		<record alias="order" name="" type="Int32" server="n" />	
+		<record alias="usable" name="" type="Bool" default="y" showzero="y" />	
+		<record alias="reset-design" name="" type="Bool" />	
+		<record alias="required-item" name="" ref="Item" repeat="3" />			
+		<record alias="required-item-count" name="" type="Short" repeat="3" />		
+		<record alias="required-money-cost" name="" type="Money" />	
+	</list>
+</table>

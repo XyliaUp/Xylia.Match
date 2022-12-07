@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" rule="cpl" type="skill3" version="3.294" >
+		<record alias="type" seq="0=active-skill|1=passive-skill|2=action" type="type" />
+
+		<record alias="id" type="id" />
+		<record alias="variation-id" name="" start="0" type="Int32" />
+		<record alias="alias" name="" type="Index" />
+		
+		<record start="164" alias="name" name="" type="Index" server="n" />
+		<record alias="name2" name="" type="Local-text" server="n" />
+	</list>
+</table>

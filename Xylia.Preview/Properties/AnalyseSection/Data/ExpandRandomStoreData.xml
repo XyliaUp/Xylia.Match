@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="110" alias="ExpandRandomstoreData" module="ItemData" type="expand-random-store" version="0.3" rule="cpl" >
+		<record alias="random-store-number" type="id" extra="Byte1" name="" >
+		    <case key="1" alias="random-store-1" name="" />
+		    <case key="2" alias="random-store-2" name="" />
+		</record>
+		<record alias="slot-index" type="id" extra="Byte2" name="" />
+		<record alias="required-item" ref="Item" />			
+		<record alias="required-item-count" type="Byte" name="" />		
+		<record alias="required-item-for-instant-payment" ref="Item" />
+	</list>
+</table>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="itemtransformupgradeitem" version="0.1" >
+		<record alias="alias" type="Index" name="" />
+		<record alias="upgrade-type" type="Byte" name="" >
+			<case alias="premium-item-transform" name="" />
+			<case alias="add-rare-item-probability-bonus" name="" />
+		</record>
+		<record alias="upgrade-item-1" ref="Item" />
+		<record alias="upgrade-item-2" ref="Item" />
+		<record alias="upgrade-item-3" ref="Item" />
+		<record alias="upgrade-item-4" ref="Item" />
+		<record alias="upgrade-item-stack-count-1" type="Byte" name="" />
+		<record alias="upgrade-item-stack-count-2" type="Byte" name="" />
+		<record alias="upgrade-item-stack-count-3" type="Byte" name="" />
+		<record alias="upgrade-item-stack-count-4" type="Byte" name="" />
+
+
+                                <!-- ======================================= -->
+		<record alias="" type="" name="" client="n" />
+                                <!-- ======================================= -->
+	</list>
+</table>

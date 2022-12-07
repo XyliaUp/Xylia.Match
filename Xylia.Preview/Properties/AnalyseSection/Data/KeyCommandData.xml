@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="key-command" version="0.2" rule="cpl" >
+		<record alias="key-command" type="Id" extra="Short1" seq="$key-command" />
+		<record alias="pc-job" name="" type="Id" extra="Byte3" seq="$job" />
+
+		<record alias="category" name="" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="movement" name="" />
+			<case alias="panel" name="" />
+			<case alias="function" name="" />
+			<case alias="skill" name="" />
+			<case alias="social" name="" />
+			<case alias="mark" name="" />
+			<case alias="bns-mode" name="" />
+			<case alias="joypad" name="" />
+			<case alias="spectate" name="" />
+		</record>
+		<record alias="joypad-category" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="joypad-movement" name="" />
+			<case alias="joypad-skill" name="" />
+			<case alias="joypad-panel-and-function" name="" />
+			<case alias="joypad-social" name="" />
+			<case alias="joypad-mark" name="" />
+			<case alias="joypad-special-function" name="" />
+			<case alias="joypad-spectate" name="" />
+		</record>
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="default-keycap" name="" type="Index" />
+		<record alias="modifier-enabled" name="" type="Bool" />
+		<record alias="sort-no" name="" type="Byte" />
+		<record alias="layer" name="" type="Byte" />
+		<record alias="option-sort-no" name="" type="Short" />
+		<record alias="usable-joypad-mode" name="" type="seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="any" name="" />
+			<case alias="ui" name="" />
+			<case alias="action" name="" />
+		</record>
+		<record alias="joypad-customize-enabled" name="" type="Bool" />
+	</list>
+</table>

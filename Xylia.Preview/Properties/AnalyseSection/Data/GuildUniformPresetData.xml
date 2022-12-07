@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="146" alias="GuildUniformPreset" module="ItemData" type="GuildUniformPreset" version="0.1" rule="cpl" >
+		<record alias="index" name="" type="ID" />
+		<record alias="preset-type" name="" type="Byte" >
+			<case alias="none" name="" default="y" />
+			<case alias="costume" name="" />
+			<case alias="face" name="" />
+			<case alias="head" name="" />
+		</record>
+		<record alias="preset" name="" ref="GuildCustomizePreset" />
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="icon-texture" name="" ref="IconTexture" />
+		<record alias="icon-index" name="" type="Short" />
+		<record alias="desc" name="" type="TextAlias" />
+		<record alias="order" name="" type="Int32" />
+	</list>
+</table>

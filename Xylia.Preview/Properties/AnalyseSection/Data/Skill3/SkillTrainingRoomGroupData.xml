@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="skill-training-room-group" version="0.2" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="group-name" name="" type="TextAlias" server="n" />
+		<record alias="group-desc" name="" type="TextAlias" server="n" />
+		<record alias="job" name="" type="Seq" seq="$job_20" />
+		<record alias="has-reward" name="" type="Bool" />
+		<record alias="group-required-level" name="" type="Byte" />
+		<record alias="group-required-mastery-level" name="" type="Byte" />
+		<record alias="group-level-text" name="" type="TextAlias" server="n" />
+		<record alias="subject-id" name="" ref="SkillTrainingRoomSubject" link="id" repeat="8" />
+		<record alias="job-style" name="" type="Seq" seq="$job-style" />
+		<record alias="sort-number" name="" type="Short" />
+		<record alias="achievement" name="" ref="Achievement" server="n" />
+	</list>
+</table>

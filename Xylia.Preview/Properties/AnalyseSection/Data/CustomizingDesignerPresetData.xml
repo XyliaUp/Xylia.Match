@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="CustomizingDesignerPreset" version="0.1" rule="cpl" side="client" >
+		<record alias="index" name="" type="ID" />
+		
+		<record alias="race" name="" type="Seq" seq="$race" start="0" />
+		<record alias="sex" name="" type="Seq" seq="$sex" />
+		<record alias="icon-texture" name="" ref="IconTexture" />
+		<record alias="icon-index" name="" type="Short" />
+		<record alias="param8" name="" type="Byte" repeat="92" />
+		<record alias="desc" name="" type="TextAlias" />
+	</list>
+</table>

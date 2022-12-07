@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData1" type="ZonePathway" version="1.52" retired="n" rule="cpl" >
+		<record alias="zone" name="" type="id" />
+		<record alias="id" name="" type="Short" start="0" />
+		<record alias="waypoint" name="" type="Short" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="pos" name="" type="Vector32" />
+		<record alias="move-type" name="" type="Byte" >
+			<case alias="walk" name="" />
+			<case alias="run" name="" />
+			<case alias="warp" name="" />
+			<case alias="sprint" name="" />
+                                 </record>
+		<record alias="warp-social" name="" ref="Social" />
+		<record alias="description" name="" type="Index" />
+		<record alias="sync" name="" type="Short" />
+	</list>
+</table>

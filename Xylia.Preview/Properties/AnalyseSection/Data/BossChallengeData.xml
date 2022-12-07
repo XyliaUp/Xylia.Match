@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="AIData" rule="cpl" version="0.2" type="boss-challenge" > 
+    <record alias="id" name="" type="id" />
+	
+    <record alias="zone" name="" ref="Zone" link="id" />	
+    <record alias="require-score" name="" type="Short" />
+    <record alias="last-round" name="" type="Short" />	
+    <record alias="alias" name="" type="Index" />	
+	<record alias="group" name="" ref="AttractionGroup" />
+    <record alias="attraction-quest" name="" type="Quest" repeat="5" server="n" />
+	<record alias="enable-heart-count" name="" type="Bool" />
+	<record alias="max-instant-heart-count" name="" type="Byte" />
+	<record alias="required-level" name="" type="Byte" />
+	<record alias="required-mastery-level" name="" type="Byte" />
+	<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
+	<record alias="required-preceding-quest-check" name="" type="Seq" >
+		<case alias="and" name="" default="y" />
+		<case alias="or" name="" />
+	</record>
+
+    <record alias="boss-challenge-name2" name="" type="TextAlias" server="n" />
+	<record alias="boss-challenge-desc" name="" type="TextAlias" server="n" />
+	<record alias="ui-text-grade" name="" type="Byte" server="n" />
+	<record alias="reward-summary" name="" ref="AttractionRewardSummary" server="n" />
+	<record alias="recommand-level-min" name="" type="Byte" server="n" />
+	<record alias="recommand-level-max" name="" type="Byte" server="n" />
+	<record alias="recommand-mastery-level-min" name="" type="Byte" server="n" />
+	<record alias="recommand-mastery-level-max" name="" type="Byte" server="n" />
+	<record alias="recommend-attack-power" name="" type="Short" server="n" />
+	<record alias="standard-gear-weapon" name="" ref="Item" server="n" />
+	<record alias="display-quests" name="" type="Quest" repeat="12" server="n" />
+	<record alias="enable-infinite-hyper-energy" name="" type="Bool" />
+	<record alias="tactic" name="" type="TextAlias" server="n" />
+	<record alias="recommend-alias" name="" ref="ContentsJournalRecommendItem" server="n" />
+	<!-- ==================================================================== -->
+	<record alias="effect-npc-group1" name="" ref="ZoneNpcSpawn" repeat="3" client="n" />
+	<record alias="effect-npc-group2" name="" ref="ZoneNpcSpawn" repeat="3" client="n" />
+	<record alias="effect-npc-group3" name="" ref="ZoneNpcSpawn" repeat="3" client="n" />
+  </list>
+</table>

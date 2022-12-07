@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list alias="BoastEvent" module="ItemData" type="boast-event" version="1.6" rule="complete" check-version="y" >
+		<record alias="type" type="type" name="" >
+			<case alias="transform-item" name="" />
+			<case alias="buy-random-store-item" name="" />
+			<case alias="acquire-item-reward" name="" />
+			<case alias="awakening-item" name="" />
+			<case alias="complete-acheivement" name="" />
+			<case alias="acquire-env-reward" name="" />
+		</record>
+
+		<record alias="id" type="id" name ="" apply="auto" output="n" />
+		<record alias="alias" type="Index" name ="" />
+		<record alias="broadcast" type="Seq" name ="" seq="0=guild|1=world" />
+
+		<!-- ========================= transform-item ======================= -->
+		<record alias="boast-from-recipe" name ="" filter="transform-item" ref="ItemTransformRecipe" />
+		<record alias="boast-item" name ="" filter="transform-item" ref="Item" />
+		<!-- ================================================================ -->
+
+		<!-- ====================== buy-random-store-item ================== -->
+		<record  alias="boast-from-random-store" name ="" filter="buy-random-store-item" ref="RandomStore" />
+		<record alias="boast-item" name ="" filter="buy-random-store-item" ref="Item" />
+		<!-- ================================================================ -->
+
+		<!-- ======================= acquire-item-reward =================== -->
+		<record alias="boast-from-decomposed-item" name ="" filter="acquire-item-reward" ref="Item" />
+		<record alias="boast-item" name ="" filter="acquire-item-reward" ref="Item" />
+		<!-- ================================================================ -->
+
+		<!-- ======================== awakening-item ======================== -->
+		<record alias="boast-item" name ="" filter="awakening-item" ref="Item" />
+		<!-- ================================================================ -->
+
+		<!-- ====================== complete-acheivement ==================== -->
+		<record alias="boast-achievement" name ="" filter="complete-acheivement" ref="achievement" />
+		<!-- ================================================================ -->
+
+		<!-- ====================== acquire-env-reward ====================== -->
+		<record alias="boast-from-env" name ="" filter="acquire-env-reward" ref="ZoneEnv2" />
+		<record alias="boast-item" name ="" filter="acquire-env-reward" ref="Item" />
+		<!-- ================================================================ -->
+	</list>
+</table>

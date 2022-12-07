@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="AIData" type="summoned" version="0.24" rule="cpl" check-verison="y" >
+		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
+		<record alias="job" type="ID" extra="Byte2" name="" seq="$job" />
+
+
+		<record alias="id" type="Long" name="" />
+		<record alias="sex" type="Seq" name="" seq="$sex" />
+		<record alias="summoned-type" type="Seq" name="" >
+			<case alias="normal" name="" default="y" />
+			<case alias="ethereal" name="" />
+                                </record>
+		<record alias="brain-type" type="Seq" name="" >
+			<case alias="normal" name="" default="y" />
+			<case alias="combat-follow" name="" />
+			<case alias="fixed" name="" />
+                                </record>
+		<record alias="combat-follow-distance" type="Distance" name="" default="200" />
+		<record alias="far-event-distance" type="Distance" name="" />
+		<record alias="far-event-action-type" type="Seq" name="" >
+			<case alias="none" name="" default="y" />
+			<case alias="recall" name="" />
+			<case alias="despawn" name="" />
+                                </record>
+		<record alias="radius" type="Distance" name="" />
+		<record alias="trace-master-skill-target" type="Byte" name="" />
+		<record alias="summoned-sequence" ref="SummonedSequence" name="" />
+		<record alias="seq-skill" type="Int32" name="" server="n" repeat="10" />
+		<record alias="spawn-skill-id" type="Int32" name="" server="n" />
+		<record alias="immune-skill-attribute" type="Seq" name="" seq="$skill-attribute" repeat="4" />
+		<record alias="immune-effect-attribute" type="Seq16" name="" seq="$effect-attribute" repeat="8" />
+		<record alias="stance" type="Seq16" name="" seq="$stance" />
+		<record alias="lifetime-duration" type="Msec" name="" />
+		<record alias="max-speed-near-master" type="Velocity" name="" />
+		<record alias="min-distance-to-lerp-speed" type="Distance" name="" />
+		<record alias="max-distance-to-lerp-speed" type="Distance" name="" />
+		<record alias="speed" type="Velocity" name="" />
+		<record alias="use-customized-appearance" type="Bool" name="" />
+		<record alias="appearance" ref="CreatureAppearance" name="" />
+		<record alias="animset" type="Index" name="" />
+		<record alias="moveanim" ref="MoveAnim" name="" client="n" />
+		<record alias="spawn-social" name="" ref="Social" />
+		<record alias="dead-social" name="" ref="Social" client="n" />
+		<record alias="despawn-social" name="" ref="Social" client="n" />
+		<record alias="respawn-in-social" name="" ref="Social" />
+		<record alias="respawn-out-social" name="" ref="Social" />
+		<record alias="spawn-show" type="Index" name="" />
+		<record alias="despawn-show" type="Index" name="" />
+		<record alias="combat-side-player-continuance-show" type="Index" name="" />
+		<record alias="combat-side-friend-continuance-show" type="Index" name="" />
+		<record alias="combat-side-enemy-continuance-show" type="Index" name="" />
+		<record alias="icon" type="Icon" name="" />
+		<record alias="ui-show-buff-list" type="Bool" name="" />
+		<record alias="ui-show-nameplate" type="Bool" name="" />
+		<record alias="ui-show-summoned-stat" type="Bool" name="" />
+		<record alias="ui-enable-pc-tooltip" type="Bool" name="" />
+		<record alias="mapunit-width" type="Float" name="" />
+		<record alias="mapunit-height" type="Float" name="" />
+		<record alias="mapunit-imageset" type="Index" name="" />
+		<record alias="mapunit-outsight-width" type="Float" name="" />
+		<record alias="mapunit-outsight-height" type="Float" name="" />
+		<record alias="mapunit-outsight-imageset" type="Index" name="" />
+		<record alias="fixed-name" type="TextAlias" name="" />
+		<record alias="nameplate-title-state-normal" type="TextAlias" name="" />
+		<record alias="nameplate-title-state-duel-other-team" type="TextAlias" name="" />
+		<record alias="nameplate-name-state-anonymity" type="TextAlias" name="" />
+		<record alias="nameplate-name-state-duel-other-team" type="TextAlias" name="" />
+		<record alias="term-sequence-range-sim-check" type="Float" name="" />
+	</list>
+</table>

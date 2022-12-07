@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="skill-training-room" version="0.2" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="zone" name="" ref="Zone" link="id" />
+		<record alias="required-level" name="" type="Byte" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
+		<record alias="required-preceding-quest-check" name="" type="seq" >
+             <case alias="and" default="y" />
+             <case alias="or" />
+        </record>
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="skill-training-room-name2" name="" type="TextAlias" />
+		<record alias="start-default-kismet-name-1" name="" type="Index" />
+		<record alias="start-default-kismet-name-2" name="" type="Index" />
+		<record alias="end-default-kismet-name-1" name="" type="Index" />
+		<record alias="end-default-kismet-name-2" name="" type="Index" />
+		<record alias="stage-change-show" name="" type="Index" />
+		
+		<!-- ============================================================ -->
+		<record alias="enter-pc-spawn" name="" type="" client="n" />
+		<record alias="support-effect-1" name="" type="" ref="Effect" client="n" />
+		<record alias="support-effect-2" name="" type="" ref="Effect" client="n" />
+
+		<record alias="remain-effect-type" name="" type="" client="n" seq="$type-seq_20" repeat="60" />
+	</list>
+</table>

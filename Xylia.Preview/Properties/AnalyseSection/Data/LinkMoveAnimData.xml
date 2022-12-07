@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="linkmoveanim" version="1.12" rule="cpl | extra" index="y">
+		<record alias="alias" name="" type="Index" />
+		<record alias="pose-type" type="Seq" >
+			<case alias="standing" name="" />
+			<case alias="dead" name="" />
+			<case alias="dead-back" name="" />
+			<case alias="dead-front" name="" />
+			<case alias="stagger" name="" />
+			<case alias="down" name="" />
+			<case alias="front_down" name="" />
+			<case alias="air" name="" />
+			<case alias="air-back" name="" />
+			<case alias="kneel" name="" />
+			<case alias="burrow" name="" />
+			<case alias="picking" name="" />
+			<case alias="mount-linker" name="" />
+			<case alias="mount-linkee" name="" />
+			<case alias="catch" name="" />
+			<case alias="catched" name="" />
+			<case alias="catch-nonehuman" name="" />
+			<case alias="catched-nonehuman" name="" />
+			<case alias="catch-friend" name="" />
+			<case alias="catched-friend" name="" />
+			<case alias="hardwall" name="" />
+			<case alias="ironfotess" name="" />
+			<case alias="sit" name="" />
+			<case alias="bomb-kneel" name="" />
+			<case alias="inhalation-catch-sword" name="" />
+			<case alias="inhalation-catch-nonehuman-sword" name="" />
+		</record>
+
+		<record alias="die-anim" name="" type="Index" />
+		<record alias="dead-abnomal-idle" type="Seq" >
+			<case alias="normal" name="" />
+			<case alias="dead" name="" />
+			<case alias="dead-hide" name="" />
+			<case alias="dead-back" name="" />
+			<case alias="dead-front" name="" />
+			<case alias="dead-swim-area" name="" />
+			<case alias="exhaustion" name="" />
+			<case alias="mount-linker" name="" />
+			<case alias="mount-linkee" name="" />
+			<case alias="inhalation_linker" name="" />
+			<case alias="inhalation_linkee" name="" />
+			<case alias="stun" name="" />
+			<case alias="stagger" name="" />
+			<case alias="down" name="" />
+			<case alias="block" name="" />
+			<case alias="air" name="" />
+			<case alias="air2" name="" />
+			<case alias="air3" name="" />
+			<case alias="kneel" name="" />
+			<case alias="magnetic" name="" />
+			<case alias="stiff" name="" />
+			<case alias="front_down" name="" />
+			<case alias="block2" name="" />
+			<case alias="flee" name="" />
+			<case alias="knockback-stand" name="" />
+			<case alias="knockback-kneel" name="" />
+			<case alias="knockback-frontdown" name="" />
+			<case alias="knockback-down" name="" />
+			<case alias="picking" name="" />
+			<case alias="fast-freezing" name="" />
+			<case alias="impregnability" name="" />
+			<case alias="hide" name="" />
+			<case alias="burrow" name="" />
+			<case alias="restoration" name="" />
+			<case alias="block3" name="" />
+			<case alias="landing-shock" name="" />
+			<case alias="catch" name="" />
+			<case alias="catched" name="" />
+			<case alias="catch-none-human" name="" />
+			<case alias="catched-none-human" name="" />
+			<case alias="catch-friend" name="" />
+			<case alias="catched-friend" name="" />
+			<case alias="catch-inhalation" name="" />
+			<case alias="catched-inhalation" name="" />
+			<case alias="npc-block" name="" />
+			<case alias="sit-down" name="" />
+			<case alias="silver-wep" name="" />
+			<case alias="ironfotess" name="" />
+			<case alias="presentation-linke" name="" />
+			<case alias="spider-web" name="" />
+			<case alias="state-social" name="" />
+			<case alias="block4" name="" />
+			<case alias="dead-duel" name="" />
+		</record>
+
+		<record alias="exhaustion-anim" name="" type="Index" />
+		<record alias="upper-idle" name="" type="Index" />
+		<record alias="lower-idle" name="" type="Index" />
+		<record alias="upper-walk-front" name="" type="Index" />
+		<record alias="lower-walk-front" name="" type="Index" />
+		<record alias="upper-walk-back" name="" type="Index" />
+		<record alias="lower-walk-back" name="" type="Index" />
+		<record alias="upper-walk-left" name="" type="Index" />
+		<record alias="lower-walk-left" name="" type="Index" />
+		<record alias="upper-walk-right" name="" type="Index" />
+		<record alias="lower-walk-right" name="" type="Index" />
+		<record alias="upper-walk-leftback" name="" type="Index" />
+		<record alias="lower-walk-leftback" name="" type="Index" />
+		<record alias="upper-walk-rightback" name="" type="Index" />
+		<record alias="lower-walk-rightback" name="" type="Index" />
+		<record alias="upper-run-front" name="" type="Index" />
+		<record alias="lower-run-front" name="" type="Index" />
+		<record alias="upper-run-back" name="" type="Index" />
+		<record alias="lower-run-back" name="" type="Index" />
+		<record alias="upper-run-left" name="" type="Index" />
+		<record alias="lower-run-left" name="" type="Index" />
+		<record alias="upper-run-right" name="" type="Index" />
+		<record alias="lower-run-right" name="" type="Index" />
+		<record alias="upper-run-leftback" name="" type="Index" />
+		<record alias="lower-run-leftback" name="" type="Index" />
+		<record alias="upper-run-rightback" name="" type="Index" />
+		<record alias="lower-run-rightback" name="" type="Index" />
+		<record alias="upper-jump-front" name="" type="Index" />
+		<record alias="lower-jump-front" name="" type="Index" />
+		<record alias="upper-jump-left" name="" type="Index" />
+		<record alias="lower-jump-left" name="" type="Index" />
+		<record alias="upper-jump-right" name="" type="Index" />
+		<record alias="lower-jump-right" name="" type="Index" />
+		<record alias="upper-turn-left" name="" type="Index" />
+		<record alias="lower-turn-left" name="" type="Index" />
+		<record alias="upper-turn-right" name="" type="Index" />
+		<record alias="lower-turn-right" name="" type="Index" />
+		<record alias="upper-jtoi" name="" type="Index" />
+		<record alias="lower-jtoi" name="" type="Index" />
+		<record alias="upper-jtomfront" name="" type="Index" />
+		<record alias="lower-jtomfront" name="" type="Index" />
+		<record alias="upper-jtomleft" name="" type="Index" />
+		<record alias="lower-jtomleft" name="" type="Index" />
+		<record alias="upper-jtomright" name="" type="Index" />
+		<record alias="lower-jtomright" name="" type="Index" />
+		<record alias="upper-jtomback" name="" type="Index" />
+		<record alias="lower-jtomback" name="" type="Index" />
+		<record alias="upper-mtojfront" name="" type="Index" />
+		<record alias="lower-mtojfront" name="" type="Index" />
+		<record alias="upper-mtojleft" name="" type="Index" />
+		<record alias="lower-mtojleft" name="" type="Index" />
+		<record alias="upper-mtojright" name="" type="Index" />
+		<record alias="lower-mtojright" name="" type="Index" />
+		<record alias="upper-mtoi" name="" type="Index" />
+		<record alias="lower-mtoi" name="" type="Index" />
+		<record alias="upper-ltor" name="" type="Index" />
+		<record alias="lower-ltor" name="" type="Index" />
+		<record alias="upper-rtol" name="" type="Index" />
+		<record alias="lower-rtol" name="" type="Index" />
+	</list>
+</table>

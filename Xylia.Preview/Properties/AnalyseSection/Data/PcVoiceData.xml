@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="LocalizationData" type="pc-voice" version="0.3" rule="cpl" >
+		<record alias="id" name="" type="ID" extra="Byte1" />
+		<record alias="sex" name="" type="ID" extra="Byte2" seq="$sex" />
+		
+		<record alias="pc-voice-set-id" name="" type="Byte" />
+		<record alias="usable-race-1" name="" type="Seq" seq="$race" />
+		<record alias="usable-race-2" name="" type="Seq" seq="$race" />
+		<record alias="usable-race-3" name="" type="Seq" seq="$race" />
+		<record alias="usable-race-4" name="" type="Seq" seq="$race" />
+		<record alias="default-race-1" name="" type="Seq" seq="$race" />
+		<record alias="default-race-2" name="" type="Seq" seq="$race" />
+		<record alias="default-race-3" name="" type="Seq" seq="$race" />
+		<record alias="default-race-4" name="" type="Seq" seq="$race" />
+
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="desc" name="" type="TextAlias" />
+	</list>
+</table>

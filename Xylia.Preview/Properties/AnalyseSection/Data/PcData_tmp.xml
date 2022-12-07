@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="231" alias="PcData" module="LocalizationData" type="pc" version="0.57" rule="cpl" >
+		<record alias="race" name="" type="ID" extra="Byte1" seq="$race" />   
+        <record alias="job" name="" type="ID" extra="Byte2" seq="$job_20" />   
+		<record alias="level" name="" type="ID" extra="Byte3" />   
+		<record alias="contents-type" name="" type="ID" extra="Byte4" >
+			<case alias="invalid" name="" />
+			<case alias="normal" name="" />
+			<case alias="duel" name="" />
+			<case alias="dungeon" name="" /> 
+			<case alias="battle-royal" name="" />
+		</record>
+		
+		<record alias="id" name="" type="Long" />   
+		<record alias="unk-" name="" type="Bool" default="y" output="n" />   
+		<record alias="radius" name="" type="distance" output="n" />   
+
+		<record alias="skill-1" name="" ref="Skill" output="n" />   
+		<record alias="skill-2" name="" ref="Skill" output="n" />   
+		<record alias="skill-3" name="" ref="Skill" output="n" />   
+		<record alias="skill-4" name="" ref="Skill" output="n" />   
+		<record alias="skill-5" name="" ref="Skill" output="n" />   
+		<record alias="skill-6" name="" ref="Skill" output="n" />   
+		<record alias="skill-7" name="" ref="Skill" output="n" />   
+		<record alias="skill-8" name="" ref="Skill" output="n" />   
+		<record alias="skill-9" name="" ref="Skill" output="n" />   
+		<record alias="skill-10" name="" ref="Skill" output="n" />   
+		<record alias="skill-11" name="" ref="Skill" output="n" />   
+		<record alias="skill-12" name="" ref="Skill" output="n" />   
+		<record alias="skill-13" name="" ref="Skill" output="n" />   
+		<record alias="skill-14" name="" ref="Skill" output="n" />   
+		<record alias="skill-15" name="" ref="Skill" output="n" />   
+		<record alias="skill-16" name="" ref="Skill" output="n" />   
+		<record alias="skill-17" name="" ref="Skill" output="n" />   
+		<record alias="skill-18" name="" ref="Skill" output="n" />   
+		<record alias="skill-19" name="" ref="Skill" output="n" />   
+		<record alias="skill-20" name="" ref="Skill" output="n" />   
+		<record alias="skill-21" name="" ref="Skill" output="n" />   
+		<record alias="skill-22" name="" ref="Skill" output="n" />   
+		<record alias="skill-23" name="" ref="Skill" output="n" />   
+		<record alias="skill-24" name="" ref="Skill" output="n" />   
+		<record alias="skill-25" name="" ref="Skill" output="n" />   
+		<record alias="skill-26" name="" ref="Skill" output="n" />   
+		<record alias="skill-27" name="" ref="Skill" output="n" />   
+		<record alias="skill-28" name="" ref="Skill" output="n" />   
+		<record alias="skill-29" name="" ref="Skill" output="n" />   
+		<record alias="skill-30" name="" ref="Skill" output="n" />   
+		<record alias="skill-31" name="" ref="Skill" output="n" />   
+		<record alias="skill-32" name="" ref="Skill" output="n" />   
+		<record alias="skill-33" name="" ref="Skill" output="n" />   
+		<record alias="skill-34" name="" ref="Skill" output="n" />   
+		<record alias="skill-35" name="" ref="Skill" output="n" />   
+		<record alias="skill-36" name="" ref="Skill" output="n" />   
+		<record alias="skill-37" name="" ref="Skill" output="n" />   
+		<record alias="skill-38" name="" ref="Skill" output="n" />   
+		<record alias="skill-39" name="" ref="Skill" output="n" />   
+		<record alias="skill-40" name="" ref="Skill" output="n" />   
+		<record alias="skill3-1" name="" ref="skill3" output="n" />   
+		<record alias="skill3-2" name="" ref="skill3" output="n" />   
+		<record alias="skill3-3" name="" ref="skill3" output="n" />   
+		<record alias="skill3-4" name="" ref="skill3" output="n" />   
+		<record alias="skill3-5" name="" ref="skill3" output="n" />   
+		<record alias="skill3-6" name="" ref="skill3" output="n" />   
+		<record alias="skill3-7" name="" ref="skill3" output="n" />   
+		<record alias="skill3-8" name="" ref="skill3" output="n" />   
+		<record alias="skill3-9" name="" ref="skill3" output="n" />   
+		<record alias="skill3-10" name="" ref="skill3" output="n" />   
+		<record alias="skill3-11" name="" ref="skill3" output="n" />   
+		<record alias="skill3-12" name="" ref="skill3" output="n" />   
+		<record alias="skill3-13" name="" ref="skill3" output="n" />   
+		<record alias="skill3-14" name="" ref="skill3" output="n" />   
+		<record alias="skill3-15" name="" ref="skill3" output="n" />   
+		<record alias="skill3-16" name="" ref="skill3" output="n" />   
+		<record alias="skill3-17" name="" ref="skill3" output="n" />   
+		<record alias="skill3-18" name="" ref="skill3" output="n" />   
+		<record alias="skill3-19" name="" ref="skill3" output="n" />   
+		<record alias="skill3-20" name="" ref="skill3" output="n" />   
+		<record alias="skill3-21" name="" ref="skill3" output="n" />   
+		<record alias="skill3-22" name="" ref="skill3" output="n" />   
+		<record alias="skill3-23" name="" ref="skill3" output="n" />   
+		<record alias="skill3-24" name="" ref="skill3" output="n" />   
+		<record alias="skill3-25" name="" ref="skill3" output="n" />   
+		<record alias="skill3-26" name="" ref="skill3" output="n" />   
+		<record alias="skill3-27" name="" ref="skill3" output="n" />   
+		<record alias="skill3-28" name="" ref="skill3" output="n" />   
+		<record alias="skill3-29" name="" ref="skill3" output="n" />   
+		<record alias="skill3-30" name="" ref="skill3" output="n" />   
+		<record alias="skill3-31" name="" ref="skill3" output="n" />   
+		<record alias="skill3-32" name="" ref="skill3" output="n" />   
+		<record alias="skill3-33" name="" ref="skill3" output="n" />   
+		<record alias="skill3-34" name="" ref="skill3" output="n" />   
+		<record alias="skill3-35" name="" ref="skill3" output="n" />   
+		<record alias="skill3-36" name="" ref="skill3" output="n" />   
+		<record alias="skill3-37" name="" ref="skill3" output="n" />   
+		<record alias="skill3-38" name="" ref="skill3" output="n" />   
+		<record alias="skill3-39" name="" ref="skill3" output="n" />   
+		<record alias="skill3-40" name="" ref="skill3" output="n" />   
+		<record alias="pc-skill3-1" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-skill3-2" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-1" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-2" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-3" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-4" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-5" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-6" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-7" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-8" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-9" name="" ref="PcSkill3" input="n" />   
+		<record alias="pc-job-style-skill3-10" name="" ref="PcSkill3" input="n" />   
+		<record alias="skill-build-up-level-max" name="" type="Byte" output="n" />   
+		<record alias="skill-build-up-point" name="" type="Short" showzero="y" output="n" />   
+		<record alias="max-hp" name="" type="Long" output="n" />   
+		<record alias="speed" name="" type="Velocity" output="n" />   	
+		<record alias="modify-cast-speed-percent" name="" type="Short" output="n" />   
+		<record alias="hp-regen" name="" type="Int32" output="n" />   
+		<record alias="hp-regen-equip" name="" type="Int32" output="n" />   
+		<record alias="attack-hit-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-hit-value" name="" type="Short" output="n" />   
+		<record alias="attack-pierce-value" name="" type="Short" output="n" />   
+		<record alias="attack-concentrate-value" name="" type="Short" output="n" />   
+		<record alias="attack-critical-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-critical-damage-percent" name="" type="Short" output="n" />   
+		<record alias="attack-critical-value" name="" type="Short" output="n" />   
+		<record alias="attack-critical-damage-value" name="" type="Short" output="n" />   
+		<record alias="defend-critical-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-critical-value" name="" type="Short" output="n" />   
+		<record alias="defend-bounce-percent" name="" type="Short" output="n" />   
+		<record alias="defend-dodge-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-dodge-value" name="" type="Short" output="n" />   
+		<record alias="defend-parry-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-parry-value" name="" type="Short" output="n" />   
+		<record alias="defend-parry-reduce-percent" name="" type="Short" output="n" />   
+		<record alias="defend-parry-reduce-diff" name="" type="Short" output="n" />   
+		<record alias="defend-perfect-parry-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-perfect-parry-reduce-percent" name="" type="Short" output="n" />   
+		<record alias="defend-counter-reduce-percent" name="" type="Short" output="n" />   
+		<record alias="defend-immune-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-power-creature-min" name="" type="Int32" output="n" />   
+		<record alias="attack-power-creature-max" name="" type="Int32" output="n" />   
+		<record alias="attack-power-equip-min" name="" type="Short" output="n" />   
+		<record alias="attack-power-equip-max" name="" type="Short" output="n" />   
+		<record alias="defend-power-creature-value" name="" type="Int32" output="n" />   
+		<record alias="defend-power-equip-value" name="" type="Int32" output="n" />   
+		<record alias="defend-resist-power-creature-value" name="" type="Short" output="n" />   
+		<record alias="defend-resist-power-equip-value" name="" type="Short" output="n" />   
+		<record alias="defend-physical-damage-reduce-percent" name="" type="Short" output="n" />   
+		<record alias="defend-force-damage-reduce-percent" name="" type="Short" output="n" />   
+		<record alias="attack-damage-modify-percent" name="" type="Short" output="n" />   
+		<record alias="attack-damage-modify-diff" name="" type="Int32" output="n" />   
+		<record alias="defend-damage-modify-percent" name="" type="Short" output="n" />   
+		<record alias="defend-damage-modify-diff" name="" type="Int32" output="n" />   
+		<record alias="defend-miss-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-stiff-duration-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-stiff-duration-value" name="" type="Short" output="n" />   
+		<record alias="defend-stiff-duration-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-stiff-duration-value" name="" type="Short" output="n" />   
+		<record alias="cast-duration-base-percent" name="" type="Short" output="n" />   
+		<record alias="cast-duration-value" name="" type="Short" output="n" />   
+		<record alias="job-ability-1" name="" type="Int32" output="n" />   
+		<record alias="job-ability-2" name="" type="Int32" output="n" />   
+		<record alias="heal-power-base-percent" name="" type="Short" output="n" />   
+		<record alias="aoe-defend-base-percent" name="" type="Short" output="n" />   
+		<record alias="aoe-defend-power-value" name="" type="Short" output="n" />   
+		<record alias="hate-base-percent" name="" type="Short" output="n" />   
+		<record alias="hate-power-creature-value" name="" type="Short" output="n" />   
+		<record alias="abnormal-attack-power-value" name="" type="Short" output="n" />   
+		<record alias="abnormal-attack-base-percent" name="" type="Short" output="n" />   
+		<record alias="abnormal-defend-power-value" name="" type="Short" output="n" />   
+		<record alias="abnormal-defend-base-percent" name="" type="Short" output="n" />   
+		<record alias="abnormal-attack-power-modify" name="" type="Short" output="n" />   
+		<record alias="abnormal-defend-power-modify" name="" type="Short" output="n" />   
+		<record alias="hate-power-modify" name="" type="Short" output="n" />   
+		<record alias="heal-power-modify" name="" type="Short" output="n" />   
+		<record alias="aoe-defend-power-modify" name="" type="Short" output="n" />   
+		<record alias="attack-hit-value-modify" name="" type="Short" output="n" />   
+		<record alias="attack-critical-value-modify" name="" type="Short" output="n" />   
+		<record alias="defend-critical-value-modify" name="" type="Short" output="n" />   
+		<record alias="defend-dodge-value-modify" name="" type="Short" output="n" />   
+		<record alias="defend-parry-value-modify" name="" type="Short" output="n" />   
+		<record alias="defend-physical-value-modify" name="" type="Short" output="n" />   
+		<record alias="defend-force-value-modify" name="" type="Short" output="n" />   
+		<record alias="attack-stiff-duration-value-modify" name="" type="Short" output="n" />   
+		<record alias="defend-stiff-duration-value-modify" name="" type="Short" output="n" />   
+		<record alias="cast-duration-value-modify" name="" type="Short" output="n" />   
+		<record alias="attack-critical-damage-modify" name="" type="Short" output="n" />   
+		<record alias="defend-critical-damage-modify" name="" type="Short" output="n" />   
+		<record alias="attack-pierce-modify" name="" type="Short" output="n" />   
+		<record alias="attack-parry-pierce-modify" name="" type="Short" output="n" />   
+		<record alias="defend-parry-reduce-modify" name="" type="Short" output="n" />   
+		<record alias="attack-perfect-parry-damage-modify" name="" type="Short" output="n" />   
+		<record alias="defend-perfect-parry-reduce-modify" name="" type="Short" output="n" />   
+		<record alias="attack-counter-damage-modify" name="" type="Short" output="n" />   
+		<record alias="defend-counter-reduce-modify" name="" type="Short" output="n" />   
+		<record alias="attack-attribute-value" name="" type="Short" output="n" />   
+		<record alias="attack-attribute-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-attribute-modify" name="" type="Short" output="n" />   
+		<record alias="attack-pierce-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-critical-damage-percent" name="" type="Short" output="n" />   
+		<record alias="defend-strength-creature-value" name="" type="Int32" output="n" />   
+		<record alias="attack-precise-creature-value" name="" type="Int32" output="n" />   
+		<record alias="attack-aoe-pierce-value" name="" type="Short" output="n" />   
+		<record alias="attack-abnormal-hit-base-percent" name="" type="Short" output="n" />   
+		<record alias="attack-abnormal-hit-value" name="" type="Short" output="n" />   
+		<record alias="defend-abnormal-dodge-base-percent" name="" type="Short" output="n" />   
+		<record alias="defend-abnormal-dodge-value" name="" type="Short" output="n" />   
+		<record alias="support-power-base-percent" name="" type="Short" output="n" />   
+		<record alias="support-power-value" name="" type="Short" output="n" />   
+		<record alias="heal-power-value" name="" type="Short" output="n" />   
+		<record alias="hypermove-power-value" name="" type="Short" output="n" />   
+		<record alias="r-attack-aoe-pierce-modify" name="" type="Short" output="n" />   
+		<record alias="r-attack-abnormal-hit-modify" name="" type="Short" output="n" />   
+		<record alias="r-defend-abnormal-dodge-modify" name="" type="Short" output="n" />   
+		<record alias="r-support-power-modify" name="" type="Short" output="n" />   
+
+
+		<record alias="max-guard-gauge" name="" type="Short" client="n" output="n" />   
+		<record alias="max-sp" name="" type="Short" client="n" output="n" />   
+		<record alias="ability-rate-max-guard-gauge-equip" name="" type="Short" client="n" output="n" />   
+		<record alias="sp-regen" name="" type="Short" client="n" output="n" />   
+		<record alias="sex" name="" type="Byte" client="n" seq="$sex" output="n" />   
+	</list>
+</table>

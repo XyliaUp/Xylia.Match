@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="CustomizingPreset" version="0.7" rule="cpl" side="client" >
+		<record alias="race" name="" type="ID" extra="Byte1" seq="$race" />
+		<record alias="sex" name="" type="ID" extra="Byte2" seq="$sex" />
+		<record alias="part-type" name="" type="ID" extra="Byte3" >
+			<case alias="none" name="" default="y" />
+			<case alias="face" name="" />
+			<case alias="body" name="" />
+			<case alias="beard" name="" />
+                                 </record>
+		<record alias="part-value" name="" type="ID" extra="Byte4" />
+
+
+		<record alias="icon-texture" name="" ref="IconTexture" />
+		<record alias="icon-index" name="" type="Short" />
+		<record alias="param8" name="" type="Byte" repeat="92" />
+		<record alias="desc" name="" type="TextAlias" />
+	</list>
+</table>

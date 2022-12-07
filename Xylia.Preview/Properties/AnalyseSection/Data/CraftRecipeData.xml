@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft-recipe" version="0.1" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="name" name="" type="TextAlias" server="n" />
+		<record alias="desc" name="" type="TextAlias" server="n" />
+		<record alias="requirement-name" name="" type="TextAlias" server="n" />		
+		<record alias="location-desc" name="" type="TextAlias" server="n" />		
+		<record alias="category" name="" type="Byte" default="none" >
+			<case alias="none" name="" />
+			<case alias="production-type-1" name="" />
+			<case alias="production-type-2" name="" />
+			<case alias="production-type-3" name="" />
+			<case alias="production-type-4" name="" />
+			<case alias="production-type-5" name="" />
+			<case alias="production-type-6" name="" />
+			<case alias="production-type-7" name="" />
+			<case alias="gathering-type-1" name="" />
+			<case alias="gathering-type-2" name="" />
+			<case alias="gathering-type-3" name="" />
+			<case alias="gathering-type-4" name="" />
+			<case alias="gathering-type-5" name="" />
+			<case alias="gathering-type-6" name="" />
+			<case alias="gathering-type-7" name="" />
+		</record>
+		<record alias="inner-category" name="" type="Int32" />
+		<record alias="money-cost" name="" type="Int32" />
+		<record alias="material-1" name="" ref="Item" />
+		<record alias="material-2" name="" ref="Item" />
+		<record alias="material-3" name="" ref="Item" />
+		<record alias="material-4" name="" ref="Item" />
+		<record alias="material-5" name="" ref="Item" />
+		<record alias="material-amount-1" name="" type="Short" />		
+		<record alias="material-amount-2" name="" type="Short" />
+		<record alias="material-amount-3" name="" type="Short" />
+		<record alias="material-amount-4" name="" type="Short" />
+		<record alias="material-amount-5" name="" type="Short" />		
+		<record alias="brand-material-1" name="" ref="ItemBrand" />
+		<record alias="brand-material-2" name="" ref="ItemBrand" />
+		<record alias="brand-material-3" name="" ref="ItemBrand" />
+		<record alias="brand-material-4" name="" ref="ItemBrand" />
+		<record alias="brand-material-5" name="" ref="ItemBrand" />
+		<record alias="brand-material-condition-type-1" name="" type="Seq" seq="$condition-type" out-cond="Exist: brand-material-1" />
+		<record alias="brand-material-condition-type-2" name="" type="Seq" seq="$condition-type" out-cond="Exist: brand-material-1" />
+		<record alias="brand-material-condition-type-3" name="" type="Seq" seq="$condition-type" out-cond="Exist: brand-material-1" />
+		<record alias="brand-material-condition-type-4" name="" type="Seq" seq="$condition-type" out-cond="Exist: brand-material-1" />
+		<record alias="brand-material-condition-type-5" name="" type="Seq" seq="$condition-type" out-cond="Exist: brand-material-1" />
+		<record alias="brand-material-amount-1" name="" type="Short" />
+		<record alias="brand-material-amount-2" name="" type="Short" />
+		<record alias="brand-material-amount-3" name="" type="Short" />
+		<record alias="brand-material-amount-4" name="" type="Short" />
+		<record alias="brand-material-amount-5" name="" type="Short" />
+		<record alias="limit-production-exp" name="" type="Short" />
+		<record alias="complete-quest" name="" type="Quest" />
+		<record alias="reward-production-exp" name="" type="Short" />
+		<record alias="reward-production-exp-bonus" name="" type="Short" />
+		<record alias="half-production-exp-step" name="" type="Short" />
+		<record alias="zero-production-exp-step" name="" type="Short" />
+		<record alias="customizable" name="" type="Bool" />
+		<record alias="delivery-method" name="" type="Byte" default="free" >
+			<case alias="free" name="" />
+			<case alias="post-box" name="" />
+			<case alias="account-warehouse" name="" />
+		</record>
+		<record alias="step-1" name="" ref="CraftRecipeStep" />		
+		<record alias="step-2" name="" ref="CraftRecipeStep" />
+		<record alias="step-3" name="" ref="CraftRecipeStep" />
+		<record alias="step-4" name="" ref="CraftRecipeStep" />		
+		<record alias="recipe-type" name="" type="Byte" default="normal" >
+			<case alias="normal" name="" />
+			<case alias="quicl" name="" />
+			<case alias="massive" name="" />
+		</record>		
+		<record alias="use-state" name="" type="Byte" default="in-use" >
+			<case alias="invalid-state" name="" />
+			<case alias="no-more-use" name="" />
+			<case alias="in-use" name="" />
+		</record>		
+	</list>
+</table>

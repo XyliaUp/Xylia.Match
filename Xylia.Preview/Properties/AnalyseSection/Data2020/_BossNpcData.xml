@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list alias="BossNpc" module="AIData" type="BossNpc" version="0.29" rule="cpl | extra" check-version="y" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="sp-point" name="" type="Short" repeat="3" />
+		<record alias="sp-show" name="" type="Index" repeat="3" />
+		<record alias="immune-breaker-disabale-show" name="" type="Index" />
+		<record alias="berserk-sequence-invoke-time" name="" type="Int32" />	
+		<record alias="difficulty-type-modify" name="" ref="DifficultyTypeModify" />	
+		<record alias="use-second-gauge" name="" type="Bool" />
+		<record alias="default-gp" name="" type="Short" />
+		<record alias="gp-section" name="" type="Short" repeat="11" />
+		<record alias="gp-section-cnt" name="" type="Byte" default="3" />
+		<record alias="ui-style" name="" type="Byte" >
+			<case alias="none" name="" default="y" />
+			<case alias="fury" name="" />
+			<case alias="absorb-level" name="" />
+			<case alias="double-sided" name="" />
+		</record>
+		<record alias="ui-tooltip" name="" type="TextAlias" />
+		<record alias="ui-double-sided-left-imageset" name="" type="Index" />	
+		<record alias="ui-double-sided-right-imageset" name="" type="Index" />	
+		<record alias="ui-double-sided-left-color-r" name="" type="Short" />
+		<record alias="ui-double-sided-left-color-g" name="" type="Short" />
+		<record alias="ui-double-sided-left-color-b" name="" type="Short" />
+		<record alias="ui-double-sided-left-color-a" name="" type="Short" />
+		<record alias="ui-double-sided-right-color-r" name="" type="Short" />
+		<record alias="ui-double-sided-right-color-g" name="" type="Short" />
+		<record alias="ui-double-sided-right-color-b" name="" type="Short" />
+		<record alias="ui-double-sided-right-color-a" name="" type="Short" />
+		<record alias="ui-fury-color-r" name="" type="Short" repeat="3" />
+		<record alias="ui-fury-color-g" name="" type="Short" repeat="3" />
+		<record alias="ui-fury-color-b" name="" type="Short" repeat="3" />
+		<record alias="ui-fury-color-a" name="" type="Short" repeat="3" />
+                                <!-- ========== 服务端专用 ========== -->
+		<record alias="berserk-sequence" name="狂暴化技能序列" ref="CombatSequence" client="n" />
+		<record alias="use-bleeding" name="" type="Bool" client="n" />
+		<record alias="disable-contribution-reward-range-check" name="" type="Bool" client="n" />
+
+		<record alias="rising-attack-skill3" name="击倒起身后使用技能" ref="Skill3" client="n" />
+		<record alias="rising-attack-invoke-time" name="击倒起身时间" type="Msec" client="n" />
+		<record alias="wakeup-attack-skill3" name="" ref="Skill3" client="n" />
+		<record alias="wakeup-attack-invoke-time" name="" type="Msec" client="n" />
+	</list>
+</table>

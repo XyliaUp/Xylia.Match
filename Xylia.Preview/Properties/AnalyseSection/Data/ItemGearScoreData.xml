@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="itemgearscore" version="0.2" rule="cpl" >
+		<record alias="level" name="" type="ID" extra="Byte1" />
+		<record alias="mastery-level" name="" type="ID" extra="Byte2" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="weapon-min" name="" type="Int32" />
+		<record alias="weapon-max" name="" type="Int32" />
+		<record alias="ring-min" name="" type="Int32" />
+		<record alias="ring-max" name="" type="Int32" />
+		<record alias="earring-min" name="" type="Int32" />
+		<record alias="earring-max" name="" type="Int32" />
+		<record alias="necklace-min" name="" type="Int32" />
+		<record alias="necklace-max" name="" type="Int32" />
+		<record alias="bracelet-min" name="" type="Int32" />
+		<record alias="bracelet-max" name="" type="Int32" />
+		<record alias="belt-min" name="" type="Int32" />
+		<record alias="belt-max" name="" type="Int32" />
+		<record alias="soul-min" name="" type="Int32" />
+		<record alias="soul-max" name="" type="Int32" />
+		<record alias="soul-2-min" name="" type="Int32" />
+		<record alias="soul-2-max" name="" type="Int32" />
+		<record alias="pet-1-min" name="" type="Int32" />
+		<record alias="pet-1-max" name="" type="Int32" />
+		<record alias="rune-1-min" name="" type="Int32" />
+		<record alias="rune-1-max" name="" type="Int32" />
+		<record alias="rune-2-min" name="" type="Int32" />
+		<record alias="rune-2-max" name="" type="Int32" />
+		<record alias="gloves-min" name="" type="Int32" />
+		<record alias="gloves-max" name="" type="Int32" />
+		<record alias="nova-min" name="" type="Int32" />
+		<record alias="nova-max" name="" type="Int32" />
+	</list>
+</table>

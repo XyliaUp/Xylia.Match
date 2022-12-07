@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="CustomizingDetailIcon" version="0.1" rule="cpl" index="y">
+		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
+		<record alias="sex" type="ID" extra="Byte2" name="" seq="$sex" />
+		<record alias="param-index" type="ID" extra="Byte3" name="" showzero="y" />
+		<record alias="order" type="ID" extra="Byte4" name="" />
+
+		<record alias="param-value" type="Byte" name="" />
+		<record alias="icon" type="Icon" name="" />
+		<record alias="desc" type="TextAlias" name="" />
+	</list>
+</table>

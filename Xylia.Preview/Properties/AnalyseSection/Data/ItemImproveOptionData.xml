@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ItemData" type="item-improve-option" version="4.2" rule="cpl" >
+		<record alias="id" type="id" name="" />
+		<record alias="level" type="Level" name="" start="0" />
+
+		<record alias="alias" type="Index" name="" />
+		<record alias="ability" type="Seq" name="" seq="$main-ability" />
+		<record alias="ability-value" type="Int32" name="" />
+		<record alias="effect" name="" ref="Effect" />
+		<record alias="effect-description" type="TextAlias" name="" />
+		<record alias="skill-modify-info-group" name="" ref="SkillModifyInfoGroup" repeat="10" />
+		<record alias="additional" type="TextAlias" name="" />
+		<record alias="draw-option-icon" name="" type="Icon" />
+	</list>
+</table>

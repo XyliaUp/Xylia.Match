@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+  <sequence alias="CreatureAppearance" name="生物外观引用序列队列" >
+  
+    <step target="CreatureAppearance" type="Table" />
+	
+    <step target="Npc" type="Table" />
+    <step target="DuelBot" type="Table" />
+    <step target="LobbyPc" type="Table" />	
+    <step target="PcAppearance" type="Table" />
+    <step target="SoulMaskSet" type="Table" />
+    <step target="SummonedAppearance" type="Table" />
+    <step target="Summoned" type="Table" />
+  </sequence>
+</table>

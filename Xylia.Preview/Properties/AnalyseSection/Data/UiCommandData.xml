@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="LocalizationData" type="ui-command" version="0.45" rule="cpl" check-version="y" >
+		<record alias="command" name ="" type="id" extra="Byte1" >
+			<case alias="none" name="" />
+			<case alias="default" name="" />
+			<case alias="transform" name="" />
+			<case alias="preview" name="" />
+			<case alias="search-auction" name="" />
+			<case alias="divide" name="" />
+			<case alias="decompose" name="" />
+			<case alias="powerbook" name="" />
+			<case alias="hyperlink" name="" />
+			<case alias="equip" name="" />
+			<case alias="unequip" name="" />
+			<case alias="lock" name="" />
+			<case alias="unlock" name="" />
+			<case alias="seal" name="" />
+			<case alias="use-grocery" name="" />
+			<case alias="unseal" name="" />
+			<case alias="randombox" name="" />
+			<case alias="talk-to-item" name="" />
+			<case alias="attach-weapongem" name="" />
+			<case alias="detach-weapongem" name="" />
+			<case alias="detach-weapon-enchant-gem" name="" />
+			<case alias="use-piece" name="" />
+			<case alias="trade-register" name="" />
+			<case alias="trade-register-divide" name="" />
+			<case alias="store-buy" name="" />
+			<case alias="store-sell" name="" />
+			<case alias="auction-sell-register" name="" />
+			<case alias="delivery-send-register" name="" />
+			<case alias="move-inventory-to-warehouse" name="" />
+			<case alias="move-warehouse-to-inventory" name="" />
+			<case alias="move-inventory-to-closet" name="" />
+			<case alias="move-closet-to-inventory" name="" />
+			<case alias="move-inventory-to-wardrobe" name="" />
+			<case alias="move-wardrobe-to-inventory" name="" />
+			<case alias="growth-auto-register" name="" />
+			<case alias="spirit-auto-register" name="" />
+			<case alias="transform-register" name="" />
+			<case alias="gemslot-add-preset" name="" />
+			<case alias="gemslot-remove-preset" name="" />
+			<case alias="production-register" name="" />
+			<case alias="chat-whisper" name="" />
+			<case alias="character-info" name="" />
+			<case alias="add-friend" name="" />
+			<case alias="invite-guild" name="" />
+			<case alias="set-target-mark" name="" />
+			<case alias="add-blacklist" name="" />
+			<case alias="delete-blacklist" name="" />
+			<case alias="direct-message" name="" />
+			<case alias="social-following" name="" />
+			<case alias="party-delegate-leader" name="" />
+			<case alias="party-banish-member" name="" />
+			<case alias="party-agreement-to-banish-member" name="" />
+			<case alias="party-withdraw-agreement-to-banish-member" name="" />
+			<case alias="party-dedicated-member" name="" />
+			<case alias="team-leave" name="" />
+			<case alias="team-delegate-leader" name="" />
+			<case alias="team-party-leader-promotion" name="" />
+			<case alias="dragon-jade-refinement" name="" />
+			<case alias="appearance-change-target" name="" />
+			<case alias="appearance-change-applying" name="" />
+			<case alias="show-inspector" name="" />
+			<case alias="remove-inserted-slot" name="" />
+			<case alias="enter-interdungeon-lobby" name="" />
+			<case alias="enter-duel-lobby" name="" />
+			<case alias="show-contents-journal" name="" />
+			<case alias="show-wardrobe" name="" />
+			<case alias="search-item-graph" name="" />
+			<case alias="explore-item-graph" name="" />
+			<case alias="set-item-graph-starting-point" name="" />
+			<case alias="clear-item-graph-starting-point" name="" />
+			<case alias="set-item-graph-destination" name="" />
+			<case alias="clear-item-graph-destination" name="" />
+			<case alias="show-item-graph-recipe" name="" />
+			<case alias="show-item-graph-variation" name="" />
+			<case alias="change-item-graph-group" name="" />
+			<case alias="receive-delivery" name="" />
+			<case alias="unpack-package" name="" />
+			<case alias="teleport" name="" />
+			<case alias="process" name="" />
+			<case alias="cash-store" name="" />
+			<case alias="add-appearance-pictorial" name="" />
+			<case alias="set-wardrobe-favorite" name="" />
+			<case alias="clear-wardrobe-favorite" name="" />
+			<case alias="set-wardrobe-appearance-seed" name="" />
+			<case alias="personal-customize" name="" />
+			<case alias="personal-customize-preview" name="" />
+			<case alias="sewing" name="" />
+			<case alias="skillskin" name="" />
+			<case alias="move-inventory-to-badge-depot" name="" />
+			<case alias="move-badge-depot-to-inventory" name="" />
+			<case alias="compose-badge" name="" />
+			<case alias="item-fusion-feed" name="" />
+			<case alias="item-fusion-special-feed" name="" />
+			<case alias="move-inventory-to-premium-depot" name="" />
+			<case alias="move-premium-depot-to-inventory" name="" />
+			<case alias="apply-guild" name="" />
+			<case alias="buy-collection-item-by-instant-payment" name="" />
+			<case alias="slate" name="" />
+                                 </record>
+
+		<record alias="name2" name="" type="TextAlias" />
+		<record alias="game-ui" name="" type="Index" />
+	</list>
+</table>

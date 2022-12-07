@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="reward" version="1.42" rule="cpl" >
+		<record alias="id" type="id" not-rule-dispel="y" />
+		<record alias="alias" type="Index" not-rule-dispel="y" />
+
+		<record alias="fixed-item" name="固定奖励" ref="Item" repeat="8" error-type="Jump" />
+		<record alias="fixed-item-min" name="固定奖励 最小数量" out-cond="Exist: fixed-item-" type="Short" repeat="8" />
+		<record alias="fixed-item-max" name="固定奖励 最大数量" out-cond="Exist: fixed-item-" type="Short" repeat="8" />
+
+		
+		<!-- 选择奖励 -->
+		<record alias="selected-item" name="选择奖励" ref="Item" repeat="64" error-type="Jump" />
+		<record alias="selected-item-count" name="选择奖励数量" type="Short" repeat="64" />
+		<record alias="selected-item-assured-count" name="可选择几项" type="Int32" />
+		
+		<!-- 普通组 -->
+		<!-- G1 12个   G2 12个   G3 24个   G4 10个   G5 10个  RARE   120个 -->
+		<record alias="group-3-item-1" ref="Item" error-type="Jump" />
+		<record alias="rare-item-1" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-1" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-1" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-2" ref="Item" error-type="Jump" />
+		<record alias="rare-item-2" ref="item" error-type="Jump" />
+		<record alias="group-1-item-2" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-2" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-3" ref="Item" error-type="Jump" />
+		<record alias="rare-item-3" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-3" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-3" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-4" ref="Item" error-type="Jump" />
+		<record alias="rare-item-4" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-4" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-4" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-5" ref="Item" error-type="Jump" />
+		<record alias="rare-item-5" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-5" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-5" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-6" ref="Item" error-type="Jump" />
+		<record alias="rare-item-6" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-6" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-6" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-7" ref="Item" error-type="Jump" />
+		<record alias="rare-item-7" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-7" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-7" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-8" ref="Item" error-type="Jump" />
+		<record alias="rare-item-8" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-8" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-8" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-9" ref="Item" error-type="Jump" />
+		<record alias="rare-item-9" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-9" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-9" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-10" ref="Item" error-type="Jump" />
+		<record alias="rare-item-10" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-10" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-10" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-11" ref="Item" error-type="Jump" />
+		<record alias="rare-item-11" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-11" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-11" ref="Item" error-type="Jump" />	
+		<record alias="group-3-item-12" ref="Item" error-type="Jump" />
+		<record alias="rare-item-12" ref="Item" error-type="Jump" />
+		<record alias="group-1-item-12" ref="Item" error-type="Jump" />
+		<record alias="group-2-item-12" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-13" ref="Item" error-type="Jump" />
+		<record alias="rare-item-13" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-14" ref="Item" error-type="Jump" />
+		<record alias="rare-item-14" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-15" ref="Item" error-type="Jump" />
+		<record alias="rare-item-15" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-16" ref="Item" error-type="Jump" />
+		<record alias="rare-item-16" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-17" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-18" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-19" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-20" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-21" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-22" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-23" name="" ref="Item" error-type="Jump" />
+		<record alias="group-3-item-24" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-17" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-18" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-19" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-20" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-21" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-22" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-23" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-24" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-25" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-26" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-27" name="" ref="Item" error-type="Jump" />
+		<record alias="rare-item-28" name="" ref="Item" error-type="Jump" />
+        <!-- ====================================== 服务端专用字段 ====================================== -->
+		<record alias="money-min" name="" type="" client="n" />
+		<record alias="money-max" name="" type="" client="n" />
+		<record alias="money-probability" name="" type="" client="n" />
+		<record alias="money-multiply" name="" type="" client="n" />	
+		<record alias="money-order-of-magnitude" name="" type="" client="n" />
+		<record alias="r-npc-exp" name="" type="" client="n" />
+		<record alias="group-1-2-probability" name="" type="" client="n" max="100" />
+		<record alias="group-1-prob-weight" name="" type="" client="n" max="100" />
+		<record alias="group-2-prob-weight" name="" type="" client="n" max="100" />
+		<record alias="group-1-assured-count" name="" type="" client="n" />
+		<record alias="group-2-assured-count" name="" type="" client="n" />
+		<record alias="group-3-probability" name="" type="Short" client="n" default="100" valid-cond="Exist: group-3-item-1" apply="must" />
+		<record alias="group-3-item-prob-weight" name="" type="Int32" client="n" default="3" valid-cond="Exist: group-3-item-*" apply="must" repeat="24" />
+
+		<record alias="group-4-item" name="" ref="Item" client="n" repeat="8" />
+		<record alias="group-4-item-min" name="" type="Byte" client="n" repeat="8" />
+		<record alias="group-4-item-max" name="" type="Byte" client="n" repeat="8" />
+		<record alias="group-4-probability" name="" type="Short" client="n" />
+		<record alias="group-4-selected-count" name="" type="Short" client="n" />
+
+		<record alias="group-5-item" name="" ref="Item" client="n" repeat="8" />
+		<record alias="group-5-item-min" name="" type="Byte" client="n" repeat="8" />
+		<record alias="group-5-item-max" name="" type="Byte" client="n" repeat="8" />
+		<record alias="group-5-probability" name="" type="Short" client="n" />
+		<record alias="group-5-selected-count" name="" type="Short" client="n" />
+
+		<record alias="rare-item-1-min" name="" type="Int32" client="n" default="1" valid-cond="Exist: rare-item-1" apply="must" />
+		<record alias="rare-item-1-max" name="" type="Int32" client="n" default="1" valid-cond="Exist: rare-item-1" apply="must" />
+		<record alias="rare-item-prob-weight" name="" type="Int32" client="n" default="50" valid-cond="Exist: rare-item-*" apply="must" repeat="120" />
+	</list>
+</table>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft" version="0.1" rule="cpl" >
+	    <record alias="category" type="id" seq="$production-type" extra="Byte1" />
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="icon" name="" type="Icon" />
+		<record alias="none-selected-icon" name="" type="Icon" />
+		<record alias="join-msg" name="" ref="GameMessage" />
+		<record alias="level-up-msg" name="" ref="GameMessage" />
+		<record alias="max-level-msg" name="" ref="GameMessage" />
+		
+		<record alias="need-exp-for-level-1" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-2" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-3" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-4" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-5" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-6" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-7" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-8" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-9" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-10" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-11" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-12" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-13" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-14" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-15" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-16" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-17" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-18" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-19" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-20" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-21" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-22" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-23" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-24" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-25" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-26" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-27" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-28" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-29" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-30" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-31" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-32" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-33" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-34" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-35" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-36" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-37" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-38" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-39" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-40" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-41" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-42" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-43" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-44" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-45" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-46" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-47" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-48" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-49" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-50" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-51" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-52" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-53" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-54" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-55" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-56" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-57" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-58" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-59" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-60" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-61" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-62" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-63" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-64" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-65" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-66" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-67" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-68" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-69" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-70" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-71" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-72" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-73" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-74" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-75" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-76" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-77" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-78" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-79" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-80" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-81" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-82" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-83" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-84" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-85" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-86" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-87" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-88" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-89" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-90" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-91" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-92" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-93" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-94" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-95" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-96" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-97" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-98" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-99" type="Int32" name="" default="-1" />
+		<record alias="need-exp-for-level-100" type="Int32" name="" default="-1" />
+	</list>
+</table>

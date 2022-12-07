@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="campfire" version="0.7" rule="cpl | extra" index="y">
+		<record alias="alias" type="Index" name="" />
+		<record alias="additional-heal-percent" type="Short" name="" />
+		<record alias="remain-duration" type="Msec" name="" showzero="y" />
+		<record alias="mesh-id" type="Index" name="" />
+		<record alias="animset-name" type="Index" name="" />
+		<record alias="anim-show" type="Index" name="" />
+		<record alias="despawn-show" type="Index" name="" />
+		<record alias="party-match" ref="PartyMatch" />
+		<record alias="map-tooltip" type="TextAlias" name="" />		
+	</list>
+</table>

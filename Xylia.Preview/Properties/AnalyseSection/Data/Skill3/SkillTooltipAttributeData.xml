@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	
+	<list module="CombatData" type="SkillTooltipAttribute" version="0.10" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="arg-type" name="" type="Seq" seq="$arg-type" repeat="4" >
+			<case alias="none" name="" default="y" />
+			<case alias="damage-percent-min-max" name="" />
+			<case alias="damage-percent" name="" />
+			<case alias="time" name="" />
+			<case alias="stack-count" name="" />
+			<case alias="effect" name="" />
+			<case alias="heal-percent" name="" />
+			<case alias="drain-percent" name="" />
+			<case alias="skill" name="" />
+			<case alias="consume-percent" name="" />
+			<case alias="probability-percent" name="" />
+			<case alias="stance-type" name="" />
+			<case alias="percent" name="" />
+			<case alias="counter" name="" />
+			<case alias="distance" name="" />
+			<case alias="key-command" name="" />
+			<case alias="number" name="" />
+			<case alias="text-alias" name="" />
+			<case alias="r-hypermove" name="" />
+			<case alias="r-heal-percent" name="" />
+			<case alias="r-heal-diff" name="" />
+			<case alias="r-shield-percent" name="" />
+			<case alias="r-shield-diff" name="" />
+			<case alias="r-support-percent" name="" />
+			<case alias="r-support-diff" name="" />
+		</record>
+
+		<record alias="text" name="" type="TextAlias" />
+		<record alias="icon" name="" type="Icon" />
+		<record alias="skill-modify-type" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="recycle-duration" name="" />
+			<case alias="sp-consume" name="" />
+			<case alias="damage" name="" />
+			<case alias="hp-drain" name="" />
+			<case alias="heal-percent" name="" />
+		</record>
+	</list>
+</table>

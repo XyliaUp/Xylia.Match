@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="duel-bot" version="0.22" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+
+		<record alias="race" name="" type="Seq" seq="$race" />
+		<record alias="sex" name="" type="Seq" seq="$sex" />
+		<record alias="job" name="" type="Seq" seq="$job_20" />
+		<record alias="level" name="" type="Byte" />
+		<record alias="mastery-level" name="" type="Byte" />
+		<record alias="faction" name="" ref="Faction" />
+		<record alias="speed" name="" type="Velocity" />
+		<record alias="radius" name="" type="Distance" />
+		<record alias="scale" name="" type="Short" default="1000" />
+		<record alias="name2" name="" type="TextAlias" />
+		<record alias="appearance" name="" ref="CreatureAppearance" />
+		<record alias="animset" name="" type="Index" />
+		<record alias="summoned-name2" name="" type="TextAlias" />
+		<record alias="summoned-appearance" name="" ref="CreatureAppearance" />
+		<record alias="summoned-animset" name="" type="Index" />
+		<!-- ================================================================= -->
+		<record alias="ability" name="" ref="DuelBotAbility" client="n" />
+		<record alias="equipped-item" name="" ref="DuelBotEquippedItem" client="n" />
+		<record alias="yaw" name="" type="Byte" client="n" />
+
+		<record alias="ai-level" name="" type="Byte" client="n" />
+		<record alias="job-style" name="" type="Seq" seq="$job-style" client="n" />
+		<record alias="spawn-social" name="" ref="Social" client="n" />
+		<record alias="despawn-social" name="" ref="Social" client="n" />
+
+		<record alias="none-override-skill-ignore-tick" name="" type="Byte" client="n" />
+		<record alias="base-move-ignore-tick" name="" type="Byte" client="n" />
+		<record alias="move-block-effect-skill-ignore-tick" name="" type="Byte" client="n" />
+		<record alias="whole-block-move-ignore-tick" name="" type="Byte" client="n" />
+		<record alias="effect-flag-skill-ignore-tick" name="" type="Byte" client="n" />
+
+
+		<record alias="trained-skill-set-vs-archer" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-assassin" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-blade-master" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-destroyer" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-force-master" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-kung-fu-fighter" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-shooter" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-soul-fighter" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-summoner" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-sword-master" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-warlock" name="" ref="" client="n" />
+		<record alias="trained-skill-set-vs-warrior" name="" ref="" client="n" />
+		<!-- ================================================================= -->
+	</list>
+</table>

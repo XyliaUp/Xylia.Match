@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="SummonedDesignerPreset" version="0.3" rule="cpl" index="y">
+		<record alias="index" name="" type="ID" />
+		<record alias="race" type="Byte" name="" seq="$race" start="0" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="icon-texture" name="" ref="IconTexture" />
+		<record alias="icon-index" name="" type="Short" />
+		<record alias="face" name="" type="Byte" />
+		<record alias="body" name="" type="Byte" />
+		<record alias="eye-color" name="" type="Byte" />
+		<record alias="eye" name="" type="Byte" />
+		<record alias="body-color" name="" type="Byte" />
+		<record alias="body-shape" name="" type="Byte" />
+		<record alias="decal" name="" type="Byte" />
+	</list>
+</table>

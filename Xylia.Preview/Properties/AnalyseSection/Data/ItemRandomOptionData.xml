@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ItemData" rule="cpl" type="item-random-option" version="0.1">
+		<record alias="id" name="" type="id" />	
+		<record alias="alias" name="" type="Index" />
+		<record alias="r-random-option-group" name="" ref="ItemRandomOptionGroupData" />
+		<record alias="r-random-option-enchant-level" type="Byte" repeat="5" />
+		<record alias="r-random-option-cost-group" name="" ref="CostGroup" repeat="4" />
+		<record alias="r-fix-random-option-cost-group-1" name="" ref="CostGroup" repeat="4" />
+		<record alias="r-fix-random-option-cost-group-2" name="" ref="CostGroup" repeat="4" />
+		<record alias="r-fix-random-option-cost-group-3" name="" ref="CostGroup" repeat="4" />
+	</list>
+</table>

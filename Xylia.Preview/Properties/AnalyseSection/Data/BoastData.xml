@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="ItemData" rule="cpl | extra" version="2.3" type="boast" side="client" > 
+	    <record alias="type" name="" type="type" >
+	        <case alias="npc-kill" />
+	        <case alias="duel" />
+	    </record>
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="name2" name="" type="TextAlias" />
+		<record alias="result-show-delay-time" name="" type="Float32" />
+		<!-- ========================================================= -->
+		<record alias="duel" name="" ref="Duel" filter="duel" />
+		<!-- ========================================================= -->
+		<record alias="npc" name="" ref="Npc" filter="npc-kill" />
+  </list>
+</table>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="LocalizationData" type="account-level" version="0.20" rule="cpl" >
+		<record alias="level" name="" type="id" />
+
+		<record alias="name" name="" type="TextAlias" server="n" />
+		<record alias="exp" name="" type="Long" showzero="y" />
+		<record alias="ability" name="" type="Seq" seq="$attach-ability" repeat="8" />
+		<record alias="ability-value" name="" type="Int32" repeat="8" />
+		<record alias="badge-slot-quota-category1-premium" name="" type="Byte" />
+		<record alias="badge-slot-quota-category1-normal" name="" type="Byte" />
+		<record alias="badge-slot-quota-category2-premium" name="" type="Byte" />
+		<record alias="badge-slot-quota-category2-normal" name="" type="Byte" />		
+		<record alias="badge-slot-quota-category3-premium" name="" type="Byte" />
+		<record alias="badge-slot-quota-category3-normal" name="" type="Byte" />
+		<record alias="badge-page" name="" type="Byte" />		
+		<record alias="badge-inventory-size" name="" type="Byte" />		
+	</list>
+</table>

@@ -1,0 +1,365 @@
+﻿
+using System;
+using System.Collections.Concurrent;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+using Xylia.bns.Modules.DataFormat.BinData;
+using Xylia.bns.Modules.DataFormat.BinData.Handle;
+using Xylia.bns.Read;
+using Xylia.Extension;
+using Xylia.Preview.Data.Record;
+
+
+namespace Xylia.Match.Util.Paks.Textures
+{
+	public abstract class IconOutBase : IDisposable
+	{
+		#region 构造
+		/// <summary>
+		/// 构造
+		/// </summary>
+		/// <param name="action"></param>
+		/// <param name="GameFolder"></param>
+		public IconOutBase(Action<string> action, string GameFolder = null)
+		{
+			Action = action;
+			this.GameDirectory = GameFolder;
+		}
+		#endregion
+
+
+
+		#region	字段
+		/// <summary>
+		/// 客户端数据
+		/// </summary>
+		internal HandleData HandleData;
+
+		/// <summary>
+		/// 统计Icon路径信息与包名称信息
+		/// </summary>
+		internal ConcurrentDictionary<int, IconTexture> IconPath;
+
+		/// <summary>
+		/// 关联信息
+		/// </summary>
+		internal BlockingCollection<QuoteInfo> QuoteInfos = new();
+
+
+		/// <summary>
+		/// 游戏资源文件夹
+		/// </summary>
+		public string GameDirectory = null;
+
+		/// <summary>
+		/// 结果目录
+		/// </summary>
+		public string OutputDirectory = null;
+
+
+		/// <summary>
+		/// 日志输出器
+		/// </summary>
+
+		internal OutLogHelper LogHelper = null;
+
+		public string Path_XML = null;
+
+		public string Path_Local = null;
+
+
+		/// <summary>
+		/// 指示是否显示生成日志
+		/// </summary>
+		public bool ShowLog_CreateInfo = true;
+
+
+		internal Action<string> Action = null;
+		#endregion
+
+
+
+
+		#region 方法
+		/// <summary>
+		/// 开始初始化
+		/// </summary>
+		public void StartInit()
+		{
+			#region 读取资源
+			this.LogHelper = new OutLogHelper(Path.GetDirectoryName(this.OutputDirectory));  //设置日志输出路径
+			
+			var select = new GetDataPath(this.GameDirectory, null);    //初始化数据文件
+			this.Path_XML = select.TargetXml;
+			this.Path_Local = select.TargetLocal;
+			#endregion
+
+
+			#region 分析数据
+			this.AnalyseTextureData();
+
+			//清空数据
+			this.QuoteInfos = new();
+
+			//开始分析数据
+			this.AnalyseSourceData(IconPath);
+
+			//清理资源
+			this.HandleData?.Dispose();
+			this.HandleData = null;
+			#endregion
+		}
+		#endregion
+
+
+		#region 处理游戏数据
+		/// <summary>
+		/// 分析贴图数据
+		/// </summary>
+		public void AnalyseTextureData()
+		{
+			#region 初始化
+			Action("正在分析图标数据...");
+
+			if (HandleData is null) this.HandleData = new HandleData(Path_XML, false);
+
+			var NameKey = HandleData.BinHandle.Field.Result.NameKey_Convert;
+			if (!NameKey.ContainsKey("icontexture")) throw new Exception("无效的图标");
+			#endregion
+
+			#region 读取贴图数据
+			this.IconPath = new ConcurrentDictionary<int, IconTexture>();
+			Parallel.ForEach(HandleData.BinHandle.ExtractData(NameKey["icontexture"]), field =>
+			{
+				try
+				{
+					int CurId = field.Field.FID;
+
+					//路径信息
+					var Lookups = field.Lookup.TextList;
+					if (this.IconPath.ContainsKey(CurId)) return;
+
+					this.IconPath.GetOrAdd(CurId, new IconTexture()
+					{
+						//alias = Lookups[0].String,
+						icontexture = Lookups[1].String,
+
+						IconWidth = BitConverter.ToInt16(field.Field.Data, 20),
+						IconHeight = BitConverter.ToInt16(field.Field.Data, 22),
+						TextureWidth = BitConverter.ToInt16(field.Field.Data, 24),
+						TextureHeight = BitConverter.ToInt16(field.Field.Data, 26),
+					});
+				}
+				catch (Exception ee)
+				{
+					System.Diagnostics.Debug.WriteLine($" == Cache == { ee.Message }");
+				}
+			});
+			#endregion
+		}
+
+		/// <summary>
+		/// 分析指定数据
+		/// </summary>
+		/// <param name="IconPath"></param>
+		/// <param name="OnlyDumpUpks">只输出文件</param>
+		internal virtual void AnalyseSourceData(ConcurrentDictionary<int, IconTexture> IconPath) => throw new Exception("请在引用类中分析资源数据");
+		#endregion
+
+
+		#region 生成图标
+		/// <summary>
+		/// 生成对应的图标文件
+		/// </summary>
+		/// <param name="SaveFormat"></param>
+		public void SaveAsPicture(string SaveFormat)
+		{
+			#region	设置存储格式
+			//去除格式中括号内空格
+			bool HasSaveFormat = false;
+			if (!SaveFormat.IsNull())
+			{
+				HasSaveFormat = true;
+				SaveFormat = SaveFormat.ToLower();
+
+				SaveFormat = new Regex(@"\[\s+", RegexOptions.Singleline).Replace(SaveFormat, "[");
+				SaveFormat = new Regex(@"\s+\]", RegexOptions.Singleline).Replace(SaveFormat, "]");
+			}
+			#endregion
+
+			#region 开始处理
+			//必须进行初始化
+			IconTextureExt.PakData.Initialize(this.GameDirectory);
+
+			//多线程处理
+			int Count = 0;
+			Parallel.ForEach(this.QuoteInfos, QuoteInfo =>
+			{
+				Action($"正在生成图标，进度{ 100 * Count++ / this.QuoteInfos.Count  }%");
+
+				try
+				{
+					//调用图标创建
+					var bitmap = GetTexture(QuoteInfo);
+					if (bitmap is null) return;
+
+
+					#region 输出名称处理
+					string MainId = QuoteInfo.MainId.ToString();
+					string OutName = $"{ MainId }_{ QuoteInfo.Name }";
+
+					if (!HasSaveFormat) OutName = MainId;
+					else
+					{
+						//由于正则对中文支持问题，其他中文情况单独列出
+						OutName = SaveFormat
+						   .Replace("[名称]", QuoteInfo.Name)
+						   .Replace("[name]", QuoteInfo.Name).Replace("[name2]", QuoteInfo.Name)
+						   .Replace("[alias]", QuoteInfo.Alias).Replace("[别名]", QuoteInfo.Alias)
+						   .Replace("[id]", MainId).Replace("[编号]", MainId);
+					}
+
+					//判断是否存在非法字符
+					if (OutName.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+					{
+						LogHelper.Record($"{ QuoteInfo.MainId } [{ QuoteInfo.Name }]  由于名称存在非法字符，生成名称已调整。(非法字符是指<>?*\" |\\/等不可以用于文件名的符号)", OutLogHelper.LogGroup.生成日志);
+						foreach (char c in Path.GetInvalidFileNameChars()) OutName = OutName.Replace(c.ToString(), "_");
+					}
+
+					//生成最终存储文件名
+					string FinalPath = OutputDirectory + @"\" + OutName + (Path.GetExtension(OutName).IsNull() ? ".png" : null);
+					#endregion
+
+					#region 存储图片
+					// 存储初始化
+					if (!Directory.Exists(OutputDirectory)) Directory.CreateDirectory(OutputDirectory);
+					if (File.Exists(FinalPath)) File.Delete(FinalPath);
+
+					// 输出图片
+					bitmap.Save(FinalPath, ImageFormat.Png);
+					bitmap.Dispose();
+					bitmap = null;
+
+					//创建成功日志
+					if (this.ShowLog_CreateInfo)
+					{
+						var IconInfo = IconPath.ContainsKey(QuoteInfo.IconTextureId) ? IconPath[QuoteInfo.IconTextureId] : null;
+						LogHelper.Record($"{ QuoteInfo.MainId } => { IconInfo.icontexture }", OutLogHelper.LogGroup.生成日志);
+					}
+					#endregion
+				}
+				catch (Exception ee)
+				{
+					LogHelper.Record($@"{ QuoteInfo.MainId } => { ee.Message }", OutLogHelper.LogGroup.错误记录);
+				}
+			});
+			#endregion
+
+
+			#region 资源清理 
+			this.QuoteInfos = null;
+
+			GC.Collect();
+			#endregion
+		}
+
+		/// <summary>
+		/// 获得图标
+		/// </summary>
+		/// <param name="IconId"></param>
+		/// <param name="IconIdx"></param>
+		/// <param name="MainId">提示用</param>
+		/// <param name="Bitmap"></param>
+		/// <param name="icon"></param>
+		/// <param name="Name">提示用</param>
+		/// <returns></returns>
+		internal Bitmap GetTexture(QuoteInfo quoteInfo)
+		{
+			#region 初始处理
+			string ItemMsg = $"数据ID { quoteInfo.MainId } { (quoteInfo.Name != null ? $"[{ quoteInfo.Name }]" : null) } ";
+
+			if (quoteInfo.IconTextureId == 0)
+			{
+				LogHelper.Record(ItemMsg + $"缺少道具图标", OutLogHelper.LogGroup.错误记录);
+				return null;
+			}
+			else if (!IconPath.ContainsKey(quoteInfo.IconTextureId))
+			{
+				Console.WriteLine($"{ quoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo：{ IconPath.Count })");
+				return null;
+			}
+
+
+			var IconTexture = IconPath[quoteInfo.IconTextureId];
+			#endregion
+
+			#region 异常处理
+			if (string.IsNullOrWhiteSpace(IconTexture.icontexture))
+			{
+				LogHelper.Record($"{ ItemMsg } => 图标({ IconTexture.icontexture }) 由于图标名为空，跳过执行", OutLogHelper.LogGroup.错误记录);
+				return null;
+			}
+
+			var bitmap = IconTextureExt.GetIcon(IconTexture, quoteInfo.IconIndex);
+			if (bitmap is null)
+			{
+				LogHelper.Record($"{ItemMsg} => 图标({ IconTexture.icontexture } 图标资源获取失败", OutLogHelper.LogGroup.错误记录);
+				return null;
+			}
+			#endregion
+
+
+			return quoteInfo.ProcessImage(bitmap);
+		}
+		#endregion
+
+
+
+		#region Dispose
+		private bool disposedValue;
+
+		protected virtual void Dispose(bool disposing)
+		{
+			try
+			{
+				if (!disposedValue)
+				{
+					if (disposing)
+					{
+						// TODO: 释放托管状态(托管对象)
+						this.HandleData?.Dispose();
+						this.HandleData = null;
+					}
+
+					this.LogHelper = null;
+
+					// TODO: 释放未托管的资源(未托管的对象)并替代终结器
+					// TODO: 将大型字段设置为 null
+					disposedValue = true;
+				}
+			}
+			catch
+			{
+
+			}
+		}
+
+		// // TODO: 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+		// ~IconTextureBase()
+		// {
+		//     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+		//     Dispose(disposing: false);
+		// }
+		public void Dispose()
+		{
+			// 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+			Dispose(disposing: true);
+			GC.SuppressFinalize(this);
+		}
+		#endregion
+	}
+}

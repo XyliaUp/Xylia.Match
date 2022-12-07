@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<!-- 物品技能 -->
+	<list module="ItemData" type="ItemSkill" version="0.13" rule="cpl | extra" >
+		<record alias="alias" type="Index" />
+		<record alias="skill-id" type="Int32" />
+		<record alias="skill-variation-id" type="Byte" repeat="8" />
+		<record alias="include-inheritance-skill" type="Bool" show-zero="y" />
+		<record alias="item-sim-skill" ref="Skill3" error-type="Single" input="n" />
+		<record alias="name2" type="TextAlias" server="n" />
+		<record alias="describe2" type="TextAlias" server="n" />
+		<record alias="item-skill-tooltip" type="TextAlias" server="n" />
+		<!-- =============================================================== -->
+		<record alias="check-effect-flag" type="Seq16" name="" client="n" seq="$flag" repeat="2" />
+		<record alias="check-effect-flag-op" type="Byte" name="" client="n" seq="$op" out-cond="Exist: check-effect-flag-2" />	
+		<record alias="check-skill-result" type="Short" name="" client="n" seq="$skill-result" />	
+		<record alias="item-sim-skill-target" type="Short" name="" client="n" seq="$skill-target" />		
+		<record alias="item-skill-effect" name="" client="n" ref="EffectGroup" repeat="7" />	
+		<record alias="target-skill-step" type="Short" name="" client="n" seq="$skill-step" />	
+		<record alias="use-exec-caster-effect" type="Bool" name="" client="n" />		
+		<!-- =============================================================== -->	
+	</list>
+</table>

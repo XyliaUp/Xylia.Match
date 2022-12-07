@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData0" type="ZoneNpcSpawn" version="0.18" retired="n" rule="cpl" side="server" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="zone" name="" ref="Zone" link="id" />		
+		<record alias="id" name="" type="Short" />
+		<record alias="npc" name="" ref="Npc" />	
+		
+		<record alias="area" name="" ref="ZoneArea" />
+		<record alias="yaw-max" name="" type="Short" />		
+		<record alias="yaw-min" name="" type="Short" />
+
+		<record alias="init-spawn" name="" type="Bool" />
+		<record alias="respawn" name="" type="Bool" />	
+		<record alias="respawn-delay-max" name="" type="Int32" max="30000" />			
+		<record alias="respawn-delay-min" name="" type="Int32" max="50000" />		
+		<record alias="despawn-delay" name="" type="Int32" />		
+		
+		<record alias="act-detect" name="" >
+		     <case alias="none" />
+		     <case alias="pc-360" />
+		     <case alias="npc-360" />
+		     <case alias="both-360" />	 
+		</record>
+
+		<record alias="act-detect-1" name="" seq="$act-detect" />
+		<record alias="act-area-1" name="" ref="ZoneArea" />
+		<record alias="act-pathway-1" name="" ref="ZonePathway" />
+
+		<record alias="act-sequence" name="" ref="ActSequence" />
+		<record alias="act-social-1" name="" ref="Social" />
+		<record alias="act-social-2" name="" ref="Social" />
+
+	</list>
+</table>

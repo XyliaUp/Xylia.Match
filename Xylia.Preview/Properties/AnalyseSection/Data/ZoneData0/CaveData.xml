@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="cave" version="0.4" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="zone-1" name="" ref="Zone" link="id" />
+		<record alias="zone-2" name="" ref="Zone" link="id" />
+		<record alias="zone-3" name="" ref="Zone" link="id" />
+		<record alias="zone-4" name="" ref="Zone" link="id" />
+		<record alias="zone-5" name="" ref="Zone" link="id" />
+		<record alias="zone-6" name="" ref="Zone" link="id" />
+		<record alias="zone-7" name="" ref="Zone" link="id" />
+		<record alias="zone-8" name="" ref="Zone" link="id" />
+		<record alias="zone-9" name="" ref="Zone" link="id" />
+		<record alias="zone-10" name="" ref="Zone" link="id" />
+		<record alias="zone-11" name="" ref="Zone" link="id" />
+		<record alias="zone-12" name="" ref="Zone" link="id" />
+		<record alias="zone-13" name="" ref="Zone" link="id" />
+		<record alias="zone-14" name="" ref="Zone" link="id" />
+		<record alias="zone-15" name="" ref="Zone" link="id" />
+		<record alias="zone-16" name="" ref="Zone" link="id" />
+		<record alias="zone-17" name="" ref="Zone" link="id" />
+		<record alias="zone-18" name="" ref="Zone" link="id" />
+		<record alias="zone-19" name="" ref="Zone" link="id" />
+		<record alias="zone-20" name="" ref="Zone" link="id" />
+		<record alias="zone-21" name="" ref="Zone" link="id" />
+		<record alias="zone-22" name="" ref="Zone" link="id" />
+		<record alias="zone-23" name="" ref="Zone" link="id" />
+		<record alias="zone-24" name="" ref="Zone" link="id" />
+		<record alias="zone-25" name="" ref="Zone" link="id" />
+		<record alias="zone-26" name="" ref="Zone" link="id" />
+		<record alias="zone-27" name="" ref="Zone" link="id" />
+		<record alias="zone-28" name="" ref="Zone" link="id" />
+		<record alias="zone-29" name="" ref="Zone" link="id" />
+		<record alias="zone-30" name="" ref="Zone" link="id" />
+		<record alias="zone-31" name="" ref="Zone" link="id" />
+		<record alias="zone-32" name="" ref="Zone" link="id" />
+		<record alias="zone-33" name="" ref="Zone" link="id" />
+		<record alias="zone-34" name="" ref="Zone" link="id" />
+		<record alias="zone-35" name="" ref="Zone" link="id" />
+		<record alias="zone-36" name="" ref="Zone" link="id" />
+		<record alias="zone-37" name="" ref="Zone" link="id" />
+		<record alias="zone-38" name="" ref="Zone" link="id" />
+		<record alias="zone-39" name="" ref="Zone" link="id" />
+		<record alias="zone-40" name="" ref="Zone" link="id" />
+	</list>
+</table>

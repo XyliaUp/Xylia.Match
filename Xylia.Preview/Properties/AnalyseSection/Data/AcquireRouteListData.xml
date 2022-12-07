@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="acquire-route-list" version="0.10" rule="cpl" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="acquire-route" name="" ref="AcquireRoute" repeat="10" />
+		<record alias="acquire-route-full" name="" ref="AcquireRoute" repeat="100" />
+	</list>
+</table>

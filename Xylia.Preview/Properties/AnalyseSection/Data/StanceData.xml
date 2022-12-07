@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list id="315" alias="Stance" module="CombatData" type="stance" version="0.26" rule="cpl" >
+		<record alias="stance-type" name="" type="id" seq="$stance" version="20210730" />
+		
+
+		<record alias="name2" name="" type="TextAlias" server="n" />
+		<record alias="initialize" name="" type="Bool" default="y" />
+		<record alias="default-sp" name="" type="Short" />
+		<record alias="max-sp" name="" type="Short" />
+		<record alias="effect-1" name="" ref="Effect" />
+		<record alias="effect-2" name="" ref="Effect" />
+		<record alias="effect-3" name="" ref="Effect" />
+		<record alias="effect-4" name="" ref="Effect" />
+		<record alias="impossible-equip" name="" type="Bool" />
+		<record alias="clone-weapon-appearance-to-left" name="" type="Bool" />
+		<record alias="target-angle-1" name="" type="Float" default="16" />
+		<record alias="target-angle-2" name="" type="Float" default="16" />
+		<record alias="target-angle-3" name="" type="Float" default="16" />
+		<record alias="target-angle-4" name="" type="Float" default="16" />
+		<record alias="target-beam-width-1" name="" type="Float" default="1.4" />
+		<record alias="target-beam-width-2" name="" type="Float" default="1.4" />
+		<record alias="target-beam-width-3" name="" type="Float" default="1.4" />
+		<record alias="target-beam-width-4" name="" type="Float" default="1.4" />
+		<record alias="target-band-first-1" name="" type="Float" default="5.0" />
+		<record alias="target-band-first-2" name="" type="Float" default="5.0" />
+		<record alias="target-band-first-3" name="" type="Float" default="5.0" />
+		<record alias="target-band-first-4" name="" type="Float" default="5.0" />
+		<record alias="target-band-second-1" name="" type="Float" default="15.0" />
+		<record alias="target-band-second-2" name="" type="Float" default="15.0" />
+		<record alias="target-band-second-3" name="" type="Float" default="15.0" />
+		<record alias="target-band-second-4" name="" type="Float" default="15.0" />
+		<record alias="band-check-limit-1" name="" type="Short" default="3" />
+		<record alias="band-check-limit-2" name="" type="Short" default="3" />
+		<record alias="band-check-limit-3" name="" type="Short" default="3" />
+		<record alias="band-check-limit-4" name="" type="Short" default="3" />
+		<record alias="target-change-delay-1" name="" type="Float" default="1.0" />
+		<record alias="target-change-delay-2" name="" type="Float" default="1.0" />
+		<record alias="target-change-delay-3" name="" type="Float" default="1.0" />
+		<record alias="target-change-delay-4" name="" type="Float" default="1.0" />
+		<record alias="threshold-min-1" name="" type="Float" />
+		<record alias="threshold-min-2" name="" type="Float" />
+		<record alias="threshold-min-3" name="" type="Float" />
+		<record alias="threshold-min-4" name="" type="Float" />
+		<record alias="threshold-max-1" name="" type="Float" />
+		<record alias="threshold-max-2" name="" type="Float" />
+		<record alias="threshold-max-3" name="" type="Float" />
+		<record alias="threshold-max-4" name="" type="Float" />	
+		<record alias="empty-delay-1" name="" type="Float" default="1.0" />
+		<record alias="empty-delay-2" name="" type="Float" default="1.0" />
+		<record alias="empty-delay-3" name="" type="Float" default="1.0" />
+		<record alias="empty-delay-4" name="" type="Float" default="1.0" />
+		<record alias="target-gather-angle" name="" type="Float" default="30" />
+		<record alias="stun-delay" name="" type="Float" default="1.0" />
+		<record alias="kneel-delay" name="" type="Float" default="1.0" />
+		<record alias="down-delay" name="" type="Float" default="1.0" />
+		<record alias="mid-air-delay" name="" type="Float" default="1.0" />
+		<record alias="swoon-delay" name="" type="Float" default="1.0" />
+		<record alias="secondgauge-name" name="" type="Byte" >
+			<case alias="none" name="" default="y" />
+			<case alias="blade" name="" />
+			<case alias="soul" name="" />
+			<case alias="fighting-spirit" name="" />
+			<case alias="force-energy" name="" />
+			<case alias="fury" name="" />
+			<case alias="chakra" name="" />
+		</record>
+		<record alias="secondgauge-use-type" name="" type="Byte" >
+			<case alias="none" name="" default="y" />
+			<case alias="use-sp" name="" />
+			<case alias="use-fp" name="" />
+		</record>
+		<record alias="combat-mode-show" name="" type="Index" />
+		<record alias="soul-fighter-weapon-show" name="" type="Index" />
+		<record alias="soul-fighter-buff-show" name="" type="Index" />
+		<record alias="phantom-not-combat-mode-show" name="" type="Index" />
+		<record alias="kungfu-fighter-contact-stance-weapon-mesh-id" name="" type="Index" />
+		<record alias="kungfu-fighter-contact-stance-weapon-mesh-col-1" name="" type="Index" />
+		<record alias="kungfu-fighter-contact-stance-weapon-mesh-col-2" name="" type="Index" />
+		<record alias="kungfu-fighter-contact-stance-weapon-mesh-col-3" name="" type="Index" />
+		<record alias="kungfu-fighter-contact-stance-weapon-show" name="" type="Index" />
+	</list>
+</table>

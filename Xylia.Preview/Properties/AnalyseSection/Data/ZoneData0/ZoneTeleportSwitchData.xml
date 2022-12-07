@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list relative-path="Zone\*\ZoneTeleportSwitchData.*" module="ZoneData2" type="ZoneTeleportSwitch" version="0.6" retired="n" rule="cpl | unsort" >
+		<!-- 将根据id进行分类 -->
+		<record alias="zone" type="id" sort-by="n" />
+		<record alias="id" type="Level" start="0" />
+	
+		<record alias="alias" name="alias" type="Index" />
+		<record alias="position" type="Vector32" />
+		<record alias="activate-radius" type="Int32" />	
+		<record alias="activate-teleport" ref="Teleport" />
+		<record alias="description" type="Index" client="n" />
+	</list>
+</table>

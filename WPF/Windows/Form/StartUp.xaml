@@ -1,0 +1,19 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      
+        xmlns:Controls="clr-namespace:ScreenToGif.Controls" x:Class="Cherub.Gather.StartUp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="{StaticResource Title.StartUp}" VerticalAlignment="Top" Height="34" Width="318" FontSize="18"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="190,151,0,0" VerticalAlignment="Top" Width="100"/>
+
+    
+
+    </Grid>
+</Window>

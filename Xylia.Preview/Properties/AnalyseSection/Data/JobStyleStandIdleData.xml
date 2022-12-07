@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="jobstylestandidle" version="0.1" rule="cpl" side="client" >
+		<record alias="job" type="id" name="" seq="$job" extra="Byte1" />
+		<record alias="job-style" type="id" name="" seq="$job-style" extra="Byte2" />
+
+		<record alias="index" name="" type="Int32" start="0" />
+		<record alias="group-index" name="" type="Int32" />
+		<record alias="job-style-stand-idle-show" name="" type="Index" />		
+		<record alias="event-time" name="" type="Msec" default="25000" />	
+	</list>
+</table>

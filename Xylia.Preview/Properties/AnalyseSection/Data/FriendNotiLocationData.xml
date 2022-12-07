@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="127" alias="FriendNotiLocation" module="ZoneData0" type="friend-noti-location" version="0.3" rule="cpl" >
+		<record alias="id" name="" type="id" extra="Short1" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="zone1" ref="Zone" link="id" repeat="127" />
+		<record alias="zone2" ref="Zone" link="id" repeat="127" />
+		<record alias="name" name="" type="TextAlias" server="n" />
+	</list>
+</table>

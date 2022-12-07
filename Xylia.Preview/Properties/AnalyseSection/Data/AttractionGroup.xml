@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData0" type="attraction-group" version="0.1" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+	</list>
+</table>

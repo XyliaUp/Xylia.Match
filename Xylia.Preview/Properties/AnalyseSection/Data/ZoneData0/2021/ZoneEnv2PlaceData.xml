@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData0" type="ZoneEnv2Place" version="0.2" retired="n" rule="cpl | extra" check-version="y" >
+    <record alias="type" name="" type="type" >
+        <case alias="button" />
+        <case alias="chest" />
+        <case alias="pot" />
+        <case alias="gate" />
+        <case alias="wall" />
+        <case alias="refiner" />
+        <case alias="control-point" />
+        <case alias="portal" />
+        <case alias="foot-switch" />
+        <case alias="effect-region" />
+        <case alias="airdash" />
+        <case alias="airdash-leave" />	
+        <case alias="oceanic-region" />
+        <case alias="fall-death" />
+        <case alias="multiple-loop" />
+        <case alias="deck" />
+        <case alias="fishing-point" />
+        <case alias="attraction-popup" />
+        <case alias="enter-arena-dungeonlobby" /> 	
+    </record>
+    <record alias="alias" name="" type="Index" />	
+    <record alias="region-point-1" name="" type="Vector32" />
+    <record alias="region-point-2" name="" type="Vector32" />
+    <record alias="region-point-3" name="" type="Vector32" />
+    <record alias="region-point-4" name="" type="Vector32" />
+    <record alias="height" name="" type="Short" />	
+    <record alias="action-point" name="" type="Vector32" />	
+    <record alias="action-radius" name="" type="Short" showzero="y" />
+    <record alias="use-manipulation-point" name="" type="Bool" />
+    <record alias="manipulation-point" name="" type="Vector32" />	
+    <record alias="manipulation-radius" name="" type="Short" />
+    <record alias="manipulation-height-upper" name="" type="Short" />	
+    <record alias="manipulation-height-lower" name="" type="Short" />
+    <record alias="env-actorname" name="" type="Index" />	
+    <record alias="spawn-env" name="" type="Bool" />
+    <!-- ============================================================= -->
+    <record alias="duration" name="" type="Msec" filter="airdash" />
+    <record alias="end-pos" name="" type="Vector32" filter="airdash" />
+    <record alias="summon-end-pos" name="" type="Vector32" filter="airdash" />
+    <!-- ============================================================= -->
+
+    <!-- ============================================================= -->	
+	<record alias="tool-zone" client="n" repeat="20" />
+    <!-- ============================================================= -->		
+	</list>
+</table>

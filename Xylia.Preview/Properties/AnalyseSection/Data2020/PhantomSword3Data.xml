@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="data" version="1.02">
+	<list module="CombatData" type="phantomsword3" version="0.5" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="variation-id" name="" type="Level" start="0" />		
+		
+		<record alias="fly-type" name="" type="seq" >
+			<case alias="bone" name="" default="y" />
+			<case alias="bone-pos-only" name="" />
+			<case alias="ground" name="" />
+			<case alias="laser" name="" />
+			<case alias="ninecurve" name="" />
+		</record>
+		<record alias="start-bone" name="" type="Index" />
+		<record alias="attack-bone" name="" type="Index" />
+		<record alias="fire-arrival-x-1" name="" type="Byte" />
+		<record alias="fire-arrival-x-2" name="" type="Byte" />
+		<record alias="fire-arrival-x-3" name="" type="Byte" />
+		<record alias="fire-arrival-x-4" name="" type="Byte" />
+		<record alias="fire-arrival-x-5" name="" type="Byte" />
+		<record alias="fire-arrival-x-6" name="" type="Byte" />
+		<record alias="fire-arrival-y-1" name="" type="Byte" />
+		<record alias="fire-arrival-y-2" name="" type="Byte" />
+		<record alias="fire-arrival-y-3" name="" type="Byte" />
+		<record alias="fire-arrival-y-4" name="" type="Byte" />
+		<record alias="fire-arrival-y-5" name="" type="Byte" />
+		<record alias="fire-arrival-y-6" name="" type="Byte" />
+		<record alias="fire-angle-1" name="" type="Int32" default="-1" />
+		<record alias="fire-angle-2" name="" type="Int32" default="-1" />
+		<record alias="fire-angle-3" name="" type="Int32" default="-1" />
+		<record alias="fire-angle-4" name="" type="Int32" default="-1" />
+		<record alias="fire-angle-5" name="" type="Int32" default="-1" />
+		<record alias="fire-angle-6" name="" type="Int32" default="-1" />
+		<record alias="cast-show-1" name="" type="Index" />
+		<record alias="cast-show-2" name="" type="Index" />
+		<record alias="cast-show-3" name="" type="Index" />
+		<record alias="cast-show-4" name="" type="Index" />
+		<record alias="cast-show-5" name="" type="Index" />
+		<record alias="cast-show-6" name="" type="Index" />
+		
+		<record alias="fire-show-1-1" name="" type="Index" />
+		<record alias="fire-show-1-2" name="" type="Index" />
+		<record alias="fire-show-1-3" name="" type="Index" />
+		<record alias="fire-show-1-4" name="" type="Index" />
+		<record alias="fire-show-1-5" name="" type="Index" />
+		<record alias="fire-show-1-6" name="" type="Index" />
+		<record alias="exec-show-1-1" name="" type="Index" />
+		<record alias="exec-show-1-2" name="" type="Index" />
+		<record alias="exec-show-1-3" name="" type="Index" />
+		<record alias="exec-show-1-4" name="" type="Index" />
+		<record alias="exec-show-1-5" name="" type="Index" />
+		<record alias="exec-show-1-6" name="" type="Index" />
+		<record alias="return-show-1-1" name="" type="Index" />
+		<record alias="return-show-1-2" name="" type="Index" />
+		<record alias="return-show-1-3" name="" type="Index" />
+		<record alias="return-show-1-4" name="" type="Index" />
+		<record alias="return-show-1-5" name="" type="Index" />
+		<record alias="return-show-1-6" name="" type="Index" />
+		<record alias="return-ani-1-1" name="" type="Index" />
+		<record alias="return-ani-1-2" name="" type="Index" />
+		<record alias="return-ani-1-3" name="" type="Index" />
+		<record alias="return-ani-1-4" name="" type="Index" />
+		<record alias="return-ani-1-5" name="" type="Index" />
+		<record alias="return-ani-1-6" name="" type="Index" />
+		<record alias="fire-show-2-1" name="" type="Index" />
+		<record alias="fire-show-2-2" name="" type="Index" />
+		<record alias="fire-show-2-3" name="" type="Index" />
+		<record alias="fire-show-2-4" name="" type="Index" />
+		<record alias="fire-show-2-5" name="" type="Index" />
+		<record alias="fire-show-2-6" name="" type="Index" />
+		<record alias="exec-show-2-1" name="" type="Index" />
+		<record alias="exec-show-2-2" name="" type="Index" />
+		<record alias="exec-show-2-3" name="" type="Index" />
+		<record alias="exec-show-2-4" name="" type="Index" />
+		<record alias="exec-show-2-5" name="" type="Index" />
+		<record alias="exec-show-2-6" name="" type="Index" />
+		<record alias="return-show-2-1" name="" type="Index" />
+		<record alias="return-show-2-2" name="" type="Index" />
+		<record alias="return-show-2-3" name="" type="Index" />
+		<record alias="return-show-2-4" name="" type="Index" />
+		<record alias="return-show-2-5" name="" type="Index" />
+		<record alias="return-show-2-6" name="" type="Index" />
+		<record alias="return-ani-2-1" name="" type="Index" />
+		<record alias="return-ani-2-2" name="" type="Index" />
+		<record alias="return-ani-2-3" name="" type="Index" />
+		<record alias="return-ani-2-4" name="" type="Index" />
+		<record alias="return-ani-2-5" name="" type="Index" />
+		<record alias="return-ani-2-6" name="" type="Index" />
+		<record alias="fire-show-3-1" name="" type="Index" />
+		<record alias="fire-show-3-2" name="" type="Index" />
+		<record alias="fire-show-3-3" name="" type="Index" />
+		<record alias="fire-show-3-4" name="" type="Index" />
+		<record alias="fire-show-3-5" name="" type="Index" />
+		<record alias="fire-show-3-6" name="" type="Index" />
+		<record alias="exec-show-3-1" name="" type="Index" />
+		<record alias="exec-show-3-2" name="" type="Index" />
+		<record alias="exec-show-3-3" name="" type="Index" />
+		<record alias="exec-show-3-4" name="" type="Index" />
+		<record alias="exec-show-3-5" name="" type="Index" />
+		<record alias="exec-show-3-6" name="" type="Index" />
+		<record alias="return-show-3-1" name="" type="Index" />
+		<record alias="return-show-3-2" name="" type="Index" />
+		<record alias="return-show-3-3" name="" type="Index" />
+		<record alias="return-show-3-4" name="" type="Index" />
+		<record alias="return-show-3-5" name="" type="Index" />
+		<record alias="return-show-3-6" name="" type="Index" />
+		<record alias="return-ani-3-1" name="" type="Index" />
+		<record alias="return-ani-3-2" name="" type="Index" />
+		<record alias="return-ani-3-3" name="" type="Index" />
+		<record alias="return-ani-3-4" name="" type="Index" />
+		<record alias="return-ani-3-5" name="" type="Index" />
+		<record alias="return-ani-3-6" name="" type="Index" />
+		<record alias="fire-show-4-1" name="" type="Index" />
+		<record alias="fire-show-4-2" name="" type="Index" />
+		<record alias="fire-show-4-3" name="" type="Index" />
+		<record alias="fire-show-4-4" name="" type="Index" />
+		<record alias="fire-show-4-5" name="" type="Index" />
+		<record alias="fire-show-4-6" name="" type="Index" />
+		<record alias="exec-show-4-1" name="" type="Index" />
+		<record alias="exec-show-4-2" name="" type="Index" />
+		<record alias="exec-show-4-3" name="" type="Index" />
+		<record alias="exec-show-4-4" name="" type="Index" />
+		<record alias="exec-show-4-5" name="" type="Index" />
+		<record alias="exec-show-4-6" name="" type="Index" />
+		<record alias="return-show-4-1" name="" type="Index" />
+		<record alias="return-show-4-2" name="" type="Index" />
+		<record alias="return-show-4-3" name="" type="Index" />
+		<record alias="return-show-4-4" name="" type="Index" />
+		<record alias="return-show-4-5" name="" type="Index" />
+		<record alias="return-show-4-6" name="" type="Index" />
+		<record alias="return-ani-4-1" name="" type="Index" />
+		<record alias="return-ani-4-2" name="" type="Index" />
+		<record alias="return-ani-4-3" name="" type="Index" />
+		<record alias="return-ani-4-4" name="" type="Index" />
+		<record alias="return-ani-4-5" name="" type="Index" />
+		<record alias="return-ani-4-6" name="" type="Index" />
+		<record alias="fire-show-5-1" name="" type="Index" />
+		<record alias="fire-show-5-2" name="" type="Index" />
+		<record alias="fire-show-5-3" name="" type="Index" />
+		<record alias="fire-show-5-4" name="" type="Index" />
+		<record alias="fire-show-5-5" name="" type="Index" />
+		<record alias="fire-show-5-6" name="" type="Index" />
+		<record alias="exec-show-5-1" name="" type="Index" />
+		<record alias="exec-show-5-2" name="" type="Index" />
+		<record alias="exec-show-5-3" name="" type="Index" />
+		<record alias="exec-show-5-4" name="" type="Index" />
+		<record alias="exec-show-5-5" name="" type="Index" />
+		<record alias="exec-show-5-6" name="" type="Index" />
+		<record alias="return-show-5-1" name="" type="Index" />
+		<record alias="return-show-5-2" name="" type="Index" />
+		<record alias="return-show-5-3" name="" type="Index" />
+		<record alias="return-show-5-4" name="" type="Index" />
+		<record alias="return-show-5-5" name="" type="Index" />
+		<record alias="return-show-5-6" name="" type="Index" />
+		<record alias="return-ani-5-1" name="" type="Index" />
+		<record alias="return-ani-5-2" name="" type="Index" />
+		<record alias="return-ani-5-3" name="" type="Index" />
+		<record alias="return-ani-5-4" name="" type="Index" />
+		<record alias="return-ani-5-5" name="" type="Index" />
+		<record alias="return-ani-5-6" name="" type="Index" />
+		<record alias="despawn-show-1" name="" type="Index" />
+		<record alias="despawn-show-2" name="" type="Index" />
+		<record alias="despawn-show-3" name="" type="Index" />
+		<record alias="despawn-show-4" name="" type="Index" />
+		<record alias="despawn-show-5" name="" type="Index" />
+		<record alias="despawn-show-6" name="" type="Index" />
+	</list>
+</table>

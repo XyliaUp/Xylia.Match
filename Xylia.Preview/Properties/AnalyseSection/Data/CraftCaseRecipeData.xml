@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft-case-recipe" version="0.4" rule="cpl" >
+		<record alias="id" name="" type="ID" />	
+		<record alias="alias" name="" type="Index" />
+		<record alias="group-alias" name="" ref="CraftGroupRecipe" />		
+		<record alias="case-option" name="" type="Byte" server="n" />		
+		<record alias="craft-duration" name="" type="Int32" />			
+		<record alias="use-state" name="" type="Byte" default="in-use" >
+			<case alias="invalid-state" name="" />
+			<case alias="no-more-use" name="" />
+			<case alias="in-use" name="" />			
+		</record>	
+		<record alias="name" name="" type="TextAlias" server="n" />		
+		<record alias="desc" name="" type="TextAlias" server="n" />		
+		<record alias="requirement-name" name="" type="TextAlias" server="n" />		
+		<record alias="location-desc" name="" type="TextAlias" server="n" />		
+		<record alias="required-craft-exp" name="" type="Short" />
+		<record alias="required-achievement-id" name="" type="Int32" />			
+		<record alias="required-achievement-step-min" name="" type="Byte" />		
+		<record alias="cost-money" name="" type="Int32" />	
+		<record alias="cost-material-1" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-2" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-3" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-4" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-5" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-6" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-7" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-8" name="" type="Int32" use-group="y" />	
+		<record alias="cost-material-condition-type-1" name="" type="Seq" seq="$condition-type" default="all" />	
+		<record alias="cost-material-condition-type-2" name="" type="Seq" seq="$condition-type" default="all" />		
+		<record alias="cost-material-condition-type-3" name="" type="Seq" seq="$condition-type" default="all" />	
+		<record alias="cost-material-condition-type-4" name="" type="Seq" seq="$condition-type" default="all" />		
+		<record alias="cost-material-condition-type-5" name="" type="Seq" seq="$condition-type" default="all" />	
+		<record alias="cost-material-condition-type-6" name="" type="Seq" seq="$condition-type" default="all" />		
+		<record alias="cost-material-condition-type-7" name="" type="Seq" seq="$condition-type" default="all" />		
+		<record alias="cost-material-condition-type-8" name="" type="Seq" seq="$condition-type" default="all" />			
+		<record alias="cost-material-amount-1" name="" type="Short" />
+		<record alias="cost-material-amount-2" name="" type="Short" />
+		<record alias="cost-material-amount-3" name="" type="Short" />
+		<record alias="cost-material-amount-4" name="" type="Short" />
+		<record alias="cost-material-amount-5" name="" type="Short" />
+		<record alias="cost-material-amount-6" name="" type="Short" />
+		<record alias="cost-material-amount-7" name="" type="Short" />
+		<record alias="cost-material-amount-8" name="" type="Short" />
+		<record alias="reward-craft-exp" name="" type="Short" />
+		<record alias="half-craft-exp-step" name="" type="Short" />
+		<record alias="zero-craft-exp-step" name="" type="Short" />
+		<record alias="reward-craft-bonus-exp" name="" type="Short" />
+		<record alias="half-craft-bonus-exp-step" name="" type="Short" />
+		<record alias="zero-craft-bonus-exp-step" name="" type="Short" />
+		<record alias="reward-item-1" name="" ref="Item" />
+		<record alias="reward-item-2" name="" ref="Item" />
+		<record alias="reward-item-3" name="" ref="Item" />
+		<record alias="reward-item-4" name="" ref="Item" />
+		<record alias="reward-item-5" name="" ref="Item" />
+		<record alias="reward-item-min-1" name="" type="Int32" />
+		<record alias="reward-item-min-2" name="" type="Int32" />
+		<record alias="reward-item-min-3" name="" type="Int32" />
+		<record alias="reward-item-min-4" name="" type="Int32" />
+		<record alias="reward-item-min-5" name="" type="Int32" />
+		<record alias="reward-item-max-1" name="" type="Int32" />
+		<record alias="reward-item-max-2" name="" type="Int32" />
+		<record alias="reward-item-max-3" name="" type="Int32" />
+		<record alias="reward-item-max-4" name="" type="Int32" />
+		<record alias="reward-item-max-5" name="" type="Int32" />
+		<record alias="reward-item-reference-1" name="" type="Int32" />
+		<record alias="reward-item-reference-2" name="" type="Int32" />
+		<record alias="reward-item-reference-3" name="" type="Int32" />
+		<record alias="reward-item-reference-4" name="" type="Int32" />
+		<record alias="reward-item-reference-5" name="" type="Int32" />		
+		
+		<!-- ======================================================= -->
+		<record alias="reward-item-random-distribution-1" name="" client="n" default="Craft_0001" apply="must" ref="RandomDistribution" out-cond="Exist: reward-item-1" />		
+		<record alias="reward-item-random-distribution-2" name="" client="n" default="Craft_0001" apply="must" ref="RandomDistribution" out-cond="Exist: reward-item-2" />		
+		<record alias="reward-item-random-distribution-3" name="" client="n" default="Craft_0001" apply="must" ref="RandomDistribution" out-cond="Exist: reward-item-3" />		
+		<record alias="reward-item-random-distribution-4" name="" client="n" default="Craft_0001" apply="must" ref="RandomDistribution" out-cond="Exist: reward-item-4" />		
+		<record alias="reward-item-random-distribution-5" name="" client="n" default="Craft_0001" apply="must" ref="RandomDistribution" out-cond="Exist: reward-item-5" />		
+		<!-- ======================================================= -->
+	</list>
+</table>

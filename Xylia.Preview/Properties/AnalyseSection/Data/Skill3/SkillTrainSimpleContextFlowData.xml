@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skill-train-simple-context-flow" version="0.5" rule="cpl" >
+		<record alias="job" type="Id" extra="Byte1" seq="$job" />
+		<record alias="job-style" type="Id" extra="Byte2" seq="$job-style" />
+		<record alias="key-command" type="Id" extra="Short2" seq="$key-command" />
+
+		<record alias="function-id" type="Byte" start="0" />
+		<record alias="key-index" type="Byte" />
+		<record alias="equip-item-rune-1" ref="Item" />
+		<record alias="equip-item-rune-2" ref="Item" />
+		<record alias="equip-item-bracelet" ref="Item" />
+	    <record alias="key-text" type="TextAlias" />
+	    <record alias="function-name" type="TextAlias" />		
+		<record alias="skill-id-1" type="Int32" name="" />
+		<record alias="skill-id-2" type="Int32" name="" />
+		<record alias="skill-id-3" type="Int32" name="" />
+		<record alias="skill-id-4" type="Int32" name="" />
+		<record alias="skill-id-5" type="Int32" name="" />
+		<record alias="skill-id-6" type="Int32" name="" />
+		<record alias="skill-id-7" type="Int32" name="" />
+		<record alias="skill-id-8" type="Int32" name="" />
+		<record alias="skill-id-9" type="Int32" name="" />
+		<record alias="skill-id-10" type="Int32" name="" />
+		<record alias="skill-id-11" type="Int32" name="" />
+		<record alias="skill-id-12" type="Int32" name="" />
+		<record alias="skill-id-13" type="Int32" name="" />
+		<record alias="skill-id-14" type="Int32" name="" />
+		<record alias="skill-id-15" type="Int32" name="" />
+		<record alias="skill-id-16" type="Int32" name="" />
+		<record alias="skill-id-17" type="Int32" name="" />
+		<record alias="skill-id-18" type="Int32" name="" />
+		<record alias="skill-id-19" type="Int32" name="" />
+		<record alias="skill-id-20" type="Int32" name="" />
+		<record alias="skill-id-21" type="Int32" name="" />
+		<record alias="skill-id-22" type="Int32" name="" />
+		<record alias="skill-id-23" type="Int32" name="" />
+		<record alias="skill-id-24" type="Int32" name="" />
+		<record alias="skill-id-25" type="Int32" name="" />
+		<record alias="skill-id-26" type="Int32" name="" />
+		<record alias="skill-id-27" type="Int32" name="" />
+		<record alias="skill-id-28" type="Int32" name="" />
+		<record alias="skill-id-29" type="Int32" name="" />
+		<record alias="skill-id-30" type="Int32" name="" />
+		<record alias="variation-id-1" type="Byte" name="" />
+		<record alias="variation-id-2" type="Byte" name="" />
+		<record alias="variation-id-3" type="Byte" name="" />
+		<record alias="variation-id-4" type="Byte" name="" />
+		<record alias="variation-id-5" type="Byte" name="" />
+		<record alias="variation-id-6" type="Byte" name="" />
+		<record alias="variation-id-7" type="Byte" name="" />
+		<record alias="variation-id-8" type="Byte" name="" />
+		<record alias="variation-id-9" type="Byte" name="" />
+		<record alias="variation-id-10" type="Byte" name="" />
+		<record alias="variation-id-11" type="Byte" name="" />
+		<record alias="variation-id-12" type="Byte" name="" />
+		<record alias="variation-id-13" type="Byte" name="" />
+		<record alias="variation-id-14" type="Byte" name="" />
+		<record alias="variation-id-15" type="Byte" name="" />
+		<record alias="variation-id-16" type="Byte" name="" />
+		<record alias="variation-id-17" type="Byte" name="" />
+		<record alias="variation-id-18" type="Byte" name="" />
+		<record alias="variation-id-19" type="Byte" name="" />
+		<record alias="variation-id-20" type="Byte" name="" />
+		<record alias="variation-id-21" type="Byte" name="" />
+		<record alias="variation-id-22" type="Byte" name="" />
+		<record alias="variation-id-23" type="Byte" name="" />
+		<record alias="variation-id-24" type="Byte" name="" />
+		<record alias="variation-id-25" type="Byte" name="" />
+		<record alias="variation-id-26" type="Byte" name="" />
+		<record alias="variation-id-27" type="Byte" name="" />
+		<record alias="variation-id-28" type="Byte" name="" />
+		<record alias="variation-id-29" type="Byte" name="" />
+		<record alias="variation-id-30" type="Byte" name="" />
+		<record alias="condition-icon-normal-text-1" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-2" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-3" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-4" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-5" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-6" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-7" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-8" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-9" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-10" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-11" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-12" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-13" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-14" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-15" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-16" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-17" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-18" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-19" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-20" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-21" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-22" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-23" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-24" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-25" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-26" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-27" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-28" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-29" type="TextAlias" name="" />
+		<record alias="condition-icon-normal-text-30" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-1" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-2" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-3" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-4" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-5" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-6" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-7" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-8" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-9" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-10" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-11" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-12" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-13" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-14" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-15" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-16" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-17" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-18" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-19" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-20" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-21" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-22" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-23" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-24" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-25" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-26" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-27" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-28" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-29" type="TextAlias" name="" />
+		<record alias="condition-icon-over-text-30" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-1" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-2" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-3" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-4" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-5" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-6" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-7" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-8" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-9" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-10" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-11" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-12" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-13" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-14" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-15" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-16" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-17" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-18" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-19" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-20" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-21" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-22" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-23" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-24" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-25" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-26" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-27" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-28" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-29" type="TextAlias" name="" />
+		<record alias="condition-tooltip-text-30" type="TextAlias" name="" />
+	</list>
+</table>

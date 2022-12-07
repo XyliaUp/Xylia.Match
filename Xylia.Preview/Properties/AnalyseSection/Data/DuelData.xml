@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="ItemData" rule="cpl | extra" version="0.35" type="duel" > 
+		<record alias="alias" name="" type="Index" />
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="duel-type" name="" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="death-match-1vs1" name="" />
+			<case alias="tag-match-3vs3" name="" />
+		</record>
+		<record alias="max-round-count" name="" type="Byte" default="1" />
+		<record alias="round-win-count" name="" type="Byte" default="0" />
+		<record alias="round-count" name="" type="Byte" default="1" />
+		<record alias="round-start-countdown-duration" name="" type="Msec" default="5000" />
+		<record alias="round-preparation-duration" name="" type="Msec" default="20000" />
+		<record alias="round-duration" name="" type="Msec" default="60000" />
+		<record alias="round-restart-duration" name="" type="Msec" default="40000" />
+		
+		<record alias="round-standby-duration" name="" type="Msec" default="0" client="n" />
+		<record alias="round-finished-duration" name="" type="Msec" default="0" client="n" />	
+		<record alias="round-finished-duration-by-decision" name="" type="Msec" default="0" client="n" />		
+		
+		
+		<record alias="zone" name="" ref="Zone" link="id" />
+		<record alias="arena-outside-alpha-side-pc-spawn" name="" ref="ZonePcSpawn" repeat="3" input="n" />
+		<record alias="arena-outside-beta-side-pc-spawn" name="" ref="ZonePcSpawn" repeat="3" input="n" />
+		<record alias="arena-inside-alpha-side-pc-spawn" name="" ref="ZonePcSpawn" repeat="3" client="n" />
+		<record alias="arena-inside-beta-side-pc-spawn" name="" ref="ZonePcSpawn" repeat="3" client="n" />
+		<record alias="standby-alpha-side-pc-spawn" name="" ref="ZonePcSpawn" client="n" input="n" />
+		<record alias="standby-beta-side-pc-spawn" name="" ref="ZonePcSpawn" client="n" input="n" />
+
+
+		<record alias="effect" name="" ref="Effect" />
+		<record alias="is-unrated-match" name="" type="Bool" />
+		<record alias="loading-description-1" name="" type="TextAlias" server="n" />
+		<record alias="loading-description-2" name="" type="TextAlias" server="n" />
+		<record alias="loading-icon" name="" type="Icon" server="n" />
+		<record alias="boast" name="" ref="Boast" server="n" />
+		<record alias="attraction-quest" name="" type="Quest" repeat="5" server="n" />
+		<record alias="ui-filter-attraction-quest-only" name="" type="Bool" server="n" />
+		<record alias="duel-name2" name="" type="TextAlias" server="n" />
+		<record alias="duel-desc" name="" type="TextAlias" server="n" />
+		<record alias="reward-summary" name="" ref="AttractionRewardSummary" server="n" />
+		<record alias="weekly-time-table-for-added-reward" name="" ref="WeeklyTimeTable" repeat="2" />
+		<record alias="bonus-point-percent" name="" type="Int32" repeat="2" />
+		<record alias="bonus-exp-percent" name="" type="Int32" repeat="2" />
+		<record alias="camera-world-pos-index" name="" type="Byte" server="n" />
+		<record alias="disable-calc-rating-score-weekly-time" name="" ref="WeeklyTimeTable" />
+		<record alias="available-normal-matching-weekly-time" name="" ref="WeeklyTimeTable" />
+		<record alias="available-ingame-championship-matching-weekly-time" name="" ref="WeeklyTimeTable" />
+		<record alias="is-championship" name="" type="Bool" />
+		<!-- ========================================================================================= -->
+		<record alias="arena-outside-round-start-effect" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="arena-outside-summoned-round-start-effect" name="" ref="Effect" repeat="8" client="n" />	
+		
+		<record alias="tag-match-interference-bonus-time" name="" type="Msec" repeat="8" client="n" />
+		<record alias="tag-match-interference-into-effect" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="tag-match-interference-out-effect" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="tag-match-tag-into-effect-by-skill" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="tag-match-tag-into-effect-by-system" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="tag-match-tag-out-effect" name="" ref="Effect" repeat="8" client="n" />
+
+		<record alias="tag-match-summoned-interference-into-effect" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="tag-match-summoned-interference-out-effect" name="" ref="Effect" repeat="8" client="n" />
+		<record alias="tag-match-summoned-tag-into-effect-by-skill" name="" ref="Effect" repeat="8" client="n" />		
+		<record alias="tag-match-summoned-tag-into-effect-by-system" name="" ref="Effect" repeat="8" client="n" />	
+		<record alias="tag-match-summoned-tag-out-effect" name="" ref="Effect" repeat="8" client="n" />
+  </list>
+</table>

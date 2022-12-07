@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="cave2" version="0.37" rule="cpl | extra" >
+		<record alias="id" name="" type="Int32" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="zone" name="" ref="Zone" repeat="16" link="id" />
+		<record alias="enable-heart-count" name="" type="Bool" />
+		<record alias="max-instant-heart-count" name="" type="Byte" />
+		<record alias="unk-" name="" type="Short" />
+		<record alias="enable-skill-score" name="" type="Bool" />
+		<record alias="skill-score-recommend-gear-score" name="" type="Int32" />
+		<record alias="skill-score-recommend-clear-time-step" name="" type="Msec" repeat="5" />
+		<record alias="skill-score-recommend-clear-time-bonus" name="" type="Short" repeat="5" />
+		<record alias="skill-score-recommand-party-member-count-bonus" name="" type="Short" />
+		<record alias="skill-score-recommend-hp-step" name="" type="Int32" repeat="5" />
+		<record alias="skill-score-recommend-hp-bonus" name="" type="Short" repeat="5" />
+		<record alias="skill-score-recommend-use-heart-count" name="" type="Short" />
+		<record alias="skill-score-recommend-use-heart-count-bonus" name="" type="Short" />
+		<record alias="skill-score-recommend-use-item-point" name="" type="Int32" />
+		<record alias="skill-score-recommend-use-item-bonus" name="" type="Short" />
+		<record alias="skill-score-boss-npc" name="" ref="Npc" />
+		<record alias="skill-score-boss-npc-bonus" name="" type="Short" />
+		<record alias="attraction-quest" name="" type="Quest" server="n" repeat="5" />
+		<record alias="ui-filter-attraction-quest-only" name="" type="Bool" server="n" />
+		<record alias="respawn-confirm-text" name="" type="TextAlias" server="n" />
+		<record alias="escape-cave-confirm-text" name="" type="TextAlias" server="n" />
+		<record alias="ui-text-grade" name="" type="Byte" server="n" />
+		<record alias="cave2-name2" name="" type="TextAlias" />
+		<record alias="cave2-desc" name="" type="TextAlias" />
+		<record alias="arena-entrance-zone" name="" ref="Zone" />
+		<record alias="arena-minimap" name="" type="Index" server="n" />
+		<record alias="arena-disable-zone-phase" name="" type="Bool" />
+		<record alias="required-level" name="" type="Byte" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="quest-for-ignoring-required-level" name="" type="Quest" />
+		<record alias="gs-item-blade-master" name="" ref="Item" server="n" />
+		<record alias="gs-item-kung-fu-fighter" name="" ref="Item" server="n" />
+		<record alias="gs-item-force-master" name="" ref="Item" server="n" />
+		<record alias="gs-item-destroyer" name="" ref="Item" server="n" />
+		<record alias="gs-item-summoner" name="" ref="Item" server="n" />
+		<record alias="gs-item-assassin" name="" ref="Item" server="n" />
+		<record alias="gs-item-sword-master" name="" ref="Item" server="n" />
+		<record alias="gs-item-warlock" name="" ref="Item" server="n" />
+		<record alias="gs-item-soul-fighter" name="" ref="Item" server="n" />
+		<record alias="gs-item-shooter" name="" ref="Item" server="n" />
+		<record alias="gs-item-warrior" name="" ref="Item" server="n" />
+		<record alias="gs-item-archer" name="" ref="Item" server="n" />
+		<record alias="gs-item-spear-master" name="" ref="Item" server="n" />
+		<record alias="gs-item-thunderer" name="" ref="Item" server="n" />
+		<record alias="gs-item-dual-blader" name="" ref="Item" server="n" />
+		<record alias="gs-item-bard" name="" ref="Item" server="n" />
+		<record alias="recommend-attack-power" name="" type="Short" server="n" />
+		<record alias="standard-gear-weapon" name="" ref="Item" server="n" />
+		<record alias="reward-summary" name="" ref="AttractionRewardSummary" server="n" />
+		<record alias="recommand-level-min" name="" type="Byte" server="n" />
+		<record alias="recommand-level-max" name="" type="Byte" server="n" />
+		<record alias="recommand-mastery-level-min" name="" type="Byte" server="n" />
+		<record alias="recommand-mastery-level-max" name="" type="Byte" server="n" />
+		<record alias="display-quests" name="" type="Quest" server="n" repeat="12" />
+		<record alias="tactic" name="" type="TextAlias" server="n" />
+		<record alias="recommend-alias" name="" ref="ContentsJournalRecommendItem" server="n" />
+	</list>
+</table>

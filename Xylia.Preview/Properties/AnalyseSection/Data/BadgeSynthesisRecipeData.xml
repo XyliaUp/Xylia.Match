@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="BadgeSynthesisRecipe" version="0.5" rule="cpl" >
+		<record alias="category" name="" type="id" seq="$condition-type" />
+		<record alias="score" name="" start="0" type="Int32" />
+		<record alias="alias" name="" type="Index" />
+	    <!-- ================================================== -->
+		<record alias="result-item-1" name="" type="" ref="Item" repeat="40" client="n" />
+	</list>
+</table>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ZoneData1" type="ZoneRespawn" version="0.46" retired="n" rule="cpl" >
+		<record alias="zone" name="" type="id" />
+		<record alias="id" name="" type="Short" start="0" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="area" name="" ref="ZoneArea" />
+		<record alias="center" name="" type="Vector32" />
+		<record alias="activated-faction-1" name="" ref="Faction" />
+		<record alias="activated-faction-2" name="" ref="Faction" />
+		<record alias="activated-faction-3" name="" ref="Faction" />
+		<record alias="activated-faction-4" name="" ref="Faction" />
+	</list>
+</table>

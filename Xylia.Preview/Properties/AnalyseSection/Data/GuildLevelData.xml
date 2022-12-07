@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="142" alias="GuildLevel" module="ItemData" type="guildlevel" version="1.11" rule="cpl" >
+		<record alias="level" type="ID" extra="Byte1" name="" />
+		<record alias="guild-type" type="ID" extra="Byte2" name="" />
+		<record alias="money" type="Int32" name="" />
+		<record alias="required-item" ref="Item" repeat="5" />
+		<record alias="required-item-count" type="Int32" name="" repeat="5" />
+		<record alias="required-guild-point" type="Int32" name="" />
+		<record alias="reputation" type="Int32" name="" />
+		<record alias="min-member-count" type="Int32" name="" />
+		<record alias="max-member-count" type="Int32" name="" />
+		<record alias="min-enable-member-count" type="Int32" name="" />
+		<record alias="guild-discount" ref="GuildDiscount" />
+		<record alias="level-skill-imageset" type="Index" name="" server="n" repeat="10" />
+		<record alias="level-skill-name" type="TextAlias" name="" server="n" repeat="10" />
+		<record alias="level-skill-description" type="TextAlias" name="" server="n" repeat="10" />
+		<record alias="display-basic-skill-imageset" type="Index" name="" server="n" repeat="10" />
+		<record alias="display-basic-skill-name" type="TextAlias" name="" server="n" repeat="10" />
+		<record alias="display-basic-skill-description" type="TextAlias" name="" server="n" repeat="10" />
+		<record alias="display-add-skill-imageset" type="Index" name="" server="n" repeat="10" />
+		<record alias="display-add-skill-name" type="TextAlias" name="" server="n" repeat="10" />
+		<record alias="display-add-skill-description" type="TextAlias" name="" server="n" repeat="10" />
+		<record alias="guildcraft-small-usable-count" type="Byte" name="" />
+		<record alias="guildcraft-small-rentable-count" type="Byte" name="" />
+		<record alias="guildcraft-big-usable-count" type="Byte" name="" />
+		<record alias="guildcraft-big-rentable-count" type="Byte" name="" />
+		<record alias="levelup-text" type="TextAlias" name="" server="n" />
+	</list>
+</table>

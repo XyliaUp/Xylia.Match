@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="condition-event" version="2.0" rule="cpl" >
+
+		<record alias="tooltip-arg-type" type="Dictionary" name="">
+			<case alias="none" name="" default="y" />
+			<case alias="time" name="" />
+			<case alias="stack-count" name="" />
+			<case alias="percent" name="" />
+			<case alias="counter" name="" />
+			<case alias="distance" name="" />
+			<case alias="number" name="" />
+                                </record>
+
+
+		<record alias="id" type="id" extra="Short1" name="" />
+		<record alias="score" type="id" extra="Short2" name="" />
+		<record alias="alias" type="Index" name="" />
+		<record alias="name" type="TextAlias" name="" />
+		<record alias="unk-" type="Int32" name="" />
+
+		<record alias="tooltip-text-1" type="TextAlias" name="" />
+		<record alias="tooltip-arg-type-1" type="Seq" seq="$tooltip-arg-type" name="" repeat="4" />
+		<record alias="tooltip-arg-1" type="Int32" name="" repeat="4" />
+		<record alias="tooltip-text-2" type="TextAlias" name="" />
+		<record alias="tooltip-arg-type-2" type="Seq" seq="$tooltip-arg-type" name="" repeat="4" />
+		<record alias="tooltip-arg-2" type="Int32" name="" repeat="4" />
+		<record alias="tooltip-text-3" type="TextAlias" name="" />
+		<record alias="tooltip-arg-type-3" type="Seq" seq="$tooltip-arg-type" name="" repeat="4" />
+		<record alias="tooltip-arg-3" type="Int32" name="" repeat="4" />
+		<record alias="tooltip-text-4" type="TextAlias" name="" />
+		<record alias="tooltip-arg-type-4" type="Seq" seq="$tooltip-arg-type" name="" repeat="4" />
+		<record alias="tooltip-arg-4" type="Int32" name="" repeat="4" />
+	</list>
+</table>

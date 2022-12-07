@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list alias="ItemBrand" module="ItemData" rule="cpl" type="item-brand" version="0.3">
+		<record alias="id" name="" type="id" />
+		<record alias="alias" name="" type="Index" />
+	</list>
+</table>

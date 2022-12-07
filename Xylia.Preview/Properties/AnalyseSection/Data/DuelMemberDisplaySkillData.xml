@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="CombatData" type="DuelMemberDisplaySkill" version="0.2" retired="n" rule="cpl" side="server" >
+		<record alias="pc-job" name="" type="" />
+		<record alias="job-style" name="" type="" />
+		<record alias="skill-id" name="" type="" repeat="4" />
+	</list>
+</table>

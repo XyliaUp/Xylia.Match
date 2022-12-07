@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="LocalizationData" type="pc-voice-set" version="0.3" rule="cpl" >
+		<record alias="id" name="" type="ID" extra="Byte1" />
+		<record alias="job" name="" type="ID" extra="Byte2" seq="$job_20" />
+		<record alias="stance" name="" type="ID" extra="Byte3" seq="$stance_20" />		
+
+		<record alias="voice-set-name" name="" type="Index" />
+		<record alias="sample-sound-name-1" name="" type="Index" />
+		<record alias="sample-sound-name-2" name="" type="Index" />
+		<record alias="sample-sound-name-3" name="" type="Index" />
+		<record alias="sample-sound-name-4" name="" type="Index" />
+		<record alias="sample-sound-name-5" name="" type="Index" />
+		<record alias="sample-sound-name-6" name="" type="Index" />
+		<record alias="type1-sample-sound-name" name="" type="Index" />
+		<record alias="type2-sample-sound-name" name="" type="Index" />
+		<record alias="type3-sample-sound-name" name="" type="Index" />
+	</list>
+</table>

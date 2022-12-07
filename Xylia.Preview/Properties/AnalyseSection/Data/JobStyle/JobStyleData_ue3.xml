@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="job-style" version="0.13" rule="cpl" side="client | server" >
+		<record alias="job" type="id" name="" seq="$job_20" extra="Byte1" />
+		<record alias="job-style" type="id" name="" seq="$job-style" extra="Byte2" />
+			
+		<record alias="combat-start-fx-show" name="" type="Index" />
+		<record alias="combat-end-fx-show" name="" type="Index" />
+		<record alias="phantom-weapon-ribbon-particle-ref" name="" type="Index" />
+		<record alias="auto-combat-attack-distance" name="" type="Distance" default="50" />
+		<record alias="auto-combat-converted-distance-attacker-enemy" name="" type="Distance" />
+		<record alias="auto-combat-converted-distance-pouch" name="" type="Distance" />
+		<record alias="auto-combat-converted-distance-enemy" name="" type="Distance" />	
+		<record alias="enable-job-style-gauge-ui" name="" type="Bool" />
+		<record alias="job-style-gauge-unit" name="" type="Byte" />		
+		<record alias="job-style-gauge-full-charge-icon" name="" type="Bool" />	
+		<record alias="job-style-gauge-full-charge-particle-ref" name="" type="Index" />
+		<record alias="job-style-gauge-full-charge-particle-scale" name="" type="Float32" />	
+	</list>
+</table>

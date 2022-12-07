@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="AIData" type="ZoneTriggerEventCond" version="0.11" rule="cpl | extra" > 
+    <record type="type" alias="type" >	
+        <case alias="weekly-event" />
+		<case alias="timeout-event" />
+		<case alias="npc-killed-event" />
+		<case alias="npc-killed-event2" />
+		<case alias="npc-survived-score-decision-timeout-event" />
+		<case alias="npc-survived-timeout-event" />
+		<case alias="boss-challenge-timeout-event" />
+		<case alias="boss-challenge-round-score-event" />
+		<case alias="boss-challenge-boss-npc-killed-event" />
+    </record>
+
+    <record alias="alias" type="Index" />	
+    <record alias="cond-contents-type" type="Seq" >
+	    <case alias="none" default="y" />
+	    <case alias="faction-stage-faction-1-win" />
+		<case alias="faction-stage-faction-2-win" />
+	</record>
+	
+    <record alias="cond-event-message" ref="GameMessage" server="n" />
+	<!-- =================================================================== -->
+    <record alias="event-day-of-week" type="Seq" filter="weekly-event" >	
+			<case alias="sun" name="" />
+			<case alias="mon" name="" />
+			<case alias="tue" name="" />
+			<case alias="wed" name="" />
+			<case alias="thu" name="" />
+			<case alias="fri" name="" />
+			<case alias="sat" name="" />
+			<case alias="thu-fri" name="" />
+			<case alias="unk1" name="" />
+			<case alias="unk2" name="" />
+			<case alias="weekend" name="" />
+			<case alias="entire-week" name="" />
+    </record>
+    <record alias="event-hour" default="-1" type="Byte" filter="weekly-event" repeat="12" />
+    <record alias="event-minute" default="-1" type="Byte" filter="weekly-event" repeat="12" />
+	<!-- ==================================================================================== -->
+
+
+    <!-- 服务端专用属性 -->
+    <record alias="kill-count" client="n"/>   
+    <record alias="target-npc-1" client="n"/>   
+    <record alias="target-npc-2" client="n"/>	
+    <record alias="target-npc-3" client="n"/>	
+    <record alias="target-npc-spawn-1" client="n"/>	
+    <record alias="target-npc-spawn-2" client="n"/>	
+    <record alias="target-npc-spawn-3" client="n"/>	
+    <record alias="survived-count" client="n"/>   	
+    <record alias="acquisition-score" client="n"/>	
+    <record alias="goal-score" client="n"/>
+    <record alias="win-score-type" client="n"/>		
+    <record alias="goal-score-type" client="n"/>		
+    <record alias="acquisition-score-type" client="n"/>	
+	<record alias="op" client="n"/>
+  </list>
+</table>
+

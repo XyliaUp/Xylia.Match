@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Xylia.Preview": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

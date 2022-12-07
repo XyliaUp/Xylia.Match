@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="expand-skill-page" version="0.1" rule="cpl" >
+		<record alias="skill-page" type="ID" name="" />
+		<record alias="money" type="Int32" name="" />	
+		<record alias="charge-type" type="Seq" name="" >
+		    <case alias="item" name="" />
+		    <case alias="money" name="" />
+		    <case alias="item-or-money" name="" default="y" />		
+		</record>
+		<record alias="required-item-1" ref="Item" />
+        <record alias="required-item-2" ref="Item" />
+        <record alias="required-item-3" ref="Item" />
+        <record alias="required-item-4" ref="Item" />
+		<record alias="required-item-count-1" type="Byte" name="" out-cond="Exist: required-item-1" />		
+		<record alias="required-item-count-2" type="Byte" name="" out-cond="Exist: required-item-2" />		
+		<record alias="required-item-count-3" type="Byte" name="" out-cond="Exist: required-item-3" />		
+		<record alias="required-item-count-4" type="Byte" name="" out-cond="Exist: required-item-4" />	
+	</list>
+</table>

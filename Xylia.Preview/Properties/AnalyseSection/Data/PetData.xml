@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="pet" version="0.1" rule="cpl | extra" index="y">
+		<record alias="alias" name="" type="Index" />
+		<record alias="mesh-name" name="" type="Index" />
+		<record alias="mesh-scale" name="" type="Float32" default="1.0" />
+		<record alias="material-name-1" name="" type="Index" />
+		<record alias="material-name-2" name="" type="Index" />
+		<record alias="material-name-3" name="" type="Index" />	
+		<record alias="anim-set-name" name="" type="Index" />
+		<record alias="anim-tree-name" name="" type="Index" />
+		<record alias="caster-spawn-show" name="" type="Index" />
+		<record alias="caster-despawn-show" name="" type="Index" />
+		<record alias="idle-anim" name="" type="Index" />
+		<record alias="combat-idle-anim" name="" type="Index" />
+		<record alias="spawn-show" name="" type="Index" />
+		<record alias="effect-show" name="" type="Index" />
+		<record alias="despawn-show" name="" type="Index" />
+		<record alias="food-show" name="" type="Index" />
+	</list>
+</table>

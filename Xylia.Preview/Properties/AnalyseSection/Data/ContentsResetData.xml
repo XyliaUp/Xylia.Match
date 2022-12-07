@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="contents-reset" version="3.0" rule="cpl" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="reset-target" name="" use-group="y" />
+		<record alias="reset-money" name="" type="Int32" />
+		<record alias="reset-item" name="" ref="Item" repeat="4" />
+		<record alias="reset-item-count" name="" type="Byte" repeat="4" />
+		<record alias="reset-quota" name="" ref="ContentQuota" />
+		<record alias="max-unbind-count" name="" type="Byte" />
+		<record alias="unk3" name="" type="Int32" />
+		<record alias="unk4" name="" type="Int32" />
+	</list>
+</table>

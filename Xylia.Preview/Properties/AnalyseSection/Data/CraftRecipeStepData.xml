@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft-recipe-step" version="0.1" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="time-cost" name="" type="Int32" />
+		<record alias="output-id-1" name="" type="Long" />
+		<record alias="output-id-2" name="" type="Long" />
+		<record alias="output-id-3" name="" type="Long" />		
+		<record alias="output-amount-1" name="" type="Short" />
+		<record alias="output-amount-2" name="" type="Short" />
+		<record alias="output-amount-3" name="" type="Short" />			
+		<record alias="output-customizable-1" name="" type="Bool" />			
+		<record alias="output-customizable-2" name="" type="Bool" />		
+		<record alias="output-customizable-3" name="" type="Bool" />		
+	</list>
+</table>

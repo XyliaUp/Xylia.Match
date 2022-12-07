@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="AIData" type="npc" version="0.5" rule="" check-size="n" is64="y" >
+		<record alias="alias" type="Index" name="" />
+		<record alias="name" type="Index" name="" server="n" output="n" />
+		<record alias="title" type="Index" name="" server="n" output="n" />
+		<record alias="name2" type="Text" name="" server="n" />
+		<record alias="title2" type="Text" name="" server="n" />
+
+		<record alias="appearance" ref="CreatureAppearance" start="1708" />
+	</list>
+</table>

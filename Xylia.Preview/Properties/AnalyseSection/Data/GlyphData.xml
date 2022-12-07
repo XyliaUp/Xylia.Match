@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="glyph" version="0.1" >
+		<record alias="id" name="" type="id" max="30000" />
+		
+		<record alias="alias" name="" type="Index" />
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="glyph-type" name="" type="Byte" />
+		<record alias="color" name="" type="Seq" />
+		<record alias="grade" name="" type="Seq" />
+		<record alias="icon" type="Icon" />
+		<record alias="is-representative" name="" type="Bool" />
+		<record alias="condition-event" name="" ref="ConditionEvent" />
+		<record alias="condition-event-type" name="" type="Seq" />
+		<record alias="condition-event-min" name="" ref="ConditionEvent" />
+		<record alias="condition-event-max" name="" ref="ConditionEvent" />
+		<record alias="flavor-text" name="" type="TextAlias" />
+		<record alias="reward-tier" name="" type="Byte" />
+	</list>
+</table>

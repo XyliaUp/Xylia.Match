@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="ItemData" rule="cpl" type="item-random-option-group" version="0.1">
+		<record alias="id" name="" type="id" />	
+		<record alias="alias" name="" type="Index" />
+		<record alias="r-effect-group" name="" ref="ItemRandomEffectGroup" repeat="20" />
+	</list>
+</table>

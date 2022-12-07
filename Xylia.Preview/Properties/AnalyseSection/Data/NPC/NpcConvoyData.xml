@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+  <list module="AIData" type="NpcConvoy" version="0.8" side="server" >
+    <record alias="alias" type="Index" name="" />
+
+    <record alias="start-act-seq" ref="ActSequence" name="" />
+    <record alias="start-attackable" type="Bool" name="" />
+    <record alias="start-brain" type="Seq" name="" seq="npc-brain" />
+    <record alias="start-hate-on" type="Bool" name="" />
+
+    <record alias="arrived-act-seq" ref="ActSequence" name="" />
+    <record alias="arrived-attackable" type="Bool" name="" />	
+    <record alias="arrived-brain" type="Seq" name="" seq="npc-brain" />
+    <record alias="arrived-hate-on" type="Bool" name="" />
+
+    <record alias="failed-act-seq" ref="ActSequence" name="" />
+    <record alias="failed-attackable" type="Bool" name="" />	
+    <record alias="failed-brain" type="Seq" name="" seq="npc-brain" />
+    <record alias="failed-hate-on" type="Bool" name="" />
+
+    <record alias="follow-detect" type="Seq" seq="$detect" name="" />
+    <record alias="combat-assist" type="Bool" name="" />
+    <record alias="destination-env2" ref="ZoneEnv2Spawn" name="" repeat="2" />
+
+    <record alias="next-stop-social-max" type="Byte" name="" />
+    <record alias="next-stop-social-min" type="Byte" name="" />
+    <record alias="stop-social" ref="Social" name="" repeat="4" />
+  </list>
+</table>

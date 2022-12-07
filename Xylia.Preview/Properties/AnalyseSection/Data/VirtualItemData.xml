@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="LocalizationData" type="virtual-item" version="1.12" rule="cpl | extra" index="y">
+		<record alias="alias" type="Index" />
+		<record alias="icon" type="Icon" />
+		<record alias="name2" type="TextAlias" />		
+		<record alias="talkable" type="Bool" />
+		<record alias="talk-mesh" type="Index" />
+		<record alias="talk-animset" type="Index" />
+		<record alias="message" ref="NpcTalkMessage" repeat="9" />
+	</list>
+</table>

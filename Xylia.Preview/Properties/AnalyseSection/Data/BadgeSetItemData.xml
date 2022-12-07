@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="badge-set-item" version="0.1" rule="cpl" >
+		<record alias="score" name="" type="id" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="effect" name="" ref="Effect" repeat="3" />
+	</list>
+</table>

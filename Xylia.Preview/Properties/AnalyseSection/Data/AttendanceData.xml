@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+	<list module="LocalizationData" type="Attendance" version="0.12" rule="cpl" >
+		<record alias="type" name="" type="type" >
+		     <case alias="board-game" />
+		     <case alias="continual-board-game" />		 
+        </record>
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="background-texture" name="" type="Index" />
+		<record alias="background-sub-texture" name="" type="Index" />
+		<record alias="background-texture-width" name="" type="Short" />
+		<record alias="background-texture-height" name="" type="Short" />
+		<record alias="slot-index" name="" type="Short" repeat="120" />
+		<record alias="slot-offset-x" name="" type="Float32" />
+		<record alias="slot-offset-y" name="" type="Float32" />
+		<record alias="slot-column-count" name="" type="Short" default="1" />
+		<record alias="slot-gap-x" name="" type="Float32" />
+		<record alias="slot-gap-y" name="" type="Float32" />
+		<record alias="player-unit-imageset" name="" type="Index" />
+		<record alias="player-unit-show-duration" name="" type="Float32" />
+		<record alias="player-unit-hide-duration" name="" type="Float32" />
+		<record alias="reward-alpha-animation-show-duration" name="" type="Float32" />
+		<record alias="reward-alpha-animation-hide-duration" name="" type="Float32" />
+		<record alias="reward-show-duration" name="" type="Float32" />
+		<record alias="reward-hide-duration" name="" type="Float32" />
+		<record alias="reward-show-sound-ref" name="" type="Index" />
+		<record alias="reward-show-icon-fore-particle-ref" name="" type="Index" />
+		<record alias="reward-show-icon-fore-particle-scale" name="" type="Float32" />
+		<record alias="reward-show-icon-back-particle-ref" name="" type="Index" />
+		<record alias="reward-show-icon-back-particle-scale" name="" type="Float32" />
+		<record alias="reward-chance-ui-action-ref" name="" type="Index" />
+		<record alias="reward-chance-ui-action-duration" name="" type="Float32" />
+		<record alias="reward-chance-result-icon-particle-ref" name="" type="Index" />
+		<record alias="reward-chance-result-show-duration" name="" type="Float32" />
+		<record alias="reward-chance-result-sound-ref" name="" type="Index" />
+		<record alias="finish-reward-show-duration" name="" type="Float32" />
+		<record alias="finish-reward-hide-duration" name="" type="Float32" />
+		<record alias="finish-reward-show-sound-ref" name="" type="Index" />
+		<record alias="finish-reward-show-icon-fore-particle-ref" name="" type="Index" />
+		<record alias="finish-reward-show-icon-fore-particle-scale" name="" type="Float32" />
+		<record alias="finish-reward-show-icon-back-particle-ref" name="" type="Index" />
+		<record alias="finish-reward-show-icon-back-particle-scale" name="" type="Float32" />
+		<record alias="can-attend-particle-ref" name="" type="Index" />
+		<record alias="can-attend-particle-scale" name="" type="Float32" />
+		<record alias="goal-icon-front-particle-ref" name="" type="Index" />
+		<record alias="goal-icon-back-particle-ref" name="" type="Index" />
+		<record alias="background-particle-ref" name="" type="Index" />
+		<record alias="background-particle-scale" name="" type="Float32" />
+		<record alias="dice-board-background-imageset" name="" type="Index" />
+		<record alias="roll-dice-1-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-2-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-3-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-4-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-5-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-6-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-7-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-8-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-9-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-10-particle-ref" name="" type="Index" />
+		<record alias="roll-dice-particle-scale" name="" type="Float32" />
+		<record alias="roll-dice-particle-duration" name="" type="Float32" />
+		<record alias="roll-dice-particle-offset-x" name="" type="Float32" />
+		<record alias="roll-dice-particle-offset-y" name="" type="Float32" />
+		<record alias="roll-dice-1-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-2-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-3-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-4-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-5-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-6-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-7-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-8-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-9-sound-ref" name="" type="Index" />
+		<record alias="roll-dice-10-sound-ref" name="" type="Index" />
+		<record alias="result-dice-1-particle-ref" name="" type="Index" />
+		<record alias="result-dice-2-particle-ref" name="" type="Index" />
+		<record alias="result-dice-3-particle-ref" name="" type="Index" />
+		<record alias="result-dice-4-particle-ref" name="" type="Index" />
+		<record alias="result-dice-5-particle-ref" name="" type="Index" />
+		<record alias="result-dice-6-particle-ref" name="" type="Index" />
+		<record alias="result-dice-7-particle-ref" name="" type="Index" />
+		<record alias="result-dice-8-particle-ref" name="" type="Index" />
+		<record alias="result-dice-9-particle-ref" name="" type="Index" />
+		<record alias="result-dice-10-particle-ref" name="" type="Index" />
+		<record alias="result-dice-particle-scale" name="" type="Float32" />
+		<record alias="result-dice-particle-start-delay" name="" type="Float32" />
+		<record alias="result-dice-1-sound-ref" name="" type="Index" />
+		<record alias="result-dice-2-sound-ref" name="" type="Index" />
+		<record alias="result-dice-3-sound-ref" name="" type="Index" />
+		<record alias="result-dice-4-sound-ref" name="" type="Index" />
+		<record alias="result-dice-5-sound-ref" name="" type="Index" />
+		<record alias="result-dice-6-sound-ref" name="" type="Index" />
+		<record alias="result-dice-7-sound-ref" name="" type="Index" />
+		<record alias="result-dice-8-sound-ref" name="" type="Index" />
+		<record alias="result-dice-9-sound-ref" name="" type="Index" />
+		<record alias="result-dice-10-sound-ref" name="" type="Index" />
+		<record alias="move-particle-ref" name="" type="Index" />
+		<record alias="move-particle-scale" name="" type="Float32" />
+		<record alias="move-particle-duration" name="" type="Float32" />
+		<record alias="move-sound-ref" name="" type="Index" />
+		<record alias="move-start-delay" name="" type="Float32" />
+		<record alias="move-start-particle-ref" name="" type="Index" />
+		<record alias="move-start-particle-scale" name="" type="Float32" />
+		<record alias="move-start-particle-duration" name="" type="Float32" />
+		<record alias="move-start-sound-ref" name="" type="Index" />
+		<record alias="arrive-particle-ref" name="" type="Index" />
+		<record alias="arrive-particle-scale" name="" type="Float32" />
+		<record alias="arrive-particle-duration" name="" type="Float32" />
+		<record alias="arrive-sound-ref" name="" type="Index" />
+		<!-- ================================================================================ -->	
+		<record alias="arrive-goal-particle-ref" name="" type="Index" filter="board-game" />
+		<record alias="arrive-goal-particle-scale" name="" type="Float32" filter="board-game" />
+		<record alias="arrive-goal-particle-duration" name="" type="Float32" filter="board-game" />
+		<record alias="arrive-goal-sound-ref" name="" type="Index" filter="board-game" />
+		<record alias="icon-start-imageset" name="" type="Index" filter="board-game" />
+		<record alias="icon-goal-imageset" name="" type="Index" filter="board-game" />
+		<record alias="icon-empty-imageset" name="" type="Index" filter="board-game" />
+		<record alias="icon-empty-passed-imageset" name="" type="Index" filter="board-game" />
+		<record alias="icon-reward-acquired-imageset" name="" type="Index" filter="board-game" />
+		<record alias="icon-reward-failed-imageset" name="" type="Index" filter="board-game" />
+		<!-- ================================================================================ -->
+		<record alias="icon-start-imageset" name="" type="Index" filter="continual-board-game" />
+		<record alias="icon-empty-imageset" name="" type="Index" filter="continual-board-game" />
+		<record alias="icon-empty-passed-imageset" name="" type="Index" filter="continual-board-game" />
+		<record alias="icon-reward-acquired-imageset" name="" type="Index" filter="continual-board-game" />
+		<record alias="icon-reward-failed-imageset" name="" type="Index" filter="continual-board-game" />
+		<record alias="is-calendar-style" name="" type="Bool" filter="continual-board-game" />
+	</list>
+</table>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+
+	<list module="ItemData" type="attraction-reward" version="0.35" index="y">
+		<record alias="reward-contents-type" type="id" extra="short1" >
+             <case alias="none" default="y" />
+             <case alias="battle-royal-field" />	 
+             <case alias="battle-royal-field-for-party" />
+        </record>	
+
+		<record alias="id" type="id" extra="short2" />
+
+		<record alias="alias" type="Index" name="" />
+		<record alias="reward-item" ref="Item" repeat="3" />
+		<record alias="reward-item-count" type="Byte" name="" repeat="3" />
+		<record alias="reward-exp" type="Int32" name="" />
+	</list>
+</table>

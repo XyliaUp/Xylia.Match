@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="item-buy-price" version="3.0" rule="cpl | extra" >
+		<record alias="alias" name="" major="y" type="Index" />
+		<record alias="money" name="" type="Int32" />
+		<record alias="required-itembrand" name="" ref="item-brand" type="Int32" />
+		<record alias="required-itembrand-condition-type" name="" out-cond="Exist: required-itembrand" seq="$condition-type" type="Seq" />
+		<record alias="required-item" name="" ref="Item" repeat="4" />
+		<record alias="required-item-count" name="" type="Short" repeat="4" />
+		<record alias="required-faction-score" name="" type="Int32" />
+		<record alias="required-duel-point" name="" type="Int32" />
+		<record alias="required-party-battle-point" name="" type="Int32" />
+		<record alias="required-field-play-point" name="" type="Int32" />
+		<record alias="required-life-contents-point" name="" type="Int32" />
+		<record alias="required-achievement-score" name="" type="Int32" />
+		<record alias="required-achievement-id" name="" type="Int32" />
+		<record alias="required-achievement-step-min" name="" type="Short" />
+		<record alias="faction-level" name="" type="Short" />
+		<record alias="check-solo-duel-grade" name="" type="Byte" />
+		<record alias="check-team-duel-grade" name="" type="Byte" />
+		<record alias="check-battle-field-grade-occupation-war" name="" type="Byte" />
+		<record alias="check-battle-field-grade-capture-the-flag" name="" type="Byte" />
+		<record alias="check-battle-field-grade-lead-the-ball" name="" type="Byte" />
+		<record alias="check-closet-collecting-grade" name="" type="Byte" />
+		<record alias="check-content-quota" name="" ref="ContentQuota" />
+		<record alias="check-soul-boost-season-bm" name="" type="Int32" />
+		<record alias="required-level" name="" type="Byte" default="1" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="required-account-level" name="" type="Short" />
+	</list>
+</table>

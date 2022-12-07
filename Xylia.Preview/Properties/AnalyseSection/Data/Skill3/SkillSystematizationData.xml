@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skillSystematization" version="0.15" rule="cpl" >
+		<record alias="id" type="ID" />
+		<record alias="alias" type="Index" />
+		<record alias="systematization" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="kneel" name="" />
+			<case alias="stun" name="" />
+			<case alias="knockback" name="" />
+			<case alias="down" name="" />
+			<case alias="catch" name="" />
+			<case alias="mount" name="" />
+			<case alias="inhalation" name="" />
+			<case alias="speeddown" name="" />
+			<case alias="midair" name="" />
+			<case alias="freezing" name="" />
+			<case alias="stiff" name="" />
+			<case alias="pull" name="" />
+			<case alias="internal-injury" name="" />
+			<case alias="flash" name="" />
+			<case alias="block-move" name="" />
+			<case alias="bleeding" name="" />
+			<case alias="swoon" name="" />
+			<case alias="immune-projectile" name="" />
+			<case alias="immune-CC" name="" />
+			<case alias="immune-damage" name="" />
+			<case alias="party-buff" name="" />
+			<case alias="party-protect" name="" />
+			<case alias="perfect-parry" name="" />
+			<case alias="counter" name="" />
+			<case alias="bounce" name="" />
+			<case alias="protect" name="" />
+			<case alias="sp-heal" name="" />
+			<case alias="hp-heal" name="" />
+			<case alias="attackdefence-block" name="" />
+			<case alias="defence-block" name="" />
+			<case alias="dash-block" name="" />
+			<case alias="escape" name="" />
+			<case alias="speedup" name="" />
+			<case alias="hyper" name="" />
+			<case alias="tumbling" name="" />
+			<case alias="dash" name="" />
+			<case alias="soulmask" name="" />
+			<case alias="provocation" name="" />
+			<case alias="hate" name="" />
+			<case alias="passive" name="" />
+			<case alias="summoned" name="" />
+			<case alias="projectile" name="" />
+			<case alias="defence-pierce" name="" />
+			<case alias="bounce-pierce" name="" />
+			<case alias="defense-crush" name="" />
+			<case alias="union" name="" />
+			<case alias="link" name="" />
+			<case alias="defence" name="" />
+			<case alias="attackdefence" name="" />
+			<case alias="single-target" name="" />
+			<case alias="aoe-target" name="" />
+			<case alias="team-buff" name="" />
+			<case alias="team-protect" name="" />
+		</record>
+		<record alias="name" type="Index" />
+		<record alias="name2" type="TextAlias" />
+		<record alias="description" type="TextAlias" />
+		<record alias="sort-no" type="Byte" />
+		<record alias="group" ref="SkillSystematizationGroup" />		
+	</list>
+</table>

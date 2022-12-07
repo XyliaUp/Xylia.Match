@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="SoulMaskSet" version="0.5" rule="cpl" check-version="y" >
+		<record alias="soul-mask-id-1" name="" type="ID" extra="Byte1" showzero="y" />
+		<record alias="soul-mask-id-2" name="" type="ID" extra="Byte2" showzero="y" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="run-speed" name="" type="Short" max="200" min="0" />
+		<record alias="use-vehicle" name="" type="Bool"  server="n" />
+		<record alias="soulmask-type" name="" type="Seq" >
+			<case alias="normal" name="" default="y" />
+			<case alias="transform" name="" />
+		</record>
+		<record alias="kun-mesh" name="" type="Index" server="n" />
+		<record alias="gon-male-mesh" name="" type="Index" server="n" />
+		<record alias="gon-female-mesh" name="" type="Index" server="n" />
+		<record alias="lyn-male-mesh" name="" type="Index" server="n" />
+		<record alias="lyn-female-mesh" name="" type="Index" server="n" />
+		<record alias="jin-male-mesh" name="" type="Index" server="n" />
+		<record alias="jin-female-mesh" name="" type="Index" server="n" />
+		<record alias="kun-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="kun-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="kun-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="gon-male-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="gon-male-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="gon-male-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="gon-female-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="gon-female-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="gon-female-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="lyn-male-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="lyn-male-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="lyn-male-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="lyn-female-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="lyn-female-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="lyn-female-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="jin-male-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="jin-male-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="jin-male-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="jin-female-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="jin-female-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="jin-female-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="kun-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="gon-male-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="gon-female-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="lyn-male-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="lyn-female-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="jin-male-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="jin-female-accessory-mesh" name="" type="Index" server="n" />
+		<record alias="kun-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="kun-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="kun-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="gon-male-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="gon-male-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="gon-male-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="gon-female-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="gon-female-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="gon-female-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="lyn-male-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="lyn-male-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="lyn-male-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="lyn-female-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="lyn-female-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="lyn-female-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="jin-male-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="jin-male-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="jin-male-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="jin-female-accessory-mesh-col-1" name="" type="Index" server="n" />
+		<record alias="jin-female-accessory-mesh-col-2" name="" type="Index" server="n" />
+		<record alias="jin-female-accessory-mesh-col-3" name="" type="Index" server="n" />
+		<record alias="is-accessory-skel-hair" name="" type="Bool" server="n" />
+		<record alias="context-script" name="" type="Contextscript" server="n" />
+		<record alias="transform-appearance" name="" ref="CreatureAppearance" server="n" />
+		<record alias="transform-animset" name="" type="Index" server="n" />
+		<record alias="transform-equip_hand_appearance" name="" ref="Item" server="n" />
+		<record alias="transform-job" name="" type="Seq" seq="$job" server="n" />
+		<record alias="transform-weapon-type" name="" type="Seq" seq="$weapon-type" server="n" />
+		<record alias="transform-stance" name="" type="Seq" seq="$stance" server="n" />
+		<record alias="ui-show-job-target-indicator" name="" type="Bool" server="n" />
+		<record alias="ui-show-job-style-gauge" name="" type="Bool" server="n" />
+		<record alias="transform-appearance-jin" name="" ref="CreatureAppearance" server="n" />
+		<record alias="transform-appearance-gon" name="" ref="CreatureAppearance" server="n" />
+		<record alias="transform-appearance-kun" name="" ref="CreatureAppearance" server="n" />
+		<record alias="is-race-transform-appearance" name="" type="Bool" server="n" />
+		<record alias="is-use-grocery" name="" type="Bool" default="y" server="n" />
+		<record alias="is-use-equiped-skill" name="" type="Bool" default="y" server="n" />
+		<record alias="is-show-pet" name="" type="Bool" default="y" server="n" />
+		<record alias="is-use-env" name="" type="Bool" default="y" server="n" />
+		<record alias="is-use-field-item" name="" type="Bool" default="y" server="n" />
+		<record alias="hide-hair" name="" type="Bool" server="n" />
+	</list>
+</table>

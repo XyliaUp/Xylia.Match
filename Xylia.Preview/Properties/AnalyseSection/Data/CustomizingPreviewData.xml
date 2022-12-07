@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="CustomizingPreview" version="0.1" rule="cpl" index="y">
+		<record alias="type" type="type" >
+		     <case alias="pose" name="" />
+		     <case alias="face-look" name="" />
+		     <case alias="costume" name="" />
+		     <case alias="light" name="" />
+		     <case alias="silhouette" name="" />			 
+		</record>
+		
+		<record alias="preview-type" type="ID" extra="Byte1" name="" >
+			<case alias="none" name="" />
+			<case alias="pose" name="" />
+			<case alias="face-look" name="" />
+			<case alias="costume" name="" />
+			<case alias="light" name="" />
+			<case alias="silhouette" name="" />
+		</record>		
+		<record alias="preview-value" type="ID" extra="Byte2" name="" />
+		<record alias="race" type="ID" extra="Byte3" name="" seq="$race" />
+		<record alias="sex" type="ID" extra="Byte4" name="" seq="$sex" />
+		<!-- ============================================================== -->
+		<record alias="pose-showname" name="" type="Index" filter="pose" />
+		<record alias="pose-show-duration" name="" type="msec" filter="pose" />
+		<record alias="icon-texture" name="" ref="IconTexture" filter="pose" />
+		<record alias="icon-index" name="" type="Short" filter="pose" />
+		<!-- ============================================================== -->
+		<record alias="face-look-showname" name="" type="Index" filter="face-look" />
+		<record alias="face-look-show-duration" name="" type="msec" filter="face-look" />
+		<record alias="icon-texture" name="" ref="IconTexture" filter="face-look" />
+		<record alias="icon-index" name="" type="Short" filter="face-look" />
+		<!-- ============================================================== -->
+		<record alias="costume-item" name="" ref="Item" filter="costume" />
+		<!-- ============================================================== -->
+		<record alias="icon-texture" name="" ref="IconTexture" filter="light" />
+		<record alias="icon-index" name="" type="Short" filter="light" />
+		<record alias="light-index" name="" type="Short" filter="light" />	
+		<!-- ============================================================== -->
+		<record alias="silhouette-designer-preset-index" name="" type="Int32" filter="silhouette" />
+		<record alias="silhouette-race" type="Seq" name="" seq="$race" filter="silhouette" />
+		<record alias="silhouette-sex" type="Seq" name="" seq="$sex" filter="silhouette" />
+		<record alias="icon-texture" name="" ref="IconTexture" filter="silhouette" />
+		<record alias="icon-index" name="" type="Short" filter="silhouette" />
+		<record alias="desc" name="" type="TextAlias" filter="silhouette" />		
+		<!-- ============================================================== -->
+	</list>
+</table>

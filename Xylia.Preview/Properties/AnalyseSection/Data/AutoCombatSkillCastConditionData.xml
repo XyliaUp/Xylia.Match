@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="auto-combat-skill-cast-condition" version="0.7" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="name" name="" type="Index" />		
+		<record alias="check-hp-percent-target-type" name="" type="Byte" >
+			<case alias="caster" name="" />
+			<case alias="target" name="" />
+			<case alias="summoned" name="" />
+		</record>
+		<record alias="check-hp-percent" name="" type="Short" />
+		<record alias="check-hp-percent-op" name="" type="Seq" seq="$op2" />
+		
+		
+		<record alias="check-caster-success-effect-flag-1" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-success-effect-flag-2" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-success-effect-flag-3" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-success-effect-flag-4" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-success-effect-flag-op" name="" type="Seq" seq="$op" />
+		<record alias="check-caster-fail-effect-flag-1" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-fail-effect-flag-2" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-fail-effect-flag-3" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-fail-effect-flag-4" name="" type="Seq16" seq="$flag" />
+		<record alias="check-caster-fail-effect-flag-op" name="" type="Seq" seq="$op" />
+		<record alias="check-caster-success-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-success-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-success-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-success-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-success-effect-attribute-op" name="" type="Seq" seq="$op" />
+		<record alias="check-caster-fail-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-fail-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-fail-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-fail-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-caster-fail-effect-attribute-op" name="" type="Seq" seq="$op" />
+		<record alias="check-target-success-effect-flag-1" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-success-effect-flag-2" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-success-effect-flag-3" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-success-effect-flag-4" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-success-effect-flag-op" name="" type="Seq" seq="$op" />
+		<record alias="check-target-fail-effect-flag-1" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-fail-effect-flag-2" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-fail-effect-flag-3" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-fail-effect-flag-4" name="" type="Seq16" seq="$flag" />
+		<record alias="check-target-fail-effect-flag-op" name="" type="Seq" seq="$op" />
+		<record alias="check-target-success-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-success-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-success-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-success-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-success-effect-attribute-op" name="" type="Seq" seq="$op" />
+		<record alias="check-target-fail-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-fail-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-fail-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-fail-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-target-fail-effect-attribute-op" name="" type="Seq" seq="$op" />
+		<record alias="check-summoned-success-effect-flag-1" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-success-effect-flag-2" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-success-effect-flag-3" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-success-effect-flag-4" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-success-effect-flag-op" name="" type="Seq" seq="$op" />
+		<record alias="check-summoned-fail-effect-flag-1" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-fail-effect-flag-2" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-fail-effect-flag-3" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-fail-effect-flag-4" name="" type="Seq16" seq="$flag" />
+		<record alias="check-summoned-fail-effect-flag-op" name="" type="Seq" seq="$op" />
+		<record alias="check-summoned-success-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-success-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-success-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-success-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-success-effect-attribute-op" name="" type="Seq" seq="$op" />
+		<record alias="check-summoned-fail-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-fail-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-fail-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-fail-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />
+		<record alias="check-summoned-fail-effect-attribute-op" name="" type="Seq" seq="$op" />
+		<record alias="check-caster-recycle-skill-id-1" name="" type="Int32" />
+		<record alias="check-caster-recycle-skill-id-2" name="" type="Int32" />
+		<record alias="check-caster-recycle-skill-id-3" name="" type="Int32" />
+		<record alias="check-caster-recycle-skill-id-4" name="" type="Int32" />
+		<record alias="check-caster-recycle-skill-variation-id-1" name="" type="Byte" />
+		<record alias="check-caster-recycle-skill-variation-id-2" name="" type="Byte" />
+		<record alias="check-caster-recycle-skill-variation-id-3" name="" type="Byte" />
+		<record alias="check-caster-recycle-skill-variation-id-4" name="" type="Byte" />
+		<record alias="check-caster-recycle-skill-op" name="" type="Seq" seq="$op" />
+		<record alias="check-target-npc-grade2" name="" type="Byte" >
+			<case alias="none" name="" default="y" />
+			<case alias="boss" name="" />
+			<case alias="champion" name="" />
+			<case alias="normal" name="" />
+			<case alias="follower" name="" />
+			<case alias="tool" name="" />
+			<case alias="weakest" name="" />
+			<case alias="weak" name="" />
+			<case alias="regular" name="" />
+			<case alias="strong" name="" />
+		</record>
+		<record alias="check-target-npc-grade2-op" name="" type="Seq" seq="$op2" />
+		<record alias="check-target-distance-target-type" name="" type="Byte" >
+			<case alias="caster" name="" />
+			<case alias="target" name="" />
+			<case alias="summoned" name="" />
+		</record>
+		<record alias="check-target-distance" name="" type="distance" />
+		<record alias="check-target-distance-op" name="" type="Seq" seq="$op2" />
+		<record alias="check-around-target-type" name="" type="Byte" >
+			<case alias="caster" name="" />
+			<case alias="target" name="" />
+			<case alias="summoned" name="" />
+		</record>
+		<record alias="check-around-enemy-count" name="" type="Short" />
+		<record alias="check-around-enemy-targeting" name="" type="Bool" />
+		<record alias="check-around-range" name="" type="distance" />
+		<record alias="check-around-op" name="" type="Seq" seq="$op2" />
+	</list>
+</table>

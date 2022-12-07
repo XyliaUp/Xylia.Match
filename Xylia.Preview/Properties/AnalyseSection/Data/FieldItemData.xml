@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="AIData" type="fielditem" version="0.57" rule="cpl" >
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="remain-duration" name="" type="Msec" />
+		<record alias="pickup-radius" name="" type="Distance" server="n" />
+		<record alias="pickup-duration" name="" type="Msec" />
+		<record alias="putdown-duration" name="" type="Msec" />
+		<record alias="equip-effect" name="" ref="Effect" repeat="4" />
+		<record alias="not-change-create-pos" name="" type="Bool" />
+		<record alias="parry-event" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="decrease-use-count" name="" />
+		</record>
+		<record alias="acquire-quest" name="" type="Quest" server="n" />
+		<record alias="forwarding-types" name="" type="Seq" seq="$forwarding-type" server="n" />
+		<record alias="quests" name="" type="Quest" server="n" />
+		<record alias="missions" name="" type="Byte" server="n" />
+		<record alias="cases" name="" type="Byte" server="n" />
+		<record alias="case-subtypes" name="" type="Short" server="n" />
+		<record alias="use-count" name="" type="Short" default="1" />
+		<record alias="use-skill3" name="" ref="Skill3" repeat="4" />		
+		<record alias="consume-use-count" name="" type="Short" default="1" repeat="4" />
+		<record alias="throw-skill3" name="" ref="Skill3" />
+		<record alias="init-activated" name="" type="Bool" />
+		<record alias="explosion-time" name="" type="Msec" />
+		<record alias="target-radius" name="" type="Distance" />
+		<record alias="target-decal" name="" type="Index" server="n" />
+		<record alias="target-state" name="" type="Seq" seq="$target-type" />
+		<record alias="invoke-effect" name="" ref="Effect" repeat="4" />
+		<record alias="change-activator-by-killer" name="" type="Bool" />
+		<record alias="target-first-filter" name="" ref="Filter" repeat="4" />
+		<record alias="target-second-filter" name="" ref="Filter" repeat="4" />
+		<record alias="first-effect" name="" ref="Effect" repeat="4" />
+		<record alias="second-effect" name="" ref="Effect" repeat="4" />
+		<record alias="activated-effect" name="" type="Bool" />
+		<record alias="activate-show-1" name="" type="Index" server="n" />
+		<record alias="activate-show-2" name="" type="Index" server="n" />
+		<record alias="activate-show-3" name="" type="Index" server="n" />
+		<record alias="activate-particle" name="" type="Index" server="n" />
+		<record alias="activate-particle-duration" name="" type="Msec" />
+		<record alias="activate-particle-attatch-bone" name="" type="Index" server="n" />
+		<record alias="throw-target" name="" type="Bool" />
+		<record alias="name2" name="" type="TextAlias" server="n" />
+		<record alias="mesh-id" name="" type="Index" server="n" />
+		<record alias="mesh-col" name="" type="Index" server="n" />
+		<record alias="animset-name" name="" type="Index" server="n" />
+		<record alias="moveanim" name="" ref="FieldItemMoveAnim" server="n" />
+		<record alias="grab-bone" name="" type="Index" server="n" />
+		<record alias="pick-up" name="" type="Index" server="n" />
+		<record alias="put-down" name="" type="Index" server="n" />
+		<record alias="throw-item" name="" type="Index" server="n" />
+		<record alias="attach-time" name="" type="Msec" default="1000" server="n" />
+		<record alias="detach-time" name="" type="Msec" default="1000" server="n" />
+		<record alias="throw-detach-time" name="" type="Msec" default="100" server="n" />
+		<record alias="throw-bone" name="" type="Index" server="n" />
+		<record alias="randing" name="" type="Bool" />
+		<record alias="throw-straight" name="" type="Bool" />
+		<record alias="gadget-stay" name="" type="Index" server="n" />
+		<record alias="gadget-pickup-idle" name="" type="Index" server="n" />
+		<record alias="gadget-putdown-start" name="" type="Index" server="n" />
+		<record alias="gadget-pickup-start" name="" type="Index" server="n" />
+		<record alias="gadget-thrown-start" name="" type="Index" server="n" />
+		<record alias="gadget-thrown-particle" name="" type="Index" server="n" />
+		<record alias="gadget-landing" name="" type="Index" server="n" />
+		<record alias="action-name2" name="" type="TextAlias" server="n" />
+		<record alias="action-desc2" name="" type="TextAlias" server="n" />
+		<record alias="drop-action-name" name="" type="TextAlias" server="n" />
+		<record alias="drop-action-desc" name="" type="TextAlias" server="n" />
+		<record alias="description2" name="" type="TextAlias" server="n" />
+		<record alias="gadget-dropanim" name="" type="Index" server="n" />
+		<record alias="gadget-putdown-show" name="" type="Index" server="n" />
+		<record alias="throw-presentation" name="" type="Bool" default="y" />
+		<record alias="prefix" name="" type="Index" server="n" />
+		<record alias="gadget-decompose-showdata" name="" type="Index" server="n" />
+		<record alias="gadget-consume-showdata" name="" type="Index" server="n" />
+		<record alias="gadget-consume-in-hand-showdata" name="" type="Index" server="n" />
+		<record alias="ghost-mode" name="" type="Bool" />
+
+		<record alias="type" name="" type="type" client="n" >
+			<case alias="use" name="" />
+			<case alias="throw" name="" />
+		</record>
+	</list>
+</table>

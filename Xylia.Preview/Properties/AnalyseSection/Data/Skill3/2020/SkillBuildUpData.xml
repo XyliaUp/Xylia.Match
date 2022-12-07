@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	
+	<list module="CombatData" type="skill-build-up" version="0.2" rule="cpl" >
+		<record alias="parent-skill3-id" type="ID" />
+
+		<record alias="alias" type="Index" />
+		<record alias="max-level" type="Byte" />
+		<record alias="required-build-up-point" type="Byte" repeat="15" />
+		<record alias="required-build-up-point-level" type="Byte" repeat="15" />
+		<record alias="skill-modify-info" ref="SkillModifyInfo" repeat="15" />
+
+		<record alias="required-build-up-point" type="Byte" start="16" repeat="20" client="n" />
+		<record alias="required-build-up-point-level" type="Byte" start="16" repeat="20" client="n" />
+		<record alias="skill-modify-info" ref="SkillModifyInfo" start="16" repeat="20" client="n" />
+	</list>
+</table>

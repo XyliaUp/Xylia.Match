@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skill-train-combo-action" version="0.5" rule="cpl" >
+		<record alias="job" type="id" extra="Byte1" seq="$job_20" />
+		<record alias="job-style" type="id" extra="Byte2" seq="$job-style" />
+		<record alias="stance-index" name="" type="id" extra="Byte3" />
+		<record alias="buff-index" name="" type="id" extra="Byte4" />
+		<record alias="function-index" name="" type="Byte" start="0" />
+
+		<record alias="alias" name="" type="Index" />
+		<record alias="stance-name" name="" type="TextAlias" />
+		<record alias="buff-name" name="" type="TextAlias" />
+		<record alias="function-name" name="" type="TextAlias" />
+		<record alias="function-desc" name="" type="TextAlias" />
+		<record alias="combo-skill" name="" type="seq" repeat="10" >
+			<case alias="red" name="" default="y" />
+			<case alias="blue" name="" />
+			<case alias="green" name="" />
+			<case alias="yellow" name="" />
+                                </record>
+		<record alias="skill-id" name="" type="Int32" repeat="10" />
+		<record alias="variation-id" name="" type="Byte" repeat="10" />
+		<record alias="condition-icon-normal-text" name="" type="TextAlias" repeat="10" />
+		<record alias="condition-icon-over-text" name="" type="TextAlias" repeat="10" />
+		<record alias="condition-tooltip-text" name="" type="TextAlias" repeat="10" />
+	</list>
+</table>

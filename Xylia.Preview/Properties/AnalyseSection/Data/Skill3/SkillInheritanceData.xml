@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skill-inheritance" version="0.3" rule="cpl" >
+		<record alias="skill-id" name="" type="Id" />
+		<record alias="parent-skill-id" name="" type="Int32" />		
+	</list>
+</table>

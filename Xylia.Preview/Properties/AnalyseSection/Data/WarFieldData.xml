@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="war-field" version="0.3" rule="cpl" index="y">
+		<record alias="id" type="id" />
+		<record alias="alias" type="Index" />
+		<record alias="main-zone" ref="Zone" />
+		<record alias="battle-zone-1" ref="Zone" />
+		<record alias="battle-zone-2" ref="Zone" />
+		<record alias="battle-zone-3" ref="Zone" />
+		<record alias="battle-zone-4" ref="Zone" />
+		<record alias="battle-zone-5" ref="Zone" />
+		<record alias="battle-zone-6" ref="Zone" />
+		<record alias="battle-zone-7" ref="Zone" />
+		<record alias="battle-zone-8" ref="Zone" />
+		<record alias="battle-zone-9" ref="Zone" />
+		<record alias="battle-zone-10" ref="Zone" />
+		<record alias="field-break-zone-1" ref="Zone" />
+		<record alias="field-break-zone-2" ref="Zone" />		
+		<record alias="field-break-boss-zone" ref="Zone" />
+		<record alias="required-level" type="Byte" />
+		<record alias="required-mastery-level" type="Byte" />		
+		<record alias="required-preceding-quest-1" type="Quest" />
+		<record alias="required-preceding-quest-2" type="Quest" />
+		<record alias="required-preceding-quest-3" type="Quest" />
+		<record alias="required-preceding-quest-check" type="Byte" >
+			<case alias="and" name="" default="y" />
+			<case alias="or" name="" />
+        </record>		
+		<record alias="field-break-zone-imprint-effect" ref="Effect" />
+		<record alias="field-break-zone-imprint-env-1" ref="Env2" />
+		<record alias="field-break-zone-imprint-env-2" ref="Env2" />
+		<record alias="boss-battle-zone-entrance-effect" ref="Effect" />
+		<record alias="group" ref="AttractionGroup" />		
+		<record alias="finish-pc-respawn" ref="ZoneRespawn" />	
+		
+        <!-- ================================================================== -->
+		<record alias="signal-state-duration-minute" type="Int32" client="n" />
+		<record alias="finish-state-duration-minute" type="Int32" client="n" />
+		<record alias="field-break-state-duration-minute" type="Int32" client="n" />
+		<record alias="weekly-time-table-for-signal-state" type="" client="n" />
+
+
+		<record alias="boss-battle-zone-boss" type="" client="n" />
+
+		<record alias="battle-zone-linked-field-break-zone-1" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-2" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-3" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-4" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-5" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-6" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-7" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-8" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-9" type="" client="n" />
+		<record alias="battle-zone-linked-field-break-zone-10" type="" client="n" />
+		
+		
+		<record alias="battle-zone-npc-reset-stage-start-state-1" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-2" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-3" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-4" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-5" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-6" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-7" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-8" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-9" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-start-state-10" type="" client="n" />
+		
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-1" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-2" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-3" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-4" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-5" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-6" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-7" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-8" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-9" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-successful-10" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-1" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-2" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-3" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-4" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-5" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-6" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-7" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-8" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-9" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-signal-state-if-failed-10" type="" client="n" />
+
+
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-1" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-2" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-3" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-4" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-5" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-6" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-7" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-8" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-9" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-successful-10" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-1" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-2" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-3" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-4" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-5" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-6" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-7" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-8" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-9" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-field-break-state-if-failed-10" type="" client="n" />	
+
+
+		<record alias="boss-battle-zone-npc-reset-stage-field-break-state" type="" client="n" />
+		<record alias="boss-battle-zone-npc-reset-stage-signal-state" type="" client="n" />
+		<record alias="boss-battle-zone-npc-reset-stage-finish-state" type="" client="n" />
+
+
+
+		<record alias="battle-zone-npc-reset-stage-finish-state-1" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-2" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-3" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-4" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-5" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-6" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-7" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-8" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-9" type="" client="n" />
+		<record alias="battle-zone-npc-reset-stage-finish-state-10" type="" client="n" />
+		
+		<record alias="field-break-zone-npc-reset-stage-start-state-1" type="" client="n" />
+		<record alias="field-break-zone-npc-reset-stage-start-state-2" type="" client="n" />
+		
+		
+		<record alias="field-break-zone-npc-reset-stage-signal-state-if-successful-1" type="" client="n" />	
+		<record alias="field-break-zone-npc-reset-stage-signal-state-if-successful-2" type="" client="n" />	
+		<record alias="field-break-zone-npc-reset-stage-signal-state-if-failed-1" type="" client="n" />	
+		<record alias="field-break-zone-npc-reset-stage-signal-state-if-failed-2" type="" client="n" />
+
+
+		<record alias="field-break-zone-npc-reset-stage-field-break-state-if-successful-1" type="" client="n" />
+		<record alias="field-break-zone-npc-reset-stage-field-break-state-if-successful-2" type="" client="n" />
+		<record alias="field-break-zone-npc-reset-stage-field-break-state-if-failed-1" type="" client="n" />
+		<record alias="field-break-zone-npc-reset-stage-field-break-state-if-failed-2" type="" client="n" />		
+
+
+		<record alias="field-break-zone-npc-reset-stage-finish-state-1" type="" client="n" />
+		<record alias="field-break-zone-npc-reset-stage-finish-state-2" type="" client="n" />
+
+	
+	</list>
+</table>

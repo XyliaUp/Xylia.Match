@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData0" type="time-limit-field-zone" version="0.2" rule="cpl" >
+		<record alias="zone" type="ID" name="" />
+
+		<record alias="alias" type="Index" name="" />
+		<record alias="time-limit-quota" type="Ref" name="" ref="ContentQuota" />
+		<record alias="required-level" type="Byte" name="" />
+		<record alias="required-mastery-level" type="Byte" name="" />
+		<record alias="required-cost" type="Ref" name="" ref="CostGroup" />	
+		<record alias="time-limit-field-zone-name2" type="TextAlias" name="" />
+		<record alias="time-limit-field-zone-desc" type="TextAlias" name="" />		
+		<record alias="ui-text-grade" type="Byte" name="" />
+		<record alias="reward-summary" type="Ref" name="" ref="AttractionRewardSummary" />	
+	</list>
+</table>

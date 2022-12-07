@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Xylia.Match (Winform)": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

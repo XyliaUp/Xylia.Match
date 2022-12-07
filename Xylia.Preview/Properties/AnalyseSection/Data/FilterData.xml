@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="filter" version="2" rule="cpl" check-version="y" >
+		<record alias="type" name="" type="type" >
+			<case alias="race" name="" />
+			<case alias="sex" name="" />
+			<case alias="job" name="" />
+			<case alias="job-style" name="" />
+			<case alias="stance" name="" />
+			<case alias="prop" name="" />
+			<case alias="prop-percent" name="" />
+			<case alias="prop-flag" name="" />
+			<case alias="effect-flag" name="" />
+			<case alias="faction" name="" />
+			<case alias="active-faction" name="" />
+			<case alias="deactivated-faction" name="" />
+			<case alias="faction-reputation" name="" />
+			<case alias="faction-level" name="" />
+			<case alias="effect-attribute" name="" />
+			<case alias="pc" name="" />
+			<case alias="weapon-type" name="" />
+			<case alias="party-leader" name="" />
+			<case alias="party-member" name="" />
+			<case alias="inventory" name="" />
+			<case alias="field-item" name="" />
+			<case alias="npc" name="" />
+			<case alias="not-npc" name="" />
+			<case alias="npc-id" name="" />
+			<case alias="npc-convoy" name="" />
+			<case alias="env" name="" />
+			<case alias="env-id" name="" />
+			<case alias="env-state" name="" />	
+			<case alias="env-prestate" name="" />
+			<case alias="env-hp-percent" name="" />
+			<case alias="skill" name="" />
+			<case alias="skill-id" name="" />
+			<case alias="skill3" name="" />
+			<case alias="skill3-id" name="" />
+			<case alias="effect-id" name="" />
+			<case alias="effect-stack-count" name="" />
+			<case alias="quest-complete" name="" />
+			<case alias="quest-not-complete" name="" />
+			<case alias="act-sequence" name="" />
+			<case alias="summoned" name="" />
+			<case alias="not-summoned" name="" />
+			<case alias="link-laser-terminate-reason" name="" />
+			<case alias="content-quota-charge" name="" />			
+			<case alias="cinematic" name="" />			
+		</record>
+		
+		<record alias="id" name="" type="ID" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="subject" type="Int32" length="20" name="由于类型解析暂不支持，暂时需要通过此方式配置" />
+		<record alias="target" name="" type="Int32" length="20" />
+		<record alias="subject2" name="" type="Int32" length="20" />
+		<record alias="target2" name="" type="Int32" length="20" />
+		<!-- ================================================================== -->
+
+
+		<!-- ================================================================== -->
+		<record alias="value-1" name="" type="Seq" seq="$race" filter="race" />
+		<record alias="value-2" name="" type="Seq" seq="$race" filter="race" />
+		<record alias="value-3" name="" type="Seq" seq="$race" filter="race" />
+		<record alias="value-4" name="" type="Seq" seq="$race" filter="race" />
+		<record alias="either" name="" type="Bool" default="y" filter="race" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="value-1" name="" type="Seq" seq="$sex" filter="sex" />
+		<record alias="value-2" name="" type="Seq" seq="$sex" filter="sex" />
+		<record alias="value-3" name="" type="Seq" seq="$sex" filter="sex" />
+		<record alias="value-4" name="" type="Seq" seq="$sex" filter="sex" />
+		<record alias="either" name="" type="Bool" default="y" filter="sex" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="value-1" name="" type="Seq" seq="$job_20" filter="job" />
+		<record alias="value-2" name="" type="Seq" seq="$job_20" filter="job" />
+		<record alias="value-3" name="" type="Seq" seq="$job_20" filter="job" />
+		<record alias="value-4" name="" type="Seq" seq="$job_20" filter="job" />
+		<record alias="either" name="" type="Bool" default="y" filter="job" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="count" name="" type="Byte" filter="job-style" />
+		<record alias="job-1" name="" type="Seq" seq="$job_20" filter="job-style" />
+		<record alias="job-2" name="" type="Seq" seq="$job_20" filter="job-style" />
+		<record alias="job-3" name="" type="Seq" seq="$job_20" filter="job-style" />
+		<record alias="job-4" name="" type="Seq" seq="$job_20" filter="job-style" />
+		<record alias="job-style-1" name="" type="Seq" seq="$job-style" filter="job-style" />
+		<record alias="job-style-2" name="" type="Seq" seq="$job-style" filter="job-style" />
+		<record alias="job-style-3" name="" type="Seq" seq="$job-style" filter="job-style" />
+		<record alias="job-style-4" name="" type="Seq" seq="$job-style" filter="job-style" />
+		<record alias="either" name="" type="Bool" default="y" filter="job-style" />
+		<!-- ================================================================== -->		
+
+		<!-- ================================================================== -->
+		<record alias="value-1" name="" type="Seq" seq="$stance" filter="stance" />
+		<record alias="value-2" name="" type="Seq" seq="$stance" filter="stance" />
+		<record alias="value-3" name="" type="Seq" seq="$stance" filter="stance" />
+		<record alias="value-4" name="" type="Seq" seq="$stance" filter="stance" />
+		<record alias="either" name="" type="Bool" default="y" filter="stance" />
+		<!-- ================================================================== -->	
+		
+		
+		<!-- ================================================================== -->
+		<record alias="field" name="" type="Seq16" seq="$creature_field" filter="prop" />
+		<record alias="op" name="" type="Byte" filter="prop" seq="$op2" />
+		<record alias="value" name="" type="Long" filter="prop" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="field" name="" type="Seq16" seq="$creature_field" filter="prop-percent" />
+		<record alias="op" name="" type="Byte" filter="prop-percent" seq="$op2" />
+		<record alias="value" name="" type="Byte" filter="prop-percent" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="field" name="" type="Seq16" seq="$creature_field" filter="prop-flag" />
+		<record alias="op" name="" type="Byte" filter="prop-flag" seq="$op2" />
+		<record alias="flag" name="" type="Bool" filter="prop-flag" />
+		<!-- ================================================================== -->		
+			
+		<!-- ================================================================== -->
+		<record alias="value" name="" ref="Faction" filter="faction" />
+		<record alias="value" name="" ref="Faction" filter="active-faction" />
+		<!-- ================================================================== -->		
+		
+		<!-- ================================================================== -->
+		<record alias="op" name="" type="Seq" seq="$op2" filter="faction-reputation" />
+		<record alias="value" name="" type="Short" filter="faction-reputation" />		
+		<!-- ================================================================== -->		
+		
+		<!-- ================================================================== -->
+		<record alias="op" name="" type="Seq" seq="$op2" filter="faction-level" />
+		<record alias="value" name="" type="Short" filter="faction-level" />		
+		<!-- ================================================================== -->			
+		
+		<!-- ================================================================== -->
+		<record alias="value-1" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
+		<record alias="value-2" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
+		<record alias="value-3" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
+		<record alias="value-4" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
+		<record alias="either" name="" type="Bool" default="y" filter="effect-attribute" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="weapon-type-1" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
+		<record alias="weapon-type-2" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
+		<record alias="weapon-type-3" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
+		<record alias="weapon-type-4" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
+		<record alias="either" name="" type="Bool" default="y" filter="weapon-type" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="item" name="" ref="Item" filter="inventory" />
+		<record alias="amount" name="" type="Byte" filter="inventory" />		
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="field-item" name="" type="Int32" filter="field-item" ref="FieldItem" />		
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="value" name="" type="Int32" filter="npc-id" ref="Npc" />		
+		<!-- ================================================================== -->		
+		
+		<!-- ================================================================== -->
+		<record alias="convoy" name="" type="Bool" filter="npc-convoy" />		
+		<!-- ================================================================== -->	
+
+		<!-- ================================================================== -->
+		<record alias="env2spawn" name="" ref="Env2Spawn" filter="env-id" />		
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="env-state" name="" type="Byte" filter="env-state | env-prestate" seq="$env-state" />
+		<!-- ================================================================== -->	
+
+		<!-- ================================================================== -->
+		<record alias="op" name="" type="Byte" filter="env-hp-percent" seq="$op2" />
+		<record alias="value" name="" type="Byte" filter="env-hp-percent" />		
+		<!-- ================================================================== -->	
+
+		<!-- ================================================================== -->
+		<record alias="value" name="" ref="Skill" filter="skill | skill-id" />		
+		<!-- ================================================================== -->	
+
+		<!-- ================================================================== -->
+		<record alias="value" name="" ref="Skill" filter="skill3 | skill3-id" />		
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="value" name="" ref="Effect" filter="effect-id" />		
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="flagtype" name="" type="Short" filter="effect-flag" seq="$flag" />
+		<record alias="flag" name="" type="Bool" filter="effect-flag" />
+		<!-- ================================================================== -->		
+		
+		
+		<!-- ================================================================== -->	
+		<record alias="effect-type" name="" type="Seq16" seq="$type-seq" filter="effect-stack-count" />
+		<record alias="effect-slot" name="" type="Byte" filter="effect-stack-count" >
+			<case alias="all" name="" />
+			<case alias="buff" name="" />
+			<case alias="debuff" name="" />
+        </record>
+		<record alias="term-op" name="" type="Byte" filter="effect-stack-count" >
+			<case alias="none" name="" default="y" />
+			<case alias="and" name="" />
+			<case alias="or" name="" />
+        </record>
+		<record alias="op-1" name="" type="Byte" filter="effect-stack-count" out-cond="Exist: value-1" seq="$op2" />
+		<record alias="op-2" name="" type="Byte" filter="effect-stack-count" out-cond="Exist: value-2" seq="$op2" />
+		<record alias="value-1" name="" type="Long" filter="effect-stack-count" />
+		<record alias="value-2" name="" type="Long" filter="effect-stack-count" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="quest" name="" type="Quest" filter="quest-complete" />
+		<record alias="mission-step" name="" type="Byte" filter="quest-complete" />
+		<record alias="count" name="" type="Short" filter="quest-complete" />
+		<record alias="count-op" name="" type="Byte" filter="quest-complete" seq="$op2" />	
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="quest" name="" type="Quest" filter="quest-not-complete" />
+		<!-- ================================================================== -->	
+		
+		<!-- ================================================================== -->
+		<record alias="content-quota" name="" ref="ContentQuota" filter="content-quota-charge" />
+		<record alias="op" name="" type="Byte" filter="content-quota-charge" seq="$op2" />		
+		<record alias="charge-value" name="" type="Long" filter="content-quota-charge" />	
+		<!-- ================================================================== -->	
+		
+		
+		<!-- ================================================================== -->
+		<record alias="value" name="" ref="cinematic" filter="cinematic" />		
+		<!-- ================================================================== -->	
+	</list>
+</table>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="149" alias="GuildUniformSlider" module="ItemData" type="GuildUniformSlider" version="0.4" rule="cpl" >
+		<record alias="param-type" name="" type="ID" />
+		<record alias="min-value" name="" type="Byte" default="1" />
+		<record alias="max-value" name="" type="Byte" default="100" />
+		<record alias="step" name="" type="Byte" />
+		<record alias="required-guild-level" name="" type="Byte" default="1" />
+	</list>
+</table>

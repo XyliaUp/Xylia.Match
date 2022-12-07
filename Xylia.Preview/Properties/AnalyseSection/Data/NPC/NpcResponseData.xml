@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="AIData" type="npcresponse" version="0.2" rule="cpl" side="client" >
+		<record alias="alias" type="Index" name="索引" />
+		<record alias="faction-check-type" type="Seq" name="" >
+			<case alias="is" name="" default="y" />
+			<case alias="is-not" name="" />
+			<case alias="is-none" name="" />
+		</record>
+		<record alias="faction-1" name="" ref="Faction" />
+		<record alias="faction-2" name="" ref="Faction" />		
+		<record alias="required-complete-quest" type="Quest" name="" />	
+		<record alias="faction-level-check-type" type="Byte" name="" >
+			<case alias="none" name="" default="y" />
+			<case alias="check-for-success" name="" />
+			<case alias="check-for-fail" name="" />
+		</record>
+		<record alias="talk-message" name="" ref="NpcTalkMessage" />
+		<record alias="indicator-social" name="" ref="IndicatorSocial" />
+		<record alias="approach-social" name="" ref="Social" />		
+		<record alias="idle" name="" ref="IndicatorSocial" />		
+		<record alias="idle-visible" type="Bool" name="" default="y" />
+		<record alias="idle-start" name="" ref="Social" />
+		<record alias="idle-end" name="" ref="Social" />		
+	</list>
+</table>

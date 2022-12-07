@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" rule="cpl" type="skill3" version="3.294" >
+
+		<record alias="alias" name="" type="Index" />
+		
+		<record alias="children-skill" name="" filter="active-skill" ref="this" repeat="4" input="n" client="n" />
+		<record alias="children-skill-yaw-plus-angle" name="" filter="active-skill" type="Short" repeat="4" client="n" />
+	</list>
+</table>

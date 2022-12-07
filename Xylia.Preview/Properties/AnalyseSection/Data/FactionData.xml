@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="ItemData" rule="cpl" type="faction" version="0.19" >
+    <record alias="id" name="" type="id" />
+    <record alias="alias" name="" type="Index" />
+    <record alias="hostile-faction" name="" ref="this" link="id" />
+    <record alias="category" name="" type="Byte" apply="must" >
+			<case alias="gang" name="" default="y" />
+			<case alias="main" name="" />
+			<case alias="second" name="" />
+	</record>
+    <record alias="name2" name="" type="TextAlias" server="n" />
+    <record alias="tag-name" name="" type="TextAlias" server="n" />
+    <record alias="icon" name="" server="n" type="Icon" />
+    <record alias="activated-icon" name="" server="n" type="Icon" />
+    <record alias="activated-desc" name="" type="TextAlias" server="n" />
+    <record alias="level-up-show" type="Index" server="n" />
+    <record alias="text" name="" type="TextAlias" server="n" />
+    <record alias="join-confirm-msg" name="" type="TextAlias" server="n" />
+    <record alias="join-confirm-input" name="" type="TextAlias" server="n" />
+    <record alias="transfer-confirm-msg" name="" type="TextAlias" server="n" />
+    <record alias="transfer-confirm-input" name="" type="TextAlias" server="n" />
+    <record alias="grade-name" name="" type="TextAlias" server="n" />
+    <record alias="grade-image" name="" type="TextAlias" server="n" />
+    <record alias="grade-type" name="" type="Byte" server="n" />
+    <record alias="grade-icon" name="" server="n" type="Icon" />
+    <record alias="grade-tooltip" name="" type="TextAlias" server="n" />
+    <record alias="hide-name" name="" type="TextAlias" server="n" />
+    <record alias="hide-summoned-name" name="" type="TextAlias" server="n" />
+    <record alias="guild-battle-field-teleport" ref="Teleport" name="" type="Int32" />
+
+    <record alias="main-faction" name="" type="Bool" client="n" />
+  </list>
+</table>

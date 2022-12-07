@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table side="common" version="1.02">
+  <list module="LocalizationData" rule="cpl | extra" type="game-message" version="1.43">
+    <record alias="alias" name="" type="Index" />
+    <record alias="category" name="" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="chat-sight" name="" />
+			<case alias="chat-party" name="" />
+			<case alias="chat-team" name="" />
+			<case alias="chat-team-leader" name="" />
+			<case alias="chat-one" name="" />
+			<case alias="chat-in-domain" name="" />
+			<case alias="chat-faction" name="" />
+			<case alias="chat-guild" name="" />
+			<case alias="chat-guild-manager" name="" />
+			<case alias="chat-party-search" name="" />
+			<case alias="chat-npc" name="" />
+			<case alias="chat-godsay-normal" name="" />
+			<case alias="chat-godsay-campaign" name="" />
+			<case alias="chat-godsay-emergency" name="" />
+			<case alias="chat-field-dungeon" name="" />
+			<case alias="chat-qq-c2c" name="" />
+			<case alias="chat-qq-group" name="" />
+			<case alias="chat-guild-search" name="" />
+			<case alias="chat-watch" name="" />
+			<case alias="default" name="" default="y" />
+			<case alias="warning" name="" />
+			<case alias="info" name="" />
+			<case alias="party" name="" />
+			<case alias="party-match" name="" />
+			<case alias="team" name="" />
+			<case alias="faction" name="" />
+			<case alias="guild" name="" />
+			<case alias="guild-match" name="" />
+			<case alias="exhaustion" name="" />
+			<case alias="exhaustion-pc" name="" />
+			<case alias="exp-acquisition" name="" />
+			<case alias="exp-loss" name="" />
+			<case alias="levelup" name="" />
+			<case alias="money-acquisition" name="" />
+			<case alias="money-loss" name="" />
+			<case alias="item-acquisition" name="" />
+			<case alias="item-loss" name="" />
+			<case alias="skill-build-up-point-acquisition" name="" />
+			<case alias="quest-acquisition" name="" />
+			<case alias="quest-complete" name="" />
+			<case alias="talk-social" name="" />
+			<case alias="field-dungeon" name="" />
+			<case alias="qq" name="" />
+			<case alias="combat-normal" name="" />
+			<case alias="combat-critical" name="" />
+			<case alias="combat-heal" name="" />
+			<case alias="combat-defend" name="" />
+			<case alias="combat-parry" name="" />
+			<case alias="combat-abnormal" name="" />
+			<case alias="combat-attacked-normal" name="" />
+			<case alias="combat-attacked-critical" name="" />
+			<case alias="combat-target-heal" name="" />
+			<case alias="combat-target-defend" name="" />
+			<case alias="combat-target-abnormal" name="" />
+			<case alias="combat-other-normal" name="" />
+			<case alias="combat-other-critical" name="" />
+			<case alias="combat-other-heal" name="" />
+			<case alias="combat-other-defend" name="" />
+			<case alias="combat-other-abnormal" name="" />
+			<case alias="combat-party-normal" name="" />
+			<case alias="combat-party-critical" name="" />
+			<case alias="combat-party-heal" name="" />
+			<case alias="combat-party-defend" name="" />
+			<case alias="combat-party-abnormal" name="" />
+			<case alias="combat-party-attacked-normal" name="" />
+			<case alias="combat-party-attacked-critical" name="" />
+			<case alias="combat-party-target-defend" name="" />
+			<case alias="mentoring" name="" />
+			<case alias="skill" name="" />
+      </record>
+    <record alias="text" name="" type="TextAlias" />	
+    <record alias="chatting" name="" type="Bool" default="y" />
+    <record alias="chatting-fontset" name="" type="Index" />
+    <record alias="headline2" name="" type="Int32" />
+    <record alias="headline2-fontset" name="" type="Index" />
+    <record alias="headline-text" name="" type="TextAlias" />
+    <record alias="headline-fontset" name="" type="Index" />
+    <record alias="headline-particle" name="" type="Index" />
+    <record alias="boss-headline-text" name="" type="TextAlias" />
+    <record alias="boss-headline-fontset" name="" type="Index" />
+    <record alias="sound-track" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="1" name="" />
+			<case alias="2" name="" />
+	</record>
+	<record alias="stop-previous-track-sound" name="" type="Bool" default="y" />
+	<record alias="duplication-check" name="" type="Bool" default="y" />
+    <record alias="sound" name="" type="Index" />
+    <record alias="sound-type" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="voice" name="" />
+			<case alias="effect" name="" />
+	</record>
+    <record alias="sound2" name="" type="Index" />
+    <record alias="sound2-type" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="voice" name="" />
+			<case alias="effect" name="" />
+	</record>
+    <record alias="guild-battle-type" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="1" name="" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+	</record>
+	<record alias="guild-battle-text" name="" type="TextAlias" />
+    <record alias="ghost-mode-type" name="" type="Seq" >
+		<case alias="none" name="全部" default="y" />
+		<case alias="normal" name="仅提示给普通环境" />
+		<case alias="ghost" name="仅提示给隔离环境" />
+	</record>
+  </list>
+</table>

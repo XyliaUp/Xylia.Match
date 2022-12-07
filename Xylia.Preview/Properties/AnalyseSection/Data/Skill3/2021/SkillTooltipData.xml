@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	
+	<list module="CombatData" type="SkillTooltip" version="0.10" rule="cpl" >
+        <record alias="skill" name="" ref="Skill3" error-type="Suggestion" />
+		<record alias="tooltip-group" name="" type="Seq" >
+			<case alias="M1" name="" />
+			<case alias="M2" name="" />
+			<case alias="SUB" name="" />
+			<case alias="STANCE" name="" />
+			<case alias="CONDITION" name="" />
+		</record>
+
+		<record alias="ect-order" name="" type="Dictionary" >
+			<case alias="CTE" name="" default="y" />
+			<case alias="CET" name="" />
+			<case alias="TCE" name="" />
+			<case alias="TEC" name="" />
+			<case alias="ECT" name="" />
+			<case alias="ETC" name="" />
+		</record>
+		<record alias="ect-order" name="" type="Seq" seq="$ect-order" />
+		<record alias="ect-order-english" name="" type="Seq" seq="$ect-order" />
+		<record alias="ect-order-french" name="" type="Seq" seq="$ect-order" />
+		<record alias="ect-order-german" name="" type="Seq" seq="$ect-order" />
+		<record alias="ect-order-russian" name="" type="Seq" seq="$ect-order" />
+		<record alias="ect-order-bportuguese" name="" type="Seq" seq="$ect-order" />
+		<record alias="effect-attribute" name="" ref="SkillTooltipAttribute" />
+		<record alias="effect-arg" name="" type="Index" repeat="4" />
+		<record alias="condition-attribute" name="" ref="SkillTooltipAttribute" />
+		<record alias="condition-arg" name="" type="Index" repeat="2" />
+		<record alias="target-attribute" name="" ref="SkillTooltipAttribute" />		
+		<record alias="before-stance-attribute" name="" ref="SkillTooltipAttribute" />
+		<record alias="after-stance-attribute" name="" ref="SkillTooltipAttribute" />	
+		<record alias="default-text" name="" type="TextAlias" />
+		<record alias="attribute-color-text" name="" type="TextAlias" />		
+		<record alias="skill-modify-diff-repeat-count" name="" type="Byte" default="1" />	
+		<record alias="skill-attack-attribute-coefficient-percent" name="" type="Short" />		
+		<record alias="item-default-text" name="" type="TextAlias" />	
+		<record alias="item-replace-text" name="" type="TextAlias" />	
+	</list>
+</table>

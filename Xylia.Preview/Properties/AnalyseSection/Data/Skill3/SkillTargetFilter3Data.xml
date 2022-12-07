@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="SkillGatherRange3" version="0.15" rule="cpl | extra" is64="y" >
+		<record type="Index" alias="alias" />
+	</list>
+</table>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="CombatData" type="skill-modify-info" version="0.3" rule="cpl | extra" >
+		<record alias="type" name="" type="type" >
+		    <case alias="normal" />
+		    <case alias="skill" />
+		    <case alias="SkillSystematization" />			
+		</record>
+		
+		<record alias="alias" name="" type="Index" />
+		<record alias="recycle-duration-modify-percent" name="" ratio="" type="Short" />
+		<record alias="recycle-duration-modify-diff" name="" type="Int32" />
+		<record alias="sp-consume-modify-diff-1" name="" type="Short" />
+		<record alias="sp-consume-modify-diff-2" name="" type="Short" />
+		<record alias="damage-power-percent-modify-percent" name="" ratio="" type="Int32" />
+		<record alias="damage-power-percent-modify-diff" name="" type="Int32" />
+		<record alias="hp-drain-percent-modify-percent" name="" ratio="" type="Int32" />
+		<record alias="hp-drain-percent-modify-diff" name="" type="Int32" />
+		<record alias="heal-percent-modify-percent" name="" ratio="" type="Int32" />
+		<record alias="heal-percent-modify-diff" name="" type="Int32" />
+		<record alias="description" name="" type="TextAlias" server="n" />
+		<!-- ================================================================ -->
+		<record alias="parent-skill3-id" name="" filter="skill" type="Int32" repeat="4" />
+		<!-- ================================================================ -->
+		<record alias="systematization" name="" filter="SkillSystematization" ref="SkillSystematization" />
+	</list>
+</table>

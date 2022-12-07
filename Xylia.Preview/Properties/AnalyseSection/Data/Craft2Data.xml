@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="craft2" version="0.1" rule="cpl" >
+	    <record alias="category" type="id" seq="$production-type" extra="Byte1" />
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="icon" name="" type="Icon" />
+		<record alias="none-selected-icon" name="" type="Icon" />
+		<record alias="join-msg" name="" ref="GameMessage" />
+		<record alias="level-up-msg" name="" ref="GameMessage" />
+		<record alias="max-level-msg" name="" ref="GameMessage" />
+		<record alias="need-exp-for-level" type="Int32" name="" default="-1" repeat="100" />
+	</list>
+</table>

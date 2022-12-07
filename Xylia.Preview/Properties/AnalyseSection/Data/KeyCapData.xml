@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="key-cap" version="0.2" rule="cpl" >
+		<record alias="key-code" name="" type="ID" extra="Short1" >
+			<case alias="none" name="" />
+			<case alias="0" name="" />
+			<case alias="1" name="" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+			<case alias="6" name="" />
+			<case alias="7" name="" />
+			<case alias="8" name="" />
+			<case alias="9" name="" />
+			<case alias="numpad-0" name="" />
+			<case alias="numpad-1" name="" />
+			<case alias="numpad-2" name="" />
+			<case alias="numpad-3" name="" />
+			<case alias="numpad-4" name="" />
+			<case alias="numpad-5" name="" />
+			<case alias="numpad-6" name="" />
+			<case alias="numpad-7" name="" />
+			<case alias="numpad-8" name="" />
+			<case alias="numpad-9" name="" />
+			<case alias="f1" name="" />
+			<case alias="f2" name="" />
+			<case alias="f3" name="" />
+			<case alias="f4" name="" />
+			<case alias="f5" name="" />
+			<case alias="f6" name="" />
+			<case alias="f7" name="" />
+			<case alias="f8" name="" />
+			<case alias="f9" name="" />
+			<case alias="f10" name="" />
+			<case alias="f11" name="" />
+			<case alias="f12" name="" />
+			<case alias="a" name="" />
+			<case alias="b" name="" />
+			<case alias="c" name="" />
+			<case alias="d" name="" />
+			<case alias="e" name="" />
+			<case alias="f" name="" />
+			<case alias="g" name="" />
+			<case alias="h" name="" />
+			<case alias="i" name="" />
+			<case alias="j" name="" />
+			<case alias="k" name="" />
+			<case alias="l" name="" />
+			<case alias="m" name="" />
+			<case alias="n" name="" />
+			<case alias="o" name="" />
+			<case alias="p" name="" />
+			<case alias="q" name="" />
+			<case alias="r" name="" />
+			<case alias="s" name="" />
+			<case alias="t" name="" />
+			<case alias="u" name="" />
+			<case alias="v" name="" />
+			<case alias="w" name="" />
+			<case alias="x" name="" />
+			<case alias="y" name="" />
+			<case alias="z" name="" />
+			<case alias="back-space" name="" />
+			<case alias="tab" name="" />
+			<case alias="caps-lock" name="" />
+			<case alias="space" name="" />
+			<case alias="page-up" name="" />
+			<case alias="page-down" name="" />
+			<case alias="end" name="" />
+			<case alias="home" name="" />
+			<case alias="left" name="" />
+			<case alias="up" name="" />
+			<case alias="right" name="" />
+			<case alias="down" name="" />
+			<case alias="insert" name="" />
+			<case alias="delete" name="" />
+			<case alias="multiply" name="" />
+			<case alias="add" name="" />
+			<case alias="subtract" name="" />
+			<case alias="decimal" name="" />
+			<case alias="divide" name="" />
+			<case alias="num-lock" name="" />
+			<case alias="shift" name="" />
+			<case alias="control" name="" />
+			<case alias="alt" name="" />
+			<case alias="semicolon" name="" />
+			<case alias="equal" name="" />
+			<case alias="minus" name="" />
+			<case alias="comma" name="" />
+			<case alias="period" name="" />
+			<case alias="slash" name="" />
+			<case alias="tilde" name="" />
+			<case alias="left-square-bracket" name="" />
+			<case alias="back-slash" name="" />
+			<case alias="right-square-bracket" name="" />
+			<case alias="single-quatation" name="" />
+			<case alias="mouse-left-button" name="" />
+			<case alias="mouse-middle-button" name="" />
+			<case alias="mouse-right-button" name="" />
+			<case alias="joybtn-a" name="" />
+			<case alias="joybtn-b" name="" />
+			<case alias="joybtn-x" name="" />
+			<case alias="joybtn-y" name="" />
+			<case alias="joybtn-dpad-up" name="" />
+			<case alias="joybtn-dpad-down" name="" />
+			<case alias="joybtn-dpad-left" name="" />
+			<case alias="joybtn-dpad-right" name="" />
+			<case alias="joybtn-leftstick-up" name="" />
+			<case alias="joybtn-leftstick-down" name="" />
+			<case alias="joybtn-leftstick-left" name="" />
+			<case alias="joybtn-leftstick-right" name="" />
+			<case alias="joybtn-rightstick-up" name="" />
+			<case alias="joybtn-rightstick-down" name="" />
+			<case alias="joybtn-rightstick-left" name="" />
+			<case alias="joybtn-rightstick-right" name="" />
+			<case alias="joybtn-leftshoulder" name="" />
+			<case alias="joybtn-rightshoulder" name="" />
+			<case alias="joybtn-start" name="" />
+			<case alias="joybtn-back" name="" />
+			<case alias="joybtn-leftthumbstick" name="" />
+			<case alias="joybtn-rightthumbstick" name="" />
+			<case alias="joybtn-lefttrigger" name="" />
+			<case alias="joybtn-righttrigger" name="" />
+			<case alias="joybtn-function1" name="" />
+			<case alias="joybtn-function2" name="" />
+			<case alias="escape" name="" />
+			<case alias="enter" name="" />
+			<case alias="shift-joypad-replaceable" name="" />
+			<case alias="shift-dash-forward-joypad-replaceable" name="" />
+			<case alias="control-joypad-replaceable" name="" />
+			<case alias="alt-joypad-replaceable" name="" />
+			<case alias="mouse-left-button-joypad-replaceable" name="" />
+			<case alias="mouse-right-button-joypad-replaceable" name="" />
+			<case alias="escape-joypad-replaceable" name="" />
+		</record>
+
+		<record alias="name" name="" type="TextAlias" />
+		<record alias="short-name" name="" type="TextAlias" />
+		<record alias="image" name="" type="TextAlias" />
+		<record alias="icon" name="" type="Icon" />
+		<record alias="scroll-imageset" name="" type="Index" />
+		<record alias="scroll-imageset-scale" name="" type="Float32" default="1.0" />
+	</list>
+</table>

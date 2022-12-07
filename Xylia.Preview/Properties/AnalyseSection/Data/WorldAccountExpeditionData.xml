@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+  <!-- 探险日志 -->
+  <list module="ItemData" type="worldaccountexpedition" version="0.10">
+        <record alias="id" name="" type="Id" extra="Short1" />
+        <record alias="step" name="" type="Id" extra="Byte3" />
+  
+        <record alias="alias" name="" type="Index" />
+		<record alias="can-not-used" type="Bool" name="" />
+		<record alias="category" type="Byte" name="" />	
+		<record alias="item" name="" use-group="y" repeat="20" />
+		<record alias="item-count" type="Short" name="" repeat="20" />
+		<record alias="unknown" type="Bool" describe="是否共同计算，启用时只使用 count1" />
+		<record alias="ability" name="" type="Seq" repeat="5" >
+			<case alias="none" name="" default="y" />
+			<case alias="attack-power-creature-min-max" name="" />
+			<case alias="pve-boss-level-npc-attack-power-creature-min-max" name="" />
+			<case alias="pvp-attack-power-creature-min-max" name="" />
+			<case alias="attack-hit-value" name="" />
+			<case alias="attack-critical-value" name="" />
+			<case alias="attack-critical-damage-value" name="" />
+			<case alias="attack-attribute-value" name="" />
+			<case alias="attack-pierce-value" name="" />
+			<case alias="abnormal-attack-power-value" name="" />
+			<case alias="max-hp" name="" />
+			<case alias="defend-power-creature-value" name="" />
+			<case alias="pve-boss-level-npc-defend-power-creature-value" name="" />
+			<case alias="pvp-defend-power-creature-value" name="" />
+			<case alias="defend-dodge-value" name="" />
+			<case alias="defend-parry-value" name="" />
+			<case alias="defend-critical-value" name="" />
+			<case alias="hp-regen" name="" />
+			<case alias="heal-power-value" name="" />
+			<case alias="abnormal-defend-power-value" name="" />
+			<case alias="r-attack-stiff-duration-value" name="" />
+			<case alias="r-defend-stiff-duration-value" name="" />
+			<case alias="r-attack-concentrate-value" name="" />
+			<case alias="r-aoe-defend-power-value" name="" />
+			<case alias="r-defend-strength-creature-value" name="" />
+			<case alias="r-attack-precise-creature-value" name="" />
+			<case alias="r-attack-aoe-pierce-value" name="" />
+			<case alias="r-attack-abnormal-hit-value" name="" />
+			<case alias="r-defend-abnormal-dodge-value" name="" />
+			<case alias="r-support-power-value" name="" />
+		</record>
+		<record alias="ability-value" type="Int32" repeat="5"  max="1000000" />
+
+
+		<record alias="unk79" type="Int32" start-show="324" name="" />
+		<record alias="unk80" type="Int32" start-show="328" name="" />
+		<record alias="unk81" type="Int32" start-show="332" name="" />
+
+		<record alias="name2" type="TextAlias" name="" />
+		<record alias="description2" type="TextAlias" name="" />
+		<record alias="story" type="TextAlias" name="" />
+		<record alias="unk88" ref="0" name="" />
+		
+		<record alias="icon" type="Icon" name="" repeat="5" />
+		<record alias="tooltip" type="TextAlias" name="" repeat="5" />
+  </list>
+</table>

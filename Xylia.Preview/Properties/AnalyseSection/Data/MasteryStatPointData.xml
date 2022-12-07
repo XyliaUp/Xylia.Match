@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list id="205" idxx="222" alias="MasteryStatPoint" module="LocalizationData" type="mastery-stat-point" version="0.5" rule="cpl" index="y">
+		<record alias="stat-point-attribute" type="id" extra="Byte1" >
+			<case alias="attacker" name="" />
+			<case alias="defender" name="" />
+		</record>
+		<record alias="stat-point" type="id" extra="Short2" />
+
+		<record alias="stat-effect" ref="Effect" />
+		<record alias="event-effect-1" ref="Effect" />
+		<record alias="event-effect-2" ref="Effect" />
+		<record alias="event-effect-3" ref="Effect" />
+		<record alias="event-effect-4" ref="Effect" />
+		<record alias="description" type="TextAlias" />
+	</list>
+</table>

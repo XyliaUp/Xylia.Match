@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="guild-discount" version="0.5" rule="cpl | extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="item-growth" name="" type="Byte" />
+		<record alias="item-awakening" name="" type="Byte" />
+		<record alias="weapon-tranform" name="" type="Byte" />
+		<record alias="accessory-tranform" name="" type="Byte" />
+		<record alias="weapon-gem-tranform" name="" type="Byte" />
+		<record alias="post-charge-discount-rate" name="" type="Byte" />
+		<record alias="post-charge-discount-max" name="" type="Int32" />
+		<record alias="detach-weapon-gem-money-cost-discount-rate" name="" type="Byte" />
+		<record alias="purify-item-discount-rate" name="" type="Byte" />
+	</list>
+</table>

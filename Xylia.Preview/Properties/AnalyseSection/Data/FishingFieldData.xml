@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ItemData" type="fishing-field" version="0.9" rule="cpl" >
+		<record alias="id" type="id" apply="auto" />
+		<record alias="alias" type="Index" />
+		<record alias="grade-ss-fish" name="" ref="Fish" repeat="20" />
+		<record alias="grade-s-fish" name="" ref="Fish" repeat="20" />
+		<record alias="grade-a-fish" name="" ref="Fish" repeat="20" />
+		<record alias="grade-b-fish" name="" ref="Fish" repeat="20" />
+		<record alias="grade-c-fish" name="" ref="Fish" repeat="20" />
+		<record alias="bonus-time" name="" ref="WeeklyTimeTable" />
+		<record alias="fishing-field-group" name="" ref="FishingFieldGroup" server="n" />
+		<record alias="bonus-time-effect" name="" type="Index" server="n" />
+	</list>
+</table>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table release-side="data" version="1.01">
+	<list module="ZoneData1" type="ZoneBaseCamp" version="0.5" retired="n" rule="cpl" >
+		<record type="id" name="" alias="zone" sort-by="y" />
+		<record start="0" alias="id" type="Short" name="" />
+		<record alias="alias" type="Index" name="" />
+		<record alias="area" ref="ZoneArea" />
+		<record alias="center" type="Vector32" />
+	</list>
+</table>
