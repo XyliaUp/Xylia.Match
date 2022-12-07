@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.BinData.Entity.BDAT.Interface;
-using Xylia.bns.Modules.DataFormat.BinData.Handle;
-using Xylia.bns.Modules.DataFormat.BinData.Handle.Local;
+using Xylia.bns.Modules.DataFormat.Bin;
+using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT.Interface;
+using Xylia.bns.Util.Sort;
 using Xylia.Extension;
 using Xylia.Files.XmlEx;
 using Xylia.Match.Properties.Resx;
@@ -54,7 +55,7 @@ namespace Xylia.Match.Util.ItemList
 		/// </summary>
 		public IEnumerable<IObject> XmlData = null;
 
-		public Localization Localization = null;
+		public TextBinData Localization = null;
 
 		public string OldPath = null;
 		#endregion
@@ -155,12 +156,12 @@ namespace Xylia.Match.Util.ItemList
 
 			try
 			{
-				var tmp = new HandleData(Path, true);
+				var tmp = new BinData(Path, true);
 
-				this.GetAction("当前版本：" + tmp.BinHandle._content.Head.UpdateTime.GetTimeStr());
+				this.GetAction("当前版本：" + tmp._content.Head.UpdateTime.GetTimeStr());
 
 				//加载记录文件
-				this.XmlData = tmp.BinHandle.ExtractData(0, false, GetReadInfo.OnlyNew ? GetOld() : null);
+				this.XmlData = ExtractData(tmp, false, GetReadInfo.OnlyNew ? GetOld() : null);
 			}
 			catch (Exception ee)
 			{
@@ -177,7 +178,7 @@ namespace Xylia.Match.Util.ItemList
 			try
 			{
 				//这里如果出现问题，可能是解包代码出现问题
-				this.Localization = new Localization(Path);
+				this.Localization = new TextBinData(Path);
 			}
 			catch (Exception ee)
 			{
@@ -216,6 +217,48 @@ namespace Xylia.Match.Util.ItemList
 			return dictionary;
 		}
 		#endregion
+
+
+
+
+		public static IEnumerable<IObject> ExtractData(BinData GameData,  bool Distinct = false, IEnumerable<int> Old = null)
+		{
+			if (!GameData.ContainsAlias("item", out var ListID)) 
+				throw new Exception("无效对象");
+
+			#region 初始化
+			var Result = new BlockingCollection<IObject>();
+			HashSet<int> CacheList = new();
+			if (Old != null) foreach (var o in Old) CacheList.Add(o);
+			#endregion
+
+			#region 处理数据
+			Parallel.ForEach(GameData[ListID].CellDatas(), Table =>
+			{
+				//读取数据编号
+				if (Old != null && CacheList.Contains(Table.FID)) return;
+
+				Result.Add(Table);
+			});
+			#endregion
+
+			#region 最后处理
+			var ObjList = Result.ToList();
+			Result.Dispose();
+			Result = null;
+
+			//对数据进行排序处理
+			ObjList.Sort(new SeriDataSortById());
+			if (Distinct) ObjList = ObjList.Distinct(new RemoveObjectSameID()).ToList();
+
+			return ObjList;
+			#endregion
+		}
+
+
+
+
+
 
 		#region Dispose
 		private bool disposedValue;

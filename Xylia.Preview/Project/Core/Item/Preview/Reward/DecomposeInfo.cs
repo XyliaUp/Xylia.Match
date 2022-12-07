@@ -85,13 +85,13 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 
 			#region 读取奖励数据
 			DecomposeRewardInfo GetRewardInfo(RewardData reward) => reward is null ? default : new DecomposeRewardInfo(reward);
-			this.DecomposeReward1 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-1"]]);
-			this.DecomposeReward2 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-2"]]);
-			this.DecomposeReward3 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-3"]]);
-			this.DecomposeReward4 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-4"]]);
-			this.DecomposeReward5 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-5"]]);
-			this.DecomposeReward6 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-6"]]);
-			this.DecomposeReward7 = GetRewardInfo(FileCacheData.Data.Reward[ItemInfo.Attributes["decompose-reward-7"]]);
+			this.DecomposeReward1 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-1"]]);
+			this.DecomposeReward2 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-2"]]);
+			this.DecomposeReward3 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-3"]]);
+			this.DecomposeReward4 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-4"]]);
+			this.DecomposeReward5 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-5"]]);
+			this.DecomposeReward6 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-6"]]);
+			this.DecomposeReward7 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-7"]]);
 
 
 			//开始遍历职业奖励对象
@@ -105,7 +105,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				if (ItemInfo.ContainsAttribute(rewardName, out string AttrVal))
 				{
 					//获得奖励数据，然后生成结构
-					var Reward = FileCacheData.Data.Reward[AttrVal];
+					var Reward = FileCache.Data.Reward[AttrVal];
 					if (Reward is null) continue;
 
 					this.DecomposeJobRewards.Add(new DecomposeJobRewardInfo(code, Reward));
@@ -136,7 +136,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			return null;
 		}
 
-		private Bitmap GetExtra(DecomposeByItem2 item2)
+		private static Bitmap GetExtra(DecomposeByItem2 item2)
 		{
 			if (item2.INVALID) return null;
 

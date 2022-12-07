@@ -35,7 +35,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview
 		{
 			if (job == Job.JobNone) return;
 
-			foreach (var o in FileCacheData.Data.JobStyle.Where(o => o.Job == job))
+			foreach (var o in FileCache.Data.JobStyle.Where(o => o.Job == job))
 			{
 				var icon = o.IntroduceJobStyleIcon.GetImageset();
 				if (icon is null) continue;

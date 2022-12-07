@@ -41,7 +41,7 @@ namespace Xylia.Preview.Project.Core.Item
 		{
 			#region 初始化
 			var Item = record as ItemData;
-			for (byte idx = 1; idx <= 10; idx++) ItemCombat[idx] = FileCacheData.Data.ItemCombat[Item.Attributes["item-combat-" + idx]];
+			for (byte idx = 1; idx <= 10; idx++) ItemCombat[idx] = FileCache.Data.ItemCombat[Item.Attributes["item-combat-" + idx]];
 
 			this.JobStyleSelect.LoadStyleIcon(Item.EquipJobCheck1);
 			#endregion
@@ -80,7 +80,7 @@ namespace Xylia.Preview.Project.Core.Item
 			#region 获取信息
 			string Txt = null;
 
-			var SkillModifyInfoGroup = FileCacheData.Data.SkillModifyInfoGroup[ItemCombat.SkillModifyInfoGroup];
+			var SkillModifyInfoGroup = FileCache.Data.SkillModifyInfoGroup[ItemCombat.SkillModifyInfoGroup];
 			if (SkillModifyInfoGroup != null) Txt = SkillModifyInfoGroup.CreateInfo();
 
 			var ItemSkills = ItemCombat.ItemSkills;

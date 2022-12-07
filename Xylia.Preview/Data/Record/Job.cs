@@ -44,7 +44,7 @@ namespace Xylia.Preview.Data.Record
 		/// <returns></returns>
 		public static string GetStyleName(this Job Job, JobStyle JobStyle)
 		{
-			var Info = FileCacheData.Data.Job.Find(t => t.job == (byte)Job);
+			var Info = FileCache.Data.Job.Find(t => t.job == (byte)Job);
 			if (Info != null) return JobStyle switch
 			{
 				JobStyle.Base1 => Info.JobStyleName1.GetText(),

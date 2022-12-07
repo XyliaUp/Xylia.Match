@@ -12,7 +12,7 @@ namespace Xylia.Match.Windows.Panel
 		public QuestMatch()
 		{
 			InitializeComponent();
-			Logger.Write($"启用任务模块");
+			//Logger.Write($"启用任务模块");
 			CheckForIllegalCrossThreadCalls = false;
 
 			//读取上一次的选择

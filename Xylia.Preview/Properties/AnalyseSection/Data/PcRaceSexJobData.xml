@@ -3,6 +3,6 @@
 	<list id="227" alias="PcRaceSexJobData" module="CombatData" type="pc-race-sex-job" version="0.7" rule="cpl" >
 		<record alias="race" type="id" extra="Byte1" seq="$race" name="" />
 		<record alias="sex" type="id" extra="Byte2" seq="$sex" name="" />
-		<record alias="job" type="id" extra="Byte3" seq="$job_20" name="" />
+		<record alias="job" type="id" extra="Byte3" seq="$job" name="" />
 	</list>
 </table>

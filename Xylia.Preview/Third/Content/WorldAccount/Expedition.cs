@@ -35,7 +35,7 @@ namespace Xylia.Preview.Third.Content
 
 			#region 配置内容
 			int RowIdx = 1;
-			foreach (var item in FileCacheData.Data.WorldAccountExpedition)
+			foreach (var item in FileCache.Data.WorldAccountExpedition)
 			{
 				var CurRow = this.ExcelInfo.CreateRow(RowIdx++);
 

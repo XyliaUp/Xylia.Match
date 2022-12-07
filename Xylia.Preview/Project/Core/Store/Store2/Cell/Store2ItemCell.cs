@@ -48,7 +48,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			#endregion
 
 			#region 处理限购策略信息
-			var ContentQuota = FileCacheData.Data.ContentQuota.GetInfo(ItemBuyPrice.CheckContentQuota);
+			var ContentQuota = FileCache.Data.ContentQuota.GetInfo(ItemBuyPrice.CheckContentQuota);
 			if (ContentQuota is null) this.quotaTxt.Visible = false;
 			else
 			{
@@ -77,7 +77,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 				if (ItemBuyPrice.RequiredAchievementId != 0)
 				{
-					string AchievementName = FileCacheData.Data.Achievement.Find(o => o.ID == ItemBuyPrice.RequiredAchievementId && o.Step == ItemBuyPrice.RequiredAchievementStepMin).NameText();
+					string AchievementName = FileCache.Data.Achievement.Find(o => o.ID == ItemBuyPrice.RequiredAchievementId && o.Step == ItemBuyPrice.RequiredAchievementStepMin).NameText();
 
 					TipInfo += "需要完成成就：" + AchievementName + "\n";
 					this.ItemShow.IconCell.ExtraBottomLeft = Resources.BnsCommon.unuseable_Achievement;

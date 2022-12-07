@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
@@ -39,12 +38,8 @@ namespace Xylia.Preview.Data
 			#endregion
 
 
-			Lazy<Text> Record;
-			if (int.TryParse(Alias, out int id) && this.ht_id.Contains(id)) Record = (Lazy<Text>)this.ht_id[id];
-			else if (this.ht_alias.Contains(Alias)) Record = (Lazy<Text>)this.ht_alias[Alias];
-			else return null;
-
-			return Record.Value;
+			if (int.TryParse(Alias, out int MainID)) return this[MainID];
+			else return this[Alias];
 		}
 	}
 }
@@ -66,8 +61,7 @@ public static class LocalText
 		//快速DEBUG模式,阻止因汉化读取导致的久耗时
 		if (false) return Alias;
 
-		var record = FileCacheData.Data.TextData.GetRecord(Alias);
-		return record is null ? Alias : record.GetText();
+		return FileCache.Data.TextData.GetRecord(Alias)?.GetText() ?? Alias;
 	}
 
 	/// <summary>

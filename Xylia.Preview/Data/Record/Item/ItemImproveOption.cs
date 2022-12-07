@@ -67,11 +67,11 @@ namespace Xylia.Preview.Data.Record
 			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup3)?.CreateInfo());
 			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup4)?.CreateInfo());
 			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup5)?.CreateInfo());
-			ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup6)?.CreateInfo());
-			ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup7)?.CreateInfo());
-			ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup8)?.CreateInfo());
-			ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup9)?.CreateInfo());
-			ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup10)?.CreateInfo());
+			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup6)?.CreateInfo());
+			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup7)?.CreateInfo());
+			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup8)?.CreateInfo());
+			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup9)?.CreateInfo());
+			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup10)?.CreateInfo());
 
 
 			//去除空白文本与Html文本语言

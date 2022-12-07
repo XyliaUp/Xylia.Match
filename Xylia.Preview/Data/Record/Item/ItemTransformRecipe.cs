@@ -245,7 +245,7 @@ namespace Xylia.Preview.Data.Record
 		{
 			if (ItemInfo is null) return null;
 
-			return FileCacheData.Data.ItemTransformRecipe.Where(a =>
+			return FileCache.Data.ItemTransformRecipe.Where(a =>
 			{
 				var CurMainIngredient = a.MainIngredient;
 

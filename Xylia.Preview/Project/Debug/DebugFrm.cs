@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
-
-using CSCore.SoundOut;
-
-using Xylia.Extension;
-using Xylia.Preview.Project.Core.Quest.Preview.SubGroup;
 
 namespace Xylia.Preview
 {
@@ -26,15 +20,15 @@ namespace Xylia.Preview
 
 			//var data = "/Game/FaceFXImporter/220622/q_2209_2_voice_1_show.q_2209_2_voice_1_show".GetUObject().GetWave();
 			//if (data is null) return;
-
 			//var _waveSource = new CustomCodecFactory().GetCodec(data, "ogg");
 			//var _soundOut = new WaveOut() { Latency = 100 };
 			//_soundOut.Initialize(_waveSource);
 			//_soundOut.Play();
 
 
-			FileCacheData.Data.TextData.TryLoad();
-			System.Diagnostics.Trace.WriteLine("34".GetText());
+
+			//FileCache.Data.TextData.TryLoad();
+			//System.Diagnostics.Trace.WriteLine("712466".GetText());
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)

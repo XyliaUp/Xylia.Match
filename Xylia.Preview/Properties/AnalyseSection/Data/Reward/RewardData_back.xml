@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="ItemData" type="reward" version="1.40" rule="cpl" check-version="y" >
+		<record alias="id" type="id" not-rule-dispel="y" />
+		<record alias="alias" type="Index" not-rule-dispel="y" />
+		<record alias="fixed-item" name="固定奖励" ref="item" repeat="8" />
+		<record alias="fixed-item-min" name="固定奖励 最小数量" out-cond="Exist: fixed-item-" type="Short" repeat="8" />
+		<record alias="fixed-item-max" name="固定奖励 最大数量" out-cond="Exist: fixed-item-" type="Short" repeat="8" />
+
+		<record alias="random-item" name="" ref="Item" repeat="28" />
+		<record alias="selected-item" name="选择奖励" ref="Item" repeat="64" />
+		<record alias="selected-item-count" name="选择奖励数量" type="Short" repeat="64" />
+		<record alias="selected-item-assured-count" name="可选择几项" type="Int32" />
+
+		<!-- 普通组 -->
+		<!-- G1 12个   G2 12个   G3 24个   G4 10个   G5 10个  RARE   120个 -->
+		<record alias="group-3-item-1" ref="Item" />
+		<record alias="rare-item-1" ref="Item" />
+		<record alias="group-1-item-1" ref="Item" />
+		<record alias="group-2-item-1" ref="Item" />
+		<record alias="group-3-item-2" ref="Item" />
+		<record alias="rare-item-2" ref="item" />
+		<record alias="group-1-item-2" ref="Item" />
+		<record alias="group-2-item-2" ref="Item" />
+		<record alias="group-3-item-3" ref="Item" />
+		<record alias="rare-item-3" ref="Item" />
+		<record alias="group-1-item-3" ref="Item" />
+		<record alias="group-2-item-3" ref="Item" />
+		<record alias="group-3-item-4" ref="Item" />
+		<record alias="rare-item-4" ref="Item" />
+		<record alias="group-1-item-4" ref="Item" />
+		<record alias="group-2-item-4" ref="Item" />
+		<record alias="group-3-item-5" ref="Item" />
+		<record alias="rare-item-5" ref="Item" />
+		<record alias="group-1-item-5" ref="Item" />
+		<record alias="group-2-item-5" ref="Item" />
+		<record alias="group-3-item-6" ref="Item" />
+		<record alias="rare-item-6" ref="Item" />
+		<record alias="group-1-item-6" ref="Item" />
+		<record alias="group-2-item-6" ref="Item" />
+		<record alias="group-3-item-7" ref="Item" />
+		<record alias="rare-item-7" ref="Item" />
+		<record alias="group-1-item-7" ref="Item" />
+		<record alias="group-2-item-7" ref="Item" />
+		<record alias="group-3-item-8" ref="Item" />
+		<record alias="rare-item-8" ref="Item" />
+		<record alias="group-1-item-8" ref="Item" />
+		<record alias="group-2-item-8" ref="Item" />
+		<record alias="group-3-item-9" ref="Item" />
+		<record alias="rare-item-9" ref="Item" />
+		<record alias="group-1-item-9" ref="Item" />
+		<record alias="group-2-item-9" ref="Item" />
+		<record alias="group-3-item-10" ref="Item" />
+		<record alias="rare-item-10" ref="Item" />
+		<record alias="group-1-item-10" ref="Item" />
+		<record alias="group-2-item-10" ref="Item" />
+		<record alias="group-3-item-11" ref="Item" />
+		<record alias="rare-item-11" ref="Item" />
+		<record alias="group-1-item-11" ref="Item" />
+		<record alias="group-2-item-11" ref="Item" />
+		<record alias="group-3-item-12" ref="Item" />
+		<record alias="rare-item-12" ref="Item" />
+		<record alias="group-1-item-12" ref="Item" />
+		<record alias="group-2-item-12" ref="Item" />
+		<record alias="group-3-item-13" ref="Item" />
+		<record alias="rare-item-13" ref="Item" />
+		<record alias="group-3-item-14" ref="Item" />
+		<record alias="rare-item-14" ref="Item" />
+		<record alias="group-3-item-15" ref="Item" />
+		<record alias="rare-item-15" ref="Item" />
+		<record alias="group-3-item-16" ref="Item" />
+		<record alias="rare-item-16" ref="Item" />
+		<record alias="group-3-item-17" ref="Item" />
+		<record alias="group-3-item-18" ref="Item" />
+		<record alias="group-3-item-19" ref="Item" />
+		<record alias="group-3-item-20" ref="Item" />
+		<record alias="rare-item-17" ref="Item" />
+		<record alias="rare-item-18" ref="Item" />
+		<record alias="rare-item-19" ref="Item" />
+		<record alias="rare-item-20" ref="Item" />
+		<record alias="group-3-item-21" ref="Item" />
+		<record alias="group-3-item-22" ref="Item" />
+		<record alias="group-3-item-23" ref="Item" />
+		<record alias="group-3-item-24" ref="Item" />
+		<record alias="rare-item-21" ref="Item" />
+		<record alias="rare-item-22" ref="Item" />
+		<record alias="rare-item-23" ref="Item" />
+		<record alias="rare-item-24" ref="Item" />
+		<record alias="rare-item-25" ref="Item" />
+		<record alias="rare-item-26" ref="Item" />
+		<record alias="rare-item-27" ref="Item" />
+		<record alias="rare-item-28" ref="Item" />
+		<record alias="rare-item-29" ref="Item" />
+		<record alias="rare-item-30" ref="Item" />
+		<record alias="rare-item-31" ref="Item" />
+		<record alias="rare-item-32" ref="Item" />
+		<record alias="rare-item-33" ref="Item" />
+		<record alias="rare-item-34" ref="Item" />
+		<record alias="rare-item-35" ref="Item" />
+		<record alias="rare-item-36" ref="Item" />
+		<record alias="rare-item-37" ref="Item" />
+		<record alias="rare-item-38" ref="Item" />
+		<record alias="rare-item-39" ref="Item" />
+		<record alias="rare-item-40" ref="Item" />
+		<record alias="rare-item-41" ref="Item" />
+		<record alias="rare-item-42" ref="Item" />
+	</list>
+</table>

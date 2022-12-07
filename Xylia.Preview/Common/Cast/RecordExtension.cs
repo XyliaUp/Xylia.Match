@@ -49,30 +49,30 @@ namespace Xylia.Preview.Common.Cast
 			if (string.IsNullOrWhiteSpace(DataKey)) return default;
 
 			//特别的处理方法
-			if (DataType == DataType.Tooltip) return FileCacheData.Data.TextData.GetRecord(DataKey);
+			if (DataType == DataType.Tooltip) return FileCache.Data.TextData.GetRecord(DataKey);
 
 
 			IRecord obj = DataType switch
 			{
-				DataType.Cave2 => FileCacheData.Data.Cave2[DataKey],
-				DataType.Cave => FileCacheData.Data.Cave[DataKey],
-				DataType.ClassicFieldZone => FileCacheData.Data.ClassicFieldZone[DataKey],
+				DataType.Cave2 => FileCache.Data.Cave2[DataKey],
+				DataType.Cave => FileCache.Data.Cave[DataKey],
+				DataType.ClassicFieldZone => FileCache.Data.ClassicFieldZone[DataKey],
 
-				DataType.Duel => FileCacheData.Data.Duel[DataKey],
-				DataType.Dungeon => FileCacheData.Data.Dungeon[DataKey],
-				DataType.FieldZone => FileCacheData.Data.FieldZone[DataKey],
+				DataType.Duel => FileCache.Data.Duel[DataKey],
+				DataType.Dungeon => FileCache.Data.Dungeon[DataKey],
+				DataType.FieldZone => FileCache.Data.FieldZone[DataKey],
 
 				DataType.Item => DataKey.GetItemInfo(),
-				DataType.ItemBrand => FileCacheData.Data.ItemBrand[DataKey],
-				DataType.Npc => FileCacheData.Data.Npc[DataKey],
+				DataType.ItemBrand => FileCache.Data.ItemBrand[DataKey],
+				DataType.Npc => FileCache.Data.Npc[DataKey],
 
-				DataType.PartyBattleFieldZone => FileCacheData.Data.PartyBattleFieldZone[DataKey],
-				DataType.PublicRaid => FileCacheData.Data.PublicRaid[DataKey],
+				DataType.PartyBattleFieldZone => FileCache.Data.PartyBattleFieldZone[DataKey],
+				DataType.PublicRaid => FileCache.Data.PublicRaid[DataKey],
 
-				DataType.RaidDungeon => FileCacheData.Data.RaidDungeon[DataKey],
-				DataType.Skill => FileCacheData.Data.Skill3[DataKey],
-				DataType.WorldAccountCard => FileCacheData.Data.WorldAccountCard[DataKey],
-				DataType.ZoneEnv2 => FileCacheData.Data.ZoneEnv2[DataKey],
+				DataType.RaidDungeon => FileCache.Data.RaidDungeon[DataKey],
+				DataType.Skill => FileCache.Data.Skill3[DataKey],
+				DataType.WorldAccountCard => FileCache.Data.WorldAccountCard[DataKey],
+				DataType.ZoneEnv2 => FileCache.Data.ZoneEnv2[DataKey],
 
 				_ => ShowDebugInfo(DataType),
 			};

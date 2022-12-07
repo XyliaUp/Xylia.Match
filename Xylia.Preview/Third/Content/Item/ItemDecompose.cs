@@ -46,7 +46,7 @@ namespace Xylia.Preview.Third.Content
 
 			#region 配置内容
 			int RowIdx = 1;
-			FileCacheData.Data.Item.ForEach(Info =>
+			FileCache.Data.Item.ForEach(Info =>
 			{
 				//跳过奖励类型
 				if (Info.Type == Item.ItemType.grocery && Info.UnsealAcquireItem1 == null)
@@ -57,7 +57,7 @@ namespace Xylia.Preview.Third.Content
 					return;
 
 
-				var RewardInfo = FileCacheData.Data.Reward.GetInfo(RewardAlias);
+				var RewardInfo = FileCache.Data.Reward.GetInfo(RewardAlias);
 
 				var CurRow = this.ExcelInfo.CreateRow(RowIdx++);
 				CurRow.AddCell(Info.ID);

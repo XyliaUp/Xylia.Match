@@ -36,7 +36,7 @@ namespace Xylia.Preview.Third.Content
 				CellIdx++;
 				int RowIdx = 1;
 
-				var challengeList = FileCacheData.Data.ChallengeList.Find(o => o.ChallengeType == ChallengeType.Key);
+				var challengeList = FileCache.Data.ChallengeList.Find(o => o.ChallengeType == ChallengeType.Key);
 				if (challengeList is null) continue;
 				#endregion
 
@@ -61,7 +61,7 @@ namespace Xylia.Preview.Third.Content
 					var ChallengeNpcKill = challengeList.Attributes["challenge-npc-kill-" + Idx];
 					var ChallengeNpcAttraction = challengeList.Attributes["challenge-npc-attraction-" + Idx];
 
-					var KillNpc = FileCacheData.Data.Npc[ChallengeNpcKill];
+					var KillNpc = FileCache.Data.Npc[ChallengeNpcKill];
 					if (KillNpc is null) break;
 
 					var AttractionInfo = ChallengeNpcAttraction.GetObject().GetName();

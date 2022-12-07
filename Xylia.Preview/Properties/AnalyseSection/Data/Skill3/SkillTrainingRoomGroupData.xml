@@ -4,7 +4,7 @@
 		<record alias="id" name="" type="ID" />
 		<record alias="group-name" name="" type="TextAlias" server="n" />
 		<record alias="group-desc" name="" type="TextAlias" server="n" />
-		<record alias="job" name="" type="Seq" seq="$job_20" />
+		<record alias="job" name="" type="Seq" seq="$job" />
 		<record alias="has-reward" name="" type="Bool" />
 		<record alias="group-required-level" name="" type="Byte" />
 		<record alias="group-required-mastery-level" name="" type="Byte" />

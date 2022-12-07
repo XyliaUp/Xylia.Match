@@ -12,11 +12,11 @@
 		<record alias="item-skill-tooltip" type="TextAlias" server="n" />
 		<!-- =============================================================== -->
 		<record alias="check-effect-flag" type="Seq16" name="" client="n" seq="$flag" repeat="2" />
-		<record alias="check-effect-flag-op" type="Byte" name="" client="n" seq="$op" out-cond="Exist: check-effect-flag-2" />	
-		<record alias="check-skill-result" type="Short" name="" client="n" seq="$skill-result" />	
-		<record alias="item-sim-skill-target" type="Short" name="" client="n" seq="$skill-target" />		
+		<record alias="check-effect-flag-op" type="Seq" name="" client="n" seq="$op" out-cond="Exist: check-effect-flag-2" />	
+		<record alias="check-skill-result" type="Seq16" name="" client="n" seq="$skill-result" />	
+		<record alias="item-sim-skill-target" type="Seq16" name="" client="n" seq="$skill-target" />		
 		<record alias="item-skill-effect" name="" client="n" ref="EffectGroup" repeat="7" />	
-		<record alias="target-skill-step" type="Short" name="" client="n" seq="$skill-step" />	
+		<record alias="target-skill-step" type="Seq16" name="" client="n" seq="$skill-step" />	
 		<record alias="use-exec-caster-effect" type="Bool" name="" client="n" />		
 		<!-- =============================================================== -->	
 	</list>

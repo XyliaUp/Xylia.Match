@@ -39,7 +39,7 @@ namespace Xylia.Preview.Project.Core.Item
 		{
 			#region 筛选出刻印书与血石的对应信息
 			//执行排序：将推荐血石排序到前面，同时抽取部分非推荐血石
-			var ScrollStones = FileCacheData.Data.SlateScrollStone.Where(info => info.scroll.MyEquals(record.Alias)).ToList();
+			var ScrollStones = FileCache.Data.SlateScrollStone.Where(info => info.scroll.MyEquals(record.Alias)).ToList();
 			ScrollStones.Sort(new SlateScrollStoneSort(){ SortByGrade = false });
 
 			//然后取出前N个对象，不足时则不执行
@@ -51,7 +51,7 @@ namespace Xylia.Preview.Project.Core.Item
 			#region 处理血石信息并生成控件
 			//显示血石信息
 			var SlateScrollCells = new List<SlateScrollCell>();
-			foreach (var Stone in ScrollStones.Select(s => FileCacheData.Data.SlateStone[s.stone]))
+			foreach (var Stone in ScrollStones.Select(s => FileCache.Data.SlateStone[s.stone]))
 			{
 				#region 生成属性信息
 				char SplitChar = '，';   //设置分隔符号
@@ -120,8 +120,8 @@ namespace Xylia.Preview.Project.Core.Item
 
 			if (SortByGrade)
 			{
-				var Grade1 = FileCacheData.Data.SlateStone[x.stone]?.Grade ?? 0;
-				var Grade2 = FileCacheData.Data.SlateStone[y.stone]?.Grade ?? 0;
+				var Grade1 = FileCache.Data.SlateStone[x.stone]?.Grade ?? 0;
+				var Grade2 = FileCache.Data.SlateStone[y.stone]?.Grade ?? 0;
 
 				return  Grade2 - Grade1;
 			}

@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-using Xylia.bns.Modules.DataFormat.BinData.Handle.Local;
+using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.Extension;
 using Xylia.Match.Util.ItemList;
 using Xylia.Preview.Third;
+
 
 namespace Xylia.Match.Util
 {
 	/// <summary>
 	/// 信息读取
 	/// </summary>
-	public static class Gain
+	public static class InfoGet
 	{
 		public static Dictionary<string, string> Special = null;
 
@@ -25,7 +26,7 @@ namespace Xylia.Match.Util
 		/// <param name="ItemId"></param>
 		/// <param name="Result"></param>
 		/// <returns></returns>
-		public static bool GetName2(this Localization Local, string ItemAlias, int ItemId, out string Result)
+		public static bool GetName2(this TextBinData Local, string ItemAlias, int ItemId, out string Result)
 		{
 			//模糊获取名称
 			string NameText = Local.GetText("Item.Name2." + ItemAlias);
@@ -51,7 +52,7 @@ namespace Xylia.Match.Util
 		/// </summary>
 		/// <param name="Name">填入物品标识/内部名称</param>
 		/// <returns></returns>
-		public static string GetDesc(this Localization Local, string Name)
+		public static string GetDesc(this TextBinData Local, string Name)
 		{
 			string Desc = null;
 
@@ -66,7 +67,7 @@ namespace Xylia.Match.Util
 		/// </summary>
 		/// <param name="Name">填入物品标识/内部名称</param>
 		/// <returns></returns>
-		public static string GetInfo(this Localization Local, string Name)
+		public static string GetInfo(this TextBinData Local, string Name)
 		{
 			string Info = null;
 
@@ -77,17 +78,17 @@ namespace Xylia.Match.Util
 			return BNS_Cut(Info);
 		}
 
+
 		public static string BNS_Cut(string Str)
 		{
 			if (Str.IsNull()) return null;
 
 			#region 替换标识符部分
-			Regex Replace_Tag1 = new Regex(@"<image.*?\.", RegexOptions.IgnoreCase);
-			Regex Replace_Tag2 = new Regex("scalerate=.*?/>", RegexOptions.IgnoreCase);
+			Regex Replace_Tag1 = new(@"<image.*?\.", RegexOptions.IgnoreCase);
+			Regex Replace_Tag2 = new("scalerate=.*?/>", RegexOptions.IgnoreCase);
 
 
 			string Tag = Replace_Tag1.Replace(Replace_Tag2.Replace(Str, ""), "")
-
 				.Replace("Tag_", "").Replace("Tooltip_", "")
 				.Replace("GetWhere", "[兑换]").Replace("Warning", "[提醒]").Replace("Random", "[随机]").Replace("GuildProduction", "[门派制作]").Replace("Job_", "")
 				.Replace("FildDrop", "[区域]").Replace("GrowthExp", "[成长经验]").Replace("NormalKey", "[钥匙]").Replace("Roulette", "[转盘]").Replace("process", "加工")
@@ -108,9 +109,8 @@ namespace Xylia.Match.Util
 			string New = replace1.Replace(Tag, "");
 			#endregion
 
-			#region 执行引号替换
+			//执行引号替换
 			return New.Replace("&quot;", '"'.ToString().Replace('”', '"')).Replace("enablescale=true", "");
-			#endregion
 		}
 		#endregion
 	}

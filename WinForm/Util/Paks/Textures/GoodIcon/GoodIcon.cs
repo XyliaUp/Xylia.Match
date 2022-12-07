@@ -1,33 +1,17 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Threading.Tasks;
-
-using Xylia.bns.Util;
-using Xylia.bns.Modules.DataFormat.BinData.Handle;
-using Xylia.Preview.Data.Record;
-using Xylia.bns.Modules.DataFormat.BinData;
 
 namespace Xylia.Match.Util.Paks.Textures
 {
 	public sealed class GoodIcon : IconOutBase
 	{
-		#region 构造
-		public GoodIcon(Action<string> action, string GameFolder = null) : base(action, GameFolder) 
-		{
-		
-		}
-		#endregion
-
-
 		#region 方法
-		internal override void AnalyseSourceData(ConcurrentDictionary<int, IconTexture> IconPath)
+		public GoodIcon(Action<string> action, string GameFolder = null) : base(action, GameFolder) { }
+
+		internal override void AnalyseSourceData()
 		{
-			var NameKey = HandleData.BinHandle.Field.Result.NameKey_Convert;
-			if (!NameKey.ContainsKey("goodsicon")) throw new Exception("无效的图标数据");
-
-
-			//读取物品数据
-			Parallel.ForEach(this.HandleData.BinHandle.ExtractData(NameKey["goodsicon"]), field =>
+			var Table = this.GameData["goodsicon"];
+			Parallel.ForEach(Table.CellDatas(), field =>
 			{
 				if (field is null || !field.HasData) return;
 
@@ -42,7 +26,7 @@ namespace Xylia.Match.Util.Paks.Textures
 					{
 						MainId = MainId,
 
-						IconTextureId = IconId,	  
+						IconTextureId = IconId,
 						IconIndex = Idx,
 					});
 				}

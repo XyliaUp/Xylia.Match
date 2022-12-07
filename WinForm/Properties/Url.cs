@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using System.Linq;
 using System.Net;
 
 using Xylia.Net.Youdao;
@@ -77,19 +76,6 @@ namespace Xylia.Match.Properties
 				catch
 				{
 
-				}
-
-
-
-				switch (Program.GetVerType)
-				{
-					case VerType.测试版本: return Update_Exp;
-
-					case VerType.正式版本: return Update;
-
-					case VerType.特殊版本: return Update;
-
-					case VerType.开发版本: return Update_Test;
 				}
 
 				return Update;

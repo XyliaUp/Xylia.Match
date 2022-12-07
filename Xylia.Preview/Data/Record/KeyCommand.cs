@@ -51,7 +51,7 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 方法
-		private KeyCap GetKeyCap(KeyCode KeyCode) => FileCacheData.Data.KeyCap.Find(o => o.KeyCode == KeyCode);
+		private KeyCap GetKeyCap(KeyCode KeyCode) => FileCache.Data.KeyCap.Find(o => o.KeyCode == KeyCode);
 
 		/// <summary>
 		/// 获取组合键

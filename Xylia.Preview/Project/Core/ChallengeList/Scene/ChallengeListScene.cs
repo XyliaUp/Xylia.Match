@@ -64,7 +64,7 @@ namespace Xylia.Preview.Project.RunForm
 
 		public void LoadData(ChallengeList.ChallengeTypeSeq ChallengeType)
 		{
-			var challengeList = FileCacheData.Data.ChallengeList.Find(o => o.ChallengeType == ChallengeType);
+			var challengeList = FileCache.Data.ChallengeList.Find(o => o.ChallengeType == ChallengeType);
 			if (challengeList is null) return;
 
 			List<ChallengeCell> ChallengeCells = new();

@@ -36,15 +36,20 @@ namespace Xylia.Match.Windows.Panel
 	public partial class MatchProp : UserControl
 	{
 		#region 构造
+		bool IsInitialization = true;
+
 		public MatchProp()
 		{
 			InitializeComponent();
 			this.TabControl.SelectedIndex = 0;
 
+
+			this.Switch_Mode.Checked = CommonPath.DataLoadMode;
 			this.GRoot_Path.Text = MySet.Core.Folder_Game_Bns;
 			this.ItemPreview_Search.InputText = Ini.ReadValue("Preview", "ItemSearch_Rule");
 
-			Logger.Write($"启用物品数据模块");
+			//Logger.Write($"启用物品数据模块");
+			IsInitialization = false;
 		}
 		#endregion
 
@@ -233,10 +238,15 @@ namespace Xylia.Match.Windows.Panel
 		/// </summary>
 		void RefreshInfo()
 		{
+			if (Switch_Mode.Checked)
+			{
+
+			}
+
 			string Version_Data = Ini.ReadValue("info", "data", this.WorkInfoPath);
 			string Version_Local = Ini.ReadValue("info", "local", this.WorkInfoPath);
 
-			this.Invoke(() => StateInfo.Text = $"汉化数据更新于 {Version_Local}\n资源数据更新于 {Version_Data}");
+			this?.Invoke(() => StateInfo.Text = $"汉化数据更新于 {Version_Local}\n资源数据更新于 {Version_Data}");
 		}
 		#endregion
 
@@ -256,7 +266,7 @@ namespace Xylia.Match.Windows.Panel
 				//变更监听路径
 				this.FileListen();
 
-				ResFilesSet.WorkingDirectory = value.FullName;
+				CommonPath.WorkingDirectory = value.FullName;
 				MySet.Core.Folder_PreviewFiles = value.ToString();
 			}
 		}
@@ -288,7 +298,7 @@ namespace Xylia.Match.Windows.Panel
 		/// </summary>
 		public static void ClearCache()
 		{
-			FileCacheData.Data.ClearAll();
+			FileCache.Data.ClearAll();
 
 			MySet.ClearMemory();
 		}
@@ -325,7 +335,7 @@ namespace Xylia.Match.Windows.Panel
 			//** 设置工作路径
 			if (!CommonPath.OutputFolder.IsNull())
 			{
-				if (this.CurDataFolder is null) this.CurDataFolder = new DirectoryInfo(ResFilesSet.WorkingDirectory);
+				if (this.CurDataFolder is null) this.CurDataFolder = new DirectoryInfo(CommonPath.WorkingDirectory);
 			}
 
 			//ResourceManager rm = new ResourceManager("Images", Assembly.GetExecutingAssembly());
@@ -411,84 +421,83 @@ namespace Xylia.Match.Windows.Panel
 				ToEnd(true);
 				return;
 			}
-			else
+
+
+
+			Step1.StepIndex = 1;
+			var thread = new Thread((ThreadStart)delegate
 			{
-				Step1.StepIndex = 1;
+				Read.GetReadInfo.Path.Chv = this.Chv_Path.Text;
+				Read.GetReadInfo.OnlyNew = this.Chk_OnlyNew.Checked;
 
-				var thread = new Thread((ThreadStart)delegate
+				DateTime dt = time = DateTime.Now;
+				this.Invoke(() => Timer.Start());
+
+				try
 				{
-					Read.GetReadInfo.Path.Chv = this.Chv_Path.Text;
-					Read.GetReadInfo.OnlyNew = this.Chk_OnlyNew.Checked;
-
-					DateTime dt = time = DateTime.Now;
-					this.Invoke(new Action(() => Timer.Start()));
-
-					try
+					//Read入口方法
+					var read = new Read(Str => this.Invoke(new Action(() => SendMessage(Str))), Switch_64Bit.Checked, MySet.Core.Folder_Game_Bns)
 					{
-						//Read入口方法
-						var read = new Read(Str => this.Invoke(new Action(() => SendMessage(Str))), Switch_64Bit.Checked, MySet.Core.Folder_Game_Bns)
-						{
-							OldPath = Ini.ReadValue(Util.Static.Enums.Section.Match, "Chv_Path")
-						};
+						OldPath = Ini.ReadValue(Util.Static.Enums.Section.Match, "Chv_Path")
+					};
 
 
-						if (!read.XmlData.Any())
-						{
-							this.Invoke(new Action(() => SendMessage("已激活仅新增道具功能，对比后无新增。")));
-							ToEnd();
-							return;
-						}
-
-
-						Step1.StepIndex = 2;
-
-						var match = new ItemMatch(Str => this.Invoke(new Action(() => SendMessage(Str))))
-						{
-							UseExcel = select2.Result == Select3.State.isXlsx,
-							Folder_Output = MySet.Core.Folder_Output,
-							OutWhenErrorLocal = !Chk_Option1.Checked,
-
-							ReadInfo = read,
-							Old = read.GetOld(false),
-						};
-
-
-						Step1.StepIndex = 3;
-						match.StartMatch_Fast(dt);
-						Step1.StepIndex = 4;
-
-
-						this.Invoke(new Action(() => Clipboard.SetDataObject(match.File.Directory, true)));
-						this.ToEnd();
-
-						if (!Ini.ReadValue("Prop", "ShowMessage").ToBool())
-						{
-							Tip.Message("本次执行已全部结束，可通过点击右键菜单中的\"打开文件夹\"或在资源管理器中使用\"Ctrl+V粘贴\"打开输出文件目录。");
-							Ini.WriteValue("Prop", "ShowMessage", true);
-						}
-
-						return;
-					}
-					catch (ExitException)
+					if (!read.XmlData.Any())
 					{
-						this.Invoke(new Action(() => SendMessage("用户取消了操作", true)));
-
+						this.Invoke(new Action(() => SendMessage("已激活仅新增道具功能，对比后无新增。")));
 						ToEnd();
 						return;
 					}
-					catch (Exception ee)
+
+
+					Step1.StepIndex = 2;
+
+					var match = new ItemMatch(Str => this.Invoke(new Action(() => SendMessage(Str))))
 					{
-						this.Invoke(new Action(() => SendMessage(ee.Message, true)));
-						Logger.Write(ee, MsgInfo.MsgLevel.错误);
+						UseExcel = select2.Result == Select3.State.isXlsx,
+						Folder_Output = MySet.Core.Folder_Output,
+						OutWhenErrorLocal = !Chk_Option1.Checked,
 
-						ToEnd();
-						return;
+						ReadInfo = read,
+						Old = read.GetOld(false),
+					};
+
+
+					Step1.StepIndex = 3;
+					match.StartMatch_Fast(dt);
+					Step1.StepIndex = 4;
+
+
+					this.Invoke(new Action(() => Clipboard.SetDataObject(match.File.Directory, true)));
+					this.ToEnd();
+
+					if (!Ini.ReadValue("Prop", "ShowMessage").ToBool())
+					{
+						Tip.Message("本次执行已全部结束，可通过点击右键菜单中的\"打开文件夹\"或在资源管理器中使用\"Ctrl+V粘贴\"打开输出文件目录。");
+						Ini.WriteValue("Prop", "ShowMessage", true);
 					}
-				});
 
-				thread.SetApartmentState(ApartmentState.STA);
-				thread.Start();
-			}
+					return;
+				}
+				catch (ExitException)
+				{
+					this.Invoke(new Action(() => SendMessage("用户取消了操作", true)));
+
+					ToEnd();
+					return;
+				}
+				catch (Exception ee)
+				{
+					this.Invoke(new Action(() => SendMessage(ee.Message, true)));
+					Logger.Write(ee, MsgInfo.MsgLevel.错误);
+
+					ToEnd();
+					return;
+				}
+			});
+
+			thread.SetApartmentState(ApartmentState.STA);
+			thread.Start();
 		}
 
 		private void Chk_OnlyNew_CheckedChanged(object sender, EventArgs e)
@@ -588,10 +597,6 @@ namespace Xylia.Match.Windows.Panel
 			ItemPreview_Search.InputText.PreviewShow((m, s) => this.Invoke(() => SendMessage(m, s)));
 		}
 
-		private void ItemPreview_Search_TextChanged(object sender, EventArgs e)
-		{
-			Ini.WriteValue("Preview", "ItemSearch_Rule", this.ItemPreview_Search.InputText);
-		}
 
 		private void ucBtnExt5_MouseEnter(object sender, EventArgs e)
 		{
@@ -617,6 +622,26 @@ namespace Xylia.Match.Windows.Panel
 				}
 
 			}).Start();
+		}
+
+
+
+		private void ItemPreview_Search_TextChanged(object sender, EventArgs e) => Ini.WriteValue("Preview", "ItemSearch_Rule", this.ItemPreview_Search.InputText);
+
+		private void Switch_Mode_CheckedChanged(object sender, EventArgs e)
+		{
+			this.label2.Visible = ucBtnExt3.Visible = ucBtnExt19.Visible =
+				 this.label4.Visible = this.ucBtnExt7.Visible = !Switch_Mode.Checked;
+
+			if (IsInitialization) return;
+
+
+			Ini.WriteValue("Preview", "LoadMode", Switch_Mode.Checked);
+
+			FrmAnchorTips.ShowTips(Switch_Mode, "* 刷新缓存后生效", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 800, false);
+
+
+			//this.RefreshInfo();
 		}
 
 

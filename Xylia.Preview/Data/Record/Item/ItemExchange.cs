@@ -95,14 +95,14 @@ namespace Xylia.Preview.Data.Record
 
 		#region 方法
 		public static IEnumerable<ItemExchange> LoadNormalItem(string ItemAlias)
-			=> FileCacheData.Data.ItemExchange.Where(Info =>
+			=> FileCache.Data.ItemExchange.Where(Info =>
 			   (Info.NormalItem1?.MyEquals(ItemAlias) ?? false)
 			|| (Info.NormalItem2?.MyEquals(ItemAlias) ?? false)
 			|| (Info.NormalItem3?.MyEquals(ItemAlias) ?? false)
 			|| (Info.NormalItem4?.MyEquals(ItemAlias) ?? false));
 
 		public static IEnumerable<ItemExchange> LoadRequiredItem(string ItemAlias, string IteBrand)
-			=> FileCacheData.Data.ItemExchange.Where(Info =>
+			=> FileCache.Data.ItemExchange.Where(Info =>
 			   (Info.RequiredItem1?.MyEquals("item:" + ItemAlias) ?? false) || (Info.RequiredItem1?.MyEquals("itembrand:" + IteBrand) ?? false)
 			|| (Info.RequiredItem2?.MyEquals("item:" + ItemAlias) ?? false) || (Info.RequiredItem2?.MyEquals("itembrand:" + IteBrand) ?? false)
 			|| (Info.RequiredItem3?.MyEquals("item:" + ItemAlias) ?? false) || (Info.RequiredItem3?.MyEquals("itembrand:" + IteBrand) ?? false)

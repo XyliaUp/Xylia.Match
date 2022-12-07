@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.BinData.Handle.Local;
-using Xylia.Extension;
-using Xylia.Preview.Data.Record;
+using Xylia.bns.Modules.DataFormat.Bin;
 
 
 namespace Xylia.Match.Util.Paks.Textures
@@ -23,8 +19,6 @@ namespace Xylia.Match.Util.Paks.Textures
 		/// </summary>
 		public bool UseBackground = false;
 
-
-
 		/// <summary>
 		/// 指示白名单模式
 		/// </summary>
@@ -36,17 +30,15 @@ namespace Xylia.Match.Util.Paks.Textures
 		public string ChvPath = null;
 		#endregion
 
-
-
 		#region 方法
 		public ItemIcon(Action<string> action, string GameFolder = null) : base(action, GameFolder) { }
 
-		internal override void AnalyseSourceData(ConcurrentDictionary<int, IconTexture> IconPath)
+		internal override void AnalyseSourceData()
 		{
 			#region 读取物品数据
 			Action("正在分析物品数据...");
 
-			var localization = new Localization(Path_Local);
+			var localization = new TextBinData(Path_Local);
 
 			//设置并发线程数量
 			var pOptions = new ParallelOptions()
@@ -55,9 +47,8 @@ namespace Xylia.Match.Util.Paks.Textures
 			};
 
 
-
-			#region 读取外部文件
-			var CacheList = new BlockingCollection<int>();
+			#region 读取外部文件	 
+			HashSet<int> CacheList = new();
 			if (!string.IsNullOrWhiteSpace(ChvPath) && File.Exists(ChvPath))  //校验
 			{
 				var rd = File.OpenText(ChvPath);
@@ -73,23 +64,24 @@ namespace Xylia.Match.Util.Paks.Textures
 			#endregion
 
 			//读取物品数据
-			Parallel.ForEach(HandleData.BinHandle.ExtractData(0, true, isWhiteList ? null : CacheList), pOptions, (field) =>
+			var ItemTable = this.GameData["item"];
+			Parallel.ForEach(ItemTable.CellDatas(), pOptions, (field) =>
 			{
 				int MainId = field.FID;
-				var FData = field.Field.Data;
-
 				if (!isWhiteList || CacheList.Contains(MainId))
 				{
 					#region 获取数据
-					int IconId = BitConverter.ToInt32(FData, LocDefine.IconId);
-					short IconIdx = BitConverter.ToInt16(FData, LocDefine.IconId + 8);
+					var Data = field.Field.Data;
 
-					byte Grade = FData[LocDefine.Grade];
-					string Name2 = localization.GetText(BitConverter.ToInt32(FData, LocDefine.Name2));
+					int IconId = BitConverter.ToInt32(Data, LocDefine.IconId);
+					short IconIdx = BitConverter.ToInt16(Data, LocDefine.IconId + 8);
+
+					byte Grade = Data[LocDefine.Grade];
+					string Name2 = localization.GetText(BitConverter.ToInt32(Data, LocDefine.Name2));
 
 					//获取 GroceryType
 					byte GroceryType = 0;
-					if (field.FType.Value == 2) GroceryType = FData[LocDefine.GroceryType];
+					if (field.FType.Value == 2) GroceryType = Data[LocDefine.GroceryType];
 					#endregion
 
 

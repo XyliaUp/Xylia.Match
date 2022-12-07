@@ -27,15 +27,15 @@ namespace Xylia.Preview.Data.Helper
 		{
 			while (InLoading) Thread.Sleep(100);
 
-			if (FileCacheData.Data.Quest is null)
+			if (FileCache.Data.Quest is null)
 			{
 				InLoading = true;
-				FileCacheData.Data.Quest = GetQuests();
+				FileCache.Data.Quest = GetQuests();
 				InLoading = false;
 			}
 
 
-			return FileCacheData.Data.Quest.ContainsKey(QuestID) ? FileCacheData.Data.Quest[QuestID] : null;
+			return FileCache.Data.Quest.ContainsKey(QuestID) ? FileCache.Data.Quest[QuestID] : null;
 		}
 
 		/// <summary>

@@ -9,13 +9,11 @@ using HZH_Controls.Forms;
 
 using NPOI.SS.UserModel;
 
-using Xylia.bns.Util;
-using Xylia.bns.Modules.DataFormat.BinData.Handle;
+using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.Configure;
 using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Files.Excel;
-using Xylia.bns.Modules.DataFormat.BinData;
 
 namespace Xylia.Match.Windows.Panel
 {
@@ -99,7 +97,7 @@ namespace Xylia.Match.Windows.Panel
 			#endregion
 
 
-			new Thread((ThreadStart)delegate
+			new Thread(act =>
 			{
 				#region 初始化
 				bool isDefault = string.IsNullOrWhiteSpace(metroTextBox1.Text);
@@ -108,45 +106,15 @@ namespace Xylia.Match.Windows.Panel
 				if (isDefault || Ext == ".json")
 					throw new Exception("暂不支持的格式");
 
-				var LocalInfo = new HandleData(filePath.Text, true).BinHandle.ExtractLocal();
+				var LocalInfo = new TextBinData(filePath.Text);
 				#endregion
 
+
 				#region 根据选择格式输出内容
-				if (isDefault || Ext == ".json")
-				{
-					throw new Exception("不再支持的格式");
-
-					#region 转为数据表
-					var RootData = new DataTable();
-
-					RootData.Columns.Add(Const.Alias, typeof(string));
-					RootData.Columns.Add(Const.Text, typeof(string));
-
-					foreach (var Pair in LocalInfo)
-					{
-						if (!Pair.Alias.IsNull())
-						{
-							DataRow RootDataRow = RootData.NewRow();
-
-							RootDataRow[Const.Alias] = Pair.Alias;
-							RootDataRow[Const.Text] = Pair.Text;
-
-							RootData.Rows.Add(RootDataRow);
-						}
-					}
-					#endregion
-
-					////导出路径
-					//StreamWriter outfile = new StreamWriter(isDefault ? Path.GetDirectoryName(filePath.Text) + @"\汉化.json" : metroTextBox1.Text);
-
-					//outfile.WriteLine(JsonConvert.SerializeObject(RootData, Newtonsoft.Json.Formatting.Indented));
-					//outfile.Close();
-				}
-
-				else if (Ext == ".xlsx" || Ext == ".xls")
+				if (Ext == ".xlsx" || Ext == ".xls")
 				{
 					#region 初始化
-					var TargetInfo = LocalInfo.Where(info => !string.IsNullOrWhiteSpace(info.Alias)).ToList();
+					var TargetInfo = LocalInfo.data.Where(info => !string.IsNullOrWhiteSpace(info.Alias)).ToList();
 
 					var excel = new ExcelInfo("汉化文档");
 					var TitleRow = excel.CreateRow(0);
@@ -185,14 +153,13 @@ namespace Xylia.Match.Windows.Panel
 					excel.Save(metroTextBox1.Text);
 					#endregion
 				}
-
 				else if (Ext == ".xml")
 				{
 					var outfile = new StreamWriter(isDefault ? Path.GetDirectoryName(filePath.Text) + @"\汉化.xml" : metroTextBox1.Text);
 					outfile.WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
 					outfile.WriteLine("<table version=\"0.11\">");
 
-					foreach (var Pair in LocalInfo.Where(info => !string.IsNullOrWhiteSpace(info.Alias)))
+					foreach (var Pair in LocalInfo.data.Where(info => !string.IsNullOrWhiteSpace(info.Alias)))
 					{
 						outfile.WriteLine($"\t<record alias=\"{ Pair.Alias }\" >");
 						outfile.WriteLine($"\t\t<![CDATA[{ Pair.Text }]]>");
@@ -347,7 +314,7 @@ namespace Xylia.Match.Windows.Panel
 
 		private void ucCheckBox2_CheckedChangeEvent(object sender, EventArgs e)
 		{
-			Xylia.Configure.Ini.WriteValue(this.GetType().Name, nameof(SaveAsBin), SaveAsBin.Checked);
+			Ini.WriteValue(this.GetType().Name, nameof(SaveAsBin), SaveAsBin.Checked);
 		}
 
 		private void ucBtnFillet5_BtnClick(object sender, EventArgs e)

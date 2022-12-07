@@ -78,8 +78,8 @@
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.contentPanel1);
 			this.Controls.Add(this.label1);
+			this.Controls.Add(this.contentPanel1);
 			this.Name = "CaseInfoPanel";
 			this.Size = new System.Drawing.Size(149, 30);
 			this.Load += new System.EventHandler(this.CaseInfoPanel_Load);

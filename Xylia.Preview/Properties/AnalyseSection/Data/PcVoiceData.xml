@@ -5,15 +5,8 @@
 		<record alias="sex" name="" type="ID" extra="Byte2" seq="$sex" />
 		
 		<record alias="pc-voice-set-id" name="" type="Byte" />
-		<record alias="usable-race-1" name="" type="Seq" seq="$race" />
-		<record alias="usable-race-2" name="" type="Seq" seq="$race" />
-		<record alias="usable-race-3" name="" type="Seq" seq="$race" />
-		<record alias="usable-race-4" name="" type="Seq" seq="$race" />
-		<record alias="default-race-1" name="" type="Seq" seq="$race" />
-		<record alias="default-race-2" name="" type="Seq" seq="$race" />
-		<record alias="default-race-3" name="" type="Seq" seq="$race" />
-		<record alias="default-race-4" name="" type="Seq" seq="$race" />
-
+		<record alias="usable-race" name="" type="Seq" seq="$race" repeat="4" />
+		<record alias="default-race" name="" type="Seq" seq="$race" repeat="4" />
 		<record alias="name" name="" type="TextAlias" />
 		<record alias="desc" name="" type="TextAlias" />
 	</list>

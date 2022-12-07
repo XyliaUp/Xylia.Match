@@ -13,17 +13,11 @@
 			<case alias="clash" name="" />
 			<case alias="escape" name="" />
 		</record>
-
         <!-- ====================================================================== -->
 		<record alias="start-score-amount" name="" type="Short" filter="score-event" />
 		<record alias="add-score-amount" name="" type="Short" filter="score-event" />
 		<record alias="reduce-score-amount" name="" type="Short" filter="score-event" />
-		<record alias="final-score-1" name="" type="Short" filter="score-event" />
-		<record alias="final-score-2" name="" type="Short" filter="score-event" />
-		<record alias="final-score-3" name="" type="Short" filter="score-event" />
-		<record alias="final-score-4" name="" type="Short" filter="score-event" />
-		<record alias="final-score-5" name="" type="Short" filter="score-event" />
-		<record alias="final-score-6" name="" type="Short" filter="score-event" />
+		<record alias="final-score" name="" type="Short" filter="score-event" repeat="6" />
 		<record alias="add-score-recycle-duration" name="" type="msec" filter="score-event" />
 	</list>
 </table>

@@ -53,7 +53,7 @@
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "RandomStoreListScene";
 			this.Text = "聚灵阁奖池";
-			this.Load += new System.EventHandler(this.RandomStoreListScene_Load);
+			//this.Load += new System.EventHandler(this.RandomStoreListScene_Load);
 			this.ResumeLayout(false);
 
 		}

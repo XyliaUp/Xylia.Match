@@ -67,7 +67,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				}
 				else if (t is NpcTalkBase talk)
 				{
-					temp.AddRange(LoadTalkMessage(talk.NpcResponse, SoundOut));
+					if (talk.NpcResponse != null) temp.AddRange(LoadTalkMessage(talk.NpcResponse, SoundOut));
+
 				}
 			}
 			#endregion
@@ -114,7 +115,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		{
 			List<Control> result = new();
 
-			var NpcResponse = FileCacheData.Data.NpcResponse[Response.Alias];
+			var NpcResponse = FileCache.Data.NpcResponse[Response?.Alias];
 			if (NpcResponse is null || NpcResponse.TalkMessage is null) return result;
 
 			return LoadTalkMessage(NpcResponse.TalkMessage, SoundOut);
@@ -131,7 +132,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			//载入数据
 			List<Control> result = new();
 
-			var TalkMessage = FileCacheData.Data.NpcTalkMessage[Message];
+			var TalkMessage = FileCache.Data.NpcTalkMessage[Message];
 			if (TalkMessage is null) return result;
 
 			System.Diagnostics.Trace.WriteLine("EndTalkSocial: " + TalkMessage.EndTalkSocial);
@@ -149,7 +150,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				var StepShow = TalkMessage.Attributes["step-show-" + i];
 				var StepCameraShow = TalkMessage.Attributes["step-camera-show-" + i];
 				#endregion
-
 
 				#region 生成控件
 				string Text = StepText.GetText();

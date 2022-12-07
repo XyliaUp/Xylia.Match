@@ -31,6 +31,7 @@ namespace Xylia.Preview
         private void InitializeComponent()
         {
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -41,6 +42,19 @@ namespace Xylia.Preview
 			this.textBox1.TabIndex = 0;
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
+			// contentPanel1
+			// 
+			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
+			this.contentPanel1.BasicLineHeight = 20;
+			this.contentPanel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.contentPanel1.ForeColor = System.Drawing.Color.White;
+			this.contentPanel1.Location = new System.Drawing.Point(56, 105);
+			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+			this.contentPanel1.Name = "contentPanel1";
+			this.contentPanel1.TabIndex = 1;
+			this.contentPanel1.Text = "施展<arg id=\"skill:Bard_G1_Skill_Down_1_Lv1\" p=\"id:skill.name2\"/><arg id=\"skill:Bar" +
+    "d_G1_Skill_Down_1_Lv1\" p=\"id:skill.current-short-cut-key.key1.image\"/>武功";
+			// 
 			// DebugFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -50,6 +64,7 @@ namespace Xylia.Preview
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(336, 256);
+			this.Controls.Add(this.contentPanel1);
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
@@ -69,6 +84,7 @@ namespace Xylia.Preview
 		#endregion
 
 		private System.Windows.Forms.TextBox textBox1;
+		private ContentPanel contentPanel1;
 	}
 }
 

@@ -97,11 +97,11 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		private Control CreteItemBrandCell(ItemBuyPrice ItemBuyPrice, ref int LoX, int LoY)
 		{
 			//获取对应的 组ID
-			var ItemBrand = FileCacheData.Data.ItemBrand[ItemBuyPrice.RequiredItembrand];
+			var ItemBrand = FileCache.Data.ItemBrand[ItemBuyPrice.RequiredItembrand];
 			if (ItemBrand is null) return null;
 
 			//搜索对象
-			var ItemBrandTooltip = FileCacheData.Data.ItemBrandTooltip.Find(info => info.BrandID == ItemBrand.ID && info.ItemConditionType == this.ItemBuyPrice.RequiredItembrandConditionType);
+			var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.BrandID == ItemBrand.ID && info.ItemConditionType == this.ItemBuyPrice.RequiredItembrandConditionType);
 			if (ItemBrandTooltip is null) Trace.WriteLine($"[CreteItemBrandCell] { ItemBrand.ID } => { this.ItemBuyPrice.RequiredItembrandConditionType } 不存在");
 
 			int ExtraScale = 10;

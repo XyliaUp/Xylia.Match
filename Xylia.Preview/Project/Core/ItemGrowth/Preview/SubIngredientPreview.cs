@@ -77,7 +77,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				else if (ResultItem is ItemBrand ItemBrand)
 				{
 					//搜索对象
-					var ItemTooltip = FileCacheData.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Recipe.SubIngredientConditionType1);
+					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Recipe.SubIngredientConditionType1);
 					if (ItemTooltip != null)
 					{
 						ItemIconCell = new FeedItemIconCell

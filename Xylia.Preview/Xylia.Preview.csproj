@@ -251,6 +251,7 @@
     <Content Include="Properties\AnalyseSection\Data\LoadingImageData.xml" />
     <Content Include="Properties\AnalyseSection\Data\LobbyPcData.xml" />
     <Content Include="Properties\AnalyseSection\Data\MapAreaData.xml" />
+    <Content Include="Properties\AnalyseSection\Data\MapGroup1ExpeditionData.xml" />
     <Content Include="Properties\AnalyseSection\Data\MapGroup1Data.xml" />
     <Content Include="Properties\AnalyseSection\Data\MapGroup2Data.xml" />
     <Content Include="Properties\AnalyseSection\Data\ZoneData0\MapUnitData.xml" />
@@ -312,7 +313,7 @@
     <Content Include="Properties\AnalyseSection\Data\NPC\NpcCombatMoveAnimData.xml" />
     <Content Include="Properties\AnalyseSection\Data\NPC\NpcConvoyData.xml" />
     <Content Include="Properties\AnalyseSection\Data\NPC\NpcData.xml" />
-    <Content Include="Properties\AnalyseSection\Data\NPC\NpcData_simple.xml" />
+    <Content Include="Properties\AnalyseSection\Data\NPC\NpcData_Simple.xml" />
     <Content Include="Properties\AnalyseSection\Data\NPC\NpcIndicatorMoveAnimData.xml" />
     <Content Include="Properties\AnalyseSection\Data\NPC\NpcMoveAnimData.xml" />
     <Content Include="Properties\AnalyseSection\Data\NPC\NpcResetStageData.xml" />
@@ -507,6 +508,7 @@
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-bottom.png" />
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-top.png" />
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-track.png" />
+    <None Remove="Properties\AnalyseSection\Data\MapGroup1ExpeditionData.xml" />
   </ItemGroup>
   
   <ItemGroup>

@@ -30,13 +30,20 @@ namespace Xylia.Preview.Project.Common.Interface
 		/// <summary>
 		/// 编号
 		/// </summary>
-		public virtual int ID => int.TryParse(this.Attributes["id"], out int @int) ? @int : (this.Index + 1);
+		public virtual int ID => int.TryParse(this.Attributes?["id"], out int @int) ? @int : (this.Index + 1);
+
+
+		/// <summary>
+		/// IconOut 需要使用字段
+		/// </summary>
+		public string alias;
 
 		/// <summary>
 		/// 别名
 		/// </summary>
-		public virtual string Alias => this.Attributes["alias"];
+		public virtual string Alias => alias ?? this.Attributes?["alias"];
 		#endregion
+
 
 		#region 接口字段
 		public override string ToString() => this.GetType().Name + ":" + (this.Alias ?? this.ID.ToString());

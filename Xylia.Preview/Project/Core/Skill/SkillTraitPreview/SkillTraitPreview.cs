@@ -42,7 +42,7 @@ namespace Xylia.Preview.Project.Core.Skill
 		{
 			this.TraitTiers = new();
 
-			foreach (var SkillTrait in FileCacheData.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced3))
+			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced3))
 			{
 				if (SkillTrait.Tier == 0)
 				{
@@ -118,7 +118,7 @@ namespace Xylia.Preview.Project.Core.Skill
 
 
 
-			return skill.Select(o => FileCacheData.Data.Skill3[o.Key, o.Value]).Where(o => o is not null).ToList();
+			return skill.Select(o => FileCache.Data.Skill3[o.Key, o.Value]).Where(o => o is not null).ToList();
 		}
 		#endregion
 

@@ -8,15 +8,15 @@
 		</record>
 		
 		<record alias="alias" name="" type="Index" />
-		<record alias="recycle-duration-modify-percent" name="" ratio="" type="Short" />
+		<record alias="recycle-duration-modify-percent" name="" type="Short" />
 		<record alias="recycle-duration-modify-diff" name="" type="Int32" />
 		<record alias="sp-consume-modify-diff-1" name="" type="Short" />
 		<record alias="sp-consume-modify-diff-2" name="" type="Short" />
-		<record alias="damage-power-percent-modify-percent" name="" ratio="" type="Int32" />
+		<record alias="damage-power-percent-modify-percent" name="" type="Int32" />
 		<record alias="damage-power-percent-modify-diff" name="" type="Int32" />
 		<record alias="hp-drain-percent-modify-percent" name="" ratio="" type="Int32" />
 		<record alias="hp-drain-percent-modify-diff" name="" type="Int32" />
-		<record alias="heal-percent-modify-percent" name="" ratio="" type="Int32" />
+		<record alias="heal-percent-modify-percent" name="" type="Int32" />
 		<record alias="heal-percent-modify-diff" name="" type="Int32" />
 		<record alias="description" name="" type="TextAlias" server="n" />
 		<!-- ================================================================ -->

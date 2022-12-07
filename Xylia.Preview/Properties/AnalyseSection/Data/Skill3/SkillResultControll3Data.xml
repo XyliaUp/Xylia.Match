@@ -8,7 +8,7 @@
 		<record alias="immune-target-bounce-skill" name="" type="Bool" repeat="5" />
 		<record alias="immune-target-dodge-skill" name="" type="Bool" repeat="5" />
 		<record alias="immune-miss-result" name="" type="Bool" repeat="5" />
-                               <!-- ============================================== -->
+		<!-- ============================================== -->
 		<record alias="immune-caster-casting-bounce" name="" type="Bool" client="n" />
 		<record alias="immune-caster-casting-dodge" name="" type="Bool" client="n" />
 		<record alias="immune-caster-casting-parry" name="" type="Bool" client="n" />

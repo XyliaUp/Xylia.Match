@@ -52,7 +52,7 @@ namespace Xylia.Preview.Project.Core.Item
 		/// <returns></returns>
 		private static SkillModifyCell CreateCell(int Skill3ID, string Tooltip, out Skill3 Skill)
 		{
-			Skill = FileCacheData.Data.Skill3[Skill3ID];
+			Skill = FileCache.Data.Skill3[Skill3ID];
 			if (Skill != null) return new SkillModifyCell()
 			{
 				SkillName = Skill.Attributes["name2"].GetText(),

@@ -21,7 +21,7 @@ namespace Xylia.Match.Windows.Panel
 			InitializeComponent();
 
 			this.BackColor = Color.Transparent;
-			Logger.Write($"启用汉化匹配模块");
+			//Logger.Write($"启用汉化匹配模块");
 		}
 
 		private void OpenLocal(TextBox Text)
@@ -32,7 +32,7 @@ namespace Xylia.Match.Windows.Panel
 			if (Open.ShowDialog() == DialogResult.OK)
 			{
 				Text.Text = Open.FileName;
-				Logger.Write(Text.Name + "已选择汉化配置文件");
+				//Logger.Write(Text.Name + "已选择汉化配置文件");
 			}
 		}
 

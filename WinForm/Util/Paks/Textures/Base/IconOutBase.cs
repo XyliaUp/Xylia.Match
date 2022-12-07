@@ -7,10 +7,10 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-using Xylia.bns.Modules.DataFormat.BinData;
-using Xylia.bns.Modules.DataFormat.BinData.Handle;
+using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Read;
 using Xylia.Extension;
+using Xylia.Preview.Common.Interface.RecordAttribute;
 using Xylia.Preview.Data.Record;
 
 
@@ -26,23 +26,21 @@ namespace Xylia.Match.Util.Paks.Textures
 		/// <param name="GameFolder"></param>
 		public IconOutBase(Action<string> action, string GameFolder = null)
 		{
-			Action = action;
+			this.Action = action;
 			this.GameDirectory = GameFolder;
 		}
 		#endregion
-
-
 
 		#region	字段
 		/// <summary>
 		/// 客户端数据
 		/// </summary>
-		internal HandleData HandleData;
+		internal BinData GameData;
 
 		/// <summary>
 		/// 统计Icon路径信息与包名称信息
 		/// </summary>
-		internal ConcurrentDictionary<int, IconTexture> IconPath;
+		internal ConcurrentDictionary<int, IconTexture> IconTextures;
 
 		/// <summary>
 		/// 关联信息
@@ -92,7 +90,7 @@ namespace Xylia.Match.Util.Paks.Textures
 		{
 			#region 读取资源
 			this.LogHelper = new OutLogHelper(Path.GetDirectoryName(this.OutputDirectory));  //设置日志输出路径
-			
+
 			var select = new GetDataPath(this.GameDirectory, null);    //初始化数据文件
 			this.Path_XML = select.TargetXml;
 			this.Path_Local = select.TargetLocal;
@@ -106,17 +104,14 @@ namespace Xylia.Match.Util.Paks.Textures
 			this.QuoteInfos = new();
 
 			//开始分析数据
-			this.AnalyseSourceData(IconPath);
+			this.AnalyseSourceData();
 
 			//清理资源
-			this.HandleData?.Dispose();
-			this.HandleData = null;
+			this.GameData?.Dispose();
+			this.GameData = null;
 			#endregion
 		}
-		#endregion
 
-
-		#region 处理游戏数据
 		/// <summary>
 		/// 分析贴图数据
 		/// </summary>
@@ -125,39 +120,31 @@ namespace Xylia.Match.Util.Paks.Textures
 			#region 初始化
 			Action("正在分析图标数据...");
 
-			if (HandleData is null) this.HandleData = new HandleData(Path_XML, false);
-
-			var NameKey = HandleData.BinHandle.Field.Result.NameKey_Convert;
-			if (!NameKey.ContainsKey("icontexture")) throw new Exception("无效的图标");
+			if (this.GameData is null) this.GameData = new BinData(Path_XML);
+			this.IconTextures = new();
 			#endregion
 
+
 			#region 读取贴图数据
-			this.IconPath = new ConcurrentDictionary<int, IconTexture>();
-			Parallel.ForEach(HandleData.BinHandle.ExtractData(NameKey["icontexture"]), field =>
+			var Table = this.GameData["icontexture"];
+			Parallel.ForEach(Table.CellDatas(), field =>
 			{
-				try
+				int CurId = field.Field.FID;
+
+				//路径信息
+				var Lookups = field.Lookup.TextList;
+				if (this.IconTextures.ContainsKey(CurId)) return;
+
+
+				this.IconTextures.GetOrAdd(CurId, new IconTexture()
 				{
-					int CurId = field.Field.FID;
-
-					//路径信息
-					var Lookups = field.Lookup.TextList;
-					if (this.IconPath.ContainsKey(CurId)) return;
-
-					this.IconPath.GetOrAdd(CurId, new IconTexture()
-					{
-						//alias = Lookups[0].String,
-						icontexture = Lookups[1].String,
-
-						IconWidth = BitConverter.ToInt16(field.Field.Data, 20),
-						IconHeight = BitConverter.ToInt16(field.Field.Data, 22),
-						TextureWidth = BitConverter.ToInt16(field.Field.Data, 24),
-						TextureHeight = BitConverter.ToInt16(field.Field.Data, 26),
-					});
-				}
-				catch (Exception ee)
-				{
-					System.Diagnostics.Debug.WriteLine($" == Cache == { ee.Message }");
-				}
+					alias = Lookups[0].String,
+					iconTexture = Lookups[1].String,
+					IconWidth = BitConverter.ToInt16(field.Field.Data, 20),
+					IconHeight = BitConverter.ToInt16(field.Field.Data, 22),
+					TextureWidth = BitConverter.ToInt16(field.Field.Data, 24),
+					TextureHeight = BitConverter.ToInt16(field.Field.Data, 26),
+				});
 			});
 			#endregion
 		}
@@ -167,7 +154,7 @@ namespace Xylia.Match.Util.Paks.Textures
 		/// </summary>
 		/// <param name="IconPath"></param>
 		/// <param name="OnlyDumpUpks">只输出文件</param>
-		internal virtual void AnalyseSourceData(ConcurrentDictionary<int, IconTexture> IconPath) => throw new Exception("请在引用类中分析资源数据");
+		internal virtual void AnalyseSourceData() => throw new Exception("请在引用类中分析资源数据");
 		#endregion
 
 
@@ -247,8 +234,8 @@ namespace Xylia.Match.Util.Paks.Textures
 					//创建成功日志
 					if (this.ShowLog_CreateInfo)
 					{
-						var IconInfo = IconPath.ContainsKey(QuoteInfo.IconTextureId) ? IconPath[QuoteInfo.IconTextureId] : null;
-						LogHelper.Record($"{ QuoteInfo.MainId } => { IconInfo.icontexture }", OutLogHelper.LogGroup.生成日志);
+						var IconInfo = IconTextures.ContainsKey(QuoteInfo.IconTextureId) ? IconTextures[QuoteInfo.IconTextureId] : null;
+						LogHelper.Record($"{ QuoteInfo.MainId } => { IconInfo.iconTexture }", OutLogHelper.LogGroup.生成日志);
 					}
 					#endregion
 				}
@@ -287,27 +274,26 @@ namespace Xylia.Match.Util.Paks.Textures
 				LogHelper.Record(ItemMsg + $"缺少道具图标", OutLogHelper.LogGroup.错误记录);
 				return null;
 			}
-			else if (!IconPath.ContainsKey(quoteInfo.IconTextureId))
+			else if (!IconTextures.ContainsKey(quoteInfo.IconTextureId))
 			{
-				Console.WriteLine($"{ quoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo：{ IconPath.Count })");
+				Console.WriteLine($"{ quoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo：{ IconTextures.Count })");
 				return null;
 			}
-
-
-			var IconTexture = IconPath[quoteInfo.IconTextureId];
 			#endregion
 
+
 			#region 异常处理
-			if (string.IsNullOrWhiteSpace(IconTexture.icontexture))
+			var IconTexture = IconTextures[quoteInfo.IconTextureId];
+			if (string.IsNullOrWhiteSpace(IconTexture.iconTexture))
 			{
-				LogHelper.Record($"{ ItemMsg } => 图标({ IconTexture.icontexture }) 由于图标名为空，跳过执行", OutLogHelper.LogGroup.错误记录);
+				LogHelper.Record($"{ ItemMsg } => 图标({ IconTexture.iconTexture }) 由于图标名为空，跳过执行", OutLogHelper.LogGroup.错误记录);
 				return null;
 			}
 
 			var bitmap = IconTextureExt.GetIcon(IconTexture, quoteInfo.IconIndex);
 			if (bitmap is null)
 			{
-				LogHelper.Record($"{ItemMsg} => 图标({ IconTexture.icontexture } 图标资源获取失败", OutLogHelper.LogGroup.错误记录);
+				LogHelper.Record($"{ItemMsg} => 图标({ IconTexture.iconTexture } 图标资源获取失败", OutLogHelper.LogGroup.错误记录);
 				return null;
 			}
 			#endregion
@@ -331,11 +317,12 @@ namespace Xylia.Match.Util.Paks.Textures
 					if (disposing)
 					{
 						// TODO: 释放托管状态(托管对象)
-						this.HandleData?.Dispose();
-						this.HandleData = null;
+
 					}
 
 					this.LogHelper = null;
+					this.GameData?.Dispose();
+					this.GameData = null;
 
 					// TODO: 释放未托管的资源(未托管的对象)并替代终结器
 					// TODO: 将大型字段设置为 null

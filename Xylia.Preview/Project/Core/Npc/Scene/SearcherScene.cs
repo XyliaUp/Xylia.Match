@@ -37,11 +37,11 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 				#endregion
 
 				 //查询地图信息
-				var MapUnit = FileCacheData.Data.MapUnit.Find(Info => Info.Alias.Contains(NpcAlias));
+				var MapUnit = FileCache.Data.MapUnit.Find(Info => Info.Alias.Contains(NpcAlias));
 				if (MapUnit != null)
 				{
 					string MapId = MapUnit.Attributes["map-id"];
-					string MapName = FileCacheData.Data.MapInfo.GetInfo(MapId)?.Attributes["name"].GetText();
+					string MapName = FileCache.Data.MapInfo.GetInfo(MapId)?.Attributes["name"].GetText();
 
 					StoreItemCell.ShowRightText = true;
 					StoreItemCell.RightText = MapName;
@@ -74,7 +74,7 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 		/// <returns></returns>
 		public static bool HasRelativeNpc(string Store2Alias, out IEnumerable<IRecord> SearchResult)
 		{
-			SearchResult = FileCacheData.Data.Npc.Where(info =>
+			SearchResult = FileCache.Data.Npc.Where(info =>
 			  info.Attributes["store2-1"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-2"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-3"].MyEquals(Store2Alias) ||

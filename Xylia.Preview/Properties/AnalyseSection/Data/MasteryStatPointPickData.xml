@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="206" alias="MasteryStatPointPick" module="LocalizationData" type="mastery-stat-point-pick" version="0.5" rule="cpl" index="y">
+	<list alias="MasteryStatPointPick" module="LocalizationData" type="mastery-stat-point-pick" version="0.5" rule="cpl" index="y">
 		<record alias="stat-point-pick-attribute" type="id" extra="Byte1" >
 			<case alias="slot1" name="" />
 			<case alias="slot2" name="" />
@@ -9,7 +9,7 @@
 			<case alias="slot5" name="" />
 		</record>
 		<record alias="stat-point-tier" type="id" extra="Byte2" />
-		<record alias="stat-point-job" type="id" extra="Byte3" seq="$job_20" />	
+		<record alias="stat-point-job" type="id" extra="Byte3" seq="$job" />	
 		
 		<record alias="required-stat-point" type="Short" showzero="y" />
 		<record alias="effect" ref="Effect" />		

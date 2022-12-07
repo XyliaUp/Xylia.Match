@@ -9,11 +9,13 @@ using System.Windows.Forms;
 
 using HZH_Controls.Forms;
 
+using Xylia.Configure;
 using Xylia.Drawing;
 using Xylia.Extension;
+using Xylia.Match.Util.Paks;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Windows.Forms;
-using Xylia.Match.Util.Paks;
+
 using static Xylia.Drawing.Compose;
 using static Xylia.Preview.Properties.Resources;
 
@@ -28,7 +30,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			IsInitialization = true;
 
-			Logger.Write($"启用图标匹配模块");
+			//Logger.Write($"启用图标匹配模块");
 
 			InitializeComponent();
 
@@ -86,9 +88,9 @@ namespace Xylia.Match.Windows.Panel
 			#endregion
 
 
-			if (bool.TryParse(Xylia.Configure.Ini.ReadValue("Match_ICON", "Mode"), out bool Result)) Switch_Mode.Checked = Result;
-			if (bool.TryParse(Xylia.Configure.Ini.ReadValue("Match_ICON", "HasBG"), out Result)) checkBox1.Checked = Result;
-			if (bool.TryParse(Xylia.Configure.Ini.ReadValue("Match_ICON", "WriteLog"), out Result)) checkBox2.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue("Match_ICON", "Mode"), out bool Result)) Switch_Mode.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue("Match_ICON", "HasBG"), out Result)) checkBox1.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue("Match_ICON", "WriteLog"), out Result)) checkBox2.Checked = Result;
 
 		}
 
@@ -511,7 +513,7 @@ namespace Xylia.Match.Windows.Panel
 
 		private void Switch_HasBG_MouseEnter(object sender, EventArgs e)
 		{
-			string Msg = checkBox1.Checked ? "生成道具图标时\n将会附带道具品级" : "只匹配出道具的\n透明背景图标";
+			string Msg = checkBox1.Checked ? "生成道具图标时\n会附带道具品级" : "只生成出道具的\n透明背景图标";
 			FrmAnchorTips.ShowTips(checkBox1, Msg, AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
 		}
 
@@ -531,7 +533,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			Xylia.Configure.Ini.WriteValue("Match_ICON", "Mode", Switch_Mode.Checked);
+			Ini.WriteValue("Match_ICON", "Mode", Switch_Mode.Checked);
 			FrmAnchorTips.CloseLastTip();
 			Switch_Mode_MouseEnter(null, null);
 		}
