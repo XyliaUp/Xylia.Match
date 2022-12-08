@@ -38,7 +38,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(2, 0);
 			this.label2.Name = "label2";
@@ -49,7 +49,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(2, 25);
 			this.label1.Name = "label1";
@@ -63,7 +63,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.priceCell2.BackColor = System.Drawing.Color.Transparent;
 			this.priceCell2.CurrencyCount = ((int)(3008888ul));
 			this.priceCell2.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
-			this.priceCell2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.priceCell2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.priceCell2.FontStyle = System.Drawing.FontStyle.Regular;
 			this.priceCell2.ForeColor = System.Drawing.Color.White;
 			this.priceCell2.Location = new System.Drawing.Point(175, 26);
@@ -78,7 +78,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.priceCell1.BackColor = System.Drawing.Color.Transparent;
 			this.priceCell1.CurrencyCount = ((int)(3000ul));
 			this.priceCell1.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
-			this.priceCell1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.priceCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.priceCell1.FontStyle = System.Drawing.FontStyle.Strikeout;
 			this.priceCell1.ForeColor = System.Drawing.Color.White;
 			this.priceCell1.Location = new System.Drawing.Point(285, 0);

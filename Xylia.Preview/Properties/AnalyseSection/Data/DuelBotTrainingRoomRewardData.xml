@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<list module="ItemData" type="duel-bot-training-room-reward" version="0.4" rule="cpl" >
-		<record alias="job" name="" type="id" extra="Byte1" seq="$job_20" />
+		<record alias="job" name="" type="id" extra="Byte1" seq="$job" />
 		<record alias="grade" name="" type="id" extra="Short2" />
 
 		<record alias="achievement" name="" type="Byte" start="0" />		
 		<record alias="reward-item" name="" ref="Item" repeat="3" />
 		<record alias="reward-item-count" name="" type="Byte" repeat="3" />
-
 		<record alias="reward-exp" name="" type="Int32" />	
 	</list>
 </table>

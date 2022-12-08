@@ -11,7 +11,7 @@
 		<record alias="level" type="Byte" name="" />	
 		<record alias="desirable-expand-level" type="Byte" name="" />		
 		<record alias="money" type="Int32" name="" showzero="y" />			
-		<record alias="charge-type" type="Byte" name="" >
+		<record alias="charge-type" type="Seq" name="" >
 		    <case alias="item" name="" />
 		    <case alias="money" name="" />
 		    <case alias="item-or-money" name="" />		

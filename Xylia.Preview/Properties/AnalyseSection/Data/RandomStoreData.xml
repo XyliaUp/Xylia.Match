@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="RandomStore" version="0.6">
+	<list module="ItemData" type="RandomStore" version="0.8">
 		<record alias="random-store-number" name="" type="id" extra="Byte1">
 			<case alias="invalid-number" name="" />
 			<case alias="random-store-1" name="" />
@@ -25,9 +25,7 @@
 		<record alias="premium-reward-draw-enable" name="" length="2" type="Bool" />
 		<record alias="premium-reward-draw-premium-draw-count" name="" type="Short" />
 		<record alias="acquire-draw-reward-set-repeat-count" name="" type="Int32" />
-
-
-		
+		<!-- ============================================================== -->
 		<record alias="default-prob-group" name="" type="" client="n" />
 		<record alias="default-slot-count" name="" type="" client="n" />
 		<record alias="free-draw-count-for-mon" name="" type="" client="n" />
@@ -38,15 +36,7 @@
 		<record alias="free-draw-count-for-sat" name="" type="" client="n" />
 		<record alias="free-draw-count-for-sun" name="" type="" client="n" />
 		<record alias="premium-reward-draw-prob" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-value-1" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-prob-1" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-value-2" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-prob-2" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-value-3" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-prob-3" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-value-4" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-prob-4" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-value-5" name="" type="" client="n" />
-		<record alias="premium-reward-draw-add-prob-5" name="" type="" client="n" />
+		<record alias="premium-reward-draw-add-value" name="幸运气息" type="" client="n" repeat="5" />
+		<record alias="premium-reward-draw-add-prob" name="" type="" client="n" repeat="5" />
 	</list>
 </table>

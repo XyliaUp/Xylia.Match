@@ -38,7 +38,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 			// RewardTitle
 			// 
 			this.RewardTitle.AutoSize = true;
-			this.RewardTitle.Font = new System.Drawing.Font("微软雅黑", 10F);
+			this.RewardTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
 			this.RewardTitle.Location = new System.Drawing.Point(-2, -2);
 			this.RewardTitle.Name = "RewardTitle";
 			this.RewardTitle.Size = new System.Drawing.Size(65, 20);
@@ -49,7 +49,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 			// 
 			this.panelContent1.AutoSize = true;
 			this.panelContent1.BackColor = System.Drawing.Color.Transparent;
-			this.panelContent1.Font = new System.Drawing.Font("微软雅黑", 10F);
+			this.panelContent1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
 			this.panelContent1.ForeColor = System.Drawing.Color.White;
 			this.panelContent1.Location = new System.Drawing.Point(123, 0);
 			this.panelContent1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);

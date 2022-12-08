@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list relative-path="Zone\*\ZoneTeleportSwitchData.*" module="ZoneData2" type="ZoneTeleportSwitch" version="0.6" retired="n" rule="cpl | unsort" >
 		<!-- 将根据id进行分类 -->
 		<record alias="zone" type="id" sort-by="n" />

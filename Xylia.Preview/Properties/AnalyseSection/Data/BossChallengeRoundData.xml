@@ -1,25 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
-  <list module="AIData" rule="cpl" version="0.2" type="boss-challenge-round" >
- 	<!-- ============================================= -->	 
-    <record alias="id" name="" type="id" /> 
-    <record alias="round" name="" type="Int32" start="0" />
-    <record alias="alias" name="" type="Index" />	
-    <record alias="spawn-effect-1" ref="Effect" name="" type="Int32" />	
-    <record alias="spawn-effect-2" ref="Effect" name="" type="Int32" />	
-    <record alias="boss-spawn-delay" name="" type="Int32" />		
-	<!-- ============================================= -->	
+<table>
+	<list module="AIData" rule="cpl" version="0.2" type="boss-challenge-round" >
+		<record alias="id" name="" type="id" />
+		<record alias="round" name="" type="Int32" start="0" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="spawn-effect" ref="Effect" name="" type="Int32" repeat="2" />
+		<record alias="boss-spawn-delay" name="" type="Int32" />
 
-	<!-- ============================================= -->
-    <record alias="boss-npc" name="" client="n" />
-	
-    <record alias="prob-weight-by-npc-killed-group1-1" name="" client="n" />
-    <record alias="prob-weight-by-npc-killed-group2-1" name="" client="n" />
-    <record alias="prob-weight-by-npc-killed-group3-1" name="" client="n" />
-	
-    <record alias="effect-by-npc-killed-group1-1" name="" client="n" />
-    <record alias="effect-by-npc-killed-group2-1" name="" client="n" />
-    <record alias="effect-by-npc-killed-group3-1" name="" client="n" />
-	<!-- ============================================= -->	
-  </list>
+		<!-- ============================================= -->
+		<record alias="boss-npc" name="" client="n" />
+		<record alias="prob-weight-by-npc-killed-group1" name="" client="n" repeat="2" />
+		<record alias="prob-weight-by-npc-killed-group2" name="" client="n" repeat="2" />
+		<record alias="prob-weight-by-npc-killed-group3" name="" client="n" repeat="2" />
+		<record alias="effect-by-npc-killed-group1" name="" client="n" repeat="2" />
+		<record alias="effect-by-npc-killed-group2" name="" client="n" repeat="2" />
+		<record alias="effect-by-npc-killed-group3" name="" client="n" repeat="2" />
+		<!-- ============================================= -->
+	</list>
 </table>

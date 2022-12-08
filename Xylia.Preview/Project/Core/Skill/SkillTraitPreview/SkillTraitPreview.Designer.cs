@@ -44,12 +44,15 @@
 			this.traitTier1.Name = "traitTier1";
 			this.traitTier1.Size = new System.Drawing.Size(625, 91);
 			this.traitTier1.TabIndex = 0;
+			this.traitTier1.Variation1 = null;
+			this.traitTier1.Variation2 = null;
+			this.traitTier1.Variation3 = null;
 			this.traitTier1.Visible = false;
 			// 
 			// ucBtnExt1
 			// 
 			this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt1.BtnText = "技能图标";
 			this.ucBtnExt1.ConerRadius = 8;
@@ -57,7 +60,7 @@
 			this.ucBtnExt1.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt1.EnabledMouseEffect = false;
 			this.ucBtnExt1.FillColor = System.Drawing.Color.Black;
-			this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt1.IsRadius = true;
 			this.ucBtnExt1.IsShowRect = true;
 			this.ucBtnExt1.IsShowTips = false;
@@ -77,37 +80,37 @@
 			// 
 			this.TooltipEffectDescription.BackColor = System.Drawing.Color.Transparent;
 			this.TooltipEffectDescription.BasicLineHeight = 20;
-			this.TooltipEffectDescription.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.TooltipEffectDescription.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipEffectDescription.ForeColor = System.Drawing.Color.White;
-			this.TooltipEffectDescription.Location = new System.Drawing.Point(641, 33);
+			this.TooltipEffectDescription.Location = new System.Drawing.Point(641, 60);
 			this.TooltipEffectDescription.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.TooltipEffectDescription.Name = "TooltipEffectDescription";
 			this.TooltipEffectDescription.TabIndex = 120;
-			this.TooltipEffectDescription.Text = "移形换位";
+			this.TooltipEffectDescription.Text = "EffectDescription";
 			// 
 			// TooltipTrainDescription
 			// 
 			this.TooltipTrainDescription.BackColor = System.Drawing.Color.Transparent;
 			this.TooltipTrainDescription.BasicLineHeight = 20;
-			this.TooltipTrainDescription.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.TooltipTrainDescription.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipTrainDescription.ForeColor = System.Drawing.Color.White;
-			this.TooltipTrainDescription.Location = new System.Drawing.Point(641, 59);
+			this.TooltipTrainDescription.Location = new System.Drawing.Point(641, 32);
 			this.TooltipTrainDescription.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.TooltipTrainDescription.Name = "TooltipTrainDescription";
 			this.TooltipTrainDescription.TabIndex = 121;
-			this.TooltipTrainDescription.Text = "移形换位";
+			this.TooltipTrainDescription.Text = "TrainDescription";
 			// 
 			// TooltipTrainName
 			// 
 			this.TooltipTrainName.BackColor = System.Drawing.Color.Transparent;
 			this.TooltipTrainName.BasicLineHeight = 25;
-			this.TooltipTrainName.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.TooltipTrainName.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipTrainName.ForeColor = System.Drawing.Color.White;
 			this.TooltipTrainName.Location = new System.Drawing.Point(641, 1);
 			this.TooltipTrainName.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.TooltipTrainName.Name = "TooltipTrainName";
 			this.TooltipTrainName.TabIndex = 122;
-			this.TooltipTrainName.Text = "移形换位";
+			this.TooltipTrainName.Text = "TrainName";
 			// 
 			// SkillTraitPreview
 			// 

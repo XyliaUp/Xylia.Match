@@ -10,10 +10,10 @@
 		<record alias="badge-slot-quota-category1-premium" name="" type="Byte" />
 		<record alias="badge-slot-quota-category1-normal" name="" type="Byte" />
 		<record alias="badge-slot-quota-category2-premium" name="" type="Byte" />
-		<record alias="badge-slot-quota-category2-normal" name="" type="Byte" />		
+		<record alias="badge-slot-quota-category2-normal" name="" type="Byte" />
 		<record alias="badge-slot-quota-category3-premium" name="" type="Byte" />
 		<record alias="badge-slot-quota-category3-normal" name="" type="Byte" />
-		<record alias="badge-page" name="" type="Byte" />		
-		<record alias="badge-inventory-size" name="" type="Byte" />		
+		<record alias="badge-page" name="" type="Byte" />
+		<record alias="badge-inventory-size" name="" type="Byte" />
 	</list>
 </table>

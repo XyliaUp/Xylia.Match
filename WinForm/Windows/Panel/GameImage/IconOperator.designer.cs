@@ -130,7 +130,7 @@
 			// 
 			this.groupBox2.BackColor = System.Drawing.Color.Transparent;
 			this.groupBox2.Controls.Add(this.metroButton9);
-			this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.groupBox2.Location = new System.Drawing.Point(7, 222);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(309, 121);
@@ -157,7 +157,7 @@
 			this.groupBox1.Controls.Add(this.FormatSelect);
 			this.groupBox1.Controls.Add(this.metroButton1);
 			this.groupBox1.Controls.Add(this.metroButton2);
-			this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.groupBox1.Location = new System.Drawing.Point(340, 223);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(418, 157);
@@ -230,7 +230,7 @@
 			this.FormatSelect.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
 			this.FormatSelect.ConerRadius = 10;
 			this.FormatSelect.DropPanelHeight = -1;
-			this.FormatSelect.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.FormatSelect.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.FormatSelect.IsRadius = true;
 			this.FormatSelect.IsShowRect = true;
 			this.FormatSelect.ItemWidth = 40;
@@ -355,7 +355,7 @@
 			this.Footer.AutoEllipsis = true;
 			this.Footer.AutoSize = true;
 			this.Footer.BackColor = System.Drawing.Color.Transparent;
-			this.Footer.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Footer.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Footer.LineColor = System.Drawing.Color.White;
 			this.Footer.Location = new System.Drawing.Point(3, 387);
 			this.Footer.MaximumSize = new System.Drawing.Size(0, 23);

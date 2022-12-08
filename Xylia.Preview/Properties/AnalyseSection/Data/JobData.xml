@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<list module="CombatData" type="job" version="0.1" rule="cpl" index="y">
-		<record alias="job" type="id" name="" seq="$job_20" />
+		<record alias="job" type="id" name="" seq="$job" />
 
 		<record alias="name2" name="" type="TextAlias" server="n" />
 		<record alias="icon" name="" type="Icon" server="n" />

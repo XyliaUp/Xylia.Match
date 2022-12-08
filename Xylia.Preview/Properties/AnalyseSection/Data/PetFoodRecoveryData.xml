@@ -2,13 +2,7 @@
 <table>
 	<list module="ItemData" type="pet-food-recovery" version="0.1" rule="cpl | extra" index="y">
 		<record alias="alias" name="" type="Index" />
-		<record alias="item-grade-1" name="" type="Byte" />
-		<record alias="item-grade-2" name="" type="Byte" />
-		<record alias="item-grade-3" name="" type="Byte" />
-		<record alias="item-grade-4" name="" type="Byte" />
-		<record alias="recovery-amount-1" name="" type="Short" />			
-		<record alias="recovery-amount-2" name="" type="Short" />
-		<record alias="recovery-amount-3" name="" type="Short" />
-		<record alias="recovery-amount-4" name="" type="Short" />		
+		<record alias="item-grade" name="" type="Byte" repeat="4" />
+		<record alias="recovery-amount" name="" type="Short" repeat="4" />
 	</list>
 </table>

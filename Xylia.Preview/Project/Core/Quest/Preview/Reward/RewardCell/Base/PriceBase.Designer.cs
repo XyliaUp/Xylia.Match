@@ -42,7 +42,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 			this.priceCell1.BackColor = System.Drawing.Color.Transparent;
 			this.priceCell1.CurrencyCount = ((int)(1ul));
 			this.priceCell1.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
-			this.priceCell1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.priceCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.priceCell1.FontStyle = System.Drawing.FontStyle.Regular;
 			this.priceCell1.ForeColor = System.Drawing.Color.White;
 			this.priceCell1.Location = new System.Drawing.Point(123, -1);

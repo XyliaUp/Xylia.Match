@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
   <list module="ItemData" type="RankingRewardGroupData" version="0.4" rule="cpl" >
     <record alias="reward-group-id" type="ID" />
     <record alias="reward-group-alias" type="Index" />

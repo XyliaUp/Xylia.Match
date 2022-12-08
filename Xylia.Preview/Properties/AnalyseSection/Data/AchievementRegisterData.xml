@@ -75,7 +75,7 @@
 		</record>
 		
 		<record alias="id" type="id" extra="short1" name="" />
-		<record alias="job" type="id" extra="Byte3" seq="$job_20" name="" default="job-none" apply="must" />
+		<record alias="job" type="id" extra="Byte3" seq="$job" name="" default="job-none" apply="must" />
 		
 		<record alias="alias" type="Index" name="" />
 		<record alias="version" type="Short" name="" />

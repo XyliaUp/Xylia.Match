@@ -35,7 +35,7 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.textBox1.Location = new System.Drawing.Point(31, 102);
 			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.textBox1.Name = "textBox1";
@@ -45,7 +45,7 @@
 			// Btn_StartMatch
 			// 
 			this.Btn_StartMatch.BtnBackColor = System.Drawing.Color.Empty;
-			this.Btn_StartMatch.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Btn_StartMatch.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_StartMatch.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.Btn_StartMatch.BtnText = "确定";
 			this.Btn_StartMatch.ConerRadius = 8;
@@ -53,7 +53,7 @@
 			this.Btn_StartMatch.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.Btn_StartMatch.EnabledMouseEffect = false;
 			this.Btn_StartMatch.FillColor = System.Drawing.Color.White;
-			this.Btn_StartMatch.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Btn_StartMatch.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Btn_StartMatch.IsRadius = true;
 			this.Btn_StartMatch.IsShowRect = true;
 			this.Btn_StartMatch.IsShowTips = false;
@@ -72,7 +72,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label1.Location = new System.Drawing.Point(27, 69);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";

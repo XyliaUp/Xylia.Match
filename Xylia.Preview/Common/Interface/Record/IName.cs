@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xylia.Preview.Project.Common.Interface
+namespace Xylia.Preview.Common.Interface
 {
 	/// <summary>
 	/// 名称接口

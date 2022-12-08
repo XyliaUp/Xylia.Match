@@ -24,8 +24,6 @@ namespace Xylia.Preview.Project.Core.Skill
 		}
 		#endregion
 
-
-
 		#region 方法
 		private void Form1_Load(object sender, EventArgs e)
 		{
@@ -42,7 +40,7 @@ namespace Xylia.Preview.Project.Core.Skill
 		{
 			this.TraitTiers = new();
 
-			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced3))
+			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced2))
 			{
 				if (SkillTrait.Tier == 0)
 				{
@@ -50,10 +48,9 @@ namespace Xylia.Preview.Project.Core.Skill
 
 					System.Diagnostics.Trace.WriteLine(SkillTrait.Attributes);
 
-					SkillTraitPreview.test.TooltipTrainName.Text = SkillTrait.TooltipTrainName.GetText();
-					SkillTraitPreview.test.TooltipTrainDescription.Text = SkillTrait.TooltipTrainDescription.GetText();
-					SkillTraitPreview.test.TooltipEffectDescription.Text = SkillTrait.TooltipEffectDescription.GetText();
-
+					this.TooltipTrainName.Text = SkillTrait.TooltipTrainName.GetText();
+					this.TooltipTrainDescription.Text = SkillTrait.TooltipTrainDescription.GetText();
+					this.TooltipEffectDescription.Text = SkillTrait.TooltipEffectDescription.GetText();
 					continue;
 				}
 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="ZoneData1" relative-path="Zone\*\ZoneData.*" retired="n" rule="cpl" type="zone" version="0.139">
 		<!-- 将根据id进行分类 -->
 		<record alias="id" sort-by="n" type="id" />
@@ -81,15 +81,20 @@
 		<record alias="phase-quest-count" name="" server="n" type="Byte" />
 		<record alias="phase-quest" name="" server="n" type="Quest" repeat="30" />
 		<record alias="phase-id" name="" server="n" type="Byte" repeat="30" />
-		<record alias="phase-zone" ref="this" name="" repeat="11" />
-		<record alias="phase-zone-disable-in-arena" name="" server="n" type="Byte" repeat="11" />
+		<record alias="phase-zone" ref="this" name="" repeat="15" />
+		<record alias="phase-zone-disable-in-arena" name="" server="n" type="Byte" repeat="15" />
 
 		<record alias="default-phase-zone" default="y" name="" type="Bool" />
-		<record alias="phase-main-zone" ref="this" name="" server="n" />
-		<record alias="default-phase-pc-spawn-id" name="" type="Short" />
+		<record alias="phase-main-zone" ref="this" name="" server="n" type="Int32" />
+		<record alias="default-phase-pc-spawn-id" name="默认入场位置，再上线后也会被传送至此" type="Short" />
 		<record alias="dungeon-step" name="" server="n" type="Byte" />
 		<record alias="is-arena-entrance" name="" type="Bool" />
-		<record alias="enable-ghost-mode" name="" type="Bool" />
+		<record alias="enable-ghost-mode" name="" type="Byte">
+			<case alias="none" name="" default="y" />
+			<case alias="basic" name="" />
+			<case alias="phase" name="" />
+		</record>
+
 		<!-- ================================================== -->
 		<record alias="arena-return-area-1" client="n" name="" />
 		<record alias="arena-return-area-2" client="n" name="" />

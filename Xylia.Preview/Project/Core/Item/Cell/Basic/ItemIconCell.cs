@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using Xylia.Drawing;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
@@ -362,7 +362,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			var Txt = StackCount.ToString();
 
 			#region 处理字体大小程度
-			var CurFont = new Font("微软雅黑", 10F, FontStyle.Regular, GraphicsUnit.Point, 134);
+			var CurFont = new Font("Microsoft YaHei UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 134);
 
 			if (StackCount > 9999) CurFont = new Font(CurFont.FontFamily, CurFont.Size - 2);
 			else if (StackCount > 999) CurFont = new Font(CurFont.FontFamily, CurFont.Size - 1);

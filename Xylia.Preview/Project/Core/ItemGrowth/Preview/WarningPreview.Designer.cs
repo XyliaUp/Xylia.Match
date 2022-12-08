@@ -52,7 +52,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			this.panelContent1.AutoSize = true;
 			this.panelContent1.BackColor = System.Drawing.Color.Transparent;
-			this.panelContent1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+			this.panelContent1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F);
 			this.panelContent1.ForeColor = System.Drawing.Color.White;
 			this.panelContent1.Location = new System.Drawing.Point(46, 5);
 			this.panelContent1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);

@@ -38,7 +38,7 @@
 			// 
 			this.ItemNameCell.AutoSize = true;
 			this.ItemNameCell.BackColor = System.Drawing.Color.Transparent;
-			this.ItemNameCell.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ItemNameCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ItemNameCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.ItemNameCell.ItemGrade = ((byte)(7));
 			this.ItemNameCell.Location = new System.Drawing.Point(63, 16);

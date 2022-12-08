@@ -1,8 +1,8 @@
-﻿using Xylia.Preview.Project.Common.Interface;
+﻿using Xylia.Preview.Common.Interface;
 using Xylia.Extension;
 
 
-namespace Xylia.Preview.Project.Common.Attribute.ArgTest
+namespace Xylia.Preview.Common.Attribute.ArgTest
 {
 	public class Integer : IArgParam
 	{

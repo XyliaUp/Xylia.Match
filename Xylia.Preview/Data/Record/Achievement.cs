@@ -1,6 +1,6 @@
 ﻿using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {

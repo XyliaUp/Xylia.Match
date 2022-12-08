@@ -1,6 +1,6 @@
 ﻿
 using Xylia.Attribute.Component;
-using Xylia.Preview.Project.Common.Enums;
+using Xylia.Preview.Common.Enums;
 
 namespace Xylia.Preview.Data.Record
 {

@@ -2,7 +2,7 @@
 
 using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -21,7 +21,7 @@ namespace Xylia.Preview.Data.Record
 		public string Name2;
 
 		[Signal("game-category-3")]
-		public string GameCategory3;
+		public Item.GameCategory3Seq GameCategory3;
 
 		[Signal("item-grade")]
 		public byte ItemGrade;

@@ -48,9 +48,7 @@ namespace Xylia.Match.Windows.Panel
 				if (temp is null) return;
 
 				//创建界面
-				var Frm = new QuestPreview();
-				Frm.Data = temp;
-				Frm.ShowDialog();
+				new QuestPreview(temp).ShowDialog();
 			});
 
 			thread.SetApartmentState(ApartmentState.STA);

@@ -5,7 +5,7 @@ using System.Linq;
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.Enums;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.QuestBonusReward;
@@ -81,7 +81,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 
 			//载入追加奖励信息
-			var QuestBonusRewardSetting = FileCache.Data.QuestBonusRewardSetting.Where(o => o.Quest == Quest.Alias);
+			var QuestBonusRewardSetting = FileCache.Data.QuestBonusRewardSetting.Where(o => int.TryParse(o.Quest, out var QuestID) ? QuestID == Quest.id : o.Quest == Quest.Alias);
 			if (QuestBonusRewardSetting.Any())
 			{
 				this.GroupText += " (当前任务包含特别奖励，尚未支持处理)";

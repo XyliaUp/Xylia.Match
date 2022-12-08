@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
   <list module="ItemData" rule="cpl | extra" version="0.35" type="duel" > 
 		<record alias="alias" name="" type="Index" />
 		<record alias="group" name="" ref="AttractionGroup" />

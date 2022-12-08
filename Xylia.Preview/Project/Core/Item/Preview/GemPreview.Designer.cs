@@ -45,7 +45,7 @@
 			this.itemNameCell1.AutoSize = true;
 			this.itemNameCell1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell1.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell1.ItemGrade = 7;
 			this.itemNameCell1.Location = new System.Drawing.Point(211, 16);
@@ -61,7 +61,7 @@
 			this.itemNameCell5.AutoSize = true;
 			this.itemNameCell5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell5.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell5.ItemGrade = 7;
 			this.itemNameCell5.Location = new System.Drawing.Point(328, 16);
@@ -77,7 +77,7 @@
 			this.itemNameCell6.AutoSize = true;
 			this.itemNameCell6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell6.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell6.ItemGrade = 7;
 			this.itemNameCell6.Location = new System.Drawing.Point(328, 79);
@@ -93,7 +93,7 @@
 			this.itemNameCell7.AutoSize = true;
 			this.itemNameCell7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell7.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell7.ItemGrade = 7;
 			this.itemNameCell7.Location = new System.Drawing.Point(328, 143);
@@ -109,7 +109,7 @@
 			this.itemNameCell8.AutoSize = true;
 			this.itemNameCell8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell8.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell8.ItemGrade = 7;
 			this.itemNameCell8.Location = new System.Drawing.Point(328, 207);
@@ -125,7 +125,7 @@
 			this.itemNameCell4.AutoSize = true;
 			this.itemNameCell4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell4.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell4.ItemGrade = 7;
 			this.itemNameCell4.Location = new System.Drawing.Point(211, 207);
@@ -141,7 +141,7 @@
 			this.itemNameCell3.AutoSize = true;
 			this.itemNameCell3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell3.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell3.ItemGrade = 7;
 			this.itemNameCell3.Location = new System.Drawing.Point(211, 143);
@@ -157,7 +157,7 @@
 			this.itemNameCell2.AutoSize = true;
 			this.itemNameCell2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemNameCell2.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.itemNameCell2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.itemNameCell2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.itemNameCell2.ItemGrade = 7;
 			this.itemNameCell2.Location = new System.Drawing.Point(211, 79);

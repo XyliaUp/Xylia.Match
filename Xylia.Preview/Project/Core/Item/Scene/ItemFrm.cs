@@ -31,7 +31,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			this.ItemInfo = ItemInfo;
 
-
 			//初始化可配置内容
 			if (bool.TryParse(Ini.ReadValue("Preview", "item#option_UseUserOperPanel"), out bool f1))
 				this.MenuItem_SwitchUserOperPanel.Checked = f1;
@@ -39,6 +38,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			if (bool.TryParse(Ini.ReadValue("Preview", "item#option_ShowCategory3"), out bool f2))
 				this.lbl_Category.Visible = f2;
 			#endregion
+
 
 			#region 实例化操作按钮
 			this.UserOperScene = new UserOperPanel(this);
@@ -60,7 +60,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			//不使用多线程，无法退出主窗体
 			this.Activated += new EventHandler((s, o) => new Thread(t => this.UserOperScene?.BringToFront()).Start());
 			#endregion
-
 
 			#region 实例化额外控件
 			this.AttributePreview = new AttributePreview()
@@ -108,10 +107,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			//初始化显示状态
 			this.UserOperScene.Refresh();
 			if (this.UserOperScene.BtnCount == 0) this.MenuItem_SwitchUserOperPanel.Visible = false;
-			else
-			{
-				this.UserOperScene.Visible = this.MenuItem_SwitchUserOperPanel.Checked;
-			}
+			else this.UserOperScene.Visible = this.MenuItem_SwitchUserOperPanel.Checked;
+
 
 			#region 操作按钮
 			if (this.UserOperScene != null && UserOperScene.Visible)

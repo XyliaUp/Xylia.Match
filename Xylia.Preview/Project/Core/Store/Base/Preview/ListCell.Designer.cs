@@ -35,26 +35,26 @@ namespace Xylia.Preview.Project.Controls.PanelEx
 			// lbl_RightText
 			// 
 			this.lbl_RightText.Dock = System.Windows.Forms.DockStyle.Right;
-			this.lbl_RightText.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_RightText.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_RightText.ForeColor = System.Drawing.Color.Magenta;
 			this.lbl_RightText.Location = new System.Drawing.Point(374, 0);
 			this.lbl_RightText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_RightText.Name = "lbl_RightText";
-			this.lbl_RightText.Size = new System.Drawing.Size(74, 63);
+			this.lbl_RightText.Size = new System.Drawing.Size(74, 61);
 			this.lbl_RightText.TabIndex = 6;
 			this.lbl_RightText.Text = "地图名称";
 			this.lbl_RightText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.lbl_RightText.Visible = false;
 			// 
-			// ListItemCell
+			// ListCell
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.lbl_RightText);
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "ListItemCell";
-			this.Size = new System.Drawing.Size(448, 63);
+			this.Name = "ListCell";
+			this.Size = new System.Drawing.Size(448, 61);
 			this.ResumeLayout(false);
 
 		}

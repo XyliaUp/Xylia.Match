@@ -1,5 +1,5 @@
 ﻿using Xylia.Attribute.Component;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 
 namespace Xylia.Preview.Data.Record

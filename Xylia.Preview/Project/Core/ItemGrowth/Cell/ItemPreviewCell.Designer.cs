@@ -39,7 +39,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 			// 
 			this.itemNameCell1.AutoSize = true;
 			this.itemNameCell1.BackColor = System.Drawing.Color.Transparent;
-			this.itemNameCell1.Font = new System.Drawing.Font("微软雅黑", 11F);
+			this.itemNameCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F);
 			this.itemNameCell1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(178)))), ((int)(((byte)(72)))));
 			this.itemNameCell1.ItemGrade = 6;
 			this.itemNameCell1.Location = new System.Drawing.Point(10, 84);

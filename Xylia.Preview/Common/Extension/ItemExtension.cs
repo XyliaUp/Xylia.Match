@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Scene;
 using Xylia.Preview.Project.Core.Skill;
 using Xylia.Preview.Properties;

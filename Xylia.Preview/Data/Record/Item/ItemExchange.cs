@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 using Xylia.Attribute.Component;
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {

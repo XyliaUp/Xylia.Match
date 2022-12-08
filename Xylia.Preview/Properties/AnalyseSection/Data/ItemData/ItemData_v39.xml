@@ -431,10 +431,8 @@
 		<record alias="acquire-used" name="获得后无法交易" type="Bool" />
 		<record alias="equip-used" name="装备后无法交易" type="Bool" />
 		<record alias="account-used" name="账号专用" type="Bool" />
-
 		<record alias="filter-equip" name="" ref="filter" repeat="4" />
 		<record alias="effect-equip" name="" ref="Effect" repeat="4" />
-
 		<record alias="gear-score" name="" type="Int32" />
 		<record alias="equip-level" name="要求等级" default="1" type="byte" />
 		<record alias="equip-level-max" name="最大可用等级" type="byte" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list alias="ZoneEnv2SpawnData" module="ZoneData0" type="ZoneEnv2Spawn" version="0.4" retired="n" rule="cpl" check-version="y" >
 		<record alias="zone" name="" type="id" />
 		<record alias="id" name="" type="Short" start="0" />

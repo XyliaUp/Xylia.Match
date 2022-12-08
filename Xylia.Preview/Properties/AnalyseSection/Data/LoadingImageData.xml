@@ -6,7 +6,7 @@
 		<record alias="zone-attraction" name="" type="Int32" use-group="y"  />
 		<record alias="level-min" name="" type="Byte" default="1" />
 		<record alias="level-max" name="" type="Byte" default="100" />
-		<record alias="job" name="" type="Seq" seq="$job_20" />
+		<record alias="job" name="" type="Seq" seq="$job" />
 		<record alias="back-ground" name="" type="Index" />
 		<record alias="count-back-ground" name="" type="Byte" default="1" />
 		<record alias="editable" name="" type="Bool" default="y" />

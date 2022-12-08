@@ -42,12 +42,12 @@
 			// ucBtnFillet1
 			// 
 			this.ucBtnFillet1.BackColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet1.BtnImage")));
 			this.ucBtnFillet1.BtnText = "选择";
 			this.ucBtnFillet1.ConerRadius = 10;
 			this.ucBtnFillet1.FillColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.IsRadius = true;
 			this.ucBtnFillet1.IsShowRect = true;
 			this.ucBtnFillet1.Location = new System.Drawing.Point(493, 20);
@@ -91,12 +91,12 @@
 			// ucBtnFillet2
 			// 
 			this.ucBtnFillet2.BackColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet2.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet2.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet2.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet2.BtnImage")));
 			this.ucBtnFillet2.BtnText = "输出";
 			this.ucBtnFillet2.ConerRadius = 10;
 			this.ucBtnFillet2.FillColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet2.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet2.IsRadius = true;
 			this.ucBtnFillet2.IsShowRect = true;
 			this.ucBtnFillet2.Location = new System.Drawing.Point(582, 20);
@@ -111,12 +111,12 @@
 			// ucBtnFillet3
 			// 
 			this.ucBtnFillet3.BackColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet3.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet3.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet3.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet3.BtnImage")));
 			this.ucBtnFillet3.BtnText = "封包";
 			this.ucBtnFillet3.ConerRadius = 10;
 			this.ucBtnFillet3.FillColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet3.IsRadius = true;
 			this.ucBtnFillet3.IsShowRect = true;
 			this.ucBtnFillet3.Location = new System.Drawing.Point(582, 68);
@@ -149,12 +149,12 @@
 			// ucBtnFillet4
 			// 
 			this.ucBtnFillet4.BackColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet4.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet4.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet4.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet4.BtnImage")));
 			this.ucBtnFillet4.BtnText = "选择";
 			this.ucBtnFillet4.ConerRadius = 10;
 			this.ucBtnFillet4.FillColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet4.IsRadius = true;
 			this.ucBtnFillet4.IsShowRect = true;
 			this.ucBtnFillet4.Location = new System.Drawing.Point(494, 68);

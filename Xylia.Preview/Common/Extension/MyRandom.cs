@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xylia.Preview.Project.Common.Extension
+namespace Xylia.Preview.Common.Extension
 {
 	public static class MyRandom
 	{

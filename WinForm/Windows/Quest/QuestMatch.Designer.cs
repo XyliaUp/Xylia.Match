@@ -54,12 +54,12 @@
 			// Btn_QusetEpic
 			// 
 			this.Btn_QusetEpic.BackColor = System.Drawing.Color.Transparent;
-			this.Btn_QusetEpic.BtnFont = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Btn_QusetEpic.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_QusetEpic.BtnImage = ((System.Drawing.Image)(resources.GetObject("Btn_QusetEpic.BtnImage")));
 			this.Btn_QusetEpic.BtnText = "红尘往事";
 			this.Btn_QusetEpic.ConerRadius = 10;
 			this.Btn_QusetEpic.FillColor = System.Drawing.Color.Transparent;
-			this.Btn_QusetEpic.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Btn_QusetEpic.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Btn_QusetEpic.IsRadius = true;
 			this.Btn_QusetEpic.IsShowRect = true;
 			this.Btn_QusetEpic.Location = new System.Drawing.Point(463, 7);
@@ -74,12 +74,12 @@
 			// Btn_QuestList
 			// 
 			this.Btn_QuestList.BackColor = System.Drawing.Color.Transparent;
-			this.Btn_QuestList.BtnFont = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Btn_QuestList.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_QuestList.BtnImage = ((System.Drawing.Image)(resources.GetObject("Btn_QuestList.BtnImage")));
 			this.Btn_QuestList.BtnText = "任务列表";
 			this.Btn_QuestList.ConerRadius = 10;
 			this.Btn_QuestList.FillColor = System.Drawing.Color.Transparent;
-			this.Btn_QuestList.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point);
+			this.Btn_QuestList.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point);
 			this.Btn_QuestList.IsRadius = true;
 			this.Btn_QuestList.IsShowRect = true;
 			this.Btn_QuestList.Location = new System.Drawing.Point(463, 59);

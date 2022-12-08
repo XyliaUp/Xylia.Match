@@ -8,7 +8,7 @@
 			<case alias="face" name="" />
 			<case alias="body" name="" />
 			<case alias="beard" name="" />
-                                 </record>
+        </record>
 		<record alias="part-value" name="" type="ID" extra="Byte4" />
 
 

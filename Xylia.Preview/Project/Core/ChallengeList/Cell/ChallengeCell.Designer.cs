@@ -44,7 +44,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			// AttractionInfo
 			// 
 			this.AttractionInfo.AutoSize = true;
-			this.AttractionInfo.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.AttractionInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.AttractionInfo.Location = new System.Drawing.Point(86, 65);
 			this.AttractionInfo.Name = "AttractionInfo";
 			this.AttractionInfo.Size = new System.Drawing.Size(83, 20);
@@ -74,7 +74,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			// ChallengeDifficultyType
 			// 
 			this.ChallengeDifficultyType.AutoSize = true;
-			this.ChallengeDifficultyType.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ChallengeDifficultyType.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ChallengeDifficultyType.Location = new System.Drawing.Point(3, 35);
 			this.ChallengeDifficultyType.Name = "ChallengeDifficultyType";
 			this.ChallengeDifficultyType.Size = new System.Drawing.Size(102, 20);
@@ -85,7 +85,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			// 
 			this.ChallengeName.BackColor = System.Drawing.Color.Transparent;
 			this.ChallengeName.BasicLineHeight = 20;
-			this.ChallengeName.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ChallengeName.Font = new System.Drawing.Font("Microsoft YaHei UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ChallengeName.ForeColor = System.Drawing.Color.White;
 			this.ChallengeName.Location = new System.Drawing.Point(40, 0);
 			this.ChallengeName.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
@@ -104,7 +104,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			this.Controls.Add(this.AttractionInfo);
 			this.Controls.Add(this.ChallengeDifficultyType);
 			this.Controls.Add(this.ChallengeIcon);
-			this.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ForeColor = System.Drawing.Color.White;
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "ChallengeCell";

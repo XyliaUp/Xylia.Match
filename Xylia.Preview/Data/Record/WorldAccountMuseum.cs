@@ -2,7 +2,7 @@
 
 using Xylia.Extension;
 using Xylia.Files.XmlEx;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {

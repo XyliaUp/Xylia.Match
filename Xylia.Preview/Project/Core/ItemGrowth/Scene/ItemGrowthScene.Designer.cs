@@ -40,20 +40,23 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 			this.itemGrowth2Page1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.itemGrowth2Page1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.itemGrowth2Page1.Location = new System.Drawing.Point(0, 0);
-			this.itemGrowth2Page1.MyWeapon = null;
+			this.itemGrowth2Page1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.itemGrowth2Page1.Name = "itemGrowth2Page1";
-			this.itemGrowth2Page1.Size = new System.Drawing.Size(675, 713);
+			this.itemGrowth2Page1.Size = new System.Drawing.Size(684, 698);
 			this.itemGrowth2Page1.TabIndex = 0;
 			// 
 			// ItemGrowthScene
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(675, 713);
+			this.ClientSize = new System.Drawing.Size(684, 698);
 			this.Controls.Add(this.itemGrowth2Page1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.KeyPreview = true;
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximizeBox = false;
 			this.Name = "ItemGrowthScene";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

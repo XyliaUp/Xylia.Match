@@ -6,8 +6,8 @@ using Xylia.bns.Modules.GameData.Enums;
 
 using Xylia.Drawing;
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Enums;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Enums;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
 
 namespace Xylia.Preview.Data.Record
@@ -93,7 +93,8 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 		#region	字段
-		public string GameCategory3 => this.Attributes["game-category-3"];
+		public GameCategory3Seq GameCategory3 => this.Attributes["game-category-3"].ToEnum<GameCategory3Seq>();
+
 		public int UsableDuration => this.Attributes["usable-duration"].ToInt();
 		public ItemEvent ItemEvent => FileCache.Data.ItemEvent.GetInfo(this.Attributes["event-info"]);
 		public string ItemName => this.Attributes["name2"].GetText();

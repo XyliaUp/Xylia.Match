@@ -1,34 +1,40 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
-using Xylia.Preview.Project.Common.Interface;
-
+using Xylia.Attribute.Component;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class RandomStoreItemDisplay : IRecord
 	{
 		#region 属性字段
-		/// <summary>
-		/// 聚灵阁类型
-		/// </summary>
-		public RandomStoreNumber RandomStoreNumber;
+		[Signal("random-store-type")]
+		public RandomStoreTypeSeq RandomStoreType;
 
+		[Signal("display-item")]
 		public string DisplayItem;
 
-		public bool Paid;
+		[Signal("draw-group")]
+		public DrawGroupSeq DrawGroup;
 
-		public DrawGroup drawGroup;
+		[Signal("probability-group")]
+		public ProbabilityGroupSeq ProbabilityGroup;
 
-		public ProbabilityGroup probabilityGroup;
-
+		[Signal("new-arrival")]
 		public bool NewArrival;
 		#endregion
 
-
-
 		#region 枚举
-		public enum DrawGroup : byte
+		public enum RandomStoreTypeSeq : byte
+		{
+			None,
+
+			Paid,
+
+			Free,
+		}
+
+		public enum DrawGroupSeq : byte
 		{
 			None,
 
@@ -39,7 +45,7 @@ namespace Xylia.Preview.Data.Record
 			Normal,
 		}
 
-		public enum ProbabilityGroup : byte
+		public enum ProbabilityGroupSeq : byte
 		{
 			None,
 
@@ -50,31 +56,5 @@ namespace Xylia.Preview.Data.Record
 			Normal,
 		}
 		#endregion
-	}
-
-
-	/// <summary>
-	/// 排序器
-	/// </summary>
-	public class RandomStoreItemDisplaySort : IComparer<RandomStoreItemDisplay>
-	{
-		public int Compare(RandomStoreItemDisplay x, RandomStoreItemDisplay y)
-		{
-			//先判断是否是最新
-			if (!x.NewArrival && y.NewArrival) return 1;
-			else if (x.NewArrival && !y.NewArrival) return -1;
-
-			var Ix = x.DisplayItem.GetItemInfo();
-			var Iy = y.DisplayItem.GetItemInfo();
-
-			//判断物品品质（大的在前）
-			if (Ix.ItemGrade != Iy.ItemGrade) return Iy.ItemGrade - Ix.ItemGrade;
-
-			//判断物品种类（小的在前）
-			//if (Ix.GameCategory3 != Iy.GameCategory3) return Ix.GameCategory3 - Iy.GameCategory3;
-
-			//最后判断顺序（小的在前）
-			return x.ID - y.ID;
-		}
 	}
 }

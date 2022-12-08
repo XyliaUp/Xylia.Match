@@ -16,17 +16,23 @@ namespace Xylia.Preview.Project.Core.RandomStore
 		public DrawRewardPreview()
 		{
 			InitializeComponent();
-
-			if (!HZH_Controls.ControlHelper.IsDesignMode) LoadData();
 		}
 		#endregion
 
 		#region 方法
+		private void DrawRewardPreview_Load(object sender, System.EventArgs e)
+		{
+			this.LoadData();
+		}
+
 		/// <summary>
 		/// 载入数据
 		/// </summary>
 		public void LoadData()
 		{
+			if (this.DesignMode) return;
+
+
 			var RandomStore = FileCache.Data.RandomStore.Find(a => a.RandomStoreNumber == RandomStoreNumber.RandomStore1);
 
 			this.PromotionName.Text = "UI.RandomStore.PromotionName".GetText();

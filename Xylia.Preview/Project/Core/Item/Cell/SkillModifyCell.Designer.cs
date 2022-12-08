@@ -38,7 +38,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// SkillName_Txt
 			// 
 			this.SkillName_Txt.AutoSize = true;
-			this.SkillName_Txt.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.SkillName_Txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.SkillName_Txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
 			this.SkillName_Txt.Location = new System.Drawing.Point(-2, 0);
 			this.SkillName_Txt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -51,7 +51,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// 
 			this.TooltipText_Txt.BackColor = System.Drawing.Color.Transparent;
 			this.TooltipText_Txt.BasicLineHeight = 20;
-			this.TooltipText_Txt.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.TooltipText_Txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipText_Txt.ForeColor = System.Drawing.Color.White;
 			this.TooltipText_Txt.Location = new System.Drawing.Point(0, 33);
 			this.TooltipText_Txt.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);

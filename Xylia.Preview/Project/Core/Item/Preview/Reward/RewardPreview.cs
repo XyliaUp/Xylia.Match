@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Xylia.Extension;
 using Xylia.Drawing;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;

@@ -130,12 +130,12 @@
 			// Online_Searcher
 			// 
 			this.Online_Searcher.BackColor = System.Drawing.Color.Transparent;
-			this.Online_Searcher.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Online_Searcher.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Online_Searcher.BtnImage = ((System.Drawing.Image)(resources.GetObject("Online_Searcher.BtnImage")));
 			this.Online_Searcher.BtnText = "云端";
 			this.Online_Searcher.ConerRadius = 10;
 			this.Online_Searcher.FillColor = System.Drawing.Color.Transparent;
-			this.Online_Searcher.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Online_Searcher.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Online_Searcher.IsRadius = true;
 			this.Online_Searcher.IsShowRect = true;
 			this.Online_Searcher.Location = new System.Drawing.Point(445, 108);
@@ -155,7 +155,7 @@
 			// 
 			this.lbl_Region.AutoSize = true;
 			this.lbl_Region.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_Region.Font = new System.Drawing.Font("微软雅黑", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_Region.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_Region.Location = new System.Drawing.Point(391, 48);
 			this.lbl_Region.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_Region.Name = "lbl_Region";
@@ -167,7 +167,7 @@
 			// 
 			this.TimeInfo.AutoSize = true;
 			this.TimeInfo.BackColor = System.Drawing.SystemColors.Window;
-			this.TimeInfo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.TimeInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TimeInfo.Location = new System.Drawing.Point(13, 347);
 			this.TimeInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.TimeInfo.Name = "TimeInfo";
@@ -180,7 +180,7 @@
 			// Step1
 			// 
 			this.Step1.BackColor = System.Drawing.Color.Transparent;
-			this.Step1.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Step1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Step1.ImgCompleted = ((System.Drawing.Image)(resources.GetObject("Step1.ImgCompleted")));
 			this.Step1.LineWidth = 2;
 			this.Step1.Location = new System.Drawing.Point(13, 252);
@@ -224,7 +224,7 @@
 			// 
 			this.Chk_Option1.BackColor = System.Drawing.Color.Transparent;
 			this.Chk_Option1.Checked = true;
-			this.Chk_Option1.Font = new System.Drawing.Font("微软雅黑", 9.4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Chk_Option1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.4F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Chk_Option1.Location = new System.Drawing.Point(18, 213);
 			this.Chk_Option1.Margin = new System.Windows.Forms.Padding(4);
 			this.Chk_Option1.Name = "Chk_Option1";
@@ -236,7 +236,7 @@
 			// Btn_StartMatch
 			// 
 			this.Btn_StartMatch.BtnBackColor = System.Drawing.Color.Empty;
-			this.Btn_StartMatch.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Btn_StartMatch.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_StartMatch.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.Btn_StartMatch.BtnText = "生成数据";
 			this.Btn_StartMatch.ConerRadius = 8;
@@ -244,7 +244,7 @@
 			this.Btn_StartMatch.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.Btn_StartMatch.EnabledMouseEffect = false;
 			this.Btn_StartMatch.FillColor = System.Drawing.Color.White;
-			this.Btn_StartMatch.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Btn_StartMatch.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Btn_StartMatch.IsRadius = true;
 			this.Btn_StartMatch.IsShowRect = true;
 			this.Btn_StartMatch.IsShowTips = false;
@@ -320,12 +320,12 @@
 			// File_Searcher
 			// 
 			this.File_Searcher.BackColor = System.Drawing.Color.Transparent;
-			this.File_Searcher.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.File_Searcher.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.File_Searcher.BtnImage = ((System.Drawing.Image)(resources.GetObject("File_Searcher.BtnImage")));
 			this.File_Searcher.BtnText = "本地";
 			this.File_Searcher.ConerRadius = 10;
 			this.File_Searcher.FillColor = System.Drawing.Color.Transparent;
-			this.File_Searcher.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.File_Searcher.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.File_Searcher.IsRadius = true;
 			this.File_Searcher.IsShowRect = true;
 			this.File_Searcher.Location = new System.Drawing.Point(554, 108);
@@ -342,12 +342,12 @@
 			// ucBtnFillet1
 			// 
 			this.ucBtnFillet1.BackColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet1.BtnImage")));
 			this.ucBtnFillet1.BtnText = "选择";
 			this.ucBtnFillet1.ConerRadius = 10;
 			this.ucBtnFillet1.FillColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.IsRadius = true;
 			this.ucBtnFillet1.IsShowRect = true;
 			this.ucBtnFillet1.Location = new System.Drawing.Point(554, 44);
@@ -389,7 +389,7 @@
 			// ucBtnExt19
 			// 
 			this.ucBtnExt19.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt19.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt19.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt19.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt19.BtnText = "生成汉化";
 			this.ucBtnExt19.ConerRadius = 8;
@@ -397,7 +397,7 @@
 			this.ucBtnExt19.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt19.EnabledMouseEffect = false;
 			this.ucBtnExt19.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt19.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt19.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt19.IsRadius = true;
 			this.ucBtnExt19.IsShowRect = true;
 			this.ucBtnExt19.IsShowTips = false;
@@ -421,7 +421,7 @@
 			this.ItemPreview_Search.DecLength = 2;
 			this.ItemPreview_Search.FillColor = System.Drawing.Color.Empty;
 			this.ItemPreview_Search.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(59)))));
-			this.ItemPreview_Search.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ItemPreview_Search.Font = new System.Drawing.Font("Microsoft YaHei UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ItemPreview_Search.InputText = "";
 			this.ItemPreview_Search.InputType = HZH_Controls.TextInputType.NotControl;
 			this.ItemPreview_Search.IsFocusColor = true;
@@ -446,7 +446,7 @@
 			this.ItemPreview_Search.Name = "ItemPreview_Search";
 			this.ItemPreview_Search.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.ItemPreview_Search.PromptColor = System.Drawing.Color.Gray;
-			this.ItemPreview_Search.PromptFont = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ItemPreview_Search.PromptFont = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ItemPreview_Search.PromptText = "请输入物品信息  (ID/别名/名称)";
 			this.ItemPreview_Search.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ItemPreview_Search.RectWidth = 1;
@@ -459,7 +459,7 @@
 			// ucBtnExt7
 			// 
 			this.ucBtnExt7.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt7.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt7.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt7.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt7.BtnText = "变更";
 			this.ucBtnExt7.ConerRadius = 8;
@@ -467,7 +467,7 @@
 			this.ucBtnExt7.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt7.EnabledMouseEffect = false;
 			this.ucBtnExt7.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt7.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt7.IsRadius = true;
 			this.ucBtnExt7.IsShowRect = true;
 			this.ucBtnExt7.IsShowTips = false;
@@ -486,7 +486,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label4.Location = new System.Drawing.Point(10, 221);
 			this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label4.Name = "label4";
@@ -498,7 +498,7 @@
 			// ucBtnExt6
 			// 
 			this.ucBtnExt6.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt6.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt6.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt6.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt6.BtnText = "界面预览";
 			this.ucBtnExt6.ConerRadius = 8;
@@ -506,7 +506,7 @@
 			this.ucBtnExt6.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt6.EnabledMouseEffect = false;
 			this.ucBtnExt6.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt6.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt6.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt6.IsRadius = true;
 			this.ucBtnExt6.IsShowRect = true;
 			this.ucBtnExt6.IsShowTips = false;
@@ -526,7 +526,7 @@
 			// ucBtnExt5
 			// 
 			this.ucBtnExt5.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt5.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt5.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt5.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt5.BtnText = "刷新缓存";
 			this.ucBtnExt5.ConerRadius = 8;
@@ -534,7 +534,7 @@
 			this.ucBtnExt5.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt5.EnabledMouseEffect = false;
 			this.ucBtnExt5.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt5.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt5.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt5.IsRadius = true;
 			this.ucBtnExt5.IsShowRect = true;
 			this.ucBtnExt5.IsShowTips = false;
@@ -555,7 +555,7 @@
 			// ucBtnExt4
 			// 
 			this.ucBtnExt4.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt4.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt4.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt4.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt4.BtnText = "帮助页面";
 			this.ucBtnExt4.ConerRadius = 8;
@@ -563,7 +563,7 @@
 			this.ucBtnExt4.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt4.EnabledMouseEffect = false;
 			this.ucBtnExt4.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt4.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt4.IsRadius = true;
 			this.ucBtnExt4.IsShowRect = true;
 			this.ucBtnExt4.IsShowTips = false;
@@ -582,7 +582,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label1.Location = new System.Drawing.Point(384, 14);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
@@ -593,7 +593,7 @@
 			// StateInfo
 			// 
 			this.StateInfo.AutoSize = true;
-			this.StateInfo.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.StateInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.StateInfo.Location = new System.Drawing.Point(10, 324);
 			this.StateInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.StateInfo.Name = "StateInfo";
@@ -604,7 +604,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label2.Location = new System.Drawing.Point(9, 85);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
@@ -615,7 +615,7 @@
 			// ucBtnExt3
 			// 
 			this.ucBtnExt3.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt3.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt3.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt3.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt3.BtnText = "生成主数据";
 			this.ucBtnExt3.ConerRadius = 8;
@@ -623,7 +623,7 @@
 			this.ucBtnExt3.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt3.EnabledMouseEffect = false;
 			this.ucBtnExt3.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt3.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt3.IsRadius = true;
 			this.ucBtnExt3.IsShowRect = true;
 			this.ucBtnExt3.IsShowTips = false;
@@ -663,7 +663,7 @@
 			this.groupBox2.Controls.Add(this.ucBtnExt9);
 			this.groupBox2.Controls.Add(this.ucBtnExt8);
 			this.groupBox2.Controls.Add(this.ucBtnExt13);
-			this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.groupBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.groupBox2.Location = new System.Drawing.Point(4, 14);
 			this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox2.Name = "groupBox2";
@@ -676,7 +676,7 @@
 			// ucBtnExt11
 			// 
 			this.ucBtnExt11.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt11.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt11.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt11.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt11.BtnText = "商店预览";
 			this.ucBtnExt11.ConerRadius = 8;
@@ -684,7 +684,7 @@
 			this.ucBtnExt11.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt11.EnabledMouseEffect = false;
 			this.ucBtnExt11.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt11.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt11.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt11.IsRadius = true;
 			this.ucBtnExt11.IsShowRect = true;
 			this.ucBtnExt11.IsShowTips = false;
@@ -703,7 +703,7 @@
 			// ucBtnExt1
 			// 
 			this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt1.BtnText = "聚灵阁奖励";
 			this.ucBtnExt1.ConerRadius = 8;
@@ -711,7 +711,7 @@
 			this.ucBtnExt1.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt1.EnabledMouseEffect = false;
 			this.ucBtnExt1.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt1.IsRadius = true;
 			this.ucBtnExt1.IsShowRect = true;
 			this.ucBtnExt1.IsShowTips = false;
@@ -730,7 +730,7 @@
 			// ucBtnExt20
 			// 
 			this.ucBtnExt20.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt20.BtnFont = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt20.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt20.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt20.BtnText = "[调试] 查看技能";
 			this.ucBtnExt20.ConerRadius = 8;
@@ -738,7 +738,7 @@
 			this.ucBtnExt20.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt20.EnabledMouseEffect = false;
 			this.ucBtnExt20.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt20.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt20.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt20.IsRadius = true;
 			this.ucBtnExt20.IsShowRect = true;
 			this.ucBtnExt20.IsShowTips = false;
@@ -757,7 +757,7 @@
 			// ucBtnExt9
 			// 
 			this.ucBtnExt9.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt9.BtnFont = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt9.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt9.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt9.BtnText = "[调试] 挑战系统";
 			this.ucBtnExt9.ConerRadius = 8;
@@ -765,7 +765,7 @@
 			this.ucBtnExt9.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt9.EnabledMouseEffect = false;
 			this.ucBtnExt9.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt9.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt9.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt9.IsRadius = true;
 			this.ucBtnExt9.IsShowRect = true;
 			this.ucBtnExt9.IsShowTips = false;
@@ -784,7 +784,7 @@
 			// ucBtnExt8
 			// 
 			this.ucBtnExt8.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt8.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt8.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt8.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt8.BtnText = "聚灵阁组合";
 			this.ucBtnExt8.ConerRadius = 8;
@@ -792,7 +792,7 @@
 			this.ucBtnExt8.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt8.EnabledMouseEffect = false;
 			this.ucBtnExt8.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt8.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt8.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt8.IsRadius = true;
 			this.ucBtnExt8.IsShowRect = true;
 			this.ucBtnExt8.IsShowTips = false;
@@ -811,7 +811,7 @@
 			// ucBtnExt13
 			// 
 			this.ucBtnExt13.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt13.BtnFont = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt13.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt13.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt13.BtnText = "[调试] 查看地图";
 			this.ucBtnExt13.ConerRadius = 8;
@@ -819,7 +819,7 @@
 			this.ucBtnExt13.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt13.EnabledMouseEffect = false;
 			this.ucBtnExt13.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt13.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt13.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt13.IsRadius = true;
 			this.ucBtnExt13.IsShowRect = true;
 			this.ucBtnExt13.IsShowTips = false;
@@ -844,7 +844,7 @@
 			this.groupBox1.Controls.Add(this.ucBtnExt12);
 			this.groupBox1.Controls.Add(this.ucBtnExt14);
 			this.groupBox1.Controls.Add(this.ucBtnExt16);
-			this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.groupBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.groupBox1.Location = new System.Drawing.Point(384, 14);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.groupBox1.Name = "groupBox1";
@@ -857,7 +857,7 @@
 			// ucBtnExt10
 			// 
 			this.ucBtnExt10.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt10.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt10.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt10.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt10.BtnText = "探险日志";
 			this.ucBtnExt10.ConerRadius = 8;
@@ -865,7 +865,7 @@
 			this.ucBtnExt10.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt10.EnabledMouseEffect = false;
 			this.ucBtnExt10.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt10.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt10.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt10.IsRadius = true;
 			this.ucBtnExt10.IsShowRect = true;
 			this.ucBtnExt10.IsShowTips = false;
@@ -884,7 +884,7 @@
 			// ucBtnExt18
 			// 
 			this.ucBtnExt18.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt18.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt18.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt18.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt18.BtnText = "衣柜_按类型";
 			this.ucBtnExt18.ConerRadius = 8;
@@ -892,7 +892,7 @@
 			this.ucBtnExt18.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt18.EnabledMouseEffect = false;
 			this.ucBtnExt18.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt18.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt18.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt18.IsRadius = true;
 			this.ucBtnExt18.IsShowRect = true;
 			this.ucBtnExt18.IsShowTips = false;
@@ -911,7 +911,7 @@
 			// ucBtnExt17
 			// 
 			this.ucBtnExt17.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt17.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt17.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt17.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt17.BtnText = "物品强化";
 			this.ucBtnExt17.ConerRadius = 8;
@@ -919,7 +919,7 @@
 			this.ucBtnExt17.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt17.EnabledMouseEffect = false;
 			this.ucBtnExt17.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt17.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt17.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt17.IsRadius = true;
 			this.ucBtnExt17.IsShowRect = true;
 			this.ucBtnExt17.IsShowTips = false;
@@ -938,7 +938,7 @@
 			// ucBtnExt12
 			// 
 			this.ucBtnExt12.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt12.BtnFont = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt12.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt12.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt12.BtnText = "衣柜 (不推荐)";
 			this.ucBtnExt12.ConerRadius = 8;
@@ -946,7 +946,7 @@
 			this.ucBtnExt12.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt12.EnabledMouseEffect = false;
 			this.ucBtnExt12.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt12.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt12.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt12.IsRadius = true;
 			this.ucBtnExt12.IsShowRect = true;
 			this.ucBtnExt12.IsShowTips = false;
@@ -965,7 +965,7 @@
 			// ucBtnExt14
 			// 
 			this.ucBtnExt14.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt14.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt14.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt14.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt14.BtnText = "物品售价";
 			this.ucBtnExt14.ConerRadius = 8;
@@ -973,7 +973,7 @@
 			this.ucBtnExt14.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt14.EnabledMouseEffect = false;
 			this.ucBtnExt14.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt14.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt14.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt14.IsRadius = true;
 			this.ucBtnExt14.IsShowRect = true;
 			this.ucBtnExt14.IsShowTips = false;
@@ -1000,7 +1000,7 @@
 			this.ucBtnExt16.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt16.EnabledMouseEffect = false;
 			this.ucBtnExt16.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt16.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt16.IsRadius = true;
 			this.ucBtnExt16.IsShowRect = true;
 			this.ucBtnExt16.IsShowTips = false;
@@ -1026,7 +1026,7 @@
 			this.Switch_Mode.Checked = true;
 			this.Switch_Mode.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
 			this.Switch_Mode.FalseTextColr = System.Drawing.Color.White;
-			this.Switch_Mode.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.Switch_Mode.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.Switch_Mode.Location = new System.Drawing.Point(18, 14);
 			this.Switch_Mode.Name = "Switch_Mode";
 			this.Switch_Mode.Size = new System.Drawing.Size(120, 48);

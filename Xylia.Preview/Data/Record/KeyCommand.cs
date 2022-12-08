@@ -2,7 +2,7 @@
 
 using Xylia.Attribute.Component;
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 using GameSeq = Xylia.bns.Modules.GameData.Enums;
 

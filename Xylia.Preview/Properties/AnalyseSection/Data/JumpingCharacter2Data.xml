@@ -4,38 +4,13 @@
 		<record alias="required-level" type="Byte" />
 		<record alias="required-preceding-epic-quest" type="Quest" link="id" />	
 		<record alias="last-epic-quest-to-complete" type="Quest" link="id" />	
-		<record alias="quest-to-complete-1" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-2" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-3" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-4" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-5" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-6" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-7" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-8" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-9" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-10" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-11" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-12" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-13" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-14" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-15" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-16" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-17" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-18" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-19" type="Quest" name="" server="n" />
-		<record alias="quest-to-complete-20" type="Quest" name="" server="n" />
+		<record alias="quest-to-complete" type="Quest" name="" server="n" repeat="20" />
 		<record alias="warp-to-pcspawn" ref="ZonePcSpawn" />
 		<record alias="faction1-item" ref="Item" />
 		<record alias="faction2-item" ref="Item" />
 		<record alias="reward-exp" type="Int32" />
 		<record alias="reward-money" type="Int32" />	
-		<record alias="reward-item-1" ref="Item" />
-		<record alias="reward-item-2" ref="Item" />
-		<record alias="reward-item-3" ref="Item" />
-		<record alias="reward-item-4" ref="Item" />
-		<record alias="reward-item-count-1" type="Short" />
-		<record alias="reward-item-count-2" type="Short" />
-		<record alias="reward-item-count-3" type="Short" />
-		<record alias="reward-item-count-4" type="Short" />
+		<record alias="reward-item" ref="Item" repeat="4" />
+		<record alias="reward-item-count" type="Short" repeat="4" />
 	</list>
 </table>

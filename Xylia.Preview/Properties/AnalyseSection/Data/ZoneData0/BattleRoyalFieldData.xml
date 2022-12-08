@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="ZoneData0" type="battle-royal-field" version="0.1" retired="n" rule="cpl" >
 		<record alias="id" name="" type="ID" />
 		

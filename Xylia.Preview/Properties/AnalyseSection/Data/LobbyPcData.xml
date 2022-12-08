@@ -2,7 +2,7 @@
 <table>
 	<list module="AIData" type="lobby-pc" version="0.7" rule="cpl" index="y">
 		<record alias="race" type="id" extra="Byte1" seq="$race" name="" />
-		<record alias="job" type="id" extra="Byte2" seq="$job_20" name="" />
+		<record alias="job" type="id" extra="Byte2" seq="$job" name="" />
 		<record alias="sex" type="id" extra="Byte3" seq="$sex" name="" />		
 		<record alias="category" type="id" extra="Byte4" name="" >
 			<case alias="none" name="" />

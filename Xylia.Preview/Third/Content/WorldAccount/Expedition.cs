@@ -1,9 +1,10 @@
 ﻿using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Files.Excel;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Cast;
+using Xylia.Preview.Common.Enums;
 
 namespace Xylia.Preview.Third.Content
 {
@@ -52,9 +53,9 @@ namespace Xylia.Preview.Third.Content
 
 
 				//获取数值信息
-				void GetAbility(Project.Common.Enums.AttachAbility Ability, int AbilityValue)
+				void GetAbility(AttachAbility Ability, int AbilityValue)
 				{
-					if (Ability == Project.Common.Enums.AttachAbility.None)
+					if (Ability == AttachAbility.None)
 					{
 						CurRow.AddCell("");
 						return;

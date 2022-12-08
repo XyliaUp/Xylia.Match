@@ -24,15 +24,7 @@
 		</record>
 		<record alias="guild-type" name="" extra="Byte2" type="id" />
 
-		<record alias="editable-1" name="" type="Bool" />
-		<record alias="editable-2" name="" type="Bool" />
-		<record alias="editable-3" name="" type="Bool" />
-		<record alias="editable-4" name="" type="Bool" />
-		<record alias="editable-5" name="" type="Bool" />
-		<record alias="initial-value-1" name="" type="Bool" />
-		<record alias="initial-value-2" name="" type="Bool" />
-		<record alias="initial-value-3" name="" type="Bool" />
-		<record alias="initial-value-4" name="" type="Bool" />
-		<record alias="initial-value-5" name="" type="Bool" />
+		<record alias="editable" name="" type="Bool" repeat="5" />
+		<record alias="initial-value" name="" type="Bool" repeat="5" />
 	</list>
 </table>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xylia.Extension;
 using Xylia.Preview.Data;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 using static Xylia.Extension.String;
 

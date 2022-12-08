@@ -37,7 +37,7 @@
 			this.richTextBox1.BackColor = System.Drawing.Color.White;
 			this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Right;
-			this.richTextBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.richTextBox1.Location = new System.Drawing.Point(312, 85);
 			this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.richTextBox1.Name = "richTextBox1";
@@ -54,7 +54,7 @@
 			this.TreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.TreeView.Dock = System.Windows.Forms.DockStyle.Left;
 			this.TreeView.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-			this.TreeView.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.TreeView.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.TreeView.HotTracking = true;
 			this.TreeView.Indent = 20;
 			this.TreeView.ItemHeight = 30;

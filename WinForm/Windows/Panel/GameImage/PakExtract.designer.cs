@@ -39,7 +39,7 @@
 			// Btn_Output
 			// 
 			this.Btn_Output.BtnBackColor = System.Drawing.Color.Empty;
-			this.Btn_Output.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Btn_Output.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_Output.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.Btn_Output.BtnText = "输出";
 			this.Btn_Output.ConerRadius = 8;
@@ -47,7 +47,7 @@
 			this.Btn_Output.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.Btn_Output.EnabledMouseEffect = false;
 			this.Btn_Output.FillColor = System.Drawing.Color.White;
-			this.Btn_Output.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Btn_Output.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Btn_Output.IsRadius = true;
 			this.Btn_Output.IsShowRect = true;
 			this.Btn_Output.IsShowTips = false;
@@ -69,7 +69,7 @@
 			this.Select.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.Select.ConerRadius = 10;
 			this.Select.DropPanelHeight = -1;
-			this.Select.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Select.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Select.ForeColor = System.Drawing.Color.White;
 			this.Select.IsRadius = true;
 			this.Select.IsShowRect = true;
@@ -116,12 +116,12 @@
 			// ucBtnFillet1
 			// 
 			this.ucBtnFillet1.BackColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet1.BtnImage")));
 			this.ucBtnFillet1.BtnText = "选择";
 			this.ucBtnFillet1.ConerRadius = 10;
 			this.ucBtnFillet1.FillColor = System.Drawing.Color.Transparent;
-			this.ucBtnFillet1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.IsRadius = true;
 			this.ucBtnFillet1.IsShowRect = true;
 			this.ucBtnFillet1.Location = new System.Drawing.Point(596, 32);

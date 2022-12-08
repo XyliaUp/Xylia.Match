@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="ZoneData0" type="ZoneNpcSpawn" version="0.18" retired="n" rule="cpl" side="server" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone" name="" ref="Zone" link="id" />		

@@ -1,6 +1,5 @@
 ﻿using System.Drawing;
 
-
 namespace Xylia.Preview.Common.Struct
 {
 	public class FontSet

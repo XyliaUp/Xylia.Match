@@ -63,31 +63,31 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				#region 创建控件
 				FeedItemIconCell ItemIconCell = null;
 
-				var ResultItem = Recipe.SubIngredient1.GetObject();
-				if (ResultItem is ItemData ItemInfo)
-				{
-					ItemIconCell = new FeedItemIconCell
-					{
-						Image = ItemInfo.Icon,
-						ItemAlias = ItemInfo.Alias,
+				//var ResultItem = Recipe.SubIngredient1.GetObject();
+				//if (ResultItem is ItemData ItemInfo)
+				//{
+				//	ItemIconCell = new FeedItemIconCell
+				//	{
+				//		Image = ItemInfo.Icon,
+				//		ItemAlias = ItemInfo.Alias,
 
-						StackCount = (uint)Recipe.SubIngredientStackCount1,
-					};
-				}
-				else if (ResultItem is ItemBrand ItemBrand)
-				{
-					//搜索对象
-					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Recipe.SubIngredientConditionType1);
-					if (ItemTooltip != null)
-					{
-						ItemIconCell = new FeedItemIconCell
-						{
-							Image = ItemTooltip?.MainIcon(),
-							ItemAlias = ItemBrand.Alias + "_" + ItemTooltip?.ItemConditionType + $" ({ ItemTooltip.Name2.GetText() })",
-						};
-					}
-				}
-				else Console.WriteLine("未知的信息 " + Recipe.SubIngredient1);
+				//		StackCount = (uint)Recipe.SubIngredientStackCount1,
+				//	};
+				//}
+				//else if (ResultItem is ItemBrand ItemBrand)
+				//{
+				//	//搜索对象
+				//	var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Recipe.SubIngredientConditionType1);
+				//	if (ItemTooltip != null)
+				//	{
+				//		ItemIconCell = new FeedItemIconCell
+				//		{
+				//			Image = ItemTooltip?.MainIcon(),
+				//			ItemAlias = ItemBrand.Alias + "_" + ItemTooltip?.ItemConditionType + $" ({ ItemTooltip.Name2.GetText() })",
+				//		};
+				//	}
+				//}
+				//else Console.WriteLine("未知的信息 " + Recipe.SubIngredient1);
 				#endregion
 
 				#region 绑定委托

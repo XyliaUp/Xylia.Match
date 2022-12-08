@@ -1,15 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 	<list module="ItemData" type="collecting" version="0.10" rule="cpl" >
-
 		<record alias="type" name="" type="type" > 
 			<case alias="closet" name="" />
 		</record>
 		
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
-		
-		
+	
 		<record alias="name" name="" type="TextAlias" server="n" />
 		<record alias="category" name="" type="Seq" server="n" >
 			<case alias="none" name="" default="y" />
@@ -34,10 +32,8 @@
 		<record alias="reward-item-count" name="" type="Short" repeat="6" />
 		<record alias="reward-money" name="" type="Int32" />
 		<record alias="reward-collecting-score" name="" type="Int32" />
-		
 		<record alias="ability" name="" type="Seq" repeat="3" seq="$attach-ability" />
 		<record alias="ability-value" name="" type="Int32" max="1000000" repeat="3" />
-
 		<record alias="expiration-time" name="" type="Time64" />
 		<record alias="can-not-used" name="" type="Bool" />
 	</list>

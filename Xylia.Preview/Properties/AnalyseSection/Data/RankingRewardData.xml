@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
   <list module="ItemData" rule="cpl" server-side="rank | server" type="RankingReward" version="0.4" >
 	<record alias="id" type="id" apply="auto" />
     <record alias="alias" type="Index" />

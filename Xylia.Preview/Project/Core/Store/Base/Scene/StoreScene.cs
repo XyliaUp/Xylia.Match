@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Project.Core.Store

@@ -59,7 +59,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// Quest_Group
 			// 
 			this.Quest_Group.AutoSize = true;
-			this.Quest_Group.Font = new System.Drawing.Font("微软雅黑", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.Quest_Group.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.Quest_Group.ForeColor = System.Drawing.SystemColors.ActiveBorder;
 			this.Quest_Group.Location = new System.Drawing.Point(4, 4);
 			this.Quest_Group.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -72,7 +72,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// 
 			this.QuestName.BackColor = System.Drawing.Color.Transparent;
 			this.QuestName.BasicLineHeight = 26;
-			this.QuestName.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.QuestName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.QuestName.ForeColor = System.Drawing.Color.LightGreen;
 			this.QuestName.Location = new System.Drawing.Point(48, 29);
 			this.QuestName.Margin = new System.Windows.Forms.Padding(2, 7, 2, 7);
@@ -147,7 +147,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.AutoSize = true;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(627, 337);
+			this.ClientSize = new System.Drawing.Size(817, 0);
 			this.ContextMenuStrip = this.MenuStrip;
 			this.Controls.Add(this.QuestName);
 			this.Controls.Add(this.ContentInfo);
@@ -155,10 +155,11 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.Controls.Add(this.Quest_ICON);
 			this.Controls.Add(this.taskInfo);
 			this.ForeColor = System.Drawing.Color.DimGray;
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
+			this.MaximumSize = new System.Drawing.Size(2147483647, 1000);
 			this.Name = "QuestPreview";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
 			this.Text = "任务预览";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.QuestPreview_FormClosing);
 			this.Load += new System.EventHandler(this.QuestPreview_Load);

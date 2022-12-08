@@ -76,7 +76,7 @@
 			// lbl_Region
 			// 
 			this.lbl_Region.AutoSize = true;
-			this.lbl_Region.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_Region.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_Region.Location = new System.Drawing.Point(117, 76);
 			this.lbl_Region.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lbl_Region.Name = "lbl_Region";
@@ -97,7 +97,7 @@
 			// 
 			// GRoot_Path
 			// 
-			this.GRoot_Path.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.GRoot_Path.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.GRoot_Path.Location = new System.Drawing.Point(6, 42);
 			this.GRoot_Path.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.GRoot_Path.Name = "GRoot_Path";
@@ -108,7 +108,7 @@
 			// GRoot_Note
 			// 
 			this.GRoot_Note.AutoSize = true;
-			this.GRoot_Note.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.GRoot_Note.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.GRoot_Note.Location = new System.Drawing.Point(7, 21);
 			this.GRoot_Note.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.GRoot_Note.Name = "GRoot_Note";
@@ -128,7 +128,7 @@
 			// 
 			// Faster_Folder_Path
 			// 
-			this.Faster_Folder_Path.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Faster_Folder_Path.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Faster_Folder_Path.Location = new System.Drawing.Point(6, 150);
 			this.Faster_Folder_Path.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Faster_Folder_Path.Name = "Faster_Folder_Path";
@@ -139,7 +139,7 @@
 			// Faster_Folder_Note
 			// 
 			this.Faster_Folder_Note.AutoSize = true;
-			this.Faster_Folder_Note.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Faster_Folder_Note.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Faster_Folder_Note.Location = new System.Drawing.Point(7, 129);
 			this.Faster_Folder_Note.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Faster_Folder_Note.Name = "Faster_Folder_Note";

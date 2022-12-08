@@ -38,7 +38,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(27, 0);
 			this.label1.Name = "label1";
@@ -50,7 +50,7 @@
 			// 
 			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
 			this.contentPanel1.BasicLineHeight = 25;
-			this.contentPanel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.contentPanel1.ForeColor = System.Drawing.Color.White;
 			this.contentPanel1.Location = new System.Drawing.Point(46, 0);
 			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);

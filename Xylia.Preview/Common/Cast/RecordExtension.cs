@@ -1,7 +1,7 @@
 ﻿
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Common.Cast
 {

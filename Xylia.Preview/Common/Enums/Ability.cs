@@ -2,7 +2,7 @@
 
 using Xylia.Attribute.Component;
 
-namespace Xylia.Preview.Project.Common.Enums
+namespace Xylia.Preview.Common.Enums
 {
 	public enum AttachAbility : byte
 	{

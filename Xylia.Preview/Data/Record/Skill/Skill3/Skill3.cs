@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 
 using Xylia.Attribute.Component;
-using Xylia.Preview.Project.Common.Enums;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Enums;
+using Xylia.Preview.Common.Interface;
 
 using GameSeq = Xylia.bns.Modules.GameData.Enums;
 

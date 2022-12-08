@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 using Xylia.bns.Modules.GameData.Enums;
 
-namespace Xylia.Preview.Project.Common.Interface
+namespace Xylia.Preview.Common.Interface
 {
 	public partial class PreviewControl : UserControl
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Xylia.Preview.Project.Common.Interface
+namespace Xylia.Preview.Common.Interface
 {
 	/// <summary>
 	/// 图标接口

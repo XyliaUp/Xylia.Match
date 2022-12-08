@@ -16,11 +16,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 {
 	public partial class CaseInfoPanel : UserControl
 	{
+		#region 构造
 		public CaseInfoPanel()
 		{
 			InitializeComponent();
 		}
-
+		#endregion
 
 		#region 字段
 		public WaveOut SoundOut;
@@ -41,44 +42,51 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		}
 
 
-		Thread thread;
+
+		private static Thread thread;
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
 			thread?.Interrupt();
 			thread = new Thread(t =>
 			{
-				//单独播放
-				if (StepIdx > 1)
+				try
 				{
-					var data = GetWave(NpcTalkMessage.GetStepShow(StepIdx), StepIdx);
-					if (data is null) DisableBtn();
-					else Play(data);
-				}
-
-				//全部播放
-				else
-				{
-					List<byte[]> datas = new();
-					for (int idx = 1; idx <= 30; idx++)
+					//单独播放
+					if (StepIdx > 1)
 					{
-						var StepShow = NpcTalkMessage.GetStepShow(idx);
-						if (StepShow is null) break;
-
-						datas.Add(GetWave(StepShow, idx));
+						var data = GetWave(NpcTalkMessage.GetStepShow(StepIdx), StepIdx);
+						if (data is null) DisableBtn();
+						else Play(data);
 					}
 
-
-					var Valid = datas.Where(data => data != null);
-					if (!Valid.Any()) DisableBtn();
+					//全部播放
 					else
 					{
-						foreach (var data in Valid)
+						List<byte[]> datas = new();
+						for (int idx = 1; idx <= 30; idx++)
 						{
-							Thread.Sleep(Play(data));
-							Thread.Sleep(800);
+							var StepShow = NpcTalkMessage.GetStepShow(idx);
+							if (StepShow is null) break;
+
+							datas.Add(GetWave(StepShow, idx));
+						}
+
+						var Valid = datas.Where(data => data != null);
+						if (!Valid.Any()) DisableBtn();
+						else
+						{
+							foreach (var data in Valid)
+							{
+								Thread.Sleep(Play(data));
+								Thread.Sleep(800);
+							}
 						}
 					}
+				}
+				catch
+				{
+
 				}
 			});
 
@@ -91,13 +99,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			this.pictureBox1.Image = Properties.Resources.Image2;
 		}
 
-
 		/// <summary>
 		/// 获取音频数据
 		/// </summary>
 		/// <param name="StepShow"></param>
 		/// <returns></returns>
-		public byte[] GetWave(string StepShow, int StepIdx) => StepShow.GetUObject().GetWave(StepIdx - 1);
+		public static byte[] GetWave(string StepShow, int StepIdx) => StepShow.GetUObject().GetWave(StepIdx - 1);
 
 		/// <summary>
 		/// 播放音频

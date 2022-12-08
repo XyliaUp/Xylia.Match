@@ -58,34 +58,31 @@ namespace Xylia.Preview.Project.Core.Store
 			get => this.m_Cells;
 			set
 			{
+				this.m_Cells = value;
 				this.ContextMenuStrip = null;
 
 				//要求复位
 				//this.ScrollBar.Reset();
 				this.Controls.Clear();
+				if (value is null) return;
 
-				this.m_Cells = value;
 
+				//如果不为空才设置菜单栏
+				this.ContextMenuStrip = MainMenu;
 
+				//遍历子元素控件
 				int LocY = 0;
-				if (value != null)
+				foreach (var o in value)
 				{
-					//如果不为空才设置菜单栏
-					this.ContextMenuStrip = MainMenu;
+					this.Controls.Add(o);
 
-					//遍历子元素控件
-					foreach (var c in value)
-					{
-						this.Controls.Add(c);
+					if (ItemCellDoubleClick != null) o.DoubleClick += ItemCellDoubleClick;
 
-						if (ItemCellDoubleClick != null) c.DoubleClick += ItemCellDoubleClick;
+					o.ForeColor = Color.White;
+					o.Location = new Point(0, LocY);
+					o.Width = this.Width - 20;
 
-						c.ForeColor = Color.White;
-						c.Location = new Point(0, LocY);
-						c.Width = this.Width - 20;
-
-						LocY += c.Height;
-					}
+					LocY = o.Bottom;
 				}
 			}
 		}

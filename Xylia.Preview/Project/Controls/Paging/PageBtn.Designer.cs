@@ -39,7 +39,7 @@ namespace Xylia.Preview.Project.Controls.Paging
 			// 
 			this.lbl_Text.AutoSize = true;
 			this.lbl_Text.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_Text.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.lbl_Text.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.lbl_Text.ForeColor = System.Drawing.Color.White;
 			this.lbl_Text.Location = new System.Drawing.Point(27, 2);
 			this.lbl_Text.Name = "lbl_Text";

@@ -656,7 +656,7 @@ namespace Xylia.Match.Windows.Panel
 		private void ucBtnExt13_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<MapInfoScene>();
 		private void ucBtnExt14_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Preview.Third.Content.ItemBuyPrice>();
 		private void ucBtnExt16_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Preview.Third.Content.ItemTransformRecipe>();
-		private void ucBtnExt17_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Xylia.Preview.Third.Content.ItemImproveOptionList>();
+		private void ucBtnExt17_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Preview.Third.Content.ItemImproveOptionList>();
 		private void ucBtnExt18_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<ItemCloset_Type>();
 		private void ucBtnExt20_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<SkillTraitPreview>();
 		#endregion

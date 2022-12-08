@@ -51,7 +51,7 @@
 			// EventTime_FixedDate
 			// 
 			this.EventTime_FixedDate.AutoSize = true;
-			this.EventTime_FixedDate.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.EventTime_FixedDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.EventTime_FixedDate.ForeColor = System.Drawing.Color.White;
 			this.EventTime_FixedDate.Location = new System.Drawing.Point(35, 35);
 			this.EventTime_FixedDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

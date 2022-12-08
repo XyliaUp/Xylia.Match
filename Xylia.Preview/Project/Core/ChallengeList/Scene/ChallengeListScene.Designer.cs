@@ -79,7 +79,7 @@
 			this.DaySelect.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.DaySelect.ConerRadius = 10;
 			this.DaySelect.DropPanelHeight = -1;
-			this.DaySelect.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.DaySelect.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.DaySelect.ForeColor = System.Drawing.Color.White;
 			this.DaySelect.IsRadius = true;
 			this.DaySelect.IsShowRect = true;

@@ -18,7 +18,6 @@ namespace Xylia.Preview.Project.Controls.PanelEx
 		}
 		#endregion
 
-
 		#region 字段
 		/// <summary>
 		/// 显示右侧文本

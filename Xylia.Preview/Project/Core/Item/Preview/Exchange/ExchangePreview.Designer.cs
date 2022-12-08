@@ -39,7 +39,7 @@
 			// ProcessTitle
 			// 
 			this.ProcessTitle.AutoSize = true;
-			this.ProcessTitle.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ProcessTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ProcessTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(99)))));
 			this.ProcessTitle.Location = new System.Drawing.Point(4, 0);
 			this.ProcessTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -52,7 +52,7 @@
 			// ProcessMaterialTitle
 			// 
 			this.ProcessMaterialTitle.AutoSize = true;
-			this.ProcessMaterialTitle.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ProcessMaterialTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ProcessMaterialTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(99)))));
 			this.ProcessMaterialTitle.Location = new System.Drawing.Point(4, 91);
 			this.ProcessMaterialTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -65,7 +65,7 @@
 			// ProcessComparison
 			// 
 			this.ProcessComparison.AutoSize = true;
-			this.ProcessComparison.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ProcessComparison.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ProcessComparison.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(99)))));
 			this.ProcessComparison.Location = new System.Drawing.Point(4, 181);
 			this.ProcessComparison.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

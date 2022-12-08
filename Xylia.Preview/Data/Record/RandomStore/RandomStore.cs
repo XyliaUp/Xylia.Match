@@ -3,7 +3,7 @@ using System.Linq;
 
 using Xylia.Extension;
 using Xylia.Files.XmlEx;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Attribute.Component;
 
 namespace Xylia.Preview.Data.Record

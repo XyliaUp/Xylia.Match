@@ -145,7 +145,7 @@
 			// Btn_StartWithEnd
 			// 
 			this.Btn_StartWithEnd.BtnBackColor = System.Drawing.Color.Empty;
-			this.Btn_StartWithEnd.BtnFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Btn_StartWithEnd.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Btn_StartWithEnd.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.Btn_StartWithEnd.BtnText = "开始";
 			this.Btn_StartWithEnd.ConerRadius = 8;
@@ -153,7 +153,7 @@
 			this.Btn_StartWithEnd.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.Btn_StartWithEnd.EnabledMouseEffect = false;
 			this.Btn_StartWithEnd.FillColor = System.Drawing.Color.White;
-			this.Btn_StartWithEnd.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.Btn_StartWithEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.Btn_StartWithEnd.IsRadius = true;
 			this.Btn_StartWithEnd.IsShowRect = true;
 			this.Btn_StartWithEnd.IsShowTips = false;
@@ -172,7 +172,7 @@
 			// Step1
 			// 
 			this.Step1.BackColor = System.Drawing.Color.Transparent;
-			this.Step1.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Step1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Step1.ImgCompleted = ((System.Drawing.Image)(resources.GetObject("Step1.ImgCompleted")));
 			this.Step1.LineWidth = 2;
 			this.Step1.Location = new System.Drawing.Point(8, 246);
@@ -216,7 +216,7 @@
 			this.checkBox1.AutoSize = true;
 			this.checkBox1.Checked = true;
 			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.checkBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.checkBox1.Location = new System.Drawing.Point(597, 163);
 			this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.checkBox1.Name = "checkBox1";

@@ -1,15 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Xylia.Extension;
-using NPOI.SS.UserModel;
+﻿using System.Linq;
 
 using Xylia.Files;
 
 namespace Xylia.Preview.Third.Content
 {
-	public class ItemImproveOptionList : OutBase
+	public sealed class ItemImproveOptionList : OutBase
 	{
-		#region 方法
 		public override void CreateData()
 		{
 			#region 配置标题
@@ -23,16 +19,16 @@ namespace Xylia.Preview.Third.Content
 			var CurRow = MainSheet.CreateRow(RowIdx++);
 
 
-			var ImproveId = FileCache.Data.Item[2847886].Attributes["improve-id"];
+			var ImproveId = FileCache.Data.Item[2847886, 1].Attributes["improve-id"];
 			if (ImproveId is null) return;
 
 
 			int Index = 1;
 			var improves = FileCache.Data.ItemImprove.Where(o => o.ID == int.Parse(ImproveId) && o.SuccessOptionListId != 0);
-			foreach(var improve in improves)
+			foreach (var improve in improves)
 			{
 				var optionlist = FileCache.Data.ItemImproveOptionList[improve.SuccessOptionListId];
-				System.Diagnostics.Debug.WriteLine($"\n {improve.Level} 强化成功时追加第{Index++}个强化效果 ↓↓↓   钱币: {optionlist.DrawCostMoney1}");
+				System.Diagnostics.Debug.WriteLine($"\n {improve.Level} 强化成功时追加第{Index++}个强化效果 ↓↓↓   重置钱币: {optionlist.DrawCostMoney1} {optionlist.DrawCostMainItem1}");
 
 
 				for (int i = 1; i <= 100; i++)
@@ -49,6 +45,5 @@ namespace Xylia.Preview.Third.Content
 				}
 			}
 		}
-		#endregion
 	}
 }

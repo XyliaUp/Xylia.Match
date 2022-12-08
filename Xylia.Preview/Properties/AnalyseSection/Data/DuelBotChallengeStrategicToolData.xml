@@ -9,12 +9,12 @@
 		<record alias="fail-caster-op" name="" type="seq" >
 			<case alias="or" name="" default="y" />
 			<case alias="and" name="" />
-                                </record>
-		<record alias="fail-caster-effect-attribute" name="" type="Short" repeat="4" seq="$effect-attribute" />
+		</record>
+		<record alias="fail-caster-effect-attribute" name="" type="Seq16" repeat="4" seq="$effect-attribute" />
 		<record alias="fail-caster-effect-attribute-op" name="" type="seq" >
 			<case alias="or" name="" default="y" />
 			<case alias="and" name="" />
-                                </record>
+		</record>
 		<record alias="icon" name="" type="Icon" />
 		<record alias="card-image-set" name="" type="Index" />
 		<record alias="card-tooltip" name="" type="TextAlias" />

@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <!-- 万象录现象委托 -->
-  <list module="ItemData" type="world-account-museum" version="0.10">
-    <record alias="alias" name="" type="Index" />
-    <record alias="collection-card" ref="WorldAccountCard" name="" repeat="8" />
-    <record alias="collection-card-count" name="" type="Short" repeat="8" />
-    <record alias="start-time" name="" type="Time64" />
-    <record alias="end-time" name="" type="Time64" />
-    <record alias="can-not-used" name="" type="Bool" />
-    <record alias="ability" name="" seq="$attach-ability" type="Seq" repeat="3" />
-    <record alias="ability-value" name="" type="Int32" repeat="3" />
-    <record alias="collection-name" name="" type="TextAlias" />
-    <record alias="collection-category" name="" type="Seq" >
+	<!-- 万象录现象委托 -->
+	<list module="ItemData" type="world-account-museum" version="0.10">
+		<record alias="alias" name="" type="Index" />
+		<record alias="collection-card" ref="WorldAccountCard" name="" repeat="8" />
+		<record alias="collection-card-count" name="" type="Short" repeat="8" />
+		<record alias="start-time" name="" type="Time64" />
+		<record alias="end-time" name="" type="Time64" />
+		<record alias="can-not-used" name="" type="Bool" />
+		<record alias="ability" name="" seq="$attach-ability" type="Seq" repeat="3" />
+		<record alias="ability-value" name="" type="Int32" repeat="3" />
+		<record alias="collection-name" name="" type="TextAlias" />
+		<record alias="collection-category" name="" type="Seq" >
 			<case alias="level-1" name="" default="y" />
 			<case alias="level-2" name="" />
 			<case alias="level-3" name="" />
 			<case alias="level-4" name="" />
 			<case alias="event" name="" />
 			<case alias="favorite" name="" />
-	</record>
-  </list>
+		</record>
+	</list>
 </table>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="ItemData" type="achievement" version="0.20" rule="cpl" is64="y" >
+	<list module="ItemData" type="achievement" version="1.1" rule="cpl">
 		<record alias="id"  type="id" extra="short1" />
 		<record alias="step" type="id" extra="short2" />
 		<record alias="job" start="0" name="" type="Seq" seq="$job" default="job-none" apply="must" />

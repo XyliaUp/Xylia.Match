@@ -36,7 +36,7 @@ namespace Xylia.Preview.Project.Core.Item
 			// Guide
 			// 
 			this.Guide.BackColor = System.Drawing.Color.Transparent;
-			this.Guide.Font = new System.Drawing.Font("微软雅黑", 10F);
+			this.Guide.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F);
 			this.Guide.ForeColor = System.Drawing.Color.White;
 			this.Guide.Location = new System.Drawing.Point(7, 303);
 			this.Guide.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);

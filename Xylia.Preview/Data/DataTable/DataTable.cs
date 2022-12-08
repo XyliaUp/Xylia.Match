@@ -17,7 +17,7 @@ using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Properties;
 using Xylia.Preview.Properties.AnalyseSection;
 
@@ -103,7 +103,7 @@ namespace Xylia.Preview.Data
 		/// <summary>
 		/// 判断是否有数据
 		/// </summary>
-		public virtual bool HasData => !InLoading && this.data != null && this.data.Length != 0;
+		public virtual bool HasData => !InLoading && this.data != null;
 
 
 		private Lazy<T>[] data;
@@ -194,6 +194,7 @@ namespace Xylia.Preview.Data
 					}
 					catch (Exception ex)
 					{
+						this.data = Array.Empty<Lazy<T>>();
 						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex}");
 					}
 
@@ -282,11 +283,8 @@ namespace Xylia.Preview.Data
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_Simple");
-			if (content is null)
-			{
-				Trace.WriteLine($"[{ DateTime.Now }] 加载配置文件失败: { typeof(T).Name }");
-				return;
-			}
+			if (content is null) throw new FileNotFoundException($"没有获取到结构配置数据");
+
 
 			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);
 			if (TableInfo.DataType == DataType.Local) this.LoadGame(FileCache.Data.LocalData, TableInfo);
@@ -302,12 +300,11 @@ namespace Xylia.Preview.Data
 			};
 
 			this.TableInfo = TableInfo;
+
 			this.ListData = DeSerializer.GetList(TableInfo);
+			if (this.ListData is null) throw new ArgumentNullException($"没有获取到指定数据");
 
-
-			//只创建空数组
-			if (this.ListData is null) this.data = Array.Empty<Lazy<T>>();
-			else this.data = new Lazy<T>[this.ListData.ObjectCount];
+			this.data = new Lazy<T>[this.ListData.ObjectCount];
 		}
 
 		public Output GetObject(int MainID, int VariationID = 0) => DeSerializer?.GetData(ListData, TableInfo, MainID, VariationID);
@@ -334,12 +331,17 @@ namespace Xylia.Preview.Data
 		{
 			#region 初始化
 			if (string.IsNullOrWhiteSpace(Alias)) return null;
-			if (int.TryParse(Alias, out int result)) return GetLazyInfo(result, 0);
+			if (int.TryParse(Alias, out int MainID)) return GetLazyInfo(MainID, 0);
 
 			if (!this.HasData) this.Load();
 			#endregion
 
+
 			#region 获取对象
+			//判断alias对应数组
+			if (this.ht_alias.ContainsKey(Alias)) return (Lazy<T>)this.ht_alias[Alias];
+
+
 			if (this.LoadFromGame)
 			{
 				if (!this.HasData) return null;
@@ -353,19 +355,19 @@ namespace Xylia.Preview.Data
 				#endregion
 
 				#region 返回最终结果
-				//Debug.WriteLine($"[{Alias}] {AliasInfo.MainID} { AliasInfo.Variation}");
-
 				var o = this.GetObject(AliasInfo.MainID, AliasInfo.Variation);
-				if (o != null) return new Lazy<T>(() => CreateNew(o));
+				if (o != null)
+				{
+					var result = new Lazy<T>(() => CreateNew(o));
+					this.ht_alias[Alias] = result;
+					return result;
+				}
 				#endregion
 			}
-
-			//判断alias对应数组
-			else if (this.ht_alias.ContainsKey(Alias)) return (Lazy<T>)this.ht_alias[Alias];
 			#endregion
 
 
-			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  alias: {Alias}");
+			if (this.data.Length != 0) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  alias: {Alias}");
 			return null;
 		}
 
@@ -384,21 +386,26 @@ namespace Xylia.Preview.Data
 			else if (this.ht_id.ContainsKey(MainID)) return (Lazy<T>)this.ht_id[MainID];
 			#endregion
 
-			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID}");
+
+			if (this.data.Length != 0) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
 			return null;
 		}
 
 
 
 
-
-
-
-		private T CreateNew(Output o)
+		/// <summary>
+		/// 目前未支持缓存读取
+		/// </summary>
+		/// <param name="o"></param>
+		/// <param name="Index"></param>
+		/// <returns></returns>
+		private T CreateNew(Output o, int Index = 0)
 		{
 			//新建一个对象，需要进行缓存
 			var temp = new T()
 			{
+				Index = Index,
 				Attributes = new OutputData(o),
 			};
 
@@ -419,7 +426,7 @@ namespace Xylia.Preview.Data
 		private IEnumerable<T> CreateTest
 		{
 			get
-			{	
+			{
 				if (DeSerializer is null) return Array.Empty<T>();
 
 
@@ -428,8 +435,10 @@ namespace Xylia.Preview.Data
 					var Objects = DeSerializer.GetDatas(this.ListData, this.TableInfo);
 					for (var x = 0; x < Objects.Count; x++)
 					{
+						var idx = x;
 						var obj = Objects[x];
-						this.data[x] = new Lazy<T>(() => CreateNew(obj));
+
+						this.data[x] = new Lazy<T>(() => CreateNew(obj, idx));
 					}
 
 					FullLoad = true;
@@ -510,7 +519,7 @@ namespace Xylia.Preview.Data
 			if (!this.HasData) this.Load();
 
 			if (this.LoadFromGame) foreach (var info in this.CreateTest) yield return info;
-			else foreach(var info in this.Data) yield return info.Value;
+			else foreach (var info in this.Data) yield return info.Value;
 
 			//结束迭代
 			yield break;

@@ -37,7 +37,7 @@
 			this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-			this.listBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.listBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.listBox1.FormattingEnabled = true;
 			this.listBox1.ItemHeight = 32;
 			this.listBox1.Location = new System.Drawing.Point(23, 85);
@@ -68,7 +68,7 @@
 			this.textBoxEx1.Name = "textBoxEx1";
 			this.textBoxEx1.OldText = null;
 			this.textBoxEx1.PromptColor = System.Drawing.Color.Gray;
-			this.textBoxEx1.PromptFont = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.textBoxEx1.PromptFont = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.textBoxEx1.PromptText = "";
 			this.textBoxEx1.RegexPattern = "";
 			this.textBoxEx1.Size = new System.Drawing.Size(255, 23);

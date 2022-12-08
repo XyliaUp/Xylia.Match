@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
   <list module="AIData" type="ZoneTriggerEventStage" version="0.11" rule="cpl" > 
 <!--
 total-duration-minute-1/2 分别对应各自的 next-cond-1/2 条件，注意两者之间并不互斥

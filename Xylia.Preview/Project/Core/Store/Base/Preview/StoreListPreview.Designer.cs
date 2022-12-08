@@ -55,7 +55,8 @@
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(26)))), ((int)(((byte)(35)))));
 			this.ContextMenuStrip = this.MainMenu;
-			this.Size = new System.Drawing.Size(10, 10);
+
+			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			//this.SizeChanged += new System.EventHandler(this.StoreListPreview_SizeChanged);
 
 			this.MainMenu.ResumeLayout(false);

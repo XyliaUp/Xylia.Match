@@ -25,10 +25,12 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 
 		public ItemShowCell(ItemData ItemData, bool UseExtra = false) : this() => LoadData(ItemData, UseExtra);
 
-		public void LoadData(ItemData ItemData, bool UseExtra = false)
+
+		public void LoadData(ItemData ItemData, bool UseExtra = false) => this.LoadData(ItemData, UseExtra ? ItemData.IconExtra : ItemData.Icon);
+
+		public void LoadData(ItemData ItemData, Bitmap Icon = null)
 		{
-			if (UseExtra) this.ItemIcon = ItemData.IconExtra;
-			else this.ItemIcon = ItemData.Icon;
+			this.ItemIcon = Icon;
 
 			this.ItemData = ItemData;
 			this.ItemName = ItemData.NameText();

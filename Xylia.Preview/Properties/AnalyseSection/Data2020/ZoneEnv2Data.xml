@@ -1,27 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
-	<list module="ZoneData0" type="ZoneEnv2" version="4.1" retired="n" rule="cpl" check-version="y" >
+<table>
+	<list module="ZoneData0" type="ZoneEnv2" version="0.47" retired="n" rule="cpl" check-version="y" >
 		<record alias="type" type="type" >
-			<case alias="button" name="" />
-			<case alias="chest" name="" />
-			<case alias="pot" name="" />
-			<case alias="gate" name="" />
-			<case alias="wall" name="" />
-			<case alias="refiner" name="" />
-			<case alias="control-point" name="" />
-			<case alias="portal" name="" />
+			<case alias="button" name="" region="n" />
+			<case alias="chest" name="" region="n" />
+			<case alias="pot" name="" region="y" />
+			<case alias="gate" name="" region="y" />
+			<case alias="wall" name="" region="y" />
+			<case alias="refiner" name="" region="n" />
+			<case alias="control-point" name="" region="n" />
+			<case alias="portal" name="" region="y" />
 			<case alias="portal-list" name="" />
-			<case alias="foot-switch" name="" />
-			<case alias="effect-region" name="" />
-			<case alias="airdash" name="" />
-			<case alias="airdash-leave" name="" />
-			<case alias="oceanic-region" name="" />
-			<case alias="fall-death" name="" />
+			<case alias="foot-switch" name="" region="y" />
+			<case alias="effect-region" name="" region="y" />
+			<case alias="airdash" name="" region="y" />
+			<case alias="airdash-leave" name="" region="y" />
+			<case alias="oceanic-region" name="" region="y" />
+			<case alias="fall-death" name="" region="y" />
 			<case alias="multiple-loop" name="" />
-			<case alias="deck" name="" />			
-			<case alias="fishing-point" name="" />
-			<case alias="attraction-popup" name="" />
-			<case alias="enter-arena-dungeonlobby" name="" />
+			<case alias="deck" name="" region="y" />			
+			<case alias="fishing-point" name="" region="n" />			
 		</record>
 
 		<record alias="alias" type="Index" />
@@ -58,7 +56,7 @@
 		<record alias="consume-faction-score" type="Bool" default="y" />
 		<record alias="manipulate-duration" type="Msec" />				
 		<record alias="manipulated-effect" ref="Effect" />
-		<record alias="main-faction-effect" ref="Effect" />		
+		<record alias="main-faction-effect" ref="Effect" />	
 		<record alias="main-faction-effect-distance" type="Distance" />	
 		<record alias="cannot-manipulate-effect" ref="Effect" />
 		<record alias="cannot-manipulate-in-combat" type="Bool" />	
@@ -88,7 +86,7 @@
 		<record alias="action-name2" type="TextAlias" />
 		<record alias="action-desc2" type="TextAlias" />
 		<record alias="hide-close" type="Bool" />
-		<record alias="hide-empty" type="Bool" name="使用后隐藏" />
+		<record alias="hide-empty" type="Bool" />
 		<record alias="tooltip-option" type="Bool" />
 		<record alias="show-quest-indicator" type="Bool" />
 		<record alias="default-indicator-image" type="Index" />
@@ -98,14 +96,13 @@
 		<record alias="missions" type="Byte" name="" server="n" repeat="20" />
 		<record alias="cases" type="Byte" name="" server="n" repeat="20" />
 		<record alias="case-subtypes" type="Short" name="" server="n" repeat="20" />
-
 		<record alias="loot-forwarding-types" type="Byte" name="" seq="$forwarding-type" server="n" repeat="8" />
 		<record alias="loot-quests" type="Quest" name="" server="n" repeat="8" />
 		<record alias="loot-missions" type="Byte" name="" server="n" repeat="8" />
 		<record alias="loot-cases" type="Byte" name="" server="n" repeat="8" />
-		<record alias="loot-item" ref="Item" name="" server="n" repeat="8" />
-		<record alias="lootable" type="Bool" name="" server="n" />
+		<record alias="loot-item" ref="Int32" name="" server="n" repeat="8" />
 
+		<record alias="lootable" type="Bool" name="" server="n" />
 		<record alias="attraction" type="Int32" name="" server="n" use-group="y" />		
 		<record alias="caster-reaction-attach" type="Index" name="" server="n" />
 		<record alias="spawn-mesh" type="Index" name="" server="n" />
@@ -138,10 +135,12 @@
         <!-- =========================================================================== -->
 
         <!-- =========================================================================== -->
-		<record alias="expedition-type" name="" filter="chest" type="Seq" />
-		<record alias="expedition" name="" filter="chest" ref="WorldAccountExpedition" />
+		<record alias="fielditemdrop" ref="FieldItemDrop" name="" filter="pot" client="n" />
+        <!-- =========================================================================== -->
 
+        <!-- =========================================================================== -->
 		<record alias="reward" ref="Reward" name="" filter="chest" client="n" />
+		<record alias="fielditemdrop" ref="FieldItemDrop" name="" filter="chest" client="n" />
         <!-- =========================================================================== -->
 
 
@@ -153,16 +152,14 @@
 		<record alias="transit-zone" name="" filter="portal" ref="Zone" link="id" />
 		<record alias="transit-dungeon" name="" filter="portal" ref="Dungeon" />		
 		<record alias="transit-reentrance-pcspawn" type="Bool" name="" filter="portal" />			
-		<record alias="transit-pc-spawn" type="Short" filter="portal" name="作用未知" />	
-		<record alias="transit-pc-spawn-in-arena" name="" filter="portal" ref="ZonePcSpawn" input="n" />
+		<record alias="transit-pc-spawn" type="Short" filter="portal" name="移动到的刷新点" />	
+		<record alias="transit-pc-spawn-in-arena" filter="portal" ref="ZonePcSpawn" input="n" name="非必须" />
 		<record alias="transit-leave-cinematic" ref="Cinematic" filter="portal" />	
 		<record alias="transit-enter-cinematic" ref="Cinematic" filter="portal" />	
 		<record alias="effect" ref="Effect" filter="portal" repeat="8" />
-<!--		
 		<record alias="phase-pc-spawn" type="Short" filter="portal" repeat="15" name="入场后的角色刷新位置编号" />
 		<record alias="phase-zone-leave-cinematic" ref="Cinematic" filter="portal" repeat="15" />
 		<record alias="phase-zone-enter-cinematic" ref="Cinematic" filter="portal" repeat="15" />
--->
 		<record alias="transit-leave-social" name="" filter="portal" ref="Social" />
 		<record alias="transit-enter-social" name="" filter="portal" ref="Social" />	
 		<record alias="required-level" type="Byte" name="" filter="portal" />			
@@ -170,13 +167,15 @@
 		<record alias="phase-pc-spawn" type="Short" filter="gate" client="n" repeat="15" />
         <!-- =========================================================================== -->
 		<record alias="manipulation-required-field-item" name="" filter="control-point" ref="FieldItem" />
-		<record alias="manipulation-drop-field-item" name="" filter="control-point" ref="FieldItemDrop" />
+		<record alias="manipulation-drop-field-item" name="" filter="control-point" ref="FieldItem" />
 		<record alias="occupation-zone-score" type="Short" name="" filter="control-point" />
 		<record alias="occupation-bonus-zone-score-per-sec" type="Short" name="" filter="control-point" />
 		<record alias="friend-occupation-additive-effect" type="Index" name="" filter="control-point" />
 		<record alias="enemy-occupation-additive-effect" type="Index" name="" filter="control-point" />
 		<record alias="friend-occupation-additive-sound" type="Index" name="" filter="control-point" />
 		<record alias="enemy-occupation-additive-sound" type="Index" name="" filter="control-point" />
+
+		<record alias="occupation-duration" type="Msec" name="" filter="control-point" client="n" />
         <!-- =========================================================================== -->
 		
         <!-- =========================================================================== -->
@@ -191,21 +190,20 @@
         <!-- =========================================================================== -->
 		<record alias="airdash-level" type="Byte" name="" filter="airdash" />
 		<record alias="kismet" type="Index" name="" filter="airdash" />
+
 		<record alias="phase-zone-pc-spawn" type="Short" name="" filter="airdash" client="n" repeat="15" />
+		<record alias="social" name="" filter="airdash" ref="Social" client="n" />
         <!-- =========================================================================== -->
 		
         <!-- =========================================================================== -->
 		<record alias="airdash-level" type="Byte" name="" filter="airdash-leave" />
 		<record alias="transit-zone" type="Int32" name="" filter="airdash-leave" ref="Zone" link="id" />
 		<record alias="transit-pc-spawn" type="Short" name="" filter="airdash-leave" />	
-		<record alias="transit-leave-social" type="Int32" name="" filter="airdash-leave" ref="Social" />
-		<record alias="transit-enter-social" type="Int32" name="" filter="airdash-leave" ref="Social" />
-
-<!--		
+		<record alias="transit-leave-social" name="" filter="airdash-leave" ref="Social" />
+		<record alias="transit-enter-social" name="" filter="airdash-leave" ref="Social" />		
 		<record alias="phase-zone-pc-spawn" type="Short" name="" filter="airdash-leave" repeat="15" />
 		<record alias="phase-zone-leave-social" name="" filter="airdash-leave" ref="Social" repeat="15" />
 		<record alias="phase-zone-enter-social" name="" filter="airdash-leave" ref="Social" repeat="15" />
--->
         <!-- =========================================================================== -->
 		
         <!-- =========================================================================== -->
@@ -255,14 +253,6 @@
 	
         <!-- =========================================================================== -->
 		<record alias="fishing-field" name="" filter="fishing-point" ref="fishing-field" />	
-        <!-- =========================================================================== -->
-		
-        <!-- =========================================================================== -->
-		<record alias="env-entrance" name="" filter="attraction-popup" ref="EnvEntrance" />	
-        <!-- =========================================================================== -->
-		
-        <!-- =========================================================================== -->
-		<record alias="enter-sealeddungeon" name="" filter="enter-arena-dungeonlobby" type="Int32" />	
         <!-- =========================================================================== -->
 	</list>
 </table>

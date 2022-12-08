@@ -4,7 +4,7 @@ using System;
 using Xylia.Extension;
 
 
-namespace Xylia.Preview.Project.Common.Interface
+namespace Xylia.Preview.Common.Interface
 {
 	/// <summary>
 	/// 数据缓存器构造

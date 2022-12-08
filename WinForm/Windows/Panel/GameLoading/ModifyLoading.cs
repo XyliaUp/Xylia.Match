@@ -2,7 +2,7 @@
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using Xylia.bns.Util;
+
 using HZH_Controls.Forms;
 
 namespace Xylia.Match.Windows.Panel
@@ -67,7 +67,7 @@ namespace Xylia.Match.Windows.Panel
 			{
 				if (!Directory.Exists(metroTextBox1.Text)) Directory.CreateDirectory(metroTextBox1.Text);
 
-				Xylia.Compress.Zip.UnCompressFile(filePath.Text, metroTextBox1.Text, Static.pwd);
+				//Xylia.Compress.Zip.UnCompressFile(filePath.Text, metroTextBox1.Text, Static.pwd);
 
 				GC.Collect();
 				this.Invoke(new Action(() => FrmTips.ShowTipsSuccess("已结束输出")));
@@ -88,7 +88,7 @@ namespace Xylia.Match.Windows.Panel
 
 			new Thread((ThreadStart)delegate
 			{
-				Xylia.Compress.Zip.ZipDirectory(metroTextBox1.Text, filePath.Text, Static.pwd);
+				//Xylia.Compress.Zip.ZipDirectory(metroTextBox1.Text, filePath.Text, Static.pwd);
 				this.Invoke(new Action(() => FrmTips.ShowTipsSuccess("封包完成")));
 			}).Start();
 		}

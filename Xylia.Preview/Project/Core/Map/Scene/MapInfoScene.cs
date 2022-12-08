@@ -32,6 +32,12 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			var MapGroup1 = FileCache.Data.MapGroup1[MapInfo.MapGroup1];
 			var MapGroup2 = FileCache.Data.MapGroup2[MapInfo.MapGroup2];
 
+			if (MapInfo.ParentMapinfo != null)
+			{
+				this.OpenParentMap.Visible = true;
+				this.OpenParentMap.Click += new EventHandler((o, e) => Execute.MyShowDialog(new MapInfoScene(MapInfo.ParentMapinfo)));
+			}
+
 
 			Trace.WriteLine(MapInfo.Attributes);
 
@@ -77,7 +83,6 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 				this.pictureBox1.Controls.Add(temp);
 			}
 		}
-
 
 		/// <summary>
 		/// 转换为当前坐标点

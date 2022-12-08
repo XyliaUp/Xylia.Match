@@ -36,7 +36,7 @@
 			// lbl_AbilityInfo
 			// 
 			this.lbl_AbilityInfo.AutoSize = true;
-			this.lbl_AbilityInfo.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_AbilityInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_AbilityInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(255)))), ((int)(((byte)(119)))));
 			this.lbl_AbilityInfo.Location = new System.Drawing.Point(268, 4);
 			this.lbl_AbilityInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

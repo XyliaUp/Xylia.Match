@@ -3,8 +3,8 @@
 	<list module="ItemData" type="craft-group-recipe" version="0.4" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="group-item" name="" ref="Item" server="n" />
-		<record alias="craft-union-type" name="" type="Byte" default="none" >
-			<case alias="none" name="" />
+		<record alias="craft-union-type" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
 			<case alias="production-type-1" name="" />
 			<case alias="production-type-2" name="" />
 			<case alias="production-type-3" name="" />
@@ -21,8 +21,8 @@
 			<case alias="gathering-type-7" name="" />
 
 		</record>
-		<record alias="craft-union-sub-type" name="" type="Byte" default="none" >
-			<case alias="none" name="" />
+		<record alias="craft-union-sub-type" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
 			<case alias="gathering" name="" />
 			<case alias="production-normal" name="" />
 			<case alias="production-transaction" name="" />

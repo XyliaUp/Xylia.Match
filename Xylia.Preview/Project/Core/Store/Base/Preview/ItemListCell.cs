@@ -10,24 +10,22 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 	public partial class ItemListCell : ListCell
 	{
 		#region 构造
-		public ItemListCell()
-		{
-			InitializeComponent();
-			this.BackColor = Color.Transparent;
-		}
+		public ItemListCell() => InitializeComponent();
 
-		public ItemListCell(ItemData DisplayItem, Bitmap Icon = null) : this()
+		public ItemListCell(ItemData DisplayItem, Bitmap Icon = null)
 		{
+			InitializeComponent(); 
 			if (DisplayItem is null) return;
 
-			this.ItemShow.LoadData(DisplayItem, true);
-			if (Icon != null) this.ItemShow.IconCell.ItemIcon = Icon;
+			if (Icon != null) this.ItemShow.LoadData(DisplayItem, Icon);
+			else this.ItemShow.LoadData(DisplayItem, true);
 
 			//显示职业信息
 			var Jobs = DisplayItem.JobInfo;
 			if (Jobs != null) this.RightText = Jobs;
 		}
 		#endregion
+
 
 		#region 字段
 		/// <summary>

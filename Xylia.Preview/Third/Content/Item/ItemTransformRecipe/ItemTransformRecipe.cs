@@ -4,7 +4,7 @@ using System.ComponentModel;
 using NPOI.SS.UserModel;
 
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Cast;
 
@@ -41,6 +41,7 @@ namespace Xylia.Preview.Third.Content
 			TitleCells[CurCellIdx++].SetCellValue("装备类型");
 			TitleCells[CurCellIdx++].SetCellValue("物品等级");
 			#endregion
+
 
 			#region 输出内容
 			int RowIdx = 1;
@@ -87,7 +88,7 @@ namespace Xylia.Preview.Third.Content
 				CurCells[CurCellIdx++].SetCellValue(Info.UseRandom ? "随机" : "必成");
 
 				//目录信息
-				string CategoryInfo = Info.category.ContainAttribute(out DescriptionAttribute description) ? description.Description : Info.category.ToString();
+				string CategoryInfo = Info.Category.ContainAttribute(out DescriptionAttribute description) ? description.Description : Info.Category.ToString();
 				CurCells[CurCellIdx++].SetCellValue(CategoryInfo);
 
 

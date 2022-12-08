@@ -5,7 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
 
@@ -40,14 +40,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.Clear();
 			this.Ctls = new List<Control>();
 
-			LoadFixedIngredient(Record.FixedIngredient1, Record.FixedIngredientStackCount1);
-			LoadFixedIngredient(Record.FixedIngredient2, Record.FixedIngredientStackCount2);
-			LoadFixedIngredient(Record.FixedIngredient3, Record.FixedIngredientStackCount3);
-			LoadFixedIngredient(Record.FixedIngredient4, Record.FixedIngredientStackCount4);
-			LoadFixedIngredient(Record.FixedIngredient5, Record.FixedIngredientStackCount5);
-			LoadFixedIngredient(Record.FixedIngredient6, Record.FixedIngredientStackCount6);
-			LoadFixedIngredient(Record.FixedIngredient7, Record.FixedIngredientStackCount7);
-			LoadFixedIngredient(Record.FixedIngredient8, Record.FixedIngredientStackCount8);
+			//LoadFixedIngredient(Record.FixedIngredient1, Record.FixedIngredientStackCount1);
+			//LoadFixedIngredient(Record.FixedIngredient2, Record.FixedIngredientStackCount2);
+			//LoadFixedIngredient(Record.FixedIngredient3, Record.FixedIngredientStackCount3);
+			//LoadFixedIngredient(Record.FixedIngredient4, Record.FixedIngredientStackCount4);
+			//LoadFixedIngredient(Record.FixedIngredient5, Record.FixedIngredientStackCount5);
+			//LoadFixedIngredient(Record.FixedIngredient6, Record.FixedIngredientStackCount6);
+			//LoadFixedIngredient(Record.FixedIngredient7, Record.FixedIngredientStackCount7);
+			//LoadFixedIngredient(Record.FixedIngredient8, Record.FixedIngredientStackCount8);
 		
 			this.Refresh();
 		}

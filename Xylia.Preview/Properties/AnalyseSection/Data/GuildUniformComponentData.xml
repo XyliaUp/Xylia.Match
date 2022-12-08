@@ -3,7 +3,7 @@
 	<list id="144" alias="GuildUniformComponent" module="ItemData" type="GuildUniformComponent" version="0.8" rule="cpl" >
 		<record alias="param-type" name="" type="ID" />
 		<record start="0" alias="param-value" name="" type="Int32" />
-		<record alias="param-type-category" name="" type="Byte" >
+		<record alias="param-type-category" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="style" name="" />
 			<case alias="top" name="" />

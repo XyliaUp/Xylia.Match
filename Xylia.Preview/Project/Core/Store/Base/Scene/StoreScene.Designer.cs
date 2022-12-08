@@ -46,7 +46,7 @@
 			this.TreeView.ContextMenuStrip = this.MenuStrip;
 			this.TreeView.Dock = System.Windows.Forms.DockStyle.Left;
 			this.TreeView.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-			this.TreeView.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.TreeView.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.TreeView.HotTracking = true;
 			this.TreeView.Indent = 20;
 			this.TreeView.ItemHeight = 30;

@@ -28,19 +28,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.Controls.Add(this.rewardInfo);
 		}
 
-
-		public QuestPreview(QuestData QuestData) : this()
-		{
-			this.Data = QuestData;
-		}
+		public QuestPreview(QuestData QuestData) : this() => this.Data = QuestData;
 		#endregion
 
 
-
-
 		#region 字段
-		WaveOut SoundOut = new() { Latency = 100 };
-
+		public readonly WaveOut SoundOut = new() { Latency = 100 };
 
 		/// <summary>
 		/// 测试模式
@@ -125,7 +118,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			}
 
 			base.Refresh();
-			this.Height = LocY;
+			this.Height = LocY + 45;
 		}
 
 

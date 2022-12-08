@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
-  <list module="LocalizationData" rule="cpl | extra" version="0.2" type="contents-guide" check-version="n"> 
+<table>
+	<list module="LocalizationData" rule="cpl | extra" version="0.2" type="contents-guide" check-version="n">
 		<record alias="type" name="" type="type" >
 			<case alias="boss-monster" name="" />
-                                </record>
+		</record>
 
 		<record alias="category" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
@@ -13,17 +13,16 @@
 			<case alias="daily-quest" name="" />
 			<case alias="faction-battle" name="" />
 			<case alias="arena-match" name="" />
-                                </record>
+		</record>
 		<record alias="min-level" name="" type="Byte" default="1" />
 		<record alias="max-level" name="" type="Byte" default="1" />
 		<record alias="title" name="" type="TextAlias" />
 		<record alias="description" name="" type="TextAlias" />
-
 
 		<record alias="boss-id" name="" ref="Npc" filter="boss-monster" />
 		<record alias="linked-boss-id" name="" ref="Npc" filter="boss-monster" />
 		<record alias="boss-description" name="" type="TextAlias" filter="boss-monster" />
 		<record alias="boss-position-description" name="" type="TextAlias" filter="boss-monster" />
 		<record alias="reward-summary" name="" ref="AttractionRewardSummary" filter="boss-monster" />
-  </list>
+	</list>
 </table>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list id="301" alias="Stance" module="CombatData" type="stance" version="0.26" rule="cpl" >
 		<record alias="stance-type" name="" type="id" seq="$stance_20" version="2020" />
 		

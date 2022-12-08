@@ -35,7 +35,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// GroupName
 			// 
 			this.GroupName.AutoSize = true;
-			this.GroupName.Font = new System.Drawing.Font("微软雅黑", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+			this.GroupName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.GroupName.ForeColor = System.Drawing.Color.White;
 			this.GroupName.Location = new System.Drawing.Point(4, 0);
 			this.GroupName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

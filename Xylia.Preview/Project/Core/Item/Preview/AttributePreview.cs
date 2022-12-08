@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Cell;
 
 namespace Xylia.Preview.Project.Core.Item

@@ -3,7 +3,7 @@
 	<list module="CombatData" type="auto-combat-skill-cast-condition" version="0.7" rule="cpl | extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="name" name="" type="Index" />		
-		<record alias="check-hp-percent-target-type" name="" type="Byte" >
+		<record alias="check-hp-percent-target-type" name="" type="Seq" >
 			<case alias="caster" name="" />
 			<case alias="target" name="" />
 			<case alias="summoned" name="" />
@@ -81,7 +81,7 @@
 		<record alias="check-caster-recycle-skill-variation-id-3" name="" type="Byte" />
 		<record alias="check-caster-recycle-skill-variation-id-4" name="" type="Byte" />
 		<record alias="check-caster-recycle-skill-op" name="" type="Seq" seq="$op" />
-		<record alias="check-target-npc-grade2" name="" type="Byte" >
+		<record alias="check-target-npc-grade2" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="boss" name="" />
 			<case alias="champion" name="" />
@@ -94,14 +94,14 @@
 			<case alias="strong" name="" />
 		</record>
 		<record alias="check-target-npc-grade2-op" name="" type="Seq" seq="$op2" />
-		<record alias="check-target-distance-target-type" name="" type="Byte" >
+		<record alias="check-target-distance-target-type" name="" type="Seq" >
 			<case alias="caster" name="" />
 			<case alias="target" name="" />
 			<case alias="summoned" name="" />
 		</record>
 		<record alias="check-target-distance" name="" type="distance" />
 		<record alias="check-target-distance-op" name="" type="Seq" seq="$op2" />
-		<record alias="check-around-target-type" name="" type="Byte" >
+		<record alias="check-around-target-type" name="" type="Seq" >
 			<case alias="caster" name="" />
 			<case alias="target" name="" />
 			<case alias="summoned" name="" />

@@ -3,8 +3,8 @@ using System.Drawing;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Enums;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Enums;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Item.Preview;

@@ -2,7 +2,7 @@
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 
 namespace Xylia.Preview.Data.Record

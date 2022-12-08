@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 using Xylia.Attribute.Component;
 using Xylia.Extension;
-using System.Drawing;
+using Xylia.Preview.Data.Record;
+
+using static Xylia.Preview.Data.Record.Item;
+
 using ItemData = Xylia.Preview.Data.Record.Item;
 using RewardData = Xylia.Preview.Data.Record.Reward;
-using static Xylia.Preview.Data.Record.Item;
-using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 {
@@ -84,7 +86,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			#endregion
 
 			#region 读取奖励数据
-			DecomposeRewardInfo GetRewardInfo(RewardData reward) => reward is null ? default : new DecomposeRewardInfo(reward);
+			static DecomposeRewardInfo GetRewardInfo(RewardData reward) => reward is null ? default : new DecomposeRewardInfo(reward);
 			this.DecomposeReward1 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-1"]]);
 			this.DecomposeReward2 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-2"]]);
 			this.DecomposeReward3 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-3"]]);
@@ -112,10 +114,6 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				}
 			}
 			#endregion
-
-#if DEBUG
-			Console.WriteLine($"[Debug] 初始化奖励基础信息：{ (DateTime.Now - Dt).TotalMilliseconds }ms");
-#endif
 		}
 		#endregion
 

@@ -17,7 +17,13 @@
     <Compile Update="Project\Controls\ContentPanel\ContentPanel_Paint.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Project\Core\Item\Preview\AttributePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Project\Core\Quest\Preview\Task\Mission\CaseInfoPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Store\RandomStore\Cell\ItemDisplayListCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Skill\SkillPreview\SkillTooltipPanel.cs">
@@ -131,9 +137,6 @@
     <Compile Update="Project\Core\Item\Preview\SlateScroll\SlateScrollCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Preview\AttributePreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Project\Core\Item\Preview\DurabilityPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,19 +230,16 @@
     <Compile Update="Project\Core\Quest\Preview\Task\TaskInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\RandomStore\Cell\DisplayItemCell.cs">
+    <Compile Update="Project\Core\Store\RandomStore\Cell\DrawRewardCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\RandomStore\Cell\DrawRewardCell.cs">
+    <Compile Update="Project\Core\Store\RandomStore\Preview\DrawRewardPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\RandomStore\Preview\DrawRewardPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Core\RandomStore\Scene\RandomStoreExhibitionScene.cs">
+    <Compile Update="Project\Core\Store\RandomStore\Scene\RandomStoreExhibitionScene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Project\Core\RandomStore\Scene\RandomStoreListScene.cs">
+    <Compile Update="Project\Core\Store\RandomStore\Scene\RandomStoreListScene.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Project\Core\Store\Base\Scene\Searcher.cs">

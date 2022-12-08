@@ -36,7 +36,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// MissionText
 			// 
 			this.MissionText.BackColor = System.Drawing.Color.Transparent;
-			this.MissionText.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.MissionText.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.MissionText.ForeColor = System.Drawing.Color.White;
 			this.MissionText.Location = new System.Drawing.Point(2, 0);
 			this.MissionText.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);

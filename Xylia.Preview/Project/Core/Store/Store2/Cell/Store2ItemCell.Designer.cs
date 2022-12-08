@@ -50,7 +50,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			// quotaTxt
 			// 
 			this.quotaTxt.AutoSize = true;
-			this.quotaTxt.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.quotaTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.quotaTxt.ForeColor = System.Drawing.Color.White;
 			this.quotaTxt.Location = new System.Drawing.Point(66, 35);
 			this.quotaTxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

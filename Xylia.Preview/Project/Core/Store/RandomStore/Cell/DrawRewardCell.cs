@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
-using Xylia.Extension;
+
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
-using System.Linq;
 
 
 namespace Xylia.Preview.Project.Core.RandomStore.Cell

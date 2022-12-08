@@ -51,7 +51,6 @@
 		<record alias="challenge-reward-total-count" name="" type="Byte" server="n" />
 		<record alias="challenge-count-for-reward" name="阶段需要完成课题数量" type="Byte" repeat="20" />
 		<record alias="reward" name="阶段奖励" ref="ChallengeListReward" repeat="20" />
-		
 		<record alias="week-start-date-time" name="" type="Time64" filter="week" />
 	</list>
 </table>

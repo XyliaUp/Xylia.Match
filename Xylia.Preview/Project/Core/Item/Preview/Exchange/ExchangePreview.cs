@@ -5,7 +5,7 @@ using System.Linq;
 
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;

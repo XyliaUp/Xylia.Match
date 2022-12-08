@@ -9,7 +9,6 @@ namespace Xylia.Preview.Third.Content
 {
 	public class ItemImprove : OutBase
 	{
-		#region 方法
 		public override void CreateData()
 		{
 			#region 配置标题
@@ -44,6 +43,5 @@ namespace Xylia.Preview.Third.Content
 				}
 			}
 		}
-		#endregion
 	}
 }

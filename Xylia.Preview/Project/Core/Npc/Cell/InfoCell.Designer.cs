@@ -34,7 +34,7 @@
 			// lbl_LeftText
 			// 
 			this.lbl_LeftText.AutoSize = true;
-			this.lbl_LeftText.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.lbl_LeftText.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.lbl_LeftText.ForeColor = System.Drawing.Color.Magenta;
 			this.lbl_LeftText.Location = new System.Drawing.Point(3, 15);
 			this.lbl_LeftText.Name = "lbl_LeftText";

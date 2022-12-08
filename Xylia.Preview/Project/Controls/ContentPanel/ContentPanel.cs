@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using HZH_Controls;
 
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Attribute.ArgTest;
+using Xylia.Preview.Common.Attribute.ArgTest;
 using Xylia.Preview.Project.Designer;
 
 namespace Xylia.Preview.Project.Controls

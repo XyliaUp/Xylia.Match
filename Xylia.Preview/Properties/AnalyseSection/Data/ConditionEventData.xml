@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<list module="ItemData" type="condition-event" version="2.0" rule="cpl" >
+		<record alias="id" type="id" extra="Short1" name="" />
+		<record alias="score" type="id" extra="Short2" name="" />
+		<record alias="alias" type="Index" name="" />
+		<record alias="name" type="TextAlias" name="" />
+		<record alias="unk-" type="Int32" name="" />
 
 		<record alias="tooltip-arg-type" type="Dictionary" name="">
 			<case alias="none" name="" default="y" />
@@ -10,15 +15,7 @@
 			<case alias="counter" name="" />
 			<case alias="distance" name="" />
 			<case alias="number" name="" />
-                                </record>
-
-
-		<record alias="id" type="id" extra="Short1" name="" />
-		<record alias="score" type="id" extra="Short2" name="" />
-		<record alias="alias" type="Index" name="" />
-		<record alias="name" type="TextAlias" name="" />
-		<record alias="unk-" type="Int32" name="" />
-
+		</record>
 		<record alias="tooltip-text-1" type="TextAlias" name="" />
 		<record alias="tooltip-arg-type-1" type="Seq" seq="$tooltip-arg-type" name="" repeat="4" />
 		<record alias="tooltip-arg-1" type="Int32" name="" repeat="4" />

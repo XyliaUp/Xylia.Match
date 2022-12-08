@@ -16,7 +16,7 @@
 			<case alias="fish-grade-8" name="" />
 			<case alias="fish-grade-9" name="" />
 			<case alias="fish-grade-10" name="" />
-                                 </record>
+		</record>
 		<record alias="boundary-min" name="" type="Short" />
 		<record alias="rare" name="" type="Bool" />
 		<record alias="cannot-use" name="" type="Bool" />

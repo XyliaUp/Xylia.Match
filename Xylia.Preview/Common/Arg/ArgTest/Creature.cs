@@ -2,7 +2,7 @@
 using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 
-namespace Xylia.Preview.Project.Common.Attribute.ArgTest
+namespace Xylia.Preview.Common.Attribute.ArgTest
 {
 	/// <summary>
 	/// 生物实例

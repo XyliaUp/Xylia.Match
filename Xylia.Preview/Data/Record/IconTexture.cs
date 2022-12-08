@@ -5,7 +5,7 @@ using Xylia.Attribute.Component;
 using Xylia.Drawing;
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {

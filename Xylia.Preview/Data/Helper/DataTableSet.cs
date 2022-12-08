@@ -7,7 +7,7 @@ using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Read;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Properties;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;

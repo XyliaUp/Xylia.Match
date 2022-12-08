@@ -1,112 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="138" alias="GuildCraftRecipe" module="ItemData" type="guild-craft-recipe" version="0.3" rule="cpl" >
-    <record alias="id" type="id" />
-    <record alias="alias" type="Index" />	
-   <!-- =================================================== -->
-    <record alias="craft-type" seq="0=none|1=small|2=big" default="none" type="byte" />	
-    <record alias="required-guild-level" type="byte" />	
-    <record alias="required-faction" ref="Faction" type="Int32" />		
-    <record alias="production-type-1" seq="$production-type" type="byte" />		
-    <record alias="production-type-2" seq="$production-type" type="byte" />		
-    <record alias="production-type-3" seq="$production-type" type="byte" />
-    <record alias="production-type-4" seq="$production-type" type="byte" />
-    <record alias="production-type-5" seq="$production-type" type="byte" />
-    <record alias="production-type-6" seq="$production-type" type="byte" />
-    <record alias="production-type-7" seq="$production-type" type="byte" />			
-    <record type="short" alias="production-type-required-exp-1" out-cond="exist: production-type-1" />		
-    <record type="short" alias="production-type-required-exp-2" out-cond="exist: production-type-2" />	
-    <record type="short" alias="production-type-required-exp-3" out-cond="exist: production-type-3" />	
-    <record type="short" alias="production-type-required-exp-4" out-cond="exist: production-type-4" />	
-    <record type="short" alias="production-type-required-exp-5" out-cond="exist: production-type-5" />	
-    <record type="short" alias="production-type-required-exp-6" out-cond="exist: production-type-6" />	
-    <record type="short" alias="production-type-required-exp-7" out-cond="exist: production-type-7" />	
-	<record type="byte" alias="production-type-required-pc-count-1" />	
-	<record type="byte" alias="production-type-required-pc-count-2" />	
-	<record type="byte" alias="production-type-required-pc-count-3" />	
-	<record type="byte" alias="production-type-required-pc-count-4" />	
-	<record type="byte" alias="production-type-required-pc-count-5" />	
-	<record type="byte" alias="production-type-required-pc-count-6" />	
-	<record type="byte" alias="production-type-required-pc-count-7" />	
-	<record type="Int32" alias="contract-money" />		
-	<record alias="contract-item-1" ref="Item" name="" />	
-	<record alias="contract-item-2" ref="Item" name="" />	
-	<record alias="contract-item-3" ref="Item" name="" />	
-	<record alias="contract-item-4" ref="Item" name="" />	
-	<record alias="contract-item-5" ref="Item" name="" />		
-	<record type="short" alias="contract-item-count-1" />		
-	<record type="short" alias="contract-item-count-2" />	
-	<record type="short" alias="contract-item-count-3" />	
-	<record type="short" alias="contract-item-count-4" />	
-	<record type="short" alias="contract-item-count-5" />	
-	
-	<record alias="contract-bm-item" ref="Item" name="" />
-	<record alias="contract-bm-item-count" type="Short" />
-	<record alias="rent-bm-item" ref="Item" name="" />
-	<record alias="rent-bm-item-count" type="Short" />
-	<record alias="material-1" ref="Item" name="" />
-	<record alias="material-2" ref="Item" name="" />
-	<record alias="material-3" ref="Item" name="" />
-	<record alias="material-4" ref="Item" name="" />
-	<record alias="material-5" ref="Item" name="" />
-	<record alias="material-6" ref="Item" name="" />
-	<record alias="material-7" ref="Item" name="" />
-	<record alias="material-8" ref="Item" name="" />
-	<record alias="material-9" ref="Item" name="" />
-	<record alias="material-10" ref="Item" name="" />
-	<record alias="material-11" ref="Item" name="" />
-	<record alias="material-12" ref="Item" name="" />
-	<record alias="material-13" ref="Item" name="" />
-	<record alias="material-14" ref="Item" name="" />
-	<record alias="material-15" ref="Item" name="" />
-	<record type="short" alias="material-count-1" />
-	<record type="short" alias="material-count-2" />
-	<record type="short" alias="material-count-3" />
-	<record type="short" alias="material-count-4" />
-	<record type="short" alias="material-count-5" />
-	<record type="short" alias="material-count-6" />
-	<record type="short" alias="material-count-7" />
-	<record type="short" alias="material-count-8" />
-	<record type="short" alias="material-count-9" />
-	<record type="short" alias="material-count-10" />
-	<record type="short" alias="material-count-11" />
-	<record type="short" alias="material-count-12" />
-	<record type="short" alias="material-count-13" />
-	<record type="short" alias="material-count-14" />
-	<record type="short" alias="material-count-15" />	
-	<record type="short" alias="material-donation-point-1" />
-	<record type="short" alias="material-donation-point-2" />
-	<record type="short" alias="material-donation-point-3" />
-	<record type="short" alias="material-donation-point-4" />
-	<record type="short" alias="material-donation-point-5" />
-	<record type="short" alias="material-donation-point-6" />
-	<record type="short" alias="material-donation-point-7" />
-	<record type="short" alias="material-donation-point-8" />
-	<record type="short" alias="material-donation-point-9" />
-	<record type="short" alias="material-donation-point-10" />
-	<record type="short" alias="material-donation-point-11" />
-	<record type="short" alias="material-donation-point-12" />
-	<record type="short" alias="material-donation-point-13" />
-	<record type="short" alias="material-donation-point-14" />
-	<record type="short" alias="material-donation-point-15" />		
-	<record alias="brand-material-1" ref="ItemBrand" name="" />
-	<record alias="brand-material-2" ref="ItemBrand" name="" />
-	<record alias="brand-material-3" ref="ItemBrand" name="" />
-	<record alias="brand-material-condition-type-1" type="byte" out-cond="exist: brand-material-1" seq="$condition-type" />		
-	<record alias="brand-material-condition-type-2" type="byte" out-cond="exist: brand-material-2" seq="$condition-type" />
-	<record alias="brand-material-condition-type-3" type="byte" out-cond="exist: brand-material-3" seq="$condition-type" />		
-	<record type="short" alias="brand-material-count-1" />		
-	<record type="short" alias="brand-material-count-2" />	
-	<record type="short" alias="brand-material-count-3" />		
-	<record type="short" alias="brand-material-donation-point-1" />		
-	<record type="short" alias="brand-material-donation-point-2" />	
-	<record type="short" alias="brand-material-donation-point-3" />		
-	<record alias="time-cost" type="Int32" />		
-	<record alias="result" ref="Item" name="" />
-	<record alias="result-count" type="short" />		
-	<record alias="result-bonus-guildlevel" type="short" />		
-	<record alias="result-bonus-count" type="short" />		
-	<record alias="result-receive-type" seq="0=authorized|1=specified" type="byte" />		
-	<record alias="use-state" seq="0=invalid-state|1=no-more-use|2=in-use" type="byte" />	
+	<list alias="GuildCraftRecipe" module="ItemData" type="guild-craft-recipe" version="0.3" rule="cpl" >
+		<record alias="id" type="id" />
+		<record alias="alias" type="Index" />
+		<!-- =================================================== -->
+		<record alias="craft-type" type="Seq" >
+			<case alias="none" name="" default="y"/>
+			<case alias="small" name="" />
+			<case alias="big" name="" />
+		</record>
+
+
+		<record alias="required-guild-level" type="Byte" />
+		<record alias="required-faction" ref="Faction" />
+		<record alias="production-type" seq="$production-type" type="Seq" repeat="7" />
+		<record alias="production-type-required-exp" type="Short" repeat="7" />
+		<record alias="production-type-required-pc-count" type="Byte" repeat="7" />
+		<record alias="contract-money" type="Int32" />
+		<record alias="contract-item" ref="Item" name="" repeat="5" />
+		<record alias="contract-item-count" type="Short" repeat="5" />
+		<record alias="contract-bm-item" ref="Item" name="" />
+		<record alias="contract-bm-item-count" type="Short" />
+		<record alias="rent-bm-item" ref="Item" name="" />
+		<record alias="rent-bm-item-count" type="Short" />
+		<record alias="material" ref="Item" name="" repeat="15" />
+		<record alias="material-count" name="" type="Short" repeat="15" />
+		<record alias="material-donation-point" name="" type="Short" repeat="15" />
+		<record alias="brand-material" ref="ItemBrand" name="" repeat="3" />
+		<record alias="brand-material-condition-type" type="Seq" out-cond="exist: brand-material-*" seq="$condition-type" repeat="3" />
+		<record alias="brand-material-count" type="Short" repeat="3" />
+		<record alias="brand-material-donation-point" type="Short" repeat="3" />
+		<record alias="time-cost" type="Int32" />
+		<record alias="result" ref="Item" name="" />
+		<record alias="result-count" type="short" />
+		<record alias="result-bonus-guildlevel" type="short" />
+		<record alias="result-bonus-count" type="short" />
+		<record alias="result-receive-type" type="Seq" >
+			<case alias="authorized" name="" />
+			<case alias="specified" name="" />
+		</record>
+		<record alias="use-state" type="Seq" >
+			<case alias="invalid-state" name="" />
+			<case alias="no-more-use" name="" />
+			<case alias="in-use" name="" />		
+		</record>		
 	</list>
 </table>

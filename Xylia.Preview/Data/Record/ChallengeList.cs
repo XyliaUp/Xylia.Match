@@ -1,7 +1,7 @@
 ﻿using System;
 
 using Xylia.Attribute.Component;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using System.ComponentModel;
 
 namespace Xylia.Preview.Data.Record

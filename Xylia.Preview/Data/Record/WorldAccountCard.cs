@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 
-using Xylia.Preview.Project.Common.Interface;
-using Xylia.Preview.Project.Common.Enums;
+using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Common.Cast;
 
 namespace Xylia.Preview.Data.Record

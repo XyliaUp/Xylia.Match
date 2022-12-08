@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list id="190" module="ItemData" type="item-improve" version="5.0" rule="cpl" >
 		<record alias="id" type="id" name="" />
 		<record alias="level" type="Level" name="" show-zero="y" start="0" />

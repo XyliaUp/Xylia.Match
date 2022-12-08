@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<list module="CombatData" type="special-skill-gauge" version="0.1" rule="cpl" >
-		<record alias="job" type="ID" extra="Byte1" seq="$job_20" />
+		<record alias="job" type="ID" extra="Byte1" seq="$job" />
 		<record alias="gauge-increase-per-sec" type="Short" />
 	</list>
 </table>

@@ -29,8 +29,12 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.OpenParentMap = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.MenuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
@@ -44,20 +48,37 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
 			// 
+			// MenuStrip
+			// 
+			this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenParentMap});
+			this.MenuStrip.Name = "MenuStrip";
+			this.MenuStrip.Size = new System.Drawing.Size(181, 48);
+			// 
+			// OpenParentMap
+			// 
+			this.OpenParentMap.Name = "OpenParentMap";
+			this.OpenParentMap.Size = new System.Drawing.Size(180, 22);
+			this.OpenParentMap.Text = "返回上级地图";
+			this.OpenParentMap.Visible = false;
+			// 
 			// MapInfoScene
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(123, 83);
+			this.ClientSize = new System.Drawing.Size(137, 80);
+			this.ContextMenuStrip = this.MenuStrip;
 			this.Controls.Add(this.pictureBox1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximizeBox = false;
 			this.Name = "MapInfoScene";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "MapInfoScene   [开发版本 35]";
+			this.Text = "MapInfoScene";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.MenuStrip.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -66,5 +87,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		#endregion
 
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.ContextMenuStrip MenuStrip;
+		private System.Windows.Forms.ToolStripMenuItem OpenParentMap;
 	}
 }

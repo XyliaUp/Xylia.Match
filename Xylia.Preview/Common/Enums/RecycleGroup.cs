@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xylia.Preview.Project.Common.Enums
+namespace Xylia.Preview.Common.Enums
 {
 	/// <summary>
 	/// 循环组

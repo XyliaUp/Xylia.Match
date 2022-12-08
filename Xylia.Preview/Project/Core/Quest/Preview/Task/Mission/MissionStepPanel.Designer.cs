@@ -39,7 +39,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// MissionDemand
 			// 
 			this.MissionDemand.BackColor = System.Drawing.Color.Transparent;
-			this.MissionDemand.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.MissionDemand.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.MissionDemand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
 			this.MissionDemand.Location = new System.Drawing.Point(19, 0);
 			this.MissionDemand.Margin = new System.Windows.Forms.Padding(2, 7, 2, 7);
@@ -51,7 +51,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// Panel_TaskDesc
 			// 
 			this.Panel_TaskDesc.BackColor = System.Drawing.Color.Transparent;
-			this.Panel_TaskDesc.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Panel_TaskDesc.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Panel_TaskDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(102)))));
 			this.Panel_TaskDesc.Location = new System.Drawing.Point(0, 23);
 			this.Panel_TaskDesc.Margin = new System.Windows.Forms.Padding(2, 7, 2, 7);
@@ -63,7 +63,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// Content_StepID
 			// 
 			this.Content_StepID.BackColor = System.Drawing.Color.Transparent;
-			this.Content_StepID.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Content_StepID.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Content_StepID.ForeColor = System.Drawing.Color.White;
 			this.Content_StepID.Location = new System.Drawing.Point(1, -1);
 			this.Content_StepID.Margin = new System.Windows.Forms.Padding(2, 7, 2, 7);

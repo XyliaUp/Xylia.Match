@@ -6,7 +6,7 @@
 			<case alias="low" name="" />
 			<case alias="medium" name="" />
 			<case alias="high" name="" />
-                                </record>
+		</record>
 
 		<record alias="target-angle" name="" type="Float32" repeat="4" default="16" />
 		<record alias="target-beam-width" name="" type="Float32" repeat="4" default="1.4" />

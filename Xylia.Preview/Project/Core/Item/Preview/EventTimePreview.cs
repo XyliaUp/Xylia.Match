@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Data.Record;
 

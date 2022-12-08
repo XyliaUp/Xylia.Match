@@ -25,7 +25,7 @@
 		<record alias="sound-volume-scale" name="" type="Float32" default="1.0" />
 		<record alias="param8" name="" type="Int8" default="0" repeat="92" />
 		<record alias="decal-radius" name="" type="Float32" default="1.0" />
-                                <!-- ======================================== -->
+		<!-- ======================================== -->
 		<record alias="pc-customize" name="2022年新增" type="Bool" />
 	</list>
 </table>

@@ -35,7 +35,7 @@
 			//this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
 			//this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.Font = new System.Drawing.Font("微软雅黑", 12F);
+			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
 			this.Margin = new System.Windows.Forms.Padding(5);
 			this.Name = "ItemNameCell";
 			this.Size = new System.Drawing.Size(20, 20);

@@ -7,6 +7,7 @@ using Xylia.Preview.Data.Record;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
+
 namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {
 	public partial class ItemGrowth2Page : UserControl
@@ -24,26 +25,20 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		#endregion
 
 
-
 		#region 字段
-		private ItemData m_MyWeapon;
-
 		/// <summary>
 		/// 设置起始物品
 		/// </summary>
 		public ItemData MyWeapon
 		{
-			get => m_MyWeapon;
 			set
 			{
-				m_MyWeapon = value;
-				if (value != null)
-				{
-					this.itemIconCell1.ItemIcon = value.Icon;
-					this.MyWeapon_Name.Text = value.NameText();
-					this.MyWeapon_Name.ItemGrade = value.ItemGrade;
-					this.MyWeapon_Name.Location = new Point(this.itemIconCell1.Left + (this.itemIconCell1.Scale - this.MyWeapon_Name.Width) / 2, this.MyWeapon_Name.Top);
-				}
+				if (value is null) return;
+
+				this.itemIconCell1.ItemIcon = value.Icon;
+				this.MyWeapon_Name.Text = value.NameText();
+				this.MyWeapon_Name.ItemGrade = value.ItemGrade;
+				this.MyWeapon_Name.Location = new Point(this.itemIconCell1.Left + (this.itemIconCell1.Scale - this.MyWeapon_Name.Width) / 2, this.MyWeapon_Name.Top);
 			}
 		}
 		#endregion

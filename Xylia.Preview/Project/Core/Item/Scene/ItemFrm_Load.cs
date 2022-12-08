@@ -8,8 +8,8 @@ using System.Windows.Forms;
 using Xylia.Attribute.Component;
 using Xylia.Drawing.Font;
 using Xylia.Extension;
+using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Enums;
 using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Util;
@@ -37,53 +37,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		AttributePreview AttributePreview { get; set; }
 		#endregion
 
-
-
 		#region 控件属性
 		[Category("Item"), Description("物品详细信息")]
 		public string ItemName { get => this.ItemNameCell.Text; set => this.ItemNameCell.Text = value; }
 
 		public Bitmap TagImage { get => this.ItemNameCell.TagImage; set => this.ItemNameCell.TagImage = value; }
-
-		/// <summary>
-		/// 加载描述 4~6
-		/// </summary>
-		/// <param name="Title"></param>
-		/// <param name="Content"></param>
-		/// <returns></returns>
-		public static TitlePanel LoadDescription(string Title, string Content)
-		{
-			if (string.IsNullOrWhiteSpace(Title) && string.IsNullOrWhiteSpace(Content))
-				return null;
-
-			return new TitleContentPanel()
-			{
-				Title = Title,
-				Content = Content,
-			};
-		}
-
-
-		/// <summary>
-		/// 加载描述
-		/// </summary>
-		public ContentPanel LoadDescription2()
-		{
-			var TextGroup = new List<string>
-			{
-				this.ItemInfo.Description2,
-				this.ItemInfo.IdentifyDescription
-			};
-
-			#region 显示文本到控件 
-			//去除空内容后获得新的数组
-			TextGroup = TextGroup.Where(t => !t.IsNull()).ToList();
-			if (TextGroup.Any()) return new ContentPanel(TextGroup.Aggregate((sum, now) => sum + "<br/>" + now));
-			#endregion
-
-			return null;
-		}
-
 
 
 		#region 道具图标右侧信息处理  
@@ -96,8 +54,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 		public Dictionary<MainAbility, long> ItemAbility { get; set; } = new();
 		#endregion
-
-
 
 
 		/// <summary>
@@ -130,8 +86,50 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 
-
 		#region 载入控件
+		/// <summary>
+		/// 加载描述
+		/// </summary>
+		/// <param name="info"></param>
+		/// <returns></returns>
+		public static ContentPanel LoadDescription2(params string[] info)
+		{
+			var temp = info.Where(t => t != null);
+			if (temp.Any()) return new ContentPanel(temp.Aggregate((sum, now) => sum + "<br/>" + now));
+
+			return null;
+		}
+
+		public static ContentPanel LoadDescription7(string Text)
+		{
+			if (Text is null) return null;
+
+			return new ContentPanel()
+			{
+				Name = "Panel_Description7",
+
+				ForeColor = Xylia.Drawing.Font.Util.GetFontStruct("UI.Label_Green03_12").Color,
+				Text = Text,
+			};
+		}
+
+		/// <summary>
+		/// 加载描述 4~6
+		/// </summary>
+		/// <param name="Title"></param>
+		/// <param name="Content"></param>
+		/// <returns></returns>
+		public static TitlePanel LoadDescription(string Title, string Text)
+		{
+			if (Title is null || Text is null) return null;
+
+			return new TitleContentPanel()
+			{
+				Title = Title,
+				Content = Text,
+			};
+		}
+
 		/// <summary>
 		/// 载入底部控件
 		/// </summary>
@@ -141,7 +139,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// <param name="Font"></param>
 		public void LoadBottomControl(string Tag, string Text, Color? ForeColor = null, Font Font = null)
 		{
-			if (Font is null) Font = new Font("微软雅黑", 10F);
+			if (Font is null) Font = new Font("Microsoft YaHei UI", 10F);
 			if (ForeColor is null) ForeColor = Color.FromArgb(255, 88, 66);
 
 
@@ -149,7 +147,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			var tc = this.BottomControl.Find(c => (string)c.Tag == Tag) ?? new Label()
 			{
 				BackColor = Color.Transparent,
-				Font = new Font("微软雅黑", 10F),
+				Font = new Font("Microsoft YaHei UI", 10F),
 				ForeColor = ForeColor.Value,
 				Text = Text,
 
@@ -180,125 +178,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			Preview.Refresh();
 			this.PreviewList.Add(Preview);
 		}
-
-
-		/// <summary>
-		/// 载入数据
-		/// </summary>
-		private void LoadData()
-		{
-			#region 加载信息
-			this.Text = $"[{ this.ItemInfo.ID }] { this.ItemInfo.ItemName }";
-
-			this.ItemIcon.Image = this.ItemInfo.IconExtra;
-			this.ItemGrade = this.ItemInfo.ItemGrade;
-			this.Category = this.ItemInfo.GameCategory3?.ToString();
-			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
-			this.ItemName = this.ItemInfo.ItemName;
-			this.TagImage = this.ItemInfo.TagIconGrade;
-
-			this.MainInfo = new List<MyInfo>()
-			{
-				new MyInfo(this.ItemInfo.MainInfo),
-				new MyInfo(this.ItemInfo.IdentifyMainInfo),
-			};
-
-			this.SubInfo = new List<MyInfo>()
-			{
-				new MyInfo(this.ItemInfo.SubInfo),
-				new MyInfo(this.ItemInfo.IdentifySubInfo),
-			};
-
-			this.LoadAbility();
-
-
-			//潜力值
-			if (this.ItemInfo.ContainsAttribute("hidden-power-attach", out string HiddenPower))
-				this.LoadBottomControl("hidden-power-attach", "潜力" + HiddenPower, MyColor.Vital_LightYellow);
-
-			//限制使用区域
-			if (this.ItemInfo.ContainsAttribute("valid-attraction-name", out string ValidAttractionName))
-				this.LoadBottomControl("valid-attraction-name", ValidAttractionName.GetText() + "，专用");
-
-			//加载交易信息
-			this.LoadTrade();
-			#endregion
-
-
-
-			#region 根据顺序载入提示工具
-			this.LoadPreview(new ExchangePreview().LoadInfo(this.ItemInfo));
-
-			this.LoadEffectInfo();
-
-			//加载绿字部分信息
-			if (this.ItemInfo.Description7 != null)
-			{
-				this.LoadPreview(new ContentPanel()
-				{
-					Name = "Panel_Description7",
-
-					ForeColor = Xylia.Drawing.Font.Util.GetFontStruct("UI.Label_Green03_12").Color,
-					Text = this.ItemInfo.Description7,
-				});
-			}
-			this.LoadPreview(new SkillTooltipPreview().LoadInfo(this.ItemInfo));
-
-
-			//加载套装信息
-			this.LoadPreview(new SetItemPreview().LoadInfo(this.ItemInfo));
-
-			//加载技能变更信息
-			this.LoadPreview(new SkillByEquipmentTooltip().LoadInfo("skill-by-equipment", FileCache.Data.SkillByEquipment, this.ItemInfo));
-
-			//奖励处理
-			this.LoadReward();
-
-			//加载封印&解印信息
-			this.LoadPreview(new SealPreview().LoadInfo(this.ItemInfo));
-
-			//加载刻印书信息
-			this.LoadPreview(new SlateScrollTooltip().LoadInfo("slate-scroll", FileCache.Data.SlateScroll, this.ItemInfo));
-
-			//加载描述4~6
-			this.LoadPreview(LoadDescription(this.ItemInfo.Description4Title, this.ItemInfo.Description4));
-			this.LoadPreview(LoadDescription(this.ItemInfo.Description5Title, this.ItemInfo.Description5));
-			this.LoadPreview(LoadDescription(this.ItemInfo.Description6Title, this.ItemInfo.Description6));
-
-			//加载描述内容
-			this.LoadPreview(this.LoadDescription2());
-
-			//加载额外内容
-			this.LoadPreview(this.LoadExtraInfo());
-
-			//加载事件信息
-			this.LoadPreview(new EventTimePreview().LoadInfo("event-info", FileCache.Data.ItemEvent, this.ItemInfo));
-
-			//可成长八卦牌属性测试
-			this.AttributePreview.LoadInfo(this.ItemInfo);
-			#endregion
-
-
-			//搜索相关路径
-			//var Recipes = FileCacheData.Data.ItemTransformRecipe.QueryRecipe(ItemInfo);
-			//this.UserOperScene.ItemTransformRecipes = Recipes;
-
-			#region 显示职业信息
-			var JobInfo = this.ItemInfo?.JobInfo;
-			if (JobInfo != null) this.lbl_JobLimit.Text = JobInfo += ", 专用";
-
-			// 判断是否显示控件
-			this.lbl_JobLimit.Visible = JobInfo != null;
-			#endregion
-
-			#region 可用技能测试
-			var Skill3Data = FileCache.Data.Skill3.GetInfo(this.ItemInfo.Attributes["skill3"]);
-			if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
-			#endregion
-		}
 		#endregion
-
-
 
 		#region 载入数据
 		/// <summary>
@@ -414,8 +294,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			#endregion
 
 
-
-
 			#region 加载邮寄费用
 			if (this.ItemInfo.ContainsAttribute("decompose-money-cost", out string Val))
 			{
@@ -514,5 +392,109 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			#endregion
 		}
 		#endregion
+
+
+
+		/// <summary>
+		/// 载入数据
+		/// </summary>
+		private void LoadData()
+		{
+			#region 加载信息
+			this.Text = $"[{ this.ItemInfo.ID }] { this.ItemInfo.ItemName }";
+
+			this.ItemIcon.Image = this.ItemInfo.IconExtra;
+			this.ItemGrade = this.ItemInfo.ItemGrade;
+			this.Category = this.ItemInfo.GameCategory3.ToString();
+			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
+			this.ItemName = this.ItemInfo.ItemName;
+			this.TagImage = this.ItemInfo.TagIconGrade;
+
+			this.MainInfo = new List<MyInfo>()
+			{
+				new MyInfo(this.ItemInfo.MainInfo),
+				new MyInfo(this.ItemInfo.IdentifyMainInfo),
+			};
+
+			this.SubInfo = new List<MyInfo>()
+			{
+				new MyInfo(this.ItemInfo.SubInfo),
+				new MyInfo(this.ItemInfo.IdentifySubInfo),
+			};
+
+			this.LoadAbility();
+
+
+			//潜力值
+			if (this.ItemInfo.ContainsAttribute("hidden-power-attach", out string HiddenPower))
+				this.LoadBottomControl("hidden-power-attach", "潜力" + HiddenPower, MyColor.Vital_LightYellow);
+
+			//限制使用区域
+			if (this.ItemInfo.ContainsAttribute("valid-attraction-name", out string ValidAttractionName))
+				this.LoadBottomControl("valid-attraction-name", ValidAttractionName.GetText() + "，专用");
+
+			//加载交易信息
+			this.LoadTrade();
+
+
+			//显示职业信息
+			var JobInfo = this.ItemInfo?.JobInfo;
+			if (JobInfo != null) this.lbl_JobLimit.Text = JobInfo += ", 专用";
+			this.lbl_JobLimit.Visible = JobInfo != null;
+			#endregion
+
+			#region 载入提示工具 (按纵向顺序)
+			this.LoadPreview(new ExchangePreview().LoadInfo(this.ItemInfo));
+			this.LoadEffectInfo();
+
+			//加载绿字部分信息
+			this.LoadPreview(LoadDescription7(this.ItemInfo.Description7));
+			this.LoadPreview(new SkillTooltipPreview().LoadInfo(this.ItemInfo));
+
+			//加载套装信息
+			this.LoadPreview(new SetItemPreview().LoadInfo(this.ItemInfo));
+
+			//加载技能变更信息
+			this.LoadPreview(new SkillByEquipmentTooltip().LoadInfo("skill-by-equipment", FileCache.Data.SkillByEquipment, this.ItemInfo));
+
+			//加载奖励信息
+			this.LoadReward();
+
+			//加载封印&解印信息
+			this.LoadPreview(new SealPreview().LoadInfo(this.ItemInfo));
+
+			//加载刻印书信息
+			this.LoadPreview(new SlateScrollTooltip().LoadInfo("slate-scroll", FileCache.Data.SlateScroll, this.ItemInfo));
+
+			//加载描述4~6
+			this.LoadPreview(LoadDescription(this.ItemInfo.Description4Title, this.ItemInfo.Description4));
+			this.LoadPreview(LoadDescription(this.ItemInfo.Description5Title, this.ItemInfo.Description5));
+			this.LoadPreview(LoadDescription(this.ItemInfo.Description6Title, this.ItemInfo.Description6));
+
+			//加载描述信息
+			this.LoadPreview(LoadDescription2(this.ItemInfo.Description2, this.ItemInfo.IdentifyDescription));
+
+			//加载额外信息
+			this.LoadPreview(this.LoadExtraInfo());
+
+			//加载事件信息
+			this.LoadPreview(new EventTimePreview().LoadInfo("event-info", FileCache.Data.ItemEvent, this.ItemInfo));
+
+			//加载可成长八卦牌属性信息
+			this.AttributePreview.LoadInfo(this.ItemInfo);
+			#endregion
+
+
+
+
+			//搜索相关路径
+			//var Recipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
+			//this.UserOperScene.ItemTransformRecipes = Recipes;
+
+			#region 可用技能测试
+			var Skill3Data = FileCache.Data.Skill3.GetInfo(this.ItemInfo.Attributes["skill3"]);
+			if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
+			#endregion
+		}
 	}
 }

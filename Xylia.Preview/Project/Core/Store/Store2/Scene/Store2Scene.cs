@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Store.Store2.Util;
 
@@ -87,7 +87,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 				string CurName = Store2Alias;
 				string Name2 = Store2.NameText();
-				if (!Name2.IsNull()) CurName = $"[{ Name2 }] " + CurName;
+				if (Name2 != null) CurName = $"[{ Name2 }] " + CurName;
 
 				int? Order = null;
 

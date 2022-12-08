@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list relative-path="Zone\*\ZoneTeleportPositionData.*" module="ZoneData2" type="ZoneTeleportPosition" version="0.2" retired="n" rule="cpl | extra" >	
 		<record alias="alias" name="alias" type="Index" />
 		<record alias="zone" type="Int32" sort-by="n" />

@@ -38,7 +38,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			this.RewardSelect.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.RewardSelect.ConerRadius = 10;
 			this.RewardSelect.DropPanelHeight = -1;
-			this.RewardSelect.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.RewardSelect.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.RewardSelect.ForeColor = System.Drawing.Color.White;
 			this.RewardSelect.IsRadius = true;
 			this.RewardSelect.IsShowRect = true;

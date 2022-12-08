@@ -52,7 +52,7 @@
 			// 
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(0, 19);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -66,7 +66,7 @@
 			// 
 			this.OptionTitle.AutoSize = true;
 			this.OptionTitle.BackColor = System.Drawing.Color.Transparent;
-			this.OptionTitle.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.OptionTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.OptionTitle.ForeColor = System.Drawing.Color.White;
 			this.OptionTitle.Location = new System.Drawing.Point(94, 36);
 			this.OptionTitle.Name = "OptionTitle";

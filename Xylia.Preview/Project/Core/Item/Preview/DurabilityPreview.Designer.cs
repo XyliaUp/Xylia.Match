@@ -40,7 +40,7 @@
 			this.lbl_Trade_Account.AutoSize = true;
 			this.lbl_Trade_Account.BackColor = System.Drawing.Color.Transparent;
 			this.lbl_Trade_Account.Dock = System.Windows.Forms.DockStyle.Left;
-			this.lbl_Trade_Account.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_Trade_Account.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_Trade_Account.ForeColor = System.Drawing.Color.White;
 			this.lbl_Trade_Account.Location = new System.Drawing.Point(0, 0);
 			this.lbl_Trade_Account.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -65,7 +65,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.Color.White;
 			this.label1.Location = new System.Drawing.Point(78, 1);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);

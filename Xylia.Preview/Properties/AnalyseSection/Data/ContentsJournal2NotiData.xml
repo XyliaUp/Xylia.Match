@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
   <list module="LocalizationData" rule="cpl | extra" version="0.2" type="contentsjournal2noti" check-version="y"> 
 		<record alias="alias" type="Index" />
 		<record alias="description" type="TextAlias" name="" />
 		<record alias="noti-quest-id" type="Quest" name="" />
 		<record alias="noti-level" type="Byte" name="" />
 		<record alias="noti-mastery-level" type="Byte" name="" />
-		<record alias="cave" type="Int32" name="" ref="Cave2" />
-		<record alias="dungeon" type="Int32" name="" ref="Dungeon" />
-		<record alias="raid-dungeon" type="Int32" name="" ref="RaidDungeon" />
-		<record alias="boss-challenge" type="Int32" name="" ref="BossChallenge" />
-		<record alias="duel-bot-challenge" type="Int32" name="" ref="DuelBotChallenge" />
-		<record alias="duel-bot-training-room" type="Int32" name="" ref="DuelBotChallengeTrainingRoom" />
-		<record alias="tendency-field" type="Int32" name="" ref="TendencyField" />
+		<record alias="cave" name="" ref="Cave2" />
+		<record alias="dungeon" name="" ref="Dungeon" />
+		<record alias="raid-dungeon" name="" ref="RaidDungeon" />
+		<record alias="boss-challenge" name="" ref="BossChallenge" />
+		<record alias="duel-bot-challenge" name="" ref="DuelBotChallenge" />
+		<record alias="duel-bot-training-room" name="" ref="DuelBotChallengeTrainingRoom" />
+		<record alias="tendency-field" name="" ref="TendencyField" />
 		<record alias="event" type="Bool" name="" />		
-		<record alias="simple-field" type="Int32" name="" ref="SimpleField" />
-		<record alias="classic-field-zone" type="Int32" name="" ref="ClassicFieldZone" />
+		<record alias="simple-field" name="" ref="SimpleField" />
+		<record alias="classic-field-zone" name="" ref="ClassicFieldZone" />
   </list>
 </table>

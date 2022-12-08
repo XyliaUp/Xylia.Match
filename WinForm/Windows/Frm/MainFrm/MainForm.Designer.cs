@@ -63,7 +63,7 @@
 			this.tvMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.tvMenu.Dock = System.Windows.Forms.DockStyle.Left;
 			this.tvMenu.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-			this.tvMenu.Font = new System.Drawing.Font("微软雅黑", 12F);
+			this.tvMenu.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
 			this.tvMenu.FullRowSelect = true;
 			this.tvMenu.HideSelection = false;
 			this.tvMenu.IsShowByCustomModel = true;
@@ -149,7 +149,7 @@
 			// Footer
 			// 
 			this.Footer.BackColor = System.Drawing.Color.Transparent;
-			this.Footer.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Footer.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.Footer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
 			this.Footer.Location = new System.Drawing.Point(152, 530);
 			this.Footer.Name = "Footer";
@@ -188,7 +188,7 @@
 			// 
 			this.Memory.AutoSize = true;
 			this.Memory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(51)))));
-			this.Memory.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.Memory.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.Memory.ForeColor = System.Drawing.Color.MediumAquamarine;
 			this.Memory.Location = new System.Drawing.Point(1, 529);
 			this.Memory.Name = "Memory";

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-
-	<!-- 刻印系统 -->
 	<list module="ItemData" type="SlateScroll" version="0.4" rule="cpl | extra" >
 		<record alias="alias" type="Index" name ="" />
 		<record alias="ingredient-item" name ="" ref="Item" repeat="5" />

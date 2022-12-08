@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="ZoneData1" type="ZonePathway" version="1.52" retired="n" rule="cpl" >
 		<record alias="zone" name="" type="id" />
 		<record alias="id" name="" type="Short" start="0" />

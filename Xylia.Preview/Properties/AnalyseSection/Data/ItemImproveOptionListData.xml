@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="ItemData" type="item-improve-option-list" version="4.0" rule="cpl" >
 		<record alias="id" type="id" name="" />
 		<record alias="job" seq="$job" type="Seq" name="" start="0" />	

@@ -17,15 +17,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 {
 	public partial class UserOperPanel : Form
 	{
-		#region 构造
-		public UserOperPanel(ItemFrm ParentForm = null)
-		{
-			InitializeComponent();
-
-			this.MyParentForm = ParentForm;
-		}
-		#endregion
-
 		#region 字段
 		public ItemFrm MyParentForm;
 
@@ -37,19 +28,26 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		public int BtnCount = 0;
 		#endregion
 
+		#region 构造
+		public UserOperPanel(ItemFrm ParentForm = null)
+		{
+			InitializeComponent();
+
+			this.MyParentForm = ParentForm;
+		}
+		#endregion
+
+
 		#region 方法
 		private void UserOperScene_Load(object sender, EventArgs e)
 		{
 			this.Width = 50;
-
-
 		}
 
 		private void UserOperPanel_VisibleChanged(object sender, EventArgs e)
 		{
 			this.RefreshLoc();
 		}
-
 
 		public override void Refresh()
 		{
@@ -59,7 +57,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			var OperBtns = new List<Control>();
 
 			if (this.MoreInformation) OperBtns.Add(this.pictureBox2);
-			if (this.HasItemTransform) OperBtns.Add(this.pictureBox1);
+			if (true || this.HasItemTransform) OperBtns.Add(this.pictureBox1);
 
 			BtnCount = OperBtns.Count;
 			#endregion
@@ -96,83 +94,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				//必须等开始加载了才能进行定位
 				this.Left = ScreenPoint.X - this.Width;
 				this.Top = ScreenPoint.Y;
-			}
-		}
-		#endregion
-
-
-		#region ItemGrowth
-		public IEnumerable<ItemTransformRecipe> ItemTransformRecipes { get; set; }
-
-		/// <summary>
-		/// 拥有物品进化信息
-		/// </summary>
-		public bool HasItemTransform => this.ItemTransformRecipes != null && this.ItemTransformRecipes.Any();
-
-		private void pictureBox2_Click(object sender, EventArgs e)
-		{
-			var thread = new Thread(act =>
-			{
-				var Preview = new DataGridScene(MyParentForm?.ItemInfo.Attributes.Attributes, ParamTable);
-				if (Preview != null)
-				{
-					Preview.Text = $"查看字段 { MyParentForm?.ItemInfo?.NameText() }";
-					Preview.ShowDialog();
-				}
-			});
-
-			thread.SetApartmentState(ApartmentState.STA);
-			thread.Start();
-		}
-
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-			var thread = new Thread(act =>
-			{
-				var Preview = new ItemGrowthScene();
-				Preview.ShowItemGrowth2(MyParentForm?.ItemInfo, ItemTransformRecipes);
-
-				if (Preview != null) Preview.ShowDialog();
-			});
-
-			thread.SetApartmentState(ApartmentState.STA);
-			thread.Start();
-		}
-		#endregion
-
-
-
-		#region 静态数据 (进行缓存)
-		private static ParamTable m_ParamTable;
-
-		public static ParamTable ParamTable
-		{
-			get
-			{
-				if (m_ParamTable is null)
-				{
-					#region 获取参数对应关系
-					m_ParamTable = new ParamTable();
-
-					var XmlDoc = new XmlDocument();
-
-					var res = DataRes.ItemData_v39;
-					if (res is null) return null;
-
-					XmlDoc.LoadXml(res);
-					foreach (XmlNode test in XmlDoc.SelectNodes("//list//record[@alias!=''][@name!='']"))
-					{
-						string Alias = test.Attributes["alias"]?.Value;
-						string Name = test.Attributes["name"]?.Value;
-						string Filter = test.Attributes["filter"]?.Value;
-
-						if (!m_ParamTable.ParamRelative.ContainsKey(Alias))
-							m_ParamTable.ParamRelative.Add(Alias, Name);
-					}
-					#endregion
-				}
-
-				return m_ParamTable;
 			}
 		}
 		#endregion
@@ -363,6 +284,84 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			else return EnumMousePointPosition.MouseSizeNone;
 		}
 		#endregion
+		#endregion
+
+
+
+
+		#region 查看字段
+		private void pictureBox2_Click(object sender, EventArgs e)
+		{
+			var thread = new Thread(act =>
+			{
+				var Preview = new DataGridScene(MyParentForm?.ItemInfo.Attributes.Attributes, ParamTable);
+				if (Preview != null)
+				{
+					Preview.Text = $"查看字段 { MyParentForm?.ItemInfo?.NameText() }";
+					Preview.ShowDialog();
+				}
+			});
+
+			thread.SetApartmentState(ApartmentState.STA);
+			thread.Start();
+		}
+
+
+		private static ParamTable m_ParamTable;
+
+		public static ParamTable ParamTable
+		{
+			get
+			{
+				if (m_ParamTable is null)
+				{
+					#region 获取参数对应关系
+					m_ParamTable = new ParamTable();
+
+					var XmlDoc = new XmlDocument();
+
+					var res = DataRes.ItemData_v39;
+					if (res is null) return null;
+
+					XmlDoc.LoadXml(res);
+					foreach (XmlNode test in XmlDoc.SelectNodes("//list//record[@alias!=''][@name!='']"))
+					{
+						string Alias = test.Attributes["alias"]?.Value;
+						string Name = test.Attributes["name"]?.Value;
+
+						if (!m_ParamTable.ParamRelative.ContainsKey(Alias))
+							m_ParamTable.ParamRelative.Add(Alias, Name);
+					}
+					#endregion
+				}
+
+				return m_ParamTable;
+			}
+		}
+		#endregion
+
+		#region 查看提炼
+		/// <summary>
+		/// 拥有物品进化信息
+		/// </summary>
+		public bool HasItemTransform => this.ItemTransformRecipes != null && this.ItemTransformRecipes.Any();
+
+
+		public IEnumerable<ItemTransformRecipe> ItemTransformRecipes { get; set; }
+
+		private void pictureBox1_Click(object sender, EventArgs e)
+		{
+			var thread = new Thread(act =>
+			{
+				var Preview = new ItemGrowthScene();
+				Preview.ShowItemGrowth2(MyParentForm?.ItemInfo, ItemTransformRecipes);
+
+				if (Preview != null) Preview.ShowDialog();
+			});
+
+			thread.SetApartmentState(ApartmentState.STA);
+			thread.Start();
+		}
 		#endregion
 	}
 }

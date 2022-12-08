@@ -38,7 +38,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// 
 			this.lbl_MainInfo.BackColor = System.Drawing.Color.Transparent;
 			this.lbl_MainInfo.BasicLineHeight = 20;
-			this.lbl_MainInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_MainInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_MainInfo.ForeColor = System.Drawing.Color.White;
 			this.lbl_MainInfo.Location = new System.Drawing.Point(0, 0);
 			this.lbl_MainInfo.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -51,7 +51,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// 
 			this.panelContent1.BackColor = System.Drawing.Color.Transparent;
 			this.panelContent1.BasicLineHeight = 20;
-			this.panelContent1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.panelContent1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.panelContent1.ForeColor = System.Drawing.Color.Yellow;
 			this.panelContent1.Location = new System.Drawing.Point(136, 0);
 			this.panelContent1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -66,7 +66,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.panelContent1);
 			this.Controls.Add(this.lbl_MainInfo);
-			this.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ForeColor = System.Drawing.Color.Black;
 			this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
 			this.Name = "AttributeInfoCell";

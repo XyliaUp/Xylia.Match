@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<!-- 
-    编辑者：   Xylia 
-	内容说明： 炫耀喇叭
-	更新时间： 2021年6月12日17:16:58
-	版本说明：            
--->
 	<list module="ItemData" type="boast-event" version="4.0" rule="complete" check-version="y" >
 		<record alias="type" type="type" name="" >
 			<case alias="transform-item" name="" />
@@ -20,13 +14,16 @@
 			<case alias="process-item-fusion" name="" />
 			<case alias="treasureboard-season-reward" name="" />
 			<case alias="treasure-board" name="" />
-			<case alias="improve-item" name="" />			
+			<case alias="improve-item" name="" />
 		</record>
 
 
-		<record alias="id" type="id" name ="" apply="auto" output="n" />
 		<record alias="alias" type="Index" name ="" />
-		<record alias="broadcast" type="Byte" name ="" seq="0=guild|1=world" />
+		<record alias="broadcast" type="Seq" name ="" >
+			<case alias="guild" name="" />
+			<case alias="world" name="" />
+		</record>
+
 
 		<!-- ========================= transform-item ======================= -->
 		<record alias="boast-from-recipe" name ="" filter="transform-item" ref="ItemTransformRecipe" />
@@ -39,7 +36,7 @@
 		<!-- ================================================================ -->
 
 		<!-- ====================== buy-random-store-item ================== -->
-		<record  alias="boast-from-random-store" name ="" filter="buy-random-store-item" ref="RandomStore" />
+		<record alias="boast-from-random-store" name ="" filter="buy-random-store-item" ref="RandomStore" />
 		<record alias="boast-item" name ="" filter="buy-random-store-item" ref="Item" />
 		<!-- ================================================================ -->
 
@@ -82,9 +79,8 @@
 		<!-- ================================================================ -->
 
 		<!-- ======================== improve-item ========================= -->
-		<record type="Int32" alias="improve-id" name ="" filter="improve-item" />
-		<record type="Byte" alias="improve-level" name ="" filter="improve-item" />
+		<record alias="improve-id" type="Int32" name ="" filter="improve-item" />
+		<record alias="improve-level" type="Byte" name ="" filter="improve-item" />
 		<!-- ================================================================ -->
-
 	</list>
 </table>

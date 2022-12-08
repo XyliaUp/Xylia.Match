@@ -3,9 +3,7 @@
 	<list module="ItemData" type="account-post-charge" version="0.1" rule="cpl | extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="charge-money" name="" type="Int32" />
-		<record alias="charge-item-1" ref="Item" name="" />
-		<record alias="charge-item-2" ref="Item" name="" />
-		<record alias="charge-item-amount-1" name="" out-cond="Exist: charge-item-1" type="Int32" />
-		<record alias="charge-item-amount-2" name="" out-cond="Exist: charge-item-2" type="Int32" />
+		<record alias="charge-item" ref="Item" name="" repeat="2" />
+		<record alias="charge-item-amount" name="" type="Int32" repeat="2" />
 	</list>
 </table>

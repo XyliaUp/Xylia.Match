@@ -1,7 +1,7 @@
 ﻿using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 
-namespace Xylia.Preview.Project.Common.Interface
+namespace Xylia.Preview.Common.Interface
 {
 	/// <summary>
 	/// 通用化配置文件 record 接口

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list alias="ZoneEnv2PlaceData" module="ZoneData0" type="ZoneEnv2Place" version="0.7" retired="n" rule="cpl | extra" >
     <record alias="type" name="" type="type" >
         <case alias="button" />

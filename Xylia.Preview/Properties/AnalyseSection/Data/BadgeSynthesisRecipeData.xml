@@ -5,6 +5,6 @@
 		<record alias="score" name="" start="0" type="Int32" />
 		<record alias="alias" name="" type="Index" />
 	    <!-- ================================================== -->
-		<record alias="result-item-1" name="" type="" ref="Item" repeat="40" client="n" />
+		<record alias="result-item" name="" type="" ref="Item" repeat="40" client="n" />
 	</list>
 </table>

@@ -52,7 +52,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// 
 			this.PanelContent.BackColor = System.Drawing.Color.Transparent;
 			this.PanelContent.BasicLineHeight = 20;
-			this.PanelContent.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.PanelContent.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.PanelContent.ForeColor = System.Drawing.Color.White;
 			this.PanelContent.Location = new System.Drawing.Point(33, 0);
 			this.PanelContent.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
@@ -70,7 +70,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.PanelContent);
 			this.Controls.Add(this.CountTooltip);
-			this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.Name = "SetItemEffect";
 			this.Size = new System.Drawing.Size(131, 26);

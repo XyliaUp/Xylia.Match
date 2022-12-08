@@ -37,7 +37,6 @@ namespace Xylia.Preview.Data
 			}
 			#endregion
 
-
 			if (int.TryParse(Alias, out int MainID)) return this[MainID];
 			else return this[Alias];
 		}

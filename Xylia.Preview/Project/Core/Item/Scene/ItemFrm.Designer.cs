@@ -63,7 +63,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// 
 			this.lbl_Category.AutoSize = true;
 			this.lbl_Category.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_Category.Font = new System.Drawing.Font("微软雅黑", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_Category.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_Category.ForeColor = System.Drawing.SystemColors.ControlLightLight;
 			this.lbl_Category.Location = new System.Drawing.Point(393, 3);
 			this.lbl_Category.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -79,7 +79,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// 
 			this.lbl_JobLimit.AutoSize = true;
 			this.lbl_JobLimit.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_JobLimit.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_JobLimit.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_JobLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(88)))), ((int)(((byte)(66)))));
 			this.lbl_JobLimit.Location = new System.Drawing.Point(1, 292);
 			this.lbl_JobLimit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -92,7 +92,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// 
 			this.lbl_Trade_Account.AutoSize = true;
 			this.lbl_Trade_Account.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_Trade_Account.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_Trade_Account.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_Trade_Account.ForeColor = System.Drawing.Color.White;
 			this.lbl_Trade_Account.Location = new System.Drawing.Point(1, 341);
 			this.lbl_Trade_Account.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -152,7 +152,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// 
 			this.lbl_MainInfo.BackColor = System.Drawing.Color.Transparent;
 			this.lbl_MainInfo.BasicLineHeight = 24;
-			this.lbl_MainInfo.Font = new System.Drawing.Font("微软雅黑", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_MainInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_MainInfo.ForeColor = System.Drawing.Color.White;
 			this.lbl_MainInfo.Location = new System.Drawing.Point(108, 42);
 			this.lbl_MainInfo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -164,7 +164,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// 
 			this.lbl_SubInfo.BackColor = System.Drawing.Color.Transparent;
 			this.lbl_SubInfo.BasicLineHeight = 20;
-			this.lbl_SubInfo.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_SubInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_SubInfo.ForeColor = System.Drawing.Color.White;
 			this.lbl_SubInfo.Location = new System.Drawing.Point(111, 79);
 			this.lbl_SubInfo.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
@@ -178,7 +178,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.PricePreview.BackColor = System.Drawing.Color.Transparent;
 			this.PricePreview.CurrencyCount = 1;
 			this.PricePreview.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
-			this.PricePreview.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.PricePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.PricePreview.FontStyle = System.Drawing.FontStyle.Regular;
 			this.PricePreview.ForeColor = System.Drawing.Color.White;
 			this.PricePreview.Location = new System.Drawing.Point(346, 445);
@@ -192,7 +192,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// 
 			this.ItemNameCell.AutoSize = true;
 			this.ItemNameCell.BackColor = System.Drawing.Color.Transparent;
-			this.ItemNameCell.Font = new System.Drawing.Font("微软雅黑", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ItemNameCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ItemNameCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
 			this.ItemNameCell.ItemGrade = 8;
 			this.ItemNameCell.Location = new System.Drawing.Point(2, 1);

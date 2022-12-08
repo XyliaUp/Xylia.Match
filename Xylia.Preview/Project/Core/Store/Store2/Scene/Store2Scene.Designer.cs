@@ -52,7 +52,7 @@
 			// ucBtnExt1
 			// 
 			this.ucBtnExt1.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt1.BtnFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt1.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.ucBtnExt1.BtnText = "出售NPC";
 			this.ucBtnExt1.ConerRadius = 8;
@@ -60,7 +60,7 @@
 			this.ucBtnExt1.DialogResult = System.Windows.Forms.DialogResult.None;
 			this.ucBtnExt1.EnabledMouseEffect = false;
 			this.ucBtnExt1.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt1.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnExt1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnExt1.IsRadius = true;
 			this.ucBtnExt1.IsShowRect = true;
 			this.ucBtnExt1.IsShowTips = false;
@@ -94,7 +94,7 @@
 			this.JobSelector.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.JobSelector.ConerRadius = 10;
 			this.JobSelector.DropPanelHeight = -1;
-			this.JobSelector.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.JobSelector.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.JobSelector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.JobSelector.IsRadius = true;
 			this.JobSelector.IsShowRect = true;

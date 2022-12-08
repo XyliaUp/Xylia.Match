@@ -51,7 +51,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			// 
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(313, 187);
+			this.pictureBox1.Location = new System.Drawing.Point(313, 238);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(64, 64);
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -62,9 +63,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			// 
 			this.MyWeapon_Title.AutoSize = true;
 			this.MyWeapon_Title.BackColor = System.Drawing.Color.Transparent;
-			this.MyWeapon_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.MyWeapon_Title.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.MyWeapon_Title.ForeColor = System.Drawing.Color.White;
-			this.MyWeapon_Title.Location = new System.Drawing.Point(36, 12);
+			this.MyWeapon_Title.Location = new System.Drawing.Point(42, 17);
+			this.MyWeapon_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.MyWeapon_Title.Name = "MyWeapon_Title";
 			this.MyWeapon_Title.Size = new System.Drawing.Size(74, 21);
 			this.MyWeapon_Title.TabIndex = 11;
@@ -74,9 +76,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			// 
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.Transparent;
-			this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(285, 12);
+			this.label1.Location = new System.Drawing.Point(332, 17);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(74, 21);
 			this.label1.TabIndex = 17;
@@ -85,7 +88,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			// pictureBox2
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(24, 51);
+			this.pictureBox2.Location = new System.Drawing.Point(28, 72);
+			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(96, 72);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -96,13 +100,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			// 
 			this.MyWeapon_Name.AutoSize = true;
 			this.MyWeapon_Name.BackColor = System.Drawing.Color.Transparent;
-			this.MyWeapon_Name.Font = new System.Drawing.Font("微软雅黑", 11F);
+			this.MyWeapon_Name.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.MyWeapon_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
-			this.MyWeapon_Name.ItemGrade = 7;
-			this.MyWeapon_Name.Location = new System.Drawing.Point(40, 126);
-			this.MyWeapon_Name.Margin = new System.Windows.Forms.Padding(5);
+			this.MyWeapon_Name.ItemGrade = ((byte)(7));
+			this.MyWeapon_Name.Location = new System.Drawing.Point(47, 178);
+			this.MyWeapon_Name.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.MyWeapon_Name.Name = "MyWeapon_Name";
-			this.MyWeapon_Name.Size = new System.Drawing.Size(63, 20);
+			this.MyWeapon_Name.Size = new System.Drawing.Size(63, 19);
 			this.MyWeapon_Name.TabIndex = 23;
 			this.MyWeapon_Name.TagImage = null;
 			this.MyWeapon_Name.Text = "物品名称";
@@ -116,10 +120,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell1.ExtraTopRight = null;
 			this.itemIconCell1.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell1.FrameImage = null;
+			this.itemIconCell1.FrameType = true;
 			this.itemIconCell1.ItemIcon = null;
-			this.itemIconCell1.Location = new System.Drawing.Point(40, 55);
+			this.itemIconCell1.Location = new System.Drawing.Point(43, 75);
+			this.itemIconCell1.Margin = new System.Windows.Forms.Padding(4);
 			this.itemIconCell1.Name = "itemIconCell1";
-			this.itemIconCell1.Scale = 63;
+			this.itemIconCell1.Scale = 64;
 			this.itemIconCell1.ShowStackCount = false;
 			this.itemIconCell1.ShowStackCountOnlyOne = true;
 			this.itemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -130,10 +136,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			// warningPreview1
 			// 
 			this.warningPreview1.AutoSize = true;
+			this.warningPreview1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.warningPreview1.BackColor = System.Drawing.Color.Transparent;
-			this.warningPreview1.Location = new System.Drawing.Point(217, 639);
+			this.warningPreview1.Location = new System.Drawing.Point(127, 639);
+			this.warningPreview1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.warningPreview1.Name = "warningPreview1";
-			this.warningPreview1.Size = new System.Drawing.Size(221, 35);
+			this.warningPreview1.Size = new System.Drawing.Size(439, 49);
 			this.warningPreview1.TabIndex = 20;
 			this.warningPreview1.Type = Xylia.Preview.Data.Record.ItemTransformRecipe.Warning.Stuck;
 			// 
@@ -142,9 +150,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.fixedIngredientPreview1.BackColor = System.Drawing.Color.Transparent;
 			this.fixedIngredientPreview1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.fixedIngredientPreview1.Controls.Add(this.moneyCostPreview1);
-			this.fixedIngredientPreview1.Location = new System.Drawing.Point(3, 425);
+			this.fixedIngredientPreview1.Location = new System.Drawing.Point(4, 421);
+			this.fixedIngredientPreview1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.fixedIngredientPreview1.Name = "fixedIngredientPreview1";
-			this.fixedIngredientPreview1.Size = new System.Drawing.Size(673, 208);
+			this.fixedIngredientPreview1.Size = new System.Drawing.Size(675, 273);
 			this.fixedIngredientPreview1.TabIndex = 0;
 			// 
 			// moneyCostPreview1
@@ -153,31 +162,34 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.moneyCostPreview1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.moneyCostPreview1.BackColor = System.Drawing.Color.Transparent;
 			this.moneyCostPreview1.Location = new System.Drawing.Point(136, 145);
+			this.moneyCostPreview1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.moneyCostPreview1.MaximumSize = new System.Drawing.Size(400, 0);
-			this.moneyCostPreview1.MoneyCost = ((int)(3000ul));
+			this.moneyCostPreview1.MoneyCost = 3000;
 			this.moneyCostPreview1.Name = "moneyCostPreview1";
-			this.moneyCostPreview1.Size = new System.Drawing.Size(400, 50);
+			this.moneyCostPreview1.Size = new System.Drawing.Size(400, 63);
 			this.moneyCostPreview1.TabIndex = 12;
 			// 
 			// resultWeaponPreview1
 			// 
 			this.resultWeaponPreview1.BackColor = System.Drawing.Color.Transparent;
-			this.resultWeaponPreview1.Location = new System.Drawing.Point(198, 43);
+			this.resultWeaponPreview1.Location = new System.Drawing.Point(182, 44);
+			this.resultWeaponPreview1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.resultWeaponPreview1.Name = "resultWeaponPreview1";
-			this.resultWeaponPreview1.Size = new System.Drawing.Size(478, 138);
+			this.resultWeaponPreview1.Size = new System.Drawing.Size(497, 138);
 			this.resultWeaponPreview1.TabIndex = 0;
 			// 
 			// subIngredientPreview1
 			// 
 			this.subIngredientPreview1.BackColor = System.Drawing.Color.Transparent;
-			this.subIngredientPreview1.Location = new System.Drawing.Point(3, 312);
+			this.subIngredientPreview1.Location = new System.Drawing.Point(0, 328);
+			this.subIngredientPreview1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.subIngredientPreview1.Name = "subIngredientPreview1";
-			this.subIngredientPreview1.Size = new System.Drawing.Size(673, 107);
+			this.subIngredientPreview1.Size = new System.Drawing.Size(679, 104);
 			this.subIngredientPreview1.TabIndex = 1;
 			// 
 			// ItemGrowth2Page
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Transparent;
@@ -193,8 +205,9 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.Controls.Add(this.resultWeaponPreview1);
 			this.Controls.Add(this.subIngredientPreview1);
 			this.Controls.Add(this.pictureBox2);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ItemGrowth2Page";
-			this.Size = new System.Drawing.Size(679, 703);
+			this.Size = new System.Drawing.Size(684, 700);
 			this.SizeChanged += new System.EventHandler(this.ItemGrowth2Page_SizeChanged);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

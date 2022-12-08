@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Linq;
 
 using Xylia.Extension;
-using Xylia.Preview.Project.Common.Extension;
-using Xylia.Preview.Project.Common.Interface;
+using Xylia.Preview.Common.Extension;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Preview.Data.Record;

@@ -41,7 +41,7 @@
 			this.ucDataGridView2.Columns = null;
 			this.ucDataGridView2.DataSource = null;
 			this.ucDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ucDataGridView2.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucDataGridView2.HeadFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucDataGridView2.HeadHeight = 40;
 			this.ucDataGridView2.HeadPadingLeft = 0;
 			this.ucDataGridView2.HeadTextColor = System.Drawing.Color.Black;

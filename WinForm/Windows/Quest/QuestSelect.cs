@@ -6,8 +6,6 @@ using System.Threading;
 using System.Windows.Forms;
 
 using Xylia.Extension;
-using Xylia.Preview;
-using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Helper;
 using Xylia.Preview.Project.Core.Quest.Preview;
 using Xylia.Resources;
@@ -29,17 +27,6 @@ namespace Xylia.Match.Windows
 		}
 		#endregion
 
-		#region 字段
-		readonly Thread thread = null;
-
-		/// <summary>
-		/// 缓存上一次的搜索框文字
-		/// </summary>
-		public static string LastSearchRule { get; set; }
-
-		private bool inprogress = false;
-		#endregion
-
 
 		#region 控件方法
 		private void ListBox1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -52,10 +39,12 @@ namespace Xylia.Match.Windows
 				return;
 			}
 
-			thread?.Interrupt();
 
 			MySet.Core.Quest_Select = SelItem.id;
-			Execute.MyShowDialog(new QuestPreview(SelItem));
+
+			var thread = new Thread(act => new QuestPreview(SelItem).ShowDialog());
+			thread.SetApartmentState(ApartmentState.STA);
+			thread.Start();
 		}
 
 		private void ListBox1_DrawItem(object sender, DrawItemEventArgs e)
@@ -76,7 +65,6 @@ namespace Xylia.Match.Windows
 			//焦点框 
 			e.DrawFocusRectangle();
 			#endregion
-
 
 			#region 绘制图标
 			Graphics g = e.Graphics;
@@ -140,6 +128,12 @@ namespace Xylia.Match.Windows
 			this.Refresh();
 		}
 
+
+
+		bool inprogress = false;
+
+		public static string LastSearchRule { get; set; }
+
 		private void textBoxEx1_TextChanged(object sender, EventArgs e)
 		{
 			if (inprogress) return;
@@ -159,7 +153,7 @@ namespace Xylia.Match.Windows
 		}
 		#endregion
 
-		#region 处理函数
+		#region 处理方法
 		/// <summary>
 		/// 加载数据
 		/// </summary>

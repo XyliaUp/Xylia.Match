@@ -34,7 +34,7 @@
 			// lbl_Title
 			// 
 			this.lbl_Title.AutoSize = true;
-			this.lbl_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.lbl_Title.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_Title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(99)))));
 			this.lbl_Title.Location = new System.Drawing.Point(0, 0);
 			this.lbl_Title.Name = "lbl_Title";

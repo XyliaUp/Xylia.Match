@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<table>
-	<list id="53" alias="ClosetGroup" module="ItemData" type="closet-group" version="0.14" rule="cpl" check-version="y" >
-		<record alias="id" type="id" name=""/>
-		<record alias="item-to-be-paid" ref="Item" start="24" />
-	</list>
-</table>

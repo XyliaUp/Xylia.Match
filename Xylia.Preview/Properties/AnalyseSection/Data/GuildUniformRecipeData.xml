@@ -2,12 +2,9 @@
 <table>
 	<list id="147" alias="GuildUniformRecipe" module="ItemData" type="GuildUniformRecipe" version="0.1" rule="cpl" >
 		<record alias="recipe-id" name="" type="ID" />
-		<record alias="required-item-1" name="" ref="Item" />
-		<record alias="required-item-2" name="" ref="Item" />
-		<record alias="required-item-count-1" name="" type="Int32" />
-		<record alias="required-item-count-2" name="" type="Int32" />
-		<record alias="required-item-is-bm-1" name="" type="Bool" />
-		<record alias="required-item-is-bm-2" name="" type="Bool" />
+		<record alias="required-item" name="" ref="Item" repeat="2" />
+		<record alias="required-item-count" name="" type="Int32" repeat="2" />
+		<record alias="required-item-is-bm" name="" type="Bool" repeat="2" />
 		<record alias="bank-money" name="" type="Int32" />
 		<record alias="bank-required-item" name="" ref="Item" repeat="5" />
 		<record alias="bank-required-item-count" name="" type="Int32" repeat="5" />

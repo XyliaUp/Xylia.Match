@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table side="common" version="1.02">
+<table>
 	<list module="ItemData" rule="cpl" type="item-random-effect-group" version="0.1">
 		<record alias="id" name="" type="id" />	
 		<record alias="alias" name="" type="Index" />
