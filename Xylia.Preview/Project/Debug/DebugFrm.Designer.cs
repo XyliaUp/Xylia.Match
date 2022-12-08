@@ -63,12 +63,7 @@ namespace Xylia.Preview
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-<<<<<<< HEAD
 			this.ClientSize = new System.Drawing.Size(773, 488);
-=======
-			this.ClientSize = new System.Drawing.Size(336, 256);
-			this.Controls.Add(this.contentPanel1);
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;

@@ -604,11 +604,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-<<<<<<< HEAD
 			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-=======
-			this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			this.label2.Location = new System.Drawing.Point(9, 85);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
@@ -1030,11 +1026,7 @@
 			this.Switch_Mode.Checked = true;
 			this.Switch_Mode.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
 			this.Switch_Mode.FalseTextColr = System.Drawing.Color.White;
-<<<<<<< HEAD
 			this.Switch_Mode.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-=======
-			this.Switch_Mode.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			this.Switch_Mode.Location = new System.Drawing.Point(18, 14);
 			this.Switch_Mode.Name = "Switch_Mode";
 			this.Switch_Mode.Size = new System.Drawing.Size(120, 48);

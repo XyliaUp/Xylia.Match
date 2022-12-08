@@ -18,29 +18,15 @@ namespace Xylia.Preview.Third.Content
 			int RowIdx = 1;
 			var CurRow = MainSheet.CreateRow(RowIdx++);
 
-
-<<<<<<< HEAD
 			var ImproveId = FileCache.Data.Item[2847886, 1].Attributes["improve-id"];
-=======
-			var ImproveId = FileCache.Data.Item[2847886].Attributes["improve-id"];
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			if (ImproveId is null) return;
-
 
 			int Index = 1;
 			var improves = FileCache.Data.ItemImprove.Where(o => o.ID == int.Parse(ImproveId) && o.SuccessOptionListId != 0);
-<<<<<<< HEAD
 			foreach (var improve in improves)
 			{
 				var optionlist = FileCache.Data.ItemImproveOptionList[improve.SuccessOptionListId];
 				System.Diagnostics.Debug.WriteLine($"\n {improve.Level} 强化成功时追加第{Index++}个强化效果 ↓↓↓   重置钱币: {optionlist.DrawCostMoney1} {optionlist.DrawCostMainItem1}");
-=======
-			foreach(var improve in improves)
-			{
-				var optionlist = FileCache.Data.ItemImproveOptionList[improve.SuccessOptionListId];
-				System.Diagnostics.Debug.WriteLine($"\n {improve.Level} 强化成功时追加第{Index++}个强化效果 ↓↓↓   钱币: {optionlist.DrawCostMoney1}");
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
-
 
 				for (int i = 1; i <= 100; i++)
 				{

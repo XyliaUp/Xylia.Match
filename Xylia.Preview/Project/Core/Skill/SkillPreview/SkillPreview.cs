@@ -192,17 +192,10 @@ namespace Xylia.Preview.Project.Core.Skill
 
 				SkillTooltipAttribute.ArgType.Time => (float)ValueConvert / 1000 + "秒",
 				SkillTooltipAttribute.ArgType.StackCount => ValueConvert,
-<<<<<<< HEAD
 				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.Program.Fontset_ItemGrade_6\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
 				SkillTooltipAttribute.ArgType.HealPercent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.DrainPercent => null,
 				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.Program.Fontset_ItemGrade_4\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
-=======
-				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.UI.Label_LightYellow_12\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.HealPercent => (float)ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.DrainPercent => null,
-				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.UI.Label_LightYellow_12\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 				SkillTooltipAttribute.ArgType.ConsumePercent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.ProbabilityPercent => (float)ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.StanceType => Arg.ToEnum<Stance>().GetDescription(),

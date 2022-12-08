@@ -223,11 +223,8 @@
   <data name="ItemBrandData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itembranddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-<<<<<<< HEAD
+
   <data name="ItemBrandTooltipData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-=======
-  <data name="ItemBrandTooltipData1" type="System.Resources.ResXFileRef, System.Windows.Forms">
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
     <value>data\itembrandtooltipdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemBuyPriceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -284,7 +281,7 @@
   <data name="JobStyleData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\jobstyledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
-<<<<<<< HEAD
+
   <data name="JumpingCharacter2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\jumpingcharacter2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
@@ -306,11 +303,8 @@
   <data name="KeyCapData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\keycapdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
-=======
-  <data name="KeyCapData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\keycapdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
+
+
   <data name="KeyCommandData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\keycommanddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>

@@ -78,14 +78,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				System.Diagnostics.Trace.WriteLine("绑定的任务奖励数量: " + Rewards.Count);
 			}
 
-
-
 			//载入追加奖励信息
-<<<<<<< HEAD:Xylia.Preview/Project/Core/Quest/Preview/Reward/RewardInfo.cs
 			var QuestBonusRewardSetting = FileCache.Data.QuestBonusRewardSetting.Where(o => int.TryParse(o.Quest, out var QuestID) ? QuestID == Quest.id : o.Quest == Quest.Alias);
-=======
-			var QuestBonusRewardSetting = FileCache.Data.QuestBonusRewardSetting.Where(o => o.Quest == Quest.Alias);
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068:Xylia.Preview/Project/Core/Quest/Preview/SubGroup/Reward/RewardInfo.cs
 			if (QuestBonusRewardSetting.Any())
 			{
 				this.GroupText += " (当前任务包含特别奖励，尚未支持处理)";

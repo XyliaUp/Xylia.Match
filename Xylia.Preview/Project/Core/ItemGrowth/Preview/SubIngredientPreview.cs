@@ -70,8 +70,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				//	{
 				//		Image = ItemInfo.Icon,
 				//		ItemAlias = ItemInfo.Alias,
-
-<<<<<<< HEAD
 				//		StackCount = (uint)Recipe.SubIngredientStackCount1,
 				//	};
 				//}
@@ -89,25 +87,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				//	}
 				//}
 				//else Console.WriteLine("未知的信息 " + Recipe.SubIngredient1);
-=======
-						StackCount = (uint)Recipe.SubIngredientStackCount1,
-					};
-				}
-				else if (ResultItem is ItemBrand ItemBrand)
-				{
-					//搜索对象
-					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Recipe.SubIngredientConditionType1);
-					if (ItemTooltip != null)
-					{
-						ItemIconCell = new FeedItemIconCell
-						{
-							Image = ItemTooltip?.MainIcon(),
-							ItemAlias = ItemBrand.Alias + "_" + ItemTooltip?.ItemConditionType + $" ({ ItemTooltip.Name2.GetText() })",
-						};
-					}
-				}
-				else Console.WriteLine("未知的信息 " + Recipe.SubIngredient1);
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 				#endregion
 
 				#region 绑定委托

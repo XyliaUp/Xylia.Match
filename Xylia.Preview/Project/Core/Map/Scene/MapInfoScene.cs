@@ -32,15 +32,13 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			var MapGroup1 = FileCache.Data.MapGroup1[MapInfo.MapGroup1];
 			var MapGroup2 = FileCache.Data.MapGroup2[MapInfo.MapGroup2];
 
-<<<<<<< HEAD
+
 			if (MapInfo.ParentMapinfo != null)
 			{
 				this.OpenParentMap.Visible = true;
 				this.OpenParentMap.Click += new EventHandler((o, e) => Execute.MyShowDialog(new MapInfoScene(MapInfo.ParentMapinfo)));
 			}
 
-=======
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 
 			Trace.WriteLine(MapInfo.Attributes);
 
@@ -87,10 +85,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			}
 		}
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 		/// <summary>
 		/// 转换为当前坐标点
 		/// </summary>

@@ -40,11 +40,7 @@ namespace Xylia.Preview.Project.Core.Skill
 		{
 			this.TraitTiers = new();
 
-<<<<<<< HEAD
 			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced2))
-=======
-			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced3))
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			{
 				if (SkillTrait.Tier == 0)
 				{

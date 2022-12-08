@@ -1,9 +1,4 @@
-﻿using Xylia.Attribute.Component;
-<<<<<<< HEAD
-using Xylia.Preview.Common.Interface;
-=======
-using Xylia.Preview.Project.Common.Interface;
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
+﻿using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {

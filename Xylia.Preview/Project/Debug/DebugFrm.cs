@@ -1,14 +1,6 @@
 ﻿using System;
-<<<<<<< HEAD
-using System.Collections.Generic;
 using System.Windows.Forms;
 
-using Xylia.Preview.Project.Core.RandomStore.Cell;
-
-=======
-using System.Windows.Forms;
-
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 namespace Xylia.Preview
 {
 	public partial class DebugFrm : Form
@@ -21,8 +13,6 @@ namespace Xylia.Preview
 		private void DebugFrm_Load(object sender, EventArgs e)
 		{
 			//this.contentPanel1.Text = "<p justification=\"true\" justificationtype=\"linefeedbywidgetarea\"><link id=\"none\"/> </p><p horizontalalignment=\"center\"><br/><image enablescale=\"false\" imagesetpath=\"00027918.InterD_ChungGakjiBu\"/><br/><image enablescale=\"true\" imagesetpath=\"00009499.Field_Boss\" scalerate=\"1.4\"/>铁傀王<br/><br/>中原的海盗组织——冲角团的平南舰队支部。<br/>支部长是啸四海。</p>";
-
-
 
 
 			//FileCache.Data.TextData.TryLoad();
@@ -39,13 +29,8 @@ namespace Xylia.Preview
 			//_soundOut.Play();
 
 
-<<<<<<< HEAD
-=======
-
 			//FileCache.Data.TextData.TryLoad();
 			//System.Diagnostics.Trace.WriteLine("712466".GetText());
-		}
->>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 
 
 			//this.Controls.Remove<CaseInfoPanel>();
