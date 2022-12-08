@@ -86,7 +86,11 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			#endregion
 
 			#region 读取奖励数据
+<<<<<<< HEAD
 			static DecomposeRewardInfo GetRewardInfo(RewardData reward) => reward is null ? default : new DecomposeRewardInfo(reward);
+=======
+			DecomposeRewardInfo GetRewardInfo(RewardData reward) => reward is null ? default : new DecomposeRewardInfo(reward);
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			this.DecomposeReward1 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-1"]]);
 			this.DecomposeReward2 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-2"]]);
 			this.DecomposeReward3 = GetRewardInfo(FileCache.Data.Reward[ItemInfo.Attributes["decompose-reward-3"]]);

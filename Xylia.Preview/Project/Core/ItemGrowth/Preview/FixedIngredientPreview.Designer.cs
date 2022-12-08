@@ -53,9 +53,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.Color.Transparent;
-			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(20, 78);
+			this.label2.Location = new System.Drawing.Point(27, 18);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(42, 21);
 			this.label2.TabIndex = 4;
@@ -70,10 +71,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell8.ExtraTopRight = null;
 			this.itemIconCell8.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell8.FrameImage = null;
+			this.itemIconCell8.FrameType = true;
 			this.itemIconCell8.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell8.ItemIcon")));
-			this.itemIconCell8.Location = new System.Drawing.Point(437, 69);
+			this.itemIconCell8.Location = new System.Drawing.Point(514, 6);
+			this.itemIconCell8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell8.Name = "itemIconCell8";
-			this.itemIconCell8.Scale = 42;
+			this.itemIconCell8.Scale = 49;
 			this.itemIconCell8.ShowStackCount = true;
 			this.itemIconCell8.ShowStackCountOnlyOne = true;
 			this.itemIconCell8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,10 +94,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell7.ExtraTopRight = null;
 			this.itemIconCell7.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell7.FrameImage = null;
+			this.itemIconCell7.FrameType = true;
 			this.itemIconCell7.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell7.ItemIcon")));
-			this.itemIconCell7.Location = new System.Drawing.Point(389, 69);
+			this.itemIconCell7.Location = new System.Drawing.Point(458, 6);
+			this.itemIconCell7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell7.Name = "itemIconCell7";
-			this.itemIconCell7.Scale = 42;
+			this.itemIconCell7.Scale = 49;
 			this.itemIconCell7.ShowStackCount = true;
 			this.itemIconCell7.ShowStackCountOnlyOne = true;
 			this.itemIconCell7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,10 +117,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell6.ExtraTopRight = null;
 			this.itemIconCell6.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell6.FrameImage = null;
+			this.itemIconCell6.FrameType = true;
 			this.itemIconCell6.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell6.ItemIcon")));
-			this.itemIconCell6.Location = new System.Drawing.Point(341, 69);
+			this.itemIconCell6.Location = new System.Drawing.Point(402, 6);
+			this.itemIconCell6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell6.Name = "itemIconCell6";
-			this.itemIconCell6.Scale = 42;
+			this.itemIconCell6.Scale = 49;
 			this.itemIconCell6.ShowStackCount = true;
 			this.itemIconCell6.ShowStackCountOnlyOne = true;
 			this.itemIconCell6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -133,10 +140,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell5.ExtraTopRight = null;
 			this.itemIconCell5.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell5.FrameImage = null;
+			this.itemIconCell5.FrameType = true;
 			this.itemIconCell5.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell5.ItemIcon")));
-			this.itemIconCell5.Location = new System.Drawing.Point(293, 69);
+			this.itemIconCell5.Location = new System.Drawing.Point(346, 6);
+			this.itemIconCell5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell5.Name = "itemIconCell5";
-			this.itemIconCell5.Scale = 42;
+			this.itemIconCell5.Scale = 49;
 			this.itemIconCell5.ShowStackCount = true;
 			this.itemIconCell5.ShowStackCountOnlyOne = true;
 			this.itemIconCell5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -154,10 +163,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell4.ExtraTopRight = null;
 			this.itemIconCell4.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell4.FrameImage = null;
+			this.itemIconCell4.FrameType = true;
 			this.itemIconCell4.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell4.ItemIcon")));
-			this.itemIconCell4.Location = new System.Drawing.Point(245, 69);
+			this.itemIconCell4.Location = new System.Drawing.Point(290, 6);
+			this.itemIconCell4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell4.Name = "itemIconCell4";
-			this.itemIconCell4.Scale = 42;
+			this.itemIconCell4.Scale = 49;
 			this.itemIconCell4.ShowStackCount = true;
 			this.itemIconCell4.ShowStackCountOnlyOne = true;
 			this.itemIconCell4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -175,10 +186,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell3.ExtraTopRight = null;
 			this.itemIconCell3.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell3.FrameImage = null;
+			this.itemIconCell3.FrameType = true;
 			this.itemIconCell3.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell3.ItemIcon")));
-			this.itemIconCell3.Location = new System.Drawing.Point(197, 69);
+			this.itemIconCell3.Location = new System.Drawing.Point(234, 6);
+			this.itemIconCell3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell3.Name = "itemIconCell3";
-			this.itemIconCell3.Scale = 42;
+			this.itemIconCell3.Scale = 49;
 			this.itemIconCell3.ShowStackCount = true;
 			this.itemIconCell3.ShowStackCountOnlyOne = true;
 			this.itemIconCell3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -196,10 +209,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell2.ExtraTopRight = null;
 			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell2.FrameImage = null;
+			this.itemIconCell2.FrameType = true;
 			this.itemIconCell2.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell2.ItemIcon")));
-			this.itemIconCell2.Location = new System.Drawing.Point(149, 69);
+			this.itemIconCell2.Location = new System.Drawing.Point(178, 6);
+			this.itemIconCell2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell2.Name = "itemIconCell2";
-			this.itemIconCell2.Scale = 42;
+			this.itemIconCell2.Scale = 49;
 			this.itemIconCell2.ShowStackCount = true;
 			this.itemIconCell2.ShowStackCountOnlyOne = true;
 			this.itemIconCell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,10 +232,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemIconCell1.ExtraTopRight = null;
 			this.itemIconCell1.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell1.FrameImage = null;
+			this.itemIconCell1.FrameType = true;
 			this.itemIconCell1.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell1.ItemIcon")));
-			this.itemIconCell1.Location = new System.Drawing.Point(101, 69);
+			this.itemIconCell1.Location = new System.Drawing.Point(122, 6);
+			this.itemIconCell1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.itemIconCell1.Name = "itemIconCell1";
-			this.itemIconCell1.Scale = 42;
+			this.itemIconCell1.Scale = 49;
 			this.itemIconCell1.ShowStackCount = true;
 			this.itemIconCell1.ShowStackCountOnlyOne = true;
 			this.itemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,9 +248,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			// FixedIngredientPreview
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
+			this.AutoSize = true;
+			this.BackColor = System.Drawing.Color.Transparent;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
 			this.Controls.Add(this.itemIconCell8);
 			this.Controls.Add(this.itemIconCell7);
@@ -245,8 +263,9 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.Controls.Add(this.itemIconCell1);
 			this.Controls.Add(this.label2);
 			this.DoubleBuffered = true;
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "FixedIngredientPreview";
-			this.Size = new System.Drawing.Size(619, 197);
+			this.Size = new System.Drawing.Size(669, 88);
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell8)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell7)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell6)).EndInit();

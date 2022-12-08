@@ -30,9 +30,12 @@ namespace Xylia.Preview.Project.Core.RandomStore
 		/// </summary>
 		public void LoadData()
 		{
+<<<<<<< HEAD:Xylia.Preview/Project/Core/Store/RandomStore/Preview/DrawRewardPreview.cs
 			if (this.DesignMode) return;
 
 
+=======
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068:Xylia.Preview/Project/Core/RandomStore/Preview/DrawRewardPreview.cs
 			var RandomStore = FileCache.Data.RandomStore.Find(a => a.RandomStoreNumber == RandomStoreNumber.RandomStore1);
 
 			this.PromotionName.Text = "UI.RandomStore.PromotionName".GetText();

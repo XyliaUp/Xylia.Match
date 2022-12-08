@@ -52,6 +52,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			{
 				try
 				{
+<<<<<<< HEAD:Xylia.Preview/Project/Core/Quest/Preview/Task/Mission/CaseInfoPanel.cs
 					//单独播放
 					if (StepIdx > 1)
 					{
@@ -61,11 +62,34 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 					}
 
 					//全部播放
+=======
+					var data = GetWave(NpcTalkMessage.GetStepShow(StepIdx), StepIdx);
+					if (data is null) DisableBtn();
+					else Play(data);
+				}
+
+				//全部播放
+				else
+				{
+					List<byte[]> datas = new();
+					for (int idx = 1; idx <= 30; idx++)
+					{
+						var StepShow = NpcTalkMessage.GetStepShow(idx);
+						if (StepShow is null) break;
+
+						datas.Add(GetWave(StepShow, idx));
+					}
+
+
+					var Valid = datas.Where(data => data != null);
+					if (!Valid.Any()) DisableBtn();
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068:Xylia.Preview/Project/Core/Quest/Preview/SubGroup/Task/Mission/CaseInfoPanel.cs
 					else
 					{
 						List<byte[]> datas = new();
 						for (int idx = 1; idx <= 30; idx++)
 						{
+<<<<<<< HEAD:Xylia.Preview/Project/Core/Quest/Preview/Task/Mission/CaseInfoPanel.cs
 							var StepShow = NpcTalkMessage.GetStepShow(idx);
 							if (StepShow is null) break;
 
@@ -81,6 +105,10 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 								Thread.Sleep(Play(data));
 								Thread.Sleep(800);
 							}
+=======
+							Thread.Sleep(Play(data));
+							Thread.Sleep(800);
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068:Xylia.Preview/Project/Core/Quest/Preview/SubGroup/Task/Mission/CaseInfoPanel.cs
 						}
 					}
 				}
@@ -105,6 +133,13 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// <param name="StepShow"></param>
 		/// <returns></returns>
 		public static byte[] GetWave(string StepShow, int StepIdx) => StepShow.GetUObject().GetWave(StepIdx - 1);
+
+		/// <summary>
+		/// 获取音频数据
+		/// </summary>
+		/// <param name="StepShow"></param>
+		/// <returns></returns>
+		public byte[] GetWave(string StepShow, int StepIdx) => StepShow.GetUObject().GetWave(StepIdx - 1);
 
 		/// <summary>
 		/// 播放音频

@@ -1,9 +1,14 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Collections.Generic;
 using System.Windows.Forms;
 
 using Xylia.Preview.Project.Core.RandomStore.Cell;
 
+=======
+using System.Windows.Forms;
+
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 namespace Xylia.Preview
 {
 	public partial class DebugFrm : Form
@@ -34,6 +39,13 @@ namespace Xylia.Preview
 			//_soundOut.Play();
 
 
+<<<<<<< HEAD
+=======
+
+			//FileCache.Data.TextData.TryLoad();
+			//System.Diagnostics.Trace.WriteLine("712466".GetText());
+		}
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 
 
 			//this.Controls.Remove<CaseInfoPanel>();

@@ -95,7 +95,11 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
+<<<<<<< HEAD
 			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+=======
+			this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			this.label2.Location = new System.Drawing.Point(523, 10);
 			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";

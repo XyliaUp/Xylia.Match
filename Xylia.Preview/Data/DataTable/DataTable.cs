@@ -17,7 +17,11 @@ using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
+<<<<<<< HEAD
 using Xylia.Preview.Common.Interface;
+=======
+using Xylia.Preview.Project.Common.Interface;
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 using Xylia.Preview.Properties;
 using Xylia.Preview.Properties.AnalyseSection;
 
@@ -194,7 +198,10 @@ namespace Xylia.Preview.Data
 					}
 					catch (Exception ex)
 					{
+<<<<<<< HEAD
 						this.data = Array.Empty<Lazy<T>>();
+=======
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex}");
 					}
 
@@ -283,8 +290,16 @@ namespace Xylia.Preview.Data
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_Simple");
+<<<<<<< HEAD
 			if (content is null) throw new FileNotFoundException($"没有获取到结构配置数据");
 
+=======
+			if (content is null)
+			{
+				Trace.WriteLine($"[{ DateTime.Now }] 加载配置文件失败: { typeof(T).Name }");
+				return;
+			}
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 
 			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);
 			if (TableInfo.DataType == DataType.Local) this.LoadGame(FileCache.Data.LocalData, TableInfo);
@@ -301,10 +316,17 @@ namespace Xylia.Preview.Data
 
 			this.TableInfo = TableInfo;
 
+<<<<<<< HEAD
 			this.ListData = DeSerializer.GetList(TableInfo);
 			if (this.ListData is null) throw new ArgumentNullException($"没有获取到指定数据");
 
 			this.data = new Lazy<T>[this.ListData.ObjectCount];
+=======
+
+			//只创建空数组
+			if (this.ListData is null) this.data = Array.Empty<Lazy<T>>();
+			else this.data = new Lazy<T>[this.ListData.ObjectCount];
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 		}
 
 		public Output GetObject(int MainID, int VariationID = 0) => DeSerializer?.GetData(ListData, TableInfo, MainID, VariationID);
@@ -367,7 +389,11 @@ namespace Xylia.Preview.Data
 			#endregion
 
 
+<<<<<<< HEAD
 			if (this.data.Length != 0) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  alias: {Alias}");
+=======
+			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  alias: {Alias}");
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			return null;
 		}
 
@@ -386,14 +412,19 @@ namespace Xylia.Preview.Data
 			else if (this.ht_id.ContainsKey(MainID)) return (Lazy<T>)this.ht_id[MainID];
 			#endregion
 
+<<<<<<< HEAD
 
 			if (this.data.Length != 0) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
+=======
+			Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID}");
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 			return null;
 		}
 
 
 
 
+<<<<<<< HEAD
 		/// <summary>
 		/// 目前未支持缓存读取
 		/// </summary>
@@ -401,6 +432,12 @@ namespace Xylia.Preview.Data
 		/// <param name="Index"></param>
 		/// <returns></returns>
 		private T CreateNew(Output o, int Index = 0)
+=======
+
+
+
+		private T CreateNew(Output o)
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 		{
 			//新建一个对象，需要进行缓存
 			var temp = new T()
@@ -426,7 +463,11 @@ namespace Xylia.Preview.Data
 		private IEnumerable<T> CreateTest
 		{
 			get
+<<<<<<< HEAD
 			{
+=======
+			{	
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 				if (DeSerializer is null) return Array.Empty<T>();
 
 
@@ -435,10 +476,15 @@ namespace Xylia.Preview.Data
 					var Objects = DeSerializer.GetDatas(this.ListData, this.TableInfo);
 					for (var x = 0; x < Objects.Count; x++)
 					{
+<<<<<<< HEAD
 						var idx = x;
 						var obj = Objects[x];
 
 						this.data[x] = new Lazy<T>(() => CreateNew(obj, idx));
+=======
+						var obj = Objects[x];
+						this.data[x] = new Lazy<T>(() => CreateNew(obj));
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 					}
 
 					FullLoad = true;
@@ -519,7 +565,11 @@ namespace Xylia.Preview.Data
 			if (!this.HasData) this.Load();
 
 			if (this.LoadFromGame) foreach (var info in this.CreateTest) yield return info;
+<<<<<<< HEAD
 			else foreach (var info in this.Data) yield return info.Value;
+=======
+			else foreach(var info in this.Data) yield return info.Value;
+>>>>>>> 87a0768aaf48150c6d7df46e4e5bad42ef854068
 
 			//结束迭代
 			yield break;

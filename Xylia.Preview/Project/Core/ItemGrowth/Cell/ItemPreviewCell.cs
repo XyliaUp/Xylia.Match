@@ -78,9 +78,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 		#endregion
 
 
-
-
-
 		#region 方法
 		private void ItemPreviewCell_SizeChanged(object sender, EventArgs e)
 		{

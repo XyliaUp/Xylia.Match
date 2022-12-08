@@ -38,9 +38,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(2, 0);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(74, 21);
 			this.label2.TabIndex = 5;
@@ -49,9 +50,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(2, 25);
+			this.label1.Location = new System.Drawing.Point(2, 35);
+			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(74, 21);
 			this.label1.TabIndex = 6;
@@ -61,44 +63,48 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			this.priceCell2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.priceCell2.BackColor = System.Drawing.Color.Transparent;
-			this.priceCell2.CurrencyCount = ((int)(3008888ul));
+			this.priceCell2.CurrencyCount = 3008888;
 			this.priceCell2.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
-			this.priceCell2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.priceCell2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.priceCell2.FontStyle = System.Drawing.FontStyle.Regular;
 			this.priceCell2.ForeColor = System.Drawing.Color.White;
-			this.priceCell2.Location = new System.Drawing.Point(175, 26);
-			this.priceCell2.Margin = new System.Windows.Forms.Padding(5);
+			this.priceCell2.Location = new System.Drawing.Point(204, 37);
+			this.priceCell2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.priceCell2.Name = "priceCell2";
-			this.priceCell2.Size = new System.Drawing.Size(148, 19);
+			this.priceCell2.Size = new System.Drawing.Size(123, 19);
 			this.priceCell2.TabIndex = 8;
+			this.priceCell2.Tooltip = null;
 			// 
 			// priceCell1
 			// 
 			this.priceCell1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.priceCell1.BackColor = System.Drawing.Color.Transparent;
-			this.priceCell1.CurrencyCount = ((int)(3000ul));
+			this.priceCell1.CurrencyCount = 3000;
 			this.priceCell1.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
-			this.priceCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.priceCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.priceCell1.FontStyle = System.Drawing.FontStyle.Strikeout;
 			this.priceCell1.ForeColor = System.Drawing.Color.White;
-			this.priceCell1.Location = new System.Drawing.Point(285, 0);
-			this.priceCell1.Margin = new System.Windows.Forms.Padding(5);
+			this.priceCell1.Location = new System.Drawing.Point(289, 0);
+			this.priceCell1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.priceCell1.Name = "priceCell1";
 			this.priceCell1.Size = new System.Drawing.Size(38, 19);
 			this.priceCell1.TabIndex = 7;
+			this.priceCell1.Tooltip = null;
 			// 
 			// MoneyCostPreview
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.priceCell2);
 			this.Controls.Add(this.priceCell1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label2);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "MoneyCostPreview";
-			this.Size = new System.Drawing.Size(323, 50);
+			this.Size = new System.Drawing.Size(333, 63);
 			this.SizeChanged += new System.EventHandler(this.MoneyCostPreview_SizeChanged);
 			this.ResumeLayout(false);
 			this.PerformLayout();

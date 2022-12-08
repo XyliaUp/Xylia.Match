@@ -35,9 +35,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(20, 32);
+			this.label2.Location = new System.Drawing.Point(23, 45);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(42, 21);
 			this.label2.TabIndex = 4;
@@ -45,12 +46,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			// SubIngredientPreview
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Black;
+			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.label2);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "SubIngredientPreview";
-			this.Size = new System.Drawing.Size(601, 93);
+			this.Size = new System.Drawing.Size(663, 132);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
