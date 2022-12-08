@@ -50,7 +50,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
-			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(684, 698);
 			this.Controls.Add(this.itemGrowth2Page1);
