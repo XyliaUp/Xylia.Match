@@ -508,10 +508,17 @@
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-bottom.png" />
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-top.png" />
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-track.png" />
+    <None Remove="Project\Core\ItemGrowth\ItemGrowth2\Preview\ResultWeaponPreview.cs~RF30f96a.TMP" />
     <None Remove="Properties\AnalyseSection\Data\MapGroup1ExpeditionData.xml" />
   </ItemGroup>
   
   <ItemGroup>
+    <Compile Update="Project\Core\ItemGrowth\Scene\EquipmentGuidePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\ItemImprove\ItemImprovePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Project\Core\Skill\SkillTrainCategoryPreview\SkillTrainCategoryPreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +554,12 @@
   </ItemGroup>
   
   <ItemGroup>
+    <EmbeddedResource Update="Project\Core\ItemGrowth\Scene\EquipmentGuidePage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Project\Core\ItemGrowth\ItemImprove\ItemImprovePage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DataRes.Designer.cs</LastGenOutput>

@@ -56,7 +56,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 						ItemIcon = TempItem.IconExtra,
 						Scale = 52,
 
-						StackCount = (uint)(short)(CrystallRule.GetMemberVal("RequiredItemStackCount" + i) ?? 1),
+						StackCount = (short)(CrystallRule.GetMemberVal("RequiredItemStackCount" + i) ?? 1),
 						ShowStackCount = true,
 						ShowStackCountOnlyOne = false,
 					});
@@ -78,7 +78,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 						ItemIcon = TempItem.IconExtra,
 						Scale = 52,
 
-						StackCount = (uint)(short)(CrystallRule.GetMemberVal("NormalItemStackCount" + i) ?? 1),
+						StackCount = (short)(CrystallRule.GetMemberVal("NormalItemStackCount" + i) ?? 1),
 						ShowStackCount = true,
 						ShowStackCountOnlyOne = false,
 					});

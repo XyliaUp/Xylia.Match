@@ -41,7 +41,7 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 警告信息
 		/// </summary>
-		public Warning warning;
+		public WarningSeq Warning;
 		#endregion
 
 		#region 枚举
@@ -102,7 +102,7 @@ namespace Xylia.Preview.Data.Record
 			EquipGem,
 		}
 
-		public enum Warning : byte
+		public enum WarningSeq : byte
 		{
 			None,
 

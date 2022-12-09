@@ -1,8 +1,4 @@
-﻿using System.Linq;
-
-using Xylia.Extension;
-using Xylia.Files.XmlEx;
-using Xylia.Preview.Common.Interface;
+﻿using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -11,10 +7,8 @@ namespace Xylia.Preview.Data.Record
 		#region 字段
 		public string Store2;
 
-
 		public Type UnlocatedStoreType;
 		#endregion
-
 
 
 		#region 枚举

@@ -40,7 +40,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// Btn_Next
 			// 
 			this.Btn_Next.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Next.Image")));
-			this.Btn_Next.Location = new System.Drawing.Point(443, 23);
+			this.Btn_Next.Location = new System.Drawing.Point(443, 9);
 			this.Btn_Next.Margin = new System.Windows.Forms.Padding(4);
 			this.Btn_Next.Name = "Btn_Next";
 			this.Btn_Next.Size = new System.Drawing.Size(37, 85);
@@ -51,7 +51,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// Btn_Prev
 			// 
 			this.Btn_Prev.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Prev.Image")));
-			this.Btn_Prev.Location = new System.Drawing.Point(0, 23);
+			this.Btn_Prev.Location = new System.Drawing.Point(0, 9);
 			this.Btn_Prev.Margin = new System.Windows.Forms.Padding(4);
 			this.Btn_Prev.Name = "Btn_Prev";
 			this.Btn_Prev.Size = new System.Drawing.Size(37, 85);
@@ -73,7 +73,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.itemPreviewCell1.Name = "itemPreviewCell1";
 			this.itemPreviewCell1.ShowFrameImage = true;
 			this.itemPreviewCell1.ShowStackCount = false;
-			this.itemPreviewCell1.Size = new System.Drawing.Size(112, 145);
+			this.itemPreviewCell1.Size = new System.Drawing.Size(94, 125);
 			this.itemPreviewCell1.TabIndex = 17;
 			this.itemPreviewCell1.Text = "测试文本";
 			// 
@@ -88,8 +88,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.Controls.Add(this.Btn_Next);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ResultWeaponPreview";
-			this.Size = new System.Drawing.Size(484, 151);
-			this.SizeChanged += new System.EventHandler(this.ResultWeaponPreview_SizeChanged);
+			this.Size = new System.Drawing.Size(484, 131);
+
 			((System.ComponentModel.ISupportInitialize)(this.Btn_Next)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.Btn_Prev)).EndInit();
 			this.ResumeLayout(false);

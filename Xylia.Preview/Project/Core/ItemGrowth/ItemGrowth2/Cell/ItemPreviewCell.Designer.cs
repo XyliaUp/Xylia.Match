@@ -42,7 +42,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 			this.ItemName.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(178)))), ((int)(((byte)(72)))));
 			this.ItemName.ItemGrade = ((byte)(6));
-			this.ItemName.Location = new System.Drawing.Point(12, 119);
+			this.ItemName.Location = new System.Drawing.Point(5, 99);
 			this.ItemName.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.ItemName.Name = "ItemName";
 			this.ItemName.Size = new System.Drawing.Size(78, 19);
@@ -53,14 +53,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 			// ItemIcon
 			// 
 			this.ItemIcon.FrameImage = ((System.Drawing.Bitmap)(resources.GetObject("ItemIcon.FrameImage")));
-			this.ItemIcon.Location = new System.Drawing.Point(0, 4);
+			this.ItemIcon.Location = new System.Drawing.Point(0, 0);
 			this.ItemIcon.Margin = new System.Windows.Forms.Padding(4);
 			this.ItemIcon.Name = "ItemIcon";
 			this.ItemIcon.ShowFrameImage = false;
 			this.ItemIcon.ShowStackCount = false;
 			this.ItemIcon.ShowStackCountOnlyOne = false;
-			this.ItemIcon.Size = new System.Drawing.Size(108, 118);
-			this.ItemIcon.StackCount = ((uint)(0u));
+			this.ItemIcon.Size = new System.Drawing.Size(90, 98);
+			this.ItemIcon.StackCount = 0;
 			this.ItemIcon.TabIndex = 25;
 			this.ItemIcon.TabStop = false;
 			// 
@@ -75,9 +75,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 			this.Controls.Add(this.ItemIcon);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ItemPreviewCell";
-			this.Size = new System.Drawing.Size(112, 145);
-			this.SizeChanged += new System.EventHandler(this.ItemPreviewCell_SizeChanged);
-			this.Click += new System.EventHandler(this.ItemPreviewCell_Click);
+			this.Size = new System.Drawing.Size(94, 125);
 			((System.ComponentModel.ISupportInitialize)(this.ItemIcon)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

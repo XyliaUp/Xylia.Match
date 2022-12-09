@@ -97,6 +97,13 @@ namespace Xylia.Preview.Data.Record
 
 		public int UsableDuration => this.Attributes["usable-duration"].ToInt();
 		public ItemEvent ItemEvent => FileCache.Data.ItemEvent.GetInfo(this.Attributes["event-info"]);
+
+
+		public int ImproveId => this.Attributes["improve-id"].ToInt();
+		public byte ImproveLevel => this.Attributes["improve-level"].ConvertToByte();
+		public string ImproveNextItem => this.Attributes["improve-next-item"];
+		public string ImprovePrevItem => this.Attributes["improve-prev-item"];
+
 		public string ItemName => this.Attributes["name2"].GetText();
 		public string MainInfo => this.Attributes["main-info"].GetText();
 		public string SubInfo => this.Attributes["sub-info"].GetText();

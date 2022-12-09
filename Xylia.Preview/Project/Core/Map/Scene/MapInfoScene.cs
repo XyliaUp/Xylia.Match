@@ -67,7 +67,11 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 				};
 
 				string Tooltip = mapunit.Name2.GetText();
-				if (mapunit.Type == MapUnit.TypeSeq.Attraction) Tooltip = mapunit.Attributes["attraction"].GetObject().GetName();
+				if (mapunit.Type == MapUnit.TypeSeq.Attraction)
+				{
+					var Attraction = mapunit.Attributes["attraction"].GetObject();
+					if (Attraction != null) Tooltip = $"{Attraction.GetType().Name}: " + Attraction.GetName();
+				}
 				else if (mapunit.Type == MapUnit.TypeSeq.Npc) Tooltip = mapunit.Attributes["npc"].GetObject(DataType.Npc).GetName();
 				else if (mapunit.Type == MapUnit.TypeSeq.Boss) Tooltip = mapunit.Attributes["npc"].GetObject(DataType.Npc).GetName();
 

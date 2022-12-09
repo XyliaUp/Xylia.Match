@@ -9,6 +9,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+using HZH_Controls;
+
 using Xylia.bns.Modules.DataFormat.Analyse;
 using Xylia.bns.Modules.DataFormat.Analyse.DeSerialize;
 using Xylia.bns.Modules.DataFormat.Analyse.Enums;
@@ -163,7 +165,7 @@ namespace Xylia.Preview.Data
 		{
 			#region 初始化
 			//如果是设计器模式，则不进行处理
-			if (HZH_Controls.ControlHelper.IsDesignMode) return;
+			if (ControlHelper.IsDesignMode) return;
 
 			//如果正在加载状态，等待到数据加载完成
 			if (this.InLoading)
@@ -303,7 +305,7 @@ namespace Xylia.Preview.Data
 
 			this.TableInfo = TableInfo;
 			this.ListData = DeSerializer.GetList(TableInfo);
-			if (this.ListData is null) throw new ArgumentNullException($"没有获取到指定数据");
+			if (this.ListData is null) throw new Exception($"没有获取到指定数据");
 
 			this.data = new Lazy<T>[this.ListData.ObjectCount];
 		}

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="190" module="ItemData" type="item-improve" version="5.0" rule="cpl" >
+	<list module="ItemData" type="item-improve" version="6.1" rule="cpl" >
 		<record alias="id" type="id" name="" />
 		<record alias="level" type="Level" name="" show-zero="y" start="0" />
 
@@ -17,11 +17,11 @@
 		<record alias="cost-sub-item-5" name="" ref="Item" repeat="8" />
 		<record alias="cost-sub-item-count-5" type="Short" name="" repeat="8" max="30000" min="0" />
 		<record alias="cost-money" type="Int32" name="" repeat="5" />
-		<record alias="unk-group1" type="Short" name="成功率提示" repeat="5" />
+		<record alias="success-probability" type="Short" name="成功率提示" repeat="5" />
 		<record alias="use-success-probability" type="Bool" name="" repeat="5" />
-		<record alias="unk-group2" type="Byte" name="" repeat="5" />
-		<record alias="unk-group3" type="Byte" name="" repeat="5" />
 		<record alias="unk-" type="Bool" name="" />
+		<record alias="random-failure-mileage-save" type="Bool" name="" repeat="5" />
+		<record alias="random-failure-mileage" type="Byte" name="" repeat="5" />
 		<record alias="unk-" type="Bool" name="" />
 		<record alias="success-option-list-id" type="Int32" name="" />
 		<record alias="unk-" type="Byte" name="" />

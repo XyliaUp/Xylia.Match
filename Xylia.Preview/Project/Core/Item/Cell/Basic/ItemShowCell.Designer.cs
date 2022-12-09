@@ -70,7 +70,7 @@
 			this.IconCell.ShowStackCount = false;
 			this.IconCell.ShowStackCountOnlyOne = true;
 			this.IconCell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.IconCell.StackCount = ((uint)(1u));
+			this.IconCell.StackCount = 1;
 			this.IconCell.TabIndex = 2;
 			this.IconCell.TabStop = false;
 			// 

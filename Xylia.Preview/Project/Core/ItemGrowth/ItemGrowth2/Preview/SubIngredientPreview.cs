@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Record;
@@ -15,33 +13,14 @@ using Xylia.Preview.Project.Core.ItemGrowth.Cell;
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
+
 namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 {
-	public partial class SubIngredientPreview : UserControl
+	public partial class SubIngredientPreview : Panel
 	{
-		#region 字段
-		const int MyScale = 92;
-		const int MyPadding = 5;
-
-		/// <summary>
-		/// 祭品控件
-		/// </summary>
-		readonly List<FeedItemIconCell> FeedItemIconCells = new();
-		#endregion
-
-		#region 构造
-		public SubIngredientPreview()
-		{
-			InitializeComponent();
-
-			this.BackColor = Color.Transparent;
-			this.AutoSize = false;
-		}
-		#endregion
-
 		#region 事件与委托
 		//定义委托
-		public delegate void RecipeChangedHandle(object sender, RecipeChangedEventArgs e);
+		public delegate void RecipeChangedHandle(RecipeChangedEventArgs e);
 
 		//定义事件
 		public event RecipeChangedHandle RecipeChanged;
@@ -49,105 +28,105 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 
 		#region 方法
-		public void SetData(IEnumerable<ItemTransformRecipe> ResultRecipes)
+		private FeedItemIconCell CreateNew(string ItemAlias, Bitmap Image, int StackCount, ref int LocX)
 		{
-			#region 清理资源
-			this.FeedItemIconCells.Clear();
-			this.Controls.OfType<FeedItemIconCell>().ToList().ForEach(r => this.Controls.Remove(r));
-			#endregion
-
-			#region 加载控件
-			var TempCtls = new BlockingCollection<FeedItemIconCell>();
-			Parallel.ForEach(ResultRecipes, Recipe =>
+			var ItemIcon = new FeedItemIconCell
 			{
-				#region 创建控件
-				FeedItemIconCell ItemIconCell = null;
+				ItemAlias = ItemAlias,
+				Image = Image,
+				Location = new Point(LocX, 0),
+				StackCount = StackCount,
+				Size = new Size(82, 90),
+				ShowStackCount = true,
+				ShowStackCountOnlyOne = false
+			};
 
-				//var ResultItem = Recipe.SubIngredient1.GetObject();
-				//if (ResultItem is ItemData ItemInfo)
-				//{
-				//	ItemIconCell = new FeedItemIconCell
-				//	{
-				//		Image = ItemInfo.Icon,
-				//		ItemAlias = ItemInfo.Alias,
-				//		StackCount = (uint)Recipe.SubIngredientStackCount1,
-				//	};
-				//}
-				//else if (ResultItem is ItemBrand ItemBrand)
-				//{
-				//	//搜索对象
-				//	var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Recipe.SubIngredientConditionType1);
-				//	if (ItemTooltip != null)
-				//	{
-				//		ItemIconCell = new FeedItemIconCell
-				//		{
-				//			Image = ItemTooltip?.MainIcon(),
-				//			ItemAlias = ItemBrand.Alias + "_" + ItemTooltip?.ItemConditionType + $" ({ ItemTooltip.Name2.GetText() })",
-				//		};
-				//	}
-				//}
-				//else Console.WriteLine("未知的信息 " + Recipe.SubIngredient1);
-				#endregion
+			ItemIcon.Click += new EventHandler((s, e) =>
+			{
+				this.Controls.OfType<FeedItemIconCell>().ForEach(c => c.ShowFrameImage = false);
+				ItemIcon.ShowFrameImage = true;
 
-				#region 绑定委托
-				if (ItemIconCell != null)
-				{
-					#region 进行公共设置
-					ItemIconCell.Size = new Size(92, 100);
-					ItemIconCell.Tag = Recipe.ID;
-					ItemIconCell.ShowStackCount = true;
-					ItemIconCell.ShowStackCountOnlyOne = false;
-					ItemIconCell.StackCount = Math.Max(1, ItemIconCell.StackCount);
-					ItemIconCell.Click += new EventHandler((s, e) =>
-					{
-						this.FeedItemIconCells.OfType<FeedItemIconCell>().ToList().ForEach(c => c.ShowFrameImage = false);
-						ItemIconCell.ShowFrameImage = true;
-
-						this.RecipeChanged?.Invoke(this, new RecipeChangedEventArgs(Recipe));
-					});
-					#endregion
-
-					TempCtls.Add(ItemIconCell);
-				}
-				#endregion
+				//this.RecipeChanged?.Invoke(ItemIcon, new RecipeChangedEventArgs(Recipe));
 			});
-			#endregion
 
-			#region 最后处理
-			this.FeedItemIconCells.AddRange(TempCtls.OrderBy(c => c.Tag));
-			TempCtls.Dispose();
-			TempCtls = null;
+			this.Controls.Add(ItemIcon);
+			LocX = ItemIcon.Right + 5;
 
-			//刷新界面
-			this.Refresh();
+			return ItemIcon;
+		}
+
+		private void HandleSize(int LocX)
+		{
+			this.Width = LocX;
+			this.Height = 90;
 
 			//触发第一个选项 
-			this.FeedItemIconCells.FirstOrDefault()?.CallEvent("OnClick");
-			#endregion
+			this.Controls.OfType<FeedItemIconCell>().FirstOrDefault()?.CallEvent("OnClick");
 		}
-		#endregion
 
 
-		#region 重写方法
-		public override void Refresh()
+		public void SetData(IEnumerable<ItemTransformRecipe> ResultRecipes)
 		{
-			this.SuspendLayout();
+			//清理资源
+			this.Controls.Remove<FeedItemIconCell>();
 
-			#region 显示控件
-			//遵守居中对齐设计，所以在这里需要位置
-			//图标大小 + Padding区域大小
-			int LocX = (this.Width - (FeedItemIconCells.Count * MyScale + (FeedItemIconCells.Count - 1) * MyPadding)) / 2;
-			foreach (var c in this.FeedItemIconCells)
+			#region 加载控件
+			int LocX = 0;
+			foreach (var Recipe in ResultRecipes)
 			{
-				if (!this.Controls.Contains(c)) this.Controls.Add(c);
+				#region 获取数据
+				var SubIngredient1 = Recipe.Attributes["sub-ingredient-1"].GetObject();
+				var SubIngredientStackCount1 = Recipe.Attributes["sub-ingredient-stack-count-1"].ConvertToShort();
+				var SubIngredientConditionType1 = Recipe.Attributes["sub-ingredient-condition-type-1"].ToEnum<ConditionType>();
 
-				c.Location = new Point(LocX, 0);
-				LocX = c.Right + MyPadding;
+				string ItemAlias = null;
+				Bitmap Image = null;
+
+				if (SubIngredient1 is ItemData ItemInfo)
+				{
+					ItemAlias = ItemInfo.Alias;
+					Image = ItemInfo.Icon;
+				}
+				else if (SubIngredient1 is ItemBrand ItemBrand)
+				{
+					//搜索对象
+					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == SubIngredientConditionType1);
+
+					ItemAlias = ItemBrand.Alias + "_" + ItemTooltip?.ItemConditionType + $" ({ ItemTooltip?.Name2.GetText() })";
+					Image = ItemTooltip?.MainIcon();
+				}
+				#endregion
+
+				//绑定事件
+				this.CreateNew(ItemAlias, Image, SubIngredientStackCount1, ref LocX).Click += new EventHandler((s, e) =>
+					this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(Recipe)));
 			}
 			#endregion
 
-			this.ResumeLayout();
-			base.Refresh();
+			this.HandleSize(LocX);
+		}
+
+		public void SetData(ItemImprove ItemImprove)
+		{
+			//清理资源
+			this.Controls.Remove<FeedItemIconCell>();
+
+			#region 加载控件
+			int LocX = 0;
+			for (byte idx = 1; idx <= 5; idx++)
+			{
+				var CostMainItem = ItemImprove.Attributes["cost-main-item-" + idx];
+				var CostMainItemCount = ItemImprove.Attributes["cost-main-item-count-" + idx].ConvertToShort();
+				if (CostMainItem is null) break;
+
+				//绑定事件
+				byte CurIdx = idx;
+				this.CreateNew(CostMainItem, CostMainItem.GetItemInfo()?.Icon, CostMainItemCount, ref LocX).Click += new EventHandler((s, e) =>
+					this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImprove, CurIdx)));
+			}
+			#endregion
+
+			this.HandleSize(LocX);
 		}
 		#endregion
 	}
@@ -157,11 +136,17 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 	/// </summary>
 	public class RecipeChangedEventArgs : EventArgs
 	{
-		public RecipeChangedEventArgs(ItemTransformRecipe ItemTransformRecipe)
-		{
-			this.ItemTransformRecipe = ItemTransformRecipe;
-		}
-
 		public ItemTransformRecipe ItemTransformRecipe { get; }
+		public RecipeChangedEventArgs(ItemTransformRecipe ItemTransformRecipe) => this.ItemTransformRecipe = ItemTransformRecipe;
+
+
+
+		public byte Index { get; }
+		public ItemImprove ItemImprove { get; }
+		public RecipeChangedEventArgs(ItemImprove ItemImprove, byte Index)
+		{
+			this.ItemImprove = ItemImprove;
+			this.Index = Index;
+		}
 	}
 }

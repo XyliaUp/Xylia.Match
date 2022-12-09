@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="ItemData" rule="cpl | extra" version="0.35" type="duel" > 
+  <list module="ZoneData0" rule="cpl | extra" version="0.35" type="duel" > 
 		<record alias="alias" name="" type="Index" />
 		<record alias="group" name="" ref="AttractionGroup" />
 		<record alias="duel-type" name="" type="Seq" >
@@ -52,14 +52,12 @@
 		<!-- ========================================================================================= -->
 		<record alias="arena-outside-round-start-effect" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="arena-outside-summoned-round-start-effect" name="" ref="Effect" repeat="8" client="n" />	
-		
 		<record alias="tag-match-interference-bonus-time" name="" type="Msec" repeat="8" client="n" />
 		<record alias="tag-match-interference-into-effect" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="tag-match-interference-out-effect" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="tag-match-tag-into-effect-by-skill" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="tag-match-tag-into-effect-by-system" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="tag-match-tag-out-effect" name="" ref="Effect" repeat="8" client="n" />
-
 		<record alias="tag-match-summoned-interference-into-effect" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="tag-match-summoned-interference-out-effect" name="" ref="Effect" repeat="8" client="n" />
 		<record alias="tag-match-summoned-tag-into-effect-by-skill" name="" ref="Effect" repeat="8" client="n" />		

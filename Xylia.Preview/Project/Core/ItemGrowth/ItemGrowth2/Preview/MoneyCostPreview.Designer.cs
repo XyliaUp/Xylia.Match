@@ -68,7 +68,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.priceCell2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.priceCell2.FontStyle = System.Drawing.FontStyle.Regular;
 			this.priceCell2.ForeColor = System.Drawing.Color.White;
-			this.priceCell2.Location = new System.Drawing.Point(204, 37);
+			this.priceCell2.Location = new System.Drawing.Point(180, 37);
 			this.priceCell2.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.priceCell2.Name = "priceCell2";
 			this.priceCell2.Size = new System.Drawing.Size(123, 19);
@@ -84,7 +84,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.priceCell1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.priceCell1.FontStyle = System.Drawing.FontStyle.Strikeout;
 			this.priceCell1.ForeColor = System.Drawing.Color.White;
-			this.priceCell1.Location = new System.Drawing.Point(289, 0);
+			this.priceCell1.Location = new System.Drawing.Point(265, 0);
 			this.priceCell1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
 			this.priceCell1.Name = "priceCell1";
 			this.priceCell1.Size = new System.Drawing.Size(38, 19);
@@ -95,16 +95,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
-			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.priceCell2);
 			this.Controls.Add(this.priceCell1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label2);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MoneyCostPreview";
-			this.Size = new System.Drawing.Size(333, 63);
+			this.Size = new System.Drawing.Size(314, 62);
 			this.SizeChanged += new System.EventHandler(this.MoneyCostPreview_SizeChanged);
 			this.ResumeLayout(false);
 			this.PerformLayout();

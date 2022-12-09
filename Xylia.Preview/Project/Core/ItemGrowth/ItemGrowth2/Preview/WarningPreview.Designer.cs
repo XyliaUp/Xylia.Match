@@ -42,7 +42,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			// 
 			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
 			this.pictureBox2.Location = new System.Drawing.Point(0, -1);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox2.Name = "pictureBox2";
 			this.pictureBox2.Size = new System.Drawing.Size(31, 27);
 			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -59,7 +59,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.panelContent1.Margin = new System.Windows.Forms.Padding(4, 7, 4, 7);
 			this.panelContent1.Name = "panelContent1";
 			this.panelContent1.TabIndex = 19;
-			this.panelContent1.Text = "123";
+			this.panelContent1.Text = "提示消息";
 			// 
 			// WarningPreview
 			// 
@@ -69,10 +69,9 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.panelContent1);
 			this.Controls.Add(this.pictureBox2);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "WarningPreview";
-			this.Size = new System.Drawing.Size(72, 30);
-			this.Resize += new System.EventHandler(this.WarningPreview_Resize);
+			this.Size = new System.Drawing.Size(103, 30);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

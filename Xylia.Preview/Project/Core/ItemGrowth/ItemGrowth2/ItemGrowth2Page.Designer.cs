@@ -30,34 +30,25 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemGrowth2Page));
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.MyWeapon_Title = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.MyWeapon_Name = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell();
-			this.itemIconCell1 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
-			this.warningPreview1 = new Xylia.Preview.Project.Core.ItemGrowth.Preview.WarningPreview();
 			this.FixedIngredientPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.FixedIngredientPreview();
-			this.moneyCostPreview1 = new Xylia.Preview.Project.Core.ItemGrowth.Preview.MoneyCostPreview();
+			this.itemIconCell4 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
+			this.itemIconCell3 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
+			this.itemIconCell2 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
+			this.MoneyCostPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.MoneyCostPreview();
 			this.ResultWeaponPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.ResultWeaponPreview();
 			this.SubIngredientPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).BeginInit();
+			this.feedItemIconCell1 = new Xylia.Preview.Project.Core.ItemGrowth.Cell.FeedItemIconCell();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
 			this.FixedIngredientPreview.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).BeginInit();
+			this.SubIngredientPreview.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.feedItemIconCell1)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(313, 238);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox1.TabIndex = 2;
-			this.pictureBox1.TabStop = false;
 			// 
 			// MyWeapon_Title
 			// 
@@ -85,135 +76,188 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.label1.TabIndex = 17;
 			this.label1.Text = "目标装备";
 			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(28, 72);
-			this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(96, 72);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox2.TabIndex = 22;
-			this.pictureBox2.TabStop = false;
-			// 
-			// MyWeapon_Name
-			// 
-			this.MyWeapon_Name.AutoSize = true;
-			this.MyWeapon_Name.BackColor = System.Drawing.Color.Transparent;
-			this.MyWeapon_Name.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.MyWeapon_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
-			this.MyWeapon_Name.ItemGrade = ((byte)(7));
-			this.MyWeapon_Name.Location = new System.Drawing.Point(47, 178);
-			this.MyWeapon_Name.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-			this.MyWeapon_Name.Name = "MyWeapon_Name";
-			this.MyWeapon_Name.Size = new System.Drawing.Size(63, 19);
-			this.MyWeapon_Name.TabIndex = 23;
-			this.MyWeapon_Name.TagImage = null;
-			this.MyWeapon_Name.Text = "物品名称";
-			// 
-			// itemIconCell1
-			// 
-			this.itemIconCell1.BackColor = System.Drawing.Color.Transparent;
-			this.itemIconCell1.ExtraBottomLeft = null;
-			this.itemIconCell1.ExtraBottomRight = null;
-			this.itemIconCell1.ExtraTopLeft = null;
-			this.itemIconCell1.ExtraTopRight = null;
-			this.itemIconCell1.ForeColor = System.Drawing.Color.Black;
-			this.itemIconCell1.FrameImage = null;
-			this.itemIconCell1.FrameType = true;
-			this.itemIconCell1.ItemIcon = null;
-			this.itemIconCell1.Location = new System.Drawing.Point(43, 75);
-			this.itemIconCell1.Margin = new System.Windows.Forms.Padding(4);
-			this.itemIconCell1.Name = "itemIconCell1";
-			this.itemIconCell1.Scale = 64;
-			this.itemIconCell1.ShowStackCount = false;
-			this.itemIconCell1.ShowStackCountOnlyOne = true;
-			this.itemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.itemIconCell1.StackCount = ((uint)(1u));
-			this.itemIconCell1.TabIndex = 21;
-			this.itemIconCell1.TabStop = false;
-			// 
-			// warningPreview1
-			// 
-			this.warningPreview1.AutoSize = true;
-			this.warningPreview1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.warningPreview1.BackColor = System.Drawing.Color.Transparent;
-			this.warningPreview1.Location = new System.Drawing.Point(127, 639);
-			this.warningPreview1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.warningPreview1.Name = "warningPreview1";
-			this.warningPreview1.Size = new System.Drawing.Size(424, 31);
-			this.warningPreview1.TabIndex = 20;
-			this.warningPreview1.Type = Xylia.Preview.Data.Record.ItemTransformRecipe.Warning.Stuck;
-			// 
 			// FixedIngredientPreview
 			// 
+			this.FixedIngredientPreview.AutoSize = true;
 			this.FixedIngredientPreview.BackColor = System.Drawing.Color.Transparent;
 			this.FixedIngredientPreview.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-			this.FixedIngredientPreview.Controls.Add(this.moneyCostPreview1);
-			this.FixedIngredientPreview.Location = new System.Drawing.Point(4, 421);
+			this.FixedIngredientPreview.Controls.Add(this.itemIconCell4);
+			this.FixedIngredientPreview.Controls.Add(this.itemIconCell3);
+			this.FixedIngredientPreview.Controls.Add(this.itemIconCell2);
+			this.FixedIngredientPreview.Location = new System.Drawing.Point(254, 449);
 			this.FixedIngredientPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.FixedIngredientPreview.Name = "FixedIngredientPreview";
-			this.FixedIngredientPreview.Size = new System.Drawing.Size(675, 273);
+			this.FixedIngredientPreview.Size = new System.Drawing.Size(165, 51);
 			this.FixedIngredientPreview.TabIndex = 0;
 			// 
-			// moneyCostPreview1
+			// itemIconCell4
 			// 
-			this.moneyCostPreview1.AutoSize = true;
-			this.moneyCostPreview1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.moneyCostPreview1.BackColor = System.Drawing.Color.Transparent;
-			this.moneyCostPreview1.Location = new System.Drawing.Point(136, 145);
-			this.moneyCostPreview1.Margin = new System.Windows.Forms.Padding(4);
-			this.moneyCostPreview1.MaximumSize = new System.Drawing.Size(400, 0);
-			this.moneyCostPreview1.MoneyCost = 3000;
-			this.moneyCostPreview1.Name = "moneyCostPreview1";
-			this.moneyCostPreview1.Size = new System.Drawing.Size(400, 63);
-			this.moneyCostPreview1.TabIndex = 12;
+			this.itemIconCell4.BackColor = System.Drawing.Color.Transparent;
+			this.itemIconCell4.ExtraBottomLeft = null;
+			this.itemIconCell4.ExtraBottomRight = null;
+			this.itemIconCell4.ExtraTopLeft = null;
+			this.itemIconCell4.ExtraTopRight = null;
+			this.itemIconCell4.ForeColor = System.Drawing.Color.Black;
+			this.itemIconCell4.FrameImage = null;
+			this.itemIconCell4.FrameType = true;
+			this.itemIconCell4.ItemIcon = null;
+			this.itemIconCell4.Location = new System.Drawing.Point(117, 3);
+			this.itemIconCell4.Name = "itemIconCell4";
+			this.itemIconCell4.Scale = 45;
+			this.itemIconCell4.ShowStackCount = false;
+			this.itemIconCell4.ShowStackCountOnlyOne = true;
+			this.itemIconCell4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.itemIconCell4.StackCount = 1;
+			this.itemIconCell4.TabIndex = 2;
+			this.itemIconCell4.TabStop = false;
+			this.itemIconCell4.Visible = false;
+			// 
+			// itemIconCell3
+			// 
+			this.itemIconCell3.BackColor = System.Drawing.Color.Transparent;
+			this.itemIconCell3.ExtraBottomLeft = null;
+			this.itemIconCell3.ExtraBottomRight = null;
+			this.itemIconCell3.ExtraTopLeft = null;
+			this.itemIconCell3.ExtraTopRight = null;
+			this.itemIconCell3.ForeColor = System.Drawing.Color.Black;
+			this.itemIconCell3.FrameImage = null;
+			this.itemIconCell3.FrameType = true;
+			this.itemIconCell3.ItemIcon = null;
+			this.itemIconCell3.Location = new System.Drawing.Point(59, 3);
+			this.itemIconCell3.Name = "itemIconCell3";
+			this.itemIconCell3.Scale = 45;
+			this.itemIconCell3.ShowStackCount = false;
+			this.itemIconCell3.ShowStackCountOnlyOne = true;
+			this.itemIconCell3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.itemIconCell3.StackCount = 1;
+			this.itemIconCell3.TabIndex = 1;
+			this.itemIconCell3.TabStop = false;
+			this.itemIconCell3.Visible = false;
+			// 
+			// itemIconCell2
+			// 
+			this.itemIconCell2.BackColor = System.Drawing.Color.Transparent;
+			this.itemIconCell2.ExtraBottomLeft = null;
+			this.itemIconCell2.ExtraBottomRight = null;
+			this.itemIconCell2.ExtraTopLeft = null;
+			this.itemIconCell2.ExtraTopRight = null;
+			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
+			this.itemIconCell2.FrameImage = null;
+			this.itemIconCell2.FrameType = true;
+			this.itemIconCell2.ItemIcon = null;
+			this.itemIconCell2.Location = new System.Drawing.Point(2, 2);
+			this.itemIconCell2.Name = "itemIconCell2";
+			this.itemIconCell2.Scale = 45;
+			this.itemIconCell2.ShowStackCount = false;
+			this.itemIconCell2.ShowStackCountOnlyOne = true;
+			this.itemIconCell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.itemIconCell2.StackCount = 1;
+			this.itemIconCell2.TabIndex = 0;
+			this.itemIconCell2.TabStop = false;
+			this.itemIconCell2.Visible = false;
+			// 
+			// MoneyCostPreview
+			// 
+			this.MoneyCostPreview.BackColor = System.Drawing.Color.Transparent;
+			this.MoneyCostPreview.Location = new System.Drawing.Point(173, 578);
+			this.MoneyCostPreview.Margin = new System.Windows.Forms.Padding(4);
+			this.MoneyCostPreview.MaximumSize = new System.Drawing.Size(400, 0);
+			this.MoneyCostPreview.MoneyCost = 0;
+			this.MoneyCostPreview.Name = "MoneyCostPreview";
+			this.MoneyCostPreview.Size = new System.Drawing.Size(334, 63);
+			this.MoneyCostPreview.TabIndex = 12;
 			// 
 			// ResultWeaponPreview
 			// 
+			this.ResultWeaponPreview.AutoSize = true;
 			this.ResultWeaponPreview.BackColor = System.Drawing.Color.Transparent;
 			this.ResultWeaponPreview.Location = new System.Drawing.Point(182, 44);
 			this.ResultWeaponPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.ResultWeaponPreview.Name = "ResultWeaponPreview";
 			this.ResultWeaponPreview.Size = new System.Drawing.Size(497, 138);
 			this.ResultWeaponPreview.TabIndex = 0;
+			this.ResultWeaponPreview.ResultItemChanged += new Xylia.Preview.Project.Core.ItemGrowth.Preview.ResultWeaponPreview.ResultItemChangedHandle(this.ResultWeaponPreview_ResultItemChanged);
 			// 
 			// SubIngredientPreview
 			// 
+			this.SubIngredientPreview.AutoSize = true;
 			this.SubIngredientPreview.BackColor = System.Drawing.Color.Transparent;
-			this.SubIngredientPreview.Location = new System.Drawing.Point(0, 328);
+			this.SubIngredientPreview.Controls.Add(this.feedItemIconCell1);
+			this.SubIngredientPreview.Location = new System.Drawing.Point(298, 344);
 			this.SubIngredientPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.SubIngredientPreview.Name = "SubIngredientPreview";
-			this.SubIngredientPreview.Size = new System.Drawing.Size(679, 104);
+			this.SubIngredientPreview.Size = new System.Drawing.Size(85, 93);
 			this.SubIngredientPreview.TabIndex = 1;
+			this.SubIngredientPreview.RecipeChanged += new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview.RecipeChangedHandle(this.SubIngredientPreview_RecipeChanged);
+			// 
+			// feedItemIconCell1
+			// 
+			this.feedItemIconCell1.FrameImage = ((System.Drawing.Bitmap)(resources.GetObject("feedItemIconCell1.FrameImage")));
+			this.feedItemIconCell1.Location = new System.Drawing.Point(0, 0);
+			this.feedItemIconCell1.Name = "feedItemIconCell1";
+			this.feedItemIconCell1.ShowFrameImage = false;
+			this.feedItemIconCell1.ShowStackCount = false;
+			this.feedItemIconCell1.ShowStackCountOnlyOne = false;
+			this.feedItemIconCell1.Size = new System.Drawing.Size(82, 90);
+			this.feedItemIconCell1.StackCount = 0;
+			this.feedItemIconCell1.TabIndex = 0;
+			this.feedItemIconCell1.TabStop = false;
+			this.feedItemIconCell1.Visible = false;
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label2.ForeColor = System.Drawing.Color.White;
+			this.label2.Location = new System.Drawing.Point(28, 377);
+			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(42, 21);
+			this.label2.TabIndex = 24;
+			this.label2.Text = "祭品";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label3.ForeColor = System.Drawing.Color.White;
+			this.label3.Location = new System.Drawing.Point(28, 474);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(42, 21);
+			this.label3.TabIndex = 25;
+			this.label3.Text = "材料";
 			// 
 			// ItemGrowth2Page
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = false;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.Controls.Add(this.MyWeapon_Name);
-			this.Controls.Add(this.itemIconCell1);
-			this.Controls.Add(this.warningPreview1);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.FixedIngredientPreview);
-			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.MyWeapon_Title);
+			this.Controls.Add(this.MoneyCostPreview);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.ResultWeaponPreview);
 			this.Controls.Add(this.SubIngredientPreview);
-			this.Controls.Add(this.pictureBox2);
-			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ItemGrowth2Page";
-			this.Size = new System.Drawing.Size(684, 700);
-			this.SizeChanged += new System.EventHandler(this.ItemGrowth2Page_SizeChanged);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).EndInit();
+			this.Controls.SetChildIndex(this.WarningPreview, 0);
+			this.Controls.SetChildIndex(this.SubIngredientPreview, 0);
+			this.Controls.SetChildIndex(this.ResultWeaponPreview, 0);
+			this.Controls.SetChildIndex(this.label1, 0);
+			this.Controls.SetChildIndex(this.MoneyCostPreview, 0);
+			this.Controls.SetChildIndex(this.MyWeapon_Title, 0);
+			this.Controls.SetChildIndex(this.FixedIngredientPreview, 0);
+			this.Controls.SetChildIndex(this.label2, 0);
+			this.Controls.SetChildIndex(this.label3, 0);
 			this.FixedIngredientPreview.ResumeLayout(false);
-			this.FixedIngredientPreview.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).EndInit();
+			this.SubIngredientPreview.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.feedItemIconCell1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -221,16 +265,18 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		#endregion
 
-		private Preview.FixedIngredientPreview FixedIngredientPreview;
-		private Preview.SubIngredientPreview SubIngredientPreview;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		protected Preview.FixedIngredientPreview FixedIngredientPreview;
+		protected Preview.SubIngredientPreview SubIngredientPreview;
 		private System.Windows.Forms.Label MyWeapon_Title;
-		private Preview.MoneyCostPreview moneyCostPreview1;
+		protected Preview.MoneyCostPreview MoneyCostPreview;
 		private System.Windows.Forms.Label label1;
-		private Preview.ResultWeaponPreview ResultWeaponPreview;
-		private Preview.WarningPreview warningPreview1;
-		private Item.Cell.Basic.ItemIconCell itemIconCell1;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private Item.Cell.Basic.ItemNameCell MyWeapon_Name;
+		protected Preview.ResultWeaponPreview ResultWeaponPreview;
+
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label3;
+		private Cell.FeedItemIconCell feedItemIconCell1;
+		private Item.Cell.Basic.ItemIconCell itemIconCell2;
+		private Item.Cell.Basic.ItemIconCell itemIconCell3;
+		private Item.Cell.Basic.ItemIconCell itemIconCell4;
 	}
 }

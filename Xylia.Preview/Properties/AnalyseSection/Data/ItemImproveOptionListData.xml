@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="item-improve-option-list" version="4.0" rule="cpl" >
+	<list module="ItemData" type="item-improve-option-list" version="5.0" rule="cpl" >
 		<record alias="id" type="id" name="" />
 		<record alias="job" seq="$job" type="Seq" name="" start="0" />	
 		<record alias="option" name="" ref="ItemImproveOption" repeat="63" />

@@ -1,117 +1,83 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
+using NPOI.SS.Formula.Functions;
+
+using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
-using Xylia.Preview.Project.Core.Item.Preview.Reward;
+
+using ItemData = Xylia.Preview.Data.Record.Item;
+
 
 namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 {
-	public partial class FixedIngredientPreview : UserControl, IPreview
+	public partial class FixedIngredientPreview : Panel
 	{
-		#region 字段
-		const int MyScale = 42;
-		const int MyPadding = 3;
-
-		List<Control> Ctls = new List<Control>();
-		#endregion
-
-		#region 构造
-		public FixedIngredientPreview()
+		#region 方法
+		private void CreateNew(ItemData Item, int StackCount, ref int LocX)
 		{
-			InitializeComponent();
-
-			this.BackColor = Color.Transparent;
-			this.AutoSize = false;
-		}
-		#endregion
-
-		#region 接口方法
-		public bool INVALID() => false;
-
-		public void LoadData(IRecord record)
-		{
-			var Record = record as ItemTransformRecipe;
-
-			this.Clear();
-			this.Ctls = new List<Control>();
-
-			//LoadFixedIngredient(Record.FixedIngredient1, Record.FixedIngredientStackCount1);
-			//LoadFixedIngredient(Record.FixedIngredient2, Record.FixedIngredientStackCount2);
-			//LoadFixedIngredient(Record.FixedIngredient3, Record.FixedIngredientStackCount3);
-			//LoadFixedIngredient(Record.FixedIngredient4, Record.FixedIngredientStackCount4);
-			//LoadFixedIngredient(Record.FixedIngredient5, Record.FixedIngredientStackCount5);
-			//LoadFixedIngredient(Record.FixedIngredient6, Record.FixedIngredientStackCount6);
-			//LoadFixedIngredient(Record.FixedIngredient7, Record.FixedIngredientStackCount7);
-			//LoadFixedIngredient(Record.FixedIngredient8, Record.FixedIngredientStackCount8);
-		
-			this.Refresh();
-		}
-
-		void LoadFixedIngredient(string Item, short StackCount)
-		{
-			if (Item is null) return;
-
-			var ItemObj = Item.GetItemInfo();
-			if (ItemObj != null)
+			var ItemIcon = new ItemIconCell()
 			{
-				Ctls.Add(new ItemIconCell()
-				{
-					ObjectRef = ItemObj,
-					ItemIcon = ItemObj.Icon,
+				ObjectRef = Item,
+				ItemIcon = Item.Icon,
+				ShowStackCount = true,
+				StackCount = StackCount,
 
-					ShowStackCount = true,
-					StackCount = Math.Max(1, (uint)StackCount),
+				Location = new Point(LocX, 0),
+				Scale = 45,
+			};
 
-					Scale = MyScale,
-				});
-			}
-		}
-		#endregion
-
-
-
-		#region 重写方法
-		public void Clear()
-		{
-			foreach (var c in this.Controls.OfType<ItemIconCell>()) this.Controls.Remove(c);
+			this.Controls.Add(ItemIcon);
+			LocX = ItemIcon.Right + 3;
 		}
 
-		public override void Refresh()
+		private void HandleSize(int LocX)
 		{
-			this.SuspendLayout();
-			this.Clear();
+			this.Width = LocX;
+			this.Height = 50;
+		}
 
-			#region 显示控件
-			//遵守居中对齐设计，所以在这里需要位置
-			//图标大小 + Padding区域大小
-			int LocX = (this.Width - (Ctls.Count * MyScale + (Ctls.Count - 1) * MyPadding)) / 2;
-			foreach (var c in Ctls)
+
+		public void LoadData(ItemTransformRecipe record)
+		{
+			this.Controls.Remove<ItemIconCell>();
+
+			#region 加载控件
+			int LocX = 0;
+			for (int i = 1; i <= 8; i++)
 			{
-				if (!this.Controls.Contains(c))
-				{
-					this.Controls.Add(c);
+				var FixedIngredient = record.Attributes["fixed-ingredient-" + i].GetItemInfo();
+				if (FixedIngredient is null) continue;
 
-					//if(!this.IsHandleCreated) 
-					//else
-					//{
-					//	this.Invoke(new MethodInvoker(delegate
-					//	{
-					//		this.Controls.Add(c);
-					//	}));
-					//}
-				}
+				var FixedIngredientStackCount = record.Attributes["fixed-ingredient-stack-count-" + i].ConvertToShort();
 
-				c.Location = new Point(LocX, this.label2.Location.Y - (MyScale - this.label2.Height));
-				LocX = c.Right + MyPadding;
+				CreateNew(FixedIngredient, FixedIngredientStackCount, ref LocX);
 			}
 			#endregion
 
-			this.ResumeLayout();
+			this.HandleSize(LocX);
+		}
+
+
+		public void LoadData(ItemImprove record, byte Index)
+		{
+			this.Controls.Remove<ItemIconCell>();
+
+			#region 加载控件
+			int LocX = 0;
+			for (int i = 1; i <= 8; i++)
+			{
+				var CostSubItem = record.Attributes[$"cost-sub-item-{Index}-{i}"].GetItemInfo();
+				if (CostSubItem is null) continue;
+
+				var CostSubItemCount = record.Attributes[$"cost-sub-item-count-{Index}-{i}"].ConvertToShort();
+
+				CreateNew(CostSubItem, CostSubItemCount, ref LocX);
+			}
+			#endregion
+
+			this.HandleSize(LocX);
 		}
 		#endregion
 	}

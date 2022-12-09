@@ -37,7 +37,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			get => (int)this.ItemShow.IconCell.StackCount;
 			set
 			{
-				this.ItemShow.IconCell.StackCount = (uint)value;
+				this.ItemShow.IconCell.StackCount = value;
 
 				this.ItemShow.IconCell.ShowStackCountOnlyOne = false;
 				this.ItemShow.IconCell.ShowStackCount = true;

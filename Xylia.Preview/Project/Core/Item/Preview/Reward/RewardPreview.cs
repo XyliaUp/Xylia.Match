@@ -154,7 +154,7 @@ namespace Xylia.Preview.Project.Core.Item
 
 						//显示所需钥匙数量
 						ShowStackCount = Icon is not null,
-						StackCount = (uint)((page.OpenItem2?.StackCount) ?? 1),
+						StackCount = (page.OpenItem2?.StackCount) ?? 1,
 					};
 
 					if (Icon is null)

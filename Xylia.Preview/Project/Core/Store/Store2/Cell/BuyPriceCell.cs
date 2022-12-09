@@ -143,7 +143,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 				Scale = this.Scale,
 				ItemIcon = ItemData.IconExtra,
 
-				StackCount = (uint)(Count ?? 0),
+				StackCount = Count ?? 0,
 				ShowStackCount = true,
 
 				Location = new Point(LoX, LoY),

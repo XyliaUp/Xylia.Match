@@ -53,7 +53,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 		/// 物品数量
 		/// </summary>
 		[Category("Item"), Description("物品数量")]
-		public uint StackCount { get; set; }
+		public int StackCount { get; set; }
 
 		/// <summary>
 		/// 显示物品数量

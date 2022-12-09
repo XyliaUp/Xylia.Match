@@ -66,7 +66,7 @@
 			this.itemIconCell2.ShowStackCount = true;
 			this.itemIconCell2.ShowStackCountOnlyOne = true;
 			this.itemIconCell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.itemIconCell2.StackCount = ((uint)(1u));
+			this.itemIconCell2.StackCount = 1;
 			this.itemIconCell2.TabIndex = 7;
 			this.itemIconCell2.TabStop = false;
 			// 
@@ -88,7 +88,7 @@
 			this.itemIconCell1.ShowStackCount = true;
 			this.itemIconCell1.ShowStackCountOnlyOne = true;
 			this.itemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.itemIconCell1.StackCount = ((uint)(1u));
+			this.itemIconCell1.StackCount = 1;
 			this.itemIconCell1.TabIndex = 6;
 			this.itemIconCell1.TabStop = false;
 			// 

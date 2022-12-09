@@ -114,7 +114,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			if (this.UserOperScene != null && UserOperScene.Visible)
 			{
 				this.UserOperScene.Show();
-				this.UserOperScene.RefreshLoc();
 			}
 			#endregion
 		}

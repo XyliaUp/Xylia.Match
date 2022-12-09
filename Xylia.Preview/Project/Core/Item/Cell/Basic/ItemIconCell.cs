@@ -70,13 +70,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// <summary>
 		/// 字段：堆叠数量
 		/// </summary>
-		private uint m_StackCount = 1;
+		private int m_StackCount = 1;
 
 		/// <summary>
 		/// 物品数量
 		/// </summary>
 		[Category("Item"), Description("物品数量")]
-		public uint StackCount
+		public int StackCount
 		{
 			get => this.m_StackCount;
 			set
@@ -357,7 +357,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// <param name="g"></param>
 		/// <param name="StackCount"></param>
 		/// <param name="Size"></param>
-		public static void DrawStackCount(Graphics g, uint StackCount, SizeF Size)
+		public static void DrawStackCount(Graphics g, int StackCount, SizeF Size)
 		{
 			var Txt = StackCount.ToString();
 
@@ -370,8 +370,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			else if (StackCount > 9) CurFont = new Font(CurFont.FontFamily, CurFont.Size);
 			else CurFont = new Font(CurFont.FontFamily, CurFont.Size);
 			#endregion
-
-
 
 
 			var TxtSize = Txt.MeasureString(CurFont, false);

@@ -132,7 +132,7 @@ namespace Xylia.Preview.Data.Helper
 
 
 		public DataTable<PartyBattleFieldZone> PartyBattleFieldZone { get; } = new();
-		public DataTable<IRecord> PublicRaid { get; } = new();
+		public DataTable<PublicRaid> PublicRaid { get; } = new();
 
 
 

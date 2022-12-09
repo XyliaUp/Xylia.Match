@@ -8,9 +8,6 @@ using System.Windows.Forms;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Cell;
-using Xylia.Preview.Project.Core.ItemGrowth.Page;
-
-using ItemData = Xylia.Preview.Data.Record.Item;
 
 
 namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
@@ -18,120 +15,80 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 	[Designer(typeof(Designer.FixedHeightDesigner))]
 	public partial class ResultWeaponPreview : UserControl
 	{
-		#region 字段
-		/// <summary>
-	 	/// 单页最大目标数量
-		/// </summary>
-		const int MaxCellNum = 5;
-
-		readonly  List<ItemPreviewCell> ItemPreviewCells = new();
+		#region 构造
+		public ResultWeaponPreview()
+		{
+			InitializeComponent();
+		}
 		#endregion
 
 		#region 事件与委托
 		//定义委托
-		public delegate void ResultItemChangedHandle(object sender, ResultItemChangedEventArgs e);
+		public delegate void ResultItemChangedHandle(ResultItemChangedEventArgs e);
 
 		//定义事件
 		public event ResultItemChangedHandle ResultItemChanged;
 		#endregion
 
-		#region 构造
-		public ResultWeaponPreview()
-		{
-			InitializeComponent();
-
-			this.BackColor = Color.Transparent;
-			this.AutoSize = false;
-
-
-			if (!DesignMode) this.Controls.Remove(this.itemPreviewCell1);
-		}
+		#region 字段
+		/// <summary>
+		/// 单页最大目标数量
+		/// </summary>
+		const int MaxCellNum = 5;
 		#endregion
 
+
 		#region 方法
-		/// <summary>
-		/// 设置数据
-		/// </summary>
-		/// <param name="Parent"></param>
-		/// <param name="Recipes"></param>
-		public void SetData(ItemGrowth2Page Parent, IEnumerable<ItemTransformRecipe> Recipes)
+		public void SetData(IEnumerable<ItemTransformRecipe> Recipes)
 		{
-			ItemPreviewCells.Clear();
-			this.Controls.Remove<ItemPreviewCell>();
-				
 			//获得成长目标信息
-			var PreviewResults = Recipes.Select(r => r.TitleItem).Distinct();
-			if (PreviewResults.Any())
-			{
-				#region 缓存查询数据
-				var ItemRecipes = new Dictionary<ItemData, IEnumerable<ItemTransformRecipe>>();
-				foreach (var Result in PreviewResults)
-				{
-					var ResultItem = Result.GetItemInfo();
-					ItemRecipes.Add(ResultItem, Recipes.Where(r => r.TitleItem == Result));
-				}
-				#endregion
-
-				#region 创建目标物品控件
-				foreach (var Result in ItemRecipes)
-				{
-					#region 创建控件对象
-					ItemPreviewCell ItemPreviewCell = new()
-					{
-						ItemInfo = Result.Key,
-						ShowStackCount = false,
-
-						Test = Parent,
-					};
-
-					ItemPreviewCells.Add(ItemPreviewCell);
-					#endregion
-
-					#region 委托绑定事件
-					ItemPreviewCell.Click += new EventHandler((s, e) =>
-					{
-						//将其他对象的选择状态取消
-						this.ItemPreviewCells.ForEach(c => c.ShowFrameImage = false);
-						ItemPreviewCell.ShowFrameImage = true;
-
-						this.ResultItemChanged?.Invoke(this, new ResultItemChangedEventArgs(Result.Key, Result.Value));
-					});
-					#endregion
-				}
-				#endregion
-
-				//触发第一个选项 
-				Page.ItemGrowth2Page.LastKey = Keys.None;
-				this.ItemPreviewCells.First().CallEvent("OnClick");
-			}
-			else
-			{
-				//传递无可成长对象
-				this.ResultItemChanged?.Invoke(this, null);
-			}
+			var PreviewResult = Recipes.Select(r => r.TitleItem).Distinct();
+			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(Recipes.Where(o => o.TitleItem == item))), PreviewResult.ToArray());
 		}
 
-		public override void Refresh()
+		public void SetData(ItemImprove ItemImprove, string ImproveNextItem)
 		{
-			this.SuspendLayout();
+			//获得成长目标信息
+			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemImprove)), ImproveNextItem);
+		}
 
+		public void SetData(Action<string> test, params string[] NextItem)
+		{
+			#region 初始化
+			this.Controls.Remove<ItemPreviewCell>();
+			#endregion
+
+			#region 创建目标物品控件
 			int LocX = 50;
-			foreach (var IconCell in this.ItemPreviewCells)
+			foreach (var TitleItem in NextItem)
 			{
-				if (!this.Controls.Contains(IconCell)) this.Controls.Add(IconCell);
+				#region 创建控件对象
+				ItemPreviewCell ItemPreviewCell = new()
+				{
+					Location = new Point(LocX, 0),
 
-				IconCell.Location = new Point(LocX, 0);
-				LocX = IconCell.Right;
+					ItemInfo = TitleItem.GetItemInfo(),
+					ShowStackCount = false,
+				};
+
+				this.Controls.Add(ItemPreviewCell);
+				LocX = ItemPreviewCell.Right;
+				#endregion
+
+				#region 委托绑定事件
+				ItemPreviewCell.Click += new EventHandler((s, e) =>
+				{
+					//将其他对象的选择状态取消
+					this.Controls.OfType<ItemPreviewCell>().ForEach(c => c.ShowFrameImage = false);
+					ItemPreviewCell.ShowFrameImage = true;
+
+					test(TitleItem);
+				});
+				#endregion
 			}
+			#endregion
 
-			this.ResumeLayout();
-
-			base.Refresh();
-		}
-
-		private void ResultWeaponPreview_SizeChanged(object sender, EventArgs e)
-		{
-			
+			this.Controls.OfType<ItemPreviewCell>().FirstOrDefault()?.CallEvent("OnClick");
 		}
 		#endregion
 	}
@@ -142,14 +99,11 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 	/// </summary>
 	public class ResultItemChangedEventArgs : EventArgs
 	{
-		public ResultItemChangedEventArgs(ItemData ItemInfo, IEnumerable<ItemTransformRecipe> Recipes)
-		{
-			this.ItemInfo = ItemInfo;
-			this.Recipes = Recipes;
-		}
-
-		public ItemData ItemInfo { get; set; }
-
 		public IEnumerable<ItemTransformRecipe> Recipes { get; set; }
+		public ResultItemChangedEventArgs(IEnumerable<ItemTransformRecipe> Recipes) => this.Recipes = Recipes;
+		
+
+		public ItemImprove ItemImprove;
+		public ResultItemChangedEventArgs(ItemImprove ItemImprove) => this.ItemImprove = ItemImprove;
 	}
 }

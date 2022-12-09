@@ -334,7 +334,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				return new ItemIconCell()
 				{
 					ShowStackCount = true,
-					StackCount = (uint)StackCount,
+					StackCount = StackCount,
 
 					ObjectRef = Obj,
 					ItemIcon = _Obj.MainIcon(),

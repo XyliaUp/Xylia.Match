@@ -30,6 +30,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 		}
 		#endregion
 
+
+
 		#region 字段
 		private ItemData _ItemInfo;
 		
@@ -83,38 +85,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 
 
 		#region 方法
-		private void ItemPreviewCell_SizeChanged(object sender, EventArgs e)
-		{
-
-		}
-
-
-		public ItemGrowth2Page Test;
-
-		private void ItemPreviewCell_Click(object sender, EventArgs e)
-		{
-			//由于创建目标物品时，会调用click方法。所以必须注意进行状态判断。
-			if (ItemGrowth2Page.LastKey == Keys.ShiftKey)
-			{
-				var thread = new Thread(act =>
-				{
-					var ItemInfo = ItemIcon.ItemAlias.GetItemInfo();
-					if (ItemInfo != null)
-					{
-						var Recipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
-						Test.Invoke(new Action(() => 
-						{
-							Test.MyWeapon = ItemInfo;
-							Test.SetData(Recipes);
-						}));
-					}
-				});
-
-				thread.SetApartmentState(ApartmentState.STA);
-				thread.Start();
-			}
-		}
-
 		public override void Refresh()
 		{
 			this.ItemName.MaximumSize = new Size(this.Width, 99999999);

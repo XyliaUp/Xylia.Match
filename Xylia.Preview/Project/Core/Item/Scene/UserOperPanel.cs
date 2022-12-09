@@ -8,7 +8,6 @@ using System.Xml;
 
 using HZH_Controls.Controls;
 
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Scene;
 using Xylia.Preview.Properties.AnalyseSection;
 
@@ -34,30 +33,12 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			InitializeComponent();
 
 			this.MyParentForm = ParentForm;
-		}
-		#endregion
-
-
-		#region 方法
-		private void UserOperScene_Load(object sender, EventArgs e)
-		{
-			this.Width = 50;
-		}
-
-		private void UserOperPanel_VisibleChanged(object sender, EventArgs e)
-		{
-			this.RefreshLoc();
-		}
-
-		public override void Refresh()
-		{
-			base.Refresh();
 
 			#region 创建操作按钮
 			var OperBtns = new List<Control>();
 
 			if (this.MoreInformation) OperBtns.Add(this.pictureBox2);
-			if (true || this.HasItemTransform) OperBtns.Add(this.pictureBox1);
+			if (true) OperBtns.Add(this.pictureBox1);
 
 			BtnCount = OperBtns.Count;
 			#endregion
@@ -81,20 +62,25 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			}
 			#endregion
 		}
+		#endregion
 
-		/// <summary>
-		/// 刷新位置
-		/// </summary>
-		public void RefreshLoc()
+
+		#region 方法
+		private void UserOperScene_Load(object sender, EventArgs e)
 		{
-			if (this.Visible)
-			{
-				var ScreenPoint = this.MyParentForm.PointToScreen(new Point(0, 0));
+			this.Width = 50;
+		}
 
-				//必须等开始加载了才能进行定位
-				this.Left = ScreenPoint.X - this.Width;
-				this.Top = ScreenPoint.Y;
-			}
+		private void UserOperPanel_VisibleChanged(object sender, EventArgs e)
+		{
+			if (!this.Visible) return;
+
+
+			var ScreenPoint = this.MyParentForm.PointToScreen(new Point(0, 0));
+
+			//必须等开始加载了才能进行定位
+			this.Left = ScreenPoint.X - this.Width;
+			this.Top = ScreenPoint.Y;
 		}
 		#endregion
 
@@ -340,23 +326,24 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		}
 		#endregion
 
-		#region 查看提炼
-		/// <summary>
-		/// 拥有物品进化信息
-		/// </summary>
-		public bool HasItemTransform => this.ItemTransformRecipes != null && this.ItemTransformRecipes.Any();
-
-
-		public IEnumerable<ItemTransformRecipe> ItemTransformRecipes { get; set; }
-
+		#region 查看装备管理
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
 			var thread = new Thread(act =>
 			{
-				var Preview = new ItemGrowthScene();
-				Preview.ShowItemGrowth2(MyParentForm?.ItemInfo, ItemTransformRecipes);
+				try
+				{
+					var Preview = new EquipmentGuideScene(MyParentForm.ItemInfo);
 
-				if (Preview != null) Preview.ShowDialog();
+					Preview.ShowItemGrowth2();
+					Preview.ShowItemImprove();
+
+					Preview.ShowDialog();
+				}
+				catch
+				{
+
+				}
 			});
 
 			thread.SetApartmentState(ApartmentState.STA);

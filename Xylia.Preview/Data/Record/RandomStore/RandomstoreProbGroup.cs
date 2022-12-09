@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xylia.Preview.Data.Record.Struct.RandomStore
+namespace Xylia.Preview.Data.Record
 {
 
 }
