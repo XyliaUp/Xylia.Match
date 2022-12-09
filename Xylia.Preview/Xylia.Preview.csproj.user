@@ -77,28 +77,28 @@
     <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListScene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Cell\FeedItemIconCell.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Cell\FeedItemIconCell.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Cell\ItemPreviewCell.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Cell\ItemPreviewCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Page\ItemGrowth2Page.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\ItemGrowth2Page.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Preview\FixedIngredientPreview.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\FixedIngredientPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Preview\MoneyCostPreview.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\MoneyCostPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Preview\ResultWeaponPreview.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\ResultWeaponPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Preview\SubIngredientPreview.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\SubIngredientPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Preview\WarningPreview.cs">
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\WarningPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\ItemGrowth\Scene\ItemGrowthScene.cs">
@@ -268,7 +268,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Project\Core\ItemGrowth\Page\ItemGrowth2Page.resx">
+    <EmbeddedResource Update="Project\Core\ItemGrowth\ItemGrowth2\ItemGrowth2Page.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Project\Core\Item\Preview\GemPreview.resx">

@@ -16,6 +16,7 @@ using Xylia.bns.Modules.DataFormat.Analyse.Output;
 using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
+
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 using Xylia.Preview.Properties;
@@ -92,7 +93,6 @@ namespace Xylia.Preview.Data
 			return File.Exists(PathCopy);
 		}
 		#endregion
-
 
 		#region 数据处理
 		/// <summary>
@@ -194,7 +194,10 @@ namespace Xylia.Preview.Data
 					}
 					catch (Exception ex)
 					{
+						//载入失败的处理
 						this.data = Array.Empty<Lazy<T>>();
+						this.FullLoad = true;
+
 						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex}");
 					}
 
@@ -304,11 +307,75 @@ namespace Xylia.Preview.Data
 
 			this.data = new Lazy<T>[this.ListData.ObjectCount];
 		}
-
-		public Output GetObject(int MainID, int VariationID = 0) => DeSerializer?.GetData(ListData, TableInfo, MainID, VariationID);
 		#endregion
 
 
+
+		#region 对象处理
+		private ObjectOutput GetObject(int MainID, int Variation)
+		{
+			var o = DeSerializer?.GetObject(ListData, TableInfo, MainID, Variation);
+			if (o is null) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
+
+			return o;
+		}
+
+		private Lazy<T> Test(int MainID, int Variation)
+		{
+			var o = this.GetObject(MainID, Variation);
+			if (o is null) return null;
+
+			return new Lazy<T>(() => CreateNew(o));
+		}
+
+		/// <summary>
+		/// 目前未支持缓存读取
+		/// </summary>
+		/// <param name="o"></param>
+		/// <param name="Index"></param>
+		/// <returns></returns>
+		private T CreateNew(ObjectOutput o, int Index = 0)
+		{
+			//新建一个对象，需要进行缓存
+			var temp = new T()
+			{
+				Index = Index,
+			};
+
+			temp.SetAttribute(o, this.PublicSet, ShowDebugInfo);
+			return temp;
+		}
+
+
+
+
+
+
+
+		bool FullLoad = false;
+
+		/// <summary>
+		/// 获取全部数据临时方法
+		/// </summary>
+		private IEnumerable<T> CreateTest(bool Preload = false)
+		{
+			if (!FullLoad)
+			{
+				var Objects = DeSerializer.GetObjects(this.ListData, this.TableInfo, Preload);
+				for (var x = 0; x < Objects.Count; x++)
+				{
+					var idx = x;
+					var obj = Objects[x];
+
+					this.data[x] = new Lazy<T>(() => CreateNew(obj, idx));
+				}
+
+				FullLoad = true;
+			}
+
+			return this.data.Select(o => o.Value);
+		}
+		#endregion
 
 
 		#region 获取对象信息
@@ -316,29 +383,20 @@ namespace Xylia.Preview.Data
 
 		public T this[int MainID, int Variation = 0] => this.GetLazyInfo(MainID, Variation)?.Value;
 
-
-		/// <summary>
-		/// 获得信息
-		/// </summary>
-		/// <param name="Alias"></param>
-		/// <returns></returns>
 		public T GetInfo(string Alias) => GetLazyInfo(Alias)?.Value;
-
 
 		protected virtual Lazy<T> GetLazyInfo(string Alias)
 		{
 			#region 初始化
 			if (string.IsNullOrWhiteSpace(Alias)) return null;
-			if (int.TryParse(Alias, out int MainID)) return GetLazyInfo(MainID, 0);
+			if (int.TryParse(Alias, out int MainID)) return GetLazyInfo(MainID, this is ItemTable ? 1 : 0);
 
 			if (!this.HasData) this.Load();
 			#endregion
 
-
 			#region 获取对象
 			//判断alias对应数组
 			if (this.ht_alias.ContainsKey(Alias)) return (Lazy<T>)this.ht_alias[Alias];
-
 
 			if (this.LoadFromGame)
 			{
@@ -353,13 +411,11 @@ namespace Xylia.Preview.Data
 				#endregion
 
 				#region 返回最终结果
-				var o = this.GetObject(AliasInfo.MainID, AliasInfo.Variation);
-				if (o != null)
-				{
-					var result = new Lazy<T>(() => CreateNew(o));
-					this.ht_alias[Alias] = result;
-					return result;
-				}
+				var result = this.Test(AliasInfo.MainID, AliasInfo.Variation);
+				if (result is null) return null;
+
+				this.ht_alias[Alias] = result;
+				return result;
 				#endregion
 			}
 			#endregion
@@ -376,11 +432,7 @@ namespace Xylia.Preview.Data
 			#endregion
 
 			#region 获取对象
-			if (this.LoadFromGame)
-			{
-				var o = this.GetObject(MainID, Variation);
-				if (o != null) return new Lazy<T>(() => CreateNew(o));
-			}
+			if (this.LoadFromGame) return this.Test(MainID, Variation);
 			else if (this.ht_id.ContainsKey(MainID)) return (Lazy<T>)this.ht_id[MainID];
 			#endregion
 
@@ -388,66 +440,7 @@ namespace Xylia.Preview.Data
 			if (this.data.Length != 0) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
 			return null;
 		}
-
-
-
-
-		/// <summary>
-		/// 目前未支持缓存读取
-		/// </summary>
-		/// <param name="o"></param>
-		/// <param name="Index"></param>
-		/// <returns></returns>
-		private T CreateNew(Output o, int Index = 0)
-		{
-			//新建一个对象，需要进行缓存
-			var temp = new T()
-			{
-				Index = Index,
-				Attributes = new OutputData(o),
-			};
-
-			//向成员赋值
-			if (this.PublicSet)
-			{
-				foreach (var Attr in o.Cells)
-					temp.SetMember(Attr.Alias, Attr.OutputVal, true, ShowDebugInfo ? null : true);
-			}
-
-			return temp;
-		}
-
-
-
-		bool FullLoad = false;
-
-		private IEnumerable<T> CreateTest
-		{
-			get
-			{
-				if (DeSerializer is null) return Array.Empty<T>();
-
-				if (!FullLoad)
-				{
-					var Objects = DeSerializer.GetDatas(this.ListData, this.TableInfo);
-					for (var x = 0; x < Objects.Count; x++)
-					{
-						var idx = x;
-						var obj = Objects[x];
-
-						this.data[x] = new Lazy<T>(() => CreateNew(obj, idx));
-					}
-
-					FullLoad = true;
-				}
-
-				return this.data.Select(o => o.Value);
-			}
-		}
 		#endregion
-
-
-
 
 		#region 处理类方法
 		/// <summary>
@@ -455,12 +448,15 @@ namespace Xylia.Preview.Data
 		/// </summary>
 		/// <param name="SearchRule"></param>
 		/// <returns></returns>
-		public T Find(Predicate<T> SearchRule)
-		{
-			if (!this.HasData) this.Load();
+		public T Find(Predicate<T> SearchRule) => this.FirstOrDefault(Info => SearchRule(Info));
 
-			if (this.LoadFromGame) return CreateTest.FirstOrDefault(Info => SearchRule(Info));
-			else return this.Data.FirstOrDefault(Info => SearchRule(Info.Value))?.Value;
+		/// <summary>
+		///  对每个元素执行指定操作。
+		/// </summary>
+		/// <param name="action"></param>
+		public void ForEach(Action<T> action)
+		{
+			foreach (var t in this) action(t);
 		}
 
 		/// <summary>
@@ -471,32 +467,53 @@ namespace Xylia.Preview.Data
 		public IEnumerable<T> Where(Predicate<T> SearchRule)
 		{
 			if (!this.HasData) this.Load();
+			if (!this.LoadFromGame) return this.Data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
 
-			if (this.LoadFromGame) return CreateTest.Where(Info => SearchRule(Info));
-			else return this.Data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
+			return CreateTest().Where(Info => SearchRule(Info));
 		}
+
+
 
 		/// <summary>
-		///  对每个元素执行指定操作。
+		/// 查询测试
 		/// </summary>
-		/// <param name="action"></param>
-		public void ForEach(Action<T> action)
+		/// <param name="AttrName"></param>
+		/// <param name="SearchRule"></param>
+		/// <returns></returns>
+		/// <exception cref="Exception"></exception>
+		public IEnumerable<T> WhereTest(string AttrName, Predicate<string> SearchRule)
 		{
 			if (!this.HasData) this.Load();
+			if (!this.LoadFromGame) throw new Exception("不支持的加载方式");
 
-			if (this.LoadFromGame)
-			{
-				foreach (var t in CreateTest) action(t);
-			}
-			else foreach (var t in this.Data) action(t.Value);
+
+			return CreateTest(true)
+				.Where(o => SearchRule(o.Attributes[AttrName]))
+				.Select(o =>
+				{
+					var Output = (o.Attributes as OutputData).Object;
+					if (Output.FullLoad) return o;
+
+
+					Output.DesObject();
+					o.SetAttribute(Output, this.PublicSet, ShowDebugInfo);
+					return o;
+				});
 		}
+		#endregion
 
 
 
+		#region 接口方法
 		/// <summary>
 		/// 清除数据
 		/// </summary>
-		public void Clear() => this.Data = null;
+		public void Clear()
+		{
+			this.data = null;
+			this.FullLoad = false;
+		}
+
 
 		/// <summary>
 		/// 重写哈希函数，使其调用清除数据方法
@@ -507,15 +524,13 @@ namespace Xylia.Preview.Data
 			this.Clear();
 			return base.GetHashCode();
 		}
-		#endregion
 
 
-		#region 接口方法
 		public IEnumerator<T> GetEnumerator()
 		{
 			if (!this.HasData) this.Load();
 
-			if (this.LoadFromGame) foreach (var info in this.CreateTest) yield return info;
+			if (this.LoadFromGame) foreach (var info in this.CreateTest()) yield return info;
 			else foreach (var info in this.Data) yield return info.Value;
 
 			//结束迭代

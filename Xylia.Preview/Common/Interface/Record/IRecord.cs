@@ -1,4 +1,6 @@
-﻿using Xylia.Extension;
+﻿
+using Xylia.bns.Modules.DataFormat.Analyse.Output;
+using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 
 namespace Xylia.Preview.Common.Interface
@@ -18,7 +20,23 @@ namespace Xylia.Preview.Common.Interface
 		public IAttributeCollection Attributes;
 
 		public bool ContainsAttribute(string AttrName, out string AttrValue) => this.Attributes.ContainsName(AttrName, out AttrValue);
+
+
+
+		public void SetAttribute(ObjectOutput o, bool SetMember, bool ShowDebugInfo)
+		{
+			this.Attributes = new OutputData(o);
+
+			//向成员赋值
+			if (SetMember)
+			{
+				foreach (var Attr in o.Cells)
+					this.SetMember(Attr.Alias, Attr.OutputVal, true, ShowDebugInfo ? null : true);
+			}
+		}
 		#endregion
+
+
 
 
 		#region 属性字段

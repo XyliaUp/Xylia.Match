@@ -115,32 +115,30 @@
     <Compile Update="Windows\Panel\Else_Youdao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Panel\GameText\MatchLocal.cs">
+    <Compile Update="Windows\Panel\Text\MatchLocal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Panel\GameImage\PakExtract.cs">
+    <Compile Update="Windows\Panel\Image\PakExtract.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Panel\MatchProp.cs">
+    <Compile Update="Windows\Panel\Main\MatchProp.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Windows\Quest\QuestMatch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Panel\GameLoading\ModifyLoading.cs">
+    <Compile Update="Windows\Panel\ModifyLoading.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Panel\GameText\ModifyLocal.cs">
+    <Compile Update="Windows\Panel\Text\ModifyLocal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Panel\GameImage\IconOperator.cs">
+    <Compile Update="Windows\Panel\Image\IconOperator.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Util\ItemMatch\Resources\Game.xml" />
-    <Content Include="Util\ItemMatch\Resources\Test\questdata.272.xml" />
-    <Content Include="Util\ItemMatch\Resources\Test\questdata.487.xml" />
+    <Content Include="Resources\Game.xml" />
     <Content Include="Properties\app\Query2.ico" />
     <Content Include="Resources\Tips.xml" />
     <Content Include="Properties\app\UpdateLog.txt" />
@@ -169,14 +167,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Loading.cs" />
-    <Compile Remove="Util\ItemMatch\Util\Quest.cs" />
-    <Compile Remove="Util\ItemMatch\Util\Test.cs" />
+    <Compile Remove="Windows\Panel\Main\ItemData\Util\Quest.cs" />
+    <Compile Remove="Windows\Panel\Main\ItemData\Util\Test.cs" />
     <Compile Remove="Windows\Quest.cs" />
     <Compile Remove="Windows\Quest.designer.cs" />
     <Compile Remove="Windows\Test.cs" />
     <Compile Remove="Windows\Test.Designer.cs" />
     <EmbeddedResource Remove="Windows\DatSelect.resx" />
-    <EmbeddedResource Remove="Windows\Panel\GameImage\UPK_Extract.resx" />
+    <EmbeddedResource Remove="Windows\Panel\Image\UPK_Extract.resx" />
     <EmbeddedResource Remove="Windows\Quest.resx" />
   </ItemGroup>
   <ItemGroup>

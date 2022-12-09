@@ -8,8 +8,6 @@ namespace Xylia.Preview.Data.Record
 	public sealed class ItemRandomAbilitySection : IRecord
 	{
 		#region 属性字段
-		public string alias;
-
 		public int VariationValueMin;
 		public int VariationValueMax;
 		public int VariationValueWithSpecialItemMin;

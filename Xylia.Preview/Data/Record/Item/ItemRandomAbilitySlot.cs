@@ -8,7 +8,6 @@ namespace Xylia.Preview.Data.Record
 	public sealed class ItemRandomAbilitySlot : IRecord
 	{
 		#region 属性字段
-		public string alias;
 		public MainAbility ability;
 		public int ValueMin;
 		public int ValueMax;

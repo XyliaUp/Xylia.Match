@@ -9,8 +9,6 @@ namespace Xylia.Preview.Data.Record
 	public sealed class NpcTalkMessage : IRecord, IName
 	{
 		#region 属性字段
-		public string alias;
-
 		public string Name2;
 
 		[Description("required-faction")]

@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace Xylia.Preview.Common.Interface
 {
-
-
-
 	/// <summary>
 	/// 变量参数 (p字段)
 	/// </summary>

@@ -70,7 +70,7 @@ namespace Xylia.Match.Windows
 		{
 			Thread thread = new(act =>
 			{
-				Xylia.Match.Load.GetNotice();
+				Xylia.Match.Loading.GetNotice();
 				this.CheckUpdate();
 			});
 

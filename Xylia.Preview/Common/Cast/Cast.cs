@@ -1,6 +1,5 @@
 ﻿using System;
 
-using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 

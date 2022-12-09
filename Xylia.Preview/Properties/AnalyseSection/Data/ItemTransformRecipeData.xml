@@ -29,11 +29,10 @@
 		<record alias="upgrade-grocery" ref="ItemTransformUpgradeItem" />
 		<record alias="required-inven-capacity" type="Int32" name="" default="1" apply="must" />
 		<record alias="money-cost" type="Int32" name="" />
-		<!-- ============================= 主材料 =============================  -->
-		<record alias="main-ingredient" name="" use-group="y" />
+		<record alias="main-ingredient" name="" use-group="y" preload="y" />
 		<record alias="main-ingredient-condition-type" type="Seq" name="" seq="$condition-type" />
 		<record alias="main-ingredient-min-level" type="Byte" name="" default="1" />
-		<record alias="main-ingredient-stack-count" type="Short" name="" default-correct="1" apply="must" />
+		<record alias="main-ingredient-stack-count" type="Short" name="" />
 		<record alias="main-ingredient-title-name" type="TextAlias" name="" server="n" />
 		<record alias="main-ingredient-title-item" type="Int32" name="用于显示的物品" ref="Item" server="n" />
 		<record alias="keep-main-ingredient-weapon-gem-slot" type="Bool" name="" />
@@ -43,22 +42,21 @@
 		<record alias="sub-ingredient" name="" use-group="y" repeat="7" />
 		<record alias="sub-ingredient-condition-type" type="Seq" name="" out-cond="Exist:sub-ingredient-*" seq="$condition-type" repeat="7" />
 		<record alias="sub-ingredient-min-level" type="Byte" default="1" out-cond="Exist:sub-ingredient-*" repeat="7" />
-		<record alias="sub-ingredient-stack-count" type="Short" default-correct="1" out-cond="Exist: sub-ingredient-*" apply="must" repeat="7" />
-		<record alias="sub-ingredient-title-name" type="TextAlias" out-cond="Exist: sub-ingredient-*" server="n" repeat="7" />
+		<record alias="sub-ingredient-stack-count" type="Short" repeat="7" />
+		<record alias="sub-ingredient-title-name" type="TextAlias" server="n" repeat="7" />
 		<record alias="sub-ingredient-title-item" ref="Item" server="n" repeat="7" />
 		<record alias="consume-sub-ingredient" type="Bool" name="" />
-		<!-- ===============================================================  -->
-		<!-- fixed 材料 -->
+		<!-- =========================== 固定材料  ===========================  -->
 		<record alias="fixed-ingredient" ref="Item" repeat="8" />
-		<record alias="fixed-ingredient-stack-count" type="Short" name="" apply-default="1" out-cond="Exist: fixed-ingredient-*" apply="must" repeat="8" />
+		<record alias="fixed-ingredient-stack-count" type="Short" name="" repeat="8" />
 		<record alias="consume-fixed-ingredient" type="Bool" name="" default="y" showzero="y" />
 		<record alias="special-fixed-index" type="Byte" name="" server="n" />
 		<record alias="unk-" type="Bool" name="" server="n" />
 		<record alias="unk-" type="Bool" name="" server="n" />
 		<record alias="unk-" type="Bool" name="" server="n" />
-		
+		<record alias="rare-item" use-group="y" repeat="12" />
 		<record alias="normal-item" use-group="y" repeat="12" />
-		<record alias="rare-item" use-group="y" repeat="24" />
+		<record alias="premium-item" use-group="y" repeat="12" />	
 		<record alias="random-item" use-group="y" repeat="10" />
 		<record alias="unk-" type="Int32" name="" />
 		<record alias="unk-" type="Int32" name="" />

@@ -14,6 +14,7 @@ namespace Xylia.Preview.Common.Cast
 		None,
 
 		KeyCap,
+
 		KeyCommand,
 	}
 }

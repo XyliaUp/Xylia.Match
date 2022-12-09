@@ -1,7 +1,7 @@
 ﻿
 using Xylia.Extension;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Common.Cast
 {
@@ -10,6 +10,27 @@ namespace Xylia.Preview.Common.Cast
 	/// </summary>
 	public static class RecordExtension
 	{
+		/// <summary>
+		/// 获得对象名称
+		/// </summary>
+		/// <param name="ObjInfo"></param>
+		/// <returns></returns>
+		public static string GetName(this string ObjInfo) => ObjInfo.GetObject()?.GetName() ?? ObjInfo;
+
+		/// <summary>
+		/// 获得对象名称
+		/// </summary>
+		/// <param name="Obj"></param>
+		/// <returns></returns>
+		public static string GetName(this IRecord Obj)
+		{
+			if (Obj is null) return null;
+			else if (Obj is IName IName) return IName.NameText();
+			else return Obj.Alias;
+		}
+
+
+
 		/// <summary>
 		/// 获得对象
 		/// </summary>
@@ -84,27 +105,6 @@ namespace Xylia.Preview.Common.Cast
 			}
 
 			return obj;
-		}
-
-
-
-		/// <summary>
-		/// 获得对象名称
-		/// </summary>
-		/// <param name="ObjInfo"></param>
-		/// <returns></returns>
-		public static string GetName(this string ObjInfo) => ObjInfo.GetObject()?.GetName() ?? ObjInfo;
-
-		/// <summary>
-		/// 获得对象名称
-		/// </summary>
-		/// <param name="Obj"></param>
-		/// <returns></returns>
-		public static string GetName(this IRecord Obj)
-		{
-			if (Obj is null) return null;
-			else if (Obj is IName IName) return IName.NameText();
-			else return Obj.Alias;
 		}
 	}
 }

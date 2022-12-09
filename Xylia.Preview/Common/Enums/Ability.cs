@@ -115,8 +115,6 @@ namespace Xylia.Preview.Common.Enums
 		RSupportPowerValue,
 	}
 
-
-
 	public enum MainAbility : byte
 	{
 		[Signal("none")]

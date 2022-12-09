@@ -20,6 +20,9 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 		}
 		#endregion
 
+
+
+
 		#region 方法
 		public void ShowItemGrowth2(ItemData ItemInfo, IEnumerable<ItemTransformRecipe> Recipes = null)
 		{
@@ -30,25 +33,22 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 
 			//查询成长路径
 			if (Recipes is null) Recipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
+
+			//关闭页面查看
+			if (Recipes is null || !Recipes.Any()) return;
 			#endregion
 
-			#region 显示内容
-			if (Recipes != null && Recipes.Any())
-			{
-				string Info = null;
-				Recipes.ToList().ForEach(r => Info += $"{r.Alias}    -    { r.warning }" + "\n");
 
-				Info = $"查询物品 { ItemInfo.NameText() } 相关成长路径如下：\n" + Info?.RemoveSuffixString("\n");
-				Console.WriteLine(Info);
+			System.Diagnostics.Trace.WriteLine($"查询物品 { ItemInfo.NameText() } 相关成长路径如下：\n" +
+				Recipes.Aggregate(string.Empty, (sum, now) => sum + $"{now.Alias}  {now.warning}\n"));
 
-				this.itemGrowth2Page1.SetData(Recipes);
-			}
-			else
-			{
-				//关闭页面查看
-			}
-			#endregion
+			this.itemGrowth2Page1.SetData(Recipes);
 		}
+
+
+
+
+
 
 		private void ItemGrowthScene_SizeChanged(object sender, EventArgs e)
 		{

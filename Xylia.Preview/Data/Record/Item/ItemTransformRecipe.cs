@@ -28,7 +28,7 @@ namespace Xylia.Preview.Data.Record
 		public bool KeepMainIngredientWeaponGemSlot;
 		public bool KeepMainIngredientWeaponAppearance;
 		public bool KeepMainIngredientSpirit;
-		
+
 		public string TitleItem;
 		public string TitleName;
 		public string TitleReward;
@@ -174,23 +174,21 @@ namespace Xylia.Preview.Data.Record
 		{
 			if (ItemInfo is null) return null;
 
-			return FileCache.Data.ItemTransformRecipe.Where(a =>
+			return FileCache.Data.ItemTransformRecipe.WhereTest("main-ingredient", CurMainIngredient =>
 			{
-				var CurMainIngredient = a.MainIngredient;
-
 				if (CurMainIngredient is null) return false;
 				else if (CurMainIngredient.MyStartsWith("Item:")) return CurMainIngredient.MyEquals("Item:" + ItemInfo.Alias);
 				else if (CurMainIngredient.MyStartsWith("ItemBrand:") && CurMainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand))
 				{
 					//校验条件类型
-					if (ItemInfo.ConditionTypes.Contains(a.MainIngredientConditionType))
-					{
-						return CurMainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand);
-					}
-					else
-					{
-						//Console.WriteLine($"没有对应数据 => " a.alias + "_" + a.MainIngredientConditionType);
-					}
+					//if (ItemInfo.ConditionTypes.Contains(a.MainIngredientConditionType))
+					//{
+					//	return CurMainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand);
+					//}
+					//else
+					//{
+					//	//Console.WriteLine($"没有对应数据 => " a.alias + "_" + a.MainIngredientConditionType);
+					//}
 				}
 
 				return false;

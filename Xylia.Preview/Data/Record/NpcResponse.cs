@@ -9,8 +9,6 @@ namespace Xylia.Preview.Data.Record
 	public sealed class NpcResponse : IRecord
 	{
 		#region 属性字段
-		public string alias;
-
 		[Description("faction-check-type")]
 		public FactionCheckType factionCheckType;
 

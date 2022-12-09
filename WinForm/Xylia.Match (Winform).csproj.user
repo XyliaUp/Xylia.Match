@@ -43,6 +43,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="Properties\Resx\Progrm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Windows\Frm\AboutUs.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

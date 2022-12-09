@@ -13,13 +13,14 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 	public sealed class OutputData : IAttributeCollection
 	{
 		#region 构造
-		private readonly OutputCellCollection OutputCells;
+		public readonly ObjectOutput Object;
 
-		public OutputData(OutputCellCollection outputs) => this.OutputCells = outputs;
-
-		public OutputData(Output output) => this.OutputCells = output.Cells;
+		public OutputData(ObjectOutput output) => this.Object = output;
 		#endregion
 
+
+
+		OutputCellCollection OutputCells => this.Object.Cells;
 
 		public IEnumerable<object> Attributes => this.OutputCells;
 

@@ -19,7 +19,7 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 
 		bool ContainsName(string AttrName, out string AttrValue);
 
-		IEnumerator<KeyValuePair<string, string>> GetEnumerator()
+		new IEnumerator<KeyValuePair<string, string>> GetEnumerator()
 		{
 			foreach (var attribute in this.Attributes)
 			{
