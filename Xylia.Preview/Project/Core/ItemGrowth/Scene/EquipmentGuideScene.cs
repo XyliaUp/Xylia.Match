@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Page;
@@ -11,46 +13,58 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 	public partial class EquipmentGuideScene : Form
 	{
 		#region 构造
-		public ItemData ItemInfo;
+		private readonly ItemData ItemInfo;
 
-		private EquipmentGuideScene() => InitializeComponent();
+		public EquipmentGuideScene(ItemData MyWeapon)
+		{
+			InitializeComponent();
 
-		public EquipmentGuideScene(ItemData MyWeapon) : this() => this.ItemInfo = MyWeapon;
+			this.ItemInfo = MyWeapon;
+
+			this.ItemTransformRecipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
+			this.ItemImprove = FileCache.Data.ItemImprove[ItemInfo.ImproveId, ItemInfo.ImproveLevel];
+		}
+
+		private void EquipmentGuideScene_Load(object sender, System.EventArgs e)
+		{
+			this.ShowItemGrowth2();
+			this.ShowItemImprove();
+		}
 		#endregion
 
 
-		ItemGrowth2Page ItemGrowth2Page = new();
 
-		ItemImprovePage ItemImprovePage = new();
-		
+		#region ItemTransformRecipe
+		IEnumerable<ItemTransformRecipe> ItemTransformRecipes;
 
+		public bool HasItemTransformRecipe => ItemTransformRecipes != null && ItemTransformRecipes.Any();
 
-		#region 方法
-		public void ShowItemGrowth2()
+		private void ShowItemGrowth2()
 		{
-			#region 初始化
-			//查询成长路径 如果数据不存在，则关闭页面查看
-			var Recipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
-			if (Recipes is null) return;
-			#endregion
+			if (!HasItemTransformRecipe) return;
 
-			this.ItemGrowth2Page.MyWeapon = ItemInfo;
-			this.ItemGrowth2Page.SetData(Recipes);
+			ItemGrowth2Page ItemGrowth2Page = new() { Dock = DockStyle.Fill };
+			this.Controls.Add(ItemGrowth2Page);
 
-			this.ItemGrowth2Page.Dock = DockStyle.Fill;
-			this.Controls.Add(this.ItemGrowth2Page);
+			ItemGrowth2Page.MyWeapon = ItemInfo;
+			ItemGrowth2Page.SetData(ItemTransformRecipes);
 		}
+		#endregion
 
-		public void ShowItemImprove()
+		#region ItemImprove
+		ItemImprove ItemImprove;
+
+		public bool HasItemImprove => this.ItemImprove != null;
+
+		private void ShowItemImprove()
 		{
-			var ImproveData = FileCache.Data.ItemImprove[ItemInfo.ImproveId, ItemInfo.ImproveLevel];
-			if(ImproveData is null) return;
+			if (!HasItemImprove) return;
 
-			this.ItemImprovePage.MyWeapon = ItemInfo;
-			this.ItemImprovePage.SetData(ImproveData, ItemInfo.ImprovePrevItem, ItemInfo.ImproveNextItem);
+			ItemImprovePage ItemImprovePage = new() { Dock = DockStyle.Fill };
+			this.Controls.Add(ItemImprovePage);
 
-			this.ItemImprovePage.Dock = DockStyle.Fill;
-			this.Controls.Add(this.ItemImprovePage);
+			ItemImprovePage.MyWeapon = ItemInfo;
+			ItemImprovePage.SetData(this.ItemImprove, ItemInfo.ImprovePrevItem, ItemInfo.ImproveNextItem);
 		}
 		#endregion
 	}

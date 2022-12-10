@@ -45,6 +45,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 			this.Name = "EquipmentGuideScene";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "装备管理";
+			this.Load += new System.EventHandler(this.EquipmentGuideScene_Load);
 			this.ResumeLayout(false);
 
 		}

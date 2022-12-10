@@ -71,7 +71,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.lbl_Category.Size = new System.Drawing.Size(76, 20);
 			this.lbl_Category.TabIndex = 2;
 			this.lbl_Category.Text = "Category";
-			this.lbl_Category.Visible = false;
+			this.lbl_Category.Visible = true;
 			this.lbl_Category.TextChanged += new System.EventHandler(this.lbl_Category_TextChanged);
 			this.lbl_Category.VisibleChanged += new System.EventHandler(this.lbl_Category_VisibleChanged);
 			// 

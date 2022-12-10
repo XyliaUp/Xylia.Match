@@ -29,15 +29,22 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EquipmentGuidePage));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemImprovePage));
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// ItemGrowth2Page
+			// pictureBox1
 			// 
-			this.Margin = new System.Windows.Forms.Padding(4);
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			// 
+			// ItemImprovePage
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.Name = "ItemImprovePage";
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		#endregion
 

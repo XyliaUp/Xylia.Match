@@ -6,6 +6,7 @@ using System.Threading;
 using System.Windows.Forms;
 
 using Xylia.Drawing;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Designer;
@@ -94,7 +95,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// <summary>
 		/// 物品别名
 		/// </summary>
-		public string ItemAlias;
+		public IRecord ObjectRef;
 		#endregion
 
 
@@ -176,9 +177,9 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			else this.OnPaint(new PaintEventArgs(this.CreateGraphics(), new Rectangle()));
 		}
 
-		public void OnDoubleClick(object sender, EventArgs e)
+		public void OnDoubleClick(object sender, EventArgs e) 
 		{
-			var t = new Thread(act => ItemAlias.PreviewShow());
+			var t = new Thread(act => ObjectRef.PreviewShow());
 
 			t.SetApartmentState(ApartmentState.STA);
 			t.Start();

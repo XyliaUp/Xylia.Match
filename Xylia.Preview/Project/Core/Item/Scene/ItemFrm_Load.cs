@@ -69,19 +69,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				this.RefreshBackgroundImage();
 			}
 		}
-
-		/// <summary>
-		/// 设置右上角目录
-		/// </summary>
-		public string Category
-		{
-			get => this.lbl_Category.Text;
-			set
-			{
-				this.lbl_Category.Text = value;
-				this.lbl_Category.Location = new Point(this.Width - this.lbl_Category.Width - 15, this.lbl_Category.Location.Y);
-			}
-		}
 		#endregion
 
 
@@ -405,7 +392,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			this.ItemIcon.Image = this.ItemInfo.IconExtra;
 			this.ItemGrade = this.ItemInfo.ItemGrade;
-			this.Category = this.ItemInfo.GameCategory3.ToString();
+			this.lbl_Category.Text =  $"Name.item.game-category-3.{ this.ItemInfo.GameCategory3.GetSignal() }".GetText(true);
 			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
 			this.ItemName = this.ItemInfo.ItemName;
 			this.TagImage = this.ItemInfo.TagIconGrade;

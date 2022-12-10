@@ -1,8 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-using NPOI.SS.Formula.Functions;
-
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
@@ -20,7 +18,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			var ItemIcon = new ItemIconCell()
 			{
 				ObjectRef = Item,
-				ItemIcon = Item.Icon,
+				Image = Item.Icon,
 				ShowStackCount = true,
 				StackCount = StackCount,
 
@@ -58,7 +56,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 			this.HandleSize(LocX);
 		}
-
 
 		public void LoadData(ItemImprove record, byte Index)
 		{

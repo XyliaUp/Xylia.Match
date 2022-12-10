@@ -110,7 +110,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 				Scale = this.Scale + ExtraScale,
 				FrameImage = Properties.Resources.FrameImg1,
 
-				ItemIcon = ItemBrandTooltip?.MainIcon(),
+				Image = ItemBrandTooltip?.MainIcon(),
 				ShowStackCount = false,
 			};
 
@@ -141,7 +141,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			var ItemIconCell = new ItemIconCell()
 			{
 				Scale = this.Scale,
-				ItemIcon = ItemData.IconExtra,
+				Image = ItemData.IconExtra,
 
 				StackCount = Count ?? 0,
 				ShowStackCount = true,

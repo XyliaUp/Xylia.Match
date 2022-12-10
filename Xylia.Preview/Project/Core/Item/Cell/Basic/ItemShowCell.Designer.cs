@@ -62,7 +62,7 @@
 			this.IconCell.ForeColor = System.Drawing.Color.Black;
 			this.IconCell.FrameImage = null;
 			this.IconCell.FrameType = true;
-			this.IconCell.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("IconCell.ItemIcon")));
+			this.IconCell.Image = ((System.Drawing.Bitmap)(resources.GetObject("IconCell.ItemIcon")));
 			this.IconCell.Location = new System.Drawing.Point(0, 0);
 			this.IconCell.Margin = new System.Windows.Forms.Padding(4);
 			this.IconCell.Name = "IconCell";

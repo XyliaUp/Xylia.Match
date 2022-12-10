@@ -52,14 +52,23 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 			// 
 			// ItemIcon
 			// 
+			this.ItemIcon.BackColor = System.Drawing.Color.Transparent;
+			this.ItemIcon.ExtraBottomLeft = null;
+			this.ItemIcon.ExtraBottomRight = null;
+			this.ItemIcon.ExtraTopLeft = null;
+			this.ItemIcon.ExtraTopRight = null;
+			this.ItemIcon.ForeColor = System.Drawing.Color.Black;
 			this.ItemIcon.FrameImage = ((System.Drawing.Bitmap)(resources.GetObject("ItemIcon.FrameImage")));
+			this.ItemIcon.FrameType = true;
 			this.ItemIcon.Location = new System.Drawing.Point(0, 0);
 			this.ItemIcon.Margin = new System.Windows.Forms.Padding(4);
 			this.ItemIcon.Name = "ItemIcon";
-			this.ItemIcon.ShowFrameImage = false;
+			this.ItemIcon.Scale = 90;
+			this.ItemIcon.ShowFrameImage = true;
 			this.ItemIcon.ShowStackCount = false;
 			this.ItemIcon.ShowStackCountOnlyOne = false;
 			this.ItemIcon.Size = new System.Drawing.Size(90, 98);
+			this.ItemIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.ItemIcon.StackCount = 0;
 			this.ItemIcon.TabIndex = 25;
 			this.ItemIcon.TabStop = false;

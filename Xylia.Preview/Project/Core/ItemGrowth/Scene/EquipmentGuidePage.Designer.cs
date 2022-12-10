@@ -102,8 +102,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.MyWeapon_Icon.ForeColor = System.Drawing.Color.Black;
 			this.MyWeapon_Icon.FrameImage = null;
 			this.MyWeapon_Icon.FrameType = true;
-			this.MyWeapon_Icon.ItemIcon = null;
-			this.MyWeapon_Icon.Location = new System.Drawing.Point(43, 62);
+			this.MyWeapon_Icon.Image = null;
+			this.MyWeapon_Icon.Location = new System.Drawing.Point(44, 62);
 			this.MyWeapon_Icon.Margin = new System.Windows.Forms.Padding(4);
 			this.MyWeapon_Icon.Name = "MyWeapon_Icon";
 			this.MyWeapon_Icon.Scale = 64;

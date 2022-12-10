@@ -116,7 +116,7 @@ namespace Xylia.Preview.Project.Core.RandomStore.Cell
 				Scale = 45,
 				StackCount = _count,
 				ObjectRef = ItemInfo,
-				ItemIcon = ItemInfo?.IconExtra,
+				Image = ItemInfo?.IconExtra,
 
 				ShowStackCount = true,
 				ShowStackCountOnlyOne = false,

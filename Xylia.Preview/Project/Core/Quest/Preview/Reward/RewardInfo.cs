@@ -117,7 +117,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 						FixedCommonObjs.Add(new ItemIconCell()
 						{
-							ItemIcon = SkillInfo.MainIcon(),
+							Image = SkillInfo.MainIcon(),
 						});
 					}
 				}
@@ -337,7 +337,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 					StackCount = StackCount,
 
 					ObjectRef = Obj,
-					ItemIcon = _Obj.MainIcon(),
+					Image = _Obj.MainIcon(),
 				};
 			}
 

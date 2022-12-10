@@ -15,6 +15,7 @@ using Xylia.bns.Modules.DataFormat.Analyse;
 using Xylia.bns.Modules.DataFormat.Analyse.DeSerialize;
 using Xylia.bns.Modules.DataFormat.Analyse.Enums;
 using Xylia.bns.Modules.DataFormat.Analyse.Output;
+using Xylia.bns.Modules.DataFormat.Analyse.Value.Derive;
 using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
@@ -430,6 +431,8 @@ namespace Xylia.Preview.Data
 		protected virtual Lazy<T> GetLazyInfo(int MainID, int Variation)
 		{
 			#region 初始化
+			if (MainID == 0) return null;
+
 			if (!this.HasData) this.Load();
 			#endregion
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -23,9 +24,13 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		#region 构造 
 		public readonly ItemData ItemInfo;
 
+		private bool Loading;
+
 		public ItemFrm(ItemData ItemInfo)
 		{
 			#region 初始化
+			Loading = true;
+
 			InitializeComponent();
 			CheckForIllegalCrossThreadCalls = false;
 
@@ -37,6 +42,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			if (bool.TryParse(Ini.ReadValue("Preview", "item#option_ShowCategory3"), out bool f2))
 				this.lbl_Category.Visible = f2;
+
+			Loading = false;
 			#endregion
 
 
@@ -176,7 +183,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			{
 				this.UserOperScene.Visible = this.MenuItem_SwitchUserOperPanel.Checked;
 
-
 				//保证焦点不会转移
 				this.Activate();
 
@@ -186,6 +192,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 		private void lbl_Category_VisibleChanged(object sender, EventArgs e)
 		{
+			if (Loading) return;
+
 			Ini.WriteValue("Preview", "item#option_ShowCategory3", this.lbl_Category.Visible);
 		}
 
@@ -349,6 +357,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			#endregion
 
 
+
+			this.lbl_Category.Location = new Point(this.Width - this.lbl_Category.Width - 15, this.lbl_Category.Location.Y);
 
 
 			#region 加载控件列表

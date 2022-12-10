@@ -52,7 +52,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemImprove)), ImproveNextItem);
 		}
 
-		public void SetData(Action<string> test, params string[] NextItem)
+		public void SetData(Action<string> action, params string[] NextItem)
 		{
 			#region 初始化
 			this.Controls.Remove<ItemPreviewCell>();
@@ -79,10 +79,16 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				ItemPreviewCell.Click += new EventHandler((s, e) =>
 				{
 					//将其他对象的选择状态取消
-					this.Controls.OfType<ItemPreviewCell>().ForEach(c => c.ShowFrameImage = false);
-					ItemPreviewCell.ShowFrameImage = true;
+					this.Controls.OfType<ItemPreviewCell>().ForEach(c => 
+					{
+						c.ShowFrameImage = false;
+						c.Refresh();
+					});
 
-					test(TitleItem);
+					ItemPreviewCell.ShowFrameImage = true;
+					ItemPreviewCell.Refresh();
+
+					action(TitleItem);
 				});
 				#endregion
 			}

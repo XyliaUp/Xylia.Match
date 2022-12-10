@@ -25,7 +25,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			{
 				if (value is null) return;
 
-				this.MyWeapon_Icon.ItemIcon = value.Icon;
+				this.MyWeapon_Icon.Image = value.Icon;
 				this.MyWeapon_Name.Text = value.NameText();
 				this.MyWeapon_Name.ItemGrade = value.ItemGrade;
 				this.MyWeapon_Name.Location = new Point(this.MyWeapon_Icon.Left + (this.MyWeapon_Icon.Scale - this.MyWeapon_Name.Width) / 2, this.MyWeapon_Name.Top);

@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Windows.Forms;
 
 using Xylia.Drawing;
 using Xylia.Extension;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
-
-using ItemData = Xylia.Preview.Data.Record.Item;
+using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Core.ItemGrowth.Cell;
 
 namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 {
@@ -28,17 +26,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.Selectable | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.SupportsTransparentBackColor, true);
 			this.Refresh();
 		}
-
-		//public ItemIconCell(ItemData ItemData) : this()
-		//{
-			
-		//}
 		#endregion
-
-
-
-
-
 
 		#region 隐藏不需要的属性
 		[Browsable(false)]
@@ -53,81 +41,12 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public new int Height => this.Scale;
 
-		[Browsable(false)]
-		[Obsolete("不再可用的属性")]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public new Size Size => new(this.Scale, this.Scale);
-
-		[Browsable(false)]
-		[Obsolete("不再可用的属性")]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public new Image Image { get => base.Image; set => base.Image = value; }
+		//[Browsable(false)]
+		//[Obsolete("不再可用的属性")]
+		//[EditorBrowsable(EditorBrowsableState.Never)]
+		//[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		//public new Size Size => new Size(this.Scale, this.Scale);
 		#endregion
-
-		#region 物品数量处理
-		/// <summary>
-		/// 字段：堆叠数量
-		/// </summary>
-		private int m_StackCount = 1;
-
-		/// <summary>
-		/// 物品数量
-		/// </summary>
-		[Category("Item"), Description("物品数量")]
-		public int StackCount
-		{
-			get => this.m_StackCount;
-			set
-			{
-				//文本赋值
-				m_StackCount = value;
-				this.Refresh();
-			}
-		}
-
-
-		/// <summary>
-		/// 字段：是否显示堆叠数量
-		/// </summary>
-		private bool m_ShowStackCount = false;
-
-		/// <summary>
-		/// 显示物品数量
-		/// </summary>
-		[Category("Item"), Description("显示物品数量")]
-		public bool ShowStackCount
-		{
-			get => m_ShowStackCount;
-			set
-			{
-				m_ShowStackCount = value;
-				this.Refresh();
-			}
-		}
-
-
-		/// <summary>
-		/// 字段：当数量为1时，是否显示堆叠数量
-		/// </summary>
-		private bool m_ShowStackCountOnlyOne = true;
-
-		/// <summary>
-		/// 显示物品数量
-		/// </summary>
-		[Category("Item"), Description("当数量为1时，是否显示物品数量")]
-		public bool ShowStackCountOnlyOne
-		{
-			get => m_ShowStackCountOnlyOne;
-			set
-			{
-				m_ShowStackCountOnlyOne = value;
-				this.Refresh();
-			}
-		}
-		#endregion
-
 
 
 		#region 字段
@@ -137,41 +56,10 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		public IRecord ObjectRef;
 
 		/// <summary>
-		/// 附加图标
-		/// </summary>
-		private Dictionary<Compose.DrawLocation, Bitmap> ExtraIcon { get; set; } = new();
-
-
-		/// <summary>
-		/// 物品图标
-		/// </summary>
-		[Category("Apperance"), Description("物品图标")]
-		public Bitmap ItemIcon
-		{
-			get => (Bitmap)base.Image;
-			set
-			{
-				base.Image = value;
-				this.Refresh();
-			}
-		}
-
-
-		/// <summary>
-		/// 框架图片
-		/// </summary>
-		private Bitmap m_FrameImage;
-
-		/// <summary>
 		/// 框架图标
 		/// </summary>
 		[Category("Apperance"), Description("框架图标")]
-		public virtual Bitmap FrameImage
-		{
-			get => m_FrameImage;
-			set => m_FrameImage = value;
-		}
-
+		public virtual Bitmap FrameImage { get; set; }
 
 		/// <summary>
 		/// 框架图标显示类型
@@ -180,6 +68,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		[Category("Apperance"), Description("框架图标显示类型")]
 		public bool FrameType { get; set; } = true;
 
+		[Category("Apperance"), Description("显示框架图标")]
+		public bool ShowFrameImage { get; set; } = true;
 
 		/// <summary>
 		/// 图片比例
@@ -196,42 +86,47 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		}
 
 
-		[Category("Extra"), Description("")]
-		public Bitmap ExtraTopLeft
-		{
-			get => GetExtraImg(Compose.DrawLocation.TopLeft);
-			set => SetExtraImg(Compose.DrawLocation.TopLeft, value);
-		}
+		/// <summary>
+		/// 附加图标
+		/// </summary>
+		private Dictionary<Compose.DrawLocation, Bitmap> ExtraIcon { get; set; } = new();
 
-		[Category("Extra"), Description("右上区域附加图标")]
-		public Bitmap ExtraTopRight
-		{
-			get => GetExtraImg(Compose.DrawLocation.TopRight);
-			set => SetExtraImg(Compose.DrawLocation.TopRight, value);
-		}
+		[Category("Extra"), Description("左上方附加图标")]
+		public Bitmap ExtraTopLeft { get => GetExtraImg(Compose.DrawLocation.TopLeft); set => SetExtraImg(Compose.DrawLocation.TopLeft, value); }
+
+		[Category("Extra"), Description("右上方附加图标")]
+		public Bitmap ExtraTopRight { get => GetExtraImg(Compose.DrawLocation.TopRight); set => SetExtraImg(Compose.DrawLocation.TopRight, value); }
+
+		[Category("Extra"), Description("左下方附加图标")]
+		public Bitmap ExtraBottomLeft { get => GetExtraImg(Compose.DrawLocation.BottomLeft); set => SetExtraImg(Compose.DrawLocation.BottomLeft, value); }
+
+		[Category("Extra"), Description("右下方附加图标")]
+		public Bitmap ExtraBottomRight { get => GetExtraImg(Compose.DrawLocation.BottomRight); set => SetExtraImg(Compose.DrawLocation.BottomRight, value); }
+		#endregion
+
+		#region 堆叠数量处理
+		/// <summary>
+		/// 堆叠数量
+		/// </summary>
+		[Category("Item"), Description("物品数量")]
+		public int StackCount { get; set; }
 
 		/// <summary>
-		/// 左下区域附加图标
+		/// 显示物品数量
 		/// </summary>
-		[Category("Extra"), Description("左下区域附加图标")]
-		public Bitmap ExtraBottomLeft
-		{
-			get => GetExtraImg(Compose.DrawLocation.BottomLeft);
-			set => SetExtraImg(Compose.DrawLocation.BottomLeft, value);
-		}
+		[Category("Item"), Description("显示物品数量")]
+		public bool ShowStackCount { get; set; }
 
-		[Category("Extra"), Description("")]
-		public Bitmap ExtraBottomRight
-		{
-			get => GetExtraImg(Compose.DrawLocation.BottomRight);
-			set => SetExtraImg(Compose.DrawLocation.BottomRight, value);
-		}
+		/// <summary>
+		/// 显示物品数量
+		/// </summary>
+		[Category("Item"), Description("当数量为1时，是否显示物品数量")]
+		public bool ShowStackCountOnlyOne { get; set; }
 		#endregion
 
 
 
-
-		#region 特殊方法
+		#region 方法
 		public void SetExtraImg(Compose.DrawLocation location, Bitmap bitmap)
 		{
 			if (bitmap is null) return;
@@ -247,17 +142,46 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			return ExtraIcon.ContainsKey(location) ? ExtraIcon[location] : null;
 		}
 
+		private void ItemIconCell_Resize(object sender, EventArgs e)
+		{
+			if (this is not FeedItemIconCell)
+				base.Width = base.Height = this.Scale;
+		}
+
+		public void ItemIconCell_DoubleClick(object sender, EventArgs e)
+		{
+			ObjectRef.PreviewShow();
+		}
+		#endregion
+
+		#region 绘制方法
 		/// <summary>
 		/// 绘制内容
 		/// </summary>
 		/// <param name="pe"></param>
 		protected override void OnPaint(PaintEventArgs pe)
 		{
-			#region 计算边界大小
-			int Border = 0;
-			if (this.FrameImage != null)
+			#region 计算基本信息
+			Size ImgSize;
+			PointF ImgTopLeft;
+			PointF ImgBottomRight;
+
+			if (this is FeedItemIconCell)
 			{
-				if(FrameType)
+				//获取缩放比例
+				float Ratio = (float)base.Height / this.FrameImage.Height;
+				base.Width = (int)(this.FrameImage.Width * Ratio);
+
+				int Left = 13, Right = 13, Top = 20, Bottom = 14;
+
+				ImgTopLeft = new PointF(Ratio * Left, Ratio * Top);
+				ImgBottomRight = new PointF(Ratio * (this.FrameImage.Width - Right), Ratio * (this.FrameImage.Height - Bottom));
+				ImgSize = new Size((int)(Ratio * (this.FrameImage.Width - Left - Right)), (int)(Ratio * (this.FrameImage.Height - Bottom - Top)));
+			}
+			else
+			{
+				int Border = 0;
+				if (this.FrameImage != null && FrameType)
 				{
 					//需按照比例缩放框架图片
 					var Ratio = (float)this.FrameImage.Width / this.Scale;
@@ -273,82 +197,75 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 						}
 					}
 				}
+
+				ImgTopLeft = new PointF(Border, Border);
+				ImgBottomRight = new PointF(this.Scale - Border, this.Scale - Border);
+
+				var ImgScale = this.Scale - 2 * Border;
+				ImgSize = new Size(ImgScale, ImgScale);
 			}
 			#endregion
 
 
+			#region 绘制一般内容
+			//图片
+			var Img = this.Image ?? Xylia.Resources.BnsCommon_Old.ItemIcon;
+			pe.Graphics.DrawImage(Img, new Rectangle((int)ImgTopLeft.X, (int)ImgTopLeft.Y, ImgSize.Width, ImgSize.Height));
 
+			//背景层
+			if (this.FrameImage != null && this.ShowFrameImage)
+			{
+				pe.Graphics.DrawImage(this.FrameImage, new Rectangle(0, 0, base.Width, base.Height));
+			}
 
-			#region 处理图片信息
-			var Img = this.ItemIcon ?? Resources.BnsCommon_Old.ItemIcon;
-			var ImgScale = this.Scale - 2 * Border;
-
-			//绘制基础图片
-			pe.Graphics.DrawImage(Img, new Rectangle(Border, Border, ImgScale, ImgScale));
-			#endregion
-
-
-			#region 处理堆叠数量信息
+			//堆叠数量
 			if (ShowStackCount && (ShowStackCountOnlyOne || this.StackCount != 1))
-				DrawStackCount(pe.Graphics, this.StackCount, new Size(this.Scale - Border, this.Scale - Border));
+				DrawStackCount(pe.Graphics, this.StackCount, ImgBottomRight);
 			#endregion
 
-			//绘制背景层
-			if (this.FrameImage != null)
+			#region 绘制附加图片
+			foreach (var Extra in ExtraIcon)
 			{
-				pe.Graphics.DrawImage(this.FrameImage, new Rectangle(0, 0, this.Scale, this.Scale));
-			}
+				if (Extra.Value is null) continue;
 
-			this.DrawExtraIcon(pe.Graphics, ImgScale, Border);
-		}
+				var AttachImg = Extra.Value.ImageThumbnail(ImgSize.Width, ImgSize.Height);
 
-		/// <summary>
-		/// 绘制附加图片
-		/// </summary>
-		public void DrawExtraIcon(Graphics g, int ImgScale, int Border)
-		{
-			if (ExtraIcon?.Count != 0)
-			{
-				foreach (var Extra in ExtraIcon.Where(e => e.Value != null))
+				float LocationX = 0;
+				float LocationY = 0;
+
+				#region 根据附加类型计算位置
+				switch (Extra.Key)
 				{
-					var AttachImg = Extra.Value.ImageThumbnail(ImgScale, ImgScale);
+					case Compose.DrawLocation.Centre:
+						LocationX = (ImgBottomRight.X - AttachImg.Width) / 2;
+						LocationY = (ImgBottomRight.Y - AttachImg.Height) / 2;
+						break;
 
-					int LocationX = 0;
-					int LocationY = 0;
+					case Compose.DrawLocation.TopLeft:
+						LocationX = ImgTopLeft.X;
+						LocationY = ImgTopLeft.Y;
+						break;
 
-					#region 根据附加类型计算位置
-					switch (Extra.Key)
-					{
-						case Compose.DrawLocation.Centre:
-							LocationX = this.Scale / 2 - AttachImg.Width / 2;
-							LocationY = this.Scale / 2 - AttachImg.Height / 2;
-							break;
+					case Compose.DrawLocation.TopRight:
+						LocationX = ImgBottomRight.X - AttachImg.Width;
+						LocationY = 0;
+						break;
 
-						case Compose.DrawLocation.TopLeft:
-							LocationX = 0;
-							LocationY = 0;
-							break;
+					case Compose.DrawLocation.BottomLeft:
+						LocationX = 0;
+						LocationY = ImgBottomRight.Y - AttachImg.Height;
+						break;
 
-						case Compose.DrawLocation.TopRight:
-							LocationX = this.Scale - AttachImg.Width;
-							LocationY = 0;
-							break;
-
-						case Compose.DrawLocation.BottomLeft:
-							LocationX = 0;
-							LocationY = this.Scale - AttachImg.Height;
-							break;
-
-						case Compose.DrawLocation.BottomRight:
-							LocationX = this.Scale - AttachImg.Width;
-							LocationY = this.Scale - AttachImg.Height;
-							break;
-					}
-					#endregion
-
-					g.DrawImage(Extra.Value, new Rectangle(Border + LocationX, Border + LocationY, AttachImg.Width, AttachImg.Height));
+					case Compose.DrawLocation.BottomRight:
+						LocationX = ImgBottomRight.X - AttachImg.Width;
+						LocationY = ImgBottomRight.Y - AttachImg.Height;
+						break;
 				}
+				#endregion
+
+				pe.Graphics.DrawImage(Extra.Value, new Rectangle((int)LocationX, (int)LocationY, AttachImg.Width, AttachImg.Height));
 			}
+			#endregion
 		}
 
 		/// <summary>
@@ -357,7 +274,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// <param name="g"></param>
 		/// <param name="StackCount"></param>
 		/// <param name="Size"></param>
-		public static void DrawStackCount(Graphics g, int StackCount, SizeF Size)
+		private static void DrawStackCount(Graphics g, int StackCount, PointF Border)
 		{
 			var Txt = StackCount.ToString();
 
@@ -373,7 +290,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 
 
 			var TxtSize = Txt.MeasureString(CurFont, false);
-			var Rect = new RectangleF(Size.Width - TxtSize.Width - 2, Size.Height - CurFont.Height, TxtSize.Width, CurFont.Height);
+			var Rect = new RectangleF(Border.X - TxtSize.Width - 2, Border.Y - CurFont.Height, TxtSize.Width, CurFont.Height);
 
 
 			using var path = GetStringPath(Txt, g.DpiY, Rect, CurFont, StringFormat.GenericTypographic);
@@ -393,15 +310,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			g.FillPath(Brushes.White, path);
 		}
 
-		/// <summary>
-		/// 获得文本路径
-		/// </summary>
-		/// <param name="s"></param>
-		/// <param name="dpi"></param>
-		/// <param name="rect"></param>
-		/// <param name="font"></param>
-		/// <param name="format"></param>
-		/// <returns></returns>
 		public static GraphicsPath GetStringPath(string s, float dpi, RectangleF rect, Font font, StringFormat format)
 		{
 			var path = new GraphicsPath();
@@ -410,25 +318,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			path.AddString(s, font.FontFamily, (int)font.Style, emSize, rect, format);
 
 			return path;
-		}
-		#endregion
-
-
-
-		#region 控件方法
-		/// <summary>
-		/// 变更大小
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void ItemIconCell_Resize(object sender, EventArgs e)
-		{
-			base.Width = base.Height = this.Scale;
-		}
-
-		public void ItemIconCell_DoubleClick(object sender, EventArgs e)
-		{
-			ObjectRef.PreviewShow();
 		}
 		#endregion
 	}

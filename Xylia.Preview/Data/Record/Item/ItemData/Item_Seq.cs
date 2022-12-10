@@ -141,6 +141,8 @@ namespace Xylia.Preview.Data.Record
 			[Signal("dual-blade")]
 			DualBlade,
 
+			Instrument,
+
 			Necklace,
 
 			Ring,
@@ -170,20 +172,28 @@ namespace Xylia.Preview.Data.Record
 
 			Vehicle,
 
-			[Signal("appearance-normal")]
-			AppearanceNormal,
-
-			[Signal("appearance-idle")]
-			AppearanceIdle,
 
 			[Signal("appearance-chat")]
 			AppearanceChat,
 
+			[Signal("appearance-idle")]
+			AppearanceIdle,
+
 			[Signal("appearance-frame")]
 			AppearanceFrame,
 
+			[Signal("appearance-normal")]
+			AppearanceNormal,
+
 			[Signal("appearance-hypermove")]
 			AppearanceHypermove,
+
+			[Signal("appearance-name-plate")]
+			AppearanceNamePlate,
+
+			[Signal("appearance-speech-bubble")]
+			AppearanceSpeechBubble,
+
 
 			Costume,
 
@@ -363,8 +373,8 @@ namespace Xylia.Preview.Data.Record
 			[Signal("skill-stone-2")]
 			SkillStone2,
 
-			[Signal("skill-stone-accessory")]
-			SkillStoneAccessory,
+			[Signal("skill-stone-3")]
+			SkillStone3,
 
 			[Signal("regenerate-potion")]
 			RegeneratePotion,

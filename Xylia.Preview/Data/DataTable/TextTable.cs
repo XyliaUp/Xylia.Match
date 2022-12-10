@@ -54,13 +54,15 @@ public static class LocalText
 	/// 获取对应汉化文本
 	/// </summary>
 	/// <param name="Alias"></param>
+	/// <param name="ReturnNull"></param>
 	/// <returns></returns>
-	public static string GetText(this string Alias)
+	public static string GetText(this string Alias, bool ReturnNull = false)
 	{
 		//快速DEBUG模式,阻止因汉化读取导致的久耗时
 		if (false) return Alias;
 
-		return FileCache.Data.TextData.GetRecord(Alias)?.GetText() ?? Alias;
+		return FileCache.Data.TextData.GetRecord(Alias)?.GetText() ?? 
+			(ReturnNull ? null : Alias);
 	}
 
 	/// <summary>

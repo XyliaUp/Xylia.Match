@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<!-- 引用公共字典 -->
-	<include path="public.xml" />
 
 	<list module="ItemData" type="item" version="39.0" check-version="y" rule="cpl" retired="n">
 		<record alias="id" type="id" />
@@ -79,6 +77,8 @@
 			<case alias="spear" name="" />
 			<case alias="orb" name="" />
 			<case alias="dual-blade" name="" />
+			<case alias="instrument" name="" />
+
 			<case alias="necklace" name="" />
 			<case alias="ring" name="" />
 			<case alias="earring" name="" />
@@ -92,11 +92,15 @@
 			<case alias="pet" name="" />
 			<case alias="nova" name="" />
 			<case alias="vehicle" name="" />
-			<case alias="appearance-normal" name="" />
-			<case alias="appearance-idle" name="" />
+
 			<case alias="appearance-chat" name="" />
+			<case alias="appearance-idle" name="" />
 			<case alias="appearance-frame" name="" />
+			<case alias="appearance-normal" name="" />
 			<case alias="appearance-hypermove" name="" />
+			<case alias="appearance-name-plate" name="" />
+			<case alias="appearance-speech-bubble" name="" />
+
 			<case alias="costume" name="" />
 			<case alias="head-attach" name="" />
 			<case alias="face-attach" name="" />
@@ -163,7 +167,7 @@
 			<case alias="skill-stone" name="" />
 			<case alias="skill-stone-1" name="" />
 			<case alias="skill-stone-2" name="" />
-			<case alias="skill-stone-accessory" name="" />
+			<case alias="skill-stone-3" name="" />
 			<case alias="regenerate-potion" name="" />
 			<case alias="heal-potion" name="" />
 			<case alias="secret-potion" name="" />

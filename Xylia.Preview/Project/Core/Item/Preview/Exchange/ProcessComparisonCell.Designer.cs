@@ -58,7 +58,7 @@
 			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell2.FrameImage = null;
 			this.itemIconCell2.FrameType = true;
-			this.itemIconCell2.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell2.ItemIcon")));
+			this.itemIconCell2.Image = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell2.ItemIcon")));
 			this.itemIconCell2.Location = new System.Drawing.Point(112, 0);
 			this.itemIconCell2.Margin = new System.Windows.Forms.Padding(4);
 			this.itemIconCell2.Name = "itemIconCell2";
@@ -80,7 +80,7 @@
 			this.itemIconCell1.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell1.FrameImage = null;
 			this.itemIconCell1.FrameType = true;
-			this.itemIconCell1.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell1.ItemIcon")));
+			this.itemIconCell1.Image = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell1.ItemIcon")));
 			this.itemIconCell1.Location = new System.Drawing.Point(0, 0);
 			this.itemIconCell1.Margin = new System.Windows.Forms.Padding(4);
 			this.itemIconCell1.Name = "itemIconCell1";

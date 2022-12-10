@@ -83,10 +83,10 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		[Category("Data"), Description("物品图标")]
 		public Bitmap ItemIcon
 		{
-			get => this.IconCell.ItemIcon;
+			get => (Bitmap)this.IconCell.Image;
 			set
 			{
-				this.IconCell.ItemIcon = value;
+				this.IconCell.Image = value;
 				this.Refresh();
 			}
 		}

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-using Xylia.Attribute.Component;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Preview;
@@ -67,7 +66,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			//获取特殊说明	
 			var warning = e.ItemTransformRecipe.Warning;
 			if (warning == ItemTransformRecipe.WarningSeq.None) this.WarningPreview.Text = null;
-			else this.WarningPreview.Text = $"Transform.Warning.{ warning.GetAttribute<Signal>()?.Description ?? warning.ToString() }".GetText();
+			else this.WarningPreview.Text = $"Transform.Warning.{ warning.GetSignal() }".GetText();
 			this.WarningPreview.Location = new Point((this.Width - this.WarningPreview.Width) / 2, this.WarningPreview.Location.Y);
 		}
 		#endregion

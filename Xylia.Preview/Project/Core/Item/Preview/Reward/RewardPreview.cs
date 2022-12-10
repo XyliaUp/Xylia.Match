@@ -148,7 +148,7 @@ namespace Xylia.Preview.Project.Core.Item
 					var IconBtn = new ItemIconCell()
 					{
 						ObjectRef = OpenItem2,
-						ItemIcon = Icon,
+						Image = Icon,
 						Scale = PicScale,
 						SizeMode = PictureBoxSizeMode.Zoom,
 
@@ -160,7 +160,7 @@ namespace Xylia.Preview.Project.Core.Item
 					if (Icon is null)
 					{
 						IconBtn.Scale = 20;
-						IconBtn.ItemIcon = IniImage;
+						IconBtn.Image = IniImage;
 					}
 					#endregion
 
@@ -239,11 +239,11 @@ namespace Xylia.Preview.Project.Core.Item
 
 
 			//将原来的选择图框颜色恢复
-			if (this.SelPicBox != null && this.SelPicBox.ItemIcon is null) this.SelPicBox.ItemIcon = IniImage;
+			if (this.SelPicBox != null && this.SelPicBox.Image is null) this.SelPicBox.Image = IniImage;
 
 			//变更选择后的颜色
 			if (CurPic is null) throw new Exception("CurPic点击事件中发生控件为空错误");
-			else if (CurPic.ItemIcon is null) CurPic.ItemIcon = SelImage;
+			else if (CurPic.Image is null) CurPic.Image = SelImage;
 			#endregion
 
 			#region 记录控件内容

@@ -37,7 +37,7 @@ namespace Xylia.Preview.Project.Core.Skill
 					Scale = 64,
 					ObjectRef = Skill,
 
-					ItemIcon = Skill.MainIcon(),
+					Image = Skill.MainIcon(),
 					Location = new Point(LoX, LoY),
 				};
 

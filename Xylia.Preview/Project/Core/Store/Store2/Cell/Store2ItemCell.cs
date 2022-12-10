@@ -126,7 +126,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			}
 
 			//如果购买价格无效，则将图标显示为异常图标
-			else if (this.ItemShow.IconCell.ItemIcon != null)
+			else if (this.ItemShow.IconCell.Image != null)
 			{
 				this.ItemShow.IconCell.FrameImage = Properties.Resources.ItemError;
 				this.ItemShow.IconCell.FrameType = false;

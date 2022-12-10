@@ -140,7 +140,7 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 获得带有背景层的图标
 		/// </summary>
-		public Bitmap Icon => this.Attributes["icon"].GetIconWithGrade(ItemGrade);
+		public Bitmap Icon => GetIconWithGrade(this.Attributes["icon"], this.ItemGrade);
 
 		/// <summary>
 		/// 获得包含附加信息的图标
@@ -161,10 +161,11 @@ namespace Xylia.Preview.Data.Record
 			}
 		}
 
+
 		/// <summary>
 		/// 状态图标
 		/// </summary>
-		public Dictionary<Compose.DrawLocation, Bitmap> SlotItem
+		private Dictionary<Compose.DrawLocation, Bitmap> SlotItem
 		{
 			get
 			{
@@ -191,6 +192,28 @@ namespace Xylia.Preview.Data.Record
 
 				return Result;
 			}
+		}
+
+		/// <summary>
+		/// 获得图标信息（包含品质）
+		/// </summary>
+		/// <param name="IconAlias"></param>
+		/// <param name="ItemGrade"></param>
+		/// <returns></returns>
+		public static Bitmap GetIconWithGrade(string IconInfo, byte ItemGrade)
+		{
+			if (string.IsNullOrWhiteSpace(IconInfo))
+			{
+				System.Diagnostics.Debug.WriteLine($"未设置图标");
+				return null;
+			}
+
+			//获取底图
+			var BackGroundImage = ItemGrade.GetBackGround(true);
+
+			//返回结果数据
+			Bitmap Raw = IconInfo.GetIcon();
+			return Raw is null ? BackGroundImage : BackGroundImage.ImageCombine(Raw);
 		}
 		#endregion
 

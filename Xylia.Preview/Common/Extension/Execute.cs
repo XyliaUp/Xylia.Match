@@ -24,7 +24,7 @@ namespace Xylia.Preview.Common.Extension
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="Frm"></param>
-		public static void MyShowDialog<T>(this T Frm) where T : Form, new()
+		public static void MyShowDialog<T>(this T Frm) where T : Form
 		{
 			var thread = new Thread(act => Frm.ShowDialog());
 

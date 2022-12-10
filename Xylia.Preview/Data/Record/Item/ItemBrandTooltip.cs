@@ -99,7 +99,7 @@ namespace Xylia.Preview.Data.Record
 		#region 获取信息
 		public string NameText() => this.Name2.GetText();
 
-		public Bitmap MainIcon() => this.Icon.GetIconWithGrade(this.ItemGrade);
+		public Bitmap MainIcon() => Item.GetIconWithGrade(this.Icon, this.ItemGrade);
 		#endregion
 	}
 }

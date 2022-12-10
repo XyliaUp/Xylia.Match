@@ -5,8 +5,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-using NPOI.SS.Formula;
-
 using Xylia.Attribute;
 using Xylia.Drawing;
 using Xylia.Extension;
@@ -143,7 +141,6 @@ namespace Xylia.Preview.Project.Controls
 
 
 			#region 处理内容
-			bool MultiLine = false;
 			foreach (var Node in doc.DocumentNode.ChildNodes)
 			{
 				if (string.IsNullOrWhiteSpace(Node.Name)) continue;
@@ -154,7 +151,12 @@ namespace Xylia.Preview.Project.Controls
 					case "ga": break;
 
 					//绘制去除转义字符的文本
-					case "#text": MultiLine = ContentPanel.DrawString(param, Node.InnerText.Decode(), ref LocX, ref LocY, this.MaxWidth); break;
+					case "#text":
+					{
+						var MultiLine = ContentPanel.DrawString(param, Node.InnerText.Decode(), ref LocX, ref LocY, this.MaxWidth);
+						if (MultiLine) CurExpextWidth = this.MaxWidth;
+					}
+					break;
 
 					//处理换行
 					case "br":
@@ -295,10 +297,8 @@ namespace Xylia.Preview.Project.Controls
 			//如果由主入口函数调用，增加最后一行对应的行高
 			if (Status) LocY += CurLineHeight;
 
-			//获取最终期望宽度
-			if (MultiLine) CurExpextWidth = this.MaxWidth;
 			//处理普通标签的最终宽度
-			else TryExtendWidth(LocX);
+			TryExtendWidth(LocX);
 
 			return CurExpextWidth;
 		}

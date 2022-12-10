@@ -9,7 +9,7 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Cell;
-
+using Xylia.Preview.Common.Interface;
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
@@ -28,11 +28,11 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 
 		#region 方法
-		private FeedItemIconCell CreateNew(string ItemAlias, Bitmap Image, int StackCount, ref int LocX)
+		private FeedItemIconCell CreateNew(IRecord ObjectRef, Bitmap Image, int StackCount, ref int LocX)
 		{
 			var ItemIcon = new FeedItemIconCell
 			{
-				ItemAlias = ItemAlias,
+				ObjectRef = ObjectRef,
 				Image = Image,
 				Location = new Point(LocX, 0),
 				StackCount = StackCount,
@@ -43,10 +43,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 			ItemIcon.Click += new EventHandler((s, e) =>
 			{
-				this.Controls.OfType<FeedItemIconCell>().ForEach(c => c.ShowFrameImage = false);
-				ItemIcon.ShowFrameImage = true;
+				this.Controls.OfType<FeedItemIconCell>().ForEach(c =>
+				{ 
+					c.ShowFrameImage = false;
+					c.Refresh();
+				});
 
-				//this.RecipeChanged?.Invoke(ItemIcon, new RecipeChangedEventArgs(Recipe));
+				ItemIcon.ShowFrameImage = true;
+				ItemIcon.Refresh();
 			});
 
 			this.Controls.Add(ItemIcon);
@@ -98,7 +102,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				#endregion
 
 				//绑定事件
-				this.CreateNew(ItemAlias, Image, SubIngredientStackCount1, ref LocX).Click += new EventHandler((s, e) =>
+				this.CreateNew(SubIngredient1, Image, SubIngredientStackCount1, ref LocX).Click += new EventHandler((s, e) =>
 					this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(Recipe)));
 			}
 			#endregion
@@ -115,13 +119,15 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			int LocX = 0;
 			for (byte idx = 1; idx <= 5; idx++)
 			{
-				var CostMainItem = ItemImprove.Attributes["cost-main-item-" + idx];
-				var CostMainItemCount = ItemImprove.Attributes["cost-main-item-count-" + idx].ConvertToShort();
+				var CostMainItem = ItemImprove.Attributes["cost-main-item-" + idx].GetItemInfo();
 				if (CostMainItem is null) break;
+
+				var CostMainItemCount = ItemImprove.Attributes["cost-main-item-count-" + idx].ConvertToShort();
+				
 
 				//绑定事件
 				byte CurIdx = idx;
-				this.CreateNew(CostMainItem, CostMainItem.GetItemInfo()?.Icon, CostMainItemCount, ref LocX).Click += new EventHandler((s, e) =>
+				this.CreateNew(CostMainItem, CostMainItem?.Icon, CostMainItemCount, ref LocX).Click += new EventHandler((s, e) =>
 					this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImprove, CurIdx)));
 			}
 			#endregion

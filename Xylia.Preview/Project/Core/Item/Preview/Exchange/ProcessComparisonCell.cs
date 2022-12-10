@@ -53,7 +53,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 					RequiredItems.Add(new ItemIconCell()
 					{
 						ObjectRef = TempItem,
-						ItemIcon = TempItem.IconExtra,
+						Image = TempItem.IconExtra,
 						Scale = 52,
 
 						StackCount = (short)(CrystallRule.GetMemberVal("RequiredItemStackCount" + i) ?? 1),
@@ -75,7 +75,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 					NormalItems.Add(new ItemIconCell()
 					{
 						ObjectRef = TempItem,
-						ItemIcon = TempItem.IconExtra,
+						Image = TempItem.IconExtra,
 						Scale = 52,
 
 						StackCount = (short)(CrystallRule.GetMemberVal("NormalItemStackCount" + i) ?? 1),

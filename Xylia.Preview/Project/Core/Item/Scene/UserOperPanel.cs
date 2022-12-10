@@ -8,6 +8,8 @@ using System.Xml;
 
 using HZH_Controls.Controls;
 
+using Xylia.Preview.Common.Extension;
+using Xylia.Preview.Project.Core.ItemGrowth.Page;
 using Xylia.Preview.Project.Core.ItemGrowth.Scene;
 using Xylia.Preview.Properties.AnalyseSection;
 
@@ -28,17 +30,21 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		#endregion
 
 		#region 构造
-		public UserOperPanel(ItemFrm ParentForm = null)
+		public UserOperPanel(ItemFrm ParentForm)
 		{
 			InitializeComponent();
 
-			this.MyParentForm = ParentForm;
+			this.MyParentForm = ParentForm;		  
+
+			//会导致首次查看物品缓慢
+			this.EquipmentGuideScene = new(MyParentForm.ItemInfo);
+
 
 			#region 创建操作按钮
 			var OperBtns = new List<Control>();
 
 			if (this.MoreInformation) OperBtns.Add(this.pictureBox2);
-			if (true) OperBtns.Add(this.pictureBox1);
+			if (this.EquipmentGuideScene.HasItemTransformRecipe || this.EquipmentGuideScene.HasItemImprove) OperBtns.Add(this.pictureBox1);
 
 			BtnCount = OperBtns.Count;
 			#endregion
@@ -327,28 +333,9 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		#endregion
 
 		#region 查看装备管理
-		private void pictureBox1_Click(object sender, EventArgs e)
-		{
-			var thread = new Thread(act =>
-			{
-				try
-				{
-					var Preview = new EquipmentGuideScene(MyParentForm.ItemInfo);
+		private readonly EquipmentGuideScene EquipmentGuideScene;
 
-					Preview.ShowItemGrowth2();
-					Preview.ShowItemImprove();
-
-					Preview.ShowDialog();
-				}
-				catch
-				{
-
-				}
-			});
-
-			thread.SetApartmentState(ApartmentState.STA);
-			thread.Start();
-		}
+		private void pictureBox1_Click(object sender, EventArgs e) => Execute.MyShowDialog(this.EquipmentGuideScene);
 		#endregion
 	}
 }

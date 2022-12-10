@@ -1,11 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
-
-using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Core.ItemGrowth.Page;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
@@ -47,7 +43,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 				this.Text = value.NameText();
 				this.Icon = value.IconExtra;
 
-				this.ItemName.ItemAlias = this.ItemIcon.ItemAlias = value.Alias;
+				this.ItemName.ObjectRef = this.ItemIcon.ObjectRef = value;
 			}
 		}
 
@@ -81,8 +77,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
 		[Category("Apperance"), Description("")]
 		public bool ShowStackCount { get => this.ItemIcon.ShowStackCount; set => this.ItemIcon.ShowStackCount = value; }
 		#endregion
-
-
 
 		#region 方法
 		public override void Refresh()

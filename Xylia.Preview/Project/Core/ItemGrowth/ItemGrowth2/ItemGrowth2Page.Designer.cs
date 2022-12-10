@@ -42,6 +42,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.feedItemIconCell1 = new Xylia.Preview.Project.Core.ItemGrowth.Cell.FeedItemIconCell();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.FixedIngredientPreview.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell3)).BeginInit();
@@ -100,7 +101,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell4.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell4.FrameImage = null;
 			this.itemIconCell4.FrameType = true;
-			this.itemIconCell4.ItemIcon = null;
+			
 			this.itemIconCell4.Location = new System.Drawing.Point(117, 3);
 			this.itemIconCell4.Name = "itemIconCell4";
 			this.itemIconCell4.Scale = 45;
@@ -122,7 +123,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell3.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell3.FrameImage = null;
 			this.itemIconCell3.FrameType = true;
-			this.itemIconCell3.ItemIcon = null;
+			
 			this.itemIconCell3.Location = new System.Drawing.Point(59, 3);
 			this.itemIconCell3.Name = "itemIconCell3";
 			this.itemIconCell3.Scale = 45;
@@ -144,7 +145,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell2.FrameImage = null;
 			this.itemIconCell2.FrameType = true;
-			this.itemIconCell2.ItemIcon = null;
+	
 			this.itemIconCell2.Location = new System.Drawing.Point(2, 2);
 			this.itemIconCell2.Name = "itemIconCell2";
 			this.itemIconCell2.Scale = 45;
@@ -174,7 +175,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.ResultWeaponPreview.Location = new System.Drawing.Point(182, 44);
 			this.ResultWeaponPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.ResultWeaponPreview.Name = "ResultWeaponPreview";
-			this.ResultWeaponPreview.Size = new System.Drawing.Size(497, 138);
+			this.ResultWeaponPreview.Size = new System.Drawing.Size(497, 131);
 			this.ResultWeaponPreview.TabIndex = 0;
 			this.ResultWeaponPreview.ResultItemChanged += new Xylia.Preview.Project.Core.ItemGrowth.Preview.ResultWeaponPreview.ResultItemChangedHandle(this.ResultWeaponPreview_ResultItemChanged);
 			// 
@@ -243,6 +244,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.Controls.Add(this.ResultWeaponPreview);
 			this.Controls.Add(this.SubIngredientPreview);
 			this.Name = "ItemGrowth2Page";
+			this.Controls.SetChildIndex(this.pictureBox1, 0);
 			this.Controls.SetChildIndex(this.WarningPreview, 0);
 			this.Controls.SetChildIndex(this.SubIngredientPreview, 0);
 			this.Controls.SetChildIndex(this.ResultWeaponPreview, 0);
@@ -252,6 +254,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.Controls.SetChildIndex(this.FixedIngredientPreview, 0);
 			this.Controls.SetChildIndex(this.label2, 0);
 			this.Controls.SetChildIndex(this.label3, 0);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.FixedIngredientPreview.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell3)).EndInit();
