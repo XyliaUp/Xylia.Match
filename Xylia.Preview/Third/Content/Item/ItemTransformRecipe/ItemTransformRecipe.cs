@@ -63,7 +63,7 @@ namespace Xylia.Preview.Third.Content
 				if (Info.MainIngredient != null)
 				{
 					//主祭品信息转换
-					MainIngredient = Info.MainIngredient.GetObject();
+					MainIngredient = Info.MainIngredient.CastObject();
 					if (MainIngredient != null)
 					{
 						if (MainIngredient is ItemBrand)

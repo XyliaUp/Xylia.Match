@@ -8,7 +8,7 @@
 		<record alias="name2" type="TextAlias" name="" />
 		<record alias="parent-mapinfo" name="" ref="this" />
 		<record alias="scale" type="Float" name="" />	
-		<record alias="district" name="" ref="district" />
+		<record alias="district" name="" ref="District" />
 		<record alias="map-group-1" name="" ref="MapGroup1" />
 		<record alias="map-group-2" name="" ref="MapGroup2" />
 		<record alias="local-axis-x" type="Float" name="" />
@@ -16,6 +16,12 @@
 		<record alias="image-size" type="Short" name="" default="1" />
 		<record alias="imageset" type="Index" name="" />
 		<record alias="imageset-alphamap" type="Index" name="" />
+		
+		<record alias="use-quest" type="Bool" name="" />
+		<record alias="quest" type="Quest" name="" />
+		<record alias="quest-imageset" type="Index" name="" />
+		<record alias="quest-imageset-alphamap" type="Index" name="" />
+		
 		<record alias="overlay" name="" ref="MapOverlay" repeat="30" />
 		<record alias="use-pos-in-parent" type="Bool" name="" />
 		<record alias="pos-in-parent-x" type="Float" name="" />
@@ -24,14 +30,6 @@
 		<record alias="zoom" type="Float" name="" default="1" />
 		<record alias="sort-no" type="Short" name="" />	
 		<record alias="show-navigaion-list" type="Bool" name="" default="y" />
-		<record alias="unk-" type="Int32" name="" />
-		<record alias="unk-" type="Int32" name="" />
-		<record alias="unk-" type="Float" name="" />
-		<record alias="unk-" ref="0" name="" />
-		<record alias="unk-" type="Float" name="" />
-		<record alias="unk380" type="Seq" name="" />
-		<record alias="unk381" type="Seq" name="" />
-		<record alias="unk382" type="Bool" name="" />	
 		<record alias="arena-dungeon-parent-mapinfo" name="" ref="this" />
 		<record alias="arena-dungeon-use-pos-in-parent" type="Bool" name="" />
 		<record alias="arena-dungeon-pos-in-parent-x" type="Float" name="" />

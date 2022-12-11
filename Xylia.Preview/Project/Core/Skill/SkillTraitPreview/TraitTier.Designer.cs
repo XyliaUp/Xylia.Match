@@ -36,38 +36,38 @@
 			// traitTierCell1
 			// 
 			this.traitTierCell1.AutoSize = true;
-			this.traitTierCell1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.traitTierCell1.BackColor = System.Drawing.Color.Transparent;
 			this.traitTierCell1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.traitTierCell1.Location = new System.Drawing.Point(3, 3);
 			this.traitTierCell1.Name = "traitTierCell1";
 			this.traitTierCell1.Size = new System.Drawing.Size(187, 85);
+			this.traitTierCell1.SkillTrait = null;
 			this.traitTierCell1.TabIndex = 0;
-			this.traitTierCell1.Click += new System.EventHandler(this.traitTierCell1_Click);
+			this.traitTierCell1.Click += new System.EventHandler(this.TierCell_Click);
 			// 
 			// traitTierCell2
 			// 
 			this.traitTierCell2.AutoSize = true;
-			this.traitTierCell2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.traitTierCell2.BackColor = System.Drawing.Color.Transparent;
 			this.traitTierCell2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.traitTierCell2.Location = new System.Drawing.Point(219, 0);
 			this.traitTierCell2.Name = "traitTierCell2";
 			this.traitTierCell2.Size = new System.Drawing.Size(187, 85);
+			this.traitTierCell2.SkillTrait = null;
 			this.traitTierCell2.TabIndex = 1;
-			this.traitTierCell2.Click += new System.EventHandler(this.traitTierCell1_Click);
+			this.traitTierCell2.Click += new System.EventHandler(this.TierCell_Click);
 			// 
 			// traitTierCell3
 			// 
 			this.traitTierCell3.AutoSize = true;
-			this.traitTierCell3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.traitTierCell3.BackColor = System.Drawing.Color.Transparent;
 			this.traitTierCell3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.traitTierCell3.Location = new System.Drawing.Point(435, 0);
 			this.traitTierCell3.Name = "traitTierCell3";
 			this.traitTierCell3.Size = new System.Drawing.Size(187, 85);
+			this.traitTierCell3.SkillTrait = null;
 			this.traitTierCell3.TabIndex = 2;
-			this.traitTierCell3.Click += new System.EventHandler(this.traitTierCell1_Click);
+			this.traitTierCell3.Click += new System.EventHandler(this.TierCell_Click);
 			// 
 			// TraitTier
 			// 
@@ -81,6 +81,7 @@
 			this.Controls.Add(this.traitTierCell1);
 			this.Name = "TraitTier";
 			this.Size = new System.Drawing.Size(625, 91);
+	
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

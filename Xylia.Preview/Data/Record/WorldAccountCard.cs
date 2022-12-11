@@ -1,8 +1,7 @@
 ﻿using System.ComponentModel;
 
-using Xylia.Preview.Common.Interface;
-using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Common.Cast;
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -35,7 +34,7 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 接口方法
-		public string NameText() => this.Item.GetObject(DataType.Item).GetName();
+		public string NameText() => this.Item.GetItemInfo()?.GetName();
 		#endregion
 	}
 }

@@ -25,7 +25,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			this.ChallengeName.Text = Quest?.Name2.GetText();
 			this.ChallengeIcon.Image = Quest?.Icon;
 
-			this.AttractionInfo.Text = Attraction.GetObject().GetName();
+			this.AttractionInfo.Text = Attraction.CastObject().GetName();
 			this.ChallengeDifficultyType.Visible = false;
 
 			this.pictureBox1.Location = new Point(this.pictureBox1.Location.X, this.ChallengeIcon.Bottom + 5);
@@ -37,7 +37,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			var KillNpc = FileCache.Data.Npc[ChallengeNpcKill];
 
 
-			this.AttractionInfo.Text = Attraction.GetObject().GetName();
+			this.AttractionInfo.Text = Attraction.CastObject().GetName();
 			this.ChallengeName.Text = $"<font name=\"00008130.Program.Fontset_ItemGrade_5\">{ this.AttractionInfo.Text }</font> { KillNpc?.NameText() } 击杀";
 			//this.ChallengeIcon.Image = null;
 

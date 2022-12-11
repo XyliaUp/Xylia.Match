@@ -44,7 +44,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			var OperBtns = new List<Control>();
 
 			if (this.MoreInformation) OperBtns.Add(this.pictureBox2);
-			if (this.EquipmentGuideScene.HasItemTransformRecipe || this.EquipmentGuideScene.HasItemImprove) OperBtns.Add(this.pictureBox1);
+			if (this.EquipmentGuideScene.Valid) OperBtns.Add(this.pictureBox1);
 
 			BtnCount = OperBtns.Count;
 			#endregion

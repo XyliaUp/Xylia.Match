@@ -64,7 +64,7 @@ namespace Xylia.Preview.Third.Content
 					var KillNpc = FileCache.Data.Npc[ChallengeNpcKill];
 					if (KillNpc is null) break;
 
-					var AttractionInfo = ChallengeNpcAttraction.GetObject().GetName();
+					var AttractionInfo = ChallengeNpcAttraction.CastObject().GetName();
 					var Info = $"[{ ChallengeNpcDifficulty.GetDescription() }] { AttractionInfo } - { KillNpc.NameText() }";
 					this.ExcelInfo.CreateCell(Rows[RowIdx++], CellIdx).SetCellValue(Info);
 				}

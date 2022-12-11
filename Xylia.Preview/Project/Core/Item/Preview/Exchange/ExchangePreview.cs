@@ -65,10 +65,10 @@ namespace Xylia.Preview.Project.Core.Item
 						PosY = itemShowCell.Bottom;
 					}
 
-					LoadObject(rule.RequiredItem1?.GetObject());
-					LoadObject(rule.RequiredItem2?.GetObject());
-					LoadObject(rule.RequiredItem3?.GetObject());
-					LoadObject(rule.RequiredItem4?.GetObject());
+					LoadObject(rule.RequiredItem1?.CastObject());
+					LoadObject(rule.RequiredItem2?.CastObject());
+					LoadObject(rule.RequiredItem3?.CastObject());
+					LoadObject(rule.RequiredItem4?.CastObject());
 				}
 			}
 			#endregion

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Linq;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
@@ -11,19 +9,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {
 	public partial class ItemImprovePage : ItemGrowth2Page
 	{
-		#region 构造
-		public ItemImprovePage()
-		{
-			InitializeComponent();
-		}
-		#endregion
-
 		#region 方法
+		public ItemImprovePage() => InitializeComponent();
+
 		public void SetData(ItemImprove ItemImprove, string ImprovePrevItem, string ImproveNextItem)
 		{
 			if (ItemImprove is null) throw new Exception("没有成长路径");
-
-			//目标物品
 			this.ResultWeaponPreview.SetData(ItemImprove, ImproveNextItem);
 
 			//获取强化效果
@@ -43,28 +34,15 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			}
 		}
 
-
-		/// <summary>
-		/// 目标物品改变
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		protected override void ResultWeaponPreview_ResultItemChanged(ResultItemChangedEventArgs e)
 		{
 			this.SubIngredientPreview.SetData(e.ItemImprove);
-			this.SubIngredientPreview.Location = new Point((this.Width - this.SubIngredientPreview.Width) / 2, this.SubIngredientPreview.Location.Y);
 		}
 
-		/// <summary>
-		/// 主要祭品改变
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		protected override void SubIngredientPreview_RecipeChanged(RecipeChangedEventArgs e)
 		{
 			//更新固定祭品信息
 			this.FixedIngredientPreview.LoadData(e.ItemImprove, e.Index);
-			this.FixedIngredientPreview.Location = new Point((this.Width - this.FixedIngredientPreview.Width) / 2, this.FixedIngredientPreview.Location.Y);
 
 			//更新手续费信息
 			this.MoneyCostPreview.MoneyCost = e.ItemImprove.Attributes[$"cost-money-{e.Index}"].ToInt();
@@ -75,10 +53,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 			if (UseSuccessProbability)
 			{
-				if (FailDiff != 0) this.WarningPreview.Text = $"有一定概率强化失败。失败时，强化阶段<font name=\"00008130.UI.Vital_red\">下降</font>{FailDiff}阶段。";
-				else this.WarningPreview.Text = $"有一定概率强化失败。";
-
-				this.WarningPreview.Location = new Point((this.Width - this.WarningPreview.Width) / 2, this.WarningPreview.Location.Y);
+				if (FailDiff == 0) this.WarningPreview.Text = $"有一定概率强化失败。";
+				else this.WarningPreview.Text = $"有一定概率强化失败。失败时，强化阶段<font name=\"00008130.UI.Vital_red\">下降</font>{FailDiff}阶段。";
 			}
 		}
 		#endregion

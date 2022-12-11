@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Xylia.Attribute.Component;
-using Xylia.Files.XmlEx;
-using Xylia.Preview.Common.Interface;  
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {

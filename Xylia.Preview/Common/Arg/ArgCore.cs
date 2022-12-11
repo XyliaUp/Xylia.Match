@@ -42,7 +42,7 @@ namespace Xylia.Preview.Public.Attribute.arg
 			//指向特定对象
 			if (CurParamInfo == "id")
 			{
-				ExecObj = Attrs["id"].GetObject();
+				ExecObj = Attrs["id"].CastObject();
 				if (ExecObj is null)
 				{
 					Debug.WriteLine("获取对象失败");

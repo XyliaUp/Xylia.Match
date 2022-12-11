@@ -1,7 +1,4 @@
-﻿
-using Xylia.Preview.Project.Core.Skill;
-
-namespace Xylia.Preview.Project.Core.Skill
+﻿namespace Xylia.Preview.Project.Core.Skill
 {
 	partial class SkillPreview
 	{
@@ -47,12 +44,11 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.SkillName.AutoSize = true;
 			this.SkillName.BackColor = System.Drawing.Color.Transparent;
 			this.SkillName.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.SkillName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-			this.SkillName.ItemGrade = ((byte)(8));
-			this.SkillName.Location = new System.Drawing.Point(6, 0);
+			this.SkillName.ItemGrade = ((byte)(4));
+			this.SkillName.Location = new System.Drawing.Point(3, 0);
 			this.SkillName.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
 			this.SkillName.Name = "SkillName";
-			this.SkillName.Size = new System.Drawing.Size(107, 29);
+			this.SkillName.Size = new System.Drawing.Size(107, 28);
 			this.SkillName.TabIndex = 24;
 			this.SkillName.TagImage = null;
 			this.SkillName.Text = "SkillName";
@@ -74,7 +70,7 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.M1_Panel.Location = new System.Drawing.Point(99, 28);
 			this.M1_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.M1_Panel.Name = "M1_Panel";
-			this.M1_Panel.Size = new System.Drawing.Size(270, 36);
+			this.M1_Panel.Size = new System.Drawing.Size(291, 36);
 			this.M1_Panel.TabIndex = 26;
 			// 
 			// M2_Panel
@@ -83,7 +79,7 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.M2_Panel.Location = new System.Drawing.Point(99, 78);
 			this.M2_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.M2_Panel.Name = "M2_Panel";
-			this.M2_Panel.Size = new System.Drawing.Size(270, 41);
+			this.M2_Panel.Size = new System.Drawing.Size(291, 41);
 			this.M2_Panel.TabIndex = 27;
 			// 
 			// SUB_Panel
@@ -92,7 +88,7 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.SUB_Panel.Location = new System.Drawing.Point(6, 137);
 			this.SUB_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.SUB_Panel.Name = "SUB_Panel";
-			this.SUB_Panel.Size = new System.Drawing.Size(367, 168);
+			this.SUB_Panel.Size = new System.Drawing.Size(384, 168);
 			this.SUB_Panel.TabIndex = 28;
 			// 
 			// CONDITION_Panel
@@ -101,7 +97,7 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.CONDITION_Panel.Location = new System.Drawing.Point(6, 380);
 			this.CONDITION_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.CONDITION_Panel.Name = "CONDITION_Panel";
-			this.CONDITION_Panel.Size = new System.Drawing.Size(367, 84);
+			this.CONDITION_Panel.Size = new System.Drawing.Size(384, 84);
 			this.CONDITION_Panel.TabIndex = 29;
 			// 
 			// DamageRateStandardStats
@@ -142,8 +138,8 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.Name = "SkillPreview";
-			this.Size = new System.Drawing.Size(376, 466);
-			this.Load += new System.EventHandler(this.SkillPreview_Load);
+			this.Size = new System.Drawing.Size(393, 466);
+		
 			((System.ComponentModel.ISupportInitialize)(this.SkillIcon)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

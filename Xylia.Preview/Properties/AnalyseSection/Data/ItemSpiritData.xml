@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" rule="cpl" type="ItemSpirit" version="0.1">
+	<list module="ItemData" rule="cpl" type="ItemSpirit" version="0.5">
 		<record alias="id" name="" type="id" />	
-		<record alias="level" name="" type="Int32" start="0" />
+		<record alias="level" name="" type="Byte" start="0" />
 		
 		<record alias="alias" name="" type="Index" />
 		<record alias="main-ingredient" name="" ref="Item" />
@@ -16,7 +16,6 @@
 		<record alias="ability-max" name="" type="Int32" repeat="2" />
 		<record alias="once-attach-ability-min" name="" type="Int32" repeat="2" />
 		<record alias="once-attach-ability-max" name="" type="Int32" repeat="2" />
-
 		<record alias="warning" name="" type="Seq" server="n" >
 		     <case alias="none" default="y" />
 			 <case alias="fail" />

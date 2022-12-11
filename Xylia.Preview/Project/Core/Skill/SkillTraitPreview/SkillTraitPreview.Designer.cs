@@ -105,7 +105,7 @@
 			this.TooltipTrainName.BackColor = System.Drawing.Color.Transparent;
 			this.TooltipTrainName.BasicLineHeight = 25;
 			this.TooltipTrainName.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.TooltipTrainName.ForeColor = System.Drawing.Color.White;
+			this.TooltipTrainName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(215)))), ((int)(((byte)(83)))));
 			this.TooltipTrainName.Location = new System.Drawing.Point(641, 1);
 			this.TooltipTrainName.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.TooltipTrainName.Name = "TooltipTrainName";

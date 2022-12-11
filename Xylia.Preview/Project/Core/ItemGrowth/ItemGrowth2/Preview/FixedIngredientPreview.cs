@@ -12,6 +12,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 {
 	public partial class FixedIngredientPreview : Panel
 	{
+		#region 事件与委托
+		public delegate void DataLoadedHandle();
+
+		public event DataLoadedHandle DataLoaded;
+		#endregion
+
+
 		#region 方法
 		private void CreateNew(ItemData Item, int StackCount, ref int LocX)
 		{
@@ -34,7 +41,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 		{
 			this.Width = LocX;
 			this.Height = 50;
+
+			this.DataLoaded?.Invoke();
 		}
+
 
 
 		public void LoadData(ItemTransformRecipe record)
@@ -71,6 +81,26 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				var CostSubItemCount = record.Attributes[$"cost-sub-item-count-{Index}-{i}"].ConvertToShort();
 
 				CreateNew(CostSubItem, CostSubItemCount, ref LocX);
+			}
+			#endregion
+
+			this.HandleSize(LocX);
+		}
+
+		public void LoadData(ItemSpirit record)
+		{
+			this.Controls.Remove<ItemIconCell>();
+
+			#region 加载控件
+			int LocX = 0;
+			for (int i = 1; i <= 8; i++)
+			{
+				var FixedIngredient = record.Attributes["fixed-ingredient-" + i].GetItemInfo();
+				if (FixedIngredient is null) continue;
+
+				var FixedIngredientStackCount = record.Attributes["fixed-ingredient-stack-count-" + i].ConvertToShort();
+
+				CreateNew(FixedIngredient, FixedIngredientStackCount, ref LocX);
 			}
 			#endregion
 

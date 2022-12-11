@@ -52,8 +52,7 @@ namespace Xylia.Preview
 			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.contentPanel1.Name = "contentPanel1";
 			this.contentPanel1.TabIndex = 1;
-			this.contentPanel1.Text = "施展<arg id=\"skill:Bard_G1_Skill_Down_1_Lv1\" p=\"id:skill.name2\"/><arg id=\"skill:Bar" +
-    "d_G1_Skill_Down_1_Lv1\" p=\"id:skill.current-short-cut-key.key1.image\"/>武功";
+			this.contentPanel1.Text = "施展武功";
 			// 
 			// DebugFrm
 			// 

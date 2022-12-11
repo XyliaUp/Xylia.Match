@@ -46,7 +46,9 @@ namespace Xylia.Preview
             Application.EnableVisualStyles();
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new DebugFrm());
+            //Application.Run(new SkillTraitPreview());
         }
     }
 }

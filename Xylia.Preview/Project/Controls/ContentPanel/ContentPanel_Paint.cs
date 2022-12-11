@@ -282,7 +282,7 @@ namespace Xylia.Preview.Project.Controls
 						var ID = Attribute["id"];
 						if (ID is "none") break;
 
-						var obj = ID.GetObject();
+						var obj = ID.CastObject();
 						if (obj is Text @text) this.SetToolTip(text.GetText());
 						else obj.PreviewShow();
 					}

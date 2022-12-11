@@ -7,9 +7,10 @@ using System.Windows.Forms;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Cell;
-using Xylia.Preview.Common.Interface;
+
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
@@ -22,8 +23,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 		//定义委托
 		public delegate void RecipeChangedHandle(RecipeChangedEventArgs e);
 
-		//定义事件
 		public event RecipeChangedHandle RecipeChanged;
+
+
+		public delegate void DataLoadedHandle();
+
+		public event DataLoadedHandle DataLoaded;
 		#endregion
 
 
@@ -44,7 +49,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			ItemIcon.Click += new EventHandler((s, e) =>
 			{
 				this.Controls.OfType<FeedItemIconCell>().ForEach(c =>
-				{ 
+				{
 					c.ShowFrameImage = false;
 					c.Refresh();
 				});
@@ -64,6 +69,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.Width = LocX;
 			this.Height = 90;
 
+			this.DataLoaded?.Invoke();
+
 			//触发第一个选项 
 			this.Controls.OfType<FeedItemIconCell>().FirstOrDefault()?.CallEvent("OnClick");
 		}
@@ -79,7 +86,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			foreach (var Recipe in ResultRecipes)
 			{
 				#region 获取数据
-				var SubIngredient1 = Recipe.Attributes["sub-ingredient-1"].GetObject();
+				var SubIngredient1 = Recipe.Attributes["sub-ingredient-1"].CastObject();
 				var SubIngredientStackCount1 = Recipe.Attributes["sub-ingredient-stack-count-1"].ConvertToShort();
 				var SubIngredientConditionType1 = Recipe.Attributes["sub-ingredient-condition-type-1"].ToEnum<ConditionType>();
 
@@ -123,7 +130,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				if (CostMainItem is null) break;
 
 				var CostMainItemCount = ItemImprove.Attributes["cost-main-item-count-" + idx].ConvertToShort();
-				
+
 
 				//绑定事件
 				byte CurIdx = idx;
@@ -134,17 +141,28 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 			this.HandleSize(LocX);
 		}
+
+		public void SetData(ItemSpirit ItemSpirit)
+		{
+			//清理资源
+			this.Controls.Remove<FeedItemIconCell>();
+
+			int LocX = 0;
+			var MainIngredient = ItemSpirit.Attributes["main-ingredient"].GetItemInfo();
+			this.CreateNew(MainIngredient, MainIngredient?.Icon, 1, ref LocX).Click += new EventHandler((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemSpirit)));
+
+			this.HandleSize(LocX);
+		}
 		#endregion
 	}
 
 	/// <summary>
 	/// 成长路径变更事件
 	/// </summary>
-	public class RecipeChangedEventArgs : EventArgs
+	public sealed class RecipeChangedEventArgs : EventArgs
 	{
 		public ItemTransformRecipe ItemTransformRecipe { get; }
 		public RecipeChangedEventArgs(ItemTransformRecipe ItemTransformRecipe) => this.ItemTransformRecipe = ItemTransformRecipe;
-
 
 
 		public byte Index { get; }
@@ -154,5 +172,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			this.ItemImprove = ItemImprove;
 			this.Index = Index;
 		}
+
+
+
+		public ItemSpirit ItemSpirit;
+		public RecipeChangedEventArgs(ItemSpirit ItemSpirit) => this.ItemSpirit = ItemSpirit;
 	}
 }

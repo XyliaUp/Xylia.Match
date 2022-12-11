@@ -44,46 +44,19 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			if (CrystallRule is null) return;
 
 			#region 处理需要物品
-			var RequiredItems = new List<Basic.ItemIconCell>();
-			for (int i = 1; i <= 4; i++)
-			{
-				var TempObj = CrystallRule?.GetMemberVal("RequiredItem" + i)?.GetObject();
-				if (TempObj != null && TempObj is ItemData TempItem)
-				{
-					RequiredItems.Add(new ItemIconCell()
-					{
-						ObjectRef = TempItem,
-						Image = TempItem.IconExtra,
-						Scale = 52,
-
-						StackCount = (short)(CrystallRule.GetMemberVal("RequiredItemStackCount" + i) ?? 1),
-						ShowStackCount = true,
-						ShowStackCountOnlyOne = false,
-					});
-				}
-			}
+			var RequiredItems = new List<ItemIconCell>();
+			RequiredItems.AddItem(LoadRequiredItem(CrystallRule.RequiredItem1, CrystallRule.RequiredItemStackCount1));
+			RequiredItems.AddItem(LoadRequiredItem(CrystallRule.RequiredItem2, CrystallRule.RequiredItemStackCount2));
+			RequiredItems.AddItem(LoadRequiredItem(CrystallRule.RequiredItem3, CrystallRule.RequiredItemStackCount3));
+			RequiredItems.AddItem(LoadRequiredItem(CrystallRule.RequiredItem4, CrystallRule.RequiredItemStackCount4));
 			#endregion
 
 			#region 处理目标物品
 			var NormalItems = new List<ItemIconCell>();
-			for (int i = 1; i <= 4; i++)
-			{
-				//注意这俩个数据存在区别
-				var TempObj = CrystallRule?.GetMemberVal("NormalItem" + i)?.GetObject(DataType.Item);
-				if (TempObj != null && TempObj is ItemData TempItem)
-				{
-					NormalItems.Add(new ItemIconCell()
-					{
-						ObjectRef = TempItem,
-						Image = TempItem.IconExtra,
-						Scale = 52,
-
-						StackCount = (short)(CrystallRule.GetMemberVal("NormalItemStackCount" + i) ?? 1),
-						ShowStackCount = true,
-						ShowStackCountOnlyOne = false,
-					});
-				}
-			}
+			NormalItems.AddItem(LoadNormalItem(CrystallRule.NormalItem1, CrystallRule.NormalItemStackCount1));
+			NormalItems.AddItem(LoadNormalItem(CrystallRule.NormalItem2, CrystallRule.NormalItemStackCount2));
+			NormalItems.AddItem(LoadNormalItem(CrystallRule.NormalItem3, CrystallRule.NormalItemStackCount3));
+			NormalItems.AddItem(LoadNormalItem(CrystallRule.NormalItem4, CrystallRule.NormalItemStackCount4));
 			#endregion
 
 
@@ -115,6 +88,48 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 
 			this.ResumeLayout();
 			#endregion
+		}
+
+
+		private static ItemIconCell LoadRequiredItem(string ItemAlias, short StackCount)
+		{
+			var TempObj = ItemAlias?.CastObject();
+			if (TempObj != null && TempObj is ItemData TempItem)
+			{
+				return new ItemIconCell()
+				{
+					ObjectRef = TempItem,
+					Image = TempItem.IconExtra,
+					Scale = 52,
+
+					StackCount = StackCount,
+					ShowStackCount = true,
+					ShowStackCountOnlyOne = false,
+				};
+			}
+
+			return null;
+		}
+
+		private static ItemIconCell LoadNormalItem(string ItemAlias, short StackCount)
+		{
+			//注意这俩个数据存在区别
+			var TempObj = ItemAlias.GetItemInfo();
+			if (TempObj != null && TempObj is ItemData TempItem)
+			{
+				return new ItemIconCell()
+				{
+					ObjectRef = TempItem,
+					Image = TempItem.IconExtra,
+					Scale = 52,
+
+					StackCount = StackCount,
+					ShowStackCount = true,
+					ShowStackCountOnlyOne = false,
+				};
+			}
+
+			return null;
 		}
 		#endregion
 	}

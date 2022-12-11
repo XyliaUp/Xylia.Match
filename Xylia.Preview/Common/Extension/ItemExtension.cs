@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,7 +14,6 @@ using Xylia.Preview.Project.Core.Skill;
 using Xylia.Preview.Properties;
 
 using static Xylia.Preview.Properties.Resources;
-
 
 
 namespace Xylia.Preview.Data.Record

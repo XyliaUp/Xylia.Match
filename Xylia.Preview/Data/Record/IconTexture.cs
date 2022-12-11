@@ -1,14 +1,12 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
 
-using Xylia.Attribute.Component;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Data.Record
 {
-	[Signal("icon-texture")]
 	public sealed class IconTexture : IRecord
 	{
 		#region 属性字段
@@ -115,7 +113,7 @@ public static class IconTextureExt
 		if (RowID == 0) RowID = AmountRow;
 		else ColID += 1;
 
-		System.Diagnostics.Debug.WriteLine($"{IconIndex} => {ColID} - {RowID}");
+		//System.Diagnostics.Debug.WriteLine($"{IconIndex} => {ColID} - {RowID}");
 
 		//锁定对象，防止异步异常
 		lock (TextureData)

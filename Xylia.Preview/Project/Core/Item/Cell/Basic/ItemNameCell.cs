@@ -67,14 +67,22 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		}
 
 
+		[Browsable(false)]
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+		public override Color ForeColor => m_itemgrade.ItemGrade(); 
+
+
+
 		private byte m_itemgrade = 6;
+
 		[Category("Data"), Description("物品品质")]
 		public byte ItemGrade
 		{
 			get => m_itemgrade;
 			set
 			{
-				this.ForeColor = (m_itemgrade = value).ItemGrade();
+				m_itemgrade = value;
 				this.Refresh();
 			}
 		}

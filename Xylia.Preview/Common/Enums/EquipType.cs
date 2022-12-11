@@ -110,6 +110,6 @@ namespace Xylia.Preview.Common.Enums
 		BadgeAppearance,
 
 
-		vehicle,
+		Vehicle,
 	}
 }

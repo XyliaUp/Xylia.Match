@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="raid-dungeon" version="0.1" rule="cpl" index="y">
+	<list module="ZoneData0" type="raid-dungeon" version="6.12" rule="cpl" index="y">
 		<record alias="id" type="id" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="name2" name="" type="TextAlias" />
@@ -33,7 +33,6 @@
 		<record alias="dungeon-tap-name2" name="" type="TextAlias" />
 		<record alias="step-name2" name="" type="TextAlias" repeat="9" />
 		<record alias="step-image" name="" type="Index" repeat="9" />
-
 		<record alias="arena-minimap" name="" type="Index" />
 		<record alias="raid-dungeon-desc" name="" type="TextAlias" />
 		<record alias="ui-text-grade" name="" type="Byte" />
@@ -50,6 +49,5 @@
 		<record alias="contents-reset" name="" ref="ContentsReset" error-type="Suggestion" />
 		<!-- ================================================================ -->
 		<record alias="max-leave-count-after-combat" name="" type="Byte" client="n" />
-
 	</list>
 </table>

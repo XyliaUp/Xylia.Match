@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using Xylia.Extension;
+
+using static Xylia.Preview.Data.Record.MapUnit;
+
 namespace Xylia.Preview
 {
 	public partial class DebugFrm : Form
@@ -14,9 +18,15 @@ namespace Xylia.Preview
 		{
 			//this.contentPanel1.Text = "<p justification=\"true\" justificationtype=\"linefeedbywidgetarea\"><link id=\"none\"/> </p><p horizontalalignment=\"center\"><br/><image enablescale=\"false\" imagesetpath=\"00027918.InterD_ChungGakjiBu\"/><br/><image enablescale=\"true\" imagesetpath=\"00009499.Field_Boss\" scalerate=\"1.4\"/>铁傀王<br/><br/>中原的海盗组织——冲角团的平南舰队支部。<br/>支部长是啸四海。</p>";
 
+			int AttackPower = 1593;
+			int DamageValue = 16000;
+			double AttackAttributePercent = 2.2203 * 0.97;
 
-			//FileCache.Data.TextData.TryLoad();
-			//System.Diagnostics.Trace.WriteLine("712466".GetText());
+			var result = AttackPower * (DamageValue * 0.01) * AttackAttributePercent;
+
+			System.Diagnostics.Debug.WriteLine(0.985 * result);
+			System.Diagnostics.Debug.WriteLine(1.015 * result);
+
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -29,14 +39,11 @@ namespace Xylia.Preview
 			//_soundOut.Play();
 
 
-			//FileCache.Data.TextData.TryLoad();
-			//System.Diagnostics.Trace.WriteLine("712466".GetText());
-
 
 			//this.Controls.Remove<CaseInfoPanel>();
-
 			//int height = 25;
 			//var cs = MissionPanel.LoadTalkMessage(new Xylia.bns.Modules.GameData.CommonTable.NpcResponse(this.textBox1.Text), new WaveOut());
+
 			//foreach (var o in cs)
 			//{
 			//	if (!this.Controls.Contains(o)) this.Controls.Add(o);

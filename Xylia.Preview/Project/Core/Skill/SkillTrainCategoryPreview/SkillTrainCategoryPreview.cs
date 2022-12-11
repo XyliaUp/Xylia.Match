@@ -30,8 +30,6 @@ namespace Xylia.Preview.Project.Core.Skill
 			Dictionary<GameSeq.KeyCommand, Skill3> test = new();
 			foreach (var Skill in Skills)
 			{
-				System.Diagnostics.Debug.WriteLine(Skill.ShortCutKey + " " + Skill.NameText());
-
 				ItemIconCell ItemIconCell = new()
 				{
 					Scale = 64,

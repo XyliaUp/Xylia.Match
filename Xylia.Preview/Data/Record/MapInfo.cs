@@ -1,6 +1,8 @@
 ﻿using Xylia.Attribute.Component;
 using Xylia.Preview.Common.Interface;
 
+using static Xylia.Preview.Data.Record.MapUnit;
+
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class MapInfo : IRecord
@@ -35,6 +37,7 @@ namespace Xylia.Preview.Data.Record
 		[Signal("image-size")]
 		public short ImageSize;
 
+
 		public string Imageset;
 
 		[Signal("imageset-alphamap")]
@@ -63,8 +66,6 @@ namespace Xylia.Preview.Data.Record
 		public bool ShowNavigaionList;
 
 
-
-
 		[Signal("arena-dungeon-parent-mapinfo")]
 		public string ArenaDungeonParentMapinfo;
 
@@ -76,6 +77,25 @@ namespace Xylia.Preview.Data.Record
 
 		[Signal("arena-dungeon-pos-in-parent-y")]
 		public float ArenaDungeonPosInParentY;
+		#endregion
+
+
+
+		#region 处理字段
+		public MapDepthSeq _MapDepth;
+
+		/// <summary>
+		/// 获取指定地图的深度
+		/// </summary>
+		/// <param name="MapInfo"></param>
+		/// <returns></returns>
+		public static MapDepthSeq GetMapDepth(MapInfo MapInfo)
+		{
+			var ParentMapinfo = FileCache.Data.MapInfo[MapInfo.ParentMapinfo];
+			if (ParentMapinfo != null) return GetMapDepth(ParentMapinfo) + 1;
+
+			return MapDepthSeq.N1;
+		}
 		#endregion
 	}
 }

@@ -37,13 +37,13 @@
 			// 
 			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
 			this.contentPanel1.BasicLineHeight = 25;
-			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(99, 24);
+			this.contentPanel1.Location = new System.Drawing.Point(99, 28);
 			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.contentPanel1.Name = "contentPanel1";
 			this.contentPanel1.TabIndex = 3;
-			this.contentPanel1.Text = "移形换位";
+			this.contentPanel1.Text = "特性名称";
 			// 
 			// pictureBox1
 			// 
@@ -57,13 +57,11 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
-			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.contentPanel1);
 			this.Controls.Add(this.pictureBox1);
 			this.Name = "TraitTierCell";
-			this.Size = new System.Drawing.Size(185, 83);
+			this.Size = new System.Drawing.Size(207, 83);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

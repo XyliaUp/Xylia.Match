@@ -33,9 +33,9 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(187, -2);
+			this.textBox1.Location = new System.Drawing.Point(232, -1);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(268, 23);
+			this.textBox1.Size = new System.Drawing.Size(232, 23);
 			this.textBox1.TabIndex = 0;
 			this.textBox1.Text = "Bard_G1_Angel_Soul_Lv3";
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -48,7 +48,7 @@
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(456, 207);
+			this.ClientSize = new System.Drawing.Size(464, 258);
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;

@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
+using HZH_Controls.Util;
+
+
+using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
+
+using static Xylia.Preview.Data.Record.MapUnit;
 
 namespace Xylia.Preview.Project.Core.Map.Scene
 {
@@ -19,19 +26,18 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		{
 			InitializeComponent();
 
-			LoadData(Rule);
+			this.LoadData(Rule);
 		}
 		#endregion
 
+
 		#region 方法
+		private MapInfo OpenedMapInfo;
+
 		public void LoadData(string Rule)
 		{
-			var MapInfo = FileCache.Data.MapInfo[Rule];
+			var MapInfo = this.OpenedMapInfo = FileCache.Data.MapInfo[Rule];
 			if (MapInfo is null) return;
-
-			var MapGroup1 = FileCache.Data.MapGroup1[MapInfo.MapGroup1];
-			var MapGroup2 = FileCache.Data.MapGroup2[MapInfo.MapGroup2];
-
 
 			if (MapInfo.ParentMapinfo != null)
 			{
@@ -39,15 +45,47 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 				this.OpenParentMap.Click += new EventHandler((o, e) => Execute.MyShowDialog(new MapInfoScene(MapInfo.ParentMapinfo)));
 			}
 
+			var MapGroup1 = FileCache.Data.MapGroup1[MapInfo.MapGroup1];
+			var MapGroup2 = FileCache.Data.MapGroup2[MapInfo.MapGroup2];
+
+
+			//获取当前查看的地图的深度
+			this.OpenedMapInfo._MapDepth = MapInfo.GetMapDepth(this.OpenedMapInfo);
+
 
 			Trace.WriteLine(MapInfo.Attributes);
 
 			this.Text = $"[{MapInfo.Name2.GetText()}]";
 			this.pictureBox1.Image = MapInfo.Imageset.GetImageset();
 
-			foreach (var mapunit in FileCache.Data.MapUnit.Where(d => d.Mapid == MapInfo.ID))
+			this.LoadMapUint(MapInfo);
+		}
+
+		private void LoadMapUint(MapInfo MapInfo, List<MapInfo> MapTree = null)
+		{
+			MapTree ??= new();
+			MapTree.Add(MapInfo);
+
+			this.GetMapUnit(MapInfo, MapTree);
+
+
+			if (MapInfo.Alias == "World") return;
+			FileCache.Data.MapInfo.Where(o => o.ParentMapinfo == MapInfo.Alias).ForEach(o => this.LoadMapUint(o, new(MapTree)));
+		}
+
+		/// <summary>
+		/// 获取指定地图的单元
+		/// </summary>
+		/// <param name="CurMapInfo"></param>
+		/// <param name="MapTree"></param>
+		private void GetMapUnit(MapInfo CurMapInfo, List<MapInfo> MapTree)
+		{
+			var MapUnits = FileCache.Data.MapUnit.Where(o => o.Mapid == CurMapInfo.ID && o.MapDepth <= this.OpenedMapInfo._MapDepth);
+			foreach (var mapunit in MapUnits)
 			{
-				if (mapunit.Type == MapUnit.TypeSeq.Quest) continue;
+				if (mapunit.Type == TypeSeq.Quest) continue;
+				if (mapunit.Type == TypeSeq.Npc) continue;	  //该类型按接取的任务进行显示
+
 
 				var res = mapunit.Imageset.GetImageset();
 				if (res is null) continue;
@@ -62,32 +100,50 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 
 					BackColor = Color.Transparent,
 					SizeMode = PictureBoxSizeMode.AutoSize,
-
-					Location = GetPoint(mapunit.PositionX, mapunit.PositionY, MapInfo),
 				};
 
-				string Tooltip = mapunit.Name2.GetText();
-				if (mapunit.Type == MapUnit.TypeSeq.Attraction)
+
+				#region Get Pos
+				//如果地形一致，不用转换 pos
+				var Pos = GetPoint(mapunit.PositionX, mapunit.PositionY, this.OpenedMapInfo).ToPoint();
+				if (MapTree.Count > 1)
 				{
-					var Attraction = mapunit.Attributes["attraction"].GetObject();
+					for (int idx = MapTree.Count; idx > 1; idx--)
+					{
+						var Map = MapTree[idx - 1];
+
+						if (Map.UsePosInParent) Pos = new Point((int)Map.PosInParentX, (int)Map.PosInParentY);
+					}
+				}
+
+				temp.Location = Pos;
+				#endregion
+
+
+
+				this.pictureBox1.Controls.Add(temp);
+
+				#region 设置提示内容
+				string Tooltip = mapunit.Name2.GetText();
+				if (mapunit.Type == TypeSeq.Attraction)
+				{
+					var Attraction = mapunit.Attributes["attraction"].CastObject();
 					if (Attraction != null) Tooltip = $"{Attraction.GetType().Name}: " + Attraction.GetName();
 				}
-				else if (mapunit.Type == MapUnit.TypeSeq.Npc) Tooltip = mapunit.Attributes["npc"].GetObject(DataType.Npc).GetName();
-				else if (mapunit.Type == MapUnit.TypeSeq.Boss) Tooltip = mapunit.Attributes["npc"].GetObject(DataType.Npc).GetName();
+				else if (mapunit.Type == TypeSeq.Npc || mapunit.Type == TypeSeq.Boss) Tooltip = mapunit.Attributes["npc"].CastObject(nameof(FileCache.Data.Npc)).GetName();
 
 				temp.SetToolTip(Tooltip);
+				#endregion
+
 				temp.Click += new EventHandler((sender, e) =>
 				{
-					var o = (Control)sender;
-
-					if (mapunit.Type == MapUnit.TypeSeq.Link) Execute.MyShowDialog(new MapInfoScene(mapunit.Attributes["link-mapid"]));
+					if (mapunit.Type == TypeSeq.Link) Execute.MyShowDialog(new MapInfoScene(mapunit.Attributes["link-mapid"]));
 
 					Debug.WriteLine(mapunit.Attributes);
 				});
-
-				this.pictureBox1.Controls.Add(temp);
 			}
 		}
+
 
 
 		/// <summary>
@@ -95,14 +151,15 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		/// </summary>
 		/// <param name="PositionX"></param>
 		/// <param name="PositionY"></param>
-		/// <param name="MapInfo"></param>
+		/// <param name="ParentMapInfo"></param>
 		/// <returns></returns>
-		public static Point GetPoint(float PositionX, float PositionY, MapInfo MapInfo)
+		public static PointF GetPoint(float PositionX, float PositionY, MapInfo ParentMapInfo)
 		{
-			float PointX = MapInfo.ImageSize * (0 + (PositionY - MapInfo.LocalAxisY) / (MapInfo.Scale * MapInfo.ImageSize));     //1050
-			float PointY = MapInfo.ImageSize * (1 - (PositionX - MapInfo.LocalAxisX) / (MapInfo.Scale * MapInfo.ImageSize));     //1000
+			float PointX = (PositionX - ParentMapInfo.LocalAxisX) / (ParentMapInfo.Scale);     //1050
+			float PointY = (PositionY - ParentMapInfo.LocalAxisY) / (ParentMapInfo.Scale);     //1000
 
-			return new Point((int)PointX, (int)PointY);
+			//转换为当前坐标轴的位置
+			return new PointF(PointY, ParentMapInfo.ImageSize - PointX);
 		}
 
 		private void pictureBox1_DoubleClick(object sender, EventArgs e)

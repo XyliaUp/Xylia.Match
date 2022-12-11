@@ -32,5 +32,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			}
 		}
 		#endregion
+
+
+
+		private void WarningPreview_TextChanged(object sender, System.EventArgs e)
+		{
+			this.WarningPreview.Location = new Point((this.Width - this.WarningPreview.Width) / 2, this.WarningPreview.Location.Y);
+		}
 	}
 }

@@ -6,7 +6,6 @@ using System.Reflection;
 using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Read;
 using Xylia.Extension;
-using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Properties;
 
@@ -34,7 +33,7 @@ namespace Xylia.Preview.Data.Helper
 					_GameData = new(getDataPath.TargetXml);
 					if (_LocalData is null) _LocalData = new(getDataPath.TargetLocal);
 				}
-				
+
 				return _GameData;
 			}
 		}
@@ -55,6 +54,9 @@ namespace Xylia.Preview.Data.Helper
 
 		public DataTable<Achievement> Achievement { get; } = new();
 
+
+
+		public DataTable<BossChallenge> BossChallenge { get; } = new();
 		public DataTable<Collecting> Collecting { get; } = new();
 		public DataTable<ChallengeList> ChallengeList { get; } = new();
 		public DataTable<ChallengeListReward> ChallengeListReward { get; } = new();
@@ -97,6 +99,8 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<ItemRandomAbilitySection> ItemRandomAbilitySection { get; } = new();
 		public DataTable<ItemRandomAbilitySlot> ItemRandomAbilitySlot { get; } = new();
 		public DataTable<ItemSkill> ItemSkill { get; } = new();
+		public DataTable<ItemSpirit> ItemSpirit { get; } = new();
+
 
 		public DataTable<ItemTransformRecipe> ItemTransformRecipe { get; } = new();
 
@@ -174,7 +178,6 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<SkillTrainCategory> SkillTrainCategory { get; } = new();
 		public DataTable<SkillTrait> SkillTrait { get; } = new();
 
-
 		public DataTable<SlateScroll> SlateScroll { get; } = new();
 		public DataTable<SlateScrollStone> SlateScrollStone { get; } = new();
 		public DataTable<SlateStone> SlateStone { get; } = new();
@@ -183,11 +186,9 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<Store2> Store2 { get; } = new();
 
 
-		/// <summary>
-		/// 汉化文本
-		/// </summary>
-		public TextTable TextData { get; } = new();
+		public DataTable<TendencyField> TendencyField { get; } = new();
 
+		public TextTable TextData { get; } = new();
 
 		public DataTable<UnlocatedStore> UnlocatedStore { get; } = new();
 
@@ -210,15 +211,15 @@ namespace Xylia.Preview.Data.Helper
 			IconTexture?.Clear();
 
 
-			var Type = typeof(DataTable<>);
-
 			//自动判断并清理
-			foreach (var finfo in typeof(FileCache)
-				.GetMembers(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance)
-				.Where(m => m is FieldInfo || m is PropertyInfo))
+			foreach (var finfo in this.GetType().GetMembers(ClassExtension.Flags).Where(m => m is FieldInfo || m is PropertyInfo))
 			{
 				//类型校验后清理数据
-				if (finfo.HasImplementedRawGeneric(Type)) finfo.GetValue().GetHashCode();
+				if (finfo.HasImplementedRawGeneric(typeof(DataTable<>)))
+				{
+					var DataTable = finfo.GetValue(this);
+					DataTable.GetType().GetMethod("Clear", ClassExtension.Flags).Invoke(DataTable);
+				}
 			}
 		}
 	}

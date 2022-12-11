@@ -39,20 +39,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 
 		#region 方法
-		public void SetData(IEnumerable<ItemTransformRecipe> Recipes)
-		{
-			//获得成长目标信息
-			var PreviewResult = Recipes.Select(r => r.TitleItem).Distinct();
-			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(Recipes.Where(o => o.TitleItem == item))), PreviewResult.ToArray());
-		}
-
-		public void SetData(ItemImprove ItemImprove, string ImproveNextItem)
-		{
-			//获得成长目标信息
-			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemImprove)), ImproveNextItem);
-		}
-
-		public void SetData(Action<string> action, params string[] NextItem)
+		private void SetData(Action<string> action, params string[] NextItem)
 		{
 			#region 初始化
 			this.Controls.Remove<ItemPreviewCell>();
@@ -79,7 +66,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 				ItemPreviewCell.Click += new EventHandler((s, e) =>
 				{
 					//将其他对象的选择状态取消
-					this.Controls.OfType<ItemPreviewCell>().ForEach(c => 
+					this.Controls.OfType<ItemPreviewCell>().ForEach(c =>
 					{
 						c.ShowFrameImage = false;
 						c.Refresh();
@@ -96,8 +83,28 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 			this.Controls.OfType<ItemPreviewCell>().FirstOrDefault()?.CallEvent("OnClick");
 		}
+
+
+		public void SetData(IEnumerable<ItemTransformRecipe> Recipes)
+		{
+			//获得成长目标信息
+			var PreviewResult = Recipes.Select(r => r.TitleItem).Distinct();
+			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(Recipes.Where(o => o.TitleItem == item))), PreviewResult.ToArray());
+		}
+
+		public void SetData(ItemImprove ItemImprove, string ImproveNextItem)
+		{
+			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemImprove)), ImproveNextItem);
+		}
+
+		public void SetData(IEnumerable<ItemSpirit> ItemSpirits)
+		{
+			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemSpirits.First(o => o.MainIngredient == item))), 
+				ItemSpirits.Select(r => r.MainIngredient).ToArray());
+		}
 		#endregion
 	}
+
 
 
 	/// <summary>
@@ -111,5 +118,9 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 		public ItemImprove ItemImprove;
 		public ResultItemChangedEventArgs(ItemImprove ItemImprove) => this.ItemImprove = ItemImprove;
+
+
+		public ItemSpirit ItemSpirit;
+		public ResultItemChangedEventArgs(ItemSpirit ItemSpirit) => this.ItemSpirit = ItemSpirit;
 	}
 }

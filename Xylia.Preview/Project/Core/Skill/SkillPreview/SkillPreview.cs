@@ -16,20 +16,11 @@ namespace Xylia.Preview.Project.Core.Skill
 		public SkillPreview()
 		{
 			InitializeComponent();
-
-			this.BackColor = Color.Transparent;
-			this.AutoSize = false;
 		}
 		#endregion
 
 
 		#region 方法
-		private void SkillPreview_Load(object sender, EventArgs e)
-		{
-			
-		}
-
-
 		public void LoadData(string SkillAlias) => LoadData(FileCache.Data.Skill3[SkillAlias]);
 
 		public void LoadData(Skill3 Skill)
@@ -187,8 +178,8 @@ namespace Xylia.Preview.Project.Core.Skill
 			//填充参数
 			Panel.Params.Add(ArgType switch
 			{
-				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(Arg.Split(',')[0], Arg.Split(',')[1], Tooltip.SkillAttackAttributeCoefficientPercent),
-				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg, "0", Tooltip.SkillAttackAttributeCoefficientPercent),
+				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(Arg.Split(',')[0].ToInt(), Arg.Split(',')[1].ToInt(), Tooltip.SkillAttackAttributeCoefficientPercent),
+				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg.ToInt(), 0, Tooltip.SkillAttackAttributeCoefficientPercent),
 
 				SkillTooltipAttribute.ArgType.Time => (float)ValueConvert / 1000 + "秒",
 				SkillTooltipAttribute.ArgType.StackCount => ValueConvert,
@@ -213,27 +204,25 @@ namespace Xylia.Preview.Project.Core.Skill
 
 
 
-		/// <summary>
-		/// 获取伤害信息 
-		/// </summary>
-		/// <param name="Min"></param>
-		/// <param name="Max"></param>
-		/// <param name="AttributePercent">功力系数</param>
-		/// <returns></returns>
-		private static string GetDamageInfo(string Min, string Max, int AttributePercent) => GetDamageInfo(Min.ToIntWithNull(), Max.ToIntWithNull(), AttributePercent);
+		public static int AttackPower = 6464;
 
-		private static string GetDamageInfo(int? Min, int? Max, int AttributePercent)
+		public static double AttackAttributePercent = 3.8837;
+
+		private static string GetDamageInfo(int MinValue, int MaxValue, int AttributePercent)
 		{
-			string result = null;
-			if (Max == 0) result = $"{Min}X AP";
-			else result = $"{Min}~{Max}X AP";
+			if (false)
+			{
+				string result = MaxValue == 0 ? $"{MinValue}%" : $"{MinValue}~{MaxValue}%";
+				return AttributePercent > 0 ? result + " [功力]" : result;
+			}
+			else
+			{
+				var temp = AttackPower * 0.01;
+				if (AttributePercent > 0) temp = temp * (AttributePercent * 0.01) * (AttackAttributePercent * 0.97);
 
-
-			if (AttributePercent > 0) result += " [功力]";
-			return result;
+				return $"{ MinValue * temp * 0.985 :N0}~{ MaxValue * temp * 1.015 :N0}";
+			}
 		}
-
-
 
 
 		public override void Refresh()

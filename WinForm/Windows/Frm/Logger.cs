@@ -13,7 +13,7 @@ namespace Xylia.Windows
 	public partial class LoggerFrm : Form
 	{
 		#region 字段
-		public List<object> lstSource = new List<object>();
+		public List<object> lstSource = new();
 		public static string LogPath = Xylia.Configure.PathDefine.MainFolder + $@"\Log\{ DateTime.UtcNow:yyMMdd}.log";
 		#endregion
 
@@ -24,7 +24,7 @@ namespace Xylia.Windows
 		public LoggerFrm()
 		{
 			this.InitializeComponent();
-			this.ClearOverdue();
+			ClearOverdue();
 
 			#region 初始化
 			var lstCulumns = new List<DataGridViewColumnEntity>
@@ -47,7 +47,7 @@ namespace Xylia.Windows
 		/// <summary>
 		/// 自动清理时间过久日志
 		/// </summary>											  
-		private void ClearOverdue()
+		private static void ClearOverdue()
 		{
 			int DayInterval = 15;
 			string DirPath = Xylia.Configure.PathDefine.MainFolder + $@"\Log";
@@ -61,7 +61,7 @@ namespace Xylia.Windows
 						if(fi.Name == "Updata-dev.log") fi.Delete();
 						else
 						{
-							int y = int.Parse(DateTime.Now.Year.ToString().Substring(0, 2) + fi.Name.Substring(0, 2));
+							int y = int.Parse(DateTime.Now.Year.ToString()[..2] + fi.Name[..2]);
 							int m = int.Parse(fi.Name.Substring(2, 2));
 							int d = int.Parse(fi.Name.Substring(4, 2));
 
@@ -103,20 +103,18 @@ namespace Xylia.Windows
 			if (!Directory.Exists(Path.GetDirectoryName(LogPath))) Directory.CreateDirectory(Path.GetDirectoryName(LogPath));
 			bool isNew = !File.Exists(LogPath);
 
-			using (StreamWriter sw = new StreamWriter(new FileStream(LogPath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite)))
-			{
-				var Assemly = Assembly.GetExecutingAssembly().GetName();
-				sw.BaseStream.Seek(0, SeekOrigin.End);
+			using StreamWriter sw = new(new FileStream(LogPath, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
+			var Assemly = Assembly.GetExecutingAssembly().GetName();
+			sw.BaseStream.Seek(0, SeekOrigin.End);
 
-				if (isNew) sw.WriteLine($"-------------------------------------------------------------------\n" +
-										$"由 { Assemly.FullName } 初始化创建\n" +
-										$"-------------------------------------------------------------------");
+			if (isNew) sw.WriteLine($"-------------------------------------------------------------------\n" +
+									$"由 { Assemly.FullName } 初始化创建\n" +
+									$"-------------------------------------------------------------------");
 
-				string OutMsg = $"{ DateTime.Now } || { Assemly.Name + "(" + Assemly.Version + ")" } || { msgLevel } || {  Msg }";
+			string OutMsg = $"{ DateTime.Now } || { Assemly.Name + "(" + Assemly.Version + ")" } || { msgLevel } || {  Msg }";
 
-				sw.WriteLine(OutMsg);
-				sw.Flush();
-			}
+			sw.WriteLine(OutMsg);
+			sw.Flush();
 
 			#endregion
 		}
@@ -138,7 +136,7 @@ namespace Xylia.Windows
 
 public static class Logger
 {
-	private static LoggerFrm m_Logger = new LoggerFrm();
+	private static readonly LoggerFrm m_Logger = new ();
 
 	public static void Show()
 	{

@@ -1,18 +1,11 @@
 ﻿using System.Windows.Forms;
 
-using Xylia.Attribute.Component;
-using Xylia.Extension;
-using Xylia.Preview.Data.Record;
-
 namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 {
 	public partial class WarningPreview : UserControl
 	{
 		#region 构造
-		public WarningPreview()
-		{
-			InitializeComponent();
-		}
+		public WarningPreview() => InitializeComponent();
 		#endregion
 
 
@@ -24,6 +17,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 			{
 				this.panelContent1.Text = value;
 				this.Visible = value is not null;
+
+				if(this.Visible) this.OnTextChanged(new());
 			}
 		}
 		#endregion

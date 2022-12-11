@@ -1,37 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Linq;
-using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Preview.Data.Record;
 using System.Drawing;
+using System.Linq;
+using System.Windows.Forms;
+
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Extension;
-using Xylia.Extension;
+using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Project.Core.Skill
 {
 	public partial class SkillTraitPreview : Form
 	{
-		public static SkillTraitPreview test;
-
-
 		#region 构造
 		public SkillTraitPreview()
 		{
 			InitializeComponent();
-
-			test = this;
 		}
 		#endregion
 
 		#region 方法
-		private void Form1_Load(object sender, EventArgs e)
-		{
-			this.LoadData();
-		}
-
-
-
 		SkillTrait Default;
 
 		Dictionary<byte, TraitTier> TraitTiers;
@@ -40,17 +28,13 @@ namespace Xylia.Preview.Project.Core.Skill
 		{
 			this.TraitTiers = new();
 
-			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced2))
+			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced3))
 			{
 				if (SkillTrait.Tier == 0)
 				{
 					Default = SkillTrait;
 
-					System.Diagnostics.Trace.WriteLine(SkillTrait.Attributes);
-
-					this.TooltipTrainName.Text = SkillTrait.TooltipTrainName.GetText();
-					this.TooltipTrainDescription.Text = SkillTrait.TooltipTrainDescription.GetText();
-					this.TooltipEffectDescription.Text = SkillTrait.TooltipEffectDescription.GetText();
+					this.SetData(SkillTrait);
 					continue;
 				}
 
@@ -71,6 +55,17 @@ namespace Xylia.Preview.Project.Core.Skill
 				o.Location = new Point(0, PosY);
 				PosY = o.Bottom;
 			}
+		}
+
+		public void SetData(SkillTrait SkillTrait)
+		{
+			System.Diagnostics.Trace.WriteLine(SkillTrait.Attributes);
+
+			this.TooltipTrainName.Text = SkillTrait.TooltipTrainName.GetText();
+			this.TooltipTrainDescription.Text = SkillTrait.TooltipTrainDescription.GetText();
+			this.TooltipEffectDescription.Text = SkillTrait.TooltipEffectDescription.GetText();
+
+			this.Refresh();
 		}
 
 		/// <summary>
@@ -119,7 +114,17 @@ namespace Xylia.Preview.Project.Core.Skill
 		}
 		#endregion
 
+		#region 控件方法
+		private void Form1_Load(object sender, EventArgs e) => this.LoadData();
 
 		private void ucBtnExt1_BtnClick(object sender, EventArgs e) => new SkillTrainCategoryPreview(this.GetSkills()).MyShowDialog();
+
+		public override void Refresh()
+		{
+			base.Refresh();
+
+			this.TooltipEffectDescription.Location = new Point(this.TooltipEffectDescription.Location.X, this.TooltipTrainDescription.Bottom);
+		}
+		#endregion
 	}
 }

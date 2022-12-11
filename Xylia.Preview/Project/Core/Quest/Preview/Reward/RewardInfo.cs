@@ -328,7 +328,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// <returns></returns>
 		private static ItemIconCell GetItem(string AliasInfo, int StackCount)
 		{
-			var Obj = AliasInfo.GetObject();
+			var Obj = AliasInfo.CastObject();
 			if (Obj != null && Obj is IPicture _Obj)
 			{
 				return new ItemIconCell()

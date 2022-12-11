@@ -82,7 +82,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.MyWeapon_Name.AutoSize = true;
 			this.MyWeapon_Name.BackColor = System.Drawing.Color.Transparent;
 			this.MyWeapon_Name.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.MyWeapon_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(10)))));
 			this.MyWeapon_Name.ItemGrade = ((byte)(7));
 			this.MyWeapon_Name.Location = new System.Drawing.Point(42, 136);
 			this.MyWeapon_Name.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
@@ -102,13 +101,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.MyWeapon_Icon.ForeColor = System.Drawing.Color.Black;
 			this.MyWeapon_Icon.FrameImage = null;
 			this.MyWeapon_Icon.FrameType = true;
-			this.MyWeapon_Icon.Image = null;
 			this.MyWeapon_Icon.Location = new System.Drawing.Point(44, 62);
 			this.MyWeapon_Icon.Margin = new System.Windows.Forms.Padding(4);
 			this.MyWeapon_Icon.Name = "MyWeapon_Icon";
 			this.MyWeapon_Icon.Scale = 64;
+			this.MyWeapon_Icon.ShowFrameImage = true;
 			this.MyWeapon_Icon.ShowStackCount = false;
 			this.MyWeapon_Icon.ShowStackCountOnlyOne = true;
+			this.MyWeapon_Icon.Size = new System.Drawing.Size(64, 64);
 			this.MyWeapon_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.MyWeapon_Icon.StackCount = 1;
 			this.MyWeapon_Icon.TabIndex = 21;
@@ -125,6 +125,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.WarningPreview.Size = new System.Drawing.Size(103, 30);
 			this.WarningPreview.TabIndex = 20;
 			this.WarningPreview.Visible = false;
+			this.WarningPreview.TextChanged += new System.EventHandler(this.WarningPreview_TextChanged);
 			// 
 			// EquipmentGuidePage
 			// 

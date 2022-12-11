@@ -1,8 +1,5 @@
-﻿using System.Linq;
-
+﻿
 using Xylia.Attribute.Component;
-using Xylia.Extension;
-using Xylia.Files.XmlEx;
 using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
@@ -32,11 +29,12 @@ namespace Xylia.Preview.Data.Record
 
 		public CategorySeq Category;
 
-		//[Signal("map-depth")]
-		//public byte MapDepth;
+		[Signal("map-depth")]
+		public MapDepthSeq MapDepth;
 
-		//[Signal("arena-dungeon-map-depth")]
-		//public byte ArenaDungeonMapDepth;
+		[Signal("arena-dungeon-map-depth")]
+		public MapDepthSeq ArenaDungeonMapDepth;
+
 
 		public bool Zoom;
 
@@ -229,6 +227,19 @@ namespace Xylia.Preview.Data.Record
 
 			[Signal("fishing-field")]
 			FishingField,
+		}
+
+		public enum MapDepthSeq : byte
+		{
+			 N1,
+
+			 N2,
+
+			 N3,
+
+			 N4,
+
+			 N5,
 		}
 		#endregion
 	}

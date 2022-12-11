@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="tendency-field" version="0.19" rule="cpl" >
+	<list module="ZoneData0" type="tendency-field" version="0.22" rule="cpl" >
 		<record alias="id" name="" type="ID" />
 		<record alias="type" name="" type="type" >
 		     <case alias="normal" />
@@ -15,9 +15,7 @@
 		<record alias="enable-change-channel" name="" type="Bool" />
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
-		<record alias="required-preceding-quest-1" name="" type="Quest" />
-		<record alias="required-preceding-quest-2" name="" type="Quest" />
-		<record alias="required-preceding-quest-3" name="" type="Quest" />
+		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
 		<record alias="required-preceding-quest-check" name="" type="seq" >
 			<case alias="and" name="" default="y" />
 			<case alias="or" name="" />
@@ -25,7 +23,7 @@
 		<record alias="required-activated-main-faction" name="" type="Bool" />
 		<record alias="restrict-enter-zone-when-manifest-tendency" name="" type="Bool" />
 		<record alias="stand-by-duration-minute" name="" type="Short" />
-		<record alias="in-progress-duration-minute" name="" type="Int32" />
+		<record alias="in-progress-duration-minute" name="" type="Msec" />
 		<record alias="tendency-1-max-play-value" name="" type="Byte" default="1" />
 		<record alias="tendency-2-max-play-value" name="" type="Byte" default="1" />
 		<record alias="tendency-3-max-play-value" name="" type="Byte" default="1" />
@@ -56,17 +54,12 @@
 		<record alias="enable-change-faction-costume" name="" type="Bool" default="y" />
 		<record alias="enable-set-guild-meeting-place" name="" type="Bool" default="y" />
 		<record alias="enable-warp-to-guild-member" name="" type="Bool" default="y" />
-		<record alias="tendency-start-kismet-name-1" name="" type="Index" />
-		<record alias="tendency-start-kismet-name-2" name="" type="Index" />
-		<record alias="tendency-start-kismet-name-3" name="" type="Index" />
-		<record alias="tendency-end-kismet-name-1" name="" type="Index" />
-		<record alias="tendency-end-kismet-name-2" name="" type="Index" />
-		<record alias="tendency-end-kismet-name-3" name="" type="Index" />		
+		<record alias="tendency-start-kismet-name" name="" type="Index" repeat="3" />
+		<record alias="tendency-end-kismet-name" name="" type="Index" repeat="3" />	
 		<record alias="tendency-field-name2" name="" type="TextAlias" />
 		<record alias="tendency-field-desc" name="" type="TextAlias" />
 		<record alias="reward-summary" name="" ref="AttractionRewardSummary" />
 		<record alias="ui-text-grade" name="" type="Byte" />
-
 		<record alias="tendency-standby-msg" name="" ref="GameMessage" repeat="3" />
 		<record alias="tendency-start-msg" name="" ref="GameMessage" repeat="3" />	
 		<record alias="tendency-timeup-alarm-msg" name="" ref="GameMessage" repeat="3" />
@@ -75,23 +68,19 @@
 		<record alias="guide-start-msg" name="" ref="GameMessage" repeat="3" />	
 		<record alias="guide-timeup-alarm-msg" name="" ref="GameMessage" repeat="3" />
 		<record alias="guide-end-msg" name="" ref="GameMessage" repeat="3" />
-
 		<record alias="recommand-level-min" name="" type="Byte" />
 		<record alias="recommand-level-max" name="" type="Byte" />
 		<record alias="recommand-mastery-level-min" name="" type="Byte" />
 		<record alias="recommand-mastery-level-max" name="" type="Byte" />
 		<record alias="recommend-attack-power" name="" type="Short" />
 		<record alias="standard-gear-weapon" name="" ref="Item" />
-
 		<record alias="display-quests" name="" type="Quest" repeat="12" />
 		<record alias="tactic" name="" type="TextAlias" />
 		<record alias="recommend-alias" name="" ref="ContentsJournalRecommendItem" />
-		
 		<record alias="check-score-interval-minute" name="" type="Byte" client="n" />
 		<record alias="check-score-required-tendency-score-1" name="" type="Int32" client="n" />		
 		<record alias="check-score-required-tendency-score-2" name="" type="Int32" client="n" />		
 		<record alias="check-score-number-of-repetition" name="" type="Int32" client="n" />		
-
 		<record alias="quest-pack-simple-quest-explicit-refresh-bonus-prob" name="" type="Byte" client="n" repeat="6" />		
 		<record alias="quest-pack-simple-quest-explicit-refresh-bonus-multiple" name="" type="Byte" client="n" repeat="6" />
 		<record alias="quest-pack-simple-quest-implicit-refresh-bonus-prob" name="" type="Byte" client="n" repeat="6" />		

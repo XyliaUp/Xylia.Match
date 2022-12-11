@@ -40,8 +40,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.MenuItem_SaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
 			this.MenuItem_SwitchUserOperPanel = new System.Windows.Forms.ToolStripMenuItem();
 			this.durabilityPreview1 = new Xylia.Preview.Project.Core.Item.DurabilityPreview();
-			this.lbl_MainInfo = new ContentPanel();
-			this.lbl_SubInfo = new ContentPanel();
+			this.lbl_MainInfo = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.lbl_SubInfo = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.PricePreview = new Xylia.Preview.Project.Controls.PriceCell();
 			this.ItemNameCell = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell();
 			((System.ComponentModel.ISupportInitialize)(this.ItemIcon)).BeginInit();
@@ -51,7 +51,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// ItemIcon
 			// 
 			this.ItemIcon.BackColor = System.Drawing.Color.SlateGray;
-			this.ItemIcon.Location = new System.Drawing.Point(8, 42);
+			this.ItemIcon.Location = new System.Drawing.Point(6, 38);
 			this.ItemIcon.Margin = new System.Windows.Forms.Padding(4);
 			this.ItemIcon.Name = "ItemIcon";
 			this.ItemIcon.Size = new System.Drawing.Size(84, 84);
@@ -71,7 +71,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.lbl_Category.Size = new System.Drawing.Size(76, 20);
 			this.lbl_Category.TabIndex = 2;
 			this.lbl_Category.Text = "Category";
-			this.lbl_Category.Visible = true;
 			this.lbl_Category.TextChanged += new System.EventHandler(this.lbl_Category_TextChanged);
 			this.lbl_Category.VisibleChanged += new System.EventHandler(this.lbl_Category_VisibleChanged);
 			// 
@@ -193,12 +192,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.ItemNameCell.AutoSize = true;
 			this.ItemNameCell.BackColor = System.Drawing.Color.Transparent;
 			this.ItemNameCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.ItemNameCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(132)))));
-			this.ItemNameCell.ItemGrade = 8;
+			this.ItemNameCell.ItemGrade = ((byte)(8));
 			this.ItemNameCell.Location = new System.Drawing.Point(2, 1);
 			this.ItemNameCell.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
 			this.ItemNameCell.Name = "ItemNameCell";
-			this.ItemNameCell.Size = new System.Drawing.Size(112, 29);
+			this.ItemNameCell.Size = new System.Drawing.Size(112, 28);
 			this.ItemNameCell.TabIndex = 23;
 			this.ItemNameCell.TagImage = null;
 			this.ItemNameCell.Text = "ItemName";

@@ -90,6 +90,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.FixedIngredientPreview.Name = "FixedIngredientPreview";
 			this.FixedIngredientPreview.Size = new System.Drawing.Size(165, 51);
 			this.FixedIngredientPreview.TabIndex = 0;
+			this.FixedIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.Preview.FixedIngredientPreview.DataLoadedHandle(this.FixedIngredientPreview_DataLoaded);
 			// 
 			// itemIconCell4
 			// 
@@ -101,12 +102,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell4.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell4.FrameImage = null;
 			this.itemIconCell4.FrameType = true;
-			
 			this.itemIconCell4.Location = new System.Drawing.Point(117, 3);
 			this.itemIconCell4.Name = "itemIconCell4";
 			this.itemIconCell4.Scale = 45;
+			this.itemIconCell4.ShowFrameImage = true;
 			this.itemIconCell4.ShowStackCount = false;
 			this.itemIconCell4.ShowStackCountOnlyOne = true;
+			this.itemIconCell4.Size = new System.Drawing.Size(45, 45);
 			this.itemIconCell4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.itemIconCell4.StackCount = 1;
 			this.itemIconCell4.TabIndex = 2;
@@ -123,12 +125,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell3.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell3.FrameImage = null;
 			this.itemIconCell3.FrameType = true;
-			
 			this.itemIconCell3.Location = new System.Drawing.Point(59, 3);
 			this.itemIconCell3.Name = "itemIconCell3";
 			this.itemIconCell3.Scale = 45;
+			this.itemIconCell3.ShowFrameImage = true;
 			this.itemIconCell3.ShowStackCount = false;
 			this.itemIconCell3.ShowStackCountOnlyOne = true;
+			this.itemIconCell3.Size = new System.Drawing.Size(45, 45);
 			this.itemIconCell3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.itemIconCell3.StackCount = 1;
 			this.itemIconCell3.TabIndex = 1;
@@ -145,12 +148,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell2.FrameImage = null;
 			this.itemIconCell2.FrameType = true;
-	
 			this.itemIconCell2.Location = new System.Drawing.Point(2, 2);
 			this.itemIconCell2.Name = "itemIconCell2";
 			this.itemIconCell2.Scale = 45;
+			this.itemIconCell2.ShowFrameImage = true;
 			this.itemIconCell2.ShowStackCount = false;
 			this.itemIconCell2.ShowStackCountOnlyOne = true;
+			this.itemIconCell2.Size = new System.Drawing.Size(45, 45);
 			this.itemIconCell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.itemIconCell2.StackCount = 1;
 			this.itemIconCell2.TabIndex = 0;
@@ -190,16 +194,26 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.SubIngredientPreview.Size = new System.Drawing.Size(85, 93);
 			this.SubIngredientPreview.TabIndex = 1;
 			this.SubIngredientPreview.RecipeChanged += new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview.RecipeChangedHandle(this.SubIngredientPreview_RecipeChanged);
+			this.SubIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview.DataLoadedHandle(this.SubIngredientPreview_DataLoaded);
 			// 
 			// feedItemIconCell1
 			// 
+			this.feedItemIconCell1.BackColor = System.Drawing.Color.Transparent;
+			this.feedItemIconCell1.ExtraBottomLeft = null;
+			this.feedItemIconCell1.ExtraBottomRight = null;
+			this.feedItemIconCell1.ExtraTopLeft = null;
+			this.feedItemIconCell1.ExtraTopRight = null;
+			this.feedItemIconCell1.ForeColor = System.Drawing.Color.Black;
 			this.feedItemIconCell1.FrameImage = ((System.Drawing.Bitmap)(resources.GetObject("feedItemIconCell1.FrameImage")));
+			this.feedItemIconCell1.FrameType = true;
 			this.feedItemIconCell1.Location = new System.Drawing.Point(0, 0);
 			this.feedItemIconCell1.Name = "feedItemIconCell1";
+			this.feedItemIconCell1.Scale = 82;
 			this.feedItemIconCell1.ShowFrameImage = false;
 			this.feedItemIconCell1.ShowStackCount = false;
 			this.feedItemIconCell1.ShowStackCountOnlyOne = false;
 			this.feedItemIconCell1.Size = new System.Drawing.Size(82, 90);
+			this.feedItemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.feedItemIconCell1.StackCount = 0;
 			this.feedItemIconCell1.TabIndex = 0;
 			this.feedItemIconCell1.TabStop = false;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -38,16 +39,14 @@ namespace Xylia.Preview.Data.Package.Pak
 			{
 				DateTime dt = DateTime.Now;
 
-				#region 初始化
 				this._provider.Initialize();
 				this._provider.UnloadAllVfs();
-				GC.Collect();
+				//GC.Collect();
 
 				//提交密钥
 				this._provider.SubmitKey(new FGuid(), new FAesKey("d2e5f7f94e625efe2726b5360c1039ce7cb9abb760a94f37bb15a6dc08741656"));
-				#endregion
 
-				System.Diagnostics.Debug.WriteLine($"[Debug] 初始化文件处理器，耗时 { (DateTime.Now - dt).Seconds }s");
+				Debug.WriteLine($"[Debug] 初始化文件处理器，耗时 { (DateTime.Now - dt).Seconds }s");
 			}
 		}
 
@@ -66,8 +65,6 @@ namespace Xylia.Preview.Data.Package.Pak
 				{
 					ObjectRef[asset.ObjectPath2] = asset.ObjectPath.Text;
 				}
-
-				AssetRegistry = null;
 			}
 
 			System.Diagnostics.Debug.WriteLine($"[Debug] 初始化资产注册表，耗时 { (DateTime.Now - dt).Seconds }s");

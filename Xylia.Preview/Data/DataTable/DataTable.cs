@@ -15,7 +15,6 @@ using Xylia.bns.Modules.DataFormat.Analyse;
 using Xylia.bns.Modules.DataFormat.Analyse.DeSerialize;
 using Xylia.bns.Modules.DataFormat.Analyse.Enums;
 using Xylia.bns.Modules.DataFormat.Analyse.Output;
-using Xylia.bns.Modules.DataFormat.Analyse.Value.Derive;
 using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Modules.DataFormat.Bin.Entity.BDAT;
 using Xylia.Extension;
@@ -517,17 +516,6 @@ namespace Xylia.Preview.Data
 		{
 			this.data = null;
 			this.FullLoad = false;
-		}
-
-
-		/// <summary>
-		/// 重写哈希函数，使其调用清除数据方法
-		/// </summary>
-		/// <returns></returns>
-		public override int GetHashCode()
-		{
-			this.Clear();
-			return base.GetHashCode();
 		}
 
 
