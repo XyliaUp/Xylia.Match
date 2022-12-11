@@ -176,7 +176,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.PricePreview.AutoSize = true;
 			this.PricePreview.BackColor = System.Drawing.Color.Transparent;
 			this.PricePreview.CurrencyCount = 1;
-			this.PricePreview.CurrencyType = Xylia.Preview.Project.Controls.Enums.CurrencyType.Money;
+			this.PricePreview.CurrencyType = Project.Controls.Currency.CurrencyType.Money;
 			this.PricePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.PricePreview.FontStyle = System.Drawing.FontStyle.Regular;
 			this.PricePreview.ForeColor = System.Drawing.Color.White;

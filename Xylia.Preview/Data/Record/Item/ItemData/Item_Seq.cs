@@ -79,17 +79,17 @@ namespace Xylia.Preview.Data.Record
 				{
 					CondTypes.Add(ConditionType.Accessory);
 
-					switch (this.accessoryType)
+					switch (this.AccessoryType)
 					{
-						case AccessoryType.Ring: CondTypes.Add(ConditionType.Ring); break;
-						case AccessoryType.Earring: CondTypes.Add(ConditionType.Earring); break;
-						case AccessoryType.Necklace: CondTypes.Add(ConditionType.Necklace); break;
-						case AccessoryType.Belt: CondTypes.Add(ConditionType.Belt); break;
-						case AccessoryType.Bracelet: CondTypes.Add(ConditionType.Bracelet); break;
-						case AccessoryType.Soul: CondTypes.Add(ConditionType.Soul); break;
-						case AccessoryType.Gloves: CondTypes.Add(ConditionType.Gloves); break;
-						case AccessoryType.Rune1: CondTypes.Add(ConditionType.Rune1); break;
-						case AccessoryType.Rune2: CondTypes.Add(ConditionType.Rune2); break;
+						case AccessoryTypeSeq.Ring: CondTypes.Add(ConditionType.Ring); break;
+						case AccessoryTypeSeq.Earring: CondTypes.Add(ConditionType.Earring); break;
+						case AccessoryTypeSeq.Necklace: CondTypes.Add(ConditionType.Necklace); break;
+						case AccessoryTypeSeq.Belt: CondTypes.Add(ConditionType.Belt); break;
+						case AccessoryTypeSeq.Bracelet: CondTypes.Add(ConditionType.Bracelet); break;
+						case AccessoryTypeSeq.Soul: CondTypes.Add(ConditionType.Soul); break;
+						case AccessoryTypeSeq.Gloves: CondTypes.Add(ConditionType.Gloves); break;
+						case AccessoryTypeSeq.Rune1: CondTypes.Add(ConditionType.Rune1); break;
+						case AccessoryTypeSeq.Rune2: CondTypes.Add(ConditionType.Rune2); break;
 					}
 				}
 

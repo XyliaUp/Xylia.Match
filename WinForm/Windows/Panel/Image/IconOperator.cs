@@ -17,7 +17,7 @@ using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Windows.Forms;
 
 using static Xylia.Drawing.Compose;
-using static Xylia.Preview.Properties.Resources;
+using static Xylia.Preview.Resources.Resource_Common;
 
 
 
@@ -41,9 +41,9 @@ namespace Xylia.Match.Windows.Panel
 
 
 			#region 初始化道具属性选择框
-			foreach (var Item in CombineOption.Grade_Bitmap) metroComboBox1.Items.Add(Item.Name);
-			foreach (var Item in CombineOption.Attach_Bitmap) metroComboBox2.Items.Add(Item.Name);
-			foreach (var Item in CombineOption.Trade_Bitmap) metroComboBox3.Items.Add(Item.Key.ToString());
+			foreach (var Item in CombineOption.Grades) metroComboBox1.Items.Add(Item.Name);
+			foreach (var Item in CombineOption.BLImage) metroComboBox2.Items.Add(Item.Name);
+			foreach (var Item in CombineOption.TRImage) metroComboBox3.Items.Add(Item.Name);
 
 			MetroButton3_Click_1(null, null);
 			#endregion
@@ -103,7 +103,7 @@ namespace Xylia.Match.Windows.Panel
 		private void FormatSelect_TextChanged(object sender, EventArgs e)
 		{
 			string SaveTxt = FormatSelect.TextValue;
-			Xylia.Configure.Ini.WriteValue("Match_ICON", "FormatSel", SaveTxt);
+			Ini.WriteValue("Match_ICON", "FormatSel", SaveTxt);
 		}
 
 		private void Path_ResultPath_TextChanged(object sender, EventArgs e)
@@ -311,7 +311,7 @@ namespace Xylia.Match.Windows.Panel
 			if (Open.ShowDialog() == DialogResult.OK)
 			{
 				metroTextBox1.Text = Open.FileName;
-				Xylia.Configure.Ini.WriteValue("Match_ICON", "Filter1", Open.FilterIndex);
+				Ini.WriteValue("Match_ICON", "Filter1", Open.FilterIndex);
 			}
 		}
 
@@ -374,7 +374,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			foreach (var Item in CombineOption.Grade_Bitmap)
+			foreach (var Item in CombineOption.Grades)
 			{
 				if (Item.Name == metroComboBox1.Text)
 				{
@@ -389,15 +389,7 @@ namespace Xylia.Match.Windows.Panel
 		private void MetroComboBox2_TextChanged(object sender, EventArgs e)
 		{
 			if (IsInitialization) return;
-			foreach (var Item in CombineOption.Attach_Bitmap)
-			{
-				if (Item.Name == metroComboBox2.Text)
-				{
-					GetProp.Attach = Item.px64;
-					GetProp.Attach128 = Item.px128;
-					break;
-				}
-			}
+			GetProp.BottomLeft = CombineOption.BLImage.Find(o => o.Name == metroComboBox2.Text);
 
 			RenderPropImg();
 		}
@@ -405,14 +397,7 @@ namespace Xylia.Match.Windows.Panel
 		private void MetroComboBox3_TextChanged(object sender, EventArgs e)
 		{
 			if (IsInitialization) return;
-			foreach (var Item in CombineOption.Trade_Bitmap)
-			{
-				if (Item.Key.ToString() == metroComboBox3.Text)
-				{
-					GetProp.Trade = Item.Value;
-					break;
-				}
-			}
+			GetProp.TopRight = CombineOption.TRImage.Find(o => o.Name == metroComboBox3.Text);
 
 			RenderPropImg();
 		}
@@ -424,7 +409,7 @@ namespace Xylia.Match.Windows.Panel
 			#region 获取道具名称
 			if (!this.IconPath.IsNull())
 			{
-				foreach (var Item in CombineOption.Grade_Bitmap)
+				foreach (var Item in CombineOption.Grades)
 				{
 					if (Item.Name == metroComboBox1.Text)
 					{
@@ -558,7 +543,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			Xylia.Configure.Ini.WriteValue("Match_ICON", "HasBG", checkBox1.Checked);
+			Ini.WriteValue("Match_ICON", "HasBG", checkBox1.Checked);
 
 			FrmAnchorTips.CloseLastTip();
 			Switch_HasBG_MouseEnter(null, null);
@@ -569,9 +554,6 @@ namespace Xylia.Match.Windows.Panel
 			Xylia.Configure.Ini.WriteValue("Match_ICON", "WriteLog", checkBox2.Checked);
 		}
 		#endregion
-
-
-
 
 		#region 输出图标
 		private void MetroButton2_Click(object sender, EventArgs e)
@@ -668,10 +650,5 @@ namespace Xylia.Match.Windows.Panel
 			act => this.Invoke(new Action(() => Footer.Text = act)));
 		}
 		#endregion
-
-		private void metroLabel1_Click(object sender, EventArgs e)
-		{
-
-		}
 	}
 }

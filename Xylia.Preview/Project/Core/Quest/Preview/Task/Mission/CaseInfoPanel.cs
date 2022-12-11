@@ -11,6 +11,7 @@ using FModel.Views.Resources.Controls.Aup;
 
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 {
@@ -95,7 +96,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		private void DisableBtn()
 		{
 			this.pictureBox1.Enabled = false;
-			this.pictureBox1.Image = Properties.Resources.Image2;
+			this.pictureBox1.Image = Resource_Common.Image2;
 		}
 
 		/// <summary>

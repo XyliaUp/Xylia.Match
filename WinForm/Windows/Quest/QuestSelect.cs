@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Xylia.Extension;
 using Xylia.Preview.Data.Helper;
 using Xylia.Preview.Project.Core.Quest.Preview;
-using Xylia.Resources;
+using Xylia.Preview.Resources;
 using Xylia.Windows.Forms;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
@@ -98,16 +98,16 @@ namespace Xylia.Match.Windows
 
 			List<Image> ExtraImage = new();
 
-			if (SourceText.Contains("\"00015590.Tag_Contents_Daily\"")) ExtraImage.Add(_00028206.Tag_024);
+			if (SourceText.Contains("\"00015590.Tag_Contents_Daily\"")) ExtraImage.Add(Resource_BNSR.Tag_024);
 
-			if (SourceText.Contains("_Superior")) ExtraImage.Add(_00028206.Tag_138);
-			if (SourceText.Contains("_Prime")) ExtraImage.Add(_00028206.Tag_138);
-			if (SourceText.Contains("_Hero")) ExtraImage.Add(_00028206.Tag_139);
+			if (SourceText.Contains("_Superior")) ExtraImage.Add(Resource_BNSR.Tag_138);
+			if (SourceText.Contains("_Prime")) ExtraImage.Add(Resource_BNSR.Tag_138);
+			if (SourceText.Contains("_Hero")) ExtraImage.Add(Resource_BNSR.Tag_139);
 
-			if (SourceText.Contains("\"00015590.Tag_Dungeon_Two\"")) ExtraImage.Add(_00028206.Tag_164);
-			if (SourceText.Contains("\"00015590.Tag_Dungeon_Six\"")) ExtraImage.Add(_00028206.Tag_165);
-			if (SourceText.Contains("\"00015590.Tag_Dungeon_Four\"")) ExtraImage.Add(_00028206.Tag_166);
-			if (SourceText.Contains("EventMarker")) ExtraImage.Add(BnsCommon.EventMarker);
+			if (SourceText.Contains("\"00015590.Tag_Dungeon_Two\"")) ExtraImage.Add(Resource_BNSR.Tag_164);
+			if (SourceText.Contains("\"00015590.Tag_Dungeon_Six\"")) ExtraImage.Add(Resource_BNSR.Tag_165);
+			if (SourceText.Contains("\"00015590.Tag_Dungeon_Four\"")) ExtraImage.Add(Resource_BNSR.Tag_166);
+			//if (SourceText.Contains("EventMarker")) ExtraImage.Add(BnsCommon.EventMarker);
 
 			if (ExtraImage.Any())
 			{

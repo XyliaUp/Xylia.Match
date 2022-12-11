@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 using Xylia.Drawing;
-
-using Xylia.Preview.Properties;
+using Xylia.Preview.Resources;
 
 using static Xylia.Drawing.Compose;
-using static Xylia.Preview.Properties.Resources;
+using static Xylia.Preview.Resources.Resource_BNSR;
 
 namespace Xylia.Match.Windows.Panel
 {
@@ -32,7 +30,7 @@ namespace Xylia.Match.Windows.Panel
 		}
 
 
-		public static List<Grade> Grade_Bitmap = new()
+		public static List<Grade> Grades = new()
 		{
 			{ new Grade(1, "粗糙级") },
 			{ new Grade(2, "凡品级") },
@@ -48,49 +46,57 @@ namespace Xylia.Match.Windows.Panel
 
 
 
-
-		public static List<Attach> Attach_Bitmap = new()
+		public sealed class ImageInfo
 		{
-			{ new Attach() { Name = "无附加属性", px128 = null, px64 = null } },
-
-			{ new Attach() { Name = "封印", px128 = Weapon_Lock_04_128, px64 = Weapon_Lock_04 } },
-			{ new Attach() { Name = "旧物", px128 = Weapon_Lock_05_128, px64 = Weapon_Lock_05 } },
-			{ new Attach() { Name = "蓝色锁", px128 = unuseable_lock_128, px64 = unuseable_lock } },
-			{ new Attach() { Name = "绿色锁", px128 = unuseable_lock_2_128, px64 = unuseable_lock_2 } },
-			{ new Attach() { Name = "绿色锁", px128 = Weapon_Lock_03_128, px64 = Weapon_Lock_03 } },
-			{ new Attach() { Name = "橘色锁", px128 = Weapon_Lock_06_128, px64 = Weapon_Lock_06 } },
-			{ new Attach() { Name = "禁止使用", px128 = Weapon_Lock_01_128, px64 = Weapon_Lock_01 } },
-			{ new Attach() { Name = "无法使用", px128 = Weapon_Lock_02_128, px64 = Weapon_Lock_02 } },
-		};
-
-		public static Dictionary<string, Bitmap> Trade_Bitmap = new()
-		{
-			{ "无交易属性", null },
-			{ "拍卖行交易", SlotItem_marketBusiness },
-			{ "账号通用", SlotItem_privateSale },
-		};
+			public ImageInfo(string Name, Bitmap bitmap)
+			{
+				this.Name = Name;
+				this.bitmap = bitmap;
+			}
 
 
-		public class Attach
-		{
 			public string Name;
 
-			public Bitmap px64;
-			public Bitmap px128;
+			public Bitmap bitmap;
 		}
 
 
-
-
-		public class Prop
+		public static List<ImageInfo> BLImage = new()
 		{
-			public Bitmap GradeImage = ItemIcon_Bg_Grade_7;
+			{ new("无附加属性", null) },
+			{ new("封印", Weapon_Lock_04) },
+			{ new("旧物", Weapon_Lock_05) },
+			{ new("蓝色锁", unuseable_lock) },
+			{ new("绿色锁", unuseable_lock_2) },
+			{ new("绿色锁", Weapon_Lock_03) },
+			{ new("橘色锁", Weapon_Lock_06) },
+			{ new("禁止使用", Weapon_Lock_01) },
+			{ new("无法使用", Weapon_Lock_02) },
+		};
 
-			public Bitmap Attach;
-			public Bitmap Attach128;
+		public static List<ImageInfo> TRImage = new()
+		{
+			{ new("无交易属性", null) },
+			{ new("拍卖行交易", SlotItem_marketBusiness) },
+			{ new("账号通用", SlotItem_privateSale) },
+		};
 
-			public Bitmap Trade;
+
+
+
+
+
+
+		public sealed class Prop
+		{
+			public Bitmap GradeImage = Resource_BNSR.ItemIcon_Bg_Grade_7;
+
+			public ImageInfo BottomLeft;
+
+			public ImageInfo TopRight;
+
 			public byte[] Icon;
+
 
 			public Bitmap DrawICON(double? Ratio = null)
 			{
@@ -99,46 +105,20 @@ namespace Xylia.Match.Windows.Panel
 				//比例缩放
 				if (Ratio != null) Temp = Temp.ImageThumbnail((double)Ratio);
 
-				try
+
+				if (Icon != null) Temp = Temp.ImageCombine(SetImage.Load(Icon), DrawLocation.Centre);
+
+
+				if (BottomLeft?.bitmap != null)
 				{
-					if (Icon != null)
-					{
-						Temp = Temp.ImageCombine(SetImage.Load(Icon), Compose.DrawLocation.Centre);
-					}
+					var tmp = BottomLeft.bitmap;
+					if (Ratio != null) tmp = BottomLeft.bitmap.ImageThumbnail((double)Ratio);
 
-					if (Attach != null)
-					{
-						if (Ratio != null)
-						{
-							var tmp = new Bitmap(Attach128 ?? Attach.ImageThumbnail((double)Ratio));
+					Temp = Temp.ImageCombine(tmp, DrawLocation.BottomLeft);
+}
 
-							Temp = Temp.ImageCombine(tmp, Compose.DrawLocation.BottomLeft);
-						}
-						else
-						{
-							Temp = Temp.ImageCombine(Attach, Compose.DrawLocation.BottomLeft);
-						}
-					}
+				if (TopRight?.bitmap != null) Temp = Temp.ImageCombine(TopRight.bitmap, DrawLocation.TopRight);
 
-					if (Trade != null)
-					{
-						int Width = 23;
-						int Height = 20;
-
-						if (Ratio != null)
-						{
-							Width = (int)(Width * Ratio);
-							Height = (int)(Height * Ratio);
-						}
-
-
-						Temp = Temp.ImageCombine(new Bitmap(Trade, Width, Height), Compose.DrawLocation.TopRight);
-					}
-				}
-				catch (Exception ee)
-				{
-					Console.WriteLine(ee);
-				}
 
 				return Temp;
 			}

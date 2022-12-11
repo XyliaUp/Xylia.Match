@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 
+using Xylia.Attribute.Component;
 using Xylia.Extension;
 
 
@@ -10,55 +11,67 @@ namespace Xylia.Preview.Data.Record
 	public sealed partial class Item
 	{
 		#region 字段
-		public AccessoryType accessoryType => this.Attributes["accessory-type"].ToEnum<AccessoryType>();
+		public AccessoryTypeSeq AccessoryType => this.Attributes["accessory-type"].ToEnum<AccessoryTypeSeq>();
+
+		//public CustomDressDesignStateSeq CustomDressDesignState => this.Attributes["custom-dress-design-state"].ToEnum<CustomDressDesignStateSeq>();
 		#endregion
 
 
-
 		#region 枚举
-		public enum AccessoryType
+		public enum AccessoryTypeSeq
 		{
-			/// <summary>
-			/// 服饰
-			/// </summary>
-			CostumeAttach = 1,
+			Accessory,
+
+			[Signal("costume-attach")]
+			CostumeAttach,
 
 			Ring,
+
 			Earring,
+
 			Necklace,
+
 			Belt,
+
 			Bracelet,
+
 			Soul,
+
+			[Signal("soul-2")]
 			Soul2,
+
 			Gloves,
+
+			[Signal("rune-1")]
 			Rune1,
+
+			[Signal("rune-2")]
 			Rune2,
 
-			/// <summary>
-			/// 星
-			/// </summary>
 			Nova,
 
-			/// <summary>
-			/// 坐骑
-			/// </summary>
 			Vehicle,
 
-
-			[Description("appearance-normal")]
+			[Signal("appearance-normal")]
 			AppearanceNormal,
 
-			[Description("appearance-idle")]
+			[Signal("appearance-idle")]
 			AppearanceIdle,
 
-			[Description("appearance-hypermove")]
-			AppearanceHypermove,
-
-			[Description("appearance-chat")]
+			[Signal("appearance-chat")]
 			AppearanceChat,
 
-			[Description("appearance-frame")]
+			[Signal("appearance-frame")]
 			AppearanceFrame,
+
+			[Signal("appearance-hypermove")]
+			AppearanceHypermove,
+
+			[Signal("appearance-name-plate")]
+			AppearanceNamePlate,
+
+			[Signal("appearance-speech-bubble")]
+			AppearanceSpeechBubble,
 		}
 		#endregion
 	}

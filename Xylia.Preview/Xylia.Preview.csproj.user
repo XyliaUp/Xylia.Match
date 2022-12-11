@@ -277,7 +277,7 @@
     <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Resources\Resource_Common.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

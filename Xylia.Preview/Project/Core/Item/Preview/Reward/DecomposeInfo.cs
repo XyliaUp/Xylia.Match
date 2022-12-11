@@ -5,6 +5,7 @@ using System.Drawing;
 using Xylia.Attribute.Component;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Resources;
 
 using static Xylia.Preview.Data.Record.Item;
 
@@ -129,7 +130,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			//存在开启金币或物品时会显示解印图标，但如果开启物品为钥匙或者为选择箱时则显示为锁图标
 			if (!this.Decompose_By_Item2_1.INVALID) return GetExtra(this.Decompose_By_Item2_1);
 			else if (!this.Job_Decompose_By_Item2_1.INVALID) return GetExtra(this.Job_Decompose_By_Item2_1);
-			else if (this.DecomposeMoneyCost != 0) return Properties.Resources.Weapon_Lock_04;
+			else if (this.DecomposeMoneyCost != 0) return Resource_BNSR.Weapon_Lock_04;
 
 			return null;
 		}
@@ -139,8 +140,8 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			if (item2.INVALID) return null;
 
 			var Item2Info = item2.Item.GetItemInfo();
-			if (Item2Info != null && Item2Info.Type == ItemType.grocery && Item2Info.groceryType == GroceryType.Key) return Properties.Resources.unuseable_KeyLock;
-			else return Properties.Resources.Weapon_Lock_04;
+			if (Item2Info != null && Item2Info.Type == ItemType.grocery && Item2Info.groceryType == GroceryType.Key) return Resource_BNSR.unuseable_KeyLock;
+			else return Resource_BNSR.Weapon_Lock_04;
 		}
 		#endregion
 	}

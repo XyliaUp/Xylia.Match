@@ -83,14 +83,14 @@ namespace Xylia.Preview.Third.Content
 
 			foreach (var item in FileCache.Data.Item.Where(item =>
 				(item.Type == ItemType.costume ||
-				(item.Type == ItemType.accessory && item.accessoryType == AccessoryType.CostumeAttach))
+				(item.Type == ItemType.accessory && item.AccessoryType == AccessoryTypeSeq.CostumeAttach))
 				&& item.UsableDuration == 0))
 			{
 				var CurRow = CreateRow(item, CostumeSheet);
 
 				CurRow.AddCell(item.EquipRace.GetAttribute<Chinese>()?.Description);
 				CurRow.AddCell(item.EquipSex.GetAttribute<Chinese>()?.Description);
-				CurRow.AddCell(item.customDressDesignState, ExcelRow.DisplayType.HideValue);
+				CurRow.AddCell(item.CustomDressDesignState, ExcelRow.DisplayType.HideValue);
 			}
 			#endregion
 
@@ -129,7 +129,7 @@ namespace Xylia.Preview.Third.Content
 			var VehicleSheet = CreateSheet("坐骑", out _);
 			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.accessory &&
-				item.accessoryType == AccessoryType.Vehicle))
+				item.AccessoryType == AccessoryTypeSeq.Vehicle))
 				CreateRow(item, VehicleSheet);
 			#endregion
 

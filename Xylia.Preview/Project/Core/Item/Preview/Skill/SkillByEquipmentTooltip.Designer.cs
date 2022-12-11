@@ -35,7 +35,7 @@
 			// 
 			// SkillIcon
 			// 
-			this.SkillIcon.Image = global::Xylia.Preview.Properties.Resources.ItemIcon_Bg_Grade_1;
+			this.SkillIcon.Image = global::Xylia.Preview.Resources.Resource_Common.ItemIcon_Bg_Grade_1;
 			this.SkillIcon.Location = new System.Drawing.Point(8, 47);
 			this.SkillIcon.Name = "SkillIcon";
 			this.SkillIcon.Size = new System.Drawing.Size(64, 64);

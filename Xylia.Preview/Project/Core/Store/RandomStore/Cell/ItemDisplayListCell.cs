@@ -5,6 +5,7 @@ using System.Linq;
 using Xylia.Drawing;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Store.Cell;
+using Xylia.Preview.Resources;
 
 using static Xylia.Preview.Data.Record.RandomStoreItemDisplay;
 
@@ -24,7 +25,7 @@ namespace Xylia.Preview.Project.Core.RandomStore.Cell
 			//追加最新图标
 			//TODO: 考虑绘制时再读取图标
 			var ItemIcon = DisplayItem.IconExtra;
-			if (Record.NewArrival) ItemIcon = ItemIcon.ImageCombine(Properties.Resources.SlotItem_New, Compose.DrawLocation.TopLeft);
+			if (Record.NewArrival) ItemIcon = ItemIcon.ImageCombine(Resource_Common.SlotItem_New, Compose.DrawLocation.TopLeft);
 
 			this.ItemShow.LoadData(DisplayItem, ItemIcon);
 		}

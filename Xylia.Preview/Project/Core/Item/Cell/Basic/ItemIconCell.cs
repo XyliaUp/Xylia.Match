@@ -10,6 +10,7 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.Cell;
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 {
@@ -209,7 +210,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 
 			#region 绘制一般内容
 			//图片
-			var Img = this.Image ?? Xylia.Resources.BnsCommon_Old.ItemIcon;
+			var Img = this.Image ?? Resource_Common.ItemIcon;
 			pe.Graphics.DrawImage(Img, new Rectangle((int)ImgTopLeft.X, (int)ImgTopLeft.Y, ImgSize.Width, ImgSize.Height));
 
 			//背景层

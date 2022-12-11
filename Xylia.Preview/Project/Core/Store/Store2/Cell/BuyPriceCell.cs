@@ -6,8 +6,9 @@ using System.Windows.Forms;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Controls.Enums;
+using Xylia.Preview.Project.Controls.Currency;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Core.Store.Cell
 {
@@ -108,7 +109,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			var FrameIconCell = new ItemIconCell()
 			{
 				Scale = this.Scale + ExtraScale,
-				FrameImage = Properties.Resources.FrameImg1,
+				FrameImage = Resource_Common.FrameImg1,
 
 				Image = ItemBrandTooltip?.MainIcon(),
 				ShowStackCount = false,

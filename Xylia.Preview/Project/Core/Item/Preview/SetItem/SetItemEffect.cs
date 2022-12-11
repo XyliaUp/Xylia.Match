@@ -1,7 +1,8 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Core.Item.Cell
 {
@@ -31,17 +32,17 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			{
 				switch (_count = value)
 				{
-					case 2: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem02_image; break;
-					case 3: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem03_image; break;
-					case 4: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem04_image; break;
-					case 5: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem05_image; break;
-					case 6: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem06_image; break;
-					case 7: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem07_image; break;
-					case 8: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem08_image; break;
-					case 9: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem09_image; break;
-					case 10: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem10_image; break;
+					case 2: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem02_Image; break;
+					case 3: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem03_Image; break;
+					case 4: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem04_Image; break;
+					case 5: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem05_Image; break;
+					case 6: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem06_Image; break;
+					case 7: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem07_Image; break;
+					case 8: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem08_Image; break;
+					case 9: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem09_Image; break;
+					case 10: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem10_Image; break;
 
-					case 1 or _: this.CountTooltip.Image = Resources.BnsCommon_Old.tooltip_gem01_image; break;
+					case 1 or _: this.CountTooltip.Image = Resource_BNSR.BNSR_Gem01_Image; break;
 				}
 			}
 		}

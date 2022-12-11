@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,8 +11,7 @@ using Xylia.Extension;
 using Xylia.Framework.Enum;
 using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Core.Item.Util;
-
-using static Xylia.Preview.Properties.Resources;
+using Xylia.Preview.Resources;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
@@ -425,8 +423,10 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			if (this.ItemGrade >= 7)
 			{
-				int BgHeight = legend_cn.Height * this.Width / legend_cn.Width;
-				g.DrawImage(legend_cn, new Rectangle(0, 0, bmp.Width, BgHeight));
+				var bitmap = Resource_Common.legend_cn;
+
+				int BgHeight = bitmap.Height * this.Width / bitmap.Width;
+				g.DrawImage(bitmap, new Rectangle(0, 0, bmp.Width, BgHeight));
 
 				this.BackgroundImage = bmp;
 			}

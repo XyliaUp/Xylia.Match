@@ -372,11 +372,8 @@
     <Content Include="Properties\AnalyseSection\Data2020\Store2Data.xml" />
     <Content Include="Properties\AnalyseSection\Data2020\UnlocatedStoreData.xml" />
     <Content Include="Properties\AnalyseSection\Public.xml" />
-    <Content Include="Resources\General\Img_UICommand_Icon_Lock.png" />
-    <Content Include="Resources\General\Img_UICommand_Icon_Unlock.png" />
-    <Content Include="Resources\General\ItemIcon_Bg_Quest.png" />
     <Content Include="Resources\General\legend_cn.png" />
-    <Content Include="Resources\General\ue3\ItemError.png" />
+    <Content Include="Resources\General\ItemError.png" />
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_1.png" />
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_2.png" />
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_3.png" />
@@ -386,39 +383,8 @@
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_7.png" />
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_8.png" />
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_9.png" />
-    <Content Include="Resources\General\ue3\Sewing.png" />
-    <Content Include="Resources\General\ue3\Sewing2.png" />
-    <Content Include="Resources\General\ue3\SlotItem_marketBusiness.png" />
-    <Content Include="Resources\General\ue3\SlotItem_New.png" />
-    <Content Include="Resources\General\ue3\SlotItem_privateSale.png" />
-    <Content Include="Resources\General\ue3\unuseable_AccountContents.png" />
-    <Content Include="Resources\General\ue3\unuseable_Achievement.png" />
-    <Content Include="Resources\General\ue3\unuseable_Area.png" />
-    <Content Include="Resources\General\ue3\unuseable_Awaken.png" />
-    <Content Include="Resources\General\ue3\unuseable_DuelRating.png" />
-    <Content Include="Resources\General\ue3\unuseable_expired.png" />
-    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughGem.png" />
-    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughgrowth.png" />
-    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughItem.png" />
-    <Content Include="Resources\General\ue3\unuseable_growth_NotEnoughLevel.png" />
-    <Content Include="Resources\General\ue3\unuseable_KeyLock.png" />
-    <Content Include="Resources\General\ue3\unuseable_lock.png" />
-    <Content Include="Resources\General\ue3\unuseable_lock_2.png" />
-    <Content Include="Resources\General\ue3\unuseable_olditem_1.png" />
-    <Content Include="Resources\General\ue3\unuseable_olditem_2.png" />
-    <Content Include="Resources\General\ue3\unuseable_olditem_3.png" />
-    <Content Include="Resources\General\ue3\unuseable_package.png" />
-    <Content Include="Resources\General\ue3\unuseable_PcRoomOnly.png" />
-    <Content Include="Resources\General\ue3\unuseable_seal.png" />
-    <Content Include="Resources\General\ue3\unuseable_X1.png" />
-    <Content Include="Resources\General\ue3\unuseable_X2.png" />
-    <Content Include="Resources\General\ue3\useable_PcRoomOnly.png" />
-    <Content Include="Resources\General\ue3\Weapon_Lock_01.png" />
-    <Content Include="Resources\General\ue3\Weapon_Lock_02.png" />
-    <Content Include="Resources\General\ue3\Weapon_Lock_03.png" />
-    <Content Include="Resources\General\ue3\Weapon_Lock_04.png" />
-    <Content Include="Resources\General\ue3\Weapon_Lock_05.png" />
-    <Content Include="Resources\General\ue3\Weapon_Lock_06.png" />
+    <Content Include="Resources\General\Sewing.png" />
+    <Content Include="Resources\General\Sewing2.png" />
     <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_1_ue4.png" />
     <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_2_ue4.png" />
     <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_3_ue4.png" />
@@ -428,32 +394,6 @@
     <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_7_ue4.png" />
     <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_8_ue4.png" />
     <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_9_ue4.png" />
-    <Content Include="Resources\General\ue4\unuseable_AccountContents_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_Achievement_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_Area_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_Awaken_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_DuelRating_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_expired_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_growth_NotEnoughItem_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_growth_NotEnoughLevel_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_KeyLock_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_lock_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_lock_2_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_olditem_1_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_olditem_2_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_olditem_3_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_package_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_PcRoomOnly_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_seal_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_X1_128.png" />
-    <Content Include="Resources\General\ue4\unuseable_X2_128.png" />
-    <Content Include="Resources\General\ue4\useable_PcRoomOnly_128.png" />
-    <Content Include="Resources\General\ue4\Weapon_Lock_01_128.png" />
-    <Content Include="Resources\General\ue4\Weapon_Lock_02_128.png" />
-    <Content Include="Resources\General\ue4\Weapon_Lock_03_128.png" />
-    <Content Include="Resources\General\ue4\Weapon_Lock_04_128.png" />
-    <Content Include="Resources\General\ue4\Weapon_Lock_05_128.png" />
-    <Content Include="Resources\General\ue4\Weapon_Lock_06_128.png" />
     <Content Include="Resources\Images\Circle.png" />
     <Content Include="Resources\Images\Circle2.png" />
     <Content Include="Resources\Images\FrameImg1.png" />
@@ -542,12 +482,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>DataRes.resx</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Resources\Resource_Common.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>Resource_Common.resx</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Resource_BNSR.Designer.cs">
+    <Compile Update="Resources\Resource_BNSR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resource_BNSR.resx</DependentUpon>
@@ -568,9 +508,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>DataRes.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Resources\Resource_Common.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resource_Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resource_BNSR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_BNSR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

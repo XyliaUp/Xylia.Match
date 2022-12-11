@@ -13,6 +13,7 @@ using Xylia.Preview.Project.Core.Item.Preview.Reward;
 using Xylia.Preview.Project.Core.ItemGrowth.Cell;
 using Xylia.Preview.Data.Record;
 using ItemData = Xylia.Preview.Data.Record.Item;
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Core.Item
 {
@@ -54,9 +55,9 @@ namespace Xylia.Preview.Project.Core.Item
 		public bool HasReward => this.RewardPages != null && this.RewardPages.Count != 0;
 
 
-		private readonly static Bitmap IniImage = Properties.Resources.Circle.ChangeColor(Color.White);
+		private readonly static Bitmap IniImage = Resource_Common.Circle.ChangeColor(Color.White);
 
-		private readonly static Bitmap SelImage = Properties.Resources.Circle.ChangeColor(Color.BlueViolet);
+		private readonly static Bitmap SelImage = Resource_Common.Circle.ChangeColor(Color.BlueViolet);
 
 
 		/// <summary>

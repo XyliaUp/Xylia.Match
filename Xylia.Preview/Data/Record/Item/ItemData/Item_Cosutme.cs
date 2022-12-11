@@ -11,12 +11,11 @@ namespace Xylia.Preview.Data.Record
 	{
 		#region 字段
 		[Description("custom-dress-design-state")]
-		public CustomDressDesignState customDressDesignState => this.Attributes["custom-dress-design-state"].ToEnum<CustomDressDesignState>();
+		public CustomDressDesignStateSeq CustomDressDesignState => this.Attributes["custom-dress-design-state"].ToEnum<CustomDressDesignStateSeq>();
 		#endregion
 
-
 		#region 枚举
-		public enum CustomDressDesignState
+		public enum CustomDressDesignStateSeq
 		{
 			None,
 			Disabled,

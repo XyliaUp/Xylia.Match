@@ -4,6 +4,7 @@ using NPOI.SS.UserModel;
 
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls;
+using Xylia.Preview.Project.Controls.Currency;
 
 namespace Xylia.Preview.Third.Content
 {

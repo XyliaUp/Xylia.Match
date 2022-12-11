@@ -5,7 +5,8 @@ using System.Windows.Forms;
 
 using Xylia.Drawing;
 using Xylia.Preview.Data.Record;
-using Xylia.Resources;
+using Xylia.Preview.Properties;
+using Xylia.Preview.Resources;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
@@ -85,8 +86,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 
 				this.m_Type.Visible = true;
 
-				if (value == CellGroup.selected) this.m_Type.Image = _00028206.Tag_199.ImageThumbnail(0.9);
-				else this.m_Type.Image = _00028206.Tag_090.ImageThumbnail(0.9);
+				if (value == CellGroup.selected) this.m_Type.Image = Resource_BNSR.Tag_199.ImageThumbnail(0.9);
+				else this.m_Type.Image = Resource_BNSR.Tag_090.ImageThumbnail(0.9);
 			}
 		}
 

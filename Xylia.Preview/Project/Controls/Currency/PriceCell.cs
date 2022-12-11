@@ -2,8 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using Xylia.Preview.Project.Controls.Enums;
-using Xylia.Resources;
+using Xylia.Preview.Project.Controls.Currency;
+using Xylia.Preview.Resources;
 
 
 namespace Xylia.Preview.Project.Controls
@@ -107,7 +107,7 @@ namespace Xylia.Preview.Project.Controls
 			if (this.CurrencyType == CurrencyType.Money)
 			{
 				//计算各部分数量
-				if (this.CurrencyCount == 0) this.CreateMeta(e.Graphics, 0, BnsCommon_Old.bronze, ref LoX);
+				if (this.CurrencyCount == 0) this.CreateMeta(e.Graphics, 0, Resource_BNSR.GameUI_Coin_Bronze, ref LoX);
 				else
 				{
 					var MoneyConvert = new MoneyConvert(this.CurrencyCount);
@@ -115,9 +115,9 @@ namespace Xylia.Preview.Project.Controls
 					float TxtPadding = 0F;
 					int IconPadding = 0;
 
-					if (MoneyConvert.Gold != 0) this.CreateMeta(e.Graphics, MoneyConvert.Gold, BnsCommon_Old.gold, ref LoX, TxtPadding, IconPadding);
-					if (MoneyConvert.Silver != 0) this.CreateMeta(e.Graphics, MoneyConvert.Silver, BnsCommon_Old.silver, ref LoX, TxtPadding, IconPadding);
-					if (MoneyConvert.Copper != 0) this.CreateMeta(e.Graphics, MoneyConvert.Copper, BnsCommon_Old.bronze, ref LoX, TxtPadding, IconPadding);
+					if (MoneyConvert.Gold != 0) this.CreateMeta(e.Graphics, MoneyConvert.Gold, Resource_BNSR.GameUI_Coin_Gold, ref LoX, TxtPadding, IconPadding);
+					if (MoneyConvert.Silver != 0) this.CreateMeta(e.Graphics, MoneyConvert.Silver, Resource_BNSR.GameUI_Coin_Silver, ref LoX, TxtPadding, IconPadding);
+					if (MoneyConvert.Copper != 0) this.CreateMeta(e.Graphics, MoneyConvert.Copper, Resource_BNSR.GameUI_Coin_Bronze, ref LoX, TxtPadding, IconPadding);
 				}
 
 				this.Height = 19;
@@ -168,46 +168,5 @@ namespace Xylia.Preview.Project.Controls
 			LoX += RealSize.Width + IconPadding;
 		}
 		#endregion
-	}
-
-
-	/// <summary>
-	/// 价格转换
-	/// </summary>
-	public struct MoneyConvert
-	{
-		#region 构造
-		public MoneyConvert(int? Total) => this.Total = Total ?? 0;
-
-		public MoneyConvert(string Total)
-		{
-			if (int.TryParse(Total, out int temp)) this.Total = temp;
-			else this.Total = 0;
-		}
-		#endregion
-
-
-		public int Total { get; set; }
-
-		public int Gold => this.Total / 10000;
-
-		public int Silver => (this.Total % 10000) / 100;
-
-		public int Copper => this.Total % 100;
-
-
-
-		public override string ToString() => this.ToString(true);
-
-		public string ToString(bool ShowImg = true)
-		{
-			string Info = null;
-
-			if (this.Gold != 0) Info += this.Gold + (!ShowImg ? "金" : "<image enablescale=\"true\" path=\"00009076.GameUI_Coin_Gold\" scalerate=\"1.2\"/>");
-			if (this.Silver != 0) Info += this.Silver + (!ShowImg ? "银" : "<image enablescale=\"true\" path=\"00009076.GameUI_Coin_Silver\" scalerate=\"1.2\"/>");
-			if (this.Copper != 0) Info += this.Copper + (!ShowImg ? "铜" : "<image enablescale=\"true\" path=\"00009076.GameUI_Coin_Bronze\" scalerate=\"1.2\"/>");
-
-			return Info;
-		}
 	}
 }

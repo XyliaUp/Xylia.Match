@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xylia.Preview.Project.Controls.Enums;
+﻿using Xylia.Preview.Project.Controls.Currency;
 
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 {

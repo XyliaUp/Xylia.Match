@@ -331,7 +331,7 @@
 			this.metroLabel1.Size = new System.Drawing.Size(131, 19);
 			this.metroLabel1.TabIndex = 5;
 			this.metroLabel1.Text = "请选择游戏根目录 *";
-			this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
+			
 			// 
 			// Btn_Search_1
 			// 
@@ -415,13 +415,13 @@
 			// ucCheckBox1
 			// 
 			this.ucCheckBox1.BackColor = System.Drawing.Color.Transparent;
-			this.ucCheckBox1.Checked = false;
+			this.ucCheckBox1.Checked = true;
 			this.ucCheckBox1.Location = new System.Drawing.Point(12, 222);
 			this.ucCheckBox1.Name = "ucCheckBox1";
 			this.ucCheckBox1.Padding = new System.Windows.Forms.Padding(1);
 			this.ucCheckBox1.Size = new System.Drawing.Size(152, 30);
 			this.ucCheckBox1.TabIndex = 33;
-			this.ucCheckBox1.TextValue = "使用扁平化背景";
+			this.ucCheckBox1.TextValue = "使用新版本背景";
 			this.ucCheckBox1.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox1_CheckedChangeEvent);
 			// 
 			// pictureBox4

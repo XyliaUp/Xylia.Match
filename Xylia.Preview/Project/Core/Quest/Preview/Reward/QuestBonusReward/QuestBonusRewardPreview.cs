@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls.Currency;
 
 
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.QuestBonusReward

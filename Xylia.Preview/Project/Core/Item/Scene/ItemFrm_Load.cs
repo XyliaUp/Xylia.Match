@@ -11,6 +11,7 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls;
+using Xylia.Preview.Project.Controls.Currency;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Util;
 

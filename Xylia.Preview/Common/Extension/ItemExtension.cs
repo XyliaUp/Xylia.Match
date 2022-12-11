@@ -11,10 +11,7 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Scene;
 using Xylia.Preview.Project.Core.Skill;
-using Xylia.Preview.Properties;
-
-using static Xylia.Preview.Properties.Resources;
-
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -29,16 +26,16 @@ namespace Xylia.Preview.Data.Record
 		/// <returns></returns>
 		public static Bitmap GetBackGround(this byte Grade, bool IsUE4 = true) => Grade switch
 		{
-			2 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_2 : ItemIcon_Bg_Grade_2,
-			3 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_3 : ItemIcon_Bg_Grade_3,
-			4 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_4 : ItemIcon_Bg_Grade_4,
-			5 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_5 : ItemIcon_Bg_Grade_5,
-			6 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_6 : ItemIcon_Bg_Grade_6,
-			7 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_7 : ItemIcon_Bg_Grade_7,
-			8 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_8 : ItemIcon_Bg_Grade_9,
-			9 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_9 : ItemIcon_Bg_Grade_8,
+			2 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_2 : Resource_Common.ItemIcon_Bg_Grade_2,
+			3 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_3 : Resource_Common.ItemIcon_Bg_Grade_3,
+			4 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_4 : Resource_Common.ItemIcon_Bg_Grade_4,
+			5 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_5 : Resource_Common.ItemIcon_Bg_Grade_5,
+			6 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_6 : Resource_Common.ItemIcon_Bg_Grade_6,
+			7 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_7 : Resource_Common.ItemIcon_Bg_Grade_7,
+			8 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_8 : Resource_Common.ItemIcon_Bg_Grade_9,
+			9 => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_9 : Resource_Common.ItemIcon_Bg_Grade_8,
 
-			1 or _ => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_1 : ItemIcon_Bg_Grade_1,
+			1 or _ => IsUE4 ? Resource_BNSR.ItemIcon_Bg_Grade_1 : Resource_Common.ItemIcon_Bg_Grade_1,
 		};
 		#endregion
 

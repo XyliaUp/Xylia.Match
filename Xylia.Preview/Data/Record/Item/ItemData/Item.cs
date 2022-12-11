@@ -9,6 +9,7 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -142,6 +143,7 @@ namespace Xylia.Preview.Data.Record
 		/// </summary>
 		public Bitmap Icon => GetIconWithGrade(this.Attributes["icon"], this.ItemGrade);
 
+
 		/// <summary>
 		/// 获得包含附加信息的图标
 		/// </summary>
@@ -150,47 +152,36 @@ namespace Xylia.Preview.Data.Record
 			get
 			{
 				var bmp = this.Icon;
-
-				var SlotItem = this.SlotItem;
-				if (bmp != null && SlotItem != null)
-				{
-					foreach (var Item in this.SlotItem) bmp = bmp?.ImageCombine(Item.Value, Item.Key);
-				}
-
-				return bmp;
-			}
-		}
+				if (bmp is null) return null;
 
 
-		/// <summary>
-		/// 状态图标
-		/// </summary>
-		private Dictionary<Compose.DrawLocation, Bitmap> SlotItem
-		{
-			get
-			{
-				var Result = new Dictionary<Compose.DrawLocation, Bitmap>();
+				#region 处理左上角
+				Bitmap TopLeft = null;
+				if (this.CustomDressDesignState == CustomDressDesignStateSeq.Disabled) TopLeft = Resource_Common.Sewing;
+				else if (this.CustomDressDesignState == CustomDressDesignStateSeq.Activated) TopLeft = Resource_Common.Sewing2;
 
-				#region 处理左下角
-				Bitmap BottomLeft;
-				if (this.ItemEvent != null && this.ItemEvent.IsExpiration) BottomLeft = Properties.Resources.unuseable_olditem_3;   //判断是否过期			  
-				else if (this.groceryType == GroceryType.Sealed) BottomLeft = Properties.Resources.Weapon_Lock_04;  //判断是否是封印状态
-				else BottomLeft = this.DecomposeInfo.GetExtra();
-
-				if (BottomLeft != null) Result.Add(Compose.DrawLocation.BottomLeft, BottomLeft);
+				if (TopLeft != null) bmp = bmp.ImageCombine(TopLeft, Compose.DrawLocation.TopLeft, false);
 				#endregion
-
 
 				#region 处理右上角
 				Bitmap TopRight = null;
 
-				if (AccountUsed) TopRight = Properties.Resources.SlotItem_privateSale;
-				else if (Auctionable) TopRight = Properties.Resources.SlotItem_marketBusiness;
+				if (AccountUsed) TopRight = Resource_BNSR.SlotItem_privateSale;
+				else if (Auctionable) TopRight = Resource_BNSR.SlotItem_marketBusiness;
 
-				if (TopRight != null) Result.Add(Compose.DrawLocation.TopRight, TopRight);
+				if (TopRight != null) bmp = bmp.ImageCombine(TopRight, Compose.DrawLocation.TopRight);
 				#endregion
 
-				return Result;
+				#region 处理左下角
+				Bitmap BottomLeft;
+				if (this.ItemEvent != null && this.ItemEvent.IsExpiration) BottomLeft = Resource_BNSR.unuseable_olditem_3;   //判断是否过期			  
+				else if (this.groceryType == GroceryType.Sealed) BottomLeft = Resource_BNSR.Weapon_Lock_04;  //判断是否是封印状态
+				else BottomLeft = this.DecomposeInfo.GetExtra();
+
+				if (BottomLeft != null) bmp = bmp.ImageCombine(BottomLeft, Compose.DrawLocation.BottomLeft);
+				#endregion
+
+				return bmp;
 			}
 		}
 

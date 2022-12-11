@@ -3,6 +3,7 @@
 using Xylia.Drawing;
 using Xylia.Preview.Data.Record;
 
+using Xylia.Preview.Resources;
 
 namespace Xylia.Match.Util.Paks.Textures
 {
@@ -38,7 +39,7 @@ namespace Xylia.Match.Util.Paks.Textures
 			//处理封印图标
 			if ((Item.GroceryType)GroceryType == Item.GroceryType.Sealed)
 			{
-				bitmap = bitmap.ImageCombine(Xylia.Resources.BnsCommon.Weapon_Lock_04, Compose.DrawLocation.BottomLeft);
+				bitmap = bitmap.ImageCombine(Resource_BNSR.Weapon_Lock_04, Compose.DrawLocation.BottomLeft);
 			}
 
 			return bitmap;

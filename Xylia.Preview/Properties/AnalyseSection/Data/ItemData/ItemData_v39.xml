@@ -1391,13 +1391,13 @@ probability-plus-zero-gem-slot-4
 			<case alias="rune-2" name="秘功牌" />
 			<case alias="nova" name="星" />
 			<case alias="vehicle" name="" />
-
-			<!-- 2021年12月新增 -->
 			<case alias="appearance-normal" name="" />
 			<case alias="appearance-idle" name="" />
 			<case alias="appearance-chat" name="" />
 			<case alias="appearance-frame" name="" />
 			<case alias="appearance-hypermove" name="" />
+			<case alias="appearance-name-plate" name="" />
+			<case alias="appearance-speech-bubble" name="" />
 		</record>
 
 		<record alias="necessary-costume" name="" filter="accessory" ref="this" />

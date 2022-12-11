@@ -4,9 +4,9 @@ using System.Linq;
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
-using Xylia.Preview.Project.Controls.Enums;
+using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls.Currency;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.QuestBonusReward;
 using Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell;

@@ -1,5 +1,4 @@
-﻿
-using Xylia.Preview.Project.Controls.Enums;
+﻿using Xylia.Preview.Project.Controls.Currency;
 
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 {

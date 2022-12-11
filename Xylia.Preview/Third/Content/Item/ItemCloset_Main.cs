@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
+﻿
 using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Files.Excel;
-using Xylia.Preview.Data.Record;
 
 using static Xylia.Preview.Data.Record.Item;
 
@@ -56,7 +54,7 @@ namespace Xylia.Preview.Third.Content
 				else if (Info.Type == ItemType.weapon && Info.ClosetGroupId != 0) Flag = true;
 				//对于饰品，需要判断其饰品类型
 				else if (Info.Type == ItemType.accessory &&
-					(Info.accessoryType == AccessoryType.CostumeAttach || Info.accessoryType == AccessoryType.Vehicle)) Flag = true;
+					(Info.AccessoryType == AccessoryTypeSeq.CostumeAttach || Info.AccessoryType == AccessoryTypeSeq.Vehicle)) Flag = true;
 
 
 				if (!Flag) return;

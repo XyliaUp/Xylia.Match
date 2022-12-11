@@ -6,9 +6,9 @@ using System.Drawing;
 using Xylia.Attribute;
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
-using Xylia.Preview.Project.Controls;
+using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls.Currency;
 
 using GameSeq = Xylia.bns.Modules.GameData.Enums;
 

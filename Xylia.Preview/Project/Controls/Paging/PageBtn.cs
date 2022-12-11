@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Controls.Paging
 {
@@ -95,7 +96,7 @@ namespace Xylia.Preview.Project.Controls.Paging
 				this.lbl_Text.Text = "前";
 
 				this.pictureBox1.Visible = true;
-				this.pictureBox1.Image = Xylia.Preview.Properties.Resources.icPager_Prev;
+				this.pictureBox1.Image = Resource_Common.icPager_Prev;
 
 				this.pictureBox1.Location = new Point(15, HeightCenter);
 				this.lbl_Text.Location = new Point(this.pictureBox1.Right + 5, this.lbl_Text.Location.Y);
@@ -109,7 +110,7 @@ namespace Xylia.Preview.Project.Controls.Paging
 				this.lbl_Text.Text = "后";
 
 				this.pictureBox1.Visible = true;
-				this.pictureBox1.Image = Xylia.Preview.Properties.Resources.icPager_Next;
+				this.pictureBox1.Image = Resource_Common.icPager_Next;
 
 				this.lbl_Text.Location = new Point(2, this.lbl_Text.Location.Y);
 				this.pictureBox1.Location = new Point(this.lbl_Text.Right + 5, HeightCenter);

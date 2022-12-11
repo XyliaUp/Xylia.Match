@@ -1,9 +1,8 @@
 ﻿using System.Drawing;
 
-using Xylia.Resources;
+using Xylia.Preview.Resources;
 
-
-namespace Xylia.Preview.Project.Controls.Enums
+namespace Xylia.Preview.Project.Controls.Currency
 {
 	/// <summary>
 	/// 货币类型
@@ -58,13 +57,13 @@ namespace Xylia.Preview.Project.Controls.Enums
 	{
 		public static Bitmap GetCurrencyIcon(this CurrencyType Type) => Type switch
 		{
-			CurrencyType.DuelPoint => BnsCommon_Old.duel,
-			CurrencyType.FactionScore => BnsCommon_Old.coin_grade_2_zero,
-			CurrencyType.FieldPlayPoint => BnsCommon_Old.fieldplay,
-			CurrencyType.GoodsStone => BnsCommon_Old.goodsstone,
-			CurrencyType.GoodsStone2 => BnsCommon_Old.goodsstone_002,
-			CurrencyType.PartyBattlePoint => BnsCommon_Old.partybattle,
-			CurrencyType.Pearl => BnsCommon_Old.pearl,
+			CurrencyType.DuelPoint => Resource_BNSR.Map_NPC_DuelPoint_Shop,
+			CurrencyType.FactionScore => Resource_BNSR.Coin_Grade_3_Half,
+			CurrencyType.FieldPlayPoint => Resource_BNSR.fieldplay,
+			CurrencyType.GoodsStone => Resource_BNSR.GameUI_Coin_GoodsStone,
+			CurrencyType.GoodsStone2 => Resource_BNSR.GameUI_Coin_GoodsStone_002,
+			CurrencyType.PartyBattlePoint => Resource_BNSR.partybattle,
+			CurrencyType.Pearl => Resource_BNSR.Store_Pearl,
 
 			_ => null,
 		};
