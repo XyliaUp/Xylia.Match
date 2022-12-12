@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Controls.PanelEx;
-
+using Xylia.Preview.Project.Core.Npc.Cell;
 
 namespace Xylia.Preview.Project.Core.Npc.Scene
 {
@@ -30,21 +29,18 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 			foreach (var Record in Npcs)
 			{
 				#region 初始化
-				var StoreItemCell = new Cell.InfoCell();
+				var StoreItemCell = new InfoCell();
 
 				string NpcAlias = Record.Alias;
 				string NpcInfo = Record.Attributes["name2"].GetText() + $" ({ NpcAlias })";
 				#endregion
 
-				 //查询地图信息
-				var MapUnit = FileCache.Data.MapUnit.Find(Info => Info.Alias.Contains(NpcAlias));
+				//查询地图信息
+				var MapUnit = FileCache.Data.MapUnit.Where(Info => Info.Alias.MyContains(NpcAlias)).FirstOrDefault();
 				if (MapUnit != null)
 				{
-					string MapId = MapUnit.Attributes["map-id"];
-					string MapName = FileCache.Data.MapInfo.GetInfo(MapId)?.Attributes["name"].GetText();
-
 					StoreItemCell.ShowRightText = true;
-					StoreItemCell.RightText = MapName;
+					StoreItemCell.RightText = FileCache.Data.MapInfo[MapUnit.Mapid]?.NameText();
 				}
 
 				StoreItemCell.LeftText = NpcInfo;
@@ -85,10 +81,5 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 			return SearchResult.Any();
 		}
 		#endregion
-
-		private void SearcherScene_Load(object sender, EventArgs e)
-		{
-
-		}
 	}
 }

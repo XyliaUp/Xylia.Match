@@ -7,6 +7,7 @@ using CSCore.SoundOut;
 
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.bns.Modules.Quest.Entities;
+using Xylia.Extension;
 
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 {

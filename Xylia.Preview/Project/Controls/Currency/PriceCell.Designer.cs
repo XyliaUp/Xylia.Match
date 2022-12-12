@@ -37,9 +37,6 @@
 			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.Margin = new System.Windows.Forms.Padding(5);
 			this.Name = "PriceCell";
-			this.Size = new System.Drawing.Size(10, 10);
-			//this.SizeChanged += new System.EventHandler(this.PriceCell_SizeChanged);
-			//this.Paint += new System.Windows.Forms.PaintEventHandler(this.PriceCell_Paint);
 			this.ResumeLayout(false);
 
 		}

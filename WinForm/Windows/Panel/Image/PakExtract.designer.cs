@@ -63,7 +63,7 @@
 			this.Btn_Output.TipsText = "";
 			this.Btn_Output.BtnClick += new System.EventHandler(this.Btn_Output_BtnClick);
 			// 
-			// Select
+			// Selector
 			// 
 			this.Selector.BackColor = System.Drawing.Color.RosyBrown;
 			this.Selector.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -76,7 +76,7 @@
 			this.Selector.ItemWidth = 30;
 			this.Selector.Location = new System.Drawing.Point(306, 97);
 			this.Selector.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-			this.Selector.Name = "Select";
+			this.Selector.Name = "Selector";
 			this.Selector.RectColor = System.Drawing.Color.RosyBrown;
 			this.Selector.RectWidth = 1;
 			this.Selector.SelectedIndex = -1;
@@ -90,6 +90,7 @@
 			this.Selector.Source.Add("GameUI_Icon7th");
 			this.Selector.Source.Add("GameUI_Icon8th");
 			this.Selector.Source.Add("GameUI_Icon9th");
+			this.Selector.Source.Add("GameUI_TitleImage");
 			this.Selector.TabIndex = 110;
 			this.Selector.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.Selector.TextValue = "GameUI_Icon";

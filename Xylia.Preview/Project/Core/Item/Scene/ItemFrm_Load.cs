@@ -234,7 +234,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		public void LoadReward()
 		{
 			//判断是否为封印物品
-			var Preview = new RewardPreview((this.ItemInfo.Type == ItemType.grocery && this.ItemInfo.UnsealAcquireItem1.IsNull()) ? "奖励" : "分解");
+			var Preview = new RewardPreview((this.ItemInfo.Type == ItemType.Grocery && this.ItemInfo.UnsealAcquireItem1.IsNull()) ? "奖励" : "分解");
 
 			#region 绑定修改奖励分页事件
 			Preview.SelRewardChanged += (o, s) =>
@@ -362,7 +362,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				if (this.ItemInfo.Auctionable) TradeInfo = "无法个人交易";
 				else TradeInfo = "无法交易";
 			}
-			else if (this.ItemInfo.EquipUsed && ItemInfo.Type != ItemType.grocery)
+			else if (this.ItemInfo.EquipUsed && ItemInfo.Type != ItemType.Grocery)
 			{
 				//支持无目标封印状态
 				TradeInfo = this.ItemInfo.CannotTrade ? "封印状态时，解除封印后无法交易" : "装备后无法交易";
@@ -393,7 +393,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			this.ItemIcon.Image = this.ItemInfo.IconExtra;
 			this.ItemGrade = this.ItemInfo.ItemGrade;
-			this.lbl_Category.Text =  $"Name.item.game-category-3.{ this.ItemInfo.GameCategory3.GetSignal() }".GetText(true);
+			this.lbl_Category.Text = $"Name.item.game-category-3.{ this.ItemInfo.GameCategory3.GetSignal() }".GetText(true);
 			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
 			this.ItemName = this.ItemInfo.ItemName;
 			this.TagImage = this.ItemInfo.TagIconGrade;
@@ -466,7 +466,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadPreview(this.LoadExtraInfo());
 
 			//加载事件信息
-			this.LoadPreview(new EventTimePreview().LoadInfo("event-info", FileCache.Data.ItemEvent, this.ItemInfo));
+			this.LoadPreview(new EventTimePreview().LoadInfo(this.ItemInfo.EventInfo));
 
 			//加载可成长八卦牌属性信息
 			this.AttributePreview.LoadInfo(this.ItemInfo);
@@ -474,15 +474,15 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 
+			if (this.ItemInfo.Type == ItemType.Grocery)
+			{
+				#region 可用技能测试
+				var Skill3Data = this.ItemInfo.Skill3;
+				if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
+				#endregion
 
-			//搜索相关路径
-			//var Recipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
-			//this.UserOperScene.ItemTransformRecipes = Recipes;
-
-			#region 可用技能测试
-			var Skill3Data = FileCache.Data.Skill3.GetInfo(this.ItemInfo.Attributes["skill3"]);
-			if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
-			#endregion
+				if (this.ItemInfo.Card != null) System.Diagnostics.Trace.WriteLine(this.ItemInfo.Card?.Attributes);
+			}
 		}
 	}
 }

@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Xylia.Extension;
+
 using Xylia.Drawing;
+using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
-using Xylia.Preview.Project.Core.ItemGrowth.Cell;
-using Xylia.Preview.Data.Record;
-using ItemData = Xylia.Preview.Data.Record.Item;
 using Xylia.Preview.Resources;
+
+using ItemData = Xylia.Preview.Data.Record.Item;   
+
 
 namespace Xylia.Preview.Project.Core.Item
 {

@@ -38,7 +38,7 @@ namespace Xylia.Match.Windows.Panel
 			}
 		}
 
-		bool isRun = false;
+		readonly bool isRun = false;
 
 		private void ucBtnFillet2_BtnClick(object sender, EventArgs e)
 		{
@@ -95,7 +95,7 @@ namespace Xylia.Match.Windows.Panel
 
 		private void ucBtnFillet4_BtnClick(object sender, EventArgs e)
 		{
-			OpenFileDialog fileDialog = new OpenFileDialog();
+			OpenFileDialog fileDialog = new();
 
 			fileDialog.Filter = "过图文件|local*.dat";
 

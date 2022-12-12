@@ -1,4 +1,5 @@
-﻿
+﻿using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
+
 namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {
 	partial class ItemGrowth2Page
@@ -32,14 +33,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemGrowth2Page));
 			this.MyWeapon_Title = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.FixedIngredientPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.FixedIngredientPreview();
+			this.FixedIngredientPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.FixedIngredientPreview();
 			this.itemIconCell4 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			this.itemIconCell3 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			this.itemIconCell2 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
-			this.MoneyCostPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.MoneyCostPreview();
-			this.ResultWeaponPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.ResultWeaponPreview();
-			this.SubIngredientPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview();
-			this.feedItemIconCell1 = new Xylia.Preview.Project.Core.ItemGrowth.Cell.FeedItemIconCell();
+			this.MoneyCostPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.MoneyCostPreview();
+			this.ResultWeaponPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.ResultWeaponPreview();
+			this.SubIngredientPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.SubIngredientPreview();
+			this.feedItemIconCell1 = new FeedItemIconCell();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -90,7 +91,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.FixedIngredientPreview.Name = "FixedIngredientPreview";
 			this.FixedIngredientPreview.Size = new System.Drawing.Size(165, 51);
 			this.FixedIngredientPreview.TabIndex = 0;
-			this.FixedIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.Preview.FixedIngredientPreview.DataLoadedHandle(this.FixedIngredientPreview_DataLoaded);
+			this.FixedIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.FixedIngredientPreview.DataLoadedHandle(this.FixedIngredientPreview_DataLoaded);
 			// 
 			// itemIconCell4
 			// 
@@ -181,7 +182,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.ResultWeaponPreview.Name = "ResultWeaponPreview";
 			this.ResultWeaponPreview.Size = new System.Drawing.Size(497, 131);
 			this.ResultWeaponPreview.TabIndex = 0;
-			this.ResultWeaponPreview.ResultItemChanged += new Xylia.Preview.Project.Core.ItemGrowth.Preview.ResultWeaponPreview.ResultItemChangedHandle(this.ResultWeaponPreview_ResultItemChanged);
+			this.ResultWeaponPreview.ResultItemChanged += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.ResultWeaponPreview.ResultItemChangedHandle(this.ResultWeaponPreview_ResultItemChanged);
 			// 
 			// SubIngredientPreview
 			// 
@@ -193,8 +194,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.SubIngredientPreview.Name = "SubIngredientPreview";
 			this.SubIngredientPreview.Size = new System.Drawing.Size(85, 93);
 			this.SubIngredientPreview.TabIndex = 1;
-			this.SubIngredientPreview.RecipeChanged += new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview.RecipeChangedHandle(this.SubIngredientPreview_RecipeChanged);
-			this.SubIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.Preview.SubIngredientPreview.DataLoadedHandle(this.SubIngredientPreview_DataLoaded);
+			this.SubIngredientPreview.RecipeChanged += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.SubIngredientPreview.RecipeChangedHandle(this.SubIngredientPreview_RecipeChanged);
+			this.SubIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.SubIngredientPreview.DataLoadedHandle(this.SubIngredientPreview_DataLoaded);
 			// 
 			// feedItemIconCell1
 			// 
@@ -282,16 +283,16 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		#endregion
 
-		protected Preview.FixedIngredientPreview FixedIngredientPreview;
-		protected Preview.SubIngredientPreview SubIngredientPreview;
+		protected FixedIngredientPreview FixedIngredientPreview;
+		protected SubIngredientPreview SubIngredientPreview;
 		private System.Windows.Forms.Label MyWeapon_Title;
-		protected Preview.MoneyCostPreview MoneyCostPreview;
+		protected MoneyCostPreview MoneyCostPreview;
 		private System.Windows.Forms.Label label1;
-		protected Preview.ResultWeaponPreview ResultWeaponPreview;
+		protected ResultWeaponPreview ResultWeaponPreview;
 
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private Cell.FeedItemIconCell feedItemIconCell1;
+		private FeedItemIconCell feedItemIconCell1;
 		private Item.Cell.Basic.ItemIconCell itemIconCell2;
 		private Item.Cell.Basic.ItemIconCell itemIconCell3;
 		private Item.Cell.Basic.ItemIconCell itemIconCell4;

@@ -49,11 +49,11 @@ namespace Xylia.Preview.Third.Content
 				bool Flag = false;
 
 				//对于服装类型，不需要额外判断
-				if (Info.Type == ItemType.costume) Flag = true;
+				if (Info.Type == ItemType.Costume) Flag = true;
 				//对于武器类型，需要判断是否存在衣柜关联
-				else if (Info.Type == ItemType.weapon && Info.ClosetGroupId != 0) Flag = true;
+				else if (Info.Type == ItemType.Weapon && Info.ClosetGroupId != 0) Flag = true;
 				//对于饰品，需要判断其饰品类型
-				else if (Info.Type == ItemType.accessory &&
+				else if (Info.Type == ItemType.Accessory &&
 					(Info.AccessoryType == AccessoryTypeSeq.CostumeAttach || Info.AccessoryType == AccessoryTypeSeq.Vehicle)) Flag = true;
 
 

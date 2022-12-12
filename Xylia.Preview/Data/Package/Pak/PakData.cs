@@ -111,6 +111,7 @@ namespace Xylia.Preview.Data.Package.Pak
 				else if (filePath.StartsWith("00021326")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Icon2nd/" + filePath[9..];
 				else if (filePath.StartsWith("00052219")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Icon3rd/" + filePath[9..];
 				else if (filePath.StartsWith("00078990")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Icon4th/" + filePath[9..];
+
 				else if (filePath.StartsWith("00033689")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_KeyKap/" + filePath[9..];
 				else if (filePath.StartsWith("00008130")) Ue4Path = "BNSR/Content/Art/UI/GameUI_BNSR/Resource/GameUI_FontSet_R/" + filePath[9..];
 				else if (filePath.StartsWith("00009076")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Window/" + filePath[9..];
@@ -119,16 +120,20 @@ namespace Xylia.Preview.Data.Package.Pak
 				else if (filePath.StartsWith("00027918")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Portrait/" + filePath[9..];
 				else if (filePath.StartsWith("00043230")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_SkillBookImage/" + filePath[9..];
 				else if (filePath.StartsWith("00064443")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_FishIcon/" + filePath[9..];
+
+				else if (filePath.StartsWith("00079972")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard2D/" + filePath[9..];
+				else if (filePath.StartsWith("00079973")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard3D/" + filePath[9..];
+				else if (filePath.StartsWith("00080271")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard3D2nd/" + filePath[9..];
+				else if (filePath.StartsWith("00080646")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard3D3rd/" + filePath[9..];
+
 				else if (filePath.StartsWith("MiniMap_", StringComparison.OrdinalIgnoreCase)) Ue4Path = "BNSR/Content/bns/Package/World/GameDesign/commonpackage/" + filePath;
 				else
 				{
 					//使用公共处理
 					if (ObjectRef.IsEmpty && true) lock (this.ObjectRef) LoadAssetRegistry();
-
 					if (this.ObjectRef.ContainsKey(filePath)) return GetObject(this.ObjectRef[filePath]);
 
-
-					System.Diagnostics.Debug.WriteLine("无法读取的路径: " + filePath);
+					Debug.WriteLine("无法读取的路径: " + filePath);
 					return null;
 				}
 

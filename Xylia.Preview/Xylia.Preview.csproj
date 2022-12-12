@@ -385,15 +385,6 @@
     <Content Include="Resources\General\ue3\ItemIcon_Bg_Grade_9.png" />
     <Content Include="Resources\General\Sewing.png" />
     <Content Include="Resources\General\Sewing2.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_1_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_2_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_3_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_4_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_5_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_6_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_7_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_8_ue4.png" />
-    <Content Include="Resources\General\ue4\ItemIcon_Bg_Grade_9_ue4.png" />
     <Content Include="Resources\Images\Circle.png" />
     <Content Include="Resources\Images\Circle2.png" />
     <Content Include="Resources\Images\FrameImg1.png" />
@@ -516,6 +507,10 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource_BNSR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Resources\GameUI\GameUI_ImageSet\" />
   </ItemGroup>
 
 </Project>

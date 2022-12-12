@@ -82,8 +82,8 @@ namespace Xylia.Preview.Third.Content
 
 
 			foreach (var item in FileCache.Data.Item.Where(item =>
-				(item.Type == ItemType.costume ||
-				(item.Type == ItemType.accessory && item.AccessoryType == AccessoryTypeSeq.CostumeAttach))
+				(item.Type == ItemType.Costume ||
+				(item.Type == ItemType.Accessory && item.AccessoryType == AccessoryTypeSeq.CostumeAttach))
 				&& item.UsableDuration == 0))
 			{
 				var CurRow = CreateRow(item, CostumeSheet);
@@ -102,7 +102,7 @@ namespace Xylia.Preview.Third.Content
 
 			RowIdx = 1;
 			foreach (var item in FileCache.Data.Item.Where(item =>
-				item.Type == ItemType.weapon &&
+				item.Type == ItemType.Weapon &&
 				item.weaponType == WeaponType.Pet1 &&
 				item.UsableDuration == 0 &&
 				(item.weaponAppearanceChangeType == WeaponAppearanceChangeType.UsedOnlyAsApplyingWeapon || item.weaponAppearanceChangeType == WeaponAppearanceChangeType.Both)))
@@ -115,7 +115,7 @@ namespace Xylia.Preview.Third.Content
 			TitleRow3.AddCell("职业");
 
 			foreach (var item in FileCache.Data.Item.Where(item =>
-				item.Type == ItemType.weapon &&
+				item.Type == ItemType.Weapon &&
 				item.weaponType != WeaponType.Pet1 &&
 				item.UsableDuration == 0 &&
 				(item.weaponAppearanceChangeType == WeaponAppearanceChangeType.UsedOnlyAsApplyingWeapon)))
@@ -128,7 +128,7 @@ namespace Xylia.Preview.Third.Content
 			#region 坐骑
 			var VehicleSheet = CreateSheet("坐骑", out _);
 			foreach (var item in FileCache.Data.Item.Where(item =>
-				item.Type == ItemType.accessory &&
+				item.Type == ItemType.Accessory &&
 				item.AccessoryType == AccessoryTypeSeq.Vehicle))
 				CreateRow(item, VehicleSheet);
 			#endregion
@@ -136,7 +136,7 @@ namespace Xylia.Preview.Third.Content
 			#region 外观道具
 			var AppearanceItem = CreateSheet("外观道具", out _);
 			foreach (var item in FileCache.Data.Item.Where(item =>
-				item.Type == ItemType.accessory &&
+				item.Type == ItemType.Accessory &&
 				item.ContainsAttribute("appearance", out _)))
 				CreateRow(item, AppearanceItem);
 			#endregion

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table>
-	<list id="395" module="LocalizationData" type="user-command" version="0.41" rule="cpl | extra" check-version="y" >
+<table data-type="local">
+	<list module="LocalizationData" type="user-command" version="0.4" rule="cpl | extra" check-version="y" >
 		<record alias="type" name="" type="type" >	
 			<case alias="command" name="" />
 			<case alias="social" name="" />
@@ -16,7 +16,6 @@
 			<case alias="chat-party" name="" />
 			<case alias="chat-whisper" name="" />
 			<case alias="chat-in-domain" name="" />
-			<case alias="chat-world" name="" />
 			<case alias="chat-guild" name="" />
 			<case alias="chat-guild-manager" name="" />
 			<case alias="chat-faction" name="" />

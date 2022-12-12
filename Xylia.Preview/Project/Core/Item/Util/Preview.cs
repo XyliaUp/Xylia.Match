@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 
 using Xylia.Extension;
-using Xylia.Preview.Data;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data;
 
 using static Xylia.Extension.String;
 
@@ -40,8 +40,8 @@ namespace Xylia.Preview.Project.Core.Item.Util
 			if (ItemInfo?.Attributes is null || !ItemInfo.ContainsAttribute(AttrName, out string AttrVal) || AttrVal.IsNull()) return null;
 
 			//类型校验
-			if (FileInfo.GetType().HasImplementedRawGeneric(typeof(DataTable<>))) 
-				return LoadInfo(Preview, FileInfo[AttrVal], ItemInfo);
+			if (FileInfo.GetType().HasImplementedRawGeneric(typeof(DataTable<>)))
+				return LoadInfo(Preview, FileInfo[AttrVal]);
 
 			return null;
 		}
@@ -50,26 +50,23 @@ namespace Xylia.Preview.Project.Core.Item.Util
 		/// 通过 IRecord 对象加载组件
 		/// </summary>
 		/// <typeparam name="TPreview"></typeparam>
-		/// <typeparam name="T1"></typeparam>
+		/// <typeparam name="TRecord"></typeparam>
 		/// <param name="Preview"></param>
 		/// <param name="Record"></param>
 		/// <param name="ItemInfo"></param>
 		/// <returns></returns>
-		public static TPreview LoadInfo<TPreview, T1>(this TPreview Preview, T1 Record = default, ItemData ItemInfo = null)
-			where T1 : IRecord, new()
+		public static TPreview LoadInfo<TPreview, TRecord>(this TPreview Preview, TRecord Record = default)
+			where TRecord : IRecord, new()
 			where TPreview : PreviewControl, IPreview, new()
 		{
-			if (Record != null && !Record.INVALID)
-			{
-				System.Diagnostics.Debug.WriteLine($"[{ Record.GetType() }] { Record.Alias }   对象有效性: { !Record?.INVALID }");
+			if (Record is null || Record.INVALID) return null;
 
-				//传递额外信息 (注意要在LoadData方法之前)
-				Preview.LoadData(Record);
+			System.Diagnostics.Debug.WriteLine($"[{ Record.GetType() }] { Record.Alias }   对象有效性: { !Record?.INVALID }");
 
-				return Preview.INVALID() ? null : Preview;  //判断是否有效
-			}
+			//传递额外信息 (注意要在LoadData方法之前)
+			Preview.LoadData(Record);
 
-			return null;
+			return Preview.INVALID() ? null : Preview;  //判断是否有效
 		}
 
 

@@ -1,7 +1,9 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
+using Xylia.Extension;
+
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	public partial class MoneyCostPreview : UserControl
 	{

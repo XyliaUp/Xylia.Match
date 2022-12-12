@@ -36,7 +36,7 @@ namespace Xylia.Match.Windows.Panel
 	public partial class MatchProp : UserControl
 	{
 		#region 构造
-		bool IsInitialization = true;
+		readonly bool IsInitialization = true;
 
 		public MatchProp()
 		{

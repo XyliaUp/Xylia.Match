@@ -49,7 +49,7 @@ namespace Xylia.Preview.Third.Content
 			FileCache.Data.Item.ForEach(Info =>
 			{
 				//跳过奖励类型
-				if (Info.Type == Item.ItemType.grocery && Info.UnsealAcquireItem1 == null)
+				if (Info.Type == Item.ItemType.Grocery && Info.UnsealAcquireItem1 == null)
 					return;
 
 				//判断是否可以分解

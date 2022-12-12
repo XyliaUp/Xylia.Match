@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <!-- 万象录系统 -->
-  <list module="ItemData" type="world-account-card" version="0.10">
-    <record alias="alias" name="" type="Index" />
-    <record alias="item" ref="Item" name="" />
-    <record alias="disabled" name="" type="Bool" />
-    <record alias="sort-no" name="" type="Short" />
-    <record alias="card-image" name="" type="Index" />
-    <record alias="card-original-image" name="" type="Index" repeat="4" />
-    <record alias="card-original-image-desc" name="" type="TextAlias" repeat="4" />
-    <record alias="set-card-original-image" name="" type="Bool" />
-  </list>
+	<list module="ItemData" type="world-account-card" version="0.3">
+		<record alias="alias" name="" type="Index" />
+		<record alias="item" ref="Item" name="" />
+		<record alias="disabled" name="" type="Bool" />
+		<record alias="sort-no" name="" type="Short" />
+		<record alias="card-image" name="" type="Index" />
+		<record alias="card-original-image" name="" type="Index" repeat="4" />
+		<record alias="card-original-image-desc" name="" type="TextAlias" repeat="4" />
+		<record alias="set-card-original-image" name="" type="Bool" />
+	</list>
 </table>

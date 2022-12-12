@@ -176,14 +176,14 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.PricePreview.AutoSize = true;
 			this.PricePreview.BackColor = System.Drawing.Color.Transparent;
 			this.PricePreview.CurrencyCount = 1;
-			this.PricePreview.CurrencyType = Project.Controls.Currency.CurrencyType.Money;
+			this.PricePreview.CurrencyType = Xylia.Preview.Project.Controls.Currency.CurrencyType.Money;
 			this.PricePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.PricePreview.FontStyle = System.Drawing.FontStyle.Regular;
 			this.PricePreview.ForeColor = System.Drawing.Color.White;
 			this.PricePreview.Location = new System.Drawing.Point(346, 445);
 			this.PricePreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.PricePreview.Name = "PricePreview";
-			this.PricePreview.Size = new System.Drawing.Size(131, 19);
+			this.PricePreview.Size = new System.Drawing.Size(134, 23);
 			this.PricePreview.TabIndex = 2;
 			this.PricePreview.Tooltip = "出售价格为每个";
 			// 
@@ -220,7 +220,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.Controls.Add(this.lbl_Category);
 			this.Controls.Add(this.ItemNameCell);
 			this.DoubleBuffered = true;
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.KeyPreview = true;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ItemFrm";
@@ -252,6 +252,5 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		private Xylia.Preview.Project.Core.Item.DurabilityPreview durabilityPreview1;
 		private Cell.Basic.ItemNameCell ItemNameCell;
 		private System.Windows.Forms.ToolStripMenuItem MenuItem_SwitchUserOperPanel;
-		//private CustomControl.Item.EventTimePreview eventTimePreview1;
 	}
 }

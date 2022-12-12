@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list alias="MasteryLevel" module="LocalizationData" type="mastery-level" version="1.12" rule="cpl" index="y">
+	<list module="LocalizationData" type="mastery-level" version="1.12" rule="cpl" index="y">
 		<record alias="mastery-level" type="ID" />
 		<record alias="mastery-exp" type="Long" showzero="y" />
 		<record alias="skill-build-up-point" type="Short" showzero="y" />			

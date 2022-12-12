@@ -8,7 +8,7 @@ using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
-namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	public partial class FixedIngredientPreview : Panel
 	{

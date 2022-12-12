@@ -2,7 +2,7 @@
 using Xylia.Preview.Project.Controls;
 
 
-namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	partial class WarningPreview
 	{

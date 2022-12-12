@@ -73,7 +73,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		/// <param name="Type"></param>
 		/// <param name="Count"></param>
 		/// <param name="LoY"></param>
-		private Control CretePriceCell(CurrencyType Type, int Count, ref int LoY)
+		private static Control CretePriceCell(CurrencyType Type, int Count, ref int LoY)
 		{
 			if (Count == 0) return null;
 
@@ -134,7 +134,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		/// <param name="Count"></param>
 		/// <param name="LoX">X坐标</param>
 		/// <param name="LoY">Y坐标</param>  
-		private Control CreteItemCell(string ItemAlias, int? Count, ref int LoX, int LoY)
+		private Control CreteItemCell(string ItemAlias, short Count, ref int LoX, int LoY)
 		{
 			var ItemData = ItemAlias.GetItemInfo();
 			if (ItemData is null) return null;
@@ -144,15 +144,16 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 				Scale = this.Scale,
 				Image = ItemData.IconExtra,
 
-				StackCount = Count ?? 0,
+				StackCount = Count,
 				ShowStackCount = true,
+				ShowStackCountOnlyOne = true,
 
 				Location = new Point(LoX, LoY),
 				ObjectRef = ItemData,
 			};
 
 			//设置信息，告知用户物品名称
-			ItemIconCell.SetToolTip(ItemData.NameText() + (!Count.HasValue || Count == 1 ? null : $" -{ Count}"));
+			ItemIconCell.SetToolTip(ItemData.NameText() + (Count == 1 ? null : $" -{ Count}"));
 			ItemIconCell.BringToFront();
 
 			//设置X坐标
@@ -181,12 +182,12 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 
 
 			#region 生成一般兑换货币部分
-			PriceCtls.AddItem(this.CretePriceCell(CurrencyType.FactionScore, ItemBuyPrice.RequiredFactionScore, ref LoY));
-			PriceCtls.AddItem(this.CretePriceCell(CurrencyType.DuelPoint, ItemBuyPrice.RequiredDuelPoint, ref LoY));
-			PriceCtls.AddItem(this.CretePriceCell(CurrencyType.PartyBattlePoint, ItemBuyPrice.RequiredPartyBattlePoint, ref LoY));
-			PriceCtls.AddItem(this.CretePriceCell(CurrencyType.Pearl, ItemBuyPrice.RequiredLifeContentsPoint, ref LoY));
-			PriceCtls.AddItem(this.CretePriceCell(CurrencyType.FieldPlayPoint, ItemBuyPrice.RequiredFieldPlayPoint, ref LoY));
-			PriceCtls.AddItem(this.CretePriceCell(CurrencyType.Money, ItemBuyPrice.Money, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.FactionScore, ItemBuyPrice.RequiredFactionScore, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.DuelPoint, ItemBuyPrice.RequiredDuelPoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.PartyBattlePoint, ItemBuyPrice.RequiredPartyBattlePoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.Pearl, ItemBuyPrice.RequiredLifeContentsPoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.FieldPlayPoint, ItemBuyPrice.RequiredFieldPlayPoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.Money, ItemBuyPrice.Money, ref LoY));
 			#endregion
 
 
@@ -198,10 +199,10 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			ItemCtls.AddItem(this.CreteItemBrandCell(ItemBuyPrice, ref LoX, LoY));
 
 			//设置兑换物品
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice?.RequiredItem1, ItemBuyPrice?.RequiredItemCount1, ref LoX, LoY));
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice?.RequiredItem2, ItemBuyPrice?.RequiredItemCount2, ref LoX, LoY));
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice?.RequiredItem3, ItemBuyPrice?.RequiredItemCount3, ref LoX, LoY));
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice?.RequiredItem4, ItemBuyPrice?.RequiredItemCount4, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem1, ItemBuyPrice.RequiredItemCount1, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem2, ItemBuyPrice.RequiredItemCount2, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem3, ItemBuyPrice.RequiredItemCount3, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem4, ItemBuyPrice.RequiredItemCount4, ref LoX, LoY));
 
 			//追加控件
 			PriceCtls.ForEach(c => this.Controls.Add(c));

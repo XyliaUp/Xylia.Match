@@ -17,8 +17,14 @@
     <Compile Update="Project\Controls\ContentPanel\ContentPanel_Paint.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListRewardPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\ItemGrowth2Page.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\FeedItemIconCell.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\FixedIngredientPreview.cs">
       <SubType>Component</SubType>
@@ -82,12 +88,6 @@
     </Compile>
     <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListScene.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Cell\FeedItemIconCell.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Cell\ItemPreviewCell.cs">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\ItemGrowth\ItemGrowth2\Preview\MoneyCostPreview.cs">
       <SubType>UserControl</SubType>
@@ -182,7 +182,7 @@
     <Compile Update="Project\Core\Map\Scene\MapInfoScene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Project\Core\Npc\Cell\InfoCell.cs">
+    <Compile Update="Project\Core\Npc\Scene\InfoCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Npc\Scene\SearcherScene.cs">

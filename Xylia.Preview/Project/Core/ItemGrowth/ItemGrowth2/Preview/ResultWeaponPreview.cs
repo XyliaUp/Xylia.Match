@@ -7,19 +7,15 @@ using System.Windows.Forms;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Core.ItemGrowth.Cell;
+using Xylia.Preview.Project.Core.Item.Cell.Basic;
 
-
-namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	[Designer(typeof(Designer.FixedHeightDesigner))]
 	public partial class ResultWeaponPreview : UserControl
 	{
 		#region 构造
-		public ResultWeaponPreview()
-		{
-			InitializeComponent();
-		}
+		public ResultWeaponPreview() => InitializeComponent();
 		#endregion
 
 		#region 事件与委托
@@ -30,58 +26,114 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 		public event ResultItemChangedHandle ResultItemChanged;
 		#endregion
 
-		#region 字段
+
+
+		#region 界面方法
 		/// <summary>
 		/// 单页最大目标数量
 		/// </summary>
-		const int MaxCellNum = 5;
+		const byte MaxCellNum = 5;
+
+		private List<FeedItemIconCell> Items;
+
+		private byte Index = 0;
+
+		private byte RemainCount => (byte)(Items.Count - MaxCellNum - Index);
+
+
+		private void Btn_Prev_Click(object sender, EventArgs e)
+		{
+			if (Index == 0) return;
+
+			Index--;
+			ShowItems();
+		}
+
+		private void Btn_Next_Click(object sender, EventArgs e)
+		{
+			if (RemainCount == 0) return;
+
+			Index++;
+			ShowItems();
+		}
+
+		private void ShowItems()
+		{
+			this.Controls.Remove<FeedItemIconCell>();
+			this.Controls.Remove<ItemNameCell>();
+
+			this.Btn_Prev.SetToolTip("+" + Index);
+			this.Btn_Next.SetToolTip("+" + RemainCount);
+
+
+			int LocX = 35;
+			foreach (var o in Items.Skip(Index).Take(MaxCellNum))
+			{
+				this.Controls.Add(o);
+				this.Controls.Add(o.BindName);
+
+				o.Location = new Point(LocX, 0);
+				LocX = o.Right;
+
+				o.BindName.MaximumSize = new Size(o.Width, int.MaxValue);
+				o.BindName.Location = new Point(o.Left + (o.Width - o.BindName.Width) / 2, o.Bottom + 5);
+			}
+		}
 		#endregion
+
 
 
 		#region 方法
 		private void SetData(Action<string> action, params string[] NextItem)
 		{
-			#region 初始化
-			this.Controls.Remove<ItemPreviewCell>();
-			#endregion
-
-			#region 创建目标物品控件
-			int LocX = 50;
+			this.Items = new();
 			foreach (var TitleItem in NextItem)
 			{
-				#region 创建控件对象
-				ItemPreviewCell ItemPreviewCell = new()
+				#region 创建目标物品控件
+				var ItemInfo = TitleItem.GetItemInfo();
+				if (ItemInfo is null) continue;
+
+				var cell = new FeedItemIconCell()
 				{
-					Location = new Point(LocX, 0),
+					Size = new Size(82, 90),
 
-					ItemInfo = TitleItem.GetItemInfo(),
 					ShowStackCount = false,
-				};
+					ObjectRef = ItemInfo,
+					Image = ItemInfo.IconExtra,
 
-				this.Controls.Add(ItemPreviewCell);
-				LocX = ItemPreviewCell.Right;
+					//创建名称
+					BindName = new ItemNameCell()
+					{
+						Text = ItemInfo.ItemName,
+						ItemGrade = ItemInfo.ItemGrade,
+					},
+				};
+				this.Items.Add(cell);
 				#endregion
 
 				#region 委托绑定事件
-				ItemPreviewCell.Click += new EventHandler((s, e) =>
+				cell.Click += new EventHandler((s, e) =>
 				{
 					//将其他对象的选择状态取消
-					this.Controls.OfType<ItemPreviewCell>().ForEach(c =>
+					this.Items.ForEach(c =>
 					{
 						c.ShowFrameImage = false;
 						c.Refresh();
 					});
 
-					ItemPreviewCell.ShowFrameImage = true;
-					ItemPreviewCell.Refresh();
+					cell.ShowFrameImage = true;
+					cell.Refresh();
 
 					action(TitleItem);
 				});
 				#endregion
 			}
-			#endregion
 
-			this.Controls.OfType<ItemPreviewCell>().FirstOrDefault()?.CallEvent("OnClick");
+
+			this.Btn_Prev.Visible = this.Btn_Next.Visible = this.Items.Count > MaxCellNum;
+			this.ShowItems();
+
+			this.Items.FirstOrDefault()?.CallEvent("OnClick");
 		}
 
 
@@ -99,7 +151,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 
 		public void SetData(IEnumerable<ItemSpirit> ItemSpirits)
 		{
-			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemSpirits.First(o => o.MainIngredient == item))), 
+			this.SetData(item => this.ResultItemChanged?.Invoke(new ResultItemChangedEventArgs(ItemSpirits.First(o => o.MainIngredient == item))),
 				ItemSpirits.Select(r => r.MainIngredient).ToArray());
 		}
 		#endregion
@@ -114,7 +166,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
 	{
 		public IEnumerable<ItemTransformRecipe> Recipes { get; set; }
 		public ResultItemChangedEventArgs(IEnumerable<ItemTransformRecipe> Recipes) => this.Recipes = Recipes;
-		
+
 
 		public ItemImprove ItemImprove;
 		public ResultItemChangedEventArgs(ItemImprove ItemImprove) => this.ItemImprove = ItemImprove;

@@ -77,7 +77,7 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 			this.Name = "SearcherScene";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "搜索";
-			this.Load += new System.EventHandler(this.SearcherScene_Load);
+			//this.Load += new System.EventHandler(this.SearcherScene_Load);
 			this.ResumeLayout(false);
 
 		}

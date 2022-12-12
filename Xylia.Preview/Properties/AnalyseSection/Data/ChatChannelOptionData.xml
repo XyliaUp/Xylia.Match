@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list id="51" module="LocalizationData" type="chat-channel-option" version="0.1" rule="cpl" >
+		<record alias="id" type="ID" name="" />
+		<record alias="category" type="Seq" name="" >
+		    <case alias="none" default="y" />
+			<case alias="chat-sight" name="" />
+			<case alias="chat-party" name="" />
+			<case alias="chat-team" name="" />
+			<case alias="chat-team-leader" name="" />
+			<case alias="chat-one" name="" />
+			<case alias="chat-in-domain" name="" />
+			<case alias="chat-faction" name="" />
+			<case alias="chat-guild" name="" />
+			<case alias="chat-guild-manager" name="" />
+			<case alias="chat-party-search" name="" />
+			<case alias="chat-npc" name="" />
+			<case alias="chat-godsay-normal" name="" />
+			<case alias="chat-godsay-campaign" name="" />
+			<case alias="chat-godsay-emergency" name="" />
+			<case alias="chat-field-dungeon" name="" />
+			<case alias="chat-qq-c2c" name="" />
+			<case alias="chat-qq-group" name="" />
+			<case alias="chat-guild-search" name="" />
+			<case alias="chat-watch" name="" />
+			<case alias="chat-world" name="" />
+
+			<case alias="default" name="" />
+			<case alias="warning" name="" />
+			<case alias="info" name="" />
+			<case alias="party" name="" />
+			<case alias="party-match" name="" />
+			<case alias="team" name="" />
+			<case alias="faction" name="" />
+			<case alias="guild" name="" />
+			<case alias="guild-match" name="" />
+			<case alias="exhaustion" name="" />
+			<case alias="exhaustion-pc" name="" />
+			<case alias="exp-acquisition" name="" />
+			<case alias="exp-loss" name="" />
+			<case alias="levelup" name="" />
+			<case alias="money-acquisition" name="" />
+			<case alias="money-loss" name="" />
+			<case alias="item-acquisition" name="" />
+			<case alias="item-loss" name="" />
+			<case alias="skill-build-up-point-acquisition" name="" />
+			<case alias="quest-acquisition" name="" />
+			<case alias="quest-complete" name="" />
+			<case alias="talk-social" name="" />
+			<case alias="field-dungeon" name="" />
+			<case alias="qq" name="" />
+			<case alias="combat-normal" name="" />
+			<case alias="combat-critical" name="" />
+			<case alias="combat-heal" name="" />
+			<case alias="combat-defend" name="" />
+			<case alias="combat-parry" name="" />
+			<case alias="combat-abnormal" name="" />
+			<case alias="combat-attacked-normal" name="" />
+			<case alias="combat-attacked-critical" name="" />
+			<case alias="combat-target-heal" name="" />
+			<case alias="combat-target-defend" name="" />
+			<case alias="combat-target-abnormal" name="" />
+			<case alias="combat-other-normal" name="" />
+			<case alias="combat-other-critical" name="" />
+			<case alias="combat-other-heal" name="" />
+			<case alias="combat-other-defend" name="" />
+			<case alias="combat-other-abnormal" name="" />
+			<case alias="combat-party-normal" name="" />
+			<case alias="combat-party-critical" name="" />
+			<case alias="combat-party-heal" name="" />
+			<case alias="combat-party-defend" name="" />
+			<case alias="combat-party-abnormal" name="" />
+			<case alias="combat-party-attacked-normal" name="" />
+			<case alias="combat-party-attacked-critical" name="" />
+			<case alias="combat-party-target-defend" name="" />
+			<case alias="mentoring" name="" />
+			<case alias="skill" name="" />
+		</record>
+		<record alias="font-color-index" type="Byte" name="" />
+		<record alias="group" type="Seq" name="" >
+		    <case alias="none" default="y" />
+		    <case alias="chat" />
+		    <case alias="system" />
+		    <case alias="combat" />
+		</record>
+		<record alias="modifiable" type="Bool" name="" />
+	</list>
+</table>

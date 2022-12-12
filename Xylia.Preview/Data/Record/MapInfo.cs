@@ -5,7 +5,7 @@ using static Xylia.Preview.Data.Record.MapUnit;
 
 namespace Xylia.Preview.Data.Record
 {
-	public sealed class MapInfo : IRecord
+	public sealed class MapInfo : IRecord, IName
 	{
 		#region 属性字段
 		[Signal("group-id")]
@@ -82,6 +82,10 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 处理字段
+		public string NameText() => this.Name2.GetText();
+
+
+
 		public MapDepthSeq _MapDepth;
 
 		/// <summary>

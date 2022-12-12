@@ -110,17 +110,16 @@ namespace Xylia.Preview.Project.Controls
 				if (this.CurrencyCount == 0) this.CreateMeta(e.Graphics, 0, Resource_BNSR.GameUI_Coin_Bronze, ref LoX);
 				else
 				{
-					var MoneyConvert = new MoneyConvert(this.CurrencyCount);
-
 					float TxtPadding = 0F;
 					int IconPadding = 0;
 
+					var MoneyConvert = new MoneyConvert(this.CurrencyCount);
 					if (MoneyConvert.Gold != 0) this.CreateMeta(e.Graphics, MoneyConvert.Gold, Resource_BNSR.GameUI_Coin_Gold, ref LoX, TxtPadding, IconPadding);
 					if (MoneyConvert.Silver != 0) this.CreateMeta(e.Graphics, MoneyConvert.Silver, Resource_BNSR.GameUI_Coin_Silver, ref LoX, TxtPadding, IconPadding);
 					if (MoneyConvert.Copper != 0) this.CreateMeta(e.Graphics, MoneyConvert.Copper, Resource_BNSR.GameUI_Coin_Bronze, ref LoX, TxtPadding, IconPadding);
 				}
 
-				this.Height = 19;
+				this.Height = 23;
 			}
 			else
 			{

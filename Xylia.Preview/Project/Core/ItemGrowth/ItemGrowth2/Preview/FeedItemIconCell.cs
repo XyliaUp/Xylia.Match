@@ -3,12 +3,17 @@
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Resources;
 
-namespace Xylia.Preview.Project.Core.ItemGrowth.Cell
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	public sealed class FeedItemIconCell : ItemIconCell
 	{
-		#region 构造
 		public override Bitmap FrameImage => Resource_Common.FeedItem;
-		#endregion
+
+
+		/// <summary>
+		/// ResultWeaponPreview	绑定控件
+		/// </summary>
+
+		public ItemNameCell BindName;
 	}
 }

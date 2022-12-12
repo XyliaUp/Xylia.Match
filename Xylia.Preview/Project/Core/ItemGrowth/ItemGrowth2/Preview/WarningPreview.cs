@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	public partial class WarningPreview : UserControl
 	{

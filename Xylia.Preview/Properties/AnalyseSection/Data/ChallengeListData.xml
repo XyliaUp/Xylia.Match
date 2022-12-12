@@ -36,20 +36,24 @@
 
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
+		
 		<record alias="challenge-quest-basic" name="任务挑战" type="Quest" repeat="20" />
 		<record alias="challenge-quest-expansion" type="Quest" name="" repeat="20" />
 		<record alias="challenge-quest-grade" type="Seq" name="" seq="$grade" server="n" repeat="20" />
 		<record alias="challenge-quest-complete-count" type="Byte" name="" server="n" />
 		<record alias="challenge-quest-attraction" name="" use-group="y" server="n" repeat="20" />
 		<record alias="challenge-quest-count" name="" type="Byte" server="n" />
+		
 		<record alias="challenge-npc-difficulty" name="挑战副本课题模式" seq="$difficulty-type" type="Seq" out-cond="Exist: challenge-npc-kill-*" apply="must" repeat="20" />
 		<record alias="challenge-npc-kill" name="" ref="Npc" repeat="20" />
 		<record alias="challenge-npc-attraction" name="" use-group="y" server="n" repeat="20" />
 		<record alias="challenge-npc-grade" type="Seq" name="" seq="$grade" server="n" repeat="20" />
 		<record alias="challenge-npc-quest" name="副本挑战关联任务" type="Quest" server="n" repeat="20" />
 		<record alias="challenge-npc-total-count" name="" type="Byte" server="n" />
+		
 		<record alias="challenge-reward-total-count" name="" type="Byte" server="n" />
 		<record alias="challenge-count-for-reward" name="阶段需要完成课题数量" type="Byte" repeat="20" />
+		
 		<record alias="reward" name="阶段奖励" ref="ChallengeListReward" repeat="20" />
 		<record alias="week-start-date-time" name="" type="Time64" filter="week" />
 	</list>

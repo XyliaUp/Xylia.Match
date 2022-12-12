@@ -2,11 +2,11 @@
 using System.Windows.Forms;
 
 using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Preview.Common.Cast;
 using Xylia.Extension;
-using ChallengeListData = Xylia.Preview.Data.Record.ChallengeList;
-using NpcData = Xylia.Preview.Data.Record.Npc;
+using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Helper;
+
+using ChallengeListData = Xylia.Preview.Data.Record.ChallengeList;
 
 namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 {
@@ -22,8 +22,13 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 		public void LoadData(string ChallengeQuestBasic, string ChallengeQuestExpansion, ChallengeListData.Grade ChallengeQuestGrade, string Attraction)
 		{
 			var Quest = ReadQuestData.GetQuestData(ChallengeQuestBasic);
-			this.ChallengeName.Text = Quest?.Name2.GetText();
-			this.ChallengeIcon.Image = Quest?.Icon;
+			if(Quest != null)
+			{
+				this.ChallengeName.Text = Quest.Name2.GetText();
+				this.ChallengeName.ForeColor = Quest.ForeColor;
+				this.ChallengeIcon.Image = Quest.Icon;
+			}
+
 
 			this.AttractionInfo.Text = Attraction.CastObject().GetName();
 			this.ChallengeDifficultyType.Visible = false;

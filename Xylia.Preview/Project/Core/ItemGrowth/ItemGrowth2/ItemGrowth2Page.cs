@@ -4,7 +4,7 @@ using System.Drawing;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Core.ItemGrowth.Preview;
+using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
 
 namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {

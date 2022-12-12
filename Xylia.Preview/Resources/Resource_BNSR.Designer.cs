@@ -63,26 +63,6 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap ArenaDungeonTooltip {
-            get {
-                object obj = ResourceManager.GetObject("ArenaDungeonTooltip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        public static System.Drawing.Bitmap Bleeding {
-            get {
-                object obj = ResourceManager.GetObject("Bleeding", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         public static System.Drawing.Bitmap BNSR_ChattingBack {
             get {
                 object obj = ResourceManager.GetObject("BNSR_ChattingBack", resourceCulture);
@@ -1596,6 +1576,46 @@ namespace Xylia.Preview.Resources {
         public static System.Drawing.Bitmap Store_Pearl {
             get {
                 object obj = ResourceManager.GetObject("Store_Pearl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap T_tooltip_legend_texture_cn {
+            get {
+                object obj = ResourceManager.GetObject("T_tooltip_legend_texture_cn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap T_tooltip_legend2_texture_cn_NEW {
+            get {
+                object obj = ResourceManager.GetObject("T_tooltip_legend2_texture_cn_NEW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap T_tooltip_legend3_GoldUp {
+            get {
+                object obj = ResourceManager.GetObject("T_tooltip_legend3_GoldUp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap T_tooltip_legend3_RedUp {
+            get {
+                object obj = ResourceManager.GetObject("T_tooltip_legend3_RedUp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

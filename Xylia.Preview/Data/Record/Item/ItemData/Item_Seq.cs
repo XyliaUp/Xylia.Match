@@ -15,21 +15,17 @@ namespace Xylia.Preview.Data.Record
 		/// </summary>
 		public enum ItemType
 		{
-			weapon,
+			Weapon,
 
-			/// <summary>
-			/// 服装
-			/// </summary>
-			costume,
+			Costume,
 
-			grocery,
+			Grocery,
 
-			gem,
+			Gem,
 
-			/// <summary>
-			/// 饰品
-			/// </summary>
-			accessory
+			Accessory,
+
+			Enchant,
 		}
 
 		/// <summary>
@@ -48,7 +44,7 @@ namespace Xylia.Preview.Data.Record
 
 
 
-				if (Type == ItemType.weapon)
+				if (Type == ItemType.Weapon)
 				{
 					var WeaponType = this.weaponType;
 
@@ -75,7 +71,7 @@ namespace Xylia.Preview.Data.Record
 						case WeaponType.Orb: CondTypes.Add(ConditionType.Orb); break;
 					}
 				}
-				else if (Type == ItemType.accessory)
+				else if (Type == ItemType.Accessory)
 				{
 					CondTypes.Add(ConditionType.Accessory);
 

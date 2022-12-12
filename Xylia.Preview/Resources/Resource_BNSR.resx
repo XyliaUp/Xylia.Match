@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ArenaDungeonTooltip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\gameui\gameui_window_r\arenadungeontooltip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bleeding" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\gameui\gameui_window_r\bleeding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BNSR_ChattingBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gameui\gameui_window_r\bnsr_chattingback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -678,6 +672,18 @@
   </data>
   <data name="Tooltip_VMHeart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gameui\gameui_window_r\tooltip_vmheart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T_tooltip_legend2_texture_cn_NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>art\fx_texture_ui\t_tooltip_legend2_texture_cn_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T_tooltip_legend3_GoldUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>art\fx_texture_ui\t_tooltip_legend3_goldup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T_tooltip_legend3_RedUp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>art\fx_texture_ui\t_tooltip_legend3_redup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T_tooltip_legend_texture_cn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>art\fx_texture_ui\t_tooltip_legend_texture_cn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unuseable_AccountContents" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>gameui\gameui_icon3_r\unuseable_accountcontents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

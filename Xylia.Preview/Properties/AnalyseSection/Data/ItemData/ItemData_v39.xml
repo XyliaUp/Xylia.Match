@@ -463,8 +463,8 @@
 		<record alias="equip-type" name="装备种类" seq="$equip-type" type="Seq" />
 		<record alias="equip-solo-duel-grade" name="" type="Byte" />
 		<record alias="equip-team-duel-grade" name="" type="Byte" />
-		<record alias="item-grade" name="道具品质" type="byte" default="1" apply="must" />
-		<record alias="legend-grade-background-particle-type" name="道具底图" type="Seq" server="n" >
+		<record alias="item-grade" name="" type="Byte" default="1" />
+		<record alias="legend-grade-background-particle-type" name="" type="Seq" >
 			<case alias="default" name="" default="y" />
 			<case alias="type-gold" name="" />
 			<case alias="type-redup" name="" />
@@ -478,7 +478,7 @@
 		<record alias="use-global-recycle-group-duration" name="" type="Int32" />
 		<record alias="use-recycle-group" name="" seq="$recycle-group" type="Seq" />
 		<record alias="use-recycle-group-id" name="" type="Byte" />
-		<record alias="use-recycle-group-duration" name="" type="Int32" />
+		<record alias="use-recycle-group-duration" name="" type="Msec" />
 		<!-- ======================================  奖励  ===================================== -->
 		<record alias="decompose-reward-by-consume-index" name="" type="Bool" />
 		<record alias="decompose-reward" name="奖励" ref="Reward" repeat="7" />
@@ -1156,7 +1156,6 @@ probability-plus-zero-gem-slot-4
 		<record alias="bonus-account-exp" name="" filter="grocery" type="Int32" />
 		<record alias="bonus-sealed-dungeon-exp" name="" filter="grocery" type="Int32" />
 		<record alias="bonus-sealed-dungeon-id" name="" filter="grocery" ref="Dungeon" />
-
 		<record alias="energy-multiple-point" name="" filter="grocery" type="Int32" />
 		<record alias="additional-mastery-stat-point" name="获得洪门点数" filter="grocery" type="Short" />
 		<record alias="skill-build-up-point" name="获得技能强化点数" filter="grocery" type="Short" />

@@ -64,8 +64,6 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 		#region 构造
 		public DecomposeInfo(ItemData ItemInfo)
 		{
-			var Dt = DateTime.Now;
-
 			#region 读取数据
 			this.DecomposeRewardByConsumeIndex = ItemInfo.Attributes["decompose-reward-by-consume-index"].ToBool();
 			this.DecomposeMax = ItemInfo.Attributes["decompose-max"].ToInt();
@@ -140,7 +138,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			if (item2.INVALID) return null;
 
 			var Item2Info = item2.Item.GetItemInfo();
-			if (Item2Info != null && Item2Info.Type == ItemType.grocery && Item2Info.groceryType == GroceryType.Key) return Resource_BNSR.unuseable_KeyLock;
+			if (Item2Info != null && Item2Info.Type == ItemType.Grocery && Item2Info.GroceryType == GroceryTypeSeq.Key) return Resource_BNSR.unuseable_KeyLock;
 			else return Resource_BNSR.Weapon_Lock_04;
 		}
 		#endregion

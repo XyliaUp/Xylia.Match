@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -9,11 +10,13 @@ using Xylia.Configure;
 using Xylia.Drawing;
 using Xylia.Extension;
 using Xylia.Framework.Enum;
+using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Core.Item.Util;
 using Xylia.Preview.Resources;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
+
 
 namespace Xylia.Preview.Project.Core.Item.Scene
 {
@@ -22,7 +25,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		#region 构造 
 		public readonly ItemData ItemInfo;
 
-		private bool Loading;
+		private readonly bool Loading;
+
 
 		public ItemFrm(ItemData ItemInfo)
 		{
@@ -79,20 +83,14 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.PreviewList.Clear();
 			if (this.ItemInfo is null) return;
 
-			try
-			{
-				this.LoadData();
-			}
-			catch (Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex);
-				throw;
-			}
+			this.LoadData();
 
-			foreach (var c in this.Controls.OfType<ContentPanel>())
-				c.Params = Params;
+			var p = this.Params;
+			foreach (var c in this.Controls.OfType<ContentPanel>()) c.Params = p;
 
-			this.Refresh();   //刷新必须放置在最后面，否则会异常
+
+			//刷新必须放置在最后面，否则会异常
+			this.Refresh();  
 		}
 
 		protected override void WndProc(ref Message m)
@@ -284,10 +282,10 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 		#region 数据处理
-		public List<object> Params => new(ContentPanel.defaultParams)
-		{
-			ItemInfo,  //第二个参数是物品数据 
-		};
+		/// <summary>
+		/// 第二个参数是物品数据
+		/// </summary>
+		public List<object> Params => new(ContentPanel.defaultParams) { ItemInfo };
 
 		/// <summary>
 		/// 刷新数据
@@ -318,13 +316,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				if (o.Value == 0) continue;
 
 				var key = o.Key;
-				string value = key.ToString().MyEndsWith("percent") ? 
-					(o.Value / 10).ToString("0.0") + "%" : 
-					o.Value.ToString();
+				var val = new MyInfo($"{key.GetDescription()} {o.Value.ToString(key)}");
 
-
-				//this.ItemInfo.MainAbility1
-				ValidSubInfo.Add(new($"{key.GetDescription()} {value}"));
+				//实际上直接 MainAbility转为此枚举是不正确的，只是简便方法
+				if (key == this.ItemInfo.MainAbility1 || key == this.ItemInfo.MainAbility2) ValidMainInfo.Add(val);
+				else ValidSubInfo.Add(val);
 			}
 			#endregion
 
@@ -402,7 +398,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			//这里设置结束高度
 			int EndPadding = 90;
-			this.PricePreview.Location = new Point(this.Width - this.PricePreview.Width - 12, PosY + EndPadding - 68);
+			this.PricePreview.Location = new Point(this.Width - this.PricePreview.Width - 15, PosY + EndPadding - 68);
 
 			//设置窗体高度
 			this.Height = PosY + EndPadding;
@@ -417,20 +413,21 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// </summary>
 		private void RefreshBackgroundImage()
 		{
-			#region 计算背景大小
-			var bmp = new Bitmap(this.Width, this.Height);
-			var g = Graphics.FromImage(bmp);
+			Bitmap res;
+			if (ItemInfo.LegendGradeBackgroundParticleType == ItemData.LegendGradeBackgroundParticleTypeSeq.TypeGold) res = Resource_BNSR.T_tooltip_legend2_texture_cn_NEW;
+			else if (ItemInfo.LegendGradeBackgroundParticleType == ItemData.LegendGradeBackgroundParticleTypeSeq.TypeGoldup) res = Resource_BNSR.T_tooltip_legend3_GoldUp;
+			else if (ItemInfo.LegendGradeBackgroundParticleType == ItemData.LegendGradeBackgroundParticleTypeSeq.TypeRedup) res = Resource_BNSR.T_tooltip_legend3_RedUp;
+			else if (ItemInfo.ItemGrade >= 7) res = Resource_BNSR.T_tooltip_legend_texture_cn;
+			else return;
 
-			if (this.ItemGrade >= 7)
-			{
-				var bitmap = Resource_Common.legend_cn;
 
-				int BgHeight = bitmap.Height * this.Width / bitmap.Width;
-				g.DrawImage(bitmap, new Rectangle(0, 0, bmp.Width, BgHeight));
 
-				this.BackgroundImage = bmp;
-			}
-			#endregion
+			var b = new Bitmap(this.Width, this.Height);
+			var g = Graphics.FromImage(b);
+			g.DrawImage(res.Clone(new Rectangle(81, 81, 355, 430), PixelFormat.Format64bppArgb),
+				  new Rectangle(0, 0, b.Width, res.Height * b.Width / res.Width));
+
+			this.BackgroundImage = b;
 		}
 		#endregion
 	}

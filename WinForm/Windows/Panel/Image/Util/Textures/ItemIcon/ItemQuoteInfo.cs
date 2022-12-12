@@ -37,7 +37,7 @@ namespace Xylia.Match.Util.Paks.Textures
 
 
 			//处理封印图标
-			if ((Item.GroceryType)GroceryType == Item.GroceryType.Sealed)
+			if ((Item.GroceryTypeSeq)GroceryType == Item.GroceryTypeSeq.Sealed)
 			{
 				bitmap = bitmap.ImageCombine(Resource_BNSR.Weapon_Lock_04, Compose.DrawLocation.BottomLeft);
 			}

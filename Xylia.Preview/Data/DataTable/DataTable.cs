@@ -327,7 +327,7 @@ namespace Xylia.Preview.Data
 			var o = this.GetObject(MainID, Variation);
 			if (o is null) return null;
 
-			return new Lazy<T>(() => CreateNew(o));
+			return new Lazy<T>(() => CreateNew(o, MainID));
 		}
 
 		/// <summary>
@@ -405,7 +405,7 @@ namespace Xylia.Preview.Data
 				if (!this.HasData) return null;
 
 				#region 通过别名表获取对象信息
-				var AliasTable = FileCache.Data.GameData._content.Head.AliasTable.List[typeof(T).Name];
+				var AliasTable = FileCache.Data.GameData._content.AliasTable.List[typeof(T).Name];
 				if (AliasTable is null) return null;
 
 				var AliasInfo = AliasTable[Alias];

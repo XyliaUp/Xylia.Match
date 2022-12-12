@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Linq;
 
+using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 
 using Xylia.Drawing;
@@ -38,6 +38,23 @@ namespace Xylia.Preview.Data.Record
 
 
 		public byte ItemGrade => this.Attributes["item-grade"].ConvertToByte();
+
+
+		public LegendGradeBackgroundParticleTypeSeq LegendGradeBackgroundParticleType => this.Attributes["legend-grade-background-particle-type"].ToEnum<LegendGradeBackgroundParticleTypeSeq>();
+		public enum LegendGradeBackgroundParticleTypeSeq
+		{
+			Default,
+
+			[Signal("type-gold")]
+			TypeGold,
+
+			[Signal("type-redup")]
+			TypeRedup,
+
+			[Signal("type-goldup")]
+			TypeGoldup,
+		}
+
 
 
 		public Race EquipRace => this.Attributes["equip-race"].ToEnum<Race>();
@@ -97,7 +114,7 @@ namespace Xylia.Preview.Data.Record
 		public GameCategory3Seq GameCategory3 => this.Attributes["game-category-3"].ToEnum<GameCategory3Seq>();
 
 		public int UsableDuration => this.Attributes["usable-duration"].ToInt();
-		public ItemEvent ItemEvent => FileCache.Data.ItemEvent.GetInfo(this.Attributes["event-info"]);
+		public ItemEvent EventInfo => FileCache.Data.ItemEvent[this.Attributes["event-info"]];
 
 
 		public int ImproveId => this.Attributes["improve-id"].ToInt();
@@ -106,6 +123,8 @@ namespace Xylia.Preview.Data.Record
 		public string ImprovePrevItem => this.Attributes["improve-prev-item"];
 
 		public string ItemName => this.Attributes["name2"].GetText();
+		public string ItemNameWithGrade => $"<font name=\"00008130.Program.Fontset_ItemGrade_{ this.ItemGrade }\">" + this.ItemName + "</font>";
+
 		public string MainInfo => this.Attributes["main-info"].GetText();
 		public string SubInfo => this.Attributes["sub-info"].GetText();
 		public string IdentifyMainInfo => this.Attributes["identify-main-info"].GetText();
@@ -127,7 +146,6 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 图标处理
-
 		/// <summary>
 		/// 获取标签图标
 		/// </summary>
@@ -174,8 +192,8 @@ namespace Xylia.Preview.Data.Record
 
 				#region 处理左下角
 				Bitmap BottomLeft;
-				if (this.ItemEvent != null && this.ItemEvent.IsExpiration) BottomLeft = Resource_BNSR.unuseable_olditem_3;   //判断是否过期			  
-				else if (this.groceryType == GroceryType.Sealed) BottomLeft = Resource_BNSR.Weapon_Lock_04;  //判断是否是封印状态
+				if (this.EventInfo != null && this.EventInfo.IsExpiration) BottomLeft = Resource_BNSR.unuseable_olditem_3;   //判断是否过期			  
+				else if (this.GroceryType == GroceryTypeSeq.Sealed) BottomLeft = Resource_BNSR.Weapon_Lock_04;  //判断是否是封印状态
 				else BottomLeft = this.DecomposeInfo.GetExtra();
 
 				if (BottomLeft != null) bmp = bmp.ImageCombine(BottomLeft, Compose.DrawLocation.BottomLeft);
@@ -210,8 +228,6 @@ namespace Xylia.Preview.Data.Record
 
 		#region 接口方法
 		public string NameText() => this.ItemName;
-
-		public string ItemNameWithGrade => $"<font name=\"00008130.Program.Fontset_ItemGrade_{ ItemGrade }\">" + NameText() + "</font>";
 
 		public Bitmap MainIcon() => this.Icon;
 		#endregion

@@ -1,4 +1,5 @@
-﻿
+﻿using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
+
 namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {
 	partial class EquipmentGuidePage
@@ -35,7 +36,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.MyWeapon_Name = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell();
 			this.MyWeapon_Icon = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
-			this.WarningPreview = new Xylia.Preview.Project.Core.ItemGrowth.Preview.WarningPreview();
+			this.WarningPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.WarningPreview();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.MyWeapon_Icon)).BeginInit();
@@ -153,7 +154,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		#endregion
 		private System.Windows.Forms.Label MyWeapon_Title;
-		public Preview.WarningPreview WarningPreview;
+		public WarningPreview WarningPreview;
 		private Item.Cell.Basic.ItemIconCell MyWeapon_Icon;
 		private System.Windows.Forms.PictureBox pictureBox2;
 		private Item.Cell.Basic.ItemNameCell MyWeapon_Name;

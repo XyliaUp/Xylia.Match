@@ -9,13 +9,12 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Core.ItemGrowth.Cell;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
 
-namespace Xylia.Preview.Project.Core.ItemGrowth.Preview
+namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	public partial class SubIngredientPreview : Panel
 	{

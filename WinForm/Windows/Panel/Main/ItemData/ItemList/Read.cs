@@ -160,7 +160,7 @@ namespace Xylia.Match.Util.ItemList
 			{
 				var tmp = new BinData(Path, true);
 
-				this.GetAction("当前版本：" + tmp._content.Head.UpdateTime.GetTimeStr());
+				this.GetAction("当前版本：" + tmp._content.UpdateTime.GetTimeStr());
 
 				//加载记录文件
 				this.XmlData = ExtractData(tmp, false, GetReadInfo.OnlyNew ? GetOld() : null);
@@ -256,9 +256,6 @@ namespace Xylia.Match.Util.ItemList
 			return ObjList;
 			#endregion
 		}
-
-
-
 
 
 

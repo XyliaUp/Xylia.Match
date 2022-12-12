@@ -32,8 +32,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 
 			//this.AutoScaleMode = AutoScaleMode.None;
 			this.ResizeRedraw = false;
-
-			this.Refresh();
 		}
 		#endregion
 

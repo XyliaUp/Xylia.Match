@@ -208,7 +208,9 @@ namespace Xylia.Preview.Project.Core.Skill
 
 		public static double AttackAttributePercent = 3.8837;
 
-		private static string GetDamageInfo(int MinValue, int MaxValue, int AttributePercent)
+		public static string GetDamageInfo(int Value) => GetDamageInfo(Value, Value, 100);
+
+		public static string GetDamageInfo(int MinValue, int MaxValue, int AttributePercent)
 		{
 			if (false)
 			{

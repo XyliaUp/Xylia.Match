@@ -9,7 +9,7 @@ using Xylia.Drawing;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Core.ItemGrowth.Cell;
+using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
 using Xylia.Preview.Resources;
 
 namespace Xylia.Preview.Project.Core.Item.Cell.Basic
@@ -25,7 +25,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			this.Scale = 36;
 
 			this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.Selectable | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.SupportsTransparentBackColor, true);
-			this.Refresh();
 		}
 		#endregion
 
@@ -34,19 +33,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		[Obsolete("不再可用的属性")]
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public new int Width => this.Scale;
+		public new int Width => base.Width;
 
 		[Browsable(false)]
 		[Obsolete("不再可用的属性")]
 		[EditorBrowsable(EditorBrowsableState.Never)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		public new int Height => this.Scale;
-
-		//[Browsable(false)]
-		//[Obsolete("不再可用的属性")]
-		//[EditorBrowsable(EditorBrowsableState.Never)]
-		//[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		//public new Size Size => new Size(this.Scale, this.Scale);
+		public new int Height => base.Height;
 		#endregion
 
 
