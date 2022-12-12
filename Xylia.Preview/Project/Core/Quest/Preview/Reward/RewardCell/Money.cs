@@ -7,15 +7,9 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 	/// </summary>
 	public sealed partial class Money : PriceBase
 	{
-		#region 构造
-		public Money()
-		{
-			InitializeComponent();
-		}
-		#endregion
-
-
 		#region 字段
+		public Money() => InitializeComponent();
+
 		public override CurrencyType CurrencyType => CurrencyType.Money;
 
 		public static string ConvertInfo(long Money)

@@ -91,7 +91,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.FixedIngredientPreview.Name = "FixedIngredientPreview";
 			this.FixedIngredientPreview.Size = new System.Drawing.Size(165, 51);
 			this.FixedIngredientPreview.TabIndex = 0;
-			this.FixedIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.FixedIngredientPreview.DataLoadedHandle(this.FixedIngredientPreview_DataLoaded);
+			this.FixedIngredientPreview.DataLoaded += new System.EventHandler(this.FixedIngredientPreview_DataLoaded);
 			// 
 			// itemIconCell4
 			// 
@@ -195,7 +195,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.SubIngredientPreview.Size = new System.Drawing.Size(85, 93);
 			this.SubIngredientPreview.TabIndex = 1;
 			this.SubIngredientPreview.RecipeChanged += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.SubIngredientPreview.RecipeChangedHandle(this.SubIngredientPreview_RecipeChanged);
-			this.SubIngredientPreview.DataLoaded += new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.SubIngredientPreview.DataLoadedHandle(this.SubIngredientPreview_DataLoaded);
+			this.SubIngredientPreview.DataLoaded += new System.EventHandler(this.SubIngredientPreview_DataLoaded);
 			// 
 			// feedItemIconCell1
 			// 

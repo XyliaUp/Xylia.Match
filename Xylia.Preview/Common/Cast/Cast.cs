@@ -39,14 +39,11 @@ namespace Xylia.Preview.Common.Cast
 		/// <returns></returns>
 		public static IRecord CastObject(this string ObjInfo)
 		{
-			//初始化
-			var InfoText = ObjInfo?.ToString();
-			if (string.IsNullOrWhiteSpace(InfoText)) return default;
+			if (string.IsNullOrWhiteSpace(ObjInfo)) return default;
 
-
-			if (InfoText.Contains(':'))
+			if (ObjInfo.Contains(':'))
 			{
-				var Temp = InfoText.Split(':');
+				var Temp = ObjInfo.Split(':');
 				return CastObject(Temp[1], Temp[0]);
 			}
 
@@ -62,10 +59,10 @@ namespace Xylia.Preview.Common.Cast
 		/// <returns></returns>
 		public static IRecord CastObject(this string DataKey, string DataTableName)
 		{
-			//初始化
 			if (string.IsNullOrWhiteSpace(DataKey)) return default;
 
 			//特别的处理方法
+			if (DataTableName.MyEquals("Skill")) return FileCache.Data.Skill3[DataKey];
 			if (DataTableName.MyEquals("Tooltip")) return FileCache.Data.TextData.GetRecord(DataKey);
 			if (DataTableName.MyEquals("Item")) return DataKey.GetItemInfo();
 

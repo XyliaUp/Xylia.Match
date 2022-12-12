@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 
 using Xylia.Drawing;
@@ -15,6 +15,8 @@ namespace Xylia.Preview.Project.Core.Store
 	public partial class StoreListPreview : Panel
 	{
 		#region 构造
+		public EventHandler ItemCellDoubleClick;
+
 		public StoreListPreview()
 		{
 			InitializeComponent();
@@ -23,11 +25,6 @@ namespace Xylia.Preview.Project.Core.Store
 			this.ContextMenuStrip = null;
 		}
 		#endregion
-
-		#region 委托
-		public EventHandler ItemCellDoubleClick;
-		#endregion
-
 
 		#region 字段
 		/// <summary>
@@ -38,14 +35,16 @@ namespace Xylia.Preview.Project.Core.Store
 		/// <summary>
 		/// 最大单页控件数量
 		/// </summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public int MaxCellNum { get; set; }
 
 		/// <summary>
 		/// 最大页面数量
 		/// </summary>
+		[EditorBrowsable(EditorBrowsableState.Never)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public int MaxPageNum { get; set; } = 0;
-
-
 
 
 		private IEnumerable<ListCell> m_Cells;
@@ -65,7 +64,6 @@ namespace Xylia.Preview.Project.Core.Store
 				//this.ScrollBar.Reset();
 				this.Controls.Clear();
 				if (value is null) return;
-
 
 				//如果不为空才设置菜单栏
 				this.ContextMenuStrip = MainMenu;
@@ -88,6 +86,8 @@ namespace Xylia.Preview.Project.Core.Store
 		}
 		#endregion
 
+
+
 		#region 方法
 		/// <summary>
 		/// 另存为图片
@@ -96,21 +96,7 @@ namespace Xylia.Preview.Project.Core.Store
 		/// <param name="e"></param>
 		private void SaveAsImage_Click(object sender, EventArgs e)
 		{
-			new Thread((ThreadStart)delegate
-			{
-				try
-				{
-					//设置默认保存名称
-					this.DrawMeToBitmap().SaveDialog(StoreAlias ?? "兑换列表");
-				}
-				catch (Exception ee)
-				{
-					Tip.Message(ee.ToString());
-				}
-
-			}).Start();
-
-			GC.Collect();
+			this.DrawMeToBitmap().SaveDialog(StoreAlias ?? "兑换列表");
 		}
 		#endregion
 	}

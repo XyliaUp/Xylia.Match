@@ -18,9 +18,9 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		#endregion
 
 		#region 方法
-		private void SubIngredientPreview_DataLoaded() => this.SubIngredientPreview.Location = new Point((this.Width - this.SubIngredientPreview.Width) / 2, this.SubIngredientPreview.Location.Y);
+		private void SubIngredientPreview_DataLoaded(object sender, EventArgs e) => this.SubIngredientPreview.Location = new Point((this.Width - this.SubIngredientPreview.Width) / 2, this.SubIngredientPreview.Location.Y);
 
-		private void FixedIngredientPreview_DataLoaded() => this.FixedIngredientPreview.Location = new Point((this.Width - this.FixedIngredientPreview.Width) / 2, this.FixedIngredientPreview.Location.Y);
+		private void FixedIngredientPreview_DataLoaded(object sender, EventArgs e) => this.FixedIngredientPreview.Location = new Point((this.Width - this.FixedIngredientPreview.Width) / 2, this.FixedIngredientPreview.Location.Y);
 
 
 		public void SetData(IEnumerable<ItemTransformRecipe> Recipes)

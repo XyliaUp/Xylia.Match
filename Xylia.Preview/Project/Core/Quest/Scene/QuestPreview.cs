@@ -28,9 +28,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.Controls.Add(this.rewardInfo);
 		}
 
-		public QuestPreview(QuestData QuestData) : this() => this.Data = QuestData;
+		public QuestPreview(QuestData QuestData) : this() => this.LoadData(QuestData);
 		#endregion
-
 
 		#region 字段
 		public readonly WaveOut SoundOut = new() { Latency = 100 };
@@ -39,50 +38,11 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 		/// 测试模式
 		/// </summary>
 		public static bool TestMode = false;
-
-
-		private QuestData _data = null;
-
-		public QuestData Data
-		{
-			set
-			{
-				_data = value;
-				if (value is null) return;
-
-
-				this.QuestName.Text = value.Name2.GetText();
-				this.QuestName.ForeColor = value.ForeColor;
-				this.Quest_ICON.Image = value.Icon;
-
-				this.Quest_Group.Text = value.Group2.GetText();
-
-				//处理内容部分
-				if (value.Desc is null) this.ContentInfo.Visible = false;
-				else this.ContentInfo.Text = value.Desc.GetText();
-
-
-				this.taskInfo.LoadData(value, SoundOut);
-				this.rewardInfo.LoadData(value);
-
-				if (value.Category == Category.Dungeon)
-				{
-					this.Quest_ICON.SetToolTip("此类型为副本进度任务");
-
-					List<string> DifficultyType = new();
-					if (value.ProgressDifficultyType1) DifficultyType.Add("入门");
-					if (value.ProgressDifficultyType2) DifficultyType.Add("普通");
-					if (value.ProgressDifficultyType3) DifficultyType.Add("熟练");
-
-					this.QuestName.Text += $" [{DifficultyType.Aggregate((sum, now) => sum + "/" + now)}]";
-				}
-			}
-		}
 		#endregion
 
+		#region 界面方法
+		private void SwitchTestMode_Click(object sender, EventArgs e) => TestMode = this.SwitchTestMode.Checked;
 
-
-		#region 方法
 		private void QuestPreview_Load(object sender, EventArgs e)
 		{
 			this.SwitchTestMode.Checked = TestMode;
@@ -94,8 +54,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			if (this.SoundOut.PlaybackState != PlaybackState.Stopped)
 				this.SoundOut.Stop();
 		}
-
-
 
 		public override void Refresh()
 		{
@@ -120,9 +78,44 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			base.Refresh();
 			this.Height = LocY + 45;
 		}
+		#endregion
 
 
-		private void SwitchTestMode_Click(object sender, EventArgs e) => TestMode = this.SwitchTestMode.Checked;
+		#region 方法
+		QuestData _data;
+
+		public void LoadData(QuestData value)
+		{
+			_data = value;
+			if (value is null) return;
+
+
+			this.QuestName.Text = value.Name2.GetText();
+			this.QuestName.ForeColor = value.ForeColor;
+			this.Quest_ICON.Image = value.Icon;
+
+			this.Quest_Group.Text = value.Group2.GetText();
+
+			//处理内容部分
+			if (value.Desc is null) this.ContentInfo.Visible = false;
+			else this.ContentInfo.Text = value.Desc.GetText();
+
+
+			this.taskInfo.LoadData(value, SoundOut);
+			this.rewardInfo.LoadData(value);
+
+			if (value.Category == Category.Dungeon)
+			{
+				this.Quest_ICON.SetToolTip("此类型为副本进度任务");
+
+				List<string> DifficultyType = new();
+				if (value.ProgressDifficultyType1) DifficultyType.Add("入门");
+				if (value.ProgressDifficultyType2) DifficultyType.Add("普通");
+				if (value.ProgressDifficultyType3) DifficultyType.Add("熟练");
+
+				this.QuestName.Text += $" [{DifficultyType.Aggregate((sum, now) => sum + "/" + now)}]";
+			}
+		}
 
 		private void OpenFileData_Click(object sender, EventArgs e)
 		{
@@ -138,7 +131,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 
 				//FrmTips.ShowTipsSuccess("修改成功");
 			};
-
 
 			Editor.Content = _data.OwnerDocument.Text();
 			Editor.Show();

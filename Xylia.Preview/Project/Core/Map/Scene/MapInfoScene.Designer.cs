@@ -33,6 +33,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.OpenParentMap = new System.Windows.Forms.ToolStripMenuItem();
+			this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.MenuStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -53,14 +54,21 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenParentMap});
 			this.MenuStrip.Name = "MenuStrip";
-			this.MenuStrip.Size = new System.Drawing.Size(181, 48);
+			this.MenuStrip.Size = new System.Drawing.Size(149, 26);
 			// 
 			// OpenParentMap
 			// 
 			this.OpenParentMap.Name = "OpenParentMap";
-			this.OpenParentMap.Size = new System.Drawing.Size(180, 22);
+			this.OpenParentMap.Size = new System.Drawing.Size(148, 22);
 			this.OpenParentMap.Text = "返回上级地图";
 			this.OpenParentMap.Visible = false;
+			// 
+			// ToolTip
+			// 
+			this.ToolTip.AutoPopDelay = 5000;
+			this.ToolTip.InitialDelay = 500;
+			this.ToolTip.IsBalloon = true;
+			this.ToolTip.ReshowDelay = 0;
 			// 
 			// MapInfoScene
 			// 
@@ -89,5 +97,6 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.ContextMenuStrip MenuStrip;
 		private System.Windows.Forms.ToolStripMenuItem OpenParentMap;
+		private System.Windows.Forms.ToolTip ToolTip;
 	}
 }

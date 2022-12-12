@@ -41,10 +41,7 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 			this.storeListPreview1.Cells = null;
 			this.storeListPreview1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.storeListPreview1.Location = new System.Drawing.Point(0, 0);
-			this.storeListPreview1.MaxCellNum = 0;
-			this.storeListPreview1.MaxPageNum = 0;
 			this.storeListPreview1.Name = "storeListPreview1";
-			//this.storeListPreview1.ShowItemID = false;
 			this.storeListPreview1.Size = new System.Drawing.Size(439, 274);
 			this.storeListPreview1.TabIndex = 0;
 			// 
@@ -53,13 +50,9 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 			this.storeItemCell1.AutoSize = true;
 			this.storeItemCell1.BackColor = System.Drawing.Color.Transparent;
 			this.storeItemCell1.ForeColor = System.Drawing.Color.Black;
-
-			//this.storeItemCell1.ItemIconPath = null;
-
 			this.storeItemCell1.Location = new System.Drawing.Point(0, 0);
 			this.storeItemCell1.Name = "storeItemCell1";
 			this.storeItemCell1.RightText = "";
-
 			this.storeItemCell1.ShowRightText = true;
 			this.storeItemCell1.Size = new System.Drawing.Size(382, 55);
 			this.storeItemCell1.StoreBundleCount = 2;

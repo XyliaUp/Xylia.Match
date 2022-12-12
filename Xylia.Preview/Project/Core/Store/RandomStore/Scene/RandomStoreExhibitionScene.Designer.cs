@@ -102,8 +102,6 @@ namespace Xylia.Preview.Project.RunForm
 			this.RandomStoreItemDisplayList_1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.RandomStoreItemDisplayList_1.Location = new System.Drawing.Point(4, 4);
 			this.RandomStoreItemDisplayList_1.Margin = new System.Windows.Forms.Padding(4);
-			this.RandomStoreItemDisplayList_1.MaxCellNum = 0;
-			this.RandomStoreItemDisplayList_1.MaxPageNum = 0;
 			this.RandomStoreItemDisplayList_1.Name = "RandomStoreItemDisplayList_1";
 			this.RandomStoreItemDisplayList_1.Size = new System.Drawing.Size(533, 546);
 			this.RandomStoreItemDisplayList_1.TabIndex = 3;
@@ -129,8 +127,6 @@ namespace Xylia.Preview.Project.RunForm
 			this.RandomStoreItemDisplayList_2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.RandomStoreItemDisplayList_2.Location = new System.Drawing.Point(4, 4);
 			this.RandomStoreItemDisplayList_2.Margin = new System.Windows.Forms.Padding(4);
-			this.RandomStoreItemDisplayList_2.MaxCellNum = 0;
-			this.RandomStoreItemDisplayList_2.MaxPageNum = 0;
 			this.RandomStoreItemDisplayList_2.Name = "RandomStoreItemDisplayList_2";
 			this.RandomStoreItemDisplayList_2.Size = new System.Drawing.Size(533, 546);
 			this.RandomStoreItemDisplayList_2.TabIndex = 4;

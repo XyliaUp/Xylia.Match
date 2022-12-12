@@ -95,8 +95,6 @@
 			this.ListPreview.Dock = System.Windows.Forms.DockStyle.Right;
 			this.ListPreview.Location = new System.Drawing.Point(409, 0);
 			this.ListPreview.Margin = new System.Windows.Forms.Padding(4);
-			this.ListPreview.MaxCellNum = 0;
-			this.ListPreview.MaxPageNum = 0;
 			this.ListPreview.Name = "ListPreview";
 			//this.ListPreview.ShowItemID = false;
 			this.ListPreview.Size = new System.Drawing.Size(489, 803);

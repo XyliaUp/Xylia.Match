@@ -29,9 +29,6 @@ namespace Xylia.Preview.Properties
 		/// </summary>
 		public static string GameFolder => Ini.ReadValue("Folder", "Game_Bns");
 
-		public static string ResFolder => OutputFolder + @"\data\res";
-
-
 
 
 		public static bool DataLoadMode => Ini.ReadValue("Preview", "LoadMode").ToBool();

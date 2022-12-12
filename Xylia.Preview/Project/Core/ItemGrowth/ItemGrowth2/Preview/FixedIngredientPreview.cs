@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 using Xylia.Extension;
@@ -13,9 +14,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 	public partial class FixedIngredientPreview : Panel
 	{
 		#region 事件与委托
-		public delegate void DataLoadedHandle();
 
-		public event DataLoadedHandle DataLoaded;
+		public event EventHandler DataLoaded;
 		#endregion
 
 
@@ -42,7 +42,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.Width = LocX;
 			this.Height = 50;
 
-			this.DataLoaded?.Invoke();
+			this.DataLoaded?.Invoke(this, null);
 		}
 
 

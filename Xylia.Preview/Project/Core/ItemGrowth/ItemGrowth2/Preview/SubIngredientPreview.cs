@@ -13,7 +13,6 @@ using Xylia.Preview.Data.Record;
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
-
 namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 {
 	public partial class SubIngredientPreview : Panel
@@ -25,9 +24,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 		public event RecipeChangedHandle RecipeChanged;
 
 
-		public delegate void DataLoadedHandle();
-
-		public event DataLoadedHandle DataLoaded;
+		public event EventHandler DataLoaded;
 		#endregion
 
 
@@ -47,7 +44,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 
 			ItemIcon.Click += new EventHandler((s, e) =>
 			{
-				this.Controls.OfType<FeedItemIconCell>().ForEach(c =>
+				var Cells = this.Controls.OfType<FeedItemIconCell>();
+				if (Cells.Count() == 1) return;
+
+				Cells.ForEach(c =>
 				{
 					c.ShowFrameImage = false;
 					c.Refresh();
@@ -68,7 +68,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.Width = LocX;
 			this.Height = 90;
 
-			this.DataLoaded?.Invoke();
+			this.DataLoaded?.Invoke(this,null);
 
 			//触发第一个选项 
 			this.Controls.OfType<FeedItemIconCell>().FirstOrDefault()?.CallEvent("OnClick");
@@ -108,8 +108,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 				#endregion
 
 				//绑定事件
-				this.CreateNew(SubIngredient1, Image, SubIngredientStackCount1, ref LocX).Click += new EventHandler((s, e) =>
-					this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(Recipe)));
+				this.CreateNew(SubIngredient1, Image, SubIngredientStackCount1, ref LocX).Click += new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(Recipe)));
 			}
 			#endregion
 
@@ -133,8 +132,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 
 				//绑定事件
 				byte CurIdx = idx;
-				this.CreateNew(CostMainItem, CostMainItem?.Icon, CostMainItemCount, ref LocX).Click += new EventHandler((s, e) =>
-					this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImprove, CurIdx)));
+				this.CreateNew(CostMainItem, CostMainItem?.Icon, CostMainItemCount, ref LocX).Click += new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImprove, CurIdx)));
 			}
 			#endregion
 
@@ -148,7 +146,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 
 			int LocX = 0;
 			var MainIngredient = ItemSpirit.Attributes["main-ingredient"].GetItemInfo();
-			this.CreateNew(MainIngredient, MainIngredient?.Icon, 1, ref LocX).Click += new EventHandler((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemSpirit)));
+			this.CreateNew(MainIngredient, MainIngredient?.Icon, 1, ref LocX).Click += new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemSpirit)));
 
 			this.HandleSize(LocX);
 		}

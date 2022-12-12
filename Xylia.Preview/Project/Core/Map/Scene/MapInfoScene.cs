@@ -15,6 +15,7 @@ using Xylia.Preview.Data.Record;
 
 using static Xylia.Preview.Data.Record.MapUnit;
 
+
 namespace Xylia.Preview.Project.Core.Map.Scene
 {
 	public partial class MapInfoScene : Form
@@ -84,7 +85,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			foreach (var mapunit in MapUnits)
 			{
 				if (mapunit.Type == TypeSeq.Quest) continue;
-				if (mapunit.Type == TypeSeq.Npc) continue;	  //该类型按接取的任务进行显示
+				if (mapunit.Type == TypeSeq.Npc) continue;    //该类型按接取的任务进行显示
 
 
 				var res = mapunit.Imageset.GetImageset();
@@ -111,7 +112,6 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 					for (int idx = MapTree.Count; idx > 1; idx--)
 					{
 						var Map = MapTree[idx - 1];
-
 						if (Map.UsePosInParent) Pos = new Point((int)Map.PosInParentX, (int)Map.PosInParentY);
 					}
 				}
@@ -132,7 +132,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 				}
 				else if (mapunit.Type == TypeSeq.Npc || mapunit.Type == TypeSeq.Boss) Tooltip = mapunit.Attributes["npc"].CastObject(nameof(FileCache.Data.Npc)).GetName();
 
-				temp.SetToolTip(Tooltip);
+				ToolTip.SetToolTip(temp, Tooltip);
 				#endregion
 
 				temp.Click += new EventHandler((sender, e) =>

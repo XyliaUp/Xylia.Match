@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
@@ -14,11 +15,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		public void SetData(IEnumerable<ItemSpirit> ItemSpirits)
 		{
 			if (ItemSpirits is null) throw new Exception("没有数据");
-			this.ResultWeaponPreview.SetData(ItemSpirits);
-
-
-			foreach (var ItemSpirit in ItemSpirits)
-				System.Diagnostics.Trace.WriteLine(ItemSpirit.Attributes);
+			this.ResultWeaponPreview.SetData(ItemSpirits.Reverse());
 		}
 
 		protected override void ResultWeaponPreview_ResultItemChanged(ResultItemChangedEventArgs e)
@@ -27,7 +24,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		}
 
 		protected override void SubIngredientPreview_RecipeChanged(RecipeChangedEventArgs e)
-		{
+		{						
+			System.Diagnostics.Trace.WriteLine(e.ItemSpirit.Attributes);
+
+
 			//更新固定祭品信息
 			this.FixedIngredientPreview.LoadData(e.ItemSpirit);
 

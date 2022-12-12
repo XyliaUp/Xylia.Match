@@ -72,8 +72,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.ItemList.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ItemList.Location = new System.Drawing.Point(0, 0);
 			this.ItemList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-			this.ItemList.MaxCellNum = 0;
-			this.ItemList.MaxPageNum = 0;
 			this.ItemList.Name = "ItemList";
 			this.ItemList.Size = new System.Drawing.Size(486, 751);
 			this.ItemList.TabIndex = 0;

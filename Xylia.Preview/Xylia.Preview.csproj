@@ -512,5 +512,14 @@
   <ItemGroup>
     <Folder Include="Resources\GameUI\GameUI_ImageSet\" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="Properties\oo2core_3_win64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Properties\oo2core_9_win64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

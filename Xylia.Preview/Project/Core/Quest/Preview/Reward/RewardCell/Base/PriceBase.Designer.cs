@@ -56,7 +56,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 
 			this.Controls.Add(this.priceCell1);
 			this.Name = "PriceBase";
-			this.Size = new System.Drawing.Size(325, 19);
+			this.Size = new System.Drawing.Size(325, 23);
 			this.Title = "钱币";
 			this.UseBasicPanel = false;
 			this.Controls.SetChildIndex(this.panelContent1, 0);
