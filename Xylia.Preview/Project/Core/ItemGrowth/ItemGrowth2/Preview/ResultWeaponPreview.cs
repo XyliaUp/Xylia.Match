@@ -62,8 +62,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.Controls.Remove<FeedItemIconCell>();
 			this.Controls.Remove<ItemNameCell>();
 
-			this.Btn_Prev.SetToolTip("+" + Index);
-			this.Btn_Next.SetToolTip("+" + RemainCount);
+			ToolTip.SetToolTip(this.Btn_Prev, "+" + Index);
+			ToolTip.SetToolTip(this.Btn_Next, "+" + RemainCount);
 
 
 			int LocX = 35;

@@ -40,33 +40,17 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		/// 控件高度
 		/// </summary>
 		public int MyHeight = 0;
-
-
-		/// <summary>
-		/// 物品购买字段
-		/// </summary>
-		private ItemBuyPrice m_ItemBuyPrice = null;
-
-		/// <summary>
-		/// 设置物品购买价格
-		/// </summary>
-		public ItemBuyPrice ItemBuyPrice
-		{
-			get => this.m_ItemBuyPrice;
-			set
-			{
-				this.m_ItemBuyPrice = value;
-
-				//如果购买信息不为空则通知刷新
-				if (value != null) this.CreateMyControl(value);
-			}
-		}
 		#endregion
 
 
 		#region 方法
+		public void LoadData(ItemBuyPrice ItemBuyPrice)
+		{
+			this.CreateMyControl(ItemBuyPrice);
+		}
 
-		#region 创建兑换预览
+
+
 		/// <summary>
 		/// 创建兑换价格元素
 		/// </summary>
@@ -102,8 +86,8 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			if (ItemBrand is null) return null;
 
 			//搜索对象
-			var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.BrandID == ItemBrand.ID && info.ItemConditionType == this.ItemBuyPrice.RequiredItembrandConditionType);
-			if (ItemBrandTooltip is null) Trace.WriteLine($"[CreteItemBrandCell] { ItemBrand.ID } => { this.ItemBuyPrice.RequiredItembrandConditionType } 不存在");
+			var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.BrandID == ItemBrand.ID && info.ItemConditionType == ItemBuyPrice.RequiredItembrandConditionType);
+			if (ItemBrandTooltip is null) Trace.WriteLine($"[CreteItemBrandCell] { ItemBrand.ID } => { ItemBuyPrice.RequiredItembrandConditionType } 不存在");
 
 			int ExtraScale = 10;
 			var FrameIconCell = new ItemIconCell()
@@ -160,8 +144,6 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			LoX += ItemIconCell.Scale + 4;
 			return ItemIconCell;
 		}
-		#endregion
-
 
 		/// <summary>
 		/// 重绘控件

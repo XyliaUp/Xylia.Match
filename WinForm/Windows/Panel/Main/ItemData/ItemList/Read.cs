@@ -73,15 +73,15 @@ namespace Xylia.Match.Util.ItemList
 		public List<int> GetOld(bool Show = true)
 		{
 			var vs = new List<int>();
-			if (!GetReadInfo.OnlyNew || string.IsNullOrWhiteSpace(GetReadInfo.Path.Chv)) return vs;
+			if (!GetReadInfo.OnlyNew || string.IsNullOrWhiteSpace(GetReadInfo.ChvPath)) return vs;
 
 
 			try
 			{
 				//本地文件
-				if (File.Exists(GetReadInfo.Path.Chv))
+				if (File.Exists(GetReadInfo.ChvPath))
 				{
-					var rd = File.OpenText(GetReadInfo.Path.Chv);
+					var rd = File.OpenText(GetReadInfo.ChvPath);
 
 					string line;
 					while ((line = rd.ReadLine()) != null)

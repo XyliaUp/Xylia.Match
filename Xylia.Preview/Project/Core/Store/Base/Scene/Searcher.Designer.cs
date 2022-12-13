@@ -36,10 +36,10 @@
 			// textBox1
 			// 
 			this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.textBox1.Location = new System.Drawing.Point(31, 102);
-			this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textBox1.Location = new System.Drawing.Point(17, 46);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(4);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(400, 26);
+			this.textBox1.Size = new System.Drawing.Size(400, 25);
 			this.textBox1.TabIndex = 0;
 			// 
 			// Btn_StartMatch
@@ -57,7 +57,7 @@
 			this.Btn_StartMatch.IsRadius = true;
 			this.Btn_StartMatch.IsShowRect = true;
 			this.Btn_StartMatch.IsShowTips = false;
-			this.Btn_StartMatch.Location = new System.Drawing.Point(341, 148);
+			this.Btn_StartMatch.Location = new System.Drawing.Point(327, 87);
 			this.Btn_StartMatch.Margin = new System.Windows.Forms.Padding(0);
 			this.Btn_StartMatch.Name = "Btn_StartMatch";
 			this.Btn_StartMatch.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -73,7 +73,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label1.Location = new System.Drawing.Point(27, 69);
+			this.label1.Location = new System.Drawing.Point(13, 13);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(107, 20);
@@ -84,12 +84,14 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(472, 215);
+			this.BackColor = System.Drawing.Color.White;
+			this.ClientSize = new System.Drawing.Size(444, 156);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.Btn_StartMatch);
 			this.Controls.Add(this.textBox1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.KeyPreview = true;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "Searcher";
 			this.Padding = new System.Windows.Forms.Padding(23, 85, 23, 28);
 			this.Text = "筛选";

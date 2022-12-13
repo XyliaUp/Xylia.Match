@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="CombatData" type="constellation-star" version="2.0" rule="cpl" >
+		<record alias="alias" type="Index" name="" />
+		<record alias="name" type="TextAlias" name="" />
+		<record alias="describe" type="TextAlias" name="" />
+		<record alias="group" type="Byte" name="" />
+		<record alias="unk-" type="Int32" start-show="32" name="" />
+		<record alias="unk-" type="Byte" start-show="36" name="" />
+		<record alias="star" type="Byte" name="" />
+		<record alias="unk-" type="Int32" start-show="40" name="" />
+		<record alias="unk-" type="Int32" start-show="44" name="" />
+		<record alias="unk-" type="Int32" start-show="48" name="" />
+		<record alias="unk-" type="Int32" start-show="52" name="" />
+		<record alias="open-ingredient-money" type="Int32" name="" />
+		<record alias="open-ingredient-item" ref="Item" name="" repeat="6" />
+		<record alias="open-ingredient-count" type="Short" name="" repeat="6" />
+		<record alias="reset-ingredient-money" type="Int32" name="" />
+		<record alias="reset-ingredient-item" ref="Item" name="" repeat="6" />
+		<record alias="reset-ingredient-count" type="Short" name="" repeat="6" />
+		<record alias="option-assured-count" type="Byte" name="" />
+		<record alias="option" ref="constellation-star-option" repeat="63" name="" />
+	</list>
+</table>

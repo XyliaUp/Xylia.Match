@@ -6,7 +6,7 @@
 		<record alias="ingredient-count" type="Short" name ="" repeat="5" />
 
 		<record alias="secondary-cash-enable" type="Bool" name ="" show-zero="y" />
-		<record alias="ingredient-money" type="Money" name ="" min="0" max="2000000000" />
+		<record alias="ingredient-money" type="Int32" name ="" min="0" max="2000000000" />
 		<record alias="secondary-cash" name="" ref="Item" />
 	</list>
 </table>

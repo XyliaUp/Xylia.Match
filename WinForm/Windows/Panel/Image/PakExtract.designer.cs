@@ -74,13 +74,13 @@
 			this.Selector.IsRadius = true;
 			this.Selector.IsShowRect = true;
 			this.Selector.ItemWidth = 30;
-			this.Selector.Location = new System.Drawing.Point(306, 97);
+			this.Selector.Location = new System.Drawing.Point(196, 97);
 			this.Selector.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.Selector.Name = "Selector";
 			this.Selector.RectColor = System.Drawing.Color.RosyBrown;
 			this.Selector.RectWidth = 1;
 			this.Selector.SelectedIndex = -1;
-			this.Selector.Size = new System.Drawing.Size(179, 38);
+			this.Selector.Size = new System.Drawing.Size(289, 38);
 			this.Selector.Source.Add("GameUI_Icon");
 			this.Selector.Source.Add("GameUI_Icon2nd");
 			this.Selector.Source.Add("GameUI_Icon3rd");
@@ -91,6 +91,7 @@
 			this.Selector.Source.Add("GameUI_Icon8th");
 			this.Selector.Source.Add("GameUI_Icon9th");
 			this.Selector.Source.Add("GameUI_TitleImage");
+			this.Selector.Source.Add("BNSR/Content/Art/UI/V2/Resource");
 			this.Selector.TabIndex = 110;
 			this.Selector.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
 			this.Selector.TextValue = "GameUI_Icon";
@@ -102,9 +103,9 @@
 			this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
 			this.metroLabel1.Location = new System.Drawing.Point(12, 12);
 			this.metroLabel1.Name = "metroLabel1";
-			this.metroLabel1.Size = new System.Drawing.Size(107, 19);
+			this.metroLabel1.Size = new System.Drawing.Size(265, 19);
 			this.metroLabel1.TabIndex = 112;
-			this.metroLabel1.Text = "请选择输出目录";
+			this.metroLabel1.Text = "请选择输出目录 此功能只能输出特定格式";
 			// 
 			// Path_OutDir
 			// 

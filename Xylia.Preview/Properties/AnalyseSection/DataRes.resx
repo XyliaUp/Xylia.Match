@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AccountLevelData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\accountleveldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="AccountPostCharge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\accountpostcharge.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
@@ -127,17 +130,71 @@
   <data name="AchievementRegisterData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\achievementregisterdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="AcquireRouteData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\acquireroutedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AcquireRouteListData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\acquireroutelistdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ArenaMatchingRuleData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\arenamatchingruledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ArenaPortalData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\arenaportaldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AttendanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\attendancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="AttractionGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\attractiongroup.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="AttractionRewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\attractionrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="AttractionRewardSummaryData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\attractionrewardsummarydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="AttractionShortcutData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\attractionshortcutdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
+  <data name="AutoCombatSkillCastConditionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\autocombatskillcastconditiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="AutoCombatSkillData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\autocombatskilldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="AutoTargetParameterData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\autotargetparameterdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BadgeAppearanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\badgeappearancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
   <data name="BadgeSetItemData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\badgesetitemdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="BadgeSynthesisCostData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\badgesynthesiscostdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BadgeSynthesisRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\badgesynthesisrecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BattleFieldGradeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\battlefieldgradedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BattleMessageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\battlemessagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="BattleRoyalFieldData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\battleroyalfielddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\battleroyalfielddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardGachaData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\boardgachadata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoardGachaReward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\boardgachareward.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="BoastData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\boastdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="BoastEventData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\boasteventdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -155,10 +212,10 @@
     <value>data\campfiredata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="Cave2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\cave2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\cave2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="CaveData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\cavedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\cavedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ChallengeListData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\challengelistdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -166,8 +223,14 @@
   <data name="ChallengeListRewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\challengelistrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="ChatChannelOptionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\chatchanneloptiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CinematicData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\cinematicdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="ClassicFieldZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\classicfieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\classicfieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ClosetCollectingGradeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\closetcollectinggradedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -180,6 +243,15 @@
   </data>
   <data name="ConditionEventData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\conditioneventdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ConstellationData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\constellationdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ConstellationStarData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\constellationstardata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ConstellationStarOptionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\constellationstaroptiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="ContentQuotaData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\contentquotadata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -198,6 +270,57 @@
   </data>
   <data name="ContentsResetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\contentsresetdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ContributionRewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\contributionrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CostGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\costgroup.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="Craft2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craft2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CraftCaseRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craftcaserecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CraftData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craftdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CraftGroupRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craftgrouprecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CraftIntroductionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craftintroductiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CraftRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craftrecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CraftRecipeStepData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\craftrecipestepdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CreatureAppearanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\creatureappearancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="CustomDressDesignCostData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customdressdesigncostdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CustomDressDesignTypeInfoData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customdressdesigntypeinfodata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CustomizingDesignerPresetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customizingdesignerpresetdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CustomizingDetailIconData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customizingdetailicondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CustomizingPresetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customizingpresetdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CustomizingPreviewData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customizingpreviewdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="CustomizingUiMatchParamData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\customizinguimatchparamdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="DifficultyTypeModifyData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\difficultytypemodifydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -233,16 +356,22 @@
     <value>data\duelmemberdisplayskilldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="DungeonData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\dungeondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\dungeondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="EffectData_Simple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\effect\effectdata_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\effectdata_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="EffectData_v25_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\effectdata_v25.0.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="EffectGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\effect\effectgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\effectgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="EmoticonData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\emoticondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="EquipGemPieceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\equipgempiecedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ExpandInventoryData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\expandinventorydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -254,7 +383,7 @@
     <value>data\expandskillpagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="FactionBattleFieldZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\factionbattlefieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\factionbattlefieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="FactionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\factiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -278,7 +407,7 @@
     <value>data\fielditemdropdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="FieldZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\fieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\fieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="FilterData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\filterdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -296,9 +425,6 @@
     <value>data\fishingfieldgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="FishingPasteData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\fishingpastedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
-  <data name="FishingPasteData1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\fishingpastedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="FriendNotiLocationData" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -319,8 +445,56 @@
   <data name="GoodsIconData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\goodsicondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
+  <data name="GradeBenefitsData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\gradebenefitsdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GuildActionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildactiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildBandItemData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildbanditemdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GuildCraftRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildcraftrecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GuildCustomizeUiMatchParamData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildcustomizeuimatchparamdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildDiscountData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilddiscountdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GuildLevelData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildleveldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GuildMemberGradeAuthorityData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildmembergradeauthoritydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="GuildUniformComponentData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilduniformcomponentdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildUniformParamTypeCategoryData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilduniformparamtypecategorydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildUniformPresetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilduniformpresetdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildUniformRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilduniformrecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildUniformRegistrationQuotaData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilduniformregistrationquotadata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="GuildUniformSliderData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guilduniformsliderdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="IconTextureData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\icontexturedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="IndicatorIdleData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\indicatoridledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="IndicatorSocialData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\indicatorsocialdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="InterDungeonListData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\interdungeonlistdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -338,13 +512,22 @@
     <value>data\itemcombatdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemData_v39" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\itemdata\itemdata_v39.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\itemdata_v39.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemEventData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemeventdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemExchangeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemexchangedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ItemGearScoreData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemgearscoredata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ItemGraphData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemgraphdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ItemGraphSeedGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemgraphseedgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="ItemImproveData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemimprovedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -354,6 +537,9 @@
   </data>
   <data name="ItemImproveOptionListData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemimproveoptionlistdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ItemImproveSetBonusData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemimprovesetbonusdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemPouchMesh2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itempouchmesh2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -366,6 +552,15 @@
   </data>
   <data name="ItemRandomAbilitySlotData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemrandomabilityslotdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="ItemRandomEffectGroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemrandomeffectgroup.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ItemRandomOptionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemrandomoptiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ItemRandomOptionGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemrandomoptiongroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemSkillData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemskilldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -386,10 +581,19 @@
     <value>data\itemusablerelationdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="JackpotBossZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\jackpotbosszonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\jackpotbosszonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="JobData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\jobdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="JobQuestData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\jobquestdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="JobStyleData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\jobstyledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="JobStyleStandIdleData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\jobstylestandidledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="JumpingCharacter2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\jumpingcharacter2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -415,6 +619,21 @@
   <data name="KeyCommandData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\keycommanddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
+  <data name="LevelData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\leveldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="LinkMoveAnimData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\linkmoveanimdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="LoadingImageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\loadingimagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="LobbyPcData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\lobbypcdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="MapAreaData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\mapareadata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
   <data name="MapGroup1Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\mapgroup1data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
@@ -425,43 +644,109 @@
     <value>data\mapgroup2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="MapInfoData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\mapinfodata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\mapinfodata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="MapUnitData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\mapunitdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\mapunitdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="MasteryLevelData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\masteryleveldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="MasteryStatPointData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\masterystatpointdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="MasteryStatPointPickData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\masterystatpointpickdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="MentoringData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\mentoringdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="MoveAnimData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\moveanimdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="NewbieCareData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\newbiecaredata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="NpcBrainParamtersData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\npcbrainparamtersdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NpcCombatMoveAnimData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\npccombatmoveanimdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="NpcConvoyData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\npcconvoydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NpcData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\npcdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="NpcData_Simple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\npc\npcdata_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\npcdata_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="NpcIndicatorMoveAnimData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\npcindicatormoveanimdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="NpcMoveAnimData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\npcmoveanimdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="NpcResetStageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\npc\npcresetstagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\npcresetstagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="NpcResponseData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\npc\npcresponsedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\npcresponsedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="NpcSealedDungeonReward" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\npc\npcsealeddungeonreward.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\npcsealeddungeonreward.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="NpcTalkMessageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\npc\npctalkmessagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\npctalkmessagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="PartyBattleFieldZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\partybattlefieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\partybattlefieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="PartyChatChannelData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\partychatchanneldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\partychatchanneldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="PartyMatchData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\partymatchdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="PcAppearanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcappearancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="PcData_tmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcdata_tmp.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PcRaceSexJobData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcracesexjobdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="PcSkill3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcskill3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PcVoiceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcvoicedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PcVoiceSetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcvoicesetdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\petdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="PetFoodRecoveryData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\petfoodrecoverydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="PhantomSword3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\phantomsword3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PhantomSwordData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\phantomsworddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Public" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>public.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PublicRaidData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\publicraiddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\publicraiddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="PublicRaidEvnetData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\publicraidevnetdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="QuestBonusRewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\questbonusrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -479,7 +764,10 @@
     <value>data\racedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="RaidDungeonData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\raiddungeondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\raiddungeondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="RandomboxPreviewData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\randomboxpreviewdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="RandomStoreData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\randomstoredata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -496,80 +784,104 @@
   <data name="RandomStoreItemGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\randomstoreitemgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="RankingRewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\rankingrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="RankingRewardGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\rankingrewardgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="RewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\reward\rewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\rewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SealedDungeonGimmickData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\sealeddungeongimmickdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SealedDungeonLevelData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\sealeddungeonleveldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SealedDungeonModifyData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\sealeddungeonmodifydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SetItemData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\setitemdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SimpleFieldData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\simplefielddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\simplefielddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Skill3Data_202211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skill3data_202211.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Skill3Data_Simple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skill3data_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skill3data_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
-  <data name="SkillBuildUpData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\2022\skillbuildupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="SkillByEquipmentData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillbyequipmentdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="SkillCastCondition3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\2022\skillcastcondition3.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="SkillCombo2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillcombo2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillDashAttribute3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilldashattribute3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
-  <data name="SkillGatherRange3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\2022\skillgatherrange3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skilldashattribute3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillInheritanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillinheritancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skillinheritancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillMessageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillmessagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skillmessagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillModifyInfoData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillmodifyinfodata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skillmodifyinfodata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SkillModifyInfoGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillmodifyinfogroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skillmodifyinfogroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SkillResultControll3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillresultcontroll3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SkillShow3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillshow3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillSkinData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillskindata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skillskindata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillSystematizationData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillsystematizationdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skillsystematizationdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillSystematizationGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skillsystematizationgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skillsystematizationgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SkillTargetFilter3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skilltargetfilter3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillTooltipAttributeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltooltipattributedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skilltooltipattributedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SkillTooltipData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltooltipdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skilltooltipdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SkillTrainCategoryData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltraincategorydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skilltraincategorydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SkillTrainComboActionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skilltraincomboactiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillTrainingRoomData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltrainingroomdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skilltrainingroomdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillTrainingRoomGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltrainingroomgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skilltrainingroomgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillTrainingRoomSubjectData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltrainingroomsubjectdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skilltrainingroomsubjectdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillTrainSimpleContextFlowData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltrainsimplecontextflowdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\skilltrainsimplecontextflowdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillTraitData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3\skilltraitdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\skilltraitdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SlateScrollData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\slatescrolldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\slatescrolldata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SlateScrollStoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\slatescrollstonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
@@ -622,28 +934,28 @@
   <data name="SurveyData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\surveydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="TalkSocialData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\talksocialdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
   <data name="TeleportData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\teleportdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\teleportdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="TendencyFieldData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\tendencyfielddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\tendencyfielddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="TerrainData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\terraindata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\terraindata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="TextData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\textdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="TimeLimitFieldZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\timelimitfieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\timelimitfieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="TreasureBoardPageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\treasureboardpagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="TreasureBoardRewardData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\treasureboardrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
-  <data name="TreasureBoardRewardData1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\treasureboardrewarddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="TreasureBoardSeasonData" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -683,63 +995,63 @@
     <value>data\worldaccountmuseumdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneAreaData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneareadata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneareadata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneBasecampData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonebasecampdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\zonebasecampdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="ZoneCampfireData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonecampfiredata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\zonecampfiredata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="ZoneCellAttributeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonecellattributedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+    <value>data\zonecellattributedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="ZoneConvoyData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneconvoydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneconvoydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneEnv2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneenv2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneenv2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneEnv2PlaceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneenv2placedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneenv2placedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneEnv2SpawnData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneenv2spawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneenv2spawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneEnv2SpawnRandomGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneenv2spawnrandomgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneenv2spawnrandomgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneNpcSpawnData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonenpcspawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonenpcspawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneNpcSquadData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonenpcsquaddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonenpcsquaddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZonePathWayData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonepathwaydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonepathwaydata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZonePcSpawnData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonepcspawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonepcspawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneRespawnData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonerespawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonerespawndata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneRuleData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneruledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneruledata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneTeleportPositionData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneteleportpositiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneteleportpositiondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneTeleportSwitchData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zoneteleportswitchdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zoneteleportswitchdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneTriggerEventCondData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonetriggereventconddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonetriggereventconddata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ZoneTriggerEventStageData" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\zonedata0\zonetriggereventstagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>data\zonetriggereventstagedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -427,7 +427,7 @@ namespace Xylia.Match.Windows.Panel
 			Step1.StepIndex = 1;
 			var thread = new Thread((ThreadStart)delegate
 			{
-				Read.GetReadInfo.Path.Chv = this.Chv_Path.Text;
+				Read.GetReadInfo.ChvPath = this.Chv_Path.Text;
 				Read.GetReadInfo.OnlyNew = this.Chk_OnlyNew.Checked;
 
 				DateTime dt = time = DateTime.Now;

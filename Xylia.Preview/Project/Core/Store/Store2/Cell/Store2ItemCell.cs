@@ -25,7 +25,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 			this.BuyPriceCell.Dock = System.Windows.Forms.DockStyle.Right;
 			this.BuyPriceCell.ParentHeight = this.Height;
-			
+
 			this.LoadData(ItemBuyPrice);
 		}
 		#endregion
@@ -33,14 +33,23 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 		#region 方法
 		public void LoadData(ItemBuyPrice ItemBuyPrice)
 		{
-			base.Refresh();
-			this.SuspendLayout();
+			//如果购买价格无效，则将图标显示为异常图标
+			if (ItemBuyPrice is null)
+			{
+				//this.ItemShow.IconCell.Image != null
+				this.ItemShow.IconCell.FrameImage = Resource_Common.ItemError;
+				this.ItemShow.IconCell.FrameType = false;
 
-			this.BuyPriceCell.ItemBuyPrice = ItemBuyPrice;
+				return;
+			}
+
 
 
 			#region 初始化控件信息
+			this.BuyPriceCell.LoadData(ItemBuyPrice);
+
 			//这段代码原先是为了控制物品名称不与购买价格重叠
+			this.ItemShow.IconCell.FrameImage = null;
 			this.ItemShow.MaximumSize = new Size(this.BuyPriceCell.Left - this.ItemShow.Left, 999999);
 			this.ItemShow.BringToFront();
 
@@ -49,97 +58,78 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			#endregion
 
 			#region 处理限购策略信息
-			var ContentQuota = FileCache.Data.ContentQuota.GetInfo(ItemBuyPrice.CheckContentQuota);
-			if (ContentQuota is null) this.quotaTxt.Visible = false;
-			else
+			string TipInfo = null;
+
+			var ContentQuota = FileCache.Data.ContentQuota[ItemBuyPrice.CheckContentQuota];
+			if (ContentQuota != null)
 			{
-				string ContentQuotaInfo = ContentQuota.Info;
-				if (!string.IsNullOrWhiteSpace(ContentQuotaInfo))
-				{
-					this.quotaTxt.Visible = true;
-					this.quotaTxt.Text = ContentQuotaInfo;
-					this.quotaTxt.BringToFront();
-				}
+				this.quotaTxt.Visible = true;
+				this.quotaTxt.Text = ContentQuota.Info;
+				this.quotaTxt.BringToFront();
+
+				TipInfo += ContentQuota.ResetInfo + "初始化购买限制" + "\n";
 			}
 			#endregion
 
 			#region 处理购买价格信息
-			string TipInfo = null;
-
-			if (ItemBuyPrice != null)
+			if (ItemBuyPrice.RequiredAchievementScore != 0)
 			{
-				this.ItemShow.IconCell.FrameImage = null;
-
-				if (ItemBuyPrice.RequiredAchievementScore != 0)
-				{
-					TipInfo += "需要成就点数：" + ItemBuyPrice.RequiredAchievementScore + "\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_Achievement;
-				}
-
-				if (ItemBuyPrice.RequiredAchievementId != 0)
-				{
-					string AchievementName = FileCache.Data.Achievement.Find(o => o.ID == ItemBuyPrice.RequiredAchievementId && o.Step == ItemBuyPrice.RequiredAchievementStepMin).NameText();
-
-					TipInfo += "需要完成成就：" + AchievementName + "\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_Achievement;
-				}
-
-				if (ItemBuyPrice.FactionLevel != 0)
-				{
-					var MainFaction1 = ((MainFaction1)ItemBuyPrice.FactionLevel).ToString().Replace("_", null);
-					var MainFaction2 = ((MainFaction2)ItemBuyPrice.FactionLevel).ToString().Replace("_", null);
-
-
-					TipInfo += $"需要势力阶级\n武林盟：{ MainFaction1 }以上\n浑天教：{ MainFaction2 }以上\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
-				}
-
-				//可以合并显示
-				if (ItemBuyPrice.CheckSoloDuelGrade != 0)
-				{
-					TipInfo += "需要个人战：" + ItemBuyPrice.CheckSoloDuelGrade + "以上\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
-				}
-
-				if (ItemBuyPrice.CheckTeamDuelGrade != 0)
-				{
-					TipInfo += "需要车轮战：" + ItemBuyPrice.CheckTeamDuelGrade + "以上\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
-				}
-
-				if (ItemBuyPrice.CheckBattleFieldGradeOccupationWar != 0)
-				{
-					TipInfo += "需要升龙谷：" + ItemBuyPrice.CheckBattleFieldGradeOccupationWar + "以上\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
-				}
-
-				if (ItemBuyPrice.CheckBattleFieldGradeCaptureTheFlag != 0)
-				{
-					TipInfo += "需要白鲸湖：" + ItemBuyPrice.CheckBattleFieldGradeCaptureTheFlag + "以上\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
-				}
-
-				if (ItemBuyPrice.CheckBattleFieldGradeLeadTheBall != 0)
-				{
-					TipInfo += "需要银河遗迹：" + ItemBuyPrice.CheckBattleFieldGradeLeadTheBall + "以上\n";
-					this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
-				}
+				TipInfo += "需要成就点数：" + ItemBuyPrice.RequiredAchievementScore + "\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_Achievement;
 			}
 
-			//如果购买价格无效，则将图标显示为异常图标
-			else if (this.ItemShow.IconCell.Image != null)
+			if (ItemBuyPrice.RequiredAchievementId != 0)
 			{
-				this.ItemShow.IconCell.FrameImage = Resource_Common.ItemError;
-				this.ItemShow.IconCell.FrameType = false;
+				string AchievementName = FileCache.Data.Achievement.Find(o => o.ID == ItemBuyPrice.RequiredAchievementId && o.Step == ItemBuyPrice.RequiredAchievementStepMin).NameText();
+
+				TipInfo += "需要完成成就：" + AchievementName + "\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_Achievement;
+			}
+
+			if (ItemBuyPrice.FactionLevel != 0)
+			{
+				var MainFaction1 = ((MainFaction1)ItemBuyPrice.FactionLevel).ToString().Replace("_", null);
+				var MainFaction2 = ((MainFaction2)ItemBuyPrice.FactionLevel).ToString().Replace("_", null);
+
+
+				TipInfo += $"需要势力阶级\n武林盟：{ MainFaction1 }以上\n浑天教：{ MainFaction2 }以上\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
+			}
+
+			//可以合并显示
+			if (ItemBuyPrice.CheckSoloDuelGrade != 0)
+			{
+				TipInfo += "需要个人战：" + ItemBuyPrice.CheckSoloDuelGrade + "以上\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
+			}
+
+			if (ItemBuyPrice.CheckTeamDuelGrade != 0)
+			{
+				TipInfo += "需要车轮战：" + ItemBuyPrice.CheckTeamDuelGrade + "以上\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
+			}
+
+			if (ItemBuyPrice.CheckBattleFieldGradeOccupationWar != 0)
+			{
+				TipInfo += "需要升龙谷：" + ItemBuyPrice.CheckBattleFieldGradeOccupationWar + "以上\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
+			}
+
+			if (ItemBuyPrice.CheckBattleFieldGradeCaptureTheFlag != 0)
+			{
+				TipInfo += "需要白鲸湖：" + ItemBuyPrice.CheckBattleFieldGradeCaptureTheFlag + "以上\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
+			}
+
+			if (ItemBuyPrice.CheckBattleFieldGradeLeadTheBall != 0)
+			{
+				TipInfo += "需要银河遗迹：" + ItemBuyPrice.CheckBattleFieldGradeLeadTheBall + "以上\n";
+				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
 			}
 			#endregion
 
-			#region 设置提示内容
-			if (!(ContentQuota?.ResetInfo).IsNull()) TipInfo += ContentQuota?.ResetInfo + "初始化购买限制" + "\n";
-			if (!TipInfo.IsNull()) this.SetToolTip(TipInfo.RemoveSuffixString("\n"));
-			#endregion
-
-			this.ResumeLayout();
+			//设置提示内容
+			if (TipInfo != null) this.SetToolTip(TipInfo.RemoveSuffixString("\n"));
 		}
 		#endregion
 	}

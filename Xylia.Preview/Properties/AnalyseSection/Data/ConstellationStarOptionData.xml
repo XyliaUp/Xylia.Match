@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="CombatData" type="constellation-star-option" version="1.0" rule="" >
+		<record alias="type" name="" type="type" > 
+			<case alias="ability" name="" />
+			<case alias="effect" name="" />
+		</record>
+		<record alias="alias" type="Index" name="" />
+		<!-- ===================================================== -->
+		<record alias="ability" type="Seq" seq="$attach-ability" name="" filter="ability" />
+		<record alias="ability-min" type="Int32" name="" filter="ability" />
+		<record alias="ability-max" type="Int32" name="" filter="ability" />
+		<!-- ===================================================== -->
+		<record alias="Effect" ref="Effect" name="" filter="effect" />
+		<!-- ===================================================== -->
+	</list>
+</table>

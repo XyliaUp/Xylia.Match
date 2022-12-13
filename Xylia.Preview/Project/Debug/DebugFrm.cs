@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 
-using Xylia.Preview.Data.Record;
-
 using Xylia.Preview.Project.Core.Skill;
 
 
@@ -21,7 +19,8 @@ namespace Xylia.Preview
 
 			System.Diagnostics.Debug.WriteLine(SkillPreview.GetDamageInfo(16000));
 
-			//System.Diagnostics.Debug.WriteLine(FileCache.Data.TextData["Usercommand.party-invite1"].Index);
+
+			System.Diagnostics.Debug.WriteLine(FileCache.Data.Effect["Constellation01_Effect_Equip_01"].Attributes);
 
 		}
 

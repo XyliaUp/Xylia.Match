@@ -6,13 +6,13 @@ using System.Windows.Forms;
 
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Store.Store2.Util;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
-
+using NpcData = Xylia.Preview.Data.Record.Npc;
 
 namespace Xylia.Preview.Project.Core.Store.Store2
 {
@@ -220,7 +220,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 		public override bool FilterNode(NodeInfo NodeInfo, object FilterRule)
 		{
 			//如果搜索条件是物品信息，那么再搜索可购买物品
-			if (FilterRule is ItemData FilterItem && this.Filter.Contains(FilterTag.Item))
+			if (FilterRule is ItemData FilterItem)
 			{
 				var Store2 = FileCache.Data.Store2.GetInfo(NodeInfo.AliasText);
 				if (Store2 is null) return false;
@@ -232,6 +232,16 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 					var ItemInfo = a.Value.GetItemInfo();
 					if (ItemInfo != null && ItemInfo.Alias == FilterItem.Alias) return true;
+				}
+			}
+			else if (FilterRule is NpcData NpcData)
+			{
+				for (byte idx = 1; idx <= 6; idx++)
+				{
+					var Store2 = NpcData.Attributes["store2-" + idx];
+					if (Store2 is null) return false;
+
+					if (NodeInfo.AliasText.MyEquals(Store2)) return true;
 				}
 			}
 

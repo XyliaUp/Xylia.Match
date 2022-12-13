@@ -22,7 +22,7 @@ namespace Xylia.Match.Util.ItemList
 		public ItemMatch(Action<string> action)
 		{
 			Application.DoEvents();
-			GetOutput = action;
+			this.GetOutput = action;
 		}
 		#endregion
 

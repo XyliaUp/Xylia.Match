@@ -5,6 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 
 using CUE4Parse.UE4.Assets.Exports.Texture;
+
 using Xylia.Preview.Data.Package.Pak;
 
 namespace Xylia.Match.Windows.Panel
@@ -24,6 +25,9 @@ namespace Xylia.Match.Windows.Panel
 		#region 方法
 		private void Btn_Output_BtnClick(object sender, EventArgs e)
 		{
+			var Selector = this.Selector.TextValue;
+			bool KeepTree = Selector.Contains('/');
+
 			new Thread(t =>
 			{
 				this.Btn_Output.Visible = false;
@@ -34,12 +38,15 @@ namespace Xylia.Match.Windows.Panel
 				var _gamefiles = PakData._provider.GameFiles;
 				if (_gamefiles != null)
 				{
-					foreach (var gamefile in _gamefiles.Where(o => o.Extension == "uasset" && o.Path.Contains($"GameUI/Resource/{this.Selector.TextValue}/")))
+					var tempPath = KeepTree ? Selector : $"GameUI/Resource/{Selector}/";
+
+					foreach (var gamefile in _gamefiles.Where(o => o.Extension == "uasset" && o.Path.Contains(tempPath)))
 					{
-						string dir = this.Path_OutDir.Text + "\\" + Path.GetFileName(Path.GetDirectoryName(gamefile.Path)) + "\\";
+						string dir = KeepTree ? Path.GetDirectoryName(gamefile.Path) : Path.GetFileName(Path.GetDirectoryName(gamefile.Path));
+						dir = this.Path_OutDir.Text + "\\" + dir + "\\";
+
 						string path = dir + Path.GetFileNameWithoutExtension(gamefile.Path);
 						if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-
 
 						var exports = PakData._provider.LoadObjectExports(gamefile.Path);
 						if (exports is null || !exports.Any()) continue;

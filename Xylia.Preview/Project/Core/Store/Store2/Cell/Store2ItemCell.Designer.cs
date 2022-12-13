@@ -58,7 +58,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			this.quotaTxt.Size = new System.Drawing.Size(103, 20);
 			this.quotaTxt.TabIndex = 5;
 			this.quotaTxt.Text = "[限购政策信息]";
-			this.quotaTxt.Visible = true;
+			this.quotaTxt.Visible = false;
 			// 
 			// Store2ItemCell
 			// 

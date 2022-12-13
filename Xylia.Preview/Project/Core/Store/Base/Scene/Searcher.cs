@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-using MetroFramework.Controls;
-using MetroFramework.Forms;
-
 namespace Xylia.Preview.Project.Core.Store
 {
-	public partial class Searcher : MetroForm
+	public partial class Searcher : Form
 	{
+		#region 构造
+		/// <summary>
+		/// 筛选信息
+		/// </summary>
+		public List<FilterInfo> FilterInfo;
+
 		public Searcher(List<FilterInfo> FilterInfo = null)
 		{
 			InitializeComponent();
 
 			this.FilterInfo = FilterInfo;
 		}
-
-		#region 字段
-		/// <summary>
-		/// 筛选信息
-		/// </summary>
-		public List<FilterInfo> FilterInfo;
 		#endregion
+
+
 
 		#region 方法
 		private void Searcher_Load(object sender, EventArgs e)
@@ -34,7 +33,7 @@ namespace Xylia.Preview.Project.Core.Store
 			{
 				foreach (var Filter in this.FilterInfo)
 				{
-					var c = new MetroCheckBox
+					var c = new CheckBox
 					{
 						Text = Filter.Text,
 						Checked = Filter.Checked,

@@ -5,13 +5,8 @@
 	/// </summary>
 	public class ReadPara
 	{
-		public PathEntity Path = new PathEntity();
+		public string ChvPath;
 
 		public bool OnlyNew;
-	}
-
-	public struct PathEntity
-	{
-		public string Chv;
 	}
 }

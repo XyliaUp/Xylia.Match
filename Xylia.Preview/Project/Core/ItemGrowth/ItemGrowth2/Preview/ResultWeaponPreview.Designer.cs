@@ -29,9 +29,11 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultWeaponPreview));
 			this.Btn_Next = new System.Windows.Forms.PictureBox();
 			this.Btn_Prev = new System.Windows.Forms.PictureBox();
+			this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.Btn_Next)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.Btn_Prev)).BeginInit();
 			this.SuspendLayout();
@@ -60,6 +62,13 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.Btn_Prev.TabStop = false;
 			this.Btn_Prev.Click += new System.EventHandler(this.Btn_Prev_Click);
 			// 
+			// ToolTip
+			// 
+			this.ToolTip.AutoPopDelay = 5000;
+			this.ToolTip.InitialDelay = 500;
+			this.ToolTip.IsBalloon = true;
+			this.ToolTip.ReshowDelay = 0;
+			// 
 			// ResultWeaponPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -80,5 +89,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 		#endregion
 		private System.Windows.Forms.PictureBox Btn_Next;
 		private System.Windows.Forms.PictureBox Btn_Prev;
+		private System.Windows.Forms.ToolTip ToolTip;
 	}
 }

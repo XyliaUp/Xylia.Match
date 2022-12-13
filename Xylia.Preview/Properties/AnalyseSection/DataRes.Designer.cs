@@ -63,6 +63,24 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;account-level&quot; version=&quot;0.20&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;level&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;exp&quot; name=&quot;&quot; type=&quot;Long&quot; showzero=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;ability&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$attach-ability&quot; repeat=&quot;8&quot; /&gt;
+        ///		&lt;record alias=&quot;ability-value&quot; name=&quot;&quot; type=&quot;Int32&quot; repeat=&quot;8&quot; /&gt;
+        ///		&lt;record alias=&quot;badge-slot-quota-category1-premium&quot; name=&quot;&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AccountLevelData {
+            get {
+                return ResourceManager.GetString("AccountLevelData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;account-post-charge&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;charge-money&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
@@ -120,6 +138,114 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;acquire-route&quot; version=&quot;0.10&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;category&quot; name=&quot;&quot; type=&quot;Byte&quot; &gt;
+        ///			&lt;case alias=&quot;None&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;NormalQuest&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;FactionQuest&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;EpicQuest&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;JobQuest&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;NormalDailyQuest&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;NormalWeeklyQuest&quot; name=&quot;&quot; /&gt;
+        ///		 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AcquireRouteData {
+            get {
+                return ResourceManager.GetString("AcquireRouteData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;acquire-route-list&quot; version=&quot;0.10&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;acquire-route&quot; name=&quot;&quot; ref=&quot;AcquireRoute&quot; repeat=&quot;10&quot; /&gt;
+        ///		&lt;record alias=&quot;acquire-route-full&quot; name=&quot;&quot; ref=&quot;AcquireRoute&quot; repeat=&quot;100&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string AcquireRouteListData {
+            get {
+                return ResourceManager.GetString("AcquireRouteListData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;ArenaMatchingRule&quot; version=&quot;0.1&quot; side=&quot;server&quot; &gt;
+        ///		&lt;record alias=&quot;game-mode&quot; name=&quot;&quot; type=&quot;Seq&quot; /&gt;
+        ///		&lt;record alias=&quot;level&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///		&lt;record alias=&quot;rating-revise&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string ArenaMatchingRuleData {
+            get {
+                return ResourceManager.GetString("ArenaMatchingRuleData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;ArenaPortal&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; &gt;
+        ///			&lt;case alias=&quot;duel&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;dungeon&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;public-raid&quot; name=&quot;&quot; /&gt;	
+        ///	    &lt;/record&gt;
+        ///
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;faction&quot; name=&quot;&quot; ref=&quot;Faction&quot; /&gt;
+        ///		&lt;record alias=&quot;required-quest-check&quot; name=&quot;&quot; type=&quot;seq&quot; &gt;
+        ///			&lt;case alias=&quot;and&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ArenaPortalData {
+            get {
+                return ResourceManager.GetString("ArenaPortalData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;Attendance&quot; version=&quot;0.12&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; &gt;
+        ///		     &lt;case alias=&quot;board-game&quot; /&gt;
+        ///		     &lt;case alias=&quot;continual-board-game&quot; /&gt;		 
+        ///        &lt;/record&gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;background-texture&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;background-sub-texture&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record ali [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AttendanceData {
+            get {
+                return ResourceManager.GetString("AttendanceData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ZoneData0&quot; type=&quot;attraction-group&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string AttractionGroup {
+            get {
+                return ResourceManager.GetString("AttractionGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;attraction-reward&quot; version=&quot;0.35&quot; index=&quot;y&quot;&gt;
         ///		&lt;record alias=&quot;reward-contents-type&quot; type=&quot;id&quot; extra=&quot;short1&quot; &gt;
@@ -136,6 +262,28 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string AttractionRewardData {
             get {
                 return ResourceManager.GetString("AttractionRewardData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;attractionrewardsummary&quot; version=&quot;1.9&quot; rule=&quot;cpl | extra&quot; check-version=&quot;y&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;category&quot; type=&quot;Dictionary&quot; name=&quot;&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;costume&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;weapon&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;equip-gem&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;accessory&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;etc&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AttractionRewardSummaryData {
+            get {
+                return ResourceManager.GetString("AttractionRewardSummaryData", resourceCulture);
             }
         }
         
@@ -163,6 +311,83 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;auto-combat-skill-cast-condition&quot; version=&quot;0.7&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;		
+        ///		&lt;record alias=&quot;check-hp-percent-target-type&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;caster&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;summoned&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;check-hp-percent&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///		&lt;record [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AutoCombatSkillCastConditionData {
+            get {
+                return ResourceManager.GetString("AutoCombatSkillCastConditionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;auto-combat-skill&quot; version=&quot;0.1&quot; rule=&quot;cpl | unsort&quot; &gt;
+        ///		&lt;record alias=&quot;parent-skill-id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record start=&quot;0&quot; alias=&quot;variation-id&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;priority&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;cast-condition&quot; name=&quot;&quot; ref=&quot;AutoCombatSkillCastCondition&quot; repeat=&quot;2&quot; /&gt;	
+        ///		&lt;record alias=&quot;cast-condition-op&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///		 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AutoCombatSkillData {
+            get {
+                return ResourceManager.GetString("AutoCombatSkillData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;20&quot; alias=&quot;AutoTargetParameter&quot; module=&quot;CombatData&quot; type=&quot;autotargetparameter&quot; version=&quot;0.10&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;stance-type&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; seq=&quot;$stance&quot; /&gt;
+        ///		&lt;record alias=&quot;sensitivity-level&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; &gt;
+        ///			&lt;case alias=&quot;low&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;medium&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;high&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///
+        ///		&lt;record alias=&quot;target-angle&quot; name=&quot;&quot; type=&quot;Float32&quot; repeat=&quot;4&quot; default=&quot;1 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string AutoTargetParameterData {
+            get {
+                return ResourceManager.GetString("AutoTargetParameterData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;badge-appearance&quot; version=&quot;0.3&quot; rule=&quot;cpl | extra&quot; check-version=&quot;y&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;apperance-type&quot; name=&quot;&quot; type=&quot;Byte&quot; &gt;
+        ///			&lt;case alias=&quot;Default&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;Item&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;item-alias&quot; name=&quot;&quot; ref=&quot;Item&quot; /&gt;
+        ///		&lt;record alias=&quot;set-score&quot; name=&quot;&quot; type=&quot;Int32&quot; repeat=&quot;10&quot; /&gt;
+        ///		&lt;record alias=&quot;apperance-begin-show&quot; nam [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string BadgeAppearanceData {
+            get {
+                return ResourceManager.GetString("BadgeAppearanceData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;badge-set-item&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;score&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
         ///
@@ -174,6 +399,82 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string BadgeSetItemData {
             get {
                 return ResourceManager.GetString("BadgeSetItemData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;badge-synthesis-cost&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;score&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
+        ///		
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item&quot; name=&quot;&quot; ref=&quot;item&quot; repeat=&quot;8&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item-count&quot; name=&quot;&quot; type=&quot;Short&quot; repeat=&quot;8&quot; /&gt;
+        ///		&lt;record alias=&quot;money-cost&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string BadgeSynthesisCostData {
+            get {
+                return ResourceManager.GetString("BadgeSynthesisCostData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;BadgeSynthesisRecipe&quot; version=&quot;0.5&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;category&quot; name=&quot;&quot; type=&quot;id&quot; seq=&quot;$condition-type&quot; /&gt;
+        ///		&lt;record alias=&quot;score&quot; name=&quot;&quot; start=&quot;0&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///	    &lt;!-- ================================================== --&gt;
+        ///		&lt;record alias=&quot;result-item&quot; name=&quot;&quot; type=&quot;&quot; ref=&quot;Item&quot; repeat=&quot;40&quot; client=&quot;n&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string BadgeSynthesisRecipeData {
+            get {
+                return ResourceManager.GetString("BadgeSynthesisRecipeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;battle-field-grade&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;season-type&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$season-type&quot; &gt;
+        ///			&lt;case alias=&quot;invalid&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;duel-death-match-1vs1&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;duel-death-match-3vs3&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;duel-tag-match-3vs3&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;party-battle-occupation-war&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;solo-dungeon-1-best-record&quot; name=&quot;&quot; /&gt;        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string BattleFieldGradeData {
+            get {
+                return ResourceManager.GetString("BattleFieldGradeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;battlemessage&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;object-type&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; &gt;
+        ///			&lt;case alias=&quot;player-attack&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;player-attacked&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;other&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;none-caster&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;skill-result-type&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; &gt;
+        ///			&lt;case alias=&quot;hit&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;cri&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string BattleMessageData {
+            get {
+                return ResourceManager.GetString("BattleMessageData", resourceCulture);
             }
         }
         
@@ -193,6 +494,63 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string BattleRoyalFieldData {
             get {
                 return ResourceManager.GetString("BattleRoyalFieldData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;board-gacha&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;square-matrix-n&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;round-duration&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///		&lt;record alias=&quot;select-position-enable&quot; name=&quot;&quot; type=&quot;Bool&quot; showzero=&quot;y&quot; /&gt;			
+        ///		&lt;record alias=&quot;participation-count-per-character&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;		
+        ///		&lt;record alias=&quot;result-top-rank-count&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;top-rank-history-count&quot; na [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string BoardGachaData {
+            get {
+                return ResourceManager.GetString("BoardGachaData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;board-gacha-reward&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;reward-type&quot; name=&quot;&quot; type=&quot;Byte&quot; &gt;
+        ///		     &lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///		     &lt;case alias=&quot;rank&quot; name=&quot;&quot; /&gt; 
+        ///		     &lt;case alias=&quot;line&quot; name=&quot;&quot; /&gt;	
+        ///		     &lt;case alias=&quot;lucky&quot; name=&quot;&quot; /&gt;	
+        ///		     &lt;case alias=&quot;participation&quot; name=&quot;&quot; /&gt;				 
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;rank-min&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///		&lt;record alias=&quot;rank-max&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string BoardGachaReward {
+            get {
+                return ResourceManager.GetString("BoardGachaReward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///  &lt;list module=&quot;ItemData&quot; rule=&quot;cpl | extra&quot; version=&quot;2.3&quot; type=&quot;boast&quot; side=&quot;client&quot; &gt; 
+        ///	    &lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; &gt;
+        ///	        &lt;case alias=&quot;npc-kill&quot; /&gt;
+        ///	        &lt;case alias=&quot;duel&quot; /&gt;
+        ///	    &lt;/record&gt;
+        ///
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;name2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt;record alias=&quot;result-show-delay-time&quot; name=&quot;&quot; type=&quot;Float32&quot; /&gt;
+        ///		&lt;!-- ========================================================= --&gt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string BoastData {
+            get {
+                return ResourceManager.GetString("BoastData", resourceCulture);
             }
         }
         
@@ -352,18 +710,56 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;!-- 每日挑战阶段奖励 --&gt;  
-        ///	&lt;list module=&quot;ItemData&quot; version=&quot;1.01&quot; type=&quot;ChallengeListReward&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///	&lt;list module=&quot;ItemData&quot; version=&quot;0.1&quot; type=&quot;ChallengeListReward&quot; rule=&quot;cpl | extra&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;reward-item&quot; name=&quot;奖励&quot; ref=&quot;Item&quot; repeat=&quot;6&quot; /&gt;
         ///		&lt;record alias=&quot;reward-item-count&quot; name=&quot;奖励数量&quot; out-cond=&quot;Exist: reward-item-*&quot; type=&quot;Short&quot; repeat=&quot;6&quot; /&gt;
         ///		&lt;record alias=&quot;reward-money&quot; name=&quot;基础金币&quot; type=&quot;Money&quot; /&gt;
         ///		&lt;record alias=&quot;reward-account-exp&quot; name=&quot;侠义团经验&quot; type=&quot;Int32&quot; /&gt;
-        ///	&lt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
         /// </summary>
         public static string ChallengeListRewardData {
             get {
                 return ResourceManager.GetString("ChallengeListRewardData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;51&quot; module=&quot;LocalizationData&quot; type=&quot;chat-channel-option&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; type=&quot;ID&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;category&quot; type=&quot;Seq&quot; name=&quot;&quot; &gt;
+        ///		    &lt;case alias=&quot;none&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;chat-sight&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;chat-party&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;chat-team&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;chat-team-leader&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;chat-one&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;chat-in-domain&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ChatChannelOptionData {
+            get {
+                return ResourceManager.GetString("ChatChannelOptionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;QuestData&quot; type=&quot;cinematic&quot; version=&quot;0.14&quot; rule=&quot;cpl | extra&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;cinema-name&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;cinema-resource-name&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;teen-cinema-name&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;teen-cinema-resource-name&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;costume&quot; name=&quot;&quot; ref=&quot;Item&quot; /&gt;
+        ///		&lt;record alias=&quot;skippable&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CinematicData {
+            get {
+                return ResourceManager.GetString("CinematicData", resourceCulture);
             }
         }
         
@@ -461,6 +857,62 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string ConditionEventData {
             get {
                 return ResourceManager.GetString("ConditionEventData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;constellation&quot; version=&quot;2.2&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; type=&quot;TextAlias&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;describe&quot; type=&quot;TextAlias&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;star-count&quot; type=&quot;Byte&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;widget&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string ConstellationData {
+            get {
+                return ResourceManager.GetString("ConstellationData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;constellation-star&quot; version=&quot;2.0&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; type=&quot;TextAlias&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;describe&quot; type=&quot;TextAlias&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;group&quot; type=&quot;Byte&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;unk-&quot; type=&quot;Int32&quot; start-show=&quot;32&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;unk-&quot; type=&quot;Byte&quot; start-show=&quot;36&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;star&quot; type=&quot;Byte&quot; name=&quot;&quot; /&gt;
+        ///		&lt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ConstellationStarData {
+            get {
+                return ResourceManager.GetString("ConstellationStarData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;constellation-star-option&quot; version=&quot;1.0&quot; rule=&quot;&quot; &gt;
+        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; &gt; 
+        ///			&lt;case alias=&quot;ability&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;effect&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;!-- ===================================================== --&gt;
+        ///		&lt;record alias=&quot;ability&quot; type=&quot;Seq&quot; seq=&quot;$attach-ability&quot; name=&quot;&quot; filter=&quot;ability&quot; /&gt;
+        ///		&lt;record alias=&quot;ability-min&quot; type=&quot;Int32&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ConstellationStarOptionData {
+            get {
+                return ResourceManager.GetString("ConstellationStarOptionData", resourceCulture);
             }
         }
         
@@ -575,6 +1027,332 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string ContentsResetData {
             get {
                 return ResourceManager.GetString("ContentsResetData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;ContributionReward&quot; version=&quot;0.12&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;contribution-type&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///		     &lt;case alias=&quot;normal&quot; default=&quot;y&quot; /&gt;
+        ///		     &lt;case alias=&quot;faction&quot; /&gt;
+        ///		     &lt;case alias=&quot;guild&quot; /&gt;
+        ///		     &lt;case alias=&quot;probability&quot; /&gt;			 
+        ///        &lt;/record&gt;
+        ///		&lt;record alias=&quot;minimum-group-item&quot; name=&quot;&quot; ref=&quot;Item&quot; input=&quot;n&quot; /&gt;
+        ///        &lt;!-- ================= [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ContributionRewardData {
+            get {
+                return ResourceManager.GetString("ContributionRewardData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;cost-group&quot; version=&quot;0.14&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot;/&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;item&quot; ref=&quot;Item&quot; name=&quot;&quot; repeat=&quot;8&quot; /&gt;
+        ///		&lt;record alias=&quot;item-amount&quot; type=&quot;Short&quot; name=&quot;&quot; repeat=&quot;8&quot; /&gt;
+        ///		&lt;record alias=&quot;money&quot; type=&quot;Long&quot; name=&quot;&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string CostGroup {
+            get {
+                return ResourceManager.GetString("CostGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft2&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///	    &lt;record alias=&quot;category&quot; type=&quot;id&quot; seq=&quot;$production-type&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt;record alias=&quot;icon&quot; name=&quot;&quot; type=&quot;Icon&quot; /&gt;
+        ///		&lt;record alias=&quot;none-selected-icon&quot; name=&quot;&quot; type=&quot;Icon&quot; /&gt;
+        ///		&lt;record alias=&quot;join-msg&quot; name=&quot;&quot; ref=&quot;GameMessage&quot; /&gt;
+        ///		&lt;record alias=&quot;level-up-msg&quot; name=&quot;&quot; ref=&quot;GameMessage&quot; /&gt;
+        ///		&lt;record alias=&quot;max-level-msg&quot; name= [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string Craft2Data {
+            get {
+                return ResourceManager.GetString("Craft2Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft-case-recipe&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;	
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;group-alias&quot; name=&quot;&quot; ref=&quot;CraftGroupRecipe&quot; /&gt;		
+        ///		&lt;record alias=&quot;case-option&quot; name=&quot;&quot; type=&quot;Byte&quot; server=&quot;n&quot; /&gt;		
+        ///		&lt;record alias=&quot;craft-duration&quot; name=&quot;&quot; type=&quot;Msec&quot; /&gt;			
+        ///		&lt;record alias=&quot;use-state&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;invalid-state&quot; name=&quot;&quot; /&gt;
+        ///			&lt;c [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CraftCaseRecipeData {
+            get {
+                return ResourceManager.GetString("CraftCaseRecipeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///	    &lt;record alias=&quot;category&quot; type=&quot;id&quot; seq=&quot;$production-type&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt;record alias=&quot;icon&quot; name=&quot;&quot; type=&quot;Icon&quot; /&gt;
+        ///		&lt;record alias=&quot;none-selected-icon&quot; name=&quot;&quot; type=&quot;Icon&quot; /&gt;
+        ///		&lt;record alias=&quot;join-msg&quot; name=&quot;&quot; ref=&quot;GameMessage&quot; /&gt;
+        ///		&lt;record alias=&quot;level-up-msg&quot; name=&quot;&quot; ref=&quot;GameMessage&quot; /&gt;
+        ///		&lt;record alias=&quot;max-level-msg&quot; name=&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CraftData {
+            get {
+                return ResourceManager.GetString("CraftData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft-group-recipe&quot; version=&quot;0.4&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;group-item&quot; name=&quot;&quot; ref=&quot;Item&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;craft-union-type&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;production-type-1&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;production-type-2&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;production-type-3&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;production-type-4&quot; name [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CraftGroupRecipeData {
+            get {
+                return ResourceManager.GetString("CraftGroupRecipeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft-introduction&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///	    &lt;record alias=&quot;category&quot; type=&quot;id&quot; seq=&quot;$production-type&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;title-icon&quot; name=&quot;&quot; type=&quot;Icon&quot; /&gt;
+        ///		&lt;record alias=&quot;normal-icon&quot; name=&quot;&quot; type=&quot;Icon&quot; /&gt;
+        ///		&lt;record alias=&quot;slogan&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt;record alias=&quot;introduction-description&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt;record alias=&quot;associated-craft&quot; name=&quot;&quot; type=&quot;seq&quot; seq=&quot;$production [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CraftIntroductionData {
+            get {
+                return ResourceManager.GetString("CraftIntroductionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft-recipe&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;desc&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;requirement-name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;location-desc&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;category [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CraftRecipeData {
+            get {
+                return ResourceManager.GetString("CraftRecipeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;craft-recipe-step&quot; version=&quot;0.1&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;time-cost&quot; name=&quot;&quot; type=&quot;Msec&quot; /&gt;
+        ///		&lt;record alias=&quot;output-id&quot; name=&quot;&quot; type=&quot;Long&quot; repeat=&quot;3&quot; /&gt;
+        ///		&lt;record alias=&quot;output-amount&quot; name=&quot;&quot; type=&quot;Short&quot; repeat=&quot;3&quot; /&gt;	
+        ///		&lt;record alias=&quot;output-customizable&quot; name=&quot;&quot; type=&quot;Bool&quot; repeat=&quot;3&quot; /&gt;	
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string CraftRecipeStepData {
+            get {
+                return ResourceManager.GetString("CraftRecipeStepData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;AIData&quot; type=&quot;appearance&quot; version=&quot;0.6&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;race&quot; type=&quot;Seq&quot; seq=&quot;$race&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; type=&quot;Seq&quot; seq=&quot;$sex&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;face-anim-set-name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;anim-tree-name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;face-mesh-name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;body-mesh-name&quot; name=&quot;&quot; type=&quot;Index&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CreatureAppearanceData {
+            get {
+                return ResourceManager.GetString("CreatureAppearanceData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;custom-dress-design-cost&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;item-type&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;byte1&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;costume&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;costume-attach&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;head-attach&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;face-attach&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;customize-id&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;byte2&quot; /&gt;
+        ///		&lt;record alias=&quot;resource- [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CustomDressDesignCostData {
+            get {
+                return ResourceManager.GetString("CustomDressDesignCostData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;custom-dress-design-type-info&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;item-type&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;costume&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;costume-attach&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;head-attach&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;face-attach&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;customize-id&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; /&gt;
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///		&lt;record alias=&quot;alias&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CustomDressDesignTypeInfoData {
+            get {
+                return ResourceManager.GetString("CustomDressDesignTypeInfoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;CustomizingDesignerPreset&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; side=&quot;client&quot; &gt;
+        ///		&lt;record alias=&quot;index&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		
+        ///		&lt;record alias=&quot;race&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$race&quot; start=&quot;0&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$sex&quot; /&gt;
+        ///		&lt;record alias=&quot;icon-texture&quot; name=&quot;&quot; ref=&quot;IconTexture&quot; /&gt;
+        ///		&lt;record alias=&quot;icon-index&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///		&lt;record alias=&quot;param8&quot; name=&quot;&quot; type=&quot;Byte&quot; repeat=&quot;92&quot; /&gt;
+        ///		&lt;record ali [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CustomizingDesignerPresetData {
+            get {
+                return ResourceManager.GetString("CustomizingDesignerPresetData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;CustomizingDetailIcon&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;race&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; name=&quot;&quot; seq=&quot;$race&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; name=&quot;&quot; seq=&quot;$sex&quot; /&gt;
+        ///		&lt;record alias=&quot;param-index&quot; type=&quot;ID&quot; extra=&quot;Byte3&quot; name=&quot;&quot; showzero=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;order&quot; type=&quot;ID&quot; extra=&quot;Byte4&quot; name=&quot;&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;param-value&quot; type=&quot;Byte&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;icon&quot; type=&quot;Icon&quot; na [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CustomizingDetailIconData {
+            get {
+                return ResourceManager.GetString("CustomizingDetailIconData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;CustomizingPreset&quot; version=&quot;0.7&quot; rule=&quot;cpl&quot; side=&quot;client&quot; &gt;
+        ///		&lt;record alias=&quot;race&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; seq=&quot;$race&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; seq=&quot;$sex&quot; /&gt;
+        ///		&lt;record alias=&quot;part-type&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte3&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;face&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;body&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;beard&quot; name=&quot;&quot; /&gt;
+        ///        &lt;/record&gt;
+        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CustomizingPresetData {
+            get {
+                return ResourceManager.GetString("CustomizingPresetData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;CustomizingPreview&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;type&quot; type=&quot;type&quot; &gt;
+        ///		     &lt;case alias=&quot;pose&quot; name=&quot;&quot; /&gt;
+        ///		     &lt;case alias=&quot;face-look&quot; name=&quot;&quot; /&gt;
+        ///		     &lt;case alias=&quot;costume&quot; name=&quot;&quot; /&gt;
+        ///		     &lt;case alias=&quot;light&quot; name=&quot;&quot; /&gt;
+        ///		     &lt;case alias=&quot;silhouette&quot; name=&quot;&quot; /&gt;			 
+        ///		&lt;/record&gt;
+        ///		
+        ///		&lt;record alias=&quot;preview-type&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; name=&quot;&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case al [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string CustomizingPreviewData {
+            get {
+                return ResourceManager.GetString("CustomizingPreviewData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;CustomizingUiMatchParam&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; side=&quot;client&quot; &gt;
+        ///		&lt;record alias=&quot;ui-index&quot; type=&quot;ID&quot; extra=&quot;Short1&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;race&quot; type=&quot;ID&quot; extra=&quot;Byte3&quot; name=&quot;&quot; seq=&quot;$race&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; type=&quot;ID&quot; extra=&quot;Byte4&quot; name=&quot;&quot; seq=&quot;$sex&quot; /&gt;
+        ///		
+        ///		&lt;record alias=&quot;sub-name&quot; type=&quot;TextAlias&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;param-index&quot; type=&quot;Byte&quot; name=&quot;&quot; default=&quot;-1&quot; /&gt;	
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string CustomizingUiMatchParamData {
+            get {
+                return ResourceManager.GetString("CustomizingUiMatchParamData", resourceCulture);
             }
         }
         
@@ -822,6 +1600,25 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;effect&quot; version=&quot;25.0&quot; rule=&quot;cpl&quot; check-version=&quot;y&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; seq=&quot;$type-seq&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;name2&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;name3&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;level&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;show-icon&quot; type=&quot;Bool&quot; n [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string EffectData_v25_0 {
+            get {
+                return ResourceManager.GetString("EffectData_v25_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;CombatData&quot; type=&quot;effect-group&quot; version=&quot;0.2&quot; rule=&quot;cpl | extra&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
         ///		&lt;record alias=&quot;effect&quot; ref=&quot;Effect&quot; repeat=&quot;8&quot; input=&quot;n&quot; /&gt;
@@ -856,6 +1653,23 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string EmoticonData {
             get {
                 return ResourceManager.GetString("EmoticonData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;equip-gem-piece&quot; rule=&quot;cpl&quot; version=&quot;0.2&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;item-ability&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$attach-ability&quot; /&gt;
+        ///		&lt;record alias=&quot;value&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;		
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string EquipGemPieceData {
+            get {
+                return ResourceManager.GetString("EquipGemPieceData", resourceCulture);
             }
         }
         
@@ -1201,25 +2015,6 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;ItemData&quot; type=&quot;Fishing-Paste&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; &gt;
-        ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; apply=&quot;auto&quot; /&gt;
-        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
-        ///		&lt;record alias=&quot;item&quot; ref=&quot;Item&quot; /&gt;
-        ///		&lt;record alias=&quot;use-auto-fishing&quot; type=&quot;bool&quot; server=&quot;n&quot; /&gt;
-        ///
-        ///		&lt;record alias=&quot;additional-fish-grade-selection-value&quot; type=&quot;Int32&quot; client=&quot;n&quot; /&gt;
-        ///	&lt;/list&gt;
-        ///&lt;/table&gt; 的本地化字符串。
-        /// </summary>
-        public static string FishingPasteData1 {
-            get {
-                return ResourceManager.GetString("FishingPasteData1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;table&gt;
         ///	&lt;list id=&quot;127&quot; alias=&quot;FriendNotiLocation&quot; module=&quot;ZoneData0&quot; type=&quot;friend-noti-location&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Short1&quot; /&gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
@@ -1332,6 +2127,267 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list id=&quot;132&quot; module=&quot;LocalizationData&quot; type=&quot;GradeBenefits&quot; version=&quot;0.24&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;benefit-type&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; name=&quot;&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;restoration-time&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;nameplate-icon&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;nameplate-icon2&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;use-nameplate-font&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;use-hypermove-special-effect&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;use-hypermove- [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GradeBenefitsData {
+            get {
+                return ResourceManager.GetString("GradeBenefitsData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;guild-action&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; side=&quot;server&quot; &gt;
+        ///         &lt;record alias=&quot;action&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///		 
+        ///		 &lt;/record&gt;
+        ///         &lt;record alias=&quot;exclusive-enable&quot; name=&quot;竞争门派使用&quot; type=&quot;Bool&quot; /&gt;
+        ///         &lt;record alias=&quot;open-enable&quot; name=&quot;开放门派使用&quot; type=&quot;Bool&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string GuildActionData {
+            get {
+                return ResourceManager.GetString("GuildActionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;guild-bank-item&quot; version=&quot;0.2&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;bank-item-type&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;gemstone&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;moonstone&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;tokeniron&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;tokensilver&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;tokengold&quot; name=&quot;&quot; /&gt;
+        ///        &lt;/record&gt;
+        ///		&lt;record alias=&quot;bank-item&quot; name=&quot;&quot; ref=&quot;Item&quot; /&gt;
+        ///		&lt;record alias=&quot;bank-i [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildBandItemData {
+            get {
+                return ResourceManager.GetString("GuildBandItemData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list alias=&quot;GuildCraftRecipe&quot; module=&quot;ItemData&quot; type=&quot;guild-craft-recipe&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;!-- =================================================== --&gt;
+        ///		&lt;record alias=&quot;craft-type&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot;/&gt;
+        ///			&lt;case alias=&quot;small&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;big&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///
+        ///
+        ///		&lt;record alias=&quot;required-guild-level&quot; type=&quot;B [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildCraftRecipeData {
+            get {
+                return ResourceManager.GetString("GuildCraftRecipeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;GuildCustomizeUiMatchParam&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;ui-index&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Short1&quot; /&gt;
+        ///		&lt;record alias=&quot;sub-name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt;record alias=&quot;param-index&quot; name=&quot;&quot; type=&quot;Byte&quot; default=&quot;-1&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string GuildCustomizeUiMatchParamData {
+            get {
+                return ResourceManager.GetString("GuildCustomizeUiMatchParamData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;guild-discount&quot; version=&quot;0.5&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;item-growth&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;item-awakening&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;weapon-tranform&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;accessory-tranform&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;weapon-gem-tranform&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;post-charge-discount-r [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildDiscountData {
+            get {
+                return ResourceManager.GetString("GuildDiscountData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;142&quot; alias=&quot;GuildLevel&quot; module=&quot;ItemData&quot; type=&quot;guildlevel&quot; version=&quot;1.11&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;level&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;guild-type&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;money&quot; type=&quot;Int32&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item&quot; ref=&quot;Item&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item-count&quot; type=&quot;Int32&quot; name=&quot;&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;required-guild-point&quot; type=&quot;Int32&quot; name= [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildLevelData {
+            get {
+                return ResourceManager.GetString("GuildLevelData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;guild-member-grade-authority&quot; version=&quot;0.11&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;authority&quot; name=&quot;&quot; extra=&quot;Byte1&quot; type=&quot;id&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;change-guildmember-grade-by-permission&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;banish-guildmember&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;change-guildmember-grade&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;edit-guild-notification-message&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;invite-guildmember&quot; name=&quot;&quot; / [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildMemberGradeAuthorityData {
+            get {
+                return ResourceManager.GetString("GuildMemberGradeAuthorityData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;144&quot; alias=&quot;GuildUniformComponent&quot; module=&quot;ItemData&quot; type=&quot;GuildUniformComponent&quot; version=&quot;0.8&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;param-type&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record start=&quot;0&quot; alias=&quot;param-value&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;param-type-category&quot; name=&quot;&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;style&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;top&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;bottoms&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;point-color [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildUniformComponentData {
+            get {
+                return ResourceManager.GetString("GuildUniformComponentData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;145&quot; alias=&quot;GuildUniformParamTypeCategory&quot; module=&quot;ItemData&quot; type=&quot;GuildUniformParamTypeCategory&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;param-type-category&quot; name=&quot;&quot; type=&quot;ID&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;style&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;top&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;bottoms&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;point-color&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;face&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;head&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		
+        ///		 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildUniformParamTypeCategoryData {
+            get {
+                return ResourceManager.GetString("GuildUniformParamTypeCategoryData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;146&quot; alias=&quot;GuildUniformPreset&quot; module=&quot;ItemData&quot; type=&quot;GuildUniformPreset&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;index&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;preset-type&quot; name=&quot;&quot; type=&quot;Byte&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;costume&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;face&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;head&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;preset&quot; name=&quot;&quot; ref=&quot;GuildCustomizePreset&quot; /&gt;
+        ///		&lt;record alias=&quot;name [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildUniformPresetData {
+            get {
+                return ResourceManager.GetString("GuildUniformPresetData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;147&quot; alias=&quot;GuildUniformRecipe&quot; module=&quot;ItemData&quot; type=&quot;GuildUniformRecipe&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;recipe-id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item&quot; name=&quot;&quot; ref=&quot;Item&quot; repeat=&quot;2&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item-count&quot; name=&quot;&quot; type=&quot;Int32&quot; repeat=&quot;2&quot; /&gt;
+        ///		&lt;record alias=&quot;required-item-is-bm&quot; name=&quot;&quot; type=&quot;Bool&quot; repeat=&quot;2&quot; /&gt;
+        ///		&lt;record alias=&quot;bank-money&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;bank-required- [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string GuildUniformRecipeData {
+            get {
+                return ResourceManager.GetString("GuildUniformRecipeData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;148&quot; alias=&quot;GuildUniformRegistrationQuota&quot; module=&quot;ItemData&quot; type=&quot;GuildUniformRegistrationQuota&quot; version=&quot;0.2&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;increase-step&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;payment-item&quot; name=&quot;&quot; ref=&quot;Item&quot; /&gt;
+        ///		&lt;record alias=&quot;payment-item-count&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string GuildUniformRegistrationQuotaData {
+            get {
+                return ResourceManager.GetString("GuildUniformRegistrationQuotaData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;149&quot; alias=&quot;GuildUniformSlider&quot; module=&quot;ItemData&quot; type=&quot;GuildUniformSlider&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;param-type&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;min-value&quot; name=&quot;&quot; type=&quot;Byte&quot; default=&quot;1&quot; /&gt;
+        ///		&lt;record alias=&quot;max-value&quot; name=&quot;&quot; type=&quot;Byte&quot; default=&quot;100&quot; /&gt;
+        ///		&lt;record alias=&quot;step&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;required-guild-level&quot; name=&quot;&quot; type=&quot;Byte&quot; default=&quot;1&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string GuildUniformSliderData {
+            get {
+                return ResourceManager.GetString("GuildUniformSliderData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;icontexture&quot; version=&quot;0.8&quot; rule=&quot;cpl&quot; use-alias-info=&quot;n&quot; auto-start=&quot;1000&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;别名&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;icon-texture&quot; name=&quot;资源设置&quot; type=&quot;Index&quot; /&gt;
@@ -1345,6 +2401,40 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string IconTextureData {
             get {
                 return ResourceManager.GetString("IconTextureData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;indicator-idle&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;master-idle&quot; name=&quot;&quot; ref=&quot;NpcIndicatorMoveAnim&quot; /&gt;
+        ///		&lt;record alias=&quot;npc&quot; name=&quot;&quot; ref=&quot;Npc&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;idle&quot; name=&quot;&quot; ref=&quot;NpcIndicatorMoveAnim&quot; repeat=&quot;5&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string IndicatorIdleData {
+            get {
+                return ResourceManager.GetString("IndicatorIdleData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;indicator-social&quot; version=&quot;0.17&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;interval&quot; name=&quot;&quot; type=&quot;Msec&quot; /&gt;
+        ///		&lt;record alias=&quot;duration2&quot; name=&quot;&quot; type=&quot;Msec&quot; /&gt;
+        ///		&lt;record alias=&quot;begine-time2&quot; name=&quot;&quot; type=&quot;Msec&quot; repeat=&quot;10&quot; /&gt;
+        ///		&lt;record alias=&quot;balloon-text2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; repeat=&quot;10&quot; /&gt;
+        ///		&lt;record alias=&quot;balloon-text2-duration&quot; name=&quot;&quot; type=&quot;Msec&quot; default=&quot;3000&quot; repeat=&quot;1 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string IndicatorSocialData {
+            get {
+                return ResourceManager.GetString("IndicatorSocialData", resourceCulture);
             }
         }
         
@@ -1502,6 +2592,62 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;itemgearscore&quot; version=&quot;0.2&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;level&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;mastery-level&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;weapon-min&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;weapon-max&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;ring-min&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;ring-max&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ItemGearScoreData {
+            get {
+                return ResourceManager.GetString("ItemGearScoreData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-graph&quot; version=&quot;1.16&quot; rule=&quot;cpl | extra | sort-id&quot; &gt;
+        ///        &lt;record alias=&quot;type&quot; type=&quot;type&quot; &gt;
+        ///		   &lt;case alias=&quot;seed&quot; /&gt;
+        ///		   &lt;case alias=&quot;edge&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		
+        ///        &lt;record alias=&quot;seed-item-sub-group&quot; type=&quot;dictionary&quot; &gt;
+        ///		   &lt;case alias=&quot;sub-group-1&quot; default=&quot;y&quot; /&gt;
+        ///		   &lt;case alias=&quot;sub-group-2&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		
+        ///        &lt;!-- ========================================================================= --&gt;
+        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ItemGraphData {
+            get {
+                return ResourceManager.GetString("ItemGraphData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-graph-seed-group&quot; version=&quot;0.2&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string ItemGraphSeedGroupData {
+            get {
+                return ResourceManager.GetString("ItemGraphSeedGroupData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-improve&quot; version=&quot;6.1&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot; /&gt;
         ///		&lt;record alias=&quot;level&quot; type=&quot;Level&quot; name=&quot;&quot; show-zero=&quot;y&quot; start=&quot;0&quot; /&gt;
@@ -1551,6 +2697,23 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string ItemImproveOptionListData {
             get {
                 return ResourceManager.GetString("ItemImproveOptionListData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-improve-set-bonus&quot; version=&quot;2.0&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; type=&quot;TextAlias&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;target-item&quot; name=&quot;&quot; repeat=&quot;12&quot; use-group=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;target-item-condition-type&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$condition-type&quot; repeat=&quot;12&quot; /&gt;
+        ///		&lt;record alias=&quot;target-equip-pos&quot; name=&quot;&quot; type=&quot;Seq&quot; repeat=&quot;12&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ItemImproveSetBonusData {
+            get {
+                return ResourceManager.GetString("ItemImproveSetBonusData", resourceCulture);
             }
         }
         
@@ -1632,6 +2795,56 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; type=&quot;item-random-effect-group&quot; version=&quot;0.1&quot;&gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;	
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;r-effect&quot; name=&quot;&quot; ref=&quot;Effect&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;r-effect-grade&quot; type=&quot;Byte&quot; repeat=&quot;5&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string ItemRandomEffectGroup {
+            get {
+                return ResourceManager.GetString("ItemRandomEffectGroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; type=&quot;item-random-option&quot; version=&quot;0.1&quot;&gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;	
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;r-random-option-group&quot; name=&quot;&quot; ref=&quot;ItemRandomOptionGroupData&quot; /&gt;
+        ///		&lt;record alias=&quot;r-random-option-enchant-level&quot; type=&quot;Byte&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;r-random-option-cost-group&quot; name=&quot;&quot; ref=&quot;CostGroup&quot; repeat=&quot;4&quot; /&gt;
+        ///		&lt;record alias=&quot;r-fix-random-option-cost-group-1 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string ItemRandomOptionData {
+            get {
+                return ResourceManager.GetString("ItemRandomOptionData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; type=&quot;item-random-option-group&quot; version=&quot;0.1&quot;&gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;	
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;r-effect-group&quot; name=&quot;&quot; ref=&quot;ItemRandomEffectGroup&quot; repeat=&quot;20&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string ItemRandomOptionGroupData {
+            get {
+                return ResourceManager.GetString("ItemRandomOptionGroupData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;!-- 物品技能 --&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;ItemSkill&quot; version=&quot;0.13&quot; rule=&quot;cpl | extra&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
@@ -1651,15 +2864,15 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; type=&quot;ItemSpirit&quot; version=&quot;0.1&quot;&gt;
+        ///	&lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; type=&quot;ItemSpirit&quot; version=&quot;0.5&quot;&gt;
         ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;	
-        ///		&lt;record alias=&quot;level&quot; name=&quot;&quot; type=&quot;Int32&quot; start=&quot;0&quot; /&gt;
+        ///		&lt;record alias=&quot;level&quot; name=&quot;&quot; type=&quot;Byte&quot; start=&quot;0&quot; /&gt;
         ///		
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;main-ingredient&quot; name=&quot;&quot; ref=&quot;Item&quot; /&gt;
         ///		&lt;record alias=&quot;applicable-part&quot; seq=&quot;$equip-type&quot; type=&quot;Seq&quot; default=&quot;none&quot; repeat=&quot;4&quot; /&gt;
         ///		&lt;record alias=&quot;use-random-ability-value&quot; name=&quot;&quot; type=&quot;Bool&quot; showzero=&quot;y&quot; /&gt;
-        ///		&lt;reco [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		&lt;recor [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string ItemSpiritData {
             get {
@@ -1765,6 +2978,37 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;job&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; name=&quot;&quot; seq=&quot;$job&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;name2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;icon&quot; name=&quot;&quot; type=&quot;Icon&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;desc&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;lobby-job-imageset&quot; name=&quot;&quot; type=&quot;Index&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;character-info-job-imageset&quot; name=&quot;&quot; type=&quot;Index&quot; server [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string JobData {
+            get {
+                return ResourceManager.GetString("JobData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;QuestData&quot; type=&quot;job-quest&quot; version=&quot;0.2&quot; rule=&quot;cpl&quot; &gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string JobQuestData {
+            get {
+                return ResourceManager.GetString("JobQuestData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;CombatData&quot; type=&quot;job-style&quot; version=&quot;0.14&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; name=&quot;&quot; seq=&quot;$job&quot; extra=&quot;Byte1&quot; /&gt;
         ///		&lt;record alias=&quot;job-style&quot; type=&quot;id&quot; name=&quot;&quot; seq=&quot;$job-style&quot; extra=&quot;Byte2&quot; /&gt;
@@ -1777,6 +3021,24 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string JobStyleData {
             get {
                 return ResourceManager.GetString("JobStyleData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;jobstylestandidle&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; side=&quot;client&quot; &gt;
+        ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; name=&quot;&quot; seq=&quot;$job&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;job-style&quot; type=&quot;id&quot; name=&quot;&quot; seq=&quot;$job-style&quot; extra=&quot;Byte2&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;index&quot; name=&quot;&quot; type=&quot;Int32&quot; start=&quot;0&quot; /&gt;
+        ///		&lt;record alias=&quot;group-index&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;job-style-stand-idle-show&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;		
+        ///		&lt;record alias=&quot;event-time&quot; nam [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string JobStyleStandIdleData {
+            get {
+                return ResourceManager.GetString("JobStyleStandIdleData", resourceCulture);
             }
         }
         
@@ -1916,6 +3178,97 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;level&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; side=&quot;client&quot; &gt;
+        ///		&lt;record alias=&quot;level&quot; type=&quot;id&quot; name=&quot;&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;exp&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;exp-boost-1&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;exp-boost-2&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;	
+        ///		&lt;record alias=&quot;exp-boost-3&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;	
+        ///		&lt;record alias=&quot;exp-boost-recharge-time-1&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;exp-boost-recha [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string LevelData {
+            get {
+                return ResourceManager.GetString("LevelData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;linkmoveanim&quot; version=&quot;1.12&quot; rule=&quot;cpl | extra&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;pose-type&quot; type=&quot;Seq&quot; &gt;
+        ///			&lt;case alias=&quot;standing&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;dead&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;dead-back&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;dead-front&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;stagger&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;down&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;front_down&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;a [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string LinkMoveAnimData {
+            get {
+                return ResourceManager.GetString("LinkMoveAnimData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ZoneData0&quot; type=&quot;LoadingImage&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; side=&quot;client&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;zone-id&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;zone-attraction&quot; name=&quot;&quot; type=&quot;Int32&quot; use-group=&quot;y&quot;  /&gt;
+        ///		&lt;record alias=&quot;level-min&quot; name=&quot;&quot; type=&quot;Byte&quot; default=&quot;1&quot; /&gt;
+        ///		&lt;record alias=&quot;level-max&quot; name=&quot;&quot; type=&quot;Byte&quot; default=&quot;100&quot; /&gt;
+        ///		&lt;record alias=&quot;job&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$job&quot; /&gt;
+        ///		&lt;reco [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string LoadingImageData {
+            get {
+                return ResourceManager.GetString("LoadingImageData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;AIData&quot; type=&quot;lobby-pc&quot; version=&quot;0.7&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;race&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$race&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; seq=&quot;$job&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; type=&quot;id&quot; extra=&quot;Byte3&quot; seq=&quot;$sex&quot; name=&quot;&quot; /&gt;		
+        ///		&lt;record alias=&quot;category&quot; type=&quot;id&quot; extra=&quot;Byte4&quot; name=&quot;&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;lobby&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;guild&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string LobbyPcData {
+            get {
+                return ResourceManager.GetString("LobbyPcData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ZoneData0&quot; type=&quot;map-area&quot; version=&quot;0.2&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;	
+        ///		&lt;record alias=&quot;name2&quot; type=&quot;TextAlias&quot; /&gt;			
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string MapAreaData {
+            get {
+                return ResourceManager.GetString("MapAreaData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ZoneData0&quot; type=&quot;map-group-1&quot; version=&quot;0.6&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
         ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;	
         ///		&lt;record alias=&quot;name2&quot; type=&quot;TextAlias&quot; /&gt;
@@ -2011,6 +3364,103 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;mastery-level&quot; version=&quot;1.12&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;mastery-level&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;mastery-exp&quot; type=&quot;Long&quot; showzero=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;skill-build-up-point&quot; type=&quot;Short&quot; showzero=&quot;y&quot; /&gt;			
+        ///		&lt;record alias=&quot;cannot-mastery-exp-up-in-min-exp&quot; type=&quot;Bool&quot; /&gt;			
+        ///		&lt;record alias=&quot;unlock-item&quot; ref=&quot;Item&quot; /&gt;	
+        ///		&lt;record alias=&quot;unlock-item-count&quot; type=&quot;Short&quot; /&gt;			
+        ///		&lt;record alias=&quot;acqui [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string MasteryLevelData {
+            get {
+                return ResourceManager.GetString("MasteryLevelData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;mastery-stat-point&quot; version=&quot;0.5&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;stat-point-attribute&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; &gt;
+        ///			&lt;case alias=&quot;attacker&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;defender&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;stat-point&quot; type=&quot;id&quot; extra=&quot;Short2&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;stat-effect&quot; ref=&quot;Effect&quot; /&gt;
+        ///		&lt;record alias=&quot;event-effect&quot; ref=&quot;Effect&quot; repeat=&quot;4&quot; /&gt;
+        ///		&lt;record alias=&quot;description&quot; type=&quot;TextAlias&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string MasteryStatPointData {
+            get {
+                return ResourceManager.GetString("MasteryStatPointData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;mastery-stat-point-pick&quot; version=&quot;0.5&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;stat-point-pick-attribute&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; &gt;
+        ///			&lt;case alias=&quot;slot1&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;slot2&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;slot3&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;slot4&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;slot5&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;stat-point-tier&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; /&gt;
+        ///		&lt;record alias=&quot;stat-point-job&quot; type=&quot;id [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string MasteryStatPointPickData {
+            get {
+                return ResourceManager.GetString("MasteryStatPointPickData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;Mentoring&quot; version=&quot;0.2&quot; retired=&quot;n&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;version&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Short1&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;enable&quot; name=&quot;&quot; type=&quot;Bool&quot; showzero=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;text&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;max-mentee-count&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;fir [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string MentoringData {
+            get {
+                return ResourceManager.GetString("MentoringData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;moveanim&quot; version=&quot;1.12&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;weapon&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$weapon-type&quot; /&gt;
+        ///		&lt;record alias=&quot;combat-pose&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;peace&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;combat-nontarget&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;combat-target&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;stance&quot; type=&quot;id&quot; extra=&quot;Byte3&quot; seq=&quot;$stance_20&quot; /&gt;	
+        ///		&lt;record a [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string MoveAnimData {
+            get {
+                return ResourceManager.GetString("MoveAnimData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///  &lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; type=&quot;newbie-care&quot; version=&quot;0.31&quot;&gt;
         ///    &lt;record alias=&quot;id&quot; type=&quot;ID&quot; name=&quot;&quot; apply=&quot;auto&quot; /&gt;
         ///    &lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
@@ -2022,6 +3472,96 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string NewbieCareData {
             get {
                 return ResourceManager.GetString("NewbieCareData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///                &lt;!-- NPC智力设置 --&gt;
+        ///	&lt;list module=&quot;AIData&quot; type=&quot;npc-brain-parameters&quot; version=&quot;0.25&quot; &gt;
+        ///alias
+        ///bleeding-1
+        ///bleeding-2
+        ///bleeding-3
+        ///combat-sequence-1
+        ///combat-sequence-2
+        ///combat-sequence-3
+        ///combat-sequence-4
+        ///combat-sequence-5
+        ///combat-sequence-6
+        ///combat-sequence-7
+        ///combat-sequence-8
+        ///combat-sequence-9
+        ///combat-sequence-10
+        ///despawn-social
+        ///event-invoked-effect-attribute-1
+        ///event-invoked-effect-attribute-2
+        ///event-invoked-effect-attribute-3
+        ///event-in [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string NpcBrainParamtersData {
+            get {
+                return ResourceManager.GetString("NpcBrainParamtersData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;npccombatmoveanim&quot; version=&quot;0.1&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;weapon&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$weapon-type&quot; /&gt;
+        ///		&lt;record alias=&quot;combat-pose&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;peace&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;combat-nontarget&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;combat-target&quot; name=&quot;&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///		&lt;record alias=&quot;stance&quot; type=&quot;id&quot; extra=&quot;Byte3&quot; seq=&quot;$stance_20&quot; /&gt;	
+        ///
+        ///	 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string NpcCombatMoveAnimData {
+            get {
+                return ResourceManager.GetString("NpcCombatMoveAnimData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///  &lt;list module=&quot;AIData&quot; type=&quot;NpcConvoy&quot; version=&quot;0.8&quot; side=&quot;server&quot; &gt;
+        ///    &lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///
+        ///    &lt;record alias=&quot;start-act-seq&quot; ref=&quot;ActSequence&quot; name=&quot;&quot; /&gt;
+        ///    &lt;record alias=&quot;start-attackable&quot; type=&quot;Bool&quot; name=&quot;&quot; /&gt;
+        ///    &lt;record alias=&quot;start-brain&quot; type=&quot;Seq&quot; name=&quot;&quot; seq=&quot;npc-brain&quot; /&gt;
+        ///    &lt;record alias=&quot;start-hate-on&quot; type=&quot;Bool&quot; name=&quot;&quot; /&gt;
+        ///
+        ///    &lt;record alias=&quot;arrived-act-seq&quot; ref=&quot;ActSequence&quot; name=&quot;&quot; /&gt;
+        ///    &lt;record alia [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string NpcConvoyData {
+            get {
+                return ResourceManager.GetString("NpcConvoyData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;AIData&quot; type=&quot;npc&quot; version=&quot;2.12&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; type=&quot;Index&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;title&quot; type=&quot;Index&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;			
+        ///		&lt;record alias=&quot;name2&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;title2&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;		
+        ///		&lt;record alias=&quot;boss-npc&quot; name=&quot;&quot; ref=&quot;BossNpc&quot; /&gt;	
+        ///		&lt;record alias=&quot;soul-npc&quot; type=&quot;Bool&quot; name= [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string NpcData {
+            get {
+                return ResourceManager.GetString("NpcData", resourceCulture);
             }
         }
         
@@ -2043,6 +3583,42 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string NpcData_Simple {
             get {
                 return ResourceManager.GetString("NpcData_Simple", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;npcindicatormoveanim&quot; version=&quot;1.12&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;upper-idle&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;lower-idle&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;upper-walk-front&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;lower-walk-front&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;upper-walk-back&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;lower-walk-back&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string NpcIndicatorMoveAnimData {
+            get {
+                return ResourceManager.GetString("NpcIndicatorMoveAnimData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;npcmoveanim&quot; version=&quot;1.12&quot; rule=&quot;cpl&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;upper-idle&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;lower-idle&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;upper-walk-front&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;lower-walk-front&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;upper-walk-back&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;lower-walk-back&quot; name=&quot;&quot; type=&quot;Ind [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string NpcMoveAnimData {
+            get {
+                return ResourceManager.GetString("NpcMoveAnimData", resourceCulture);
             }
         }
         
@@ -2190,6 +3766,185 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list alias=&quot;PcAppearanceData&quot; module=&quot;AIData&quot; type=&quot;pc-appearance&quot; version=&quot;0.7&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;race&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$race&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; seq=&quot;$job&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; type=&quot;id&quot; extra=&quot;Byte3&quot; seq=&quot;$sex&quot; name=&quot;&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;anim-set-name&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;appearance&quot; ref=&quot;CreatureAppearance&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string PcAppearanceData {
+            get {
+                return ResourceManager.GetString("PcAppearanceData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;231&quot; alias=&quot;PcData&quot; module=&quot;LocalizationData&quot; type=&quot;pc&quot; version=&quot;0.57&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;race&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; seq=&quot;$race&quot; /&gt;   
+        ///        &lt;record alias=&quot;job&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; seq=&quot;$job&quot; /&gt;   
+        ///		&lt;record alias=&quot;level&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte3&quot; /&gt;   
+        ///		&lt;record alias=&quot;contents-type&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte4&quot; &gt;
+        ///			&lt;case alias=&quot;invalid&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;normal&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case ali [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PcData_tmp {
+            get {
+                return ResourceManager.GetString("PcData_tmp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;227&quot; alias=&quot;PcRaceSexJobData&quot; module=&quot;CombatData&quot; type=&quot;pc-race-sex-job&quot; version=&quot;0.7&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;race&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$race&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; seq=&quot;$sex&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; extra=&quot;Byte3&quot; seq=&quot;$job&quot; name=&quot;&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string PcRaceSexJobData {
+            get {
+                return ResourceManager.GetString("PcRaceSexJobData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;PcSkill3&quot; version=&quot;0.10&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;job-style&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$job-style&quot; input=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;skill3&quot; name=&quot;&quot; ref=&quot;Skill3&quot; repeat=&quot;40&quot; input=&quot;n&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string PcSkill3Data {
+            get {
+                return ResourceManager.GetString("PcSkill3Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;pc-voice&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;sex&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; seq=&quot;$sex&quot; /&gt;
+        ///		
+        ///		&lt;record alias=&quot;pc-voice-set-id&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;usable-race&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$race&quot; repeat=&quot;4&quot; /&gt;
+        ///		&lt;record alias=&quot;default-race&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$race&quot; repeat=&quot;4&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; name=&quot;&quot; type=&quot;TextAlia [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PcVoiceData {
+            get {
+                return ResourceManager.GetString("PcVoiceData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;pc-voice-set&quot; version=&quot;0.3&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte1&quot; /&gt;
+        ///		&lt;record alias=&quot;job&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte2&quot; seq=&quot;$job&quot; /&gt;
+        ///		&lt;record alias=&quot;stance&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Byte3&quot; seq=&quot;$stance&quot; /&gt;		
+        ///
+        ///		&lt;record alias=&quot;voice-set-name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;sample-sound-name&quot; name=&quot;&quot; type=&quot;Index&quot; repeat=&quot;6&quot; /&gt;
+        ///		&lt;record alias=&quot;type1-sample-sound-name&quot; name= [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PcVoiceSetData {
+            get {
+                return ResourceManager.GetString("PcVoiceSetData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;pet&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;mesh-name&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;mesh-scale&quot; name=&quot;&quot; type=&quot;Float32&quot; default=&quot;1.0&quot; /&gt;
+        ///		&lt;record alias=&quot;material-name-1&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;material-name-2&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;material-name-3&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;	
+        ///		&lt;record alias=&quot;anim-set-name&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PetData {
+            get {
+                return ResourceManager.GetString("PetData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;pet-food-recovery&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; index=&quot;y&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;item-grade&quot; name=&quot;&quot; type=&quot;Byte&quot; repeat=&quot;4&quot; /&gt;
+        ///		&lt;record alias=&quot;recovery-amount&quot; name=&quot;&quot; type=&quot;Short&quot; repeat=&quot;4&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string PetFoodRecoveryData {
+            get {
+                return ResourceManager.GetString("PetFoodRecoveryData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table side=&quot;data&quot; version=&quot;1.02&quot;&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;phantomsword3&quot; version=&quot;0.5&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;variation-id&quot; name=&quot;&quot; type=&quot;Level&quot; start=&quot;0&quot; /&gt;	
+        ///		
+        ///		&lt;record alias=&quot;fly-type&quot; name=&quot;&quot; type=&quot;seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;bone&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;bone-pos-only&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;force-caster-bone&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;force-caste [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PhantomSword3Data {
+            get {
+                return ResourceManager.GetString("PhantomSword3Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table side=&quot;data&quot; version=&quot;1.02&quot;&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;phantomsword3&quot; version=&quot;0.5&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;variation-1-level&quot; name=&quot;&quot; type=&quot;Byte&quot; start=&quot;0&quot; /&gt;		
+        ///		&lt;record alias=&quot;variation-2-level&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;variation-3-level&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		&lt;record alias=&quot;variation-4-level&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
+        ///		
+        ///		
+        ///		&lt;record alias=&quot;fly-type&quot; name=&quot;&quot; type=&quot;seq&quot; &gt;
+        ///			&lt;case [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PhantomSwordData {
+            get {
+                return ResourceManager.GetString("PhantomSwordData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;public &gt;
         ///	
         ///		&lt;record alias=&quot;attach-ability&quot; type=&quot;dictionary&quot; &gt;
@@ -2226,6 +3981,26 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string PublicRaidData {
             get {
                 return ResourceManager.GetString("PublicRaidData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;ZoneData0&quot; type=&quot;public-raid-event&quot; version=&quot;0.3&quot; check-version=&quot;y&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; &gt;
+        ///             &lt;case alias=&quot;score-event&quot; name=&quot;&quot; /&gt;
+        ///        &lt;/record&gt;		
+        ///		
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;event-duration&quot; name=&quot;&quot; type=&quot;msec&quot; /&gt;
+        ///		&lt;record alias=&quot;event-type&quot; name=&quot;&quot; type=&quot;seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string PublicRaidEvnetData {
+            get {
+                return ResourceManager.GetString("PublicRaidEvnetData", resourceCulture);
             }
         }
         
@@ -2350,6 +4125,27 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///
+        ///	&lt;list module=&quot;ItemData&quot; side=&quot;&quot; type=&quot;randombox-preview&quot; version=&quot;0.20&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;condition&quot; type=&quot;Dictionary&quot; name=&quot;&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;variation-1&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;variation-2&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;variation-3&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;variation-4&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;variation-5&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;variation-6&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;v [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string RandomboxPreviewData {
+            get {
+                return ResourceManager.GetString("RandomboxPreviewData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;RandomStore&quot; version=&quot;0.8&quot;&gt;
         ///		&lt;record alias=&quot;random-store-number&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Byte1&quot;&gt;
         ///			&lt;case alias=&quot;invalid-number&quot; name=&quot;&quot; /&gt;
@@ -2447,6 +4243,40 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///  &lt;list module=&quot;ItemData&quot; rule=&quot;cpl&quot; server-side=&quot;rank | server&quot; type=&quot;RankingReward&quot; version=&quot;0.4&quot; &gt;
+        ///	&lt;record alias=&quot;id&quot; type=&quot;id&quot; apply=&quot;auto&quot; /&gt;
+        ///    &lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
+        ///    &lt;!-- ===================================================== --&gt;
+        ///    &lt;record alias=&quot;week-reward-exp&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;
+        ///    &lt;record alias=&quot;week-reward-money&quot; name=&quot;&quot; show-zero=&quot;y&quot; type=&quot;Money&quot; /&gt;
+        ///    &lt;record alias=&quot;week-reward-item&quot; ref=&quot;Item&quot; name=&quot;周奖励物品&quot; rep [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string RankingRewardData {
+            get {
+                return ResourceManager.GetString("RankingRewardData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///  &lt;list module=&quot;ItemData&quot; type=&quot;RankingRewardGroupData&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; &gt;
+        ///    &lt;record alias=&quot;reward-group-id&quot; type=&quot;ID&quot; /&gt;
+        ///    &lt;record alias=&quot;reward-group-alias&quot; type=&quot;Index&quot; /&gt;
+        ///    &lt;!-- ===================================================== --&gt;
+        ///    &lt;record alias=&quot;reward-group-top&quot; name=&quot;&quot; type=&quot;Int32&quot; repeat=&quot;20&quot; /&gt;
+        ///    &lt;record alias=&quot;reward-group-bottom&quot; name=&quot;&quot; type=&quot;Int32&quot; repeat=&quot;20&quot; /&gt;
+        ///    &lt;record alias=&quot;reward-data&quot; ref=&quot;RankingReward&quot; na [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string RankingRewardGroupData {
+            get {
+                return ResourceManager.GetString("RankingRewardGroupData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;reward&quot; version=&quot;1.40&quot; rule=&quot;cpl&quot; check-version=&quot;y&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; not-rule-dispel=&quot;y&quot; /&gt;
         ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; not-rule-dispel=&quot;y&quot; /&gt;
@@ -2476,6 +4306,41 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string SealedDungeonGimmickData {
             get {
                 return ResourceManager.GetString("SealedDungeonGimmickData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;sealed-dungeon-level&quot; version=&quot;0.10&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;sealed-level&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;sealed-exp&quot; name=&quot;&quot; type=&quot;Long&quot; showzero=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;scroll-level-font&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;	
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string SealedDungeonLevelData {
+            get {
+                return ResourceManager.GetString("SealedDungeonLevelData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;sealed-dungeon-modify&quot; version=&quot;0.10&quot; rule=&quot;&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;Id&quot; extra=&quot;Short1&quot; /&gt;
+        ///		&lt;record alias=&quot;sealed-level&quot; name=&quot;&quot; type=&quot;Id&quot; extra=&quot;Byte3&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;modify-npc-exp-percent&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;modify-npc-sealed-dungeon-exp-percent&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;	
+        ///		&lt;record alias=&quot;modify-clear-sealed-dungeon-exp-perce [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string SealedDungeonModifyData {
+            get {
+                return ResourceManager.GetString("SealedDungeonModifyData", resourceCulture);
             }
         }
         
@@ -2518,6 +4383,28 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;skill3&quot; version=&quot;10.0&quot; rule=&quot;cpl&quot; is64=&quot;y&quot; check-size=&quot;y&quot; &gt;
+        ///		&lt;record alias=&quot;type&quot; type=&quot;type&quot; &gt;
+        ///			&lt;case alias=&quot;active-skill&quot; /&gt;
+        ///			&lt;case alias=&quot;passive-skill&quot; /&gt;
+        ///			&lt;case alias=&quot;action&quot; /&gt;
+        ///		&lt;/record&gt;
+        ///
+        ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; /&gt;
+        ///		&lt;record alias=&quot;variation-id&quot; name=&quot;&quot; start=&quot;0&quot; type=&quot;Variation&quot; /&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;revised-effect-equip-probability-in-exec&quot; name [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string Skill3Data_202211 {
+            get {
+                return ResourceManager.GetString("Skill3Data_202211", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;CombatData&quot; rule=&quot;&quot; type=&quot;skill3&quot; version=&quot;10.0&quot; &gt;
         ///		&lt;record alias=&quot;type&quot; type=&quot;type&quot; &gt;
         ///			&lt;case alias=&quot;active-skill&quot; /&gt;
@@ -2540,38 +4427,39 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
         ///	
-        ///	&lt;list module=&quot;CombatData&quot; type=&quot;skill-build-up&quot; version=&quot;1.0&quot; rule=&quot;cpl&quot; &gt;
-        ///		&lt;record alias=&quot;parent-skill3-id&quot; type=&quot;ID&quot; /&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;skill-by-equipment&quot; version=&quot;0.10&quot; rule=&quot;cpl | extra&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
-        ///		&lt;record alias=&quot;max-level&quot; type=&quot;Byte&quot; /&gt;
-        ///
-        ///		&lt;record alias=&quot;required-build-up-point&quot; type=&quot;Byte&quot; repeat=&quot;20&quot; /&gt;
-        ///		&lt;record alias=&quot;required-build-up-point-level&quot; type=&quot;Short&quot; repeat=&quot;20&quot; /&gt;
-        ///		&lt;record alias=&quot;skill-modify-info&quot; ref=&quot;SkillModifyInfo&quot; repeat=&quot;20&quot; /&gt;
-        ///	&lt;/list&gt;
-        ///&lt;/table&gt; 的本地化字符串。
+        ///		&lt;record alias=&quot;skill3-id-1&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;skill3-id-2&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;skill3-id-3&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;skill3-id-4&quot; type=&quot;Int32&quot; /&gt;
+        ///		&lt;record alias=&quot;block-skill3-id-1&quot; type=&quot;Int32&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record alias=&quot;block-skill3-id-2&quot; type=&quot;Int32&quot; server=&quot;n&quot; /&gt;
+        ///		&lt;record ali [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
-        public static string SkillBuildUpData {
+        public static string SkillByEquipmentData {
             get {
-                return ResourceManager.GetString("SkillBuildUpData", resourceCulture);
+                return ResourceManager.GetString("SkillByEquipmentData", resourceCulture);
             }
         }
         
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;CombatData&quot; type=&quot;SkillCastCondition3&quot; version=&quot;7.0&quot; rule=&quot;cpl&quot; &gt;
-        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;stance&quot; type=&quot;Seq&quot; name=&quot;&quot; seq=&quot;$stance&quot; /&gt;
-        ///		&lt;record alias=&quot;summoned-stance&quot; type=&quot;Seq&quot; seq=&quot;$stance&quot; name=&quot;鬼剑姿态判断&quot; /&gt;
-        ///		&lt;record alias=&quot;summoned-use-only&quot; name=&quot;&quot; type=&quot;bool&quot; /&gt;
-        ///		&lt;record alias=&quot;summoned-dead-state&quot; name=&quot;&quot; type=&quot;Seq&quot; seq=&quot;$dead-state&quot; /&gt;
-        ///
-        ///		&lt;record alias=&quot;required-weapon-type&quot; type=&quot;Byte&quot; n [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;skill-combo-2&quot; version=&quot;0.4&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;group&quot; name=&quot;&quot; type=&quot;seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target-down&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target-stun&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target-kneel&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target-midair-1&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target-midair-2&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;target-back&quot; name=&quot;&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
-        public static string SkillCastCondition3 {
+        public static string SkillCombo2Data {
             get {
-                return ResourceManager.GetString("SkillCastCondition3", resourceCulture);
+                return ResourceManager.GetString("SkillCombo2Data", resourceCulture);
             }
         }
         
@@ -2592,27 +4480,6 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string SkillDashAttribute3Data {
             get {
                 return ResourceManager.GetString("SkillDashAttribute3Data", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;table&gt;
-        ///	&lt;list module=&quot;CombatData&quot; rule=&quot;cpl | extra&quot; type=&quot;SkillGatherRange3&quot; version=&quot;0.15&quot;&gt;
-        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;dir&quot; type=&quot;dictionary&quot; name=&quot;&quot; &gt;
-        ///			&lt;case alias=&quot;360&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
-        ///			&lt;case alias=&quot;front-180&quot; name=&quot;&quot; /&gt;
-        ///			&lt;case alias=&quot;back-180&quot; name=&quot;&quot; /&gt;
-        ///			&lt;case alias=&quot;front-90&quot; name=&quot;&quot; /&gt;
-        ///			&lt;case alias=&quot;back-90&quot; name=&quot;&quot; /&gt;
-        ///			&lt;case alias=&quot;front-30&quot; name=&quot;&quot; /&gt;
-        ///			&lt;case alias=&quot;front-45&quot; name=&quot;&quot; /&gt;
-        ///		 [字符串的其余部分被截断]&quot;; 的本地化字符串。
-        /// </summary>
-        public static string SkillGatherRange3Data {
-            get {
-                return ResourceManager.GetString("SkillGatherRange3Data", resourceCulture);
             }
         }
         
@@ -2692,6 +4559,41 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;SkillResultControll3&quot; version=&quot;1.0&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;immune-target-counter-skill&quot; name=&quot;&quot; type=&quot;Bool&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;immune-target-parry-skill&quot; name=&quot;&quot; type=&quot;Bool&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;immune-target-perfect-parry-skill&quot; name=&quot;&quot; type=&quot;Bool&quot; repeat=&quot;5&quot; /&gt;
+        ///		&lt;record alias=&quot;immune-target-bounce-skill&quot; name=&quot;&quot; type=&quot;Bool&quot; repeat=&quot;5&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string SkillResultControll3Data {
+            get {
+                return ResourceManager.GetString("SkillResultControll3Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;SkillShow3&quot; version=&quot;0.4&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
+        ///		&lt;record alias=&quot;variation-id&quot; name=&quot;&quot; type=&quot;Byte&quot; start=&quot;0&quot; /&gt;
+        ///		&lt;record alias=&quot;skillskin-id&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;play-player-show&quot; name=&quot;&quot; type=&quot;Bool&quot; /&gt;
+        ///		&lt;record alias=&quot;force-play-hit-show&quot; name=&quot;&quot; type=&quot;Bool&quot; /&gt;
+        ///		&lt;record alias=&quot;player-cast-show&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;player-exec-show&quot; name=&quot;&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string SkillShow3Data {
+            get {
+                return ResourceManager.GetString("SkillShow3Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;SkillSkin&quot; version=&quot;1.0&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; extra=&quot;Short1&quot; /&gt;
         ///		
@@ -2754,6 +4656,20 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;SkillGatherRange3&quot; version=&quot;0.15&quot; rule=&quot;cpl | extra&quot; is64=&quot;y&quot; &gt;
+        ///		&lt;record type=&quot;Index&quot; alias=&quot;alias&quot; /&gt;
+        ///	&lt;/list&gt;
+        ///&lt;/table&gt; 的本地化字符串。
+        /// </summary>
+        public static string SkillTargetFilter3Data {
+            get {
+                return ResourceManager.GetString("SkillTargetFilter3Data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	
         ///	&lt;list module=&quot;CombatData&quot; type=&quot;SkillTooltipAttribute&quot; version=&quot;0.10&quot; rule=&quot;cpl | extra&quot; &gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
@@ -2808,6 +4724,24 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         public static string SkillTrainCategoryData {
             get {
                 return ResourceManager.GetString("SkillTrainCategoryData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;skill-train-combo-action&quot; version=&quot;0.5&quot; rule=&quot;cpl&quot; &gt;
+        ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; extra=&quot;Byte1&quot; seq=&quot;$job&quot; /&gt;
+        ///		&lt;record alias=&quot;job-style&quot; type=&quot;id&quot; extra=&quot;Byte2&quot; seq=&quot;$job-style&quot; /&gt;
+        ///		&lt;record alias=&quot;stance-index&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Byte3&quot; /&gt;
+        ///		&lt;record alias=&quot;buff-index&quot; name=&quot;&quot; type=&quot;id&quot; extra=&quot;Byte4&quot; /&gt;
+        ///		&lt;record alias=&quot;function-index&quot; name=&quot;&quot; type=&quot;Byte&quot; start=&quot;0&quot; /&gt;
+        ///
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Ind [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string SkillTrainComboActionData {
+            get {
+                return ResourceManager.GetString("SkillTrainComboActionData", resourceCulture);
             }
         }
         
@@ -2913,7 +4847,7 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///		&lt;record alias=&quot;ingredient-count&quot; type=&quot;Short&quot; name =&quot;&quot; repeat=&quot;5&quot; /&gt;
         ///
         ///		&lt;record alias=&quot;secondary-cash-enable&quot; type=&quot;Bool&quot; name =&quot;&quot; show-zero=&quot;y&quot; /&gt;
-        ///		&lt;record alias=&quot;ingredient-money&quot; type=&quot;Money&quot; name =&quot;&quot; min=&quot;0&quot; max=&quot;2000000000&quot; /&gt;
+        ///		&lt;record alias=&quot;ingredient-money&quot; type=&quot;Int32&quot; name =&quot;&quot; min=&quot;0&quot; max=&quot;2000000000&quot; /&gt;
         ///		&lt;record alias=&quot;secondar [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string SlateScrollData {
@@ -3224,6 +5158,24 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
+        ///	&lt;list alias=&quot;TalkSocial&quot; module=&quot;LocalizationData&quot; type=&quot;talksocial&quot; version=&quot;0.1&quot; rule=&quot;cpl | extra&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;name&quot; type=&quot;TextAlias&quot;/&gt;
+        ///		&lt;record alias=&quot;use-at-dead&quot; type=&quot;Bool&quot; /&gt;
+        ///		&lt;record alias=&quot;use-at-exhaustion&quot; type=&quot;Bool&quot; /&gt;
+        ///		&lt;record alias=&quot;use-at-restoration&quot; type=&quot;Bool&quot; /&gt;
+        ///		&lt;record alias=&quot;use-at-not-dead&quot; type=&quot;Bool&quot; default=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;se-in-chat-input&quot; type=&quot;Bool&quot; default=&quot;y&quot; / [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        public static string TalkSocialData {
+            get {
+                return ResourceManager.GetString("TalkSocialData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;table&gt;
         ///	&lt;list module=&quot;ZoneData0&quot; type=&quot;teleport&quot; version=&quot;0.23&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;ID&quot; /&gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
@@ -3356,25 +5308,6 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;ItemData&quot; type=&quot;treasure-board-reward&quot; version=&quot;0.8&quot; rule=&quot;cpl&quot; &gt;
-        ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;reward-grade&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;reward-item&quot; ref=&quot;Item&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;reward-item-count&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;max-draw-count&quot; type=&quot;Short&quot; name=&quot;&quot; max=&quot;1000&quot; /&gt;
-        ///	&lt;/list&gt;
-        ///&lt;/table&gt; 的本地化字符串。
-        /// </summary>
-        public static string TreasureBoardRewardData1 {
-            get {
-                return ResourceManager.GetString("TreasureBoardRewardData1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;table&gt;
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;treasure-board-season&quot; version=&quot;0.2&quot; rule=&quot;cpl&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot; /&gt;
         ///
@@ -3431,17 +5364,18 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;table data-type=&quot;local&quot;&gt;
-        ///	&lt;list module=&quot;LocalizationData&quot; type=&quot;user-command&quot; version=&quot;0.4&quot; rule=&quot;cpl | extra&quot; check-version=&quot;y&quot; &gt;
-        ///		&lt;record alias=&quot;text&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///&lt;table&gt;
+        ///	&lt;list id=&quot;395&quot; module=&quot;LocalizationData&quot; type=&quot;user-command&quot; version=&quot;0.41&quot; rule=&quot;cpl | extra&quot; check-version=&quot;y&quot; &gt;
         ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; &gt;	
         ///			&lt;case alias=&quot;command&quot; name=&quot;&quot; /&gt;
         ///			&lt;case alias=&quot;social&quot; name=&quot;&quot; /&gt;
         ///			&lt;case alias=&quot;system-social&quot; name=&quot;&quot; /&gt;
         ///			&lt;case alias=&quot;emoticon&quot; name=&quot;&quot; /&gt;			
         ///		&lt;/record&gt;
-        ///		
-        ///		&lt;!-- =========================================================  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		&lt;record alias=&quot;text&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///
+        ///		&lt;!-- ========================================================= --&gt;
+        ///		&lt;re [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string UserCommandData {
             get {
@@ -3546,15 +5480,14 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///  &lt;!-- 万象录系统 --&gt;
-        ///  &lt;list module=&quot;ItemData&quot; type=&quot;world-account-card&quot; version=&quot;0.10&quot;&gt;
-        ///    &lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
-        ///    &lt;record alias=&quot;item&quot; ref=&quot;Item&quot; name=&quot;&quot; /&gt;
-        ///    &lt;record alias=&quot;disabled&quot; name=&quot;&quot; type=&quot;Bool&quot; /&gt;
-        ///    &lt;record alias=&quot;sort-no&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
-        ///    &lt;record alias=&quot;card-image&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
-        ///    &lt;record alias=&quot;card-original-image&quot; name=&quot;&quot; type=&quot;Index&quot; repeat=&quot;4&quot; /&gt;
-        ///    &lt;record alias=&quot;card-original-image- [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;world-account-card&quot; version=&quot;0.3&quot;&gt;
+        ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;item&quot; ref=&quot;Item&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;disabled&quot; name=&quot;&quot; type=&quot;Bool&quot; /&gt;
+        ///		&lt;record alias=&quot;sort-no&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///		&lt;record alias=&quot;card-image&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
+        ///		&lt;record alias=&quot;card-original-image&quot; name=&quot;&quot; type=&quot;Index&quot; repeat=&quot;4&quot; /&gt;
+        ///		&lt;record alias=&quot;card-original-image-desc&quot; name=&quot;&quot; type=&quot;TextAlias&quot; rep [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string WorldAccountCardData {
             get {

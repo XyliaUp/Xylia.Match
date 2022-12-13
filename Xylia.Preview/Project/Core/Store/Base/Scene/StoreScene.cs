@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -31,7 +30,7 @@ namespace Xylia.Preview.Project.Core.Store
 		/// <summary>
 		/// 缓存
 		/// </summary>
-		internal Dictionary<TreeNode, NodeInfo> TreeNodeInfo = new ();
+		internal Dictionary<TreeNode, NodeInfo> TreeNodeInfo = new();
 
 		/// <summary>
 		/// 线程
@@ -71,20 +70,28 @@ namespace Xylia.Preview.Project.Core.Store
 			//清理节点内容
 			foreach (TreeNode CurNode in this.TreeView.Nodes) CurNode.Nodes.Clear();
 
+			bool HasFilter = !string.IsNullOrWhiteSpace(FilterRule);
+
+
+
 			//尝试获取记录器对象
 			IRecord RecordEntity = null;
-
-			if (this.Filter.Contains(FilterTag.Item))
+			if (HasFilter)
 			{
-				if (!FilterRule.IsNull()) RecordEntity = FilterRule.GetItemInfo(null, false);
+				if (this.Filter.Contains(FilterTag.Item)) RecordEntity = FilterRule.GetItemInfo(null, false);
+				RecordEntity = FileCache.Data.Npc[FilterRule];
+
+				System.Diagnostics.Debug.WriteLine(RecordEntity?.Attributes);
 			}
+
+
 
 			//恢复符合规则的子节点
 			foreach (var Node in this.TreeNodeInfo)
 			{
-				if (FilterRule.IsNull() ||
-					Node.Key.Text.MyContains(FilterRule) ||   //判断节点文本
-					this.FilterNode(Node.Value, RecordEntity ?? (object)FilterRule))  //特殊规则判断
+				if (!HasFilter ||
+					Node.Key.Text.MyContains(FilterRule) ||     //判断节点文本
+					this.FilterNode(Node.Value, RecordEntity))  //特殊规则判断
 				{
 					Node.Value.ParentNode.Nodes.Add(Node.Key);
 				}
@@ -99,11 +106,11 @@ namespace Xylia.Preview.Project.Core.Store
 		/// <param name="NodeInfo"></param>
 		/// <param name="FilterRule">搜索规则，可以为文本或者实例对象</param>
 		/// <returns></returns>
-		public virtual bool FilterNode(NodeInfo NodeInfo, object FilterRule)
-		{
-			return false;
-		}
+		public virtual bool FilterNode(NodeInfo NodeInfo, object FilterRule) => false;
 		#endregion
+
+
+
 
 		#region 控件方法
 		private void Store2Frm_Load(object sender, EventArgs e)
@@ -126,25 +133,13 @@ namespace Xylia.Preview.Project.Core.Store
 			thread.Start();
 		}
 
-
 		public void Frm_SizeChanged(object sender, EventArgs e)
 		{
 			int TempWidth = this.Width - this.TreeView.Width - 30;
 			this.ListPreview.Width = Math.Max(TempWidth, 315);
 		}
 
-		private void Store2Frm_FormClosing(object sender, FormClosingEventArgs e)
-		{
-			try
-			{
-				if (thread != null) thread.Abort();
-			}
-			catch
-			{
-
-			}
-		}
-
+		private void Store2Frm_FormClosing(object sender, FormClosingEventArgs e) => thread?.Interrupt();
 
 		/// <summary>
 		/// 筛选内容
