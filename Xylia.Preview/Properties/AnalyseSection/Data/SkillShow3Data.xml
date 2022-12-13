@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SkillShow3" version="0.4" rule="cpl" >
+	<list module="CombatData" type="SkillShow3" version="0.4" >
 		<record alias="id" name="" type="ID" />
 		<record alias="variation-id" name="" type="Byte" start="0" />
 		<record alias="skillskin-id" name="" type="Short" />

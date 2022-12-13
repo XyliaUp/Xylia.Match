@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="craft2" version="0.1" rule="cpl" >
+	<list module="ItemData" type="craft2" version="0.1" >
 	    <record alias="category" type="id" seq="$production-type" extra="Byte1" />
 		<record alias="name" name="" type="TextAlias" />
 		<record alias="icon" name="" type="Icon" />

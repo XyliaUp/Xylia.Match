@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData1" type="ZoneBaseCamp" version="0.5" retired="n" rule="cpl" >
+	<list module="ZoneData1" type="ZoneBaseCamp" version="0.5" >
 		<record type="id" name="" alias="zone" sort-by="y" />
 		<record start="0" alias="id" type="Short" name="" />
 		<record alias="alias" type="Index" name="" />

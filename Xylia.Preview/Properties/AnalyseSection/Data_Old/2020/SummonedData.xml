@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="AIData" type="summoned" version="0.24" rule="" check-verison="y" >
+		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
+		<record alias="job" type="ID" extra="Byte2" name="" seq="$job_20" />
+		<record alias="sex" type="ID" extra="Byte3" name="" seq="$sex" />	
+	
+		<record alias="id" type="Long" name="" />
+		<record alias="unk-" type="Int32" name="" />		
+		<record alias="icon" type="Icon" />
+		<record alias="radius" type="Distance" name="" />		
+		<record alias="summoned-sequence" name="" ref="SummonedSequence" server="n" />
+		<record alias="seq-skill" type="Int32" name="" server="n" repeat="10" />
+		<record alias="spawn-skill-id" type="Int32" name="" server="n" />
+		<record alias="spawn-social" name="" ref="Social" />
+		<record alias="respawn-in-social" name="" ref="Social" />
+		<record alias="respawn-out-social" name="" ref="Social" />
+		<record alias="immune-skill-attribute" type="Seq" name="" seq="$skill-attribute" repeat="4" />	
+		<record alias="immune-effect-attribute" type="Seq16" name="" seq="$effect-attribute" repeat="8" />	
+		<record alias="stance" type="Seq16" name="" seq="$stance" />
+		<record alias="speed" type="Velocity" name="" />
+		<record alias="lifetime-duration" type="Msec" name="" />		
+		<record alias="appearance" name="" ref="CreatureAppearance" />		
+		<record alias="animset" type="Index" name="" />		
+		<record alias="despawn-show" type="Index" name="" />			
+		<record alias="spawn-show" type="Index" name="" />
+	</list>
+</table>

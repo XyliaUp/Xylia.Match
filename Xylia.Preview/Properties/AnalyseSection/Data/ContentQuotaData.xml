@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<!-- 内容限制 -->
-	<list module="ItemData" type="content-quota" version="5.0" rule="cpl" check-version="n" >
+	<list module="ItemData" type="content-quota" version="5.0" check-version="n" >
 		<record alias="type" type="type" name="" >
 			<case alias="vitality" name="" />
 			<case alias="shop-sale" name="" />

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	id="61" module="ItemData" type="contents-reset" version="1.0" rule="extra" >
+		<record alias="alias" name="" type="Index" />
+		<record alias="reset-target" name="" use-group="y" />
+		<record alias="reset-money" name="" type="Money" />
+		<record alias="reset-item" name="" ref="Item" repeat="4" />
+		<record alias="reset-item-count" name="" type="Byte" repeat="4" />
+		<record alias="max-unbind-count" name="" type="Byte" />
+	</list>
+</table>

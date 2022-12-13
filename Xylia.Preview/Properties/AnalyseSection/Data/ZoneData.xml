@@ -6,7 +6,7 @@
 	更新时间：
 	版本说明：               
 -->
-	<list module="ZoneData1" relative-path="Zone\*\ZoneData.*" retired="n" rule="cpl" type="zone" version="5.0" check-version="y" >
+	<list module="ZoneData1" type="zone" version="5.0" check-version="y" >
 		<!-- 将根据id进行分类 -->
 		<record alias="id" sort-by="n" type="id" />
 		<record alias="alias" name="alias" type="Index" />

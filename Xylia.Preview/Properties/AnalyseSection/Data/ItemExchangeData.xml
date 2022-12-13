@@ -1,20 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 	
-	<list module="ItemData" type="ItemExchange" version="0.5" rule="cpl | extra" >
+	<list module="ItemData" type="ItemExchange" version="0.5" rule="extra" >
 		<record alias="alias" type="Index" />
-
 		<record alias="rule-usage" type="Seq" >
 		     <case alias="antique-exchange" name="旧物交换" />
 		     <case alias="crystallization" name="加工" /> 
 		</record>
 		
-		
 		<record alias="required-item" use-group="y" repeat="4" />
-		<record alias="required-item-min-level" type="Byte" out-cond="exist: required-item-*" repeat="4" />
-		<record alias="required-item-stack-count" type="Short" out-cond="exist: required-item-*" repeat="4" />
-		
+		<record alias="required-item-min-level" type="Byte" repeat="4" />
+		<record alias="required-item-stack-count" type="Short" repeat="4" />
 		<record alias="normal-item" ref="item" repeat="4" />
-		<record alias="normal-item-stack-count" type="short" out-cond="exist: normal-item-*" repeat="4" />
+		<record alias="normal-item-stack-count" type="short" repeat="4" />
 	</list>
 </table>

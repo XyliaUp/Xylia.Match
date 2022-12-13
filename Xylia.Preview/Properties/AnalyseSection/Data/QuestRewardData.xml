@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<public >
+	<public>
 		<record alias="optional-group" type="struct" >
 			<record alias="faction" name="" ref="Faction" />
 			<record alias="job" name="" seq="$job" type="Seq" repeat="16"/>
@@ -22,7 +22,7 @@
 
 
 	<!-- 任务奖励 -->
-	<list module="QuestData" rule="cpl" type="QuestReward" version="5.0" check-version="y" >
+	<list module="QuestData" type="QuestReward" version="5.0" check-version="y" >
 		<record alias="id" name="" type="id" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="quest-first-progress" name="" type="Seq" >

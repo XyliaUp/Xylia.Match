@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="GuildCustomizeUiMatchParam" version="0.1" rule="cpl" >
+	<list module="ItemData" type="GuildCustomizeUiMatchParam" version="0.1" >
 		<record alias="ui-index" name="" type="ID" extra="Short1" />
 		<record alias="sub-name" name="" type="TextAlias" />
 		<record alias="param-index" name="" type="Byte" default="-1" />

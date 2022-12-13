@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list alias="Stance" module="CombatData" type="stance" version="0.26" rule="cpl" >
+	<list module="CombatData" type="stance" version="0.26" >
 		<record alias="stance-type" name="" type="id" seq="$stance" />
 		
 		<record alias="name2" name="" type="TextAlias" server="n" />

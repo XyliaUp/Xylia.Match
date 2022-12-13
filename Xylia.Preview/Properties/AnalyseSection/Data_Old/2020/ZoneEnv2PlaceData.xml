@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="ZoneData0" type="ZoneEnv2Place" version="0.9" rule="extra" check-version="y" >
+    <record alias="type" name="" type="type" >
+        <case alias="button" />
+        <case alias="chest" />
+        <case alias="pot" />
+        <case alias="gate" />
+        <case alias="wall" />
+        <case alias="refiner" />
+        <case alias="control-point" />
+        <case alias="portal" />
+        <case alias="foot-switch" />
+        <case alias="effect-region" />
+        <case alias="airdash" />
+        <case alias="airdash-leave" />	
+        <case alias="oceanic-region" />
+        <case alias="fall-death" />
+        <case alias="multiple-loop" />
+        <case alias="deck" />
+        <case alias="fishing-point" />
+    </record>
+    <record alias="alias" name="" type="Index" />	
+    <record alias="region-point-1" name="" type="Vector32" />
+    <record alias="region-point-2" name="" type="Vector32" />
+    <record alias="region-point-3" name="" type="Vector32" />
+    <record alias="region-point-4" name="" type="Vector32" />
+    <record alias="height" name="" type="Short" />	
+    <record alias="action-point" name="" type="Vector32" />	
+    <record alias="action-radius" name="" type="Short" showzero="y" />
+    <record alias="use-manipulation-point" name="" type="Bool" />
+    <record alias="manipulation-point" name="" type="Vector32" />	
+    <record alias="manipulation-radius" name="" type="Short" />
+    <record alias="manipulation-height-upper" name="" type="Short" />	
+    <record alias="manipulation-height-lower" name="" type="Short" />
+    <record alias="env-actorname" name="" type="Index" />	
+    <record alias="spawn-env" name="" type="Bool" />
+    <!-- ============================================================= -->
+    <record alias="duration" name="" type="Msec" filter="airdash" />
+    <record alias="end-pos" name="" type="Vector32" filter="airdash" />
+    <record alias="summon-end-pos" name="" type="Vector32" filter="airdash" />
+    <!-- ============================================================= -->
+
+    <!-- ============================================================= -->	
+	<record alias="tool-zone-1" client="n" />
+    <record alias="tool-zone-2" client="n" />
+    <record alias="tool-zone-3" client="n" />
+    <record alias="tool-zone-4" client="n" />
+    <record alias="tool-zone-5" client="n" />
+    <record alias="tool-zone-6" client="n" />
+    <record alias="tool-zone-7" client="n" />
+    <record alias="tool-zone-8" client="n" />
+    <record alias="tool-zone-9" client="n" />
+    <record alias="tool-zone-10" client="n" />
+    <record alias="tool-zone-11" client="n" />
+    <record alias="tool-zone-12" client="n" />
+    <record alias="tool-zone-13" client="n" />
+    <record alias="tool-zone-14" client="n" />
+    <record alias="tool-zone-15" client="n" />
+    <record alias="tool-zone-16" client="n" />
+    <record alias="tool-zone-17" client="n" />
+    <record alias="tool-zone-18" client="n" />
+    <record alias="tool-zone-19" client="n" />
+    <record alias="tool-zone-20" client="n" />
+    <!-- ============================================================= -->		
+	</list>
+</table>

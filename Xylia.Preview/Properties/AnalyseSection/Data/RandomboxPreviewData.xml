@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="ItemData" side="" type="randombox-preview" version="0.20" rule="cpl | extra" >
+	<list module="ItemData" side="" type="randombox-preview" version="0.20" rule="extra" >
 		<record alias="condition" type="Dictionary" name="" >
 			<case alias="none" name="" default="y" />
 			<case alias="variation-1" name="" />

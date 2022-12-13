@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="PcSkill3" version="0.10" rule="cpl | extra" >
+	<list module="LocalizationData" type="PcSkill3" version="0.10" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="job-style" name="" type="Seq" seq="$job-style" input="y" />
 		<record alias="skill3" name="" ref="Skill3" repeat="40" input="n" />

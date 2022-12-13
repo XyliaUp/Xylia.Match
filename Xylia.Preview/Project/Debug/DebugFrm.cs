@@ -20,7 +20,7 @@ namespace Xylia.Preview
 			System.Diagnostics.Debug.WriteLine(SkillPreview.GetDamageInfo(16000));
 
 
-			System.Diagnostics.Debug.WriteLine(FileCache.Data.Effect["Constellation01_Effect_Equip_01"].Attributes);
+			System.Diagnostics.Debug.WriteLine(FileCache.Data.Effect["Constellation_Effect_StarSong"].Attributes);
 
 		}
 

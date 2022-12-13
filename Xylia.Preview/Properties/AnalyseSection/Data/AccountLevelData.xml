@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="account-level" version="0.20" rule="cpl" >
+	<list module="LocalizationData" type="account-level" version="0.20" >
 		<record alias="level" name="" type="id" />
 
 		<record alias="name" name="" type="TextAlias" server="n" />

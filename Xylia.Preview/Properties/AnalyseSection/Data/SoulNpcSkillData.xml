@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="soul-npc-skill" version="0.1" rule="cpl | extra" >
+	<list module="AIData" type="soul-npc-skill" version="0.1" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="skill3" ref="Skill3" repeat="10" />
 		<record alias="soul-particle" type="Index" />

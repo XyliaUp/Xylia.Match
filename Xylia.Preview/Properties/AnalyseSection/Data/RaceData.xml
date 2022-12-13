@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="race" version="0.7" rule="cpl" >
+	<list module="CombatData" type="race" version="0.7" >
 		<record alias="race" type="id" extra="Byte1" seq="$race" name="" />
 
 		<record alias="name2" name="" type="TextAlias" />

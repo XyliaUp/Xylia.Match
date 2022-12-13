@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="expand-skill-page" version="0.1" rule="cpl" >
+	<list module="ItemData" type="expand-skill-page" version="0.1" >
 		<record alias="skill-page" type="ID" name="" />
 		<record alias="money" type="Int32" name="" />	
 		<record alias="charge-type" type="Seq" name="" >

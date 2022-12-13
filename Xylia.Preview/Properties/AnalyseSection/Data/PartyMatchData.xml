@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="partymatch" version="0.6" rule="cpl | extra" >
+	<list module="ZoneData0" type="partymatch" version="0.6" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="name" type="TextAlias" />
 		<record alias="faction" ref="Faction" />

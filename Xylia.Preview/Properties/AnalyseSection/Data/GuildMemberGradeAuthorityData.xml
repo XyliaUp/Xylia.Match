@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="guild-member-grade-authority" version="0.11" rule="cpl" >
+	<list module="ItemData" type="guild-member-grade-authority" version="0.11" >
 		<record alias="authority" name="" extra="Byte1" type="id" >
 			<case alias="none" name="" />
 			<case alias="change-guildmember-grade-by-permission" name="" />
@@ -23,7 +23,7 @@
 			<case alias="purchase-guild-benefit" name="" />
 		</record>
 		<record alias="guild-type" name="" extra="Byte2" type="id" />
-
+		
 		<record alias="editable" name="" type="Bool" repeat="5" />
 		<record alias="initial-value" name="" type="Bool" repeat="5" />
 	</list>

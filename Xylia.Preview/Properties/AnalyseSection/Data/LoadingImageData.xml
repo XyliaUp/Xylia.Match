@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="LoadingImage" version="0.1" rule="cpl | extra" side="client" >
+	<list module="ZoneData0" type="LoadingImage" version="0.1" rule="extra" side="client" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone-id" name="" type="Int32" />
 		<record alias="zone-attraction" name="" type="Int32" use-group="y"  />

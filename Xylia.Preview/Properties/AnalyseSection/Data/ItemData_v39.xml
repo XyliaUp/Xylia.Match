@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="ItemData" type="item" version="39.0" check-version="y" rule="cpl" retired="n">
+	<list module="ItemData" type="item" version="39.0" check-version="y" >
 		<record alias="id" type="id" />
 		<record alias="type" name="类型" type="type" >
 			<case alias="weapon" />

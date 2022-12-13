@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="BadgeSynthesisRecipe" version="0.5" rule="cpl" >
+	<list module="ItemData" type="BadgeSynthesisRecipe" version="0.5" >
 		<record alias="category" name="" type="id" seq="$condition-type" />
 		<record alias="score" name="" start="0" type="Int32" />
 		<record alias="alias" name="" type="Index" />

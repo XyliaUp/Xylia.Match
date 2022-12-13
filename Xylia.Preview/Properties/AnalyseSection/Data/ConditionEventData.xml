@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="condition-event" version="2.0" rule="cpl" >
+	<list module="ItemData" type="condition-event" version="2.0" >
 		<record alias="id" type="id" extra="Short1" name="" />
 		<record alias="score" type="id" extra="Short2" name="" />
 		<record alias="alias" type="Index" name="" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="CustomizingUiMatchParam" version="0.1" rule="cpl" side="client" >
+	<list module="ItemData" type="CustomizingUiMatchParam" version="0.1" side="client" >
 		<record alias="ui-index" type="ID" extra="Short1" name="" />
 		<record alias="race" type="ID" extra="Byte3" name="" seq="$race" />
 		<record alias="sex" type="ID" extra="Byte4" name="" seq="$sex" />

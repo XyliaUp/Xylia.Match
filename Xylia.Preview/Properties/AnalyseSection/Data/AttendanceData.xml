@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="Attendance" version="0.12" rule="cpl" >
+	<list module="LocalizationData" type="Attendance" version="0.12" >
 		<record alias="type" name="" type="type" >
 		     <case alias="board-game" />
 		     <case alias="continual-board-game" />		 

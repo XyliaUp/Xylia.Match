@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="collecting" version="0.10" rule="cpl" >
+	<list module="ItemData" type="collecting" version="0.10" >
 		<record alias="type" name="" type="type" > 
 			<case alias="closet" name="" />
 		</record>

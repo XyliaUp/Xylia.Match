@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="effect" version="25.0" rule="cpl" check-version="y" >
+	<list module="CombatData" type="effect" version="25.0" check-version="y" >
 		<record alias="id" name="" type="id" />
 
 		<record alias="type" name="" type="type" seq="$type-seq" />
@@ -354,13 +354,13 @@
 		<record alias="hate-diff" filter="desire-increase" type="Int32" />
 		<record alias="shout-power-percent" filter="shout-physical-attack" type="Short" />
 		<!-- ======================================================================================== -->
-		<record alias="extend-duration" filter="extend-link" type="Int32" />
+		<record alias="extend-duration" filter="extend-link" type="Msec" />
 		<!-- ======================================================================================== -->
 		<record alias="effect-type" filter="extend-effect" type="Seq16" seq="$type-seq" />
-		<record alias="extend-duration" filter="extend-effect" type="Int32" />
+		<record alias="extend-duration" filter="extend-effect" type="Msec" />
 		<!-- ======================================================================================== -->
 		<record alias="effect-type" filter="fluctuation-time-effect" type="Seq16" seq="$type-seq" />
-		<record alias="fluctuation-time-effect-duration" filter="fluctuation-time-effect" type="Int32" />
+		<record alias="fluctuation-time-effect-duration" filter="fluctuation-time-effect" type="Msec" />
 		<record alias="effect-duration-fluctuation-max" filter="fluctuation-time-effect" type="Int32" />
 		<!-- ======================================================================================== -->
 		<!-- ======================================================================================== -->

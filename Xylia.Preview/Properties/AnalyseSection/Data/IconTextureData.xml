@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="icontexture" version="0.8" rule="cpl" use-alias-info="n" auto-start="1000" >
+	<list module="LocalizationData" type="icontexture" version="0.8" use-alias-info="n" auto-start="1000" >
 		<record alias="alias" name="别名" type="Index" />
 		<record alias="icon-texture" name="资源设置" type="Index" />
 		<record alias="icon-width" name="" type="Short" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="feedback-skill-score" version="0.2" rule="cpl" >
+	<list module="CombatData" type="feedback-skill-score" version="0.2" >
 		<record alias="alias" type="Index" />
 		<record alias="skill" ref="Skill3" />
 		<record alias="skill-result" type="Seq" seq="$skill-result" repeat="8" />

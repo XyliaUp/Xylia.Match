@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SkillDashAttribute3" version="0.3" rule="cpl | extra" >
+	<list module="CombatData" type="SkillDashAttribute3" version="0.3" rule="extra" >
 		<record alias="alias" name="" type="Index" />
-		<record alias="dash-type" name="" type="Byte" >
+		<record alias="dash-type" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="dash" name="" />
 			<case alias="rear-dash" name="" />

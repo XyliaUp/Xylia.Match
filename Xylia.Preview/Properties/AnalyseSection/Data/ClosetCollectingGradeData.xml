@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="closet-collecting-grade" version="0.14" rule="cpl" >
+	<list module="ItemData" type="closet-collecting-grade" version="0.14" >
 		<record alias="grade" type="id" extra="Byte1" name=""/>
 		<record alias="score" type="Int32" name="" />
 		<record alias="name" type="TextAlias" name=""/>	

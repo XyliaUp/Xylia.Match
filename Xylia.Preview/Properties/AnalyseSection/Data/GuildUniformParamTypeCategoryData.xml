@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="145" alias="GuildUniformParamTypeCategory" module="ItemData" type="GuildUniformParamTypeCategory" version="0.4" rule="cpl" >
+	<list module="ItemData" type="GuildUniformParamTypeCategory" version="0.4" >
 		<record alias="param-type-category" name="" type="ID" >
 			<case alias="none" name="" />
 			<case alias="style" name="" />

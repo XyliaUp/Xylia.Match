@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="ZoneData0" rule="cpl | extra" version="0.35" type="duel" > 
+  <list module="ZoneData0" rule="extra" version="0.35" type="duel" > 
 		<record alias="alias" name="" type="Index" />
 		<record alias="group" name="" ref="AttractionGroup" />
 		<record alias="duel-type" name="" type="Seq" >

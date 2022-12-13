@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SoulMaskSet" version="0.5" rule="cpl" check-version="y" >
+	<list module="CombatData" type="SoulMaskSet" version="0.5" check-version="y" >
 		<record alias="soul-mask-id-1" name="" type="ID" extra="Byte1" showzero="y" />
 		<record alias="soul-mask-id-2" name="" type="ID" extra="Byte2" showzero="y" />
 

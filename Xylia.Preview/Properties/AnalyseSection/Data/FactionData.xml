@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" rule="cpl" type="faction" version="0.19" >
+	<list module="ItemData" type="faction" version="0.19" >
 		<record alias="id" name="" type="id" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="hostile-faction" name="" ref="this" link="id" />

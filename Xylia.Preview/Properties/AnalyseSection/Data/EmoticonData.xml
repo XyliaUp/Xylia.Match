@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="LocalizationData" rule="cpl | extra" version="0.5" type="emoticon" side="client" > 
+  <list module="LocalizationData" rule="extra" version="0.5" type="emoticon" side="client" > 
 	    <record alias="type" name="" type="type" >
 	        <case alias="emoticon" />
 	        <case alias="profile" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="ZoneEnv2Place" version="0.2" retired="n" rule="cpl | extra" check-version="y" >
+	<list module="ZoneData0" type="ZoneEnv2Place" version="0.2" rule="extra" check-version="y" >
     <record alias="type" name="" type="type" >
         <case alias="button" />
         <case alias="chest" />

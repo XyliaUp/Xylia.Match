@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="ZoneConvoy" version="0.6" retired="n" rule="cpl" >
+	<list module="AIData" type="ZoneConvoy" version="0.6" >
 		<record alias="zone" name="" type="id" />
 		<record alias="id" name="" type="Short" start="0" />
 		<record alias="alias" name="" type="Index" />

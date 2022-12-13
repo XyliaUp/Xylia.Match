@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="fishing-field" version="0.9" rule="cpl" >
+	<list module="ItemData" type="fishing-field" version="0.9" >
 		<record alias="id" type="id" apply="auto" />
 		<record alias="alias" type="Index" />
 		<record alias="grade-ss-fish" name="" ref="Fish" repeat="20" />

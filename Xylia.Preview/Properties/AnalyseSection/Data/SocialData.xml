@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="QuestData" type="social" version="0.24" rule="cpl" index="y">
+	<list module="QuestData" type="social" version="0.24" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="duration" type="Msec" name="" />			
 		<record alias="balloon-text" type="TextAlias" name="" server="n" error-type="Suggestion" />	

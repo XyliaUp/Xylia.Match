@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="constellation" version="2.2" rule="cpl" >
+	<list module="CombatData" type="constellation" version="2.2" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="name" type="TextAlias" name="" />
 		<record alias="describe" type="TextAlias" name="" />

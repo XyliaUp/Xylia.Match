@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="ItemData" type="attraction-reward" version="0.35" index="y">
+	<list module="ItemData" type="attraction-reward" version="0.35" >
 		<record alias="reward-contents-type" type="id" extra="short1" >
              <case alias="none" default="y" />
              <case alias="battle-royal-field" />	 

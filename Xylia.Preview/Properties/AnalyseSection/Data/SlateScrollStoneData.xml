@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="SlateScrollStone" version="0.1" rule="cpl | extra" >
+	<list module="ItemData" type="SlateScrollStone" version="0.1" rule="extra" >
 		<record alias="scroll" ref="SlateScroll" />
 		<record alias="stone" ref="SlateStone" />
 		<record alias="tooltip" type="Bool" server="n" />

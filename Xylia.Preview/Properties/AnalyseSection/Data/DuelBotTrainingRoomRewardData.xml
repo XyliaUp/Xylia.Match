@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="duel-bot-training-room-reward" version="0.4" rule="cpl" >
+	<list module="ItemData" type="duel-bot-training-room-reward" version="0.4" >
 		<record alias="job" name="" type="id" extra="Byte1" seq="$job" />
 		<record alias="grade" name="" type="id" extra="Short2" />
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="ItemData" rule="cpl" type="newbie-care" version="0.31">
+  <list module="ItemData" type="newbie-care" version="0.31">
     <record alias="id" type="ID" name="" apply="auto" />
     <record alias="alias" type="Index" name="" />
     <record alias="dungeon" name="" ref="dungeon" server="n" />

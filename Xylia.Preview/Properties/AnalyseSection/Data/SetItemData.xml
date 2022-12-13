@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="set-item" version="0.19" rule="cpl | extra" >
+	<list module="ItemData" type="set-item" version="0.19" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="count-1-effect" name="" ref="Effect" repeat="2" />
 		<record alias="count-2-effect" name="" ref="Effect" repeat="2" />

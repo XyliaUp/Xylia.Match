@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="public-raid-event" version="0.3" check-version="y" rule="cpl" >
+	<list module="ZoneData0" type="public-raid-event" version="0.3" check-version="y" >
 		<record alias="id" name="" type="ID" />
 		<record alias="type" name="" type="type" >
              <case alias="score-event" name="" />
         </record>		
 		
 		<record alias="alias" name="" type="Index" />
-		<record alias="event-duration" name="" type="msec" />
-		<record alias="event-type" name="" type="seq" >
+		<record alias="event-duration" name="" type="Msec" />
+		<record alias="event-type" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="clash" name="" />
 			<case alias="escape" name="" />
@@ -18,6 +18,6 @@
 		<record alias="add-score-amount" name="" type="Short" filter="score-event" />
 		<record alias="reduce-score-amount" name="" type="Short" filter="score-event" />
 		<record alias="final-score" name="" type="Short" filter="score-event" repeat="6" />
-		<record alias="add-score-recycle-duration" name="" type="msec" filter="score-event" />
+		<record alias="add-score-recycle-duration" name="" type="Msec" filter="score-event" />
 	</list>
 </table>

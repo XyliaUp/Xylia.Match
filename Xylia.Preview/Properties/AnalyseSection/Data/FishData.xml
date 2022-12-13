@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="Fish" version="0.15" rule="cpl" >
+	<list module="ItemData" type="Fish" version="0.15" >
 		<record alias="id" type="id" apply="auto" />
 
 		<record alias="alias" type="Index" />

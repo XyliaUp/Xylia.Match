@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="132" module="LocalizationData" type="GradeBenefits" version="0.24" rule="cpl" >
+	<list module="LocalizationData" type="GradeBenefits" version="0.24" >
 		<record alias="benefit-type" type="ID" extra="Byte1" name="" >
 			<case alias="none" name="" />
 			<case alias="restoration-time" name="" />

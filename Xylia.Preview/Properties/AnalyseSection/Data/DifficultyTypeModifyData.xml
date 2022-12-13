@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<!-- 副本难度变更设定 -->
-	<list module="AIData" type="difficulty-type-modify" version="0.2" rule="cpl | extra" index="y">
+	<list module="AIData" type="difficulty-type-modify" version="0.2" rule="extra" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="berserk-sequence-invoke-time" type="Msec" name="" repeat="3" />
          <!-- ========================================================= -->

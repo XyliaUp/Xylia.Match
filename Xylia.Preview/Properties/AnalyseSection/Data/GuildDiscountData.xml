@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="guild-discount" version="0.5" rule="cpl | extra" >
+	<list module="ItemData" type="guild-discount" version="0.5" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="item-growth" name="" type="Byte" />
 		<record alias="item-awakening" name="" type="Byte" />

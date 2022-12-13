@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="virtual-item" version="1.12" rule="cpl | extra" index="y">
+	<list module="LocalizationData" type="virtual-item" version="1.12" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="icon" type="Icon" />
 		<record alias="name2" type="TextAlias" />		

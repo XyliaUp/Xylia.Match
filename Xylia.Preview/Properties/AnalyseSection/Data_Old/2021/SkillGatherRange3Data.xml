@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="CombatData" rule="extra" type="SkillGatherRange3" version="0.15">
+		<record alias="alias" type="Index" name="" />
+		<record alias="dir" type="dictionary" name="" >
+			<case alias="360" name="" default="y" />
+			<case alias="front-180" name="" />
+			<case alias="back-180" name="" />
+			<case alias="front-90" name="" />
+			<case alias="back-90" name="" />
+			<case alias="front-30" name="" />
+			<case alias="front-45" name="" />
+			<case alias="front-60" name="" />
+			<case alias="front-120" name="" />
+			<case alias="front-270" name="" />
+		</record>
+
+		<record alias="cast-dir-caster" type="Seq" name="" seq="$dir" />
+		<record alias="cast-dir-target" type="Seq" name="" seq="$dir" />
+
+		<record alias="range-cast-min" name="" type="distance" />
+		<record alias="range-cast-max" name="" type="distance" default="5000" />
+		<record alias="range-cast-height" name="" type="distance" default="5000" />
+		<record alias="range-cast-depth" name="" type="distance" default="5000" />
+		<record alias="range-cast-laser-width" name="" type="distance" />
+		<record alias="gather-radius-min" name="" type="distance" repeat="5" />
+		<record alias="gather-radius-max" name="" type="distance" repeat="5" />
+		<record alias="gather-laser-width-min" name="" type="distance" repeat="5" />
+		<record alias="gather-laser-width-max" name="" type="distance" repeat="5" />
+		<record alias="gather-laser-front-distance-min" name="" type="distance" repeat="5" />
+		<record alias="gather-laser-front-distance-max" name="" type="distance" repeat="5" />
+		<record alias="gather-laser-back-distance-min" name="" type="distance" repeat="5" />
+		<record alias="gather-laser-back-distance-max" name="" type="distance" repeat="5" />
+		<record alias="shifting-laser-width-min" name="" type="distance" />
+		<record alias="shifting-laser-width-max" name="" type="distance" />
+		<record alias="shifting-laser-distance-min" name="" type="distance" />
+		<record alias="shifting-laser-distance-max" name="" type="distance" />
+		<record alias="shifting-laser-height" name="" type="distance" />
+		<record alias="shifting-laser-depth" name="" type="distance" />
+		<record alias="shifting-laser-offset" name="" type="distance" />
+		<record alias="target-z" name="" type="distance" repeat="5" />
+		<record alias="summon-base-pos-type" name="" type="Seq" >
+			<case alias="caster" name="" default="y" />
+			<case alias="target" name="" />
+		</record>
+		<record alias="summon-base-pos-relative-distance" name="" type="Distance" default="11" />
+		<record alias="summon-base-dir-type" name="" type="Seq" >
+			<case alias="caster" name="" default="y" />
+			<case alias="target" name="" />
+			<case alias="caster-to-target" name="" />
+		</record>
+		<record alias="summon-base-dir-relative-angle" name="" type="Short" />
+
+		<!-- ============================================================================= -->
+		<record alias="gather-depth" name="" type="distance" client="n" repeat="5" />
+		<record alias="gather-height" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-exec-depth" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-exec-height" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-exec-laser-width" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-exec-max" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-exec-min" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-fire-depth" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-fire-height" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-fire-laser-width" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-fire-max" name="" type="distance" client="n" repeat="5" />
+		<record alias="range-fire-min" name="" type="distance" client="n" repeat="5" />
+	</list>
+</table>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list type="skill-train-category" module="CombatData" version="0.37" rule="cpl" >
+	<list type="skill-train-category" module="CombatData" version="0.37" >
 		<record alias="job" name="" type="ID" extra="Byte1" seq="$job" />
 		<record start="0" alias="view-skill-id" name="" type="Int32" />
 		<record alias="tree-id" name="" type="Int32" server="n" />

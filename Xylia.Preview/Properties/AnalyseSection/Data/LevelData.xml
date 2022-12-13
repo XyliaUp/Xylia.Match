@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="level" version="0.1" rule="cpl" side="client" >
+	<list module="LocalizationData" type="level" version="0.1" side="client" >
 		<record alias="level" type="id" name="" extra="Byte1" />
 		<record alias="exp" name="" type="Int32" />
 		<record alias="exp-boost-1" name="" type="Int32" />

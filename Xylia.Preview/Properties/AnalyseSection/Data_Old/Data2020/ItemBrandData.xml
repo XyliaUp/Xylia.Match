@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<table>
-	<list alias="ItemBrand" module="ItemData" rule="cpl" type="item-brand" version="0.3">
-		<record alias="id" name="" type="id" />
-		<record alias="alias" name="" type="Index" />
-	</list>
-</table>

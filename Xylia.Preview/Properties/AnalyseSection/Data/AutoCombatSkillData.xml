@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="auto-combat-skill" version="0.1" rule="cpl | unsort" >
+	<list module="CombatData" type="auto-combat-skill" version="0.1" rule="unsort" >
 		<record alias="parent-skill-id" name="" type="ID" />
 		<record start="0" alias="variation-id" name="" type="Byte" />
 

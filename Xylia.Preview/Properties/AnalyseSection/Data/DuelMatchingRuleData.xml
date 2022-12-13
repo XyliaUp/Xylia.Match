@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="DuelMatchingRule" version="0.1" retired="n" rule="cpl" side="server" >
+	<list module="ItemData" type="DuelMatchingRule" version="0.1" side="server" >
 		<record alias="game-mode" name="" type="" />
 		<record alias="level" name="" type="" />
 		<record alias="rating-revise" name="" type="Int32" />

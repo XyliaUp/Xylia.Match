@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="custom-dress-design-type-info" version="0.3" rule="cpl" >
+	<list module="ItemData" type="custom-dress-design-type-info" version="0.3" >
 		<record alias="item-type" name="" type="ID" extra="Byte1" >
 			<case alias="none" name="" />
 			<case alias="costume" name="" />

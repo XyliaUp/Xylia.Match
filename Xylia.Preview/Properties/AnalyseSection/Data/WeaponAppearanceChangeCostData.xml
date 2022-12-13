@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="weapon-appearance-change-cost" version="1.0" rule="cpl" >
+	<list module="ItemData" type="weapon-appearance-change-cost" version="1.0" >
 		<record alias="item-grade" name="" type="ID" extra="Byte1" />
 		<record alias="growth-efficient-level" name="" type="ID" extra="Byte2" />		
 		<record alias="weapon-cost-type" name="" type="ID" extra="Byte3" >	

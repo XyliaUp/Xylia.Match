@@ -19,7 +19,6 @@
 			<case alias="gathering-type-5" name="" />
 			<case alias="gathering-type-6" name="" />
 			<case alias="gathering-type-7" name="" />
-
 		</record>
 		<record alias="craft-union-sub-type" name="" type="Seq" >
 			<case alias="none" name="" default="y" />

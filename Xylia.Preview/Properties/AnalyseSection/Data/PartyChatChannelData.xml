@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="partychatchannel" version="0.6" rule="cpl" side="client" >
+	<list module="ZoneData0" type="partychatchannel" version="0.6" side="client" >
 		<record alias="id" type="id" extra="Short1" />
 		<record alias="type" type="type" >
 			 <case alias="normal" />	
@@ -8,7 +8,7 @@
 		</record>
 
 		<record alias="alias" name="" type="Index" />
-		<record alias="chnnelid" name="" type="seq" >
+		<record alias="chnnelid" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="1" name="" />
 			<case alias="2" name="" />
@@ -22,7 +22,7 @@
 		
 		<record alias="district" name="" ref="District" />
 		<record alias="map-group-1" name="" ref="MapGroup1" />
-		<record alias="arrange-type" name="" type="seq" >
+		<record alias="arrange-type" name="" type="Seq" >
 			<case alias="district" name="" default="y" />
 			<case alias="group-name" name="" />
 		</record>

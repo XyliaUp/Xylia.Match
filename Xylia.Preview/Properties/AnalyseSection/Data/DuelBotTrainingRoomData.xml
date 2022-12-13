@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="duel-bot-training-room" version="0.10" rule="cpl" >
+	<list module="ItemData" type="duel-bot-training-room" version="0.10" >
 		<record alias="id" name="" type="ID" />
 		<record alias="zone" name="" ref="Zone" link="id" />
 		<record alias="alias" name="" type="Index" />
@@ -8,13 +8,13 @@
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
 		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
-		<record alias="required-preceding-quest-check" name="" type="seq" >
+		<record alias="required-preceding-quest-check" name="" type="Seq" >
 			<case alias="and" name="" default="y" />
 			<case alias="or" name="" />
 		</record>
-		<record alias="match-select-delay-duration" name="" type="msec" />
-		<record alias="spawn-kismet-delay-duration" name="" type="msec" />
-		<record alias="finish-delay-duration" name="" type="msec" />
+		<record alias="match-select-delay-duration" name="" type="Msec" />
+		<record alias="spawn-kismet-delay-duration" name="" type="Msec" />
+		<record alias="finish-delay-duration" name="" type="Msec" />
 		<record alias="blade-master-spawn-kismet-name" name="" type="Index" />
 		<record alias="kung-fu-fighter-spawn-kismet-name" name="" type="Index" />
 		<record alias="force-master-spawn-kismet-name" name="" type="Index" />

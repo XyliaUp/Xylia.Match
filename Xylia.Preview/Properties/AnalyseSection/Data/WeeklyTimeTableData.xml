@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="WeeklyTimeTable" version="0.4" retired="n" rule="cpl | extra" >
+	<list module="LocalizationData" type="WeeklyTimeTable" version="0.4" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="enable" type="Bool" showzero="y" />
 		<record alias="sun-start-hour" type="Byte" default="-1" repeat="12" />

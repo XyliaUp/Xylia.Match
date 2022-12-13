@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="fishgrade" version="0.3" rule="cpl" >
+	<list module="ItemData" type="fishgrade" version="0.3" >
 		<record alias="id" name="" type="id" extra="Byte1" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="name" name="" type="TextAlias" />
 		<record alias="grade-symbol" name="" type="Index" />
-		<record alias="grade" name="" type="seq" >
+		<record alias="grade" name="" type="Seq" >
 			<case alias="fish-grade-1" name="" />
 			<case alias="fish-grade-2" name="" />
 			<case alias="fish-grade-3" name="" />

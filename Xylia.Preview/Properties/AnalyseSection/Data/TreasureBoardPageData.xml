@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="treasure-board-page" version="1.0" rule="cpl | extra" >
+	<list module="ItemData" type="treasure-board-page" version="1.0" rule="extra" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="one-time-draw-item" ref="Item" name="" />
 		<record alias="one-time-draw-item-count" type="Short" name="" />

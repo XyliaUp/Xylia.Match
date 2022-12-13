@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="effect-group" version="0.2" rule="cpl | extra" >
+	<list module="CombatData" type="effect-group" version="0.2" rule="extra" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="effect" ref="Effect" repeat="8" input="n" />
 

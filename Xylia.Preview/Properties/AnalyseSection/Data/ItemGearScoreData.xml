@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="itemgearscore" version="0.2" rule="cpl" >
+	<list module="ItemData" type="itemgearscore" version="0.2" >
 		<record alias="level" name="" type="ID" extra="Byte1" />
 		<record alias="mastery-level" name="" type="ID" extra="Byte2" />
 

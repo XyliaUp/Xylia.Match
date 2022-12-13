@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="fishing-field-group" version="0.1" rule="cpl" side="client" >
+	<list module="ItemData" type="fishing-field-group" version="0.1" side="client" >
 		<record alias="id" type="id" apply="auto" />
 		<record alias="alias" type="Index" />
-
 		<record alias="name2" name="" type="TextAlias" />
 		<record alias="desc" name="" type="TextAlias" />
 		<record alias="fishing-field" name="" ref="FishingField" repeat="10" />

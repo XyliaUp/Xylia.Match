@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="CustomizingPreset" version="0.7" rule="cpl" side="client" >
+	<list module="ItemData" type="CustomizingPreset" version="0.7" side="client" >
 		<record alias="race" name="" type="ID" extra="Byte1" seq="$race" />
 		<record alias="sex" name="" type="ID" extra="Byte2" seq="$sex" />
 		<record alias="part-type" name="" type="ID" extra="Byte3" >

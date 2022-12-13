@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="item-improve-option" version="4.2" rule="cpl" >
+	<list module="ItemData" type="item-improve-option" version="4.2" >
 		<record alias="id" type="id" name="" />
 		<record alias="level" type="Level" name="" start="0" />
 

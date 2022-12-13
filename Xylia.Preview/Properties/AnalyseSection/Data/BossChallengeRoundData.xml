@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" rule="cpl" version="0.2" type="boss-challenge-round" >
+	<list module="AIData" version="0.2" type="boss-challenge-round" >
 		<record alias="id" name="" type="id" />
 		<record alias="round" name="" type="Int32" start="0" />
 		<record alias="alias" name="" type="Index" />

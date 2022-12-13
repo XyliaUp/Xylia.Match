@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="field-zone" version="0.16" rule="cpl" >
+	<list module="ZoneData0" type="field-zone" version="0.16" >
 		<record alias="type" name="" type="type" >
 		     <case alias="normal" />
 			 <case alias="guild-battle-field-entrance" />

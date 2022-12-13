@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="ZoneData0" type="public-raid" version="0.16" check-version="y" rule="" >
+		<record alias="id" name="" type="ID" />
+		<record alias="type" name="" type="type" >
+             <case alias="public-raid-1" name="" />
+			 <case alias="public-raid-2" name="" />
+			 <case alias="public-raid-3" name="" />
+        </record>		
+		
+		<record alias="alias" name="" type="Index" />
+		<record alias="zone" name="" ref="Zone" link="id" />
+		<record alias="max-pc-count" name="" type="Byte" />
+		<record alias="max-party-count" name="" type="Byte" />
+		<record alias="round-id" name="" type="Byte" />
+		<record alias="required-level" name="" type="Byte" />
+		<record alias="required-mastery-level" name="" type="Byte" />
+		<record alias="required-preceding-quest-1" name="" type="Quest" />
+		<record alias="required-preceding-quest-2" name="" type="Quest" />
+		<record alias="required-preceding-quest-3" name="" type="Quest" />
+		<record alias="required-preceding-quest-check" name="" type="Seq" >
+			<case alias="and" name="" default="y" />
+			<case alias="or" name="" />
+        </record>
+		
+		<record alias="required-available-weekly-time" name="" ref="WeeklyTimeTable" />
+		<record alias="start-weekly-time" name="" ref="WeeklyTimeTable" />
+		<record alias="stand-by-duration-second" name="" type="Short" />
+		<record alias="group" name="" ref="AttractionGroup" />
+		<record alias="arena-entrance-zone" name="" ref="Zone" link="id" />
+		<record alias="enter-pc-spawn" name="" ref="ZonePcSpawn" />
+		<record alias="publicraid-name2" name="" type="TextAlias" server="n" />
+		<record alias="publicraid-desc" name="" type="TextAlias" server="n" />
+		<record alias="reward-summary" name="" ref="AttractionRewardSummary" />
+		<record alias="publicraid-icon" name="" type="Index" server="n" />
+		<record alias="publicraid-image" name="" type="Index" server="n" />
+		<record alias="enable-reset-combat-mode" name="" type="Bool" />
+		<record alias="reset-combat-mode-recycle-duration" name="" type="Msec" />
+		<record alias="public-raid-kismet-name" name="" type="Index" server="n" repeat="30" />
+		<record alias="public-raid-npc-for-kismet" name="" ref="Npc" repeat="30" />
+		<record alias="enable-custom-pouch-drop-position" name="" type="Bool" server="n" />
+		<record alias="pouch-pos-x" name="" type="Float32" server="n" />
+		<record alias="pouch-pos-y" name="" type="Float32" server="n" />
+		<record alias="pouch-pos-z" name="" type="Float32" server="n" />
+		<record alias="exit-env-name" name="" type="Index" server="n" />
+		
+		<record alias="radius" name="" type="Int32" client="n" />		
+		<record alias="bottom" name="" type="Int32" client="n" />
+		<record alias="center-x" name="" type="Int32" client="n" />
+		<record alias="center-y" name="" type="Int32" client="n" />
+		<record alias="center-z" name="" type="Int32" client="n" />		
+		<record alias="change-state-env-by-start" name="" type="" client="n" />
+		<record alias="target-npc-to-finish-state" name="" type="" client="n" />
+
+		<record alias="enable-public-raid-event" name="" type="Bool" filter="public-raid-1" showzero="y" />	
+	</list>
+</table>

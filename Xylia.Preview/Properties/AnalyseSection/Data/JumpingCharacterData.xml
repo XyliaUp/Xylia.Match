@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="JumpingCharacter" version="0.5" rule="cpl" >
+	<list module="CombatData" type="JumpingCharacter" version="0.5" >
 		<record alias="job" type="Id" extra="Byte1" seq="$job" />
 		<record alias="condition-level" type="Id" extra="Byte2" />
 		

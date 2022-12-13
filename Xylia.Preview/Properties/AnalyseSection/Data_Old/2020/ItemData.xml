@@ -1,0 +1,1276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+    <!-- 引用公共字典 -->
+    <include path="public.xml" />
+
+	<list module="ItemData" type="item" version="1.398" check-version="y" rule="" >
+		<record alias="dispel" type="dispel-flag" flag="y" />
+
+		<record alias="id" type="id" />
+		<record alias="type" name="类型" type="type" >
+			<case alias="weapon" />
+			<case alias="costume" />
+			<case alias="grocery" />
+			<case alias="gem" />
+			<case alias="accessory" />
+			<case alias="enchant" />
+		</record>
+		
+		<record alias="level" type="Level" start="0" />
+		<record alias="alias" name="别名" type="Index" />
+		<record alias="brand" name="物品组" ref="ItemBrand" />
+		<record alias="price" name="出售价格" type="Int32" />
+		<record alias="base-fee" name="基础邮寄钱币" type="Int32" />
+		<record alias="game-category-1" name="分类目录1" type="Byte" server="n" >
+			<case alias="none" name="" default="y" />
+		    <case alias="equip" />
+			<case alias="enchant" />
+			<case alias="consumable" />
+			<case alias="production" />
+			<case alias="exchange" />
+			<case alias="box" />
+		</record>
+		
+		<record alias="game-category-2" name="分类目录2" type="Byte" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="weapon" name="" />
+			<case alias="accessory" name="" />
+			<case alias="dress" name="" />
+			<case alias="equip-gem" name="" />
+			<case alias="weapon-gem" name="" />
+			<case alias="build-up-stone" name="" />
+			<case alias="badge" name="" />
+			<case alias="medicine" name="" />
+			<case alias="food" name="" />
+			<case alias="tool" name="" />
+			<case alias="talisman" name="" />
+			<case alias="equip-material" name="" />
+			<case alias="union-material" name="" />
+			<case alias="dress-material" name="" />
+			<case alias="etc-material" name="" />
+			<case alias="coin" name="" />
+			<case alias="deed" name="" />
+			<case alias="quest" name="" />
+			<case alias="etc-change" name="" />
+			<case alias="weapon-box" name="" />
+			<case alias="accessory-box" name="" />
+			<case alias="dress-box" name="" />
+			<case alias="equip-gem-box" name="" />
+			<case alias="weapon-gem-box" name="" />
+			<case alias="material-box" name="" />
+			<case alias="booty-box" name="" />
+			<case alias="etc-box" name="" />
+                                </record>
+		<record alias="game-category-3" name="分类目录3" type="Seq16" server="n" error-type="Suggestion" >
+			<case alias="none" name="" default="y" />
+			<case alias="sword" name="" />
+			<case alias="gauntlet" name="" />
+			<case alias="aura-bangle" name="" />
+			<case alias="axe" name="" />
+			<case alias="dagger" name="" />
+			<case alias="staff" name="" />
+			<case alias="lyn-sword" name="" />
+			<case alias="warlock-dagger" name="" />
+			<case alias="soul-fighter-gauntlet" name="" />
+			<case alias="gun" name="" />
+			<case alias="great-sword" name="" />
+			<case alias="long-bow" name="" />
+			<case alias="spear" name="" />
+			<case alias="orb" name="" />
+			<case alias="necklace" name="" />
+			<case alias="ring" name="" />
+			<case alias="earring" name="" />
+			<case alias="bracelet" name="" />
+			<case alias="belt" name="" />
+			<case alias="gloves" name="" />
+			<case alias="soul" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="rune-1" name="" />
+			<case alias="rune-2" name="" />
+			<case alias="pet" name="" />
+			<case alias="nova" name="" />
+			<case alias="costume" name="" />
+			<case alias="head-attach" name="" />
+			<case alias="face-attach" name="" />
+			<case alias="costume-attach" name="" />
+			<case alias="summoned-pet-costume" name="" />
+			<case alias="summoned-pet-hat" name="" />
+			<case alias="summoned-pet-attach" name="" />
+			<case alias="gam1" name="" />
+			<case alias="gan2" name="" />
+			<case alias="jin3" name="" />
+			<case alias="son4" name="" />
+			<case alias="ri5" name="" />
+			<case alias="gon6" name="" />
+			<case alias="tae7" name="" />
+			<case alias="geon8" name="" />
+			<case alias="synthesis-gem" name="" />
+			<case alias="feed-gem" name="" />
+			<case alias="diamond" name="" />
+			<case alias="ruby" name="" />
+			<case alias="topaz" name="" />
+			<case alias="sapphire" name="" />
+			<case alias="jade" name="" />
+			<case alias="emerald" name="" />
+			<case alias="amethyst" name="" />
+			<case alias="aquamarine" name="" />
+			<case alias="amber" name="" />
+			<case alias="obsidian" name="" />
+			<case alias="garnet" name="" />
+			<case alias="ruby-topaz" name="" />
+			<case alias="ruby-sapphire" name="" />
+			<case alias="ruby-jade" name="" />
+			<case alias="ruby-amethyst" name="" />
+			<case alias="ruby-emerald" name="" />
+			<case alias="ruby-diamond" name="" />
+			<case alias="topaz-sapphire" name="" />
+			<case alias="topaz-jade" name="" />
+			<case alias="topaz-amethyst" name="" />
+			<case alias="topaz-emerald" name="" />
+			<case alias="topaz-diamond" name="" />
+			<case alias="sapphire-jade" name="" />
+			<case alias="sapphire-amethyst" name="" />
+			<case alias="sapphire-emerald" name="" />
+			<case alias="sapphire-diamond" name="" />
+			<case alias="jade-amethyst" name="" />
+			<case alias="jade-emerald" name="" />
+			<case alias="jade-diamond" name="" />
+			<case alias="amethyst-emerald" name="" />
+			<case alias="amethyst-diamond" name="" />
+			<case alias="emerald-diamond" name="" />
+			<case alias="aquamarine-diamond" name="" />
+			<case alias="amber-diamond" name="" />
+			<case alias="obsidian-garnet" name="" />
+			<case alias="corundum-white" name="" />
+			<case alias="corundum-black" name="" />
+			<case alias="corundum-pink" name="" />
+			<case alias="corundum-yellow" name="" />
+			<case alias="corundum-bluegreen" name="" />
+			<case alias="corundum-blue" name="" />
+			<case alias="corundum-aquamarine" name="" />
+			<case alias="corundum-amber" name="" />
+			<case alias="corundum-ruby" name="" />
+			<case alias="corundum-amethyst" name="" />
+			<case alias="corundum-jade" name="" />
+			<case alias="skill-stone" name="" />
+			<case alias="skill-stone-1" name="" />
+			<case alias="skill-stone-2" name="" />
+			<case alias="regenerate-potion" name="" />
+			<case alias="heal-potion" name="" />
+			<case alias="secret-potion" name="" />
+			<case alias="detox-potion" name="" />
+			<case alias="magic-potion" name="" />
+			<case alias="hwan-dan" name="" />
+			<case alias="cook" name="" />
+			<case alias="exp-cook" name="" />
+			<case alias="alcohol" name="" />
+			<case alias="normal-repair-tool" name="" />
+			<case alias="urgency-repair-tool" name="" />
+			<case alias="key" name="" />
+			<case alias="weapon-gem-make" name="" />
+			<case alias="festival-tool" name="" />
+			<case alias="fishing-goods" name="" />
+			<case alias="reset-talisman" name="" />
+			<case alias="revive-talisman" name="" />
+			<case alias="party-revive-talisman" name="" />
+			<case alias="growth-talisman" name="" />
+			<case alias="unseal-talisman" name="" />
+			<case alias="seal-talisman" name="" />
+			<case alias="escape-talisman" name="" />
+			<case alias="build-up-talisman" name="" />
+			<case alias="valuables" name="" />
+			<case alias="wealth" name="" />
+			<case alias="holy-material" name="" />
+			<case alias="weapon-material" name="" />
+			<case alias="party-battle-material" name="" />
+			<case alias="raid-material" name="" />
+			<case alias="weapon-seed-material" name="" />
+			<case alias="accessory-material" name="" />
+			<case alias="synthetic-material" name="" />
+			<case alias="weapon-exp" name="" />
+			<case alias="accessory-exp" name="" />
+			<case alias="weapon-maker" name="" />
+			<case alias="talis-maker" name="" />
+			<case alias="equip-gem-maker" name="" />
+			<case alias="accessory-maker" name="" />
+			<case alias="medicine-maker" name="" />
+			<case alias="food-maker" name="" />
+			<case alias="common-maker" name="" />
+			<case alias="hypermove-material" name="" />
+			<case alias="production-material" name="" />
+			<case alias="cloth" name="" />
+			<case alias="dress-design" name="" />
+			<case alias="color-material" name="" />
+			<case alias="pattern" name="" />
+			<case alias="special-material" name="" />
+			<case alias="normal-material" name="" />
+			<case alias="weapon-coin" name="" />
+			<case alias="token" name="" />
+			<case alias="naryu-coin" name="" />
+			<case alias="pvp-coin" name="" />
+			<case alias="rvr-coin" name="" />
+			<case alias="festival-coin" name="" />
+			<case alias="hero-coin" name="" />
+			<case alias="spirit-coin" name="" />
+			<case alias="normal-coin" name="" />
+			<case alias="skill-deed" name="" />
+			<case alias="skill-take-deed" name="" />
+			<case alias="ticket" name="" />
+			<case alias="reset-deed" name="" />
+			<case alias="extend-deed" name="" />
+			<case alias="exchange-deed" name="" />
+			<case alias="switch-deed" name="" />
+			<case alias="normal-deed" name="" />
+			<case alias="guild-deed" name="" />
+			<case alias="quest-start" name="" />
+			<case alias="quest-virtual" name="" />
+			<case alias="chack-item" name="" />
+			<case alias="sundry-item" name="" />
+			<case alias="normal-weapon-box" name="" />
+			<case alias="shape-weapon-box" name="" />
+			<case alias="normal-accessory-box" name="" />
+			<case alias="normal-dress-box" name="" />
+			<case alias="normal-equip-gem-box" name="" />
+			<case alias="normal-weapon-gem-box" name="" />
+			<case alias="normal-material-box" name="" />
+			<case alias="normal-booty-box" name="" />
+			<case alias="normal-etc-box" name="" />
+			<case alias="badge-1-premium" name="" />
+			<case alias="badge-2-premium" name="" />
+			<case alias="badge-3-premium" name="" />
+			<case alias="badge-1-normal" name="" />
+			<case alias="badge-2-normal" name="" />
+			<case alias="badge-3-normal" name="" />
+			<case alias="badge-appearance" name="" />
+			<case alias="fusion-material" name="" />
+                                </record>
+		
+		<record alias="market-category-1" name="拍卖行目录1" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="equip" name="" />
+			<case alias="enchant" name="" />
+			<case alias="consumable" name="" />
+			<case alias="production" name="" />
+			<case alias="exchange" name="" />
+			<case alias="box" name="" />
+		</record>
+		
+		<record alias="market-category-2" name="拍卖行目录2" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="weapon" name="" />
+			<case alias="equip-gem" name="" />
+			<case alias="accessory" name="" />
+			<case alias="dress" name="" />
+			<case alias="weapon-gem" name="" />
+			<case alias="medicine" name="" />
+			<case alias="food" name="" />
+			<case alias="build-up-stone" name="" />
+			<case alias="talisman" name="" />
+			<case alias="tool" name="" />
+			<case alias="equip-material" name="" />
+			<case alias="union-material" name="" />
+			<case alias="dress-material" name="" />
+			<case alias="etc-material" name="" />
+			<case alias="coin" name="" />
+			<case alias="deed" name="" />
+			<case alias="quest" name="" />
+			<case alias="etc-change" name="" />
+			<case alias="etc-box" name="" />
+			<case alias="badge" name="" />
+		</record>
+		
+		<record alias="market-category-3" name="拍卖行目录3" type="Seq" error-type="Suggestion" >
+			<case alias="none" name="" default="y" />
+			<case alias="sword" name="" />
+			<case alias="gauntlet" name="" />
+			<case alias="axe" name="" />
+			<case alias="staff" name="" />
+			<case alias="aura-bangle" name="" />
+			<case alias="dagger" name="" />
+			<case alias="gam1" name="" />
+			<case alias="gan2" name="" />
+			<case alias="jin3" name="" />
+			<case alias="son4" name="" />
+			<case alias="ri5" name="" />
+			<case alias="gon6" name="" />
+			<case alias="tae7" name="" />
+			<case alias="geon8" name="" />
+			<case alias="great-sword" name="" />
+			<case alias="ring" name="" />
+			<case alias="earring" name="" />
+			<case alias="necklace" name="" />
+			<case alias="costume" name="" />
+			<case alias="head-attach" name="" />
+			<case alias="face-attach" name="" />
+			<case alias="costume-attach" name="" />
+			<case alias="summoned-pet-costume" name="" />
+			<case alias="summoned-pet-hat" name="" />
+			<case alias="summoned-pet-attach" name="" />
+			<case alias="ruby" name="" />
+			<case alias="topaz" name="" />
+			<case alias="sapphire" name="" />
+			<case alias="jade" name="" />
+			<case alias="amethyst" name="" />
+			<case alias="emerald" name="" />
+			<case alias="diamond" name="" />
+			<case alias="regenerate-potion" name="" />
+			<case alias="heal-potion" name="" />
+			<case alias="secret-potion" name="" />
+			<case alias="detox-potion" name="" />
+			<case alias="lyn-sword" name="" />
+			<case alias="warlock-dagger" name="" />
+			<case alias="soul-fighter-gauntlet" name="" />
+			<case alias="gun" name="" />
+			<case alias="cook" name="" />
+			<case alias="alcohol" name="" />
+			<case alias="normal-repair-tool" name="" />
+			<case alias="urgency-repair-tool" name="" />
+			<case alias="unseal-talisman" name="" />
+			<case alias="revive-talisman" name="" />
+			<case alias="escape-talisman" name="" />
+			<case alias="feed-gem" name="" />
+			<case alias="weapon-gem-etc" name="" />
+			<case alias="long-bow" name="" />
+			<case alias="magic-potion" name="" />
+			<case alias="key" name="" />
+			<case alias="hwan-dan" name="" />
+			<case alias="exp-cook" name="" />
+			<case alias="weapon-gem-make" name="" />
+			<case alias="festival-tool" name="" />
+			<case alias="sundry-item" name="" />
+			<case alias="reset-talisman" name="" />
+			<case alias="party-revive-talisman" name="" />
+			<case alias="weapon-maker" name="" />
+			<case alias="talis-maker" name="" />
+			<case alias="equip-gem-maker" name="" />
+			<case alias="accessory-maker" name="" />
+			<case alias="medicine-maker" name="" />
+			<case alias="food-maker" name="" />
+			<case alias="growth-talisman" name="" />
+			<case alias="build-up-talisman" name="" />
+			<case alias="valuables" name="" />
+			<case alias="wealth" name="" />
+			<case alias="growth-material" name="" />
+			<case alias="holy-material" name="" />
+			<case alias="common-maker" name="" />
+			<case alias="special-material" name="" />
+			<case alias="hypermove-material" name="" />
+			<case alias="normal-material" name="" />
+			<case alias="production-material" name="" />
+			<case alias="cloth" name="" />
+			<case alias="obsidian" name="" />
+			<case alias="amber" name="" />
+			<case alias="garnet" name="" />
+			<case alias="aquamarine" name="" />
+			<case alias="belt" name="" />
+			<case alias="bracelet" name="" />
+			<case alias="seal-talisman" name="" />
+			<case alias="dress-design" name="" />
+			<case alias="fishing-goods" name="" />
+			<case alias="badge-1" name="" />
+			<case alias="weapon-gem-guardian" name="" />
+			<case alias="spear" name="" />
+			<case alias="orb" name="" />
+			<case alias="ruby-diamond" name="" />
+			<case alias="void-6" name="" />
+			<case alias="void-7" name="" />
+			<case alias="void-8" name="" />
+			<case alias="void-9" name="" />
+			<case alias="topaz-diamond" name="" />
+			<case alias="void-10" name="" />
+			<case alias="void-11" name="" />
+			<case alias="void-12" name="" />
+			<case alias="sapphire-diamond" name="" />
+			<case alias="void-13" name="" />
+			<case alias="void-14" name="" />
+			<case alias="jade-diamond" name="" />
+			<case alias="void-15" name="" />
+			<case alias="amethyst-diamond" name="" />
+			<case alias="emerald-diamond" name="" />
+			<case alias="soul" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="gloves" name="" />
+			<case alias="pet-1" name="" />
+			<case alias="nova" name="" />
+			<case alias="color-material" name="" />
+			<case alias="rune-1" name="" />
+			<case alias="rune-2" name="" />
+			<case alias="aquamarine-diamond" name="" />
+			<case alias="pattern" name="" />
+			<case alias="normal-coin" name="" />
+			<case alias="skill-take-deed" name="" />
+			<case alias="normal-deed" name="" />
+			<case alias="quest-start" name="" />
+			<case alias="chack-item" name="" />
+			<case alias="normal-etc-box" name="" />
+			<case alias="skill-stone-1" name="" />
+			<case alias="skill-stone-2" name="" />
+			<case alias="amber-diamond" name="" />
+			<case alias="obsidian-garnet" name="" />
+	    </record>
+		
+		
+		<record alias="cannot-dispose" name="无法销毁" type="bool" />
+		<record alias="cannot-sell" name="无法出售" type="bool" />
+		<record alias="cannot-trade" name="无法交易" type="bool" />
+		<record alias="cannot-depot" name="无法存储到仓库" type="bool" />
+		<record alias="cannot-use-restore-failed-enchant-cost" name="" type="bool" />
+		<record alias="consume-durability" name="消耗耐久" type="bool" default="y" />
+		<record alias="auctionable" name="允许拍卖行交易" type="bool" />
+		<record alias="party-auction-exclusion" name="不进行队伍竞拍" type="bool" />
+		<record alias="acquire-used" name="获得后无法交易" type="bool" />
+		<record alias="equip-used" name="装备后无法交易" type="bool" />
+		<record alias="account-used" name="账号专用" type="bool" />
+		<record alias="filter-equip" name="" ref="filter" repeat="4" />
+		<record alias="effect-equip" name="" ref="Effect" repeat="4" error-type="Suggestion" />
+
+		<record alias="gear-score" name="" type="Int32" />
+		<record alias="equip-level" name="要求等级" default="1" type="byte" />
+		<record alias="equip-level-max" name="最大可用等级" type="byte" />
+		<record alias="equip-mastery-level" name="要求星级" type="byte" />
+		<record alias="equip-job-check" name="职业1" seq="$job_20" type="Seq" repeat="4" />
+		<record alias="equip-sex" name="性别" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="all" name="" default="y" />
+			<case alias="male" name="" />
+			<case alias="female" name="" />
+                                </record>
+		<record alias="equip-race" name="种族" type="Seq" >
+			<case alias="none" name="" />
+			<case alias="all" name="" default="y" />
+			<case alias="jin" name="" />
+			<case alias="gon" name="" />
+			<case alias="lyn" name="" />
+			<case alias="kun" name="" />
+			<case alias="summoned-all" name="" />
+			<case alias="summoned-cat" name="" />
+                                </record>
+                         
+		<record alias="equip-type" name="装备种类" seq="$equip-type" type="byte" default="none" />
+		<record alias="equip-solo-duel-grade" name="" type="Byte" />
+		<record alias="equip-team-duel-grade" name="" type="Byte" />
+		<record alias="item-grade" name="道具品质" type="byte" default="1" apply="must" />
+		<record alias="legend-grade-background-particle-type" name="道具底图" type="Seq" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="type-gold" name="" />
+			<case alias="type-redup" name="" />
+			<case alias="type-goldup" name="" />
+                                </record>
+		<record alias="max-durability" name="最大耐久" filiter="weapon" type="short" />
+		<record alias="init-durability" name="初始耐久" filiter="weapon" type="short" />
+		<record alias="repair-money-cost" name="" type="Int32" />
+		<record alias="use-global-recycle-group" name="" seq="$recycle-group" type="Byte" />
+		<record alias="use-global-recycle-group-id" name="" type="Byte" />
+		<record alias="use-global-recycle-group-duration" name="" type="Int32" />
+		<record alias="use-recycle-group" name="" seq="$recycle-group" type="Byte" />
+		<record alias="use-recycle-group-id" name="" type="Byte" />
+		<record alias="use-recycle-group-duration" name="" type="Int32" />
+		<!-- ======================================  奖励  ===================================== -->
+		<record alias="decompose-reward-by-consume-index" name="" type="Bool" />
+		<record alias="decompose-reward-1" name="奖励" ref="Reward" rule-dispel="y" />
+		<record alias="decompose-reward" name="奖励" ref="Reward" start="2" repeat="7" />
+
+		<record alias="decompose-event-reward" name="事件奖励" ref="Reward" />
+		<record alias="decompose-job-reward-blade-master" name="剑士奖励" ref="Reward" />
+		<record alias="decompose-job-reward-kung-fu-fighter" name="拳师奖励" ref="Reward" />
+		<record alias="decompose-job-reward-force-master" name="气功师奖励" ref="Reward" />
+		<record alias="decompose-job-reward-destroyer" name="力士奖励" ref="Reward" />
+		<record alias="decompose-job-reward-summoner" name="召唤师奖励" ref="Reward" />
+		<record alias="decompose-job-reward-assassin" name="刺客奖励" ref="Reward" />
+		<record alias="decompose-job-reward-sword-master" name="灵剑士奖励" ref="Reward" />
+		<record alias="decompose-job-reward-warlock" name="咒术师奖励" ref="Reward" />
+		<record alias="decompose-job-reward-soul-fighter" name="气宗奖励" ref="Reward" />
+		<record alias="decompose-job-reward-shooter" name="枪手奖励" ref="Reward" />
+		<record alias="decompose-job-reward-warrior" name="斗士奖励" ref="Reward" />
+		<record alias="decompose-job-reward-archer" name="弓手奖励" ref="Reward" />
+		<record alias="decompose-job-reward-spear-master" name="矛手奖励" ref="Reward" />
+		<record alias="decompose-job-reward-thunderer" name="星术师奖励" ref="Reward" />
+		<record alias="decompose-max" name="" default="1" type="Int32" />
+		<record alias="decompose-money-cost" name="" type="Int32" />
+		<record alias="decompose-by-item2" name="" ref="Item" repeat="7" />
+		<record alias="decompose-by-item2-stack-count" name="" out-cond="Exist: decompose-by-item2-" type="Short" repeat="7" />
+		<record alias="job-decompose-by-item2" name="" ref="Item" repeat="7" />
+		<record alias="job-decompose-by-item2-stack-count" name="" out-cond="Exist: job-decompose-by-item2-" type="Short" repeat="7" />
+		<!-- ========================================================================================= -->
+		<record alias="set-item" name="" ref="SetItem" />
+		<record alias="faction" name="" ref="Faction" />
+		<record alias="equip-faction" name="" ref="Faction" />
+		<record alias="equip-faction-level" name="" type="Short" />
+		<record alias="new-product" name="新品" type="Bool" server="n" />
+		<record alias="hot-product" name="热品" type="Bool" server="n" />
+		<record alias="pouch-appearance-priority" name="掉落物外观优先级，屏蔽会导致看不到贡献度奖励箱子" type="short" out-cond="Exist: pouch-appearance" />
+		<record alias="pouch-appearance" name="掉落物外观，屏蔽会导致看不到贡献度奖励箱子" type="Seq" seq="$pouch-appearance" />
+		<record alias="seal-consume-item-1" name="封印消耗道具1" ref="this" />
+		<record alias="seal-consume-item-2" name="封印消耗道具2" ref="this" />
+		<record alias="seal-consume-item-count-1" name="封印消耗道具1 数量" type="Short" />
+		<record alias="seal-consume-item-count-2" name="封印消耗道具2 数量" type="Short" />
+		<record alias="seal-acquire-item" name="封印获得物品" ref="this" />
+		<record alias="seal-keep-level" name="封印后不重置进化级别" type="bool" />
+
+		<record alias="forwarding-types" type="Seq" name="" seq="$forwarding-type" server="n" repeat="64" />
+		<record alias="quests" type="Quest" name="" server="n" repeat="64" />
+		<record alias="missions" type="Byte" name="" server="n" repeat="64" />
+		<record alias="cases" type="Byte" name="" server="n" repeat="64" />
+		<record alias="case-subtypes" type="Short" name="" server="n" repeat="64" />
+		<!-- ========================================================================================= -->
+		<!-- ========================================= 属性 ========================================== -->
+		<record alias="attack-power-equip-min" name="最小攻击" type="Short" />
+		<record alias="attack-power-equip-max" name="最大攻击" type="Short" />
+		<record alias="defend-power-equip-value" name="防御" type="Short" />
+		<record alias="defend-resist-power-equip-value" name="抗性" type="Short" />
+		<record alias="attack-hit-base-percent" name="命中率" type="Short" />
+		<record alias="attack-hit-value" name="" type="Short" />
+		<record alias="attack-hit-value-equip" name="命中" type="Short" />
+		<record alias="attack-pierce-base-percent" name="" type="Short" />
+		<record alias="attack-parry-pierce-percent" name="" type="Short" />
+		<record alias="attack-pierce-value" name="" type="Short" />
+		<record alias="attack-pierce-value-equip" name="穿刺" type="Short" />
+		<record alias="attack-critical-base-percent" name="" type="Short" />
+		<record alias="attack-critical-damage-percent" name="暴击伤害率" type="Short" />
+		<record alias="attack-critical-value" name="暴击" type="Short" />
+		<record alias="attack-critical-value-equip" name="" type="Short" />
+		<record alias="attack-critical-damage-value" name="" type="Short" />
+		<record alias="attack-critical-damage-value-equip" name="" type="Short" />
+		<record alias="defend-critical-base-percent" name="" type="Short" />
+		<record alias="defend-critical-damage-percent" name="暴击防御率" type="Short" />
+		<record alias="defend-critical-value" name="" type="Short" />
+		<record alias="defend-critical-value-equip" name="暴击防御" type="Short" />
+		<record alias="defend-dodge-base-percent" name="闪避率" type="Short" />
+		<record alias="defend-dodge-value" name="" type="Short" />
+		<record alias="defend-dodge-value-equip" name="闪避" type="Short" />
+		<record alias="defend-parry-base-percent" name="格挡率" type="Short" />
+		<record alias="defend-parry-value" name="" type="Short" />
+		<record alias="defend-parry-value-equip" name="格挡" type="Short" />
+		<record alias="attack-stiff-duration-base-percent" name="状态异常时间增加（百分比）" type="Short" />
+		<record alias="attack-stiff-duration-value" name="熟练" type="Short" />
+		<record alias="defend-stiff-duration-base-percent" name="状态异常时间减少（百分比）" type="Short" />
+		<record alias="defend-stiff-duration-value" name="韧性" type="Short" />
+		<record alias="cast-duration-base-percent" name="集中率" type="Short" />
+		<record alias="cast-duration-value" name="集中" type="Short" />
+		<record alias="defend-physical-damage-reduce-percent" name="物理伤害减免率" type="Short" />
+		<record alias="defend-force-damage-reduce-percent" name="气功伤害减免率" type="Short" />
+		<record alias="attack-damage-modify-percent" name="额外伤害率" type="Short" />
+		<record alias="attack-damage-modify-diff" name="额外伤害" type="Short" />
+		<record alias="defend-damage-modify-percent" name="伤害减免率" type="Short" />
+		<record alias="defend-damage-modify-diff" name="伤害减免" type="Short" />
+		<record alias="max-hp" name="" type="Int32" />
+		<record alias="max-hp-equip" name="生命" type="Int32" />
+		<record alias="hp-regen" name="恢复" type="Int32" />
+		<record alias="hp-regen-equip" name="" type="Int32" />
+		<record alias="hp-regen-combat" name="" type="Int32" />
+		<record alias="hp-regen-combat-equip" name="战斗中恢复生命" type="Int32" />
+		<record alias="max-guard-gauge" name="刚体" type="Int32" />
+		<record alias="max-guard-gauge-equip" name="" type="Int32" />
+		<record alias="attack-concentrate-value" name="" type="Short" />
+		<record alias="attack-concentrate-value-equip" name="" type="Short" />
+		<record alias="defend-perfect-parry-reduce-percent" name="" type="Short" />
+		<record alias="defend-counter-reduce-percent" name="" type="Short" />
+		<record alias="attack-attribute-value" name="" type="Short" />
+		<record alias="attack-attribute-value-equip" name="功力" type="Short" />
+		<record alias="attack-attribute-base-percent" name="功力伤害率" type="Short" />
+		<record alias="pve-boss-level-npc-attack-power-equip-min" name="最小降魔攻击力" type="Short" />
+		<record alias="pve-boss-level-npc-attack-power-equip-max" name="最大降魔攻击力" type="Short" />
+		<record alias="pve-boss-level-npc-defend-power-equip-value" name="降魔防御力" type="Short" />
+		<record alias="pvp-attack-power-equip-min" name="最小PVP攻击力" type="Short" />
+		<record alias="pvp-attack-power-equip-max" name="最大PVP攻击力" type="Short" />
+		<record alias="pvp-defend-power-equip-value" name="PVP防御力" type="Short" />
+		<record alias="r-attack-stiff-duration-equip-value" type="Short" name="" />
+		<record alias="r-defend-stiff-duration-equip-value" type="Short" name="" />
+		<record alias="r-aoe-defend-power-value-equip" type="Short" name="" />
+		<record alias="r-heal-power-equip-value" type="Short" name="" />
+		<record alias="r-defend-strength-equip-value" type="Int32" name="" />
+		<record alias="r-attack-precise-equip-value" type="Int32" name="" />
+		<record alias="r-attack-aoe-pierce-value-equip" type="Short" name="" />
+		<record alias="r-attack-abnormal-hit-equip-value" type="Short" name="" />
+		<record alias="r-defend-abnormal-dodge-equip-value" type="Short" name="" />
+		<record alias="r-support-power-equip-value" type="Short" name="" />
+		<record alias="r-hypermove-power-equip-value" type="Short" name="" />
+		<record alias="potential-attack-power-equip-min" type="Short" name="" />
+		<record alias="potential-attack-power-equip-max" type="Short" name="" />
+		<record alias="potential-defend-power-equip-value" type="Short" name="" />
+		<record alias="potential-defend-resist-power-equip-value" type="Short" name="" />
+		<record alias="potential-attack-hit-base-percent" type="Short" name="" />
+		<record alias="potential-attack-hit-value" type="Short" name="" />
+		<record alias="potential-attack-pierce-value" type="Short" name="" />
+		<record alias="potential-attack-critical-base-percent" type="Short" name="" />
+		<record alias="potential-attack-critical-damage-percent" type="Short" name="" />
+		<record alias="potential-attack-critical-value" type="Short" name="" />
+		<record alias="potential-defend-critical-base-percent" type="Short" name="" />
+		<record alias="potential-defend-critical-value" type="Short" name="" />
+		<record alias="potential-defend-dodge-base-percent" type="Short" name="" />
+		<record alias="potential-defend-dodge-value" type="Short" name="" />
+		<record alias="potential-defend-parry-base-percent" type="Short" name="" />
+		<record alias="potential-defend-parry-value" type="Short" name="" />
+		<record alias="potential-attack-stiff-duration-base-percent" type="Short" name="" />
+		<record alias="potential-attack-stiff-duration-value" type="Short" name="" />
+		<record alias="potential-defend-stiff-duration-base-percent" type="Short" name="" />
+		<record alias="potential-defend-stiff-duration-value" type="Short" name="" />
+		<record alias="potential-cast-duration-base-percent" type="Short" name="" />
+		<record alias="potential-cast-duration-value" type="Short" name="" />
+		<record alias="potential-defend-physical-damage-reduce-percent" type="Short" name="" />
+		<record alias="potential-defend-force-damage-reduce-percent" type="Short" name="" />
+		<record alias="potential-attack-damage-modify-percent" type="Short" name="" />
+		<record alias="potential-attack-damage-modify-diff" type="Short" name="" />
+		<record alias="potential-defend-damage-modify-percent" type="Short" name="" />
+		<record alias="potential-defend-damage-modify-diff" type="Short" name="" />
+		<record alias="potential-attack-concentrate-value" type="Short" name="" />
+		<record alias="potential-defend-perfect-parry-reduce-percent" type="Short" name="" />
+		<record alias="potential-defend-counter-reduce-percent" type="Short" name="" />
+		<record alias="potential-max-hp" type="Int32" name="" />
+		<record alias="potential-hp-regen" type="Int32" name="" />
+		<record alias="potential-hp-regen-combat" type="Int32" name="" />
+		<record alias="potential-max-guard-gauge" type="Int32" name="" />
+		
+		
+		
+		<record alias="job-ability-1" name="" type="Short" />
+		<record alias="job-ability-2" name="" type="Short" />
+		<record alias="heal-power-base-percent" name="" type="Short" />
+		<record alias="heal-power-value" name="" type="Short" />
+		<record alias="heal-power-diff" name="治疗" type="Int32" />
+		<record alias="aoe-defend-base-percent" name="" type="Short" />
+		<record alias="aoe-defend-power-value" name="" type="Short" />
+		<record alias="abnormal-attack-base-percent" name="状态异常伤害率" type="Short" />
+		<record alias="abnormal-attack-power-value" name="" type="Short" />
+		<record alias="abnormal-attack-power-value-equip" name="状态异常伤害" type="Short" />
+		<record alias="abnormal-defend-base-percent" name="状态异常防御率" type="Short" />
+		<record alias="abnormal-defend-power-value" name="状态异常防御力" type="Short" />
+		<record alias="hate-power-equip-value" name="嘲讽" type="Short" />
+		<record alias="additional-exp-diff-by-kill" name="" type="Short" />
+		<record alias="additional-exp-percent-by-kill" name="" type="Short" />
+		<record alias="item-sound-move" name="移动音效" server="n" type="Index" />
+		<record alias="item-sound-dragstart" name="拖拽音效" server="n" type="Index" />
+		<record alias="item-sound-itemdrop" name="丢弃音效" server="n" type="Index" />
+		<record alias="main-ability" name="" type="dictionary" >	
+			<case alias="none" name="" default="y" />
+			<case alias="attack-power-equip-min-and-max" name="" />
+			<case alias="defend-power-equip-value" name="" />
+			<case alias="defend-resist-power-equip-value" name="" />
+			<case alias="defend-critical-base-percent" name="" />
+			<case alias="defend-critical-value" name="" />
+			<case alias="defend-dodge-base-percent" name="" />
+			<case alias="defend-dodge-value" name="" />
+			<case alias="defend-parry-base-percent" name="" />
+			<case alias="defend-parry-value" name="" />
+			<case alias="defend-stiff-duration-base-percent" name="" />
+			<case alias="defend-stiff-duration-value" name="" />
+			<case alias="defend-physical-damage-reduce-percent" name="" />
+			<case alias="defend-force-damage-reduce-percent" name="" />
+			<case alias="defend-damage-modify-percent" name="" />
+			<case alias="defend-damage-modify-diff" name="" />
+			<case alias="defend-perfect-parry-reduce-percent" name="" />
+			<case alias="defend-counter-reduce-percent" name="" />
+			<case alias="attack-hit-base-percent" name="" />
+			<case alias="attack-hit-value" name="" />
+			<case alias="attack-critical-base-percent" name="" />
+			<case alias="attack-critical-damage-percent" name="" />
+			<case alias="attack-critical-value" name="" />
+			<case alias="attack-stiff-duration-base-percent" name="" />
+			<case alias="attack-stiff-duration-value" name="" />
+			<case alias="attack-damage-modify-percent" name="" />
+			<case alias="attack-damage-modify-diff" name="" />
+			<case alias="attack-pierce-value" name="" />
+			<case alias="attack-concentrate-value" name="" />
+			<case alias="max-hp" name="" />
+			<case alias="hp-regen" name="" />
+			<case alias="hp-regen-combat" name="" />
+			<case alias="cast-duration-base-percent" name="" />
+			<case alias="cast-duration-value" name="" />
+			<case alias="hate-power-value" name="" />
+			<case alias="heal-power-value" name="" />
+			<case alias="pve-boss-level-npc-attack-power-equip-min-and-max" name="" />
+			<case alias="pve-boss-level-npc-defend-power-equip-value" name="" />
+			<case alias="pvp-attack-power-equip-min-and-max" name="" />
+			<case alias="pvp-defend-power-equip-value" name="" />
+			<case alias="abnormal-defend-base-percent" name="" />
+			<case alias="abnormal-defend-power-value" name="" />
+			<case alias="attack-critical-damage-value" name="" />
+			<case alias="abnormal-attack-power-value" name="" />
+			<case alias="abnormal-attack-base-percent" name="" />
+			<case alias="max-guard-gauge" name="" />
+			<case alias="attack-attribute-value" name="" />
+			<case alias="attack-attribute-base-percent" name="" />
+			<case alias="r-attack-stiff-duration-equip-value" name="" />
+			<case alias="r-defend-stiff-duration-equip-value" name="" />
+			<case alias="r-aoe-defend-power-value-equip" name="" />
+			<case alias="r-heal-power-equip-value" name="" />
+			<case alias="r-defend-strength-equip-value" name="" />
+			<case alias="r-attack-precise-equip-value" name="" />
+			<case alias="r-attack-aoe-pierce-value-equip" name="" />
+			<case alias="r-attack-abnormal-hit-equip-value" name="" />
+			<case alias="r-defend-abnormal-dodge-equip-value" name="" />
+			<case alias="r-support-power-equip-value" name="" />
+			<case alias="r-hypermove-power-equip-value" name="" />
+		</record>
+		
+		<record alias="main-ability-1" name="" server="n" type="Seq" seq="$main-ability" />
+		<record alias="main-ability-2" name="" server="n" type="Seq" seq="$main-ability" />
+		<record alias="pccafe-ncsoft-korea-only" name="" type="Bool" />		
+		<record alias="growth-id" type="Int32" name="" />
+		<record alias="growth-level-max" type="Byte" name="" default="1" server="must" />
+		<record alias="growth-step" type="Byte" name="" />
+		<record alias="growth-efficient-level" type="Short" name="" default="1" />
+		<record alias="growth-exp-scale" type="Short" name="" default="1000" />
+		<record alias="r-random-option" name="" ref="ItemRandomOption" />
+		<record alias="growth-recipe-exp-min" type="Int32" name="" />
+		<record alias="growth-recipe-exp-max" type="Int32" name="" />
+
+		<record alias="growth-recipe-exp" type="Int32" name="" repeat="4" />
+		<record alias="growth-recipe-exp-prob-weight-1" name="" type="Int32" client="n" apply="must" default="60" valid-cond="Exist: growth-recipe-exp-1" />
+		<record alias="growth-recipe-exp-prob-weight-2" name="" type="Int32" client="n" apply="must" default="20" valid-cond="Exist: growth-recipe-exp-2" />
+		<record alias="growth-recipe-exp-prob-weight-3" name="" type="Int32" client="n" apply="must" default="15" valid-cond="Exist: growth-recipe-exp-3" />
+		<record alias="growth-recipe-exp-prob-weight-4" name="" type="Int32" client="n" apply="must" default="5" valid-cond="Exist: growth-recipe-exp-4" />
+  
+		<record alias="growth-recipe-cost" type="Money" name="" />
+		<record alias="growth-recipe-material" name="" ref="this" repeat="6" />
+		<record alias="growth-recipe-material-count" type="Short" name="" repeat="6" />
+
+		<record alias="growth-fail-probability" type="Byte" name="" />
+		<record alias="awakening-recipe-cost" type="Money" name="" />
+		<record alias="awakening-recipe-material" name="" ref="this" repeat="6" />
+		<record alias="awakening-recipe-material-count" type="Short" name="" repeat="6" />
+		<record alias="dispose-awakening-feed-item" type="Bool" name="" />
+		<record alias="dispose-awakening-material" type="Bool" name="" default="y" />
+		<record alias="required-feed-item-brand-for-growth" ref="ItemBrand" />
+		<record alias="required-feed-item-for-growth" ref="this" />
+		<record alias="required-seed-item-growth-course" type="Byte" name="" seq="1=normal|2=coin" />
+		<record alias="required-seed-item-condition-type" type="Byte" name="" seq="$condition-type" />
+		<record alias="required-seed-item-equip-level-min" type="Byte" name="" out-cond="Exist: required-seed-item-growth-course" />
+		<record alias="required-seed-item-equip-level-max" type="Byte" name="" out-cond="Exist: required-seed-item-growth-course" />
+		<record alias="required-feed-item-brand-for-awakening" name="" ref="ItemBrand" />
+		<record alias="required-feed-item-condition-type" type="Byte" name="" seq="$condition-type" />
+		<record alias="required-feed-item-level-min" type="Byte" name="" out-cond="Exist: required-feed-item-brand-for-awakening"/>
+		<record alias="required-feed-item-level-max" type="Byte" name="" out-cond="Exist: required-feed-item-brand-for-awakening"/>
+		<record alias="awakening-target-item" name="" ref="this" server="n" repeat="5" />
+		<record alias="required-awakening-bm-item-count" type="Short" name="" />
+		<record alias="awakening-probability" type="Short" name="" default="100" out-cond="exist: awakening-target-item-1" />
+		<record alias="awakening-fail-effect" ref="Effect" />
+		<!-- ========================================================================================= -->
+		<!-- ======================================== 描述类 ========================================= -->
+		<record alias="lock-enable" name="" type="Bool" />
+		<record alias="time-limit-type" name="" type="Seq" >
+			<case alias="invalid" name="" />
+			<case alias="none" name="" default="y" />
+			<case alias="duration" name="" />
+			<case alias="fixed" name="" />
+			<case alias="duration-with-fixed" name="" />
+			<case alias="undefined" name="" />
+         </record>
+
+		<record alias="usable-duration" name="" type="Int32" />
+		<record alias="fixed-expiration-time" name="" type="Time64" />
+		<record alias="event-info" name="" ref="ItemEvent" />
+		<record alias="show-reward-preview" name="显示奖励预览" type="Bool" server="n" />
+		<record alias="account-post-charge" name="账号邮寄价格" ref="AccountPostCharge" />
+		<record alias="skill-build-up-parent-skill3-id-1" name="" type="Int32" />
+		<record alias="skill-build-up-parent-skill3-id-2" name="" type="Int32" />
+		<record alias="skill-build-up-parent-skill3-id-3" name="" type="Int32" />
+		<record alias="skill-build-up-level-1" name="" type="Byte" default="1" showzero="y" out-cond="Exist: skill-build-up-parent-skill3-id-1" />
+		<record alias="skill-build-up-level-2" name="" type="Byte" default="1" showzero="y" out-cond="Exist: skill-build-up-parent-skill3-id-2" />
+		<record alias="skill-build-up-level-3" name="" type="Byte" default="1" showzero="y" out-cond="Exist: skill-build-up-parent-skill3-id-3" />
+		<record alias="fusion-category-1" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="all" name="" />
+			<case alias="dress" name="" />
+			<case alias="summoned-pet-dress" name="" />
+			<case alias="equip-gem" name="" />
+			<case alias="weapon-gem" name="" />
+			<case alias="weapon" name="" />
+			<case alias="accessory" name="" />
+			<case alias="soul" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="nova" name="" />
+			<case alias="pet" name="" />
+			<case alias="corundum" name="" />
+                                 </record>
+
+		<record alias="fusion-category-2" name="" type="Seq16" >	
+			<case alias="none" name="" default="y" />
+			<case alias="costume" name="" />
+			<case alias="head-attach" name="" />
+			<case alias="face-attach" name="" />
+			<case alias="costume-attach" name="" />
+			<case alias="summoned-pet-costume" name="" />
+			<case alias="summoned-pet-hat" name="" />
+			<case alias="summoned-pet-attach" name="" />
+			<case alias="gam1" name="" />
+			<case alias="gan2" name="" />
+			<case alias="jin3" name="" />
+			<case alias="son4" name="" />
+			<case alias="ri5" name="" />
+			<case alias="gon6" name="" />
+			<case alias="tae7" name="" />
+			<case alias="geon8" name="" />
+			<case alias="weapon-gem" name="" />
+			<case alias="sword" name="" />
+			<case alias="gauntlet" name="" />
+			<case alias="aura-bangle" name="" />
+			<case alias="axe" name="" />
+			<case alias="dagger" name="" />
+			<case alias="staff" name="" />
+			<case alias="lyn-sword" name="" />
+			<case alias="warlock-dagger" name="" />
+			<case alias="soul-fighter-gauntlet" name="" />
+			<case alias="gun" name="" />
+			<case alias="long-bow" name="" />
+			<case alias="great-sword" name="" />
+			<case alias="orb" name="" />
+			<case alias="necklace" name="" />
+			<case alias="ring" name="" />
+			<case alias="earring" name="" />
+			<case alias="bracelet" name="" />
+			<case alias="belt" name="" />
+			<case alias="gloves" name="" />
+			<case alias="soul" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="nova" name="" />
+			<case alias="pet" name="" />
+			<case alias="corundum-white" name="" />
+			<case alias="corundum-black" name="" />
+			<case alias="corundum-pink" name="" />
+			<case alias="corundum-yellow" name="" />
+			<case alias="corundum-bluegreen" name="" />
+			<case alias="corundum-blue" name="" />
+        </record>
+
+
+		<record alias="fusion-score" name="" type="Int32" />
+		<record alias="name2" name="名称" type="TextAlias" server="n" error-type="Jump" />
+		<record alias="nickname" name="昵称" type="TextAlias" server="n" />
+		<record alias="stage-number" name="装备阶段" type="Int32" server="n" />
+		<record alias="tag-icon" type="Icon" server="n" />
+		<record alias="tag-icon-grade" type="Icon" server="n" />
+		<record alias="icon" type="Icon" server="n" />
+		<record alias="kun-mesh" name="" server="n" type="Index" />
+		<record alias="gon-male-mesh" name="" server="n" type="Index" />
+		<record alias="gon-female-mesh" name="" server="n" type="Index" />
+		<record alias="lyn-male-mesh" name="" server="n" type="Index" />
+		<record alias="lyn-female-mesh" name="" server="n" type="Index" />
+		<record alias="jin-male-mesh" name="" server="n" type="Index" />
+		<record alias="jin-female-mesh" name="" server="n" type="Index" />
+		<record alias="cat-mesh" name="" server="n" type="Index" />
+		<record alias="kun-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="kun-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="kun-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="gon-male-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="gon-male-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="gon-male-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="gon-female-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="gon-female-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="gon-female-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="lyn-male-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="lyn-male-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="lyn-male-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="lyn-female-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="lyn-female-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="lyn-female-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="jin-male-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="jin-male-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="jin-male-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="jin-female-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="jin-female-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="jin-female-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="cat-mesh-col-1" name="" server="n" type="Index" />
+		<record alias="cat-mesh-col-2" name="" server="n" type="Index" />
+		<record alias="cat-mesh-col-3" name="" server="n" type="Index" />
+		<record alias="mesh-id" name="" server="n" type="Index" />
+		<record alias="mesh-id-2" name="" server="n" type="Index" />
+		<record alias="talk-mesh" name="" server="n" type="Index" />
+		<record alias="talk-animset" name="" server="n" type="Index" />
+		<record alias="mesh-col-1" name="" server="n" type="Index" />
+		<record alias="mesh-col-2" name="" server="n" type="Index" />
+		<record alias="mesh-col-3" name="" server="n" type="Index" />
+		<record alias="mesh-animset" name="" server="n" type="Index" />
+		<record alias="mesh-animtree" name="" server="n" type="Index" />
+		<record alias="mesh-attach" name="" type="Bool" />
+		<record alias="hide-beard" name="" type="Bool" />
+		<record alias="hide-name" name="" server="n" type="Bool" />
+		<record alias="guild-item" name="" type="Bool" />
+		<record alias="description2" name="描述" type="TextAlias" server="n" error-type="Jump" />
+		<record alias="description4-title" name="descTitle4" type="TextAlias" server="n" />
+		<record alias="description5-title" name="descTitle5" type="TextAlias" server="n" />
+		<record alias="description6-title" name="descTitle6" type="TextAlias" server="n" />
+		<record alias="description4" name="desc4" type="TextAlias" server="n" />
+		<record alias="description5" name="desc5" type="TextAlias" server="n" />
+		<record alias="description6" name="desc6" type="TextAlias" server="n" />
+		<record alias="description7" name="效果描述" type="TextAlias" server="n" />
+		<record alias="main-info" name="主信息" type="TextAlias" server="n" />
+		<record alias="sub-info" name="子信息" type="TextAlias" server="n" />
+		<record alias="identify-main-info" name="" type="TextAlias" server="n" />
+		<record alias="identify-sub-info" name="" type="TextAlias" server="n" />
+		<record alias="identify-description" name="" type="TextAlias" server="n" />
+		<record alias="legend-transform-title-name" name="进化标题" type="TextAlias" server="n" />
+		<record alias="ui-icon-state" name="" type="Seq" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="decompose" name="" />
+			<case alias="sell" name="" />
+			<case alias="exchange" name="" />
+        </record>
+		<record alias="message" name="" ref="NpcTalkMessage" server="n" repeat="9" />
+		<record alias="invoke-fx-msg" name="" type="Bool" server="n" />
+		<record alias="tooltip_info" name="" type="Index" server="n" />
+		<record alias="item-score" name="" type="Int32" server="n" />
+		<record alias="item-style" name="" type="Seq" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="normal" name="" />
+			<case alias="pve-weapon1" name="" />
+			<case alias="pve-weapon2" name="" />
+			<case alias="raid-weapon1" name="" />
+			<case alias="hc-weapon1" name="" />
+			<case alias="awaken1" name="" />
+			<case alias="awaken2" name="" />
+			<case alias="awaken3" name="" />
+			<case alias="pvp" name="" />
+			<case alias="soul-long" name="" />
+			<case alias="soul-short" name="" />
+        </record>
+		<!-- ========================================================================================= -->
+		<!-- ================================== [0] Weapon 专用部分 ================================== -->
+		<record alias="weapon-type" name="" filter="weapon" type="Seq" seq="$weapon-type" />
+		<record alias="equip-show" name="" filter="weapon" type="Index" />
+		<record alias="default-gem-level" name="" filter="weapon" type="short" default="1" />
+		<record alias="max-gem-slot-level" name="最大宝石孔等级" filter="weapon" type="short" />
+		<record alias="identify-enable" name="" filter="weapon" type="bool" />
+		<record alias="identify-grocery" name="" filter="weapon" ref="this" type="Int32" />
+		<!-- ========================================================================================= -->
+		<record alias="gem-slot-by-probability" name="" filter="weapon" type="Bool" default="n" />
+		<record alias="probability-block-gem-slot" name="" filter="weapon" type="" client="n" repeat="4" />
+		<record alias="probability-plus-one-gem-slot" name="" filter="weapon" type="" client="n" repeat="4" />
+		<record alias="probability-minus-one-gem-slot" name="" filter="weapon" type="" client="n" repeat="4" />
+		<record alias="probability-plus-zero-gem-slot" name="" filter="weapon" type="" client="n" repeat="4" />
+		<record alias="gem-slot-type" name="" filter="weapon" seq="$gem-slot-type" type="Seq" repeat="4" />
+		<!-- ========================================================================================= -->
+		<record alias="open-gem-slot-grocery" name="开启宝石孔 需要物品" filter="weapon" ref="this" repeat="8" />
+		<record alias="open-gem-slot-grocery-count" name="开启宝石孔 需要物品数量" filter="weapon" type="Short" out-cond="Exist: open-gem-slot-grocery-" default="1" repeat="8" />
+		<record alias="open-gem-slot-price" name="开启宝石孔 需要钱币" filter="weapon" type="Money" repeat="8" />
+		<!-- ========================================================================================= -->
+                                <!-- 服务端用：可成功开启宝石孔的概率 -->
+		<record alias="open-gem-slot-percent-1" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-1" />
+		<record alias="open-gem-slot-percent-2" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-2" />
+		<record alias="open-gem-slot-percent-3" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-3" />
+		<record alias="open-gem-slot-percent-4" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-4" />
+		<record alias="open-gem-slot-percent-5" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-5" />
+		<record alias="open-gem-slot-percent-6" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-6" />
+  		<record alias="open-gem-slot-percent-7" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-7" />
+		<record alias="open-gem-slot-percent-8" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-8" />
+                                <!-- 服务端用：可额外获得宝石孔的概率 -->
+		<record alias="zero-gem-slot-prob-weight" name="0孔权重" filter="weapon" type="Int32" client="n" apply="must" default="370" valid-cond="ge: max-gem-slot-count : 0" />      
+		<record alias="one-gem-slot-prob-weight" name="1孔权重" filter="weapon" type="Int32" client="n" apply="must" default="350" valid-cond="ge: max-gem-slot-count : 1" />          
+		<record alias="two-gem-slot-prob-weight" name="2孔权重" filter="weapon" type="Int32" client="n" apply="must" default="160" valid-cond="ge: max-gem-slot-count : 2" />           
+		<record alias="three-gem-slot-prob-weight" name="3孔权重" filter="weapon" type="Int32" client="n" apply="must" default="60" valid-cond="ge: max-gem-slot-count : 3" />   
+		<record alias="four-gem-slot-prob-weight" name="4孔权重" filter="weapon" type="Int32" client="n" apply="must" default="30" valid-cond="ge: max-gem-slot-count : 4" />
+		<record alias="five-gem-slot-prob-weight" name="5孔权重" filter="weapon" type="Int32" client="n" apply="must" default="15" valid-cond="ge: max-gem-slot-count : 5" />
+		<record alias="six-gem-slot-prob-weight" name="6孔权重" filter="weapon" type="Int32" client="n" apply="must" default="10" valid-cond="ge: max-gem-slot-count : 6" />
+		<record alias="seven-gem-slot-prob-weight" name="7孔权重" filter="weapon" type="Int32" client="n" apply="must" default="4" valid-cond="ge: max-gem-slot-count : 7" />
+		<record alias="eight-gem-slot-prob-weight" name="8孔权重" filter="weapon" type="Int32" client="n" apply="must" default="1" valid-cond="ge: max-gem-slot-count : 8" />
+
+		<record alias="fixed-open-gem-slot" name="固定开启宝石孔数量" filter="weapon" type="Byte" />
+		<record alias="max-gem-slot-count" name="最大宝石孔数量" filter="weapon" type="Byte" />
+		<!-- ========================================================================================= -->
+		<record alias="enchant-gem-slot-usable-1" name="" filter="weapon" type="Bool" />
+		<record alias="enchant-gem-slot-usable-2" name="" filter="weapon" type="Bool" />
+		<record alias="repairable" name="可修理" filter="weapon" type="Bool" default="y" apply="Must" />
+		<record alias="repair-level" name="" filter="weapon" type="Short" />
+		<record alias="repair-item-count" name="" filter="weapon" type="Int32" />
+		<record alias="ui-repair-item" name="" filter="weapon" server="n" ref="this" />
+		<record alias="gem-slot-expandable" name="可扩展宝石孔" filter="weapon" type="Bool" />
+		<record alias="skill-by-equipment" name="" filter="weapon" ref="SkillByEquipment" />
+		<record alias="skill-modify-info-group" name="" filter="weapon" ref="SkillModifyInfoGroup" repeat="10" />
+		<record alias="weapon-appearance-change-type" name="武器幻化设定" filter="weapon" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="used-only-as-target-weapon" name="" />
+			<case alias="used-only-as-applying-weapon" name="" />
+			<case alias="both" name="" />
+		</record>
+		<record alias="pet" name="" filter="weapon" ref="Pet" server="n" />
+		<record alias="item-skill-1" name="" filter="weapon" ref="ItemSkill" />
+		<record alias="item-skill-2" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-3" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-4" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-5" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-6" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-7" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-8" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-9" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-10" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-11" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-12" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-13" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-14" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-15" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="item-skill-16" name="" filter="weapon" ref="ItemSkill" error-type="Suggestion" />
+		<record alias="closet-group-id" name="" filter="weapon" type="Int32" />
+		<record alias="skill-skin" name="" filter="weapon" ref="SkillSkin" />
+		<record alias="hidden-power-attach" name="潜力" filter="weapon" type="Short" />
+		<!-- ========================================================================================= -->
+		<!-- ================================== [1] Costume 专用部分 ================================== -->
+		<record alias="guild-used" name="门派专用" filter="costume" type="Bool" />
+		<record alias="closet-group-id" name="衣柜" filter="costume" type="Int32" />
+		<record alias="talk-social" name="" filter="costume" ref="TalkSocial" />
+		<record alias="pair-costume" name="" filter="costume" ref="this" />
+		<record alias="pair-costume-brand" name="" filter="costume" ref="ItemBrand" />
+		<record alias="pair-costume-signal-show" name="" filter="costume" type="Index" />
+		<record alias="pair-costume-signal-detach-show" name="" filter="costume" type="Index" />
+		<record alias="custom-dress-design-state" name="" filter="costume" type="Seq" seq="1=disabled|2=activated" />
+		<record alias="skill-skin" name="" filter="costume" ref="SkillSkin" />
+		<!-- ========================================================================================= -->
+		<!-- ================================== [2] Grocery 特殊部分 ================================== -->
+		<record alias="grocery-type" name="" filter="grocery" type="Seq" >
+			<case alias="other" name="" />
+			<case alias="repair" name="" />
+			<case alias="seal" name="" />
+			<case alias="random-box" name="" />
+			<case alias="cave-escape" name="" />
+			<case alias="key" name="" />
+			<case alias="weapon-gem-slot-expander" name="" />
+			<case alias="sealed" name="" />
+			<case alias="weapon-gem-slot-adder" name="" />
+			<case alias="messenger" name="" />
+			<case alias="quest-replay-epic" name="" />
+			<case alias="base-camp-warp" name="" />
+			<case alias="pet-food" name="" />
+			<case alias="reset-dungeon" name="" />
+			<case alias="skill-book" name="" />
+			<case alias="fishing-paste" name="" />
+			<case alias="badge" name="" />
+			<case alias="scroll" name="" />
+			<case alias="fusion-subitem" name="" />
+		</record>
+		
+		<record alias="stack-count" name="堆叠数量" filter="grocery" type="Short" default="1" max="10000" error-type="Jump" />
+		<record alias="store-bundle-count" name="商店批量" filter="grocery" type="Short" default="1" server="n" max="10000" />
+		<record alias="skill3" name="" filter="grocery" ref="Skill3" type="Int32" />
+		<record alias="duel-skill3" name="" filter="grocery" ref="Skill3" type="Int32" />
+		<record alias="skill-limit-level" name="" filter="grocery" type="Byte" />
+		<record alias="skill-limit-level-max" name="" filter="grocery" type="Byte" />
+		<record alias="skill-limit-mastery-level" name="" filter="grocery" type="Byte" />
+		<record alias="skill-limit-mastery-level-max" name="" filter="grocery" type="Byte" />
+		<record alias="skill-limit-job" name="" filter="grocery" type="Seq" seq="$job_20" default="job-none" />
+		<record alias="skill-limit-faction" name="" filter="grocery" ref="Faction" />
+		<record alias="skill-limit-faction-level" name="" filter="grocery" type="Byte" />
+		<record alias="skill-limit-activated-faction" name="" filter="grocery" ref="Faction" />
+		<record alias="recharge-heart-type" name="" filter="grocery" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="instant-heart" name="" />
+			<case alias="heart" name="" />
+        </record>
+		<record alias="disable-vitality-zero" name="" filter="grocery" type="Bool" />
+		<record alias="disable-vitality-none-zero" name="" filter="grocery" type="Bool" />
+		<record alias="skill-score-point" name="" filter="grocery" type="Int32" />
+		<record alias="skill-skin-acquire" name="" filter="grocery" ref="SkillSkin" />
+		<record alias="resurrect-effect" name="" filter="grocery" ref="Effect" />
+		<record alias="bonus-exp" name="" filter="grocery" type="Int32" />
+		<record alias="bonus-mastery-exp" name="" filter="grocery" type="Int32" />
+		<record alias="bonus-account-exp" name="" filter="grocery" type="Int32" />
+		<record alias="energy-multiple-point" name="" filter="grocery" type="Int32" />
+		<record alias="additional-mastery-stat-point" name="获得洪门点数" filter="grocery" type="Short" />
+		<record alias="skill-build-up-point" name="获得技能强化点数" filter="grocery" type="Short" />
+		<record alias="consume-by-skill" name="" filter="grocery" type="Bool" default="y" />
+		<record alias="repair-level-min" name="最小修理级别" filter="grocery" type="Short" />
+		<record alias="repair-level-max" name="最大修理级别" filter="grocery" type="Short" />
+		<record alias="repair-duration" name="修理时长" filter="grocery" type="Msec" />
+		<record alias="repair-grade" name="修理等级" filter="grocery" type="Byte" />
+		<record alias="necessary-campfire" name="" filter="grocery" type="Bool" out-cond="Exist: repair-grade" default="y" />
+		<record alias="valid-attraction-name" name="" filter="grocery" type="TextAlias" server="n" />
+		<record alias="valid-attraction-1" name="" filter="grocery" client="n" use-group="y" valid-cond="Exist: exceptional-usable-attraction" apply="must" default="$exceptional-usable-attraction" />
+		<record alias="valid-attraction-2" name="" filter="grocery" client="n" use-group="y" />
+		<record alias="valid-attraction-3" name="" filter="grocery" client="n" use-group="y" />
+		<record alias="valid-attraction-4" name="" filter="grocery" client="n" use-group="y" />
+
+		<record alias="dest-zone" name="" filter="grocery" ref="Zone" link="id" />
+		<record alias="expand-weapon-gem-slot-level-1" name="" filter="grocery" type="Byte" default="3" />
+		<record alias="expand-weapon-gem-slot-level-2" name="" filter="grocery" type="Byte" default="3" />
+		<record alias="unseal-acquire-item-1" name="过滤后打开图鉴会卡死" filter="grocery" ref="this" input="y" />
+		<record alias="unseal-acquire-item" name="" filter="grocery" ref="this" start="2" repeat="20" input="n" />
+		<record alias="unseal-consume-item2" name="" filter="grocery" ref="this" repeat="4" />
+		<record alias="unseal-consume-item2-stack-count" name="" filter="grocery" type="Short" repeat="4" />
+		<!-- ========================================================================================= -->
+                                <!-- 服务端用：解印获得物品权重 -->
+		<record alias="unseal-acquire-item-prob-weight" name="" filter="grocery" type="Short" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-" repeat="20" />
+		<!-- ========================================================================================= -->
+		<record alias="unseal-result-preview-item" name="" filter="grocery" ref="this" server="n" />
+		<record alias="transform-add-probability" name="" filter="grocery" type="Short" min="0" max="1000" />
+		<record alias="transform-change-group" name="" filter="grocery" type="Bool" />
+		<record alias="additional-growth-recipe-exp-diff" name="" filter="grocery" type="Int32" />
+		<record alias="additional-growth-recipe-exp-percent" name="" filter="grocery" type="Int32" />
+		<record alias="additional-awakening-probability" name="" filter="grocery" type="Byte" />
+		<record alias="ui-recommend-job" name="" filter="grocery" seq="$job_20" type="Seq" repeat="4" />
+		<record alias="randombox-preview" name="" filter="grocery" ref="RandomboxPreview" />
+		<record alias="message-range" name="" filter="grocery" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="district" name="" />
+			<case alias="all" name="" />
+        </record>
+		<record alias="quest-replay-epic-dest-quest" type="Quest" name="" filter="grocery" />
+		<record alias="quest-replay-epic-filter-start-quest" type="Quest" name="" filter="grocery" />
+		<record alias="quest-replay-epic-filter-end-quest" type="Quest" name="" filter="grocery" />
+		<record alias="pet-food-recovery" name="" filter="grocery" ref="PetFoodRecovery" />
+		<record alias="exceptional-usable-attraction" type="Int32" name="" filter="grocery" use-group="y" />
+		<record alias="item-usable-group" name="物品可用组" filter="grocery" ref="ItemUsableGroup" />
+		<record alias="required-completion-quest" type="Quest" name="" filter="grocery" />
+		<record alias="skill-book-achievement-blademaster" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-kungfufighter" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-forcemaster" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-shooter" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-destroyer" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-summoner" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-assassin" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-swordmaster" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-warlock" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-soulfighter" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-warrior" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-archer" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-spear-master" name="" filter="grocery" ref="Achievement" />
+		<record alias="skill-book-achievement-thunderer" name="" filter="grocery" ref="Achievement" />
+		<record alias="fishing-paste" name="" filter="grocery" ref="FishingPaste" server="n" />
+		<record alias="secret-treasure-id" type="Byte" name="" filter="grocery" />
+		<record alias="badge-gear-score" name="徽章套装点数" filter="grocery" type="Int32" />
+		<record alias="badge-synthesis-score" name="徽章合成点数" filter="grocery" type="Int32" />
+		<record alias="skill-modify-info-group" name="" filter="grocery" ref="SkillModifyInfoGroup" repeat="10" />
+		<record alias="slate-scroll" name="刻印书" filter="grocery" ref="SlateScroll" />
+		<record alias="fusion-target-category" name="" filter="grocery" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="all" name="" />
+			<case alias="dress" name="" />
+			<case alias="summoned-pet-dress" name="" />
+			<case alias="equip-gem" name="" />
+			<case alias="weapon-gem" name="" />
+			<case alias="weapon" name="" />
+			<case alias="accessory" name="" />
+			<case alias="soul" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="nova" name="" />
+			<case alias="pet" name="" />
+			<case alias="corundum" name="" />
+        </record>
+		<record alias="fusion-score-factor" name="" filter="grocery" type="Short" />
+		<record alias="grocery-effect-type" name="" filter="grocery" type="Seq" >	
+			<case alias="heal-potion" name="" />
+			<case alias="sp-potion" name="" />
+			<case alias="buff-item-01" name="" />
+			<case alias="buff-item-02" name="" />
+			<case alias="buff-item-03" name="" />
+			<case alias="buff-item-04" name="" />
+			<case alias="buff-item-05" name="" />
+			<case alias="buff-item-06" name="" />
+			<case alias="buff-item-07" name="" />
+			<case alias="buff-item-08" name="" />
+			<case alias="buff-item-09" name="" />
+			<case alias="buff-item-10" name="" />
+			<case alias="buff-item-11" name="" />
+			<case alias="buff-item-12" name="" />
+			<case alias="buff-item-13" name="" />
+			<case alias="buff-item-14" name="" />
+			<case alias="buff-item-15" name="" />
+			<case alias="buff-item-16" name="" />
+			<case alias="buff-item-17" name="" />
+			<case alias="buff-item-18" name="" />
+			<case alias="buff-item-19" name="" />
+			<case alias="buff-item-20" name="" />
+			<case alias="etc" name="" default="y" />
+        </record>
+		<record alias="grocery-effect-level" name="" filter="grocery" type="Short" />
+		<!-- ========================================================================================= -->
+		<!-- ==================================== [3] Gem 特殊部分 ==================================== -->
+		<record alias="gem-type" name="" filter="gem" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="weapon-gem" name="" />
+			<case alias="equip-gem" name="" />
+			<case alias="random-stat-equip-gem" name="" />
+			<case alias="feed-gem" name="" />
+			<case alias="weapon-enchant-gem" name="" />
+			<case alias="pet-gem" name="" />
+		</record>
+
+
+		<record alias="weapon-gem-type" name="" filter="gem" seq="$weapon-gem-type" type="Byte" />
+		<record alias="weapon-gem-level" name="" filter="gem" type="Short" />
+		<record alias="cannot-transform" name="" filter="gem" type="Byte" />
+		<record alias="extra-icon" name="" filter="gem" type="Icon" server="n" />
+		<record alias="extra-icon-grade" name="" filter="gem" type="Icon" server="n" />
+		<record alias="weapon-enchant-gem-slot-type" name="" filter="gem" type="Seq" >
+		       <case alias="none" name="" default="y" />
+		       <case alias="first" name="" />
+			   <case alias="second" name="" />
+		</record>
+		
+		<record alias="reveal-consumable-item" name="" filter="gem" ref="this" repeat="4" />
+		<record alias="reveal-consumable-item-count" name="" filter="gem" out-cond="Exist: reveal-consumable-item-*" type="Byte" repeat="4" />
+		<record alias="equip-gem-piece" name="" filter="gem" type="Long" repeat="4" />
+		<record alias="attach-equip-gem-piece-consumable-item" name="" filter="gem" ref="this" repeat="4" />
+		<record alias="attach-equip-gem-piece-consumable-item-count" name="" filter="gem" out-cond="Exist: attach-equip-gem-piece-consumable-item-" type="Byte" repeat="4" />
+		<record alias="attach-equip-gem-piece-money-cost" name="" filter="gem" type="Int32" />
+		<record alias="attach-equip-gem-piece" name="" filter="gem" ref="EquipGemPiece" repeat="10"  />
+		<record alias="attach-equip-gem-piece-prop-weight" name="" filter="gem" type="Short" repeat="10" input="n" />
+		<record alias="attach-equip-gem-piece-primary-gem-equip-level-min" name="" filter="gem" type="Byte" />
+		<record alias="attach-equip-gem-piece-primary-gem-equip-level-max" name="" filter="gem" type="Byte" />
+		<record alias="attack-effect" name="" filter="gem" ref="Effect" repeat="2"  />
+		<record alias="attack-effect-skill-result" name="" filter="gem" out-cond="Exist: attack-effect-1" seq="$skill-result" type="Byte" />
+		<record alias="attack-effect-probability" name="" filter="gem" out-cond="Exist: attack-effect-1" type="Byte" />
+		<record alias="attack-effect-target-limit-level" name="" filter="gem" type="Byte" />
+		<record alias="attack-effect-target-effect-flag" name="" filter="gem" seq="$flag" type="Short" repeat="4" />
+		<record alias="attack-effect-caster-effect-flag" name="" filter="gem" seq="$flag" type="Short" repeat="4" />
+		<record alias="second-attack-effect" name="" filter="gem" ref="Effect" repeat="2"  />
+		<record alias="second-attack-effect-skill-result" name="" filter="gem" out-cond="Exist: second-attack-effect-1" seq="$skill-result" type="Byte" />
+		<record alias="second-attack-effect-probability" name="" filter="gem" out-cond="Exist: second-attack-effect-1" type="Byte" />
+		<record alias="second-attack-effect-target-limit-level" name="" filter="gem" type="Byte" />
+		<record alias="second-attack-effect-target-effect-flag" name="" filter="gem" seq="$flag" type="Short" repeat="4" />
+		<record alias="second-attack-effect-caster-effect-flag" name="" filter="gem" seq="$flag" type="Short" repeat="4" />
+		<record alias="detach-gem-money-cost" name="" filter="gem" type="Int32" />
+		<record alias="main-ability-fixed" name="" filter="gem" ref="ItemRandomAbilitySlot" />
+		<record alias="sub-ability-fixed" name="" filter="gem" ref="ItemRandomAbilitySlot" />
+		<record alias="sub-ability-random-count" name="" filter="gem" type="Byte" />
+		<record alias="sub-ability-random" name="" filter="gem" ref="ItemRandomAbilitySlot" repeat="5" />
+		<record alias="feed-ability-random" name="" filter="gem" ref="ItemRandomAbilitySlot" repeat="8" />
+		<record alias="feed-ability-random-count" name="" filter="gem" type="Int32" />
+		<record alias="ability-feeding-required-money" name="" filter="gem" type="Int32" />
+		<record alias="ability-feeding-required-item-1" name="" filter="gem" ref="this" />
+		<record alias="ability-feeding-required-item-2" name="" filter="gem" ref="this" />
+		<record alias="ability-feeding-required-item-count-1" name="" filter="gem" type="Short" />
+		<record alias="ability-feeding-required-item-count-2" name="" filter="gem" type="Short" />
+		<record alias="ability-feeding-special-item" name="" filter="gem" ref="this" type="Int32" />
+		<record alias="ability-feeding-special-item-count" name="" filter="gem" type="Int32" />
+		<record alias="ability-feeding-target-1" name="" filter="gem" ref="ItemBrand" />
+		<record alias="ability-feeding-target-2" name="" filter="gem" ref="ItemBrand" />
+		<record alias="item-skill-1" name="" filter="gem" ref="ItemSkill" />
+		<record alias="item-skill" name="" filter="gem" ref="ItemSkill" error-type="Suggestion" start="2" repeat="16" />
+		<record alias="skill-by-equipment" name="" filter="gem" ref="SkillByEquipment" />
+		<record alias="skill-modify-info-group" name="" filter="gem" ref="SkillModifyInfoGroup" repeat="10" />
+		<record alias="hidden-power-attach" name="潜力" filter="gem" type="Short" />
+		<!-- ========================================================================================= -->
+		<!-- ================================== [4] Accessory 特殊部分 =============================== -->
+		<record alias="accessory-type" name="" filter="accessory" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="costume-attach" name="服饰" />
+			<case alias="ring" name="戒指" />
+			<case alias="earring" name="耳环" />
+			<case alias="necklace" name="项链" />
+			<case alias="belt" name="腰带" />
+			<case alias="bracelet" name="手镯" />
+			<case alias="soul" name="魂" />
+			<case alias="soul-2" name="灵" />
+			<case alias="gloves" name="手套" />
+			<case alias="rune-1" name="神功牌" />
+			<case alias="rune-2" name="秘功牌" />
+			<case alias="nova" name="星" />
+		</record>
+		<record alias="necessary-costume" name="" filter="accessory" ref="this" />
+		<record alias="necessary-costume-brand" name="" filter="accessory" ref="ItemBrand" />
+		<record alias="cannot-equip-identical-pairs" name="" filter="accessory" type="Bool" />
+		<record alias="skill-modify-info-group" name="" filter="accessory" ref="SkillModifyInfoGroup" repeat="10" />
+		<record alias="guild-used" name="" filter="accessory" type="Bool" />
+		<record alias="closet-group-id" name="" filter="accessory" type="Int32" />
+		<record alias="item-skill-1" name="" filter="accessory" ref="ItemSkill" />
+		<record alias="item-skill" name="" filter="accessory" ref="ItemSkill" error-type="Suggestion" start="2" repeat="16" />
+		<record alias="item-skill-second-1" name="" filter="accessory" ref="ItemSkill" />
+		<record alias="item-skill-second" name="" filter="accessory" ref="ItemSkill" error-type="Suggestion" start="2" repeat="16" />
+		<record alias="skill3" name="" filter="accessory" ref="Skill3" />
+		<record alias="custom-dress-design-state" name="" filter="accessory" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="disabled" name="" />
+			<case alias="activated" name="" />
+		</record>
+		<record alias="hidden-power-attach" name="潜力" filter="accessory" type="Short" />
+		<!-- <record alias="item-skill-third" name="" filter="accessory" ref="ItemSkill" server="n" repeat="16" /> -->
+	</list>
+</table>

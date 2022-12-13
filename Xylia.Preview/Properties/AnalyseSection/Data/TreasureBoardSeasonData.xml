@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="treasure-board-season" version="0.2" rule="cpl" >
+	<list module="ItemData" type="treasure-board-season" version="0.2" >
 		<record alias="id" type="id" name="" />
 
 		<record alias="season-enable" type="Bool" name="" />

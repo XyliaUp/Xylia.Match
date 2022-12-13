@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="itempouchmesh2" version="0.2" rule="cpl" side="client" >
+	<list module="ItemData" type="itempouchmesh2" version="0.2" side="client" >
 		<record alias="pouch-appearance" type="ID" extra="Byte1" seq="$pouch-appearance" />
 		<record alias="npc-grade2" type="ID" extra="Byte2" seq="$npc-grade2" />
 		<record alias="private-pouch" type="ID" extra="Bool3" showzero="y" />

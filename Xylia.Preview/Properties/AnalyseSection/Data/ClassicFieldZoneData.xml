@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="classic-field-zone" version="0.17" rule="cpl" >
+	<list module="ZoneData0" type="classic-field-zone" version="0.17" >
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone-1" name="" ref="Zone" link="id" />

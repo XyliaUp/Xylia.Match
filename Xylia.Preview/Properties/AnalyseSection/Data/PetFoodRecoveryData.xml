@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="pet-food-recovery" version="0.1" rule="cpl | extra" index="y">
+	<list module="ItemData" type="pet-food-recovery" version="0.1" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="item-grade" name="" type="Byte" repeat="4" />
 		<record alias="recovery-amount" name="" type="Short" repeat="4" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="skill-training-room-subject" version="0.11" rule="cpl" >
+	<list module="ZoneData0" type="skill-training-room-subject" version="0.11" >
 		<record alias="id" name="" type="ID" />
 		<record alias="type" name="" type="type" >
 			<case alias="class-training" />

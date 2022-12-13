@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="account-post-charge" version="0.1" rule="cpl | extra" >
+	<list module="ItemData" type="account-post-charge" version="0.1" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="charge-money" name="" type="Int32" />
 		<record alias="charge-item" ref="Item" name="" repeat="2" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="job-style" version="0.14" rule="cpl" >
+	<list module="CombatData" type="job-style" version="0.14" >
 		<record alias="job" type="id" name="" seq="$job" extra="Byte1" />
 		<record alias="job-style" type="id" name="" seq="$job-style" extra="Byte2" />
 

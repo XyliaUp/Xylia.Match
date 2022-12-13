@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="unlocated-store" version="1.0" rule="cpl" >
+	<list module="LocalizationData" type="unlocated-store" version="1.0" >
 		<record alias="alias" name ="" type="Index" />
 		<record alias="store2" name ="" ref="Store2" />
 		<record alias="no-more-use" name ="" type="Bool" />
-		<record alias="unlocated-store-type" type="Seq" name ="" server="n" >
+		<record alias="unlocated-store-type" type="Seq" name="" server="n" >
 		    <case alias="unlocated-none" />
 			<case alias="unlocated-store" />
 			<case alias="account-store" />

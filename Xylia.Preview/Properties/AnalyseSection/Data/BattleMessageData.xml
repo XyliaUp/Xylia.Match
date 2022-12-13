@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="battlemessage" version="0.1" rule="cpl" >
+	<list module="CombatData" type="battlemessage" version="0.1" >
 		<record alias="object-type" name="" type="id" extra="Byte1" >
 			<case alias="player-attack" name="" />
 			<case alias="player-attacked" name="" />

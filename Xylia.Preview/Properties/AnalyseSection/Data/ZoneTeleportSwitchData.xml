@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list relative-path="Zone\*\ZoneTeleportSwitchData.*" module="ZoneData2" type="ZoneTeleportSwitch" version="0.6" retired="n" rule="cpl | unsort" >
-		<!-- 将根据id进行分类 -->
+	<list module="ZoneData2" type="ZoneTeleportSwitch" version="0.6" rule="unsort" >
 		<record alias="zone" type="id" sort-by="n" />
 		<record alias="id" type="Level" start="0" />
 	

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" rule="cpl" type="item-random-option" version="0.1">
+	<list module="ItemData" type="item-random-option" version="0.1">
 		<record alias="id" name="" type="id" />	
 		<record alias="alias" name="" type="Index" />
 		<record alias="r-random-option-group" name="" ref="ItemRandomOptionGroupData" />

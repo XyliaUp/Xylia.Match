@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="feedback" version="0.2" rule="cpl" >
+	<list module="CombatData" type="feedback" version="0.2" >
 		<record alias="alias" type="Index" />
 		<record alias="max-score-except-boss-npc" type="Int32" />
 		<record alias="boss-npc" ref="Npc" repeat="4" />

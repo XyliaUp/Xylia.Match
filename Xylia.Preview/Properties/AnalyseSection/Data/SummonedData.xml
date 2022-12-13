@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="summoned" version="0.24" rule="cpl" check-verison="y" >
+	<list module="AIData" type="summoned" version="0.24" check-verison="y" >
 		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
 		<record alias="job" type="ID" extra="Byte2" name="" seq="$job" />
 
@@ -10,19 +10,19 @@
 		<record alias="summoned-type" type="Seq" name="" >
 			<case alias="normal" name="" default="y" />
 			<case alias="ethereal" name="" />
-                                </record>
+        </record>
 		<record alias="brain-type" type="Seq" name="" >
 			<case alias="normal" name="" default="y" />
 			<case alias="combat-follow" name="" />
 			<case alias="fixed" name="" />
-                                </record>
+        </record>
 		<record alias="combat-follow-distance" type="Distance" name="" default="200" />
 		<record alias="far-event-distance" type="Distance" name="" />
 		<record alias="far-event-action-type" type="Seq" name="" >
 			<case alias="none" name="" default="y" />
 			<case alias="recall" name="" />
 			<case alias="despawn" name="" />
-                                </record>
+        </record>
 		<record alias="radius" type="Distance" name="" />
 		<record alias="trace-master-skill-target" type="Byte" name="" />
 		<record alias="summoned-sequence" ref="SummonedSequence" name="" />

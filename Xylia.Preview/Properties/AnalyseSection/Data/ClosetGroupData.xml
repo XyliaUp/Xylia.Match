@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="closet-group" version="0.14" rule="cpl" >
+	<list module="ItemData" type="closet-group" version="0.14" >
 		<record alias="id" type="id" name=""/>
 		<record alias="category" type="Seq" name="" >
 			<case alias="none" name="" default="y" />

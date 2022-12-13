@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="filter" version="2" rule="cpl" check-version="y" >
+	<list module="CombatData" type="filter" version="2" check-version="y" >
 		<record alias="type" name="" type="type" >
 			<case alias="race" name="" />
 			<case alias="sex" name="" />
@@ -58,47 +58,29 @@
 
 
 		<!-- ================================================================== -->
-		<record alias="value-1" name="" type="Seq" seq="$race" filter="race" />
-		<record alias="value-2" name="" type="Seq" seq="$race" filter="race" />
-		<record alias="value-3" name="" type="Seq" seq="$race" filter="race" />
-		<record alias="value-4" name="" type="Seq" seq="$race" filter="race" />
+		<record alias="value" name="" type="Seq" seq="$race" filter="race" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="race" />
 		<!-- ================================================================== -->	
 		
 		<!-- ================================================================== -->
-		<record alias="value-1" name="" type="Seq" seq="$sex" filter="sex" />
-		<record alias="value-2" name="" type="Seq" seq="$sex" filter="sex" />
-		<record alias="value-3" name="" type="Seq" seq="$sex" filter="sex" />
-		<record alias="value-4" name="" type="Seq" seq="$sex" filter="sex" />
+		<record alias="value" name="" type="Seq" seq="$sex" filter="sex" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="sex" />
 		<!-- ================================================================== -->	
 		
 		<!-- ================================================================== -->
-		<record alias="value-1" name="" type="Seq" seq="$job_20" filter="job" />
-		<record alias="value-2" name="" type="Seq" seq="$job_20" filter="job" />
-		<record alias="value-3" name="" type="Seq" seq="$job_20" filter="job" />
-		<record alias="value-4" name="" type="Seq" seq="$job_20" filter="job" />
+		<record alias="value" name="" type="Seq" seq="$job" filter="job" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="job" />
 		<!-- ================================================================== -->	
 		
 		<!-- ================================================================== -->
 		<record alias="count" name="" type="Byte" filter="job-style" />
-		<record alias="job-1" name="" type="Seq" seq="$job_20" filter="job-style" />
-		<record alias="job-2" name="" type="Seq" seq="$job_20" filter="job-style" />
-		<record alias="job-3" name="" type="Seq" seq="$job_20" filter="job-style" />
-		<record alias="job-4" name="" type="Seq" seq="$job_20" filter="job-style" />
-		<record alias="job-style-1" name="" type="Seq" seq="$job-style" filter="job-style" />
-		<record alias="job-style-2" name="" type="Seq" seq="$job-style" filter="job-style" />
-		<record alias="job-style-3" name="" type="Seq" seq="$job-style" filter="job-style" />
-		<record alias="job-style-4" name="" type="Seq" seq="$job-style" filter="job-style" />
+		<record alias="job" name="" type="Seq" seq="$job" filter="job-style" repeat="4" />
+		<record alias="job-style" name="" type="Seq" seq="$job-style" filter="job-style" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="job-style" />
 		<!-- ================================================================== -->		
 
 		<!-- ================================================================== -->
-		<record alias="value-1" name="" type="Seq" seq="$stance" filter="stance" />
-		<record alias="value-2" name="" type="Seq" seq="$stance" filter="stance" />
-		<record alias="value-3" name="" type="Seq" seq="$stance" filter="stance" />
-		<record alias="value-4" name="" type="Seq" seq="$stance" filter="stance" />
+		<record alias="value" name="" type="Seq" seq="$stance" filter="stance" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="stance" />
 		<!-- ================================================================== -->	
 		
@@ -137,18 +119,12 @@
 		<!-- ================================================================== -->			
 		
 		<!-- ================================================================== -->
-		<record alias="value-1" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
-		<record alias="value-2" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
-		<record alias="value-3" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
-		<record alias="value-4" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" />
+		<record alias="value" name="" type="Seq16" seq="$effect-attribute" filter="effect-attribute" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="effect-attribute" />
 		<!-- ================================================================== -->	
 		
 		<!-- ================================================================== -->
-		<record alias="weapon-type-1" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
-		<record alias="weapon-type-2" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
-		<record alias="weapon-type-3" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
-		<record alias="weapon-type-4" name="" type="Seq" seq="$weapon-type" filter="weapon-type" />
+		<record alias="weapon-type" name="" type="Seq" seq="$weapon-type" filter="weapon-type" repeat="4" />
 		<record alias="either" name="" type="Bool" default="y" filter="weapon-type" />
 		<!-- ================================================================== -->	
 		
@@ -199,15 +175,14 @@
 		<record alias="flag" name="" type="Bool" filter="effect-flag" />
 		<!-- ================================================================== -->		
 		
-		
 		<!-- ================================================================== -->	
 		<record alias="effect-type" name="" type="Seq16" seq="$type-seq" filter="effect-stack-count" />
-		<record alias="effect-slot" name="" type="Byte" filter="effect-stack-count" >
+		<record alias="effect-slot" name="" type="Seq" filter="effect-stack-count" >
 			<case alias="all" name="" />
 			<case alias="buff" name="" />
 			<case alias="debuff" name="" />
         </record>
-		<record alias="term-op" name="" type="Byte" filter="effect-stack-count" >
+		<record alias="term-op" name="" type="Seq" filter="effect-stack-count" >
 			<case alias="none" name="" default="y" />
 			<case alias="and" name="" />
 			<case alias="or" name="" />
@@ -234,7 +209,6 @@
 		<record alias="op" name="" type="Byte" filter="content-quota-charge" seq="$op2" />		
 		<record alias="charge-value" name="" type="Long" filter="content-quota-charge" />	
 		<!-- ================================================================== -->	
-		
 		
 		<!-- ================================================================== -->
 		<record alias="value" name="" ref="cinematic" filter="cinematic" />		

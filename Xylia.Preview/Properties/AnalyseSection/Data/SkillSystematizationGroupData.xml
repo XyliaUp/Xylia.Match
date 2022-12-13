@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SkillSystematizationGroup" version="0.15" rule="cpl | extra" >
+	<list module="CombatData" type="SkillSystematizationGroup" version="0.15" rule="extra" >
 		<record alias="alias" type="Index" />
         <record alias="name" type="Index" />
 		<record alias="name2" type="TextAlias" />

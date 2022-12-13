@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="ItemData" side="achievement" type="achievement-register" version="0.20" rule="cpl" >
+	<list module="ItemData" side="achievement" type="achievement-register" version="0.20" >
 		<record alias="type" type="type" name="" >
 			<case key="0" alias="null" name="" />
 			<case key="1" alias="kill-boss-npc" name="" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="skill-inheritance" version="0.3" rule="cpl" >
+	<list module="CombatData" type="skill-inheritance" version="0.3" >
 		<record alias="skill-id" name="" type="Id" />
 		<record alias="parent-skill-id" name="" type="Int32" />		
 	</list>

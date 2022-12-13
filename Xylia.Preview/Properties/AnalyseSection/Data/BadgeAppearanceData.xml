@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="badge-appearance" version="0.3" rule="cpl | extra" check-version="y" >
+	<list module="ItemData" type="badge-appearance" version="0.3" rule="extra" check-version="y" >
 		<record alias="alias" name="" type="Index" />
-		<record alias="apperance-type" name="" type="Byte" >
+		<record alias="apperance-type" name="" type="Seq" >
 			<case alias="Default" name="" default="y" />
 			<case alias="Item" name="" />
 		</record>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="npcindicatormoveanim" version="1.12" rule="cpl" index="y">
+	<list module="CombatData" type="npcindicatormoveanim" version="1.12" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="upper-idle" name="" type="Index" />
 		<record alias="lower-idle" name="" type="Index" />

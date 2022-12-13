@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="AIData" type="ZoneTriggerEventStage" version="0.11" rule="cpl" > 
+  <list module="AIData" type="ZoneTriggerEventStage" version="0.11" > 
 <!--
 total-duration-minute-1/2 分别对应各自的 next-cond-1/2 条件，注意两者之间并不互斥
 如果同时设置为时间类型，又不设置对应的持续时间。就会出现事件刚结束就立即再次触发的问题。

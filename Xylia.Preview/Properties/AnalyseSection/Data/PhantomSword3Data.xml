@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table side="data" version="1.02">
-	<list module="CombatData" type="phantomsword3" version="0.5" rule="cpl" >
+	<list module="CombatData" type="phantomsword3" version="0.5" >
 		<record alias="id" name="" type="ID" />
 		<record alias="variation-id" name="" type="Level" start="0" />	
 		
-		<record alias="fly-type" name="" type="seq" >
+		<record alias="fly-type" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="bone" name="" default="y" />
 			<case alias="bone-pos-only" name="" />

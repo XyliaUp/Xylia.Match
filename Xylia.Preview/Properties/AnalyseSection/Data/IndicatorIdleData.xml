@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="indicator-idle" version="0.1" rule="cpl | extra" >
+	<list module="LocalizationData" type="indicator-idle" version="0.1" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="master-idle" name="" ref="NpcIndicatorMoveAnim" />
 		<record alias="npc" name="" ref="Npc" repeat="5" />

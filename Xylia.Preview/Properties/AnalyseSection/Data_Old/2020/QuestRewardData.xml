@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+
+	<public >
+		<record alias="optional-group" type="struct" >
+			<record alias="faction" name="" ref="faction" />
+			<record alias="job" name="" seq="$job_20" type="Seq" repeat="14" />
+			<record alias="sex" name="" seq="$sex" type="Seq" repeat="4" />
+			<record alias="race" name="" seq="$race" type="Seq" repeat="4" />
+			<record alias="difficulty-type" name="" seq="$difficulty-type" type="Seq" />
+			<record alias="slot" name="" use-group="y" repeat="4" />
+			<record alias="item-count-1" name="" out-cond="Exist: *slot-1" type="Byte" apply="y" default="1" />
+			<record alias="item-count-2" name="" out-cond="Exist: *slot-2" type="Byte" apply="y" default="1" />
+			<record alias="item-count-3" name="" out-cond="Exist: *slot-3" type="Byte" apply="y" default="1" />
+			<record alias="item-count-4" name="" out-cond="Exist: *slot-4" type="Byte" apply="y" default="1" />
+		</record>
+
+		<record alias="fixed-group" type="struct" parent="optional-group" >
+			<record alias="skill-var-idx-1" name="" type="Byte" />
+			<record alias="skill-var-idx-2" name="" type="Byte" />
+			<record alias="skill-var-idx-3" name="" type="Byte" />
+			<record alias="skill-var-idx-4" name="" type="Byte" />
+		</record>
+	</public>
+
+	
+	<!-- 任务奖励 -->
+	<list module="QuestData" rule="" type="QuestReward" version="0.28">
+		<record alias="id" name="" type="id" />
+		<record alias="alias" name="" type="Index" />
+		<record alias="quest-first-progress" name="" type="Seq" >
+			<case alias="none" name="" default="y" />
+			<case alias="y" name="" />
+			<case alias="n" name="" />
+                                </record>
+		<record alias="quest-completion-count" name="" type="Byte" />
+		<record alias="quest-completion-count-op" name="" type="Byte" />
+
+		<record alias="basic-money" name="" type="Int32" />
+		<record alias="basic-exp" name="" type="Int32" />
+		<record alias="basic-account-exp" name="侠义团经验" type="Int32" />
+		<record alias="basic-mastery-level" name="" type="Byte" />
+		<record alias="basic-production-id" name="" type="Byte" />
+		<record alias="basic-production-exp" name="" type="Short" />
+		<record alias="basic-faction-reputation" name="" type="Int32" />
+		<record alias="basic-duel-point" name="" type="Int32" />
+		<record alias="basic-party-battle-point" name="" type="Int32" />
+		<record alias="basic-field-play-point" name="" type="Int32" />
+		<!-- ================================================================================== -->
+		<record alias="fixed-skill3" name="" ref="Skill3" server="n" repeat="4" />
+		<record alias="fixed-common-slot" name="" use-group="y" repeat="4" />
+		<record alias="fixed-common-item-count" name="数值为1可以缺省" out-cond="Exist: fixed-common-slot-" type="Byte" default="1" repeat="4" />
+		<record alias="fixed-common-skill-var-idx" name="" type="Byte" repeat="4" />
+		
+		<record alias="optional-common-slot" name="" use-group="y" repeat="4" />
+		<record alias="optional-common-item-count" name="" out-cond="Exist: optional-common-slot-" type="Byte" apply="must" default="1" repeat="4" />
+		<!-- ================================================================================== -->
+		<record alias="fixed-1-" name="" struct="fixed-group" />
+		<record alias="fixed-2-" name="" struct="fixed-group" />
+		<record alias="fixed-3-" name="" struct="fixed-group" />
+		<record alias="fixed-4-" name="" struct="fixed-group" />
+		<record alias="fixed-5-" name="" struct="fixed-group" />
+		<record alias="fixed-6-" name="" struct="fixed-group" />
+		<record alias="fixed-7-" name="" struct="fixed-group" />
+		<record alias="fixed-8-" name="" struct="fixed-group" />
+		<record alias="fixed-9-" name="" struct="fixed-group" />
+		<record alias="fixed-10-" name="" struct="fixed-group" />
+		<record alias="fixed-11-" name="" struct="fixed-group" />
+		<record alias="fixed-12-" name="" struct="fixed-group" />
+		<record alias="fixed-13-" name="" struct="fixed-group" />
+		<record alias="fixed-14-" name="" struct="fixed-group" />
+		<!-- ================================================================================== -->
+		<record alias="optional-1-" name="" struct="optional-group" />
+		<record alias="optional-2-" name="" struct="optional-group" />
+		<record alias="optional-3-" name="" struct="optional-group" />
+		<record alias="optional-4-" name="" struct="optional-group" />
+		<record alias="optional-5-" name="" struct="optional-group" />
+		<record alias="optional-6-" name="" struct="optional-group" />
+		<record alias="optional-7-" name="" struct="optional-group" />
+		<record alias="optional-8-" name="" struct="optional-group" />
+		<record alias="optional-9-" name="" struct="optional-group" />
+		<record alias="optional-10-" name="" struct="optional-group" />
+		<record alias="optional-11-" name="" struct="optional-group" />
+		<record alias="optional-12-" name="" struct="optional-group" />
+		<record alias="optional-13-" name="" struct="optional-group" />
+		<record alias="optional-14-" name="" struct="optional-group" />
+		<!-- ================================================================================== -->
+		
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-sun-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-sun-fixed-item-count" name="" out-cond="Exist: dayofweek-sun-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-mon-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-mon-fixed-item-count" name="" out-cond="Exist: dayofweek-mon-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-tue-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-tue-fixed-item-count" name="" out-cond="Exist: dayofweek-tue-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-wed-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-wed-fixed-item-count" name="" out-cond="Exist: dayofweek-wed-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-thu-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-thu-fixed-item-count" name="" out-cond="Exist: dayofweek-thu-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-fri-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-fri-fixed-item-count" name="" out-cond="Exist: dayofweek-fri-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-sat-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="dayofweek-sat-fixed-item-count" name="" out-cond="Exist: dayofweek-sat-fixed-item-" type="Byte" default="1" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="dayofweek-sun-bonus-money" name="" type="Int32" />
+		<record alias="dayofweek-mon-bonus-money" name="" type="Int32" />
+		<record alias="dayofweek-tue-bonus-money" name="" type="Int32" />
+		<record alias="dayofweek-wed-bonus-money" name="" type="Int32" />
+		<record alias="dayofweek-thu-bonus-money" name="" type="Int32" />
+		<record alias="dayofweek-fri-bonus-money" name="" type="Int32" />
+		<record alias="dayofweek-sat-bonus-money" name="" type="Int32" />
+		<!-- ================================================================================== -->
+		
+		<!-- ================================================================================== -->
+		<record alias="newbie-party-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="newbie-party-fixed-item-count" name="" out-cond="Exist: newbie-party-fixed-item-" type="Byte" repeat="2" />
+		<record alias="oldbie-party-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="oldbie-party-fixed-item-count" name="" out-cond="Exist: oldbie-party-fixed-item-" type="Byte" repeat="2" />
+		<!-- ================================================================================== -->
+		
+		<!-- ================================================================================== -->
+		<record alias="mentor-fixed-item" name="" ref="Item" repeat="2" />
+		<record alias="mentor-fixed-item-count" name="" out-cond="Exist: mentor-fixed-item-" type="Byte" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="hongmoon-item" name="" ref="Item" repeat="2" />
+		<record alias="hongmoon-item-count" name="" out-cond="Exist: hongmoon-item-" type="Short" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="membership-item" name="" ref="Item" repeat="2" />
+		<record alias="membership-item-count" name="" out-cond="Exist: membership-item-" type="Short" repeat="2" />
+		<!-- ================================================================================== -->
+		<record alias="pccafe-item" name="" ref="Item" repeat="2" />
+		<record alias="pccafe-item-count" name="" out-cond="Exist: pccafe-item-" type="Short" repeat="2" />
+		<!-- ================================================================================== -->
+		
+		<!-- ================================================================================== -->
+		<record alias="dungeon-additional-reward-item" name="" ref="Item" repeat="4" />
+		<record alias="dungeon-additional-reward-item-count" name="" type="Byte" repeat="4" />
+		<record alias="dungeon-additional-reward-cost-a" name="" ref="CostGroup" repeat="4" />
+		<record alias="dungeon-additional-reward-cost-b" name="" ref="CostGroup" repeat="4" />
+		<!-- ================================================================================== -->
+
+		<!-- ====================================== 服务端 ====================================== -->
+		<record alias="elevate-job-style" name="允许使用第三派系" type="Bool" valid-cond="Equal: alias : 1815_final_set1" apply="must" client="n" />
+		<record alias="fixed-quest-reward-job-style-skill3" name="" ref="QuestRewardSkill" client="n" repeat="10" />
+		<!-- ==================================================================================== -->	
+	</list>
+</table>

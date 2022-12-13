@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="duel-bot" version="0.22" rule="cpl | extra" >
+	<list module="CombatData" type="duel-bot" version="0.22" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 
 		<record alias="race" name="" type="Seq" seq="$race" />

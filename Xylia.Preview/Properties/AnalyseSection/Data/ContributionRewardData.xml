@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="ContributionReward" version="0.12" rule="cpl | extra" >
+	<list module="ItemData" type="ContributionReward" version="0.12" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="contribution-type" name="" type="Seq" >
 		     <case alias="normal" default="y" />

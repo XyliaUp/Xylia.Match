@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SkillResultControll3" version="1.0" rule="cpl | extra" >
+	<list module="CombatData" type="SkillResultControll3" version="1.0" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="immune-target-counter-skill" name="" type="Bool" repeat="5" />
 		<record alias="immune-target-parry-skill" name="" type="Bool" repeat="5" />

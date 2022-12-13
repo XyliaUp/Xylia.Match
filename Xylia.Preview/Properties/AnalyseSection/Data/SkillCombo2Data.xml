@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="skill-combo-2" version="0.4" rule="cpl | extra" >
+	<list module="CombatData" type="skill-combo-2" version="0.4" rule="extra" >
 		<record alias="alias" name="" type="Index" />
-		<record alias="group" name="" type="seq" >
+		<record alias="group" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="target-down" name="" />
 			<case alias="target-stun" name="" />
@@ -22,17 +22,17 @@
 			<case alias="success-skill-slidestep" name="" />
 			<case alias="success-skill-right" name="" />
 			<case alias="success-skill-takedown" name="" />
-                                </record>
+        </record>
 		<record alias="sort-no" name="" type="Short" />
 		<record alias="name2" name="" type="TextAlias" />
 		<record alias="action-desc" name="" type="TextAlias" />
 		<record alias="combo-desc" name="" type="TextAlias" />
 		<record alias="video" name="" type="Index" />
 		<record alias="skill" name="" type="Int32" repeat="5" />
-		<record alias="skill-slot-type" name="" type="seq" repeat="5" >
+		<record alias="skill-slot-type" name="" type="Seq" repeat="5" >
 			<case alias="none" name="" default="y" />
 			<case alias="skill-start" name="" />
 			<case alias="combo" name="" />
-                                </record>
+        </record>
 	</list>
 </table>

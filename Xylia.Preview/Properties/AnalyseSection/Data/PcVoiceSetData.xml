@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="pc-voice-set" version="0.3" rule="cpl" >
+	<list module="LocalizationData" type="pc-voice-set" version="0.3" >
 		<record alias="id" name="" type="ID" extra="Byte1" />
 		<record alias="job" name="" type="ID" extra="Byte2" seq="$job" />
 		<record alias="stance" name="" type="ID" extra="Byte3" seq="$stance" />		

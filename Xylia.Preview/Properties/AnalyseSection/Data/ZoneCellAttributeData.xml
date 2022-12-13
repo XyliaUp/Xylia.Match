@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData2" type="ZoneCampfire" version="0.3" retired="n" rule="cpl" >
+	<list module="ZoneData2" type="ZoneCellAttribute" version="0.3" >
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone" name="" ref="Zone" link="id" />
@@ -9,9 +9,9 @@
 		<record alias="pos-y" name="" type="Int32" repeat="20" />
 		<record alias="pos-z-start" name="" type="Int32" />
 		<record alias="pos-z-end" name="" type="Int32" />
-		<record alias="cell-attribute" name="" type="seq" >
+		<record alias="cell-attribute" name="" type="Seq" >
 			<case alias="invalid" name="" />
 			<case alias="safe" name="" />
-                                </record>
+        </record>
 	</list>
 </table>

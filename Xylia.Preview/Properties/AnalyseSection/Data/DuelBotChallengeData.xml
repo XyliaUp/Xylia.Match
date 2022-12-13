@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="duel-bot-challenge" version="0.39" rule="cpl" >
+	<list module="ZoneData0" type="duel-bot-challenge" version="0.39" >
 		<record alias="type" name="" type="type" >
 			<case alias="time-attack-mode" name="" />
 			<case alias="round-mode" name="" />
@@ -13,23 +13,23 @@
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
 		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
-		<record alias="required-preceding-quest-check" name="" type="seq" >
+		<record alias="required-preceding-quest-check" name="" type="Seq" >
 			<case alias="and" name="" default="y" />
 			<case alias="or" name="" />
 		</record>
 		<record alias="recommend-attack-power" name="" type="Short" />
 		<record alias="standard-gear-weapon" name="" ref="Item" />
-		<record alias="duel-bot-spawn-delay" name="" type="msec" />
-		<record alias="ready-duration" name="" type="msec" />
+		<record alias="duel-bot-spawn-delay" name="" type="Msec" />
+		<record alias="ready-duration" name="" type="Msec" />
 		<record alias="floor-timeout-duration-second" name="" type="Short" />
 		<record alias="finish-time-section" name="" type="Short" repeat="10" />
 		<record alias="finish-time-section-floor-setup" name="" type="Short" repeat="10" />
 		<record alias="max-floor" name="" type="Short" />
-		<record alias="card-select-delay-duration" name="" type="msec" />
-		<record alias="change-floor-delay-duration" name="" type="msec" />
+		<record alias="card-select-delay-duration" name="" type="Msec" />
+		<record alias="change-floor-delay-duration" name="" type="Msec" />
 		<record alias="change-floor-kismet-name" name="" type="Index" repeat="10" />
 		<record alias="change-floor-show-name" name="" type="Index" repeat="10" />
-		<record alias="result-show-delay-duration" name="" type="msec" />
+		<record alias="result-show-delay-duration" name="" type="Msec" />
 		<record alias="blade-master-floor-kismet-name" name="" type="Index" />
 		<record alias="kung-fu-fighter-floor-kismet-name" name="" type="Index" />
 		<record alias="force-master-floor-kismet-name" name="" type="Index" />

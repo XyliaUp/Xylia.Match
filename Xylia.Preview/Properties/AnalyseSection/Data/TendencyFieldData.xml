@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="tendency-field" version="0.22" rule="cpl" >
+	<list module="ZoneData0" type="tendency-field" version="0.22" >
 		<record alias="id" name="" type="ID" />
 		<record alias="type" name="" type="type" >
 		     <case alias="normal" />
@@ -16,7 +16,7 @@
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
 		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
-		<record alias="required-preceding-quest-check" name="" type="seq" >
+		<record alias="required-preceding-quest-check" name="" type="Seq" >
 			<case alias="and" name="" default="y" />
 			<case alias="or" name="" />
 		</record>
@@ -39,9 +39,9 @@
 			<case alias="tendency-1-2-3" name="" default="y" />
 		</record>
 		
-		<record alias="tendency-1-reset-score-type" name="" type="seq" seq="$tendency-reset-score-type" />
-		<record alias="tendency-2-reset-score-type" name="" type="seq" seq="$tendency-reset-score-type" />
-		<record alias="tendency-3-reset-score-type" name="" type="seq" seq="$tendency-reset-score-type" />
+		<record alias="tendency-1-reset-score-type" name="" type="Seq" seq="$tendency-reset-score-type" />
+		<record alias="tendency-2-reset-score-type" name="" type="Seq" seq="$tendency-reset-score-type" />
+		<record alias="tendency-3-reset-score-type" name="" type="Seq" seq="$tendency-reset-score-type" />
 		<record alias="quest-pack-simple-quest-refresh-money" name="" type="Long" />
 		<record alias="weekly-time-table-for-added-reward-1" name="" ref="WeeklyTimeTable" />
 		<record alias="weekly-time-table-for-added-reward-2" name="" ref="WeeklyTimeTable" />	

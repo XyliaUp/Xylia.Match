@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="ZoneEnv2Spawn" version="0.9" retired="n" rule="cpl" index="y">
+	<list module="ZoneData0" type="ZoneEnv2Spawn" version="0.9" >
 		<record alias="zone" name="" type="id" />
 		<record alias="id" name="" type="Short" start="0" />
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="guild-bank-item" version="0.2" rule="cpl" index="y">
+	<list module="ItemData" type="guild-bank-item" version="0.2" >
 		<record alias="bank-item-type" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="gemstone" name="" />

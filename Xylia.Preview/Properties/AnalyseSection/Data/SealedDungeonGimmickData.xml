@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 	
-	<list module="CombatData" type="sealed-dungeon-gimmick" version="0.10" rule="cpl" >
+	<list module="CombatData" type="sealed-dungeon-gimmick" version="0.10" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="name" name="" type="TextAlias" />
 		<record alias="icon-name" name="" type="TextAlias" />

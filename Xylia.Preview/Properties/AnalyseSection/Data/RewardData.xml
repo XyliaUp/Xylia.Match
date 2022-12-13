@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="reward" version="1.40" rule="cpl" check-version="y" >
+	<list module="ItemData" type="reward" version="1.40" check-version="y" >
 		<record alias="id" type="id" not-rule-dispel="y" />
 		<record alias="alias" type="Index" not-rule-dispel="y" />
 		<record alias="fixed-item" name="固定奖励" ref="item" repeat="8" />

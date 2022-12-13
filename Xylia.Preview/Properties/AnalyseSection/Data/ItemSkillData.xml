@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<!-- 物品技能 -->
-	<list module="ItemData" type="ItemSkill" version="0.13" rule="cpl | extra" >
+	<list module="ItemData" type="ItemSkill" version="0.13" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="skill-id" type="Int32" />
 		<record alias="skill-variation-id" type="Byte" repeat="8" />

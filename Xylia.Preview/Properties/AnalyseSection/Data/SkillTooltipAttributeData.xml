@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 	
-	<list module="CombatData" type="SkillTooltipAttribute" version="0.10" rule="cpl | extra" >
+	<list module="CombatData" type="SkillTooltipAttribute" version="0.10" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="arg-type" name="" type="Seq" seq="$arg-type" repeat="4" >
 			<case alias="none" name="" default="y" />

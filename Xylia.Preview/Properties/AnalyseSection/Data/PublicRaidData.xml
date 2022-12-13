@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="public-raid" version="5.3" rule="cpl" >
+	<list module="ZoneData0" type="public-raid" version="5.3" >
 		<record alias="id" name="" type="ID" />
 		<record alias="type" name="" type="type" >
 			<case alias="public-raid-1" name="" />

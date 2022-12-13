@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="linkmoveanim" version="1.12" rule="cpl | extra" index="y">
+	<list module="CombatData" type="linkmoveanim" version="1.12" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="pose-type" type="Seq" >
 			<case alias="standing" name="" />

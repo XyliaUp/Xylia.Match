@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="pet" version="0.1" rule="cpl | extra" index="y">
+	<list module="ItemData" type="pet" version="0.1" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="mesh-name" name="" type="Index" />
 		<record alias="mesh-scale" name="" type="Float32" default="1.0" />

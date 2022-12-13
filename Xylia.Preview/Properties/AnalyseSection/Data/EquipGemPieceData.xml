@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="equip-gem-piece" rule="cpl" version="0.2" >
+	<list module="ItemData" type="equip-gem-piece" version="0.2" >
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="item-ability" name="" type="Seq" seq="$attach-ability" />

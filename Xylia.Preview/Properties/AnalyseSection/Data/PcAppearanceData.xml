@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list alias="PcAppearanceData" module="AIData" type="pc-appearance" version="0.7" rule="cpl" >
+	<list module="AIData" type="pc-appearance" version="0.7" >
 		<record alias="race" type="id" extra="Byte1" seq="$race" name="" />
 		<record alias="job" type="id" extra="Byte2" seq="$job" name="" />
 		<record alias="sex" type="id" extra="Byte3" seq="$sex" name="" />

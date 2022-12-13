@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="JumpingCharacter2" version="0.1" rule="cpl | extra" >
+	<list module="CombatData" type="JumpingCharacter2" version="0.1" rule="extra" >
 		<record alias="required-level" type="Byte" />
 		<record alias="required-preceding-epic-quest" type="Quest" link="id" />	
 		<record alias="last-epic-quest-to-complete" type="Quest" link="id" />	

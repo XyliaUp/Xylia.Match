@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="ArenaPortal" version="0.1" rule="cpl | extra" >
+	<list module="ItemData" type="ArenaPortal" version="0.1" rule="extra" >
 		<record alias="type" name="" type="type" >
 			<case alias="duel" name="" />
 			<case alias="dungeon" name="" />
@@ -9,7 +9,7 @@
 
 		<record alias="alias" name="" type="Index" />
 		<record alias="faction" name="" ref="Faction" />
-		<record alias="required-quest-check" name="" type="seq" >
+		<record alias="required-quest-check" name="" type="Seq" >
 			<case alias="and" name="" default="y" />
 			<case alias="or" name="" />
 	    </record>
@@ -25,7 +25,7 @@
 		<record alias="tag-match-3vs3" name="" ref="Duel" filter="Duel" repeat="4" />
 		<record alias="tag-match-unrated" name="" ref="Duel" filter="Duel" repeat="4" />		
 		<!-- ====================================================== -->
-		<record alias="public-raid-mode" name="" type="seq" filter="public-raid" >
+		<record alias="public-raid-mode" name="" type="Seq" filter="public-raid" >
 			<case alias="public-raid-1" name="" />
 			<case alias="public-raid-2" name="" />
 			<case alias="public-raid-2-party-mode" name="" />

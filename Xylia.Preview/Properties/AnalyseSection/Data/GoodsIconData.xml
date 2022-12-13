@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="goods-icon" version="0.1" rule="cpl" index="y">
+	<list module="LocalizationData" type="goods-icon" version="0.1" >
 		<record alias="id" type="ID" name="" />
 		<record alias="icon" type="Icon" name="" />
 	</list>

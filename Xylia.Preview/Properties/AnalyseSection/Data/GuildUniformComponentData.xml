@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="144" alias="GuildUniformComponent" module="ItemData" type="GuildUniformComponent" version="0.8" rule="cpl" >
+	<list alias="GuildUniformComponent" module="ItemData" type="GuildUniformComponent" version="0.8" >
 		<record alias="param-type" name="" type="ID" />
 		<record start="0" alias="param-value" name="" type="Int32" />
 		<record alias="param-type-category" name="" type="Seq" >

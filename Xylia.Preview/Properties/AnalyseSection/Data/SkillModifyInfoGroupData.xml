@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<!-- 物品技能组 -->
-	<list module="CombatData" type="skill-modify-info-group" version="0.4" rule="cpl | extra" >
+	<list module="CombatData" type="skill-modify-info-group" version="0.4" rule="extra" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="job-style" type="Seq" name="" seq="$job-style" />
 		<record alias="skill-modify-info" name="" ref="SkillModifyInfo" repeat="4" />

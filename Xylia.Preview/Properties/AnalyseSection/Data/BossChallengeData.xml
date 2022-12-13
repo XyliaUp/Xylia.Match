@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="AIData" rule="cpl" version="0.2" type="boss-challenge" > 
+  <list module="AIData" version="0.2" type="boss-challenge" > 
     <record alias="id" name="" type="id" />
 	
     <record alias="zone" name="" ref="Zone" link="id" />	

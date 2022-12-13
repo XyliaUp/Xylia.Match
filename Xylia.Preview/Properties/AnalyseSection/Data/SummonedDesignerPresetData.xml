@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SummonedDesignerPreset" version="0.3" rule="cpl" index="y">
+	<list module="CombatData" type="SummonedDesignerPreset" version="0.3" >
 		<record alias="index" name="" type="ID" />
 		<record alias="race" type="Byte" name="" seq="$race" start="0" />
 		<record alias="alias" name="" type="Index" />

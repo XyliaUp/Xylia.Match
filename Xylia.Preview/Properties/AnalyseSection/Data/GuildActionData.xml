@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="guild-action" version="0.4" rule="cpl" side="server" >
+	<list module="ItemData" type="guild-action" version="0.4" side="server" >
          <record alias="action" name="" type="Seq" >
 		 
 		 </record>

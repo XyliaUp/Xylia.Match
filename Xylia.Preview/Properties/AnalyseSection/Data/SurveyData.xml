@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<table release-side="local" version="1.01">
-	<list id="319" alias="Survey" module="LocalizationData" type="survey" version="0.5" rule="cpl" >
+<table data-type="local" >
+	<list module="LocalizationData" type="survey" version="0.5" >
 		<record alias="id" name="" type="ID" />
 		<record alias="survey-question" name="" ref="0" server="n" />
 		<record alias="job" name="" type="Seq" seq="$job" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="battle-field-grade" version="0.3" rule="cpl" >
+	<list module="ItemData" type="battle-field-grade" version="0.3" >
 		<record alias="season-type" name="" type="id" extra="Byte1" seq="$season-type" >
 			<case alias="invalid" name="" />
 			<case alias="duel-death-match-1vs1" name="" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="20" alias="AutoTargetParameter" module="CombatData" type="autotargetparameter" version="0.10" rule="cpl" >
+	<list module="CombatData" type="autotargetparameter" version="0.10" >
 		<record alias="stance-type" name="" type="ID" extra="Byte1" seq="$stance" />
 		<record alias="sensitivity-level" name="" type="ID" extra="Byte2" >
 			<case alias="low" name="" />

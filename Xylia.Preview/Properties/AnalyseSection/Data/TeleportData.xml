@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="teleport" version="0.23" rule="cpl" >
+	<list module="ZoneData0" type="teleport" version="0.23" >
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="retired" name="" type="Bool" />

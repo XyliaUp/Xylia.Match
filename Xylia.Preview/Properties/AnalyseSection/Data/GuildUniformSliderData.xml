@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="149" alias="GuildUniformSlider" module="ItemData" type="GuildUniformSlider" version="0.4" rule="cpl" >
+	<list module="ItemData" type="GuildUniformSlider" version="0.4" >
 		<record alias="param-type" name="" type="ID" />
 		<record alias="min-value" name="" type="Byte" default="1" />
 		<record alias="max-value" name="" type="Byte" default="100" />

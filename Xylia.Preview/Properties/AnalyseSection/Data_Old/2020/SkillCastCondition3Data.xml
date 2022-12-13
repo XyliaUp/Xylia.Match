@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+
+	<list module="CombatData" type="SkillCastCondition3" version="1.45" rule="" >
+		<record alias="alias" type="Index" name="" />
+		<record alias="stance" type="Byte" name="" seq="$stance_20" />
+		<record alias="summoned-use-only" name="" type="bool" />
+		<record alias="required-weapon-type" type="Byte" name="" seq="$weapon-type" />
+		<record alias="link-type" name="" type="Seq" seq="$link-type" />
+		<record alias="link-state" name="" type="Seq" seq="$link-state"/>	
+		<record alias="link-stage" name="" type="Seq" seq="$link-stage"/>		
+		<record alias="immune-caster-block-skill" type="Bool" name="免疫技能打断" />
+		<record alias="unnecessary-acquired" name="" type="Bool" />		
+		<record alias="target-type" name="" type="Seq" seq="$target-type" />	
+		<record alias="success-caster-combat-mode" name="" type="Seq" >	
+			<case alias="all" name="" default="y" />
+			<case alias="combat-mode" name="" />
+			<case alias="not-combat-mode" name="" />
+
+		</record>
+		
+		<record alias="success-caster-flag-1" type="Short" name="" seq="$flag" />
+		<record alias="success-caster-flag-2" type="Short" name="" seq="$flag" />
+		<record alias="success-caster-flag-3" type="Short" name="" seq="$flag" />
+		<record alias="success-caster-flag-4" type="Short" name="" seq="$flag" />
+		<record alias="success-caster-op" name="" type="Seq" seq="$op" out-cond="Exist: success-caster-flag-2" default="or" apply="must" />
+		<record alias="fail-caster-flag-1" name="" type="Seq16" seq="$flag" />	
+		<record alias="fail-caster-flag-2" name="" type="Seq16" seq="$flag" />		
+		<record alias="fail-caster-flag-3" name="" type="Seq16" seq="$flag" />		
+		<record alias="fail-caster-flag-4" name="" type="Seq16" seq="$flag" />		
+		<record alias="fail-caster-op" name="" type="Seq" seq="$op" out-cond="Exist: fail-caster-flag-2" apply="must" />	
+		<record alias="success-caster-effect-attribute-1" type="Short" name="" seq="$effect-attribute" />
+		<record alias="success-caster-effect-attribute-2" type="Short" name="" seq="$effect-attribute" />
+		<record alias="success-caster-effect-attribute-3" type="Short" name="" seq="$effect-attribute" />
+		<record alias="success-caster-effect-attribute-4" type="Short" name="" seq="$effect-attribute" />
+		<record alias="success-caster-effect-attribute-op" type="Byte" name="" seq="$op" out-cond="Exist: success-caster-effect-attribute-2" apply="must" />	
+		<record alias="fail-caster-effect-attribute-1" name="" type="Seq16" seq="$effect-attribute" />	
+		<record alias="fail-caster-effect-attribute-2" name="" type="Seq16" seq="$effect-attribute" />	
+		<record alias="fail-caster-effect-attribute-3" name="" type="Seq16" seq="$effect-attribute" />	
+		<record alias="fail-caster-effect-attribute-4" name="" type="Seq16" seq="$effect-attribute" />	
+		<record alias="fail-caster-effect-attribute-op" type="Byte" name="" seq="$op" out-cond="Exist: fail-caster-effect-attribute-2" apply="must" />
+		<record alias="success-caster-filter-1" name="" ref="FilterData" />
+		<record alias="success-caster-filter-2" name="" ref="FilterData" />
+		<record alias="success-caster-filter-op" name="" type="Seq" seq="$op" out-cond="Exist: success-caster-filter-2" apply="must" />	
+		<record alias="fail-caster-filter-1" name="" ref="FilterData" />
+		<record alias="fail-caster-filter-2" name="" ref="FilterData" />
+		<record alias="fail-caster-filter-op" name="" type="Seq" seq="$op" out-cond="Exist: fail-caster-filter-2" apply="must" />			
+		<record alias="success-target-dead-state" name="" type="Seq" seq="$dead-state" />		
+		<record alias="success-target-flag-1" name="" type="Seq16" seq="$flag" />	
+		<record alias="success-target-flag-2" name="" type="Seq16" seq="$flag" />	
+		<record alias="success-target-flag-3" name="" type="Seq16" seq="$flag" />	
+		<record alias="success-target-flag-4" name="" type="Seq16" seq="$flag" />			
+		<record alias="success-target-op" name="" type="Seq" seq="$op" out-cond="Exist: success-target-flag-2" apply="must" />	
+		<record alias="fail-target-flag-1" type="Short" name="" seq="$flag" />
+		<record alias="fail-target-flag-2" type="Short" name="" seq="$flag" />
+		<record alias="fail-target-flag-3" type="Short" name="" seq="$flag" />
+		<record alias="fail-target-flag-4" type="Short" name="" seq="$flag" />
+		<record alias="fail-target-op" type="Byte" name="" seq="$op" out-cond="Exist: fail-target-flag-2" apply="must" />
+
+
+		<record alias="success-target-effect-attribute-1" type="Short" name="" seq="$effect-attribute" />
+		<record alias="success-target-effect-attribute-2" type="Short" name="" seq="$effect-attribute" />	
+		<record alias="success-target-effect-attribute-3" type="Short" name="" seq="$effect-attribute" />
+		<record alias="success-target-effect-attribute-4" type="Short" name="" seq="$effect-attribute" />	
+		<record alias="success-target-effect-attribute-op" type="Byte" name="" seq="$op" out-cond="Exist: success-target-effect-attribute-2" />
+		<record alias="fail-target-effect-attribute-1" type="Short" name="" seq="$effect-attribute" />
+		<record alias="fail-target-effect-attribute-2" type="Short" name="" seq="$effect-attribute" />	
+		<record alias="fail-target-effect-attribute-3" type="Short" name="" seq="$effect-attribute" />
+		<record alias="fail-target-effect-attribute-4" type="Short" name="" seq="$effect-attribute" />	
+		<record alias="fail-target-effect-attribute-op" type="Seq" seq="$op" out-cond="Exist: fail-target-effect-attribute-2" />
+		<record alias="success-target-filter-1" name="" ref="FilterData" />
+		<record alias="success-target-filter-2" name="" ref="FilterData" />
+		<record alias="success-target-filter-op" name="" type="Seq" seq="$op" out-cond="Exist: success-target-filter-2" />
+		<record alias="fail-target-filter-1" name="" ref="FilterData" />
+		<record alias="fail-target-filter-2" name="" ref="FilterData" />
+		<record alias="fail-target-filter-op" name="" type="Seq" seq="$op"  out-cond="Exist: fail-target-filter-2" />
+		<record alias="fail-target-mount-linker" type="Bool" name="" />				
+		<record alias="fail-target-mount-linked" type="Bool" name="" />	
+		<record alias="fail-target-inhalation-linker" type="Bool" name="" />				
+		<record alias="fail-target-inhalation-linked" type="Bool" name="" />		
+		<record alias="fail-target-catch-linker" type="Bool" name="" />				
+		<record alias="fail-target-catch-linked" type="Bool" name="" />
+		<record alias="gather-range" name="" type="Int32" ref="SkillGatherRange3" server="n" />
+		<record alias="check-style-score" type="Short" name="" />		
+		<record alias="check-hp-value" name="" type="Short" />	
+		<record alias="check-hp-type" name="" type="Seq" seq="$consume-type" out-cond="Exist: check-hp-value" />
+		<record alias="check-sp-value-1" name="" type="Short" />		
+		<record alias="check-sp-value-2" name="" type="Short" />
+		<record alias="check-sp-type-1" type="Byte" name="" seq="$consume-type" out-cond="Exist: check-sp-value-1" />
+		<record alias="check-sp-type-2" type="Byte" name="" seq="$consume-type" out-cond="Exist: check-sp-value-2" />
+		<record alias="check-summoned-hp-value" name="" type="Short" />
+		<record alias="check-summoned-hp-type" name="" type="Seq" seq="$consume-type" out-cond="Exist: check-summoned-hp-value" />
+		<record alias="success-caster-move-state-1" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-2" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-3" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-4" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-5" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-6" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-7" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-8" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="success-caster-move-state-9" name="" type="Seq" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-1" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-2" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-3" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-4" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-5" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-6" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-7" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-8" type="Byte" name="" seq="$move-state" server="n" />
+		<record alias="fail-caster-move-state-9" type="Byte" name="" seq="$move-state" server="n" />
+		
+		
+		<record alias="move-type" type="Byte" name="" >	
+		    <case alias="free" name="" />		
+		    <case alias="cast-block" name="" />	
+		    <case alias="whole-block" name="" />
+		</record>
+		
+		<record alias="prev-combo-id-1" type="Int32" name="" />
+		<record alias="prev-combo-id-2" type="Int32" name="" />
+		<record alias="prev-combo-id-3" type="Int32" name="" />
+		<record alias="prev-combo-id-4" type="Int32" name="" />
+		<record alias="prev-combo-event-type-1" type="Byte" name="" seq="$event-type" />	
+		<record alias="prev-combo-event-type-2" type="Byte" name="" seq="$event-type" />	
+		<record alias="prev-combo-event-type-3" type="Byte" name="" seq="$event-type" />	
+		<record alias="prev-combo-event-type-4" type="Byte" name="" seq="$event-type" />	
+		
+		<record alias="combo-check-point" type="dictionary" name="" >	
+			<case alias="exec-first" name="" default="y" />
+			<case alias="exec-last" name="" />
+			<case alias="fire" name="" />
+		</record>
+		
+		<record alias="prev-combo-check-point-1" type="Byte" name="" seq="$combo-check-point" />	
+		<record alias="prev-combo-check-point-2" type="Byte" name="" seq="$combo-check-point" />	
+		<record alias="prev-combo-check-point-3" type="Byte" name="" seq="$combo-check-point" />	
+		<record alias="prev-combo-check-point-4" type="Byte" name="" seq="$combo-check-point" />	
+		<record alias="prev-combo-result-1" type="Short" name="" />
+		<record alias="prev-combo-result-2" type="Short" name="" />
+		<record alias="prev-combo-result-3" type="Short" name="" />
+		<record alias="prev-combo-result-4" type="Short" name="" />
+		<record alias="prev-combo-1-result-1" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-2" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-3" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-4" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-5" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-6" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-7" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-1-result-8" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-1" />
+		<record alias="prev-combo-2-result-1" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-2" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-3" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-4" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-5" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-6" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-7" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-2-result-8" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-2" />
+		<record alias="prev-combo-3-result-1" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-2" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-3" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-4" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-5" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-6" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-7" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-3-result-8" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-3" />
+		<record alias="prev-combo-4-result-1" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-2" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-3" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-4" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-5" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-6" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-7" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="prev-combo-4-result-8" type="Byte" name="" seq="$skill-result" out-cond="Exist: prev-combo-id-4" />
+		<record alias="last-event-type-1" type="Byte" name="" seq="$event-type" />
+		<record alias="last-event-type-2" type="Byte" name="" seq="$event-type" />
+		<record alias="last-event-result-1" name="" type="Short" server="n" />
+		<record alias="last-event-result-2" name="" type="Short" server="n" />
+		<record alias="last-event-1-result-1" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-2" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-3" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-4" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-5" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-6" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-7" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-1-result-8" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" />
+		<record alias="last-event-2-result-1" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-2" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-3" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-4" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-5" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-6" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-7" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="last-event-2-result-8" type="Byte" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" />
+		<record alias="success-recycle-group-1" name="" type="Seq" seq="$recycle-group" />			
+	    <record alias="success-recycle-group-2" name="" type="Seq" seq="$recycle-group" />
+	    <record alias="success-recycle-group-3" name="" type="Seq" seq="$recycle-group" />
+		<record alias="success-recycle-group-4" name="" type="Seq" seq="$recycle-group" />
+		<record alias="success-recycle-group-id-1" name="" type="Byte" />	
+		<record alias="success-recycle-group-id-2" name="" type="Byte" />		
+		<record alias="success-recycle-group-id-3" name="" type="Byte" />	
+		<record alias="success-recycle-group-id-4" name="" type="Byte" />		
+		<record alias="success-recycle-group-op" name="" type="Seq" seq="$op" out-cond="Exist: success-recycle-group-id-2" />	
+		<record alias="fail-recycle-group-1" name="" type="Seq" seq="$recycle-group" server="n" />			
+	    <record alias="fail-recycle-group-2" name="" type="Seq" seq="$recycle-group" server="n" />
+	    <record alias="fail-recycle-group-3" name="" type="Seq" seq="$recycle-group" server="n" />
+		<record alias="fail-recycle-group-4" name="" type="Seq" seq="$recycle-group" server="n" />
+		<record alias="fail-recycle-group-id-1" name="" type="Byte" />	
+		<record alias="fail-recycle-group-id-2" name="" type="Byte" />		
+		<record alias="fail-recycle-group-id-3" name="" type="Byte" />	
+		<record alias="fail-recycle-group-id-4" name="" type="Byte" />		
+		<record alias="fail-recycle-group-op" name="" type="Seq" seq="$op" out-cond="Exist: fail-recycle-group-2" default="or" apply="must" />		
+		<record alias="soul-mask-1" ref="SoulMaskSet" />
+		<record alias="soul-mask-2" ref="SoulMaskSet" />
+		<record alias="fail-soulmask-except-normal" type="Bool" name="" default="y" />
+		<record alias="is-special-skill" name="" type="Bool" />	
+		<record alias="lockon-skill-type" name="" type="Seq" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="only-target" name="" />
+			<case alias="target-pawn-rotate" name="" />
+			<case alias="full-lock-on" name="" />
+		</record>
+		<record alias="is-ground-pitch-dash-skill" name="" type="Bool" />		
+		
+		<record alias="simple-context-success-caster-flag-1" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-success-caster-flag-2" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-success-caster-flag-3" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-success-caster-flag-4" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-success-caster-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-success-caster-flag-2" apply="must" />		
+		<record alias="simple-context-fail-caster-flag-1" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-fail-caster-flag-2" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-fail-caster-flag-3" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-fail-caster-flag-4" type="Short" name="" seq="$flag" server="n" />
+		<record alias="simple-context-fail-caster-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-fail-caster-flag-2" apply="must" />		
+		<record alias="simple-context-success-caster-effect-attribute-1" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-caster-effect-attribute-2" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-caster-effect-attribute-3" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-caster-effect-attribute-4" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-caster-effect-attribute-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-success-caster-effect-attribute-2" apply="must" />			
+		<record alias="simple-context-fail-caster-effect-attribute-1" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-fail-caster-effect-attribute-2" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-fail-caster-effect-attribute-3" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-fail-caster-effect-attribute-4" type="Short" name="" seq="$effect-attribute" server="n" />		
+		<record alias="simple-context-fail-caster-effect-attribute-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-fail-caster-effect-attribute-2" />	
+		<record alias="simple-context-success-target-flag-1" type="Short" name="" server="n" />
+		<record alias="simple-context-success-target-flag-2" type="Short" name="" server="n" />
+		<record alias="simple-context-success-target-flag-3" type="Short" name="" server="n" />
+		<record alias="simple-context-success-target-flag-4" type="Short" name="" server="n" />
+		<record alias="simple-context-success-target-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-success-target-flag-2" />
+		<record alias="simple-context-fail-target-flag-1" type="Short" name="" server="n" />
+		<record alias="simple-context-fail-target-flag-2" type="Short" name="" server="n" />
+		<record alias="simple-context-fail-target-flag-3" type="Short" name="" server="n" />
+		<record alias="simple-context-fail-target-flag-4" type="Short" name="" server="n" />
+		<record alias="simple-context-fail-target-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-fail-target-flag-2" />
+		<record alias="simple-context-success-target-effect-attribute-1" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-target-effect-attribute-2" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-target-effect-attribute-3" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-success-target-effect-attribute-4" type="Short" name="" seq="$effect-attribute" server="n" />		
+		<record alias="simple-context-success-target-effect-attribute-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-success-target-effect-attribute-2" />	
+		<record alias="simple-context-fail-target-effect-attribute-1" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-fail-target-effect-attribute-2" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-fail-target-effect-attribute-3" type="Short" name="" seq="$effect-attribute" server="n" />
+		<record alias="simple-context-fail-target-effect-attribute-4" type="Short" name="" seq="$effect-attribute" server="n" />		
+		<record alias="simple-context-fail-target-effect-attribute-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-fail-target-effect-attribute-2" />	
+	
+		
+		
+		
+		
+		<record alias="simple-context-check-sp-value-1" type="Short" name="" server="n" />
+		<record alias="simple-context-check-sp-value-2" type="Short" name="" server="n" />
+		<record alias="simple-context-check-sp-type-1" type="Byte" name="" seq="$consume-type" out-cond="Exist: simple-context-check-sp-value-1" server="n" />
+		<record alias="simple-context-check-sp-type-2" type="Byte" name="" seq="$consume-type" out-cond="Exist: simple-context-check-sp-value-2" server="n" />
+		<record alias="simple-context-success-recycle-group-1" name="" type="Seq" seq="$recycle-group" server="n" />	
+		<record alias="simple-context-success-recycle-group-2" name="" type="Seq" seq="$recycle-group" server="n" />
+		<record alias="simple-context-success-recycle-group-3" name="" type="Seq" seq="$recycle-group" server="n" />
+		<record alias="simple-context-success-recycle-group-4" name="" type="Seq" seq="$recycle-group" server="n" />
+		<record alias="simple-context-success-recycle-group-id-1" name="" type="Byte" server="n" />	
+		<record alias="simple-context-success-recycle-group-id-2" name="" type="Byte" server="n" />	
+		<record alias="simple-context-success-recycle-group-id-3" name="" type="Byte" server="n" />	
+		<record alias="simple-context-success-recycle-group-id-4" name="" type="Byte" server="n" />	
+		<record alias="simple-context-success-recycle-group-op" name="" type="Seq" seq="$op" server="n" out-cond="Exist: simple-context-success-recycle-group-id-2" />	
+		<record alias="simple-context-fail-recycle-group-1" name="" type="Seq" seq="$recycle-group" server="n" />	
+		<record alias="simple-context-fail-recycle-group-2" name="" type="Seq" seq="$recycle-group" server="n" />	
+		<record alias="simple-context-fail-recycle-group-3" name="" type="Seq" seq="$recycle-group" server="n" />	
+		<record alias="simple-context-fail-recycle-group-4" name="" type="Seq" seq="$recycle-group" server="n" />	
+		<record alias="simple-context-fail-recycle-group-id-1" name="" type="Byte" server="n" />		
+		<record alias="simple-context-fail-recycle-group-id-2" name="" type="Byte" server="n" />	
+		<record alias="simple-context-fail-recycle-group-id-3" name="" type="Byte" server="n" />	
+		<record alias="simple-context-fail-recycle-group-id-4" name="" type="Byte" server="n" />	
+		<record alias="simple-context-fail-recycle-group-op" name="" type="Seq" seq="$op" server="n" out-cond="Exist: simple-context-fail-recycle-group-id-2" />	
+	</list>
+</table>

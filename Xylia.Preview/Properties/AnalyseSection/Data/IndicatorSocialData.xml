@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="indicator-social" version="0.17" rule="cpl" >
+	<list module="LocalizationData" type="indicator-social" version="0.17" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="interval" name="" type="Msec" />
 		<record alias="duration2" name="" type="Msec" />

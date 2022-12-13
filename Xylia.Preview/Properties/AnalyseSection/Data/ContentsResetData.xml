@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="contents-reset" version="3.0" rule="cpl" >
+	<list module="ItemData" type="contents-reset" version="3.0" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="reset-target" name="" use-group="y" />
 		<record alias="reset-money" name="" type="Int32" />

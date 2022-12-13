@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="ZoneRule" version="0.16" rule="cpl" >
+	<list module="ZoneData0" type="ZoneRule" version="0.16" >
 		<record alias="zone" type="id" name=""/>
 		<record alias="enable-infinite-hyper-energy" type="Bool" name="" />
 		<record alias="enable-reset-combat-mode" type="Bool" name="" />
@@ -33,7 +33,7 @@
 			<case alias="advanced" name="高级模式" />
 		</record>
 		<record alias="enable-auto-item-support" type="Bool" name="开启自动战斗物品支持" server="n" />
-		<record alias="unk-" type="Bool" name="" />
+		<record alias="activate-vehicle" type="Bool" name="" />
 		<record alias="unk-" type="Bool" name="" default="y" />
 		<record alias="unk-" type="Bool" name="" />
         <!-- ================================================================ -->

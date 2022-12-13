@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table side="data" version="1.02">
-	<list module="CombatData" type="phantomsword3" version="0.5" rule="cpl" >
+	<list module="CombatData" type="phantomsword3" version="0.5" >
 		<record alias="id" name="" type="ID" />
 		<record alias="variation-1-level" name="" type="Byte" start="0" />		
 		<record alias="variation-2-level" name="" type="Byte" />
@@ -8,7 +8,7 @@
 		<record alias="variation-4-level" name="" type="Byte" />
 		
 		
-		<record alias="fly-type" name="" type="seq" >
+		<record alias="fly-type" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="bone" name="" default="y" />
 			<case alias="bone-pos-only" name="" />
@@ -20,7 +20,6 @@
 		</record>
 		<record alias="start-bone" name="" type="Index" />	
 		<record alias="attack-bone" name="" type="Index" />
-		
 		<record alias="fire-arrival-x" name="" type="Byte" repeat="6" />
 		<record alias="fire-arrival-y" name="" type="Byte" repeat="6" />
 		<record alias="fire-angle" name="" type="Int32" default="-1" repeat="6" />

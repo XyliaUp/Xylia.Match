@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<!-- quest 控制任务步骤显示，npc控制任务接取与提交显示  -->
+	<list module="ZoneData0" type="mapunit" version="1.74" rule="unsort" >
+		<record alias="type" type="type" >
+			<case alias="static" name="" />
+			<case alias="quest" name="" />
+			<case alias="link" name="" />
+			<case alias="npc" name="" />
+			<case alias="boss" name="" />
+			<case alias="airdash" name="" />
+			<case alias="env" name="" />
+			<case alias="attraction" name="" />
+			<case alias="npc-group" name="" />
+			<case alias="guild-battle-field-portal" name="" />
+			<case alias="party-battle-startpoint-alpha" name="" />
+			<case alias="party-battle-startpoint-beta" name="" />
+			<case alias="fishing-field" name="" />			
+		</record>
+
+		<record alias="id" type="ID" name="" />
+		<record alias="alias" type="Index" name="" />
+		<record alias="mapid" type="Short" name="" />
+		<record alias="zone-id" type="Int32" name="" />
+		<record alias="is-phasing-unit" type="Bool" name="" />
+		<record alias="position-x" type="Float" name="" />
+		<record alias="position-y" type="Float" name="" />
+		<record alias="position-z" type="Float" name="" />
+		<record alias="category" type="Byte" name="" >
+			<case alias="none" name="" default="y" />
+			<case alias="player" name="" />
+			<case alias="party" name="" />
+			<case alias="team" name="" />
+			<case alias="guild" name="" />
+			<case alias="friend" name="" />
+			<case alias="faction" name="" />
+			<case alias="duel-enemy" name="" />
+			<case alias="quest" name="" />
+			<case alias="npc" name="" />
+			<case alias="env" name="" />
+			<case alias="teleport" name="" />
+			<case alias="airdash" name="" />
+			<case alias="link" name="" />
+			<case alias="convoy" name="" />
+			<case alias="spawned-env" name="" />
+			<case alias="static" name="" />
+			<case alias="auction" name="" />
+			<case alias="store" name="" />
+			<case alias="camp" name="" />
+			<case alias="party-camp" name="" />
+			<case alias="roulette" name="" />
+			<case alias="field-boss" name="" />
+			<case alias="gather" name="" />
+			<case alias="craft" name="" />
+			<case alias="gather-env" name="" />
+			<case alias="heart" name="" />
+			<case alias="enter-arena" name="" />
+			<case alias="weapon-box" name="" />
+			<case alias="refiner" name="" />
+			<case alias="dungeon-3" name="" />
+			<case alias="dungeon-4" name="" />
+			<case alias="dungeon-5" name="" />
+			<case alias="raid-dungeon" name="" />
+			<case alias="classic-field" name="" />
+			<case alias="faction-battle-field" name="" />
+			<case alias="guild-battle-field" name="" />
+			<case alias="party-battle-startpoint" name="" />
+			<case alias="party-battle-enemy" name="" />
+			<case alias="fishing-field" name="" />
+        </record>
+		<record alias="map-depth" type="byte" name="" >		
+			<case alias="1" name="" default="y" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+		</record>
+		<record alias="arena-dungeon-map-depth" type="byte" name="" >
+			<case alias="1" name="" default="y" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+		</record>
+		<record alias="zoom" type="Bool" name="" />
+		<record alias="rotate" type="Bool" name="" />		
+		<record alias="click" type="Bool" name="" />			
+		<record alias="front" type="Bool" name="" />			
+		<record alias="show-tooltip" type="Bool" name="" default="y" />	
+		<record alias="name2" type="TextAlias" name="" error-type="Suggestion" />
+		<record alias="opacity" type="Short" name="" />
+		<record alias="size-x" type="Short" name="" />
+		<record alias="size-y" type="Short" name="" />
+		<record alias="oufofsight-size-x" type="Short" name="" />
+		<record alias="oufofsight-size-y" type="Short" name="" />
+		<record alias="imageset" type="Index" name="" />
+		<record alias="over-imageset" type="Index" name="" />
+		<record alias="pressed-imageset" type="Index" name="" />
+		<record alias="outofsight-imageset" type="Index" name="" />
+		<record alias="outofsight-over-imageset" type="Index" name="" />
+		<record alias="outofsight-pressed-imageset" type="Index" name="" />
+		<record alias="center-pos-x" type="Float" name="" default="-1" />
+		<record alias="center-pos-y" type="Float" name="" default="-1" />
+		<!-- ========================== 公共区域  结束 ========================== -->
+
+
+		<!-- ============================ [1=] 开始 ============================ -->
+		<record alias="ignore-quest-map-location" type="Bool" name="" filter="quest" />
+		<record alias="force-quest-indicator-map-depth" type="byte" name="" filter="quest" >
+			<case alias="1" name="" default="y" />
+			<case alias="2" name="" />
+			<case alias="3" name="" />
+			<case alias="4" name="" />
+			<case alias="5" name="" />
+		</record>
+		<record alias="force-tendency-simple-quest-indicator-to-change" type="Bool" name="" filter="quest" />
+		<!-- =================================================================== -->
+
+		<!-- ============================ [2=] 开始 ============================ -->
+		<record alias="link-mapid" type="Short" name="" filter="link" />
+		<record alias="link-map-location-x" type="float" name="" filter="link" />
+		<record alias="link-map-location-y" type="float" name="" filter="link" />
+		<!-- =================================================================== -->
+
+		<!-- ============================ [3=] 开始 ============================ -->
+		<record alias="npc" type="Int32" name="" filter="npc" ref="Npc" />
+		<record alias="ignore-object-pos" type="Bool" name="" filter="npc" />
+		<record alias="in-sight-only" type="Bool" name="只在视野内时才显示" filter="npc" />
+		<record alias="many-counts" type="Bool" name="" filter="npc" />
+		<!-- =================================================================== -->
+
+		<!-- ========================== [4=] 开始 ========================== -->
+		<record alias="npc" type="Int32" name="" filter="boss" ref="Npc" />
+		<record alias="combat-imageset" type="Index" name="" filter="boss" />
+		<record alias="combat-over-imageset" type="Index" name="" filter="boss" />
+		<record alias="combat-pressed-imageset" type="Index" name="" filter="boss" />
+		<record alias="combat-outofsight-imageset" type="Index" name="" filter="boss" />
+		<record alias="combat-outofsight-over-imageset" type="Index" name="" filter="boss" />
+		<record alias="combat-outofsight-pressed-imageset" type="Index" name="" filter="boss" />
+		<!-- =================================================================== -->
+
+		<!-- ========================== 5  开始 ========================== -->
+		<record alias="env2spawn" type="Int32" name="" filter="airdash" ref="ZoneEnv2Spawn" />
+		<!-- =================================================================== -->
+
+		<!-- ========================== 6  开始 ========================== -->
+		<record alias="env2" type="Int32" name="" filter="env" ref="ZoneEnv2" />
+		<!-- =================================================================== -->
+
+		<!-- ======================= [7=content] 开始 ======================= -->
+		<record alias="attraction" type="Int32" filter="attraction" use-group="y" />
+		<record alias="attraction-position-x" type="float" name="" filter="attraction" />
+		<record alias="attraction-position-y" type="float" name="" filter="attraction" />
+		<!-- =================================================================== -->
+
+		<!-- ======================== [8=npc-group] 开始 ======================== -->
+		<record alias="npc" type="Int32" name="" filter="npc-group" ref="Npc" />
+		<!-- =================================================================== -->
+
+		<!-- ======================== [9=] 开始 ======================== -->
+		<record alias="env2spawn" type="Int32" name="" filter="guild-battle-field-portal" ref="ZoneEnv2Spawn" />
+		<record alias="disable-imageset" type="Index" name="" filter="guild-battle-field-portal" />
+		<record alias="disable-over-imageset" type="Index" name="" filter="guild-battle-field-portal" />
+		<record alias="disable-pressed-imageset" type="Index" name="" filter="guild-battle-field-portal" />
+		<record alias="disable-outofsight-imageset" type="Index" name="" filter="guild-battle-field-portal" />
+		<record alias="disable-outofsight-over-imageset" type="Index" name="" filter="guild-battle-field-portal" />
+		<record alias="disable-outofsight-pressed-imageset" type="Index" name="" filter="guild-battle-field-portal" />	
+		<!-- =================================================================== -->
+
+		<!-- ========================== 10 / 11 ========================== -->
+		<record alias="enemy-side-imageset" type="Index" name="" filter="party-battle-startpoint-alpha" />
+		<record alias="enemy-side-imageset" type="Index" name="" filter="party-battle-startpoint-beta" />
+		<!-- =================================================================== -->
+		
+		
+		<!-- ========================== 12  开始 ========================== -->
+		<record alias="fishing-point-env" type="Int32" name="" filter="fishing-field" ref="ZoneEnv2" />
+		<!-- =================================================================== -->
+
+	</list>
+
+</table>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="map-area" version="0.2" rule="cpl" index="y">
+	<list module="ZoneData0" type="map-area" version="0.2" >
 		<record alias="alias" type="Index" />	
 		<record alias="name2" type="TextAlias" />			
 	</list>

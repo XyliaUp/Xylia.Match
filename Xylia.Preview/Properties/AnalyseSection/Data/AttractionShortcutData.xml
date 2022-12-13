@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="attraction-shortcut" version="0.35" index="y">
+	<list module="ItemData" type="attraction-shortcut" version="0.35" >
 		<record alias="type" type="type" >
 			<case alias="dungeon" name="" />
 			<case alias="raid-dungeon" name="" />

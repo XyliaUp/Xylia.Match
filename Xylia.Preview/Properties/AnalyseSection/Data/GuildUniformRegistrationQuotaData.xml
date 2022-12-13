@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="148" alias="GuildUniformRegistrationQuota" module="ItemData" type="GuildUniformRegistrationQuota" version="0.2" rule="cpl" >
+	<list module="ItemData" type="GuildUniformRegistrationQuota" version="0.2" >
 		<record alias="increase-step" name="" type="ID" />
 		<record alias="payment-item" name="" ref="Item" />
 		<record alias="payment-item-count" name="" type="Int32" />

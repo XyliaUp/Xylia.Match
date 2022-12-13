@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="CustomizingDetailIcon" version="0.1" rule="cpl" index="y">
+	<list module="ItemData" type="CustomizingDetailIcon" version="0.1" >
 		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
 		<record alias="sex" type="ID" extra="Byte2" name="" seq="$sex" />
 		<record alias="param-index" type="ID" extra="Byte3" name="" showzero="y" />

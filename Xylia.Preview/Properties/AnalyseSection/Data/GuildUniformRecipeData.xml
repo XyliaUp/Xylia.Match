@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="147" alias="GuildUniformRecipe" module="ItemData" type="GuildUniformRecipe" version="0.1" rule="cpl" >
+	<list module="ItemData" type="GuildUniformRecipe" version="0.1" >
 		<record alias="recipe-id" name="" type="ID" />
 		<record alias="required-item" name="" ref="Item" repeat="2" />
 		<record alias="required-item-count" name="" type="Int32" repeat="2" />

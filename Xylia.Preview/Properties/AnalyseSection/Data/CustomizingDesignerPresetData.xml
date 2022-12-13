@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="CustomizingDesignerPreset" version="0.1" rule="cpl" side="client" >
+	<list module="ItemData" type="CustomizingDesignerPreset" version="0.1" side="client" >
 		<record alias="index" name="" type="ID" />
 		
 		<record alias="race" name="" type="Seq" seq="$race" start="0" />

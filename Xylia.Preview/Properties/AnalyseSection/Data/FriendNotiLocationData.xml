@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="127" alias="FriendNotiLocation" module="ZoneData0" type="friend-noti-location" version="0.3" rule="cpl" >
+	<list module="ZoneData0" type="friend-noti-location" version="0.3" >
 		<record alias="id" name="" type="id" extra="Short1" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone1" ref="Zone" link="id" repeat="127" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="NpcResponse" version="0.5" rule="cpl" side="client" >
+	<list module="AIData" type="NpcResponse" version="0.5" side="client" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="faction-check-type" type="Seq" name="" >
 			<case alias="is" name="" default="y" />

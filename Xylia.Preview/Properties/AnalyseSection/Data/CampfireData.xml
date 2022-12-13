@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="campfire" version="0.7" rule="cpl | extra" index="y">
+	<list module="ZoneData0" type="campfire" version="0.7" rule="extra" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="additional-heal-percent" type="Short" name="" />
 		<record alias="remain-duration" type="Msec" name="" showzero="y" />

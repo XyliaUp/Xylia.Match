@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="key-command" version="0.2" rule="cpl" >
+	<list module="ItemData" type="key-command" version="0.2" >
 		<record alias="key-command" type="Id" extra="Short1" seq="$key-command" />
 		<record alias="pc-job" name="" type="Id" extra="Byte3" seq="$job" />
 
@@ -32,7 +32,7 @@
 		<record alias="sort-no" name="" type="Byte" />
 		<record alias="layer" name="" type="Byte" />
 		<record alias="option-sort-no" name="" type="Short" />
-		<record alias="usable-joypad-mode" name="" type="seq" >
+		<record alias="usable-joypad-mode" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="any" name="" />
 			<case alias="ui" name="" />

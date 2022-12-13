@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="summoned-appearance" version="0.7" rule="cpl" check-version="y" >
+	<list module="AIData" type="summoned-appearance" version="0.7" check-version="y" >
 		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
 		<record alias="animset" type="Index" name="" />	
 		<record alias="moveanim" ref="SummonedMoveAnim" ref="315" />	

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="110" alias="ExpandRandomstoreData" module="ItemData" type="expand-random-store" version="0.3" rule="cpl" >
+	<list module="ItemData" type="expand-random-store" version="0.3" >
 		<record alias="random-store-number" type="id" extra="Byte1" name="" >
 		    <case key="1" alias="random-store-1" name="" />
 		    <case key="2" alias="random-store-2" name="" />

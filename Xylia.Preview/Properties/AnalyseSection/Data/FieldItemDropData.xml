@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="FielditemDrop" version="0.9" rule="cpl | extra" >
+	<list module="AIData" type="FielditemDrop" version="0.9" rule="extra" >
 		<record alias="type" name="" type="type" >
 			<case alias="npc" name="" />
 			<case alias="env" name="" />			

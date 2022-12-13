@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" rule="cpl" type="item-brand" version="2.0">
+	<list module="ItemData" type="item-brand" version="2.0">
 		<record alias="id" name="" type="id" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="ui-item-transform" name="" ref="Item" />

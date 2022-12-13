@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="395" module="LocalizationData" type="user-command" version="0.41" rule="cpl | extra" check-version="y" >
+	<list id="395" module="LocalizationData" type="user-command" version="0.41" rule="extra" check-version="y" >
 		<record alias="type" name="" type="type" >	
 			<case alias="command" name="" />
 			<case alias="social" name="" />

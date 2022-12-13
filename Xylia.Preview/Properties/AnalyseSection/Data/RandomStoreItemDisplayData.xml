@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="random-store-item-display" version="0.3" rule="cpl" >
+	<list module="ItemData" type="random-store-item-display" version="0.3" >
 		<record alias="random-store-type" name="" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="paid" name="" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="109" idx="113" alias="ExpandInventoryData" module="ItemData" type="expand-inventory" version="0.14" rule="cpl" >
+	<list module="ItemData" type="expand-inventory" version="0.14" >
 		<record alias="inventory-type" type="id" extra="Byte1" name="" >
 		    <case alias="inventory" name="" />
 		    <case alias="depository" name="" />

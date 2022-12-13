@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	
-	<list module="ZoneData2" type="Terrain" version="0.8" retired="n" rule="cpl" >
+	<list module="ZoneData2" type="Terrain" version="0.8" >
 		<!-- 将根据id进行分类 -->
 		<record alias="id" type="id" />
 		<record alias="alias" type="Index" name="alias" />

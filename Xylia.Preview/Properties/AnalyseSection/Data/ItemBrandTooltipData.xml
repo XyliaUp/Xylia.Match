@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" rule="cpl" type="item-brand-tooltip" version="0.8">
+	<list module="ItemData" type="item-brand-tooltip" version="0.8">
 		<record alias="brand-id" name="" type="id" />
 		<record start="0" alias="item-condition-type" name="" seq="$condition-type" type="Seq" />
 		<record alias="name2" name="" type="TextAlias" />

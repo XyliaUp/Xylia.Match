@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="duel-grade" version="0.3" rule="cpl" >
+	<list module="ItemData" type="duel-grade" version="0.3" >
 		<record alias="grade" name="" type="id" extra="Byte1" />
 		<record alias="score" name="" type="Int32" showzero="y" />
 		<record alias="duel-point-bonus-percent" name="" type="Short" showzero="y" />

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="ZoneData0" type="InterDungeonList" version="3.0" rule="" >
+		<record alias="id" type="ID" />
+		<record alias="alias" type="Index" />
+		<record alias="dungeon" ref="dungeon" />
+		<record alias="cave" ref="cave2" />
+		<record alias="party-battle-field" ref="PartyBattleFieldZone" />
+		<record alias="public-raid" ref="public-raid" />
+		<record alias="battle-royal-field" ref="BattleRoyalField" />
+		<record alias="required-complete-quest-1" type="Quest" server="n" repeat="2" />
+		<record alias="one-of-quest" type="Byte" server="n" />
+		<record alias="use-difficulty-type" type="Bool" server="n" repeat="3" />
+		<record alias="use-chat-filter" type="Bool" server="n" />
+		<record alias="quest-mission-step" type="Byte" default="-1" server="n" />
+		<record alias="use-guild-combat" type="Bool" />
+		<record alias="skip-match-required-member-count" type="Int32"  />
+	</list>
+</table>

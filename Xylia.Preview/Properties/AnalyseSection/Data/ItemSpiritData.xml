@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" rule="cpl" type="ItemSpirit" version="0.5">
+	<list module="ItemData" type="ItemSpirit" version="0.5">
 		<record alias="id" name="" type="id" />	
 		<record alias="level" name="" type="Byte" start="0" />
 		

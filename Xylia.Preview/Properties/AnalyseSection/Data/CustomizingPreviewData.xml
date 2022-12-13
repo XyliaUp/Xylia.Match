@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="CustomizingPreview" version="0.1" rule="cpl" index="y">
+	<list module="ItemData" type="CustomizingPreview" version="0.1" >
 		<record alias="type" type="type" >
 		     <case alias="pose" name="" />
 		     <case alias="face-look" name="" />
@@ -22,12 +22,12 @@
 		<record alias="sex" type="ID" extra="Byte4" name="" seq="$sex" />
 		<!-- ============================================================== -->
 		<record alias="pose-showname" name="" type="Index" filter="pose" />
-		<record alias="pose-show-duration" name="" type="msec" filter="pose" />
+		<record alias="pose-show-duration" name="" type="Msec" filter="pose" />
 		<record alias="icon-texture" name="" ref="IconTexture" filter="pose" />
 		<record alias="icon-index" name="" type="Short" filter="pose" />
 		<!-- ============================================================== -->
 		<record alias="face-look-showname" name="" type="Index" filter="face-look" />
-		<record alias="face-look-show-duration" name="" type="msec" filter="face-look" />
+		<record alias="face-look-show-duration" name="" type="Msec" filter="face-look" />
 		<record alias="icon-texture" name="" ref="IconTexture" filter="face-look" />
 		<record alias="icon-index" name="" type="Short" filter="face-look" />
 		<!-- ============================================================== -->

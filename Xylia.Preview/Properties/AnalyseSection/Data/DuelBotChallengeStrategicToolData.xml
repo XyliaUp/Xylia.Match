@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="duel-bot-challenge-strategic-tool" version="0.7" rule="cpl | extra" >
+	<list module="CombatData" type="duel-bot-challenge-strategic-tool" version="0.7" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="pc-effect" name="" ref="Effect" repeat="2" />
 		<record alias="duel-bot-effect" name="" ref="Effect" repeat="2" />
 		<record alias="immune-caster-block-skill" name="" type="Bool" />
 		<record alias="fail-caster-flag" name="" type="Short" repeat="4" seq="$flag" />
-		<record alias="fail-caster-op" name="" type="seq" >
+		<record alias="fail-caster-op" name="" type="Seq" >
 			<case alias="or" name="" default="y" />
 			<case alias="and" name="" />
 		</record>
 		<record alias="fail-caster-effect-attribute" name="" type="Seq16" repeat="4" seq="$effect-attribute" />
-		<record alias="fail-caster-effect-attribute-op" name="" type="seq" >
+		<record alias="fail-caster-effect-attribute-op" name="" type="Seq" >
 			<case alias="or" name="" default="y" />
 			<case alias="and" name="" />
 		</record>

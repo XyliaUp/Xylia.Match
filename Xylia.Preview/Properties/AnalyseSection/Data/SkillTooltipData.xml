@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
 	
-	<list module="CombatData" type="SkillTooltip" version="0.15" rule="cpl" >
+	<list module="CombatData" type="SkillTooltip" version="0.15" >
         <record alias="skill" name="" ref="Skill3" error-type="Suggestion" />
 		<record alias="tooltip-group" name="" type="Seq" >
 			<case alias="M1" name="" />

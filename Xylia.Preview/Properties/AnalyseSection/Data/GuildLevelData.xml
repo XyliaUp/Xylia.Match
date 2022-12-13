@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list id="142" alias="GuildLevel" module="ItemData" type="guildlevel" version="1.11" rule="cpl" >
+	<list module="ItemData" type="guildlevel" version="1.11" >
 		<record alias="level" type="ID" extra="Byte1" name="" />
 		<record alias="guild-type" type="ID" extra="Byte2" name="" />
 		<record alias="money" type="Int32" name="" />

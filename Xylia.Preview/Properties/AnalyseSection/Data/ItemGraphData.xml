@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="item-graph" version="1.16" rule="cpl | extra | sort-id" >
+	<list module="ItemData" type="item-graph" version="1.16" rule="extra | sort-id" >
         <record alias="type" type="type" >
 		   <case alias="seed" />
 		   <case alias="edge" />

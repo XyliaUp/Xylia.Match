@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 	<!--  -->
-	<list module="ZoneData0" type="mapunit" version="1.78" rule="cpl | unsort" >
+	<list module="ZoneData0" type="mapunit" version="1.78" rule="unsort" >
 
 		<record alias="type" type="type" >
 			<case alias="static" name="" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="LocalizationData" rule="cpl | extra" version="0.2" type="contentsjournalrecommenditem" > 
+  <list module="LocalizationData" rule="extra" version="0.2" type="contentsjournalrecommenditem" > 
 		<record alias="alias" type="Index" />
 		<record alias="weapon-recommend-score" type="Int32" />	
 		<record alias="necklace-recommend-score" type="Int32" name="" />

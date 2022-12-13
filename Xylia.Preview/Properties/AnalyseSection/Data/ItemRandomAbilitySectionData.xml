@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="item-random-ability-section" version="0.1" rule="cpl | extra" index="y">
+	<list module="ItemData" type="item-random-ability-section" version="0.1" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="variation-value-min" type="Int32" />
 		<record alias="variation-value-max" type="Int32" />

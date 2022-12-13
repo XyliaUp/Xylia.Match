@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table>
+	<list module="AIData" type="summoned-appearance" version="0.5" rule="" check-version="y" >
+		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
+		<record alias="walk-ratescale" type="Float32" name="" />	
+		<record alias="run-ratescale" type="Float32" name="" />
+		<record alias="animset" type="Index" name="" />	
+		<record alias="moveanim" ref="SummonedMoveAnim" ref="315" />	
+		<record alias="appearance" ref="CreatureAppearance" />			
+		<record alias="sword" type="Index" name="" />	
+		<record alias="glove-r" type="Index" name="" />	
+		<record alias="glove-l" type="Index" name="" />	
+		<record alias="hammer" type="Index" name="" />	
+	</list>
+</table>

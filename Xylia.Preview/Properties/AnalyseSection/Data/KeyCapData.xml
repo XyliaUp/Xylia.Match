@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="key-cap" version="0.2" rule="cpl" >
+	<list module="ItemData" type="key-cap" version="0.2" >
 		<record alias="key-code" name="" type="ID" extra="Short1" >
 			<case alias="none" name="" />
 			<case alias="0" name="" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="cave2" version="0.37" rule="cpl | extra" >
+	<list module="ZoneData0" type="cave2" version="0.37" rule="extra" >
 		<record alias="id" name="" type="Int32" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="group" name="" ref="AttractionGroup" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" rule="cpl" type="Dungeon" version="9.11" >
+	<list module="ZoneData0" type="Dungeon" version="9.11" >
 		<record alias="id" type="id" />
 		<record alias="type" name="" type="type" >
 			<case alias="default" />

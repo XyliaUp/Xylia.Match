@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list alias="TalkSocial" module="LocalizationData" type="talksocial" version="0.18" rule="cpl | extra" >
+	<list module="LocalizationData" type="talksocial" version="0.18" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="name" type="TextAlias"/>
 		<record alias="use-at-dead" type="Bool" />

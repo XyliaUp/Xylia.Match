@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="acquire-route" version="0.10" rule="cpl" >
+	<list module="ItemData" type="acquire-route" version="0.10" >
 		<record alias="alias" name="" type="Index" />
-		<record alias="category" name="" type="Byte" >
+		<record alias="category" name="" type="Seq" >
 			<case alias="None" name="" />
 			<case alias="NormalQuest" name="" />
 			<case alias="FactionQuest" name="" />

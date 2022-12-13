@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SkillGatherRange3" version="0.15" rule="cpl | extra" is64="y" >
-		<record type="Index" alias="alias" />
+	<list module="CombatData" type="SkillTargetFilter3" version="0.15" rule="extra" >
+		<record alias="alias" type="Index" />
 	</list>
 </table>

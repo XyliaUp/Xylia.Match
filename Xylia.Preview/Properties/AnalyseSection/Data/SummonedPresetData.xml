@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="SummonedPreset" version="0.3" rule="cpl" index="y">
+	<list module="CombatData" type="SummonedPreset" version="0.3" >
 		<record alias="race" type="ID" extra="Byte1" name="" seq="$race" />
 		<record alias="part-type" type="ID" extra="Byte2" name="" >
 			<case alias="none" name="" />
@@ -11,7 +11,7 @@
 			<case alias="body-color" name="" />
 			<case alias="body-shape" name="" />
 			<case alias="decal" name="" />
-                                </record>
+        </record>
 		<record alias="part-value" type="ID" extra="Byte3" name="" />
 
 		<record alias="alias" name="" type="Index" />

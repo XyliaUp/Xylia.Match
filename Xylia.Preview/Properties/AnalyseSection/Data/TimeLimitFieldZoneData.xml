@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="time-limit-field-zone" version="0.2" rule="cpl" >
+	<list module="ZoneData0" type="time-limit-field-zone" version="0.2" >
 		<record alias="zone" type="ID" name="" />
 
 		<record alias="alias" type="Index" name="" />

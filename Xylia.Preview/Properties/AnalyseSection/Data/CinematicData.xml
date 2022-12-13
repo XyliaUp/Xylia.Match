@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="QuestData" type="cinematic" version="0.14" rule="cpl | extra" index="y">
+	<list module="QuestData" type="cinematic" version="0.14" rule="extra" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="cinema-name" type="Index" name="" />
 		<record alias="cinema-resource-name" type="Index" name="" />

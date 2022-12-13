@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list alias="GuildCraftRecipe" module="ItemData" type="guild-craft-recipe" version="0.3" rule="cpl" >
+	<list module="ItemData" type="guild-craft-recipe" version="0.3" >
 		<record alias="id" type="id" />
 		<record alias="alias" type="Index" />
 		<!-- =================================================== -->

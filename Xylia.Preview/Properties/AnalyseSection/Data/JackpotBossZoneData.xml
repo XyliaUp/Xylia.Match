@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="AIData" rule="cpl" type="jackpot-boss-zone" version="0.5">
+  <list module="AIData" type="jackpot-boss-zone" version="0.5">
     <record alias="id" name="" type="ID" />
 
     <record alias="alias" name="" type="Index" />
@@ -12,7 +12,7 @@
     <record alias="boss-npc-faction" ref="Npc" name="" repeat="2" />
     <record alias="despawn-force-faction-1" default="y" name="" type="Bool" input="n" />
     <record alias="respawn-after-despawn-faction-1" name="" type="Bool" input="n" />
-    <record alias="spawn-delay-faction-1" name="" type="msec" input="n" />
+    <record alias="spawn-delay-faction-1" name="" type="Msec" input="n" />
     <record alias="despawn-force-faction-2" default="y" name="" type="Bool" input="n" />
     <record alias="respawn-after-despawn-faction-2" name="" type="Bool" input="n" />
     <record alias="spawn-delay-faction-2" name="" type="Msec" input="n" />

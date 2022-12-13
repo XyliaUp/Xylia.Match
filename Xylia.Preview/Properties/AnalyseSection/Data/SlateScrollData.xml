@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="SlateScroll" version="0.4" rule="cpl | extra" >
+	<list module="ItemData" type="SlateScroll" version="0.4" rule="extra" >
 		<record alias="alias" type="Index" name ="" />
 		<record alias="ingredient-item" name ="" ref="Item" repeat="5" />
 		<record alias="ingredient-count" type="Short" name ="" repeat="5" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="AIData" type="ZoneTriggerEventCond" version="0.11" rule="cpl | extra" > 
+  <list module="AIData" type="ZoneTriggerEventCond" version="0.11" rule="extra" > 
     <record type="type" alias="type" >	
         <case alias="weekly-event" />
 		<case alias="timeout-event" />
@@ -42,14 +42,14 @@
 
 
     <!-- 服务端专用属性 -->
-    <record alias="kill-count" client="n"/>   
-    <record alias="target-npc-1" client="n"/>   
+    <record alias="kill-count" client="n"/>
+    <record alias="target-npc-1" client="n"/>
     <record alias="target-npc-2" client="n"/>	
     <record alias="target-npc-3" client="n"/>	
     <record alias="target-npc-spawn-1" client="n"/>	
     <record alias="target-npc-spawn-2" client="n"/>	
     <record alias="target-npc-spawn-3" client="n"/>	
-    <record alias="survived-count" client="n"/>   	
+    <record alias="survived-count" client="n"/>	
     <record alias="acquisition-score" client="n"/>	
     <record alias="goal-score" client="n"/>
     <record alias="win-score-type" client="n"/>		

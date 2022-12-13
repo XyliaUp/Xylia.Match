@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="board-gacha-reward" version="0.1" rule="cpl | extra" >
-		<record alias="reward-type" name="" type="Byte" >
+	<list module="ItemData" type="board-gacha-reward" version="0.1" rule="extra" >
+		<record alias="reward-type" name="" type="Seq" >
 		     <case alias="none" name="" />
 		     <case alias="rank" name="" /> 
 		     <case alias="line" name="" />	
@@ -13,7 +13,7 @@
 		<record alias="participation-count" name="" type="Short" />	
 		<record alias="reward-item" name="" ref="Item" />
 		<record alias="reward-item-count" name="" type="Short" />	
-		
+		<!-- ========================================================== -->
 		<record alias="lucky-reward-item" name="" ref="Item" repeat="5" />
 		<record alias="lucky-reward-item-count" name="" type="Short" repeat="5" />
 		<record alias="lucky-reward-represent-item" name="" ref="Item" server="n" />		

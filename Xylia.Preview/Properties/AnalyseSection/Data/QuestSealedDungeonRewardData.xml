@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="QuestData" type="quest-sealed-dungeon-reward" version="1.0" rule="cpl" >
+	<list module="QuestData" type="quest-sealed-dungeon-reward" version="1.0" >
 		<record alias="id" name="" type="ID" />
 		
 		<record start="0" alias="level" name="" type="Int32" />

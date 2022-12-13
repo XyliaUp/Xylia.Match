@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="ZoneNpcSpawn" version="0.18" retired="n" rule="cpl" side="server" >
+	<list module="ZoneData0" type="ZoneNpcSpawn" version="0.18" side="server" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone" name="" ref="Zone" link="id" />		
 		<record alias="id" name="" type="Short" />

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list relative-path="Zone\*\ZoneTeleportPositionData.*" module="ZoneData2" type="ZoneTeleportPosition" version="0.2" retired="n" rule="cpl | extra" >	
+	<list module="ZoneData2" type="ZoneTeleportPosition" version="0.2" rule="extra" >	
 		<record alias="alias" name="alias" type="Index" />
 		<record alias="zone" type="Int32" sort-by="n" />
 		<record alias="position" type="Vector32" />

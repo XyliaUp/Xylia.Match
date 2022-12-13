@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="fielditem" version="0.57" rule="cpl" >
+	<list module="AIData" type="fielditem" version="0.57" >
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="remain-duration" name="" type="Msec" />

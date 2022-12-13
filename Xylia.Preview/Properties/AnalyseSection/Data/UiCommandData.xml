@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="LocalizationData" type="ui-command" version="0.45" rule="cpl" check-version="y" >
+	<list module="LocalizationData" type="ui-command" version="0.45" check-version="y" >
 		<record alias="command" name ="" type="id" extra="Byte1" >
 			<case alias="none" name="" />
 			<case alias="default" name="" />
@@ -100,7 +100,7 @@
 			<case alias="apply-guild" name="" />
 			<case alias="buy-collection-item-by-instant-payment" name="" />
 			<case alias="slate" name="" />
-                                 </record>
+         </record>
 
 		<record alias="name2" name="" type="TextAlias" />
 		<record alias="game-ui" name="" type="Index" />

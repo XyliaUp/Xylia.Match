@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" version="0.1" type="ChallengeListReward" rule="cpl | extra" >
+	<list module="ItemData" version="0.1" type="ChallengeListReward" rule="extra" >
 		<record alias="alias" name="" type="Index" />
 		<record alias="reward-item" name="奖励" ref="Item" repeat="6" />
 		<record alias="reward-item-count" name="奖励数量" out-cond="Exist: reward-item-*" type="Short" repeat="6" />

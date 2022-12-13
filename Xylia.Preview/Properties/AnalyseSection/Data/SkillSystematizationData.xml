@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="skillSystematization" version="0.15" rule="cpl" >
+	<list module="CombatData" type="skillSystematization" version="0.15" >
 		<record alias="id" type="ID" />
 		<record alias="alias" type="Index" />
 		<record alias="systematization" type="Seq" >

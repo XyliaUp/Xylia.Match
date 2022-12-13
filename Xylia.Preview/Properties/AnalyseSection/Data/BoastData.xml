@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="ItemData" rule="cpl | extra" version="2.3" type="boast" side="client" > 
+  <list module="ItemData" rule="extra" version="2.3" type="boast" side="client" > 
 	    <record alias="type" name="" type="type" >
 	        <case alias="npc-kill" />
 	        <case alias="duel" />

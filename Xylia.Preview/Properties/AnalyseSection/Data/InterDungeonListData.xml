@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="InterDungeonList" version="3.0" rule="cpl" >
+	<list module="ZoneData0" type="InterDungeonList" version="3.0" >
 		<record alias="id" type="ID" />
 		<record alias="alias" type="Index" />
 		<record alias="dungeon" ref="dungeon" />

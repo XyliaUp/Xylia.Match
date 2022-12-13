@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="BossNpc" version="3.0" rule="cpl | extra" check-version="y" >
+	<list module="AIData" type="BossNpc" version="3.0" rule="extra" check-version="y" >
 		<record alias="alias" name="" type="Index" />
 
 		<record alias="sp-point" name="" type="Short" repeat="3" />

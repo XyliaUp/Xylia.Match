@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="SkillSkin" version="1.0" rule="cpl" >
+	<list module="ItemData" type="SkillSkin" version="1.0" >
 		<record alias="id" name="" type="ID" extra="Short1" />
 		
 		<record alias="alias" name="" type="Index" />
-		<record alias="skill-skin-type" name="" type="seq" >
+		<record alias="skill-skin-type" name="" type="Seq" >
 			<case alias="none" name="" />
 			<case alias="use-grocery" name="" />
 			<case alias="equip-item" name="" />

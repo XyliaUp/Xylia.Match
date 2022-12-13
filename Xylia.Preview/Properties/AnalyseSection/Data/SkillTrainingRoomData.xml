@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="skill-training-room" version="0.2" rule="cpl" >
+	<list module="ZoneData0" type="skill-training-room" version="0.2" >
 		<record alias="id" name="" type="ID" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="zone" name="" ref="Zone" link="id" />
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
 		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
-		<record alias="required-preceding-quest-check" name="" type="seq" >
+		<record alias="required-preceding-quest-check" name="" type="Seq" >
              <case alias="and" default="y" />
              <case alias="or" />
         </record>
@@ -23,7 +23,6 @@
 		<record alias="enter-pc-spawn" name="" type="" client="n" />
 		<record alias="support-effect-1" name="" type="" ref="Effect" client="n" />
 		<record alias="support-effect-2" name="" type="" ref="Effect" client="n" />
-
-		<record alias="remain-effect-type" name="" type="" client="n" seq="$type-seq_20" repeat="60" />
+		<record alias="remain-effect-type" name="" type="" client="n" seq="$type-seq" repeat="60" />
 	</list>
 </table>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="itempouchmesh2" version="0.2" rule="cpl" >
+	<list module="ItemData" type="itempouchmesh2" version="0.2" >
 		<record alias="pouch" type="ID" extra="Byte1" >
 			<case alias="normal" name="" />
 			<case alias="equip" name="" />

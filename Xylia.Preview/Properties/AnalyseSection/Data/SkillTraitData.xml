@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="skill-trait" version="0.11" rule="cpl" >
+	<list module="CombatData" type="skill-trait" version="0.11" >
 		<record alias="job" type="id" extra="Byte1" seq="$job" />
 		<record alias="job-style" type="id" extra="Byte2" seq="$job-style" />
 		<record alias="tier" type="id" extra="Byte3" showzero="y" apply="must" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="appearance" version="0.6" rule="cpl" >
+	<list module="AIData" type="appearance" version="0.6" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="race" type="Seq" seq="$race" name="" />
 		<record alias="sex" type="Seq" seq="$sex" name="" />

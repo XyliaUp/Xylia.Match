@@ -24,7 +24,7 @@
 		random-item-total-count
 	
 -->
-	<list module="ItemData" type="ItemTransformRecipe" version="3" rule="cpl" >
+	<list module="ItemData" type="ItemTransformRecipe" version="3" >
 		<record alias="alias" type="Index" name="别名" />
 		<record alias="upgrade-grocery" ref="ItemTransformUpgradeItem" />
 		<record alias="required-inven-capacity" type="Int32" name="" default="1" apply="must" />

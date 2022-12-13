@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="ItemData" type="attractionrewardsummary" version="1.9" rule="cpl | extra" check-version="y" >
+	<list module="ItemData" type="attractionrewardsummary" version="1.9" rule="extra" check-version="y" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="category" type="Dictionary" name="" >
 			<case alias="none" name="" default="y" />

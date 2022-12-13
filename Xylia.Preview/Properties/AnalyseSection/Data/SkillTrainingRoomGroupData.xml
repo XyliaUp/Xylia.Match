@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="skill-training-room-group" version="0.2" rule="cpl" >
+	<list module="ZoneData0" type="skill-training-room-group" version="0.2" >
 		<record alias="id" name="" type="ID" />
 		<record alias="group-name" name="" type="TextAlias" server="n" />
 		<record alias="group-desc" name="" type="TextAlias" server="n" />

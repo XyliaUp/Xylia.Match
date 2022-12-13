@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="party-battle-field-zone" version="1.22" rule="cpl" >
+	<list module="ZoneData0" type="party-battle-field-zone" version="1.22" >
 		<record alias="id" name="" type="ID" extra="Short1" />
 		<record alias="type" name="" type="type" >
 			<case alias="occupation-war" />

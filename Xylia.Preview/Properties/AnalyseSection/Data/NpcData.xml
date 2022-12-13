@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="AIData" type="npc" version="2.12" rule="cpl" >
+	<list module="AIData" type="npc" version="2.12" >
 		<record alias="alias" type="Index" name="" />
 		<record alias="name" type="Index" name="" server="n" />
 		<record alias="title" type="Index" name="" server="n" />			
@@ -140,7 +140,7 @@
 		<record alias="despawn-showdata" type="Index" name="" server="n" />
         <record alias="race" name="" seq="$race" type="Seq" server="n" />
         <record alias="sex" name="" seq="$sex" type="Seq" server="n" />
-        <record alias="job" name="" seq="$job_20" type="Seq" server="n" />
+        <record alias="job" name="" seq="$job" type="Seq" server="n" />
         <record alias="stance" name="" seq="$stance" type="Seq" default="npc기본자세" />
         <record alias="level" type="Byte" name="" />
         <record alias="mastery-level" type="Byte" name="" />

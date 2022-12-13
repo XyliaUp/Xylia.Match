@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-  <list module="LocalizationData" rule="cpl | extra" type="game-message" version="1.43">
+  <list module="LocalizationData" rule="extra" type="game-message" version="1.43">
     <record alias="alias" name="" type="Index" />
     <record alias="category" name="" type="Seq" >
 			<case alias="none" name="" />

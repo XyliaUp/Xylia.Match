@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="map-group-2" version="0.1" rule="cpl | extra" index="y">
+	<list module="ZoneData0" type="map-group-2" version="0.1" rule="extra" >
 		<record alias="alias" type="Index" />	
 		<record alias="quest-filtering-type" type="Seq" >
 			<case alias="default" name="" default="y" />

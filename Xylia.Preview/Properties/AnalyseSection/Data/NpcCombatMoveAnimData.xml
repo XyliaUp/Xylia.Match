@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="npccombatmoveanim" version="0.1" rule="cpl" index="y">
+	<list module="CombatData" type="npccombatmoveanim" version="0.1" >
 		<record alias="weapon" type="id" extra="Byte1" seq="$weapon-type" />
 		<record alias="combat-pose" type="id" extra="Byte2" >
 			<case alias="none" name="" />
@@ -8,7 +8,7 @@
 			<case alias="combat-nontarget" name="" />
 			<case alias="combat-target" name="" />
 		</record>
-		<record alias="stance" type="id" extra="Byte3" seq="$stance_20" />	
+		<record alias="stance" type="id" extra="Byte3" seq="$stance" />	
 
 		<record alias="upper-idle" name="" type="Index" />
 		<record alias="lower-idle" name="" type="Index" />

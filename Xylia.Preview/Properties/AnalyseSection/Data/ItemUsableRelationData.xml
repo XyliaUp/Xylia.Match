@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="ItemUsableRelation" version="0.3" rule="cpl | extra" index="y">
+	<list module="ItemData" type="ItemUsableRelation" version="0.3" rule="extra" >
 		<record alias="alias" type="Index" />
 		<record alias="attraction-group" ref="AttractionGroup"  />
 		<record alias="all" type="Bool" showzero="y" />

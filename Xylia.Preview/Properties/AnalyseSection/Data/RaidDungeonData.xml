@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ZoneData0" type="raid-dungeon" version="6.12" rule="cpl" index="y">
+	<list module="ZoneData0" type="raid-dungeon" version="6.12" >
 		<record alias="id" type="id" />
 		<record alias="alias" name="" type="Index" />
 		<record alias="name2" name="" type="TextAlias" />

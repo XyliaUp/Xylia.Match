@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
 
-	<list module="CombatData" type="skill3" version="10.0" rule="cpl" is64="y" check-size="y" >
+	<list module="CombatData" type="skill3" version="10.0" check-size="y" >
 		<record alias="type" type="type" >
 			<case alias="active-skill" />
 			<case alias="passive-skill" />
@@ -435,7 +435,7 @@
 		<record alias="ui-recycle-description" name="" filter="active-skill" type="TextAlias" server="n" />
 		<record alias="ui-sp-heal-value" name="" filter="active-skill" type="Short" server="n" />
 		<record alias="ui-sp-heal-type" name="" filter="active-skill" type="Byte" server="n" seq="$consume-type" />
-		<record alias="casting-target" name="" filter="active-skill" type="Byte" >
+		<record alias="casting-target" name="" filter="active-skill" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="self" name="" />
 			<case alias="target" name="" />
