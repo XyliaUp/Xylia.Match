@@ -1,7 +1,7 @@
 ﻿namespace Xylia.Match
 {
-    partial class Select3
-    {
+    partial class ModeSelect
+	{
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Select3));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModeSelect));
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -133,7 +133,7 @@
 			this.Name = "Select3";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Select3_FormClosing);
+		
 			this.Load += new System.EventHandler(this.Select_Load);
 			this.Controls.SetChildIndex(this.pictureBox1, 0);
 			this.Controls.SetChildIndex(this.pictureBox2, 0);

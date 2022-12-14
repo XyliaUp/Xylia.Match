@@ -279,7 +279,6 @@
     <Content Include="Properties\AnalyseSection\Data\NewbieCareData.xml" />
     <Content Include="Properties\AnalyseSection\Data\PartyMatchData.xml" />
     <Content Include="Properties\AnalyseSection\Data\PcAppearanceData.xml" />
-    <Content Include="Properties\AnalyseSection\Data\PcData_tmp.xml" />
     <Content Include="Properties\AnalyseSection\Data\PcRaceSexJobData.xml" />
     <Content Include="Properties\AnalyseSection\Data\PcSkill3Data.xml" />
     <Content Include="Properties\AnalyseSection\Data\PcVoiceData.xml" />
@@ -463,6 +462,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Folder Include="Properties\AnalyseSection\Public\" />
     <Folder Include="Resources\GameUI\GameUI_ImageSet\" />
   </ItemGroup>
   

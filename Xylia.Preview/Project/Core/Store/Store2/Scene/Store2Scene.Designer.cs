@@ -40,7 +40,6 @@
 			this.ListPreview.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.ListPreview.Location = new System.Drawing.Point(399, 54);
 			this.ListPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			//this.ListPreview.ShowItemID = true;
 			this.ListPreview.Size = new System.Drawing.Size(401, 561);
 			// 
 			// TreeView
@@ -74,7 +73,6 @@
 			this.ucBtnExt1.TabStop = false;
 			this.ucBtnExt1.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
 			this.ucBtnExt1.TipsText = "";
-			this.ucBtnExt1.Visible = false;
 			this.ucBtnExt1.BtnClick += new System.EventHandler(this.ucBtnExt1_BtnClick);
 			// 
 			// ControlPanel

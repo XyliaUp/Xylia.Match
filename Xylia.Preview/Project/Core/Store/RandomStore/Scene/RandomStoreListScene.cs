@@ -47,7 +47,7 @@ namespace Xylia.Preview.Project.Core.Store.RandomStore
 
 
 		#region 方法
-		public override void LoadData()
+		protected override void LoadData()
 		{
 			//先进行分组
 			foreach (var Record in FileCache.Data.RandomStoreItem)
@@ -91,12 +91,12 @@ namespace Xylia.Preview.Project.Core.Store.RandomStore
 			this.MainNode[GroupType.Rare].ExpandAll();
 		}
 
-		public override void ShowStoreContent(string GroupAlias)
+		protected override void ShowStoreContent(string GroupAlias)
 		{
 			#region 初始化数据
-			if (InLoading) return;
-			else if (!RandomStoreItemGroups.ContainsKey(GroupAlias)) return;
-			else InLoading = true;
+			if (!RandomStoreItemGroups.ContainsKey(GroupAlias)) return;
+			
+			InLoading = true;
 
 			this.ListPreview.StoreAlias = GroupAlias;
 			var CurRandomStoreItems = this.RandomStoreItemGroups[GroupAlias];
@@ -120,7 +120,7 @@ namespace Xylia.Preview.Project.Core.Store.RandomStore
 				#endregion
 
 				//保证控件不会跨线程调用
-				this.ListPreview.Invoke(new Action(() =>
+				this.ListPreview.Invoke(new(() =>
 				{
 					var Store2ItemCell = new Store2ItemCell(ItemInfo, BuyPrice)
 					{
@@ -136,7 +136,7 @@ namespace Xylia.Preview.Project.Core.Store.RandomStore
 			#endregion
 		}
 
-		public override bool FilterNode(NodeInfo NodeInfo, object FilterRule)
+		protected override bool FilterNode(NodeInfo NodeInfo, object FilterRule)
 		{
 			//如果搜索条件是物品信息，那么再搜索可购买物品
 			if (FilterRule is ItemData FilterItem)

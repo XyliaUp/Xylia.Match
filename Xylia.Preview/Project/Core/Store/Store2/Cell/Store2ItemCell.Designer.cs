@@ -34,25 +34,24 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			this.quotaTxt = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
-			// itemShowCell1
+			// ItemShow
 			// 
 			this.ItemShow.AutoSize = true;
+			this.ItemShow.HeightDiff = -15;
+			this.ItemShow.Size = new System.Drawing.Size(145, 56);
 			// 
 			// lbl_RightText
 			// 
-			this.lbl_RightText.Location = new System.Drawing.Point(293, 0);
+			this.lbl_RightText.Location = new System.Drawing.Point(312, 0);
 			this.lbl_RightText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-			this.lbl_RightText.Size = new System.Drawing.Size(29, 60);
-
-
-			
+			this.lbl_RightText.Size = new System.Drawing.Size(10, 60);
 			// 
 			// quotaTxt
 			// 
 			this.quotaTxt.AutoSize = true;
 			this.quotaTxt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.quotaTxt.ForeColor = System.Drawing.Color.White;
-			this.quotaTxt.Location = new System.Drawing.Point(66, 35);
+			this.quotaTxt.Location = new System.Drawing.Point(58, 29);
 			this.quotaTxt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.quotaTxt.Name = "quotaTxt";
 			this.quotaTxt.Size = new System.Drawing.Size(103, 20);
@@ -69,6 +68,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.Name = "Store2ItemCell";
 			this.Size = new System.Drawing.Size(322, 60);
+			this.SizeChanged += new System.EventHandler(this.Store2ItemCell_SizeChanged);
 			this.Controls.SetChildIndex(this.ItemShow, 0);
 			this.Controls.SetChildIndex(this.lbl_RightText, 0);
 			this.Controls.SetChildIndex(this.quotaTxt, 0);

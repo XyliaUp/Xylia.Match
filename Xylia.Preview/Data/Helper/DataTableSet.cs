@@ -30,7 +30,7 @@ namespace Xylia.Preview.Data.Helper
 				{
 					var getDataPath = new GetDataPath(CommonPath.GameFolder, true);
 
-					_GameData = new(getDataPath.TargetXml);
+					_GameData = new BinData(getDataPath.TargetXml);
 					if (_LocalData is null) _LocalData = new(getDataPath.TargetLocal);
 				}
 
@@ -42,7 +42,7 @@ namespace Xylia.Preview.Data.Helper
 		{
 			get
 			{
-				if (_LocalData is null) _LocalData = new(new GetDataPath(CommonPath.GameFolder, true).TargetLocal);
+				if (_LocalData is null) _LocalData = new BinData(new GetDataPath(CommonPath.GameFolder, true).TargetLocal);
 				return _LocalData;
 			}
 		}

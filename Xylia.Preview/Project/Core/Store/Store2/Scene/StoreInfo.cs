@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Xylia.Preview.Project.Core.Store.Store2.Util
+﻿namespace Xylia.Preview.Project.Core.Store.Store2.Util
 {
 	/// <summary>
 	/// 商店信息

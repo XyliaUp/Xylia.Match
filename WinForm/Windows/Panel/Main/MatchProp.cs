@@ -54,10 +54,6 @@ namespace Xylia.Match.Windows.Panel
 		#endregion
 
 
-		#region 字段
-		DateTime time = DateTime.Now;
-		#endregion
-
 		#region 物品预览功能
 		private static string DataFolder => MySet.Core.Folder_Output + @"\data\files";
 
@@ -312,7 +308,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			Timer.Stop();
 
-			Step1.StepIndex = 5;
+			Step1.StepIndex = 4;
 
 			//if (UseError) richOut.Output(Xylia.Match.Windows.Forms.Controls.lib.RichOutLib.Combine("由于用户操作，本次执行未完成。\n\n", Color.Orange, 13));
 			//  Program.Taskbar.SetProgressState(TaskbarProgressBarState.Paused, this.Handle);
@@ -320,7 +316,7 @@ namespace Xylia.Match.Windows.Panel
 			Btn_StartMatch.Enabled = Online_Searcher.Enabled = ucBtnFillet1.Enabled = File_Searcher.Enabled = GRoot_Path.Enabled = Chv_Path.Enabled = Chk_OnlyNew.Enabled = true;
 
 			GC.Collect();
-			MySet.ClearMemory();
+			//MySet.ClearMemory();
 		}
 
 
@@ -377,156 +373,127 @@ namespace Xylia.Match.Windows.Panel
 			Open.RestoreDirectory = false;
 
 			if (Open.ShowDialog() == DialogResult.OK)
-				Chv_Path.Text = System.IO.Path.GetFullPath(Open.FileName);
+			{
+				Chv_Path.Text = Path.GetFullPath(Open.FileName);
+				Ini.WriteValue("Match", "Chv_Path", Chv_Path.Text);
+			}	
 		}
+
+
+
+		DateTime StartTime = DateTime.Now;
 
 		private void Btn_StartMatch_BtnClick(object sender, EventArgs e)
 		{
 			#region 初始化
-			if (!Directory.Exists(MySet.Core.Folder_Output))
+			if (!Directory.Exists(GRoot_Path.Text))
 			{
-				FrmTips.ShowTipsWarning("请先设置导出文件夹路径！");
+				FrmTips.ShowTipsWarning("请先设置游戏目录");
+				return;
+			}
+			else if (!Directory.Exists(MySet.Core.Folder_Output))
+			{
+				FrmTips.ShowTipsWarning("请先设置输出目录");
 				ucBtnFillet1_BtnClick(null, null);
 				return;
 			}
-
-			// Program.Taskbar.SetProgressState(TaskbarProgressBarState.Indeterminate, this.Handle);
-
-			if (!Directory.Exists(GRoot_Path.Text))
+			else if (Chk_OnlyNew.Checked && !Chv_Path.Text.Contains("云端资源") && !File.Exists(Chv_Path.Text))
 			{
-				Xylia.Tip.Message("设置游戏根目录，请先设置！");
+				FrmTips.ShowTipsWarning(".Chv配置文件未选择或不存在\n如无配置文件，请使用云资源或者取消下方\"仅更新\"勾选");
 				return;
 			}
-			else if (Chk_OnlyNew.Checked)
-			{
-				if (!Chv_Path.Text.Contains("云端资源") && !File.Exists(Chv_Path.Text))
-				{
-					Xylia.Tip.Message(".Chv配置文件未选择或不存在\n\n如无配置文件，请使用云资源或者取消下方\"仅更新\"勾选");
-					return;
-				}
-			}
 
-			Btn_StartMatch.Enabled = File_Searcher.Enabled = Online_Searcher.Enabled =
-				GRoot_Path.Enabled = Chv_Path.Enabled = Chk_OnlyNew.Enabled = false;
+			Btn_StartMatch.Enabled = File_Searcher.Enabled = Online_Searcher.Enabled = GRoot_Path.Enabled = Chv_Path.Enabled = Chk_OnlyNew.Enabled = false;
+			// Program.Taskbar.SetProgressState(TaskbarProgressBarState.Indeterminate, this.Handle);
 			#endregion
 
 			#region 选择生成模式
-			Select3 select2 = new();
+			ModeSelect select2 = new();
 			select2.ShowDialog();
-			#endregion
 
-
-			if (select2.Result == Select3.State.None)
+			if (select2.Result == ModeSelect.State.None)
 			{
 				ToEnd(true);
 				return;
 			}
+			#endregion
 
+			
+			this.StartTime = DateTime.Now;
+			this.Timer.Start();
 
-
-			Step1.StepIndex = 1;
-			var thread = new Thread((ThreadStart)delegate
+			var thread = new Thread(act =>
 			{
-				Read.GetReadInfo.ChvPath = this.Chv_Path.Text;
-				Read.GetReadInfo.OnlyNew = this.Chk_OnlyNew.Checked;
+				void SendMessage(string Msg, bool IsError = false) => this.Invoke(new(() => Tip.SendMessage(Msg, IsError)));
 
-				DateTime dt = time = DateTime.Now;
-				this.Invoke(() => Timer.Start());
-
-				try
+				#region 准备开始
+				var match = new ItemMatch(Str => SendMessage(Str))
 				{
-					//Read入口方法
-					var read = new Read(Str => this.Invoke(new Action(() => SendMessage(Str))), Switch_64Bit.Checked, MySet.Core.Folder_Game_Bns)
-					{
-						OldPath = Ini.ReadValue("Match", "Chv_Path")
-					};
+					UseExcel = select2.Result == ModeSelect.State.Xlsx,
+					Folder_Output = MySet.Core.Folder_Output,
 
+					Chk_OnlyNew = this.Chk_OnlyNew.Checked,
+				};
+				this.Step1.StepIndex = 1;
+				#endregion
 
-					if (!read.XmlData.Any())
-					{
-						this.Invoke(new Action(() => SendMessage("已激活仅新增道具功能，对比后无新增。")));
-						ToEnd();
-						return;
-					}
-
-
-					Step1.StepIndex = 2;
-
-					var match = new ItemMatch(Str => this.Invoke(new Action(() => SendMessage(Str))))
-					{
-						UseExcel = select2.Result == Select3.State.isXlsx,
-						Folder_Output = MySet.Core.Folder_Output,
-						ReadInfo = read,
-						Old = read.GetOld(false),
-					};
-
-
-					Step1.StepIndex = 3;
-					match.StartMatch(dt);
-					Step1.StepIndex = 4;
-
-
-					this.Invoke(new Action(() => Clipboard.SetDataObject(match.File.Directory, true)));
-					this.ToEnd();
-
-					if (!Ini.ReadValue("Prop", "ShowMessage").ToBool())
-					{
-						Tip.Message("本次执行已全部结束，可通过点击右键菜单中的\"打开文件夹\"或在资源管理器中使用\"Ctrl+V粘贴\"打开输出文件目录。");
-						Ini.WriteValue("Prop", "ShowMessage", true);
-					}
-
-					return;
-				}
-				catch (ExitException)
+				#region 加载资源
+				//Switch_64Bit.Checked
+				match.LoadCache(Ini.ReadValue("Match", "Chv_Path"));
+				match.GetData();
+				if (!match.ItemDatas.Any())
 				{
-					this.Invoke(new Action(() => SendMessage("用户取消了操作", true)));
-
+					SendMessage("已激活仅新增道具功能，对比后无新增。");
 					ToEnd();
 					return;
 				}
-				catch (Exception ee)
-				{
-					this.Invoke(new Action(() => SendMessage(ee.Message, true)));
-					Logger.Write(ee, MsgInfo.MsgLevel.错误);
+				Step1.StepIndex = 2;
+				#endregion
 
-					ToEnd();
-					return;
-				}
+				#region 执行输出
+				Step1.StepIndex = 3;
+				match.StartMatch(this.StartTime);
+				match = null;
+				#endregion
+
+				this.ToEnd();
 			});
 
 			thread.SetApartmentState(ApartmentState.STA);
 			thread.Start();
 		}
 
+		private void Timer_Tick(object sender, EventArgs e)
+		{
+			int Second = (int)DateTime.Now.Subtract(StartTime).TotalSeconds;
+			if (Second >= 180)
+			{
+				TimeInfo.ForeColor = Color.OrangeRed;
+				TimeInfo.Text = "已持续 " + Second + " 秒（已超过3分钟，如仍无响应，可能出现异常）";
+			}
+			else
+			{
+				TimeInfo.ForeColor = Color.Black;
+				TimeInfo.Text = "已持续 " + Second + " 秒";
+			}
+		}
+
+
 		private void Chk_OnlyNew_CheckedChanged(object sender, EventArgs e)
 		{
 			Note_Chv.Visible = Chv_Path.Visible = /*Online_Searcher.Visible = */File_Searcher.Visible = Chk_OnlyNew.Checked;
 		}
 
-		private void File_Searcher_MouseEnter(object sender, EventArgs e)
-		{
-			FrmAnchorTips.ShowTips(File_Searcher, "选择本地文件\n\n如无，请选择云端资源。", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
-		}
+		private void File_Searcher_MouseEnter(object sender, EventArgs e) => FrmAnchorTips.ShowTips(File_Searcher, "选择本地文件\n\n如无，请选择云端资源。", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
 
-		private void Online_Searcher_BtnMouseEnter(object sender, EventArgs e)
-		{
-			FrmAnchorTips.ShowTips(Online_Searcher, "选择云端资源\n\n云端资源可能不会及时更新。", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
-		}
+		private void Online_Searcher_BtnMouseEnter(object sender, EventArgs e) => FrmAnchorTips.ShowTips(Online_Searcher, "选择云端资源\n\n云端资源可能不会及时更新。", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
 
 		/// <summary>
 		/// 清理提示
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void CloseTip(object sender, EventArgs e)
-		{
-			FrmAnchorTips.CloseLastTip();
-		}
-
-		private void MatchProp_KeyDown(object sender, KeyEventArgs e)
-		{
-			TabControl_KeyDown(null, e);
-		}
+		private void CloseTip(object sender, EventArgs e) => FrmAnchorTips.CloseLastTip();
 
 		private void TabControl_KeyDown(object sender, KeyEventArgs e)
 		{
@@ -553,22 +520,6 @@ namespace Xylia.Match.Windows.Panel
 					if (int.TryParse(ItemPreview_Search.InputText, out int r)) ItemPreview_Search.InputText = (--r).ToString();
 				}
 				break;
-			}
-		}
-
-
-		private void Timer_Tick(object sender, EventArgs e)
-		{
-			int Second = (int)DateTime.Now.Subtract(time).TotalSeconds;
-			if (Second >= 180)
-			{
-				TimeInfo.ForeColor = Color.OrangeRed;
-				TimeInfo.Text = "已持续 " + Second + " 秒（已超过3分钟，如仍无响应，可能出现异常）";
-			}
-			else
-			{
-				TimeInfo.ForeColor = Color.Black;
-				TimeInfo.Text = "已持续 " + Second + " 秒";
 			}
 		}
 
@@ -628,7 +579,7 @@ namespace Xylia.Match.Windows.Panel
 
 		private void Switch_Mode_CheckedChanged(object sender, EventArgs e)
 		{
-			this.label2.Visible = ucBtnExt3.Visible = ucBtnExt19.Visible =
+			this.StateInfo.Visible = this.label2.Visible = ucBtnExt3.Visible = ucBtnExt19.Visible =
 				 this.label4.Visible = this.ucBtnExt7.Visible = !Switch_Mode.Checked;
 
 			if (IsInitialization) return;

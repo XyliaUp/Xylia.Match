@@ -21,7 +21,6 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		public BuyPriceCell()
 		{
 			InitializeComponent();
-			this.AutoSize = false;
 		}
 		#endregion
 
@@ -30,40 +29,106 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		/// 图片规格
 		/// </summary>
 		private new int Scale { get; set; } = 28;
-
-		/// <summary>
-		/// 母控件高度
-		/// </summary>
-		public int? ParentHeight = 55;
-
-		/// <summary>
-		/// 控件高度
-		/// </summary>
-		public int MyHeight = 0;
 		#endregion
 
 
 		#region 方法
 		public void LoadData(ItemBuyPrice ItemBuyPrice)
 		{
-			this.CreateMyControl(ItemBuyPrice);
-		}
+			#region 初始化
+			if (ItemBuyPrice is null)
+			{
+				Debug.WriteLine("兑换价格为空");
+				return;
+			}
 
+			int LoY = 0;
+			var PriceCtls = new List<Control>();   //价格控件
+			var ItemCtls = new List<Control>();    //物品控件
+			#endregion
+
+
+			#region 生成一般兑换货币部分
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.FactionScore, ItemBuyPrice.RequiredFactionScore, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.DuelPoint, ItemBuyPrice.RequiredDuelPoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.PartyBattlePoint, ItemBuyPrice.RequiredPartyBattlePoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.Pearl, ItemBuyPrice.RequiredLifeContentsPoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.FieldPlayPoint, ItemBuyPrice.RequiredFieldPlayPoint, ref LoY));
+			PriceCtls.AddItem(CretePriceCell(CurrencyType.Money, ItemBuyPrice.Money, ref LoY));
+			#endregion
+
+			#region 生成兑换所需物品
+			//生成坐标(X,Y)信息
+			int LoX = 0;
+			LoY += 5;
+
+			//设置兑换物品组
+			ItemCtls.AddItem(this.CreteItemBrandCell(ItemBuyPrice, ref LoX, LoY));
+
+			//设置兑换物品
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem1, ItemBuyPrice.RequiredItemCount1, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem2, ItemBuyPrice.RequiredItemCount2, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem3, ItemBuyPrice.RequiredItemCount3, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem4, ItemBuyPrice.RequiredItemCount4, ref LoX, LoY));
+
+			//追加控件
+			PriceCtls.ForEach(c => this.Controls.Add(c));
+			ItemCtls.ForEach(c => this.Controls.Add(c));
+			#endregion
+
+			//判断高度位置
+			//this.MyHeight = LoY + (ItemCtls.Count == 0 ? 0 : this.Scale);
+			//if (this.ParentHeight != null && this.ParentHeight > this.MyHeight)
+			//{
+			//	//在无货币价格设置时将物品显示在中间
+			//	if (PriceCtls.Count == 0)
+			//	{
+			//		ItemCtls.ForEach(c => c.Location = new Point(c.Location.X, 0 + ((int)this.ParentHeight - c.Height) / 2));
+			//	}
+			//	//必须判断是否只有一个价格控件，不然会发生重叠
+			//	else if (ItemCtls.Count == 0 && PriceCtls.Count == 1)
+			//	{
+			//		PriceCtls.ForEach(c => c.Location = new Point(c.Location.X, ((int)this.ParentHeight - c.Height) / 2));
+			//	}
+			//}
+
+			#region 重新计算信息位置
+			//计算最大需要宽度
+			int MaxWidth = 0, TempWidth = 0;
+			PriceCtls.ForEach(c => MaxWidth = Math.Max(MaxWidth, c.Width));
+			ItemCtls.ForEach(c => MaxWidth = Math.Max(MaxWidth, TempWidth += c.Width + 4));
+
+
+			this.Width = MaxWidth += 2;
+
+			PriceCtls.ForEach(c => c.Location = new Point(this.Width - c.Width, c.Location.Y));
+
+			//计算出物品图标的起始点
+			int StartLoX = this.Width;
+			ItemCtls.ForEach(c => StartLoX -= c.Width + 4);
+			ItemCtls.ForEach(c =>
+			{
+				c.Location = new Point(StartLoX + c.Location.X, c.Location.Y);
+			});
+			#endregion
+
+			this.Refresh();
+		}
 
 
 		/// <summary>
 		/// 创建兑换价格元素
 		/// </summary>
 		/// <param name="Type"></param>
-		/// <param name="Count"></param>
+		/// <param name="CurrencyCount"></param>
 		/// <param name="LoY"></param>
-		private static Control CretePriceCell(CurrencyType Type, int Count, ref int LoY)
+		private static Control CretePriceCell(CurrencyType Type, int CurrencyCount, ref int LoY)
 		{
-			if (Count == 0) return null;
+			if (CurrencyCount == 0) return null;
 
 			var PriceCell = new Controls.PriceCell()
 			{
-				CurrencyCount = Count,
+				CurrencyCount = CurrencyCount,
 				CurrencyType = Type,
 				AutoSize = false,
 			};
@@ -143,92 +208,6 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			//设置X坐标
 			LoX += ItemIconCell.Scale + 4;
 			return ItemIconCell;
-		}
-
-		/// <summary>
-		/// 重绘控件
-		/// </summary>
-		public void CreateMyControl(ItemBuyPrice ItemBuyPrice)
-		{
-			#region 初始化
-			if (ItemBuyPrice is null)
-			{
-				Debug.WriteLine("兑换价格为空");
-				return;
-			}
-
-			int LoY = 0;
-			var PriceCtls = new List<Control>();   //价格控件
-			var ItemCtls = new List<Control>();    //物品控件
-			#endregion
-
-
-			#region 生成一般兑换货币部分
-			PriceCtls.AddItem(CretePriceCell(CurrencyType.FactionScore, ItemBuyPrice.RequiredFactionScore, ref LoY));
-			PriceCtls.AddItem(CretePriceCell(CurrencyType.DuelPoint, ItemBuyPrice.RequiredDuelPoint, ref LoY));
-			PriceCtls.AddItem(CretePriceCell(CurrencyType.PartyBattlePoint, ItemBuyPrice.RequiredPartyBattlePoint, ref LoY));
-			PriceCtls.AddItem(CretePriceCell(CurrencyType.Pearl, ItemBuyPrice.RequiredLifeContentsPoint, ref LoY));
-			PriceCtls.AddItem(CretePriceCell(CurrencyType.FieldPlayPoint, ItemBuyPrice.RequiredFieldPlayPoint, ref LoY));
-			PriceCtls.AddItem(CretePriceCell(CurrencyType.Money, ItemBuyPrice.Money, ref LoY));
-			#endregion
-
-
-			//生成坐标(X,Y)信息
-			int LoX = 0;
-			LoY += 5;
-
-			//设置兑换物品组
-			ItemCtls.AddItem(this.CreteItemBrandCell(ItemBuyPrice, ref LoX, LoY));
-
-			//设置兑换物品
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem1, ItemBuyPrice.RequiredItemCount1, ref LoX, LoY));
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem2, ItemBuyPrice.RequiredItemCount2, ref LoX, LoY));
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem3, ItemBuyPrice.RequiredItemCount3, ref LoX, LoY));
-			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem4, ItemBuyPrice.RequiredItemCount4, ref LoX, LoY));
-
-			//追加控件
-			PriceCtls.ForEach(c => this.Controls.Add(c));
-			ItemCtls.ForEach(c => this.Controls.Add(c));
-
-
-			this.MyHeight = LoY + (ItemCtls.Count == 0 ? 0 : this.Scale);
-
-			//判断高度位置
-			if (this.ParentHeight != null && this.ParentHeight > this.MyHeight)
-			{
-				//在无货币价格设置时将物品显示在中间
-				if (PriceCtls.Count == 0)
-				{
-					ItemCtls.ForEach(c => c.Location = new Point(c.Location.X, 0 + ((int)this.ParentHeight - c.Height) / 2));
-				}
-				//必须判断是否只有一个价格控件，不然会发生重叠
-				else if (ItemCtls.Count == 0 && PriceCtls.Count == 1)
-				{
-					PriceCtls.ForEach(c => c.Location = new Point(c.Location.X, ((int)this.ParentHeight - c.Height) / 2));
-				}
-			}
-
-			#region 重新计算信息位置
-			//计算最大需要宽度
-			int MaxWidth = 0, TempWidth = 0;
-			PriceCtls.ForEach(c => MaxWidth = Math.Max(MaxWidth, c.Width));
-			ItemCtls.ForEach(c => MaxWidth = Math.Max(MaxWidth, TempWidth += c.Width + 4));
-
-
-			this.Width = MaxWidth += 2;
-
-			PriceCtls.ForEach(c => c.Location = new Point(this.Width - c.Width, c.Location.Y));
-
-			//计算出物品图标的起始点
-			int StartLoX = this.Width;
-			ItemCtls.ForEach(c => StartLoX -= c.Width + 4);
-			ItemCtls.ForEach(c =>
-			{
-				c.Location = new Point(StartLoX + c.Location.X, c.Location.Y);
-			});
-			#endregion
-
-			this.Refresh();
 		}
 		#endregion
 	}

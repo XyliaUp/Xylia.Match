@@ -285,9 +285,9 @@ namespace Xylia.Preview.Data
 		private void LoadGame()
 		{
 			string content = ConfigContent;
-			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
-			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_Simple");
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
 			if (content is null) throw new FileNotFoundException($"没有获取到结构配置数据");
 
 			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);

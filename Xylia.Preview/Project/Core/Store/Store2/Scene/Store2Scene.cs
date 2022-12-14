@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 using Xylia.bns.Modules.GameData.Enums;
+using Xylia.Configure;
 using Xylia.Extension;
-using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Store.Store2.Util;
@@ -26,11 +26,6 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 		/// 商店类型与主要节点对应关系
 		/// </summary>
 		public Dictionary<Store2Type, TreeNode> Nodes = new();
-
-		/// <summary>
-		/// 关联NPC临时缓存信息
-		/// </summary>
-		private IEnumerable<IRecord> Records = new List<IRecord>();
 		#endregion
 
 
@@ -57,7 +52,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 			this.JobSelector.Source = Source;
 
-			var LastJobSelect = Xylia.Configure.Ini.ReadValue(this.Name, "JobFilter");
+			var LastJobSelect = Ini.ReadValue(this.Name, "JobFilter");
 			this.JobSelector.TextValue = Source.Contains(LastJobSelect) ? LastJobSelect : this.JobSelector.Source.FirstOrDefault();
 			#endregion
 
@@ -72,10 +67,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 
 		#region 处理方法
-		/// <summary>
-		/// 加载数据
-		/// </summary>
-		public override void LoadData()
+		protected override void LoadData()
 		{
 			#region 读取数据
 			var StoreInfoList = new List<StoreInfo>();
@@ -147,39 +139,25 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			TreeView.Nodes[0].ExpandAll();
 		}
 
-		/// <summary>
-		/// 展示商店内容
-		/// </summary>
-		/// <param name="StoreAlias"></param>
-		public override void ShowStoreContent(string StoreAlias)
+		protected override void ShowStoreContent(string StoreAlias)
 		{
 			#region 初始化数据
-			if (InLoading) return;
-
 			var Store2 = FileCache.Data.Store2[StoreAlias];
-			if (Store2 is null)
-			{
-				InLoading = false;
-				return;
-			}
+			if (Store2 is null) return;
 
 			InLoading = true;
 
-
-			//获取是否存在出售NPC
-			var HasRelativeNpc = Npc.Scene.SearcherScene.HasRelativeNpc(StoreAlias, out Records);
-			this.Invoke(new Action(() => this.ucBtnExt1.Visible = HasRelativeNpc));
-
-			var ItemCells = new List<ListCell>();
-			this.ListPreview.StoreAlias = Store2.Alias;
-			#endregion
-
-			#region 读取数据
 			//获取当前选择的职业
 			var temp = typeof(Job).GetFields().ToList().Find(f => this.JobSelector.TextValue == (f.GetDescription() ?? f.Name));
 			Job SelectedJob = temp?.Name.ToEnum<Job>() ?? Job.JobNone;
 
+			this.ListPreview.StoreAlias = Store2.Alias;
+			Clipboard.SetText(Store2.Alias);
+			#endregion
+
+			#region 读取数据
 			int MaxIndex = 120;
+			var ItemCells = new List<ListCell>();
 			for (int i = 1; i <= MaxIndex; i++)
 			{
 				this.Text = $"商店 { Store2.NameText() } ，加载数据中：{ (i - 1) * 100 / 120 }%";
@@ -201,23 +179,20 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 			this.Text = $"商店 { Store2.NameText() } ，共计 { ItemCells.Count }个兑换内容";
 
-			this.ListPreview.Invoke(() =>
-			{
-				Clipboard.SetText(this.ListPreview.StoreAlias);
-				this.ListPreview.Cells = ItemCells;
-			});
+			this.ListPreview.Invoke(() => this.ListPreview.Cells = ItemCells);
 			#endregion
+
+
+			//获取是否存在出售NPC
+			//var HasRelativeNpc = Npc.Scene.SearcherScene.HasRelativeNpc(StoreAlias, out Records);
+			this.Invoke(new Action(() => this.ucBtnExt1.Visible = true));
+
+
 
 			InLoading = false;
 		}
 
-		/// <summary>
-		/// 筛选节点
-		/// </summary>
-		/// <param name="NodeInfo"></param>
-		/// <param name="FilterRule"></param>
-		/// <returns></returns>
-		public override bool FilterNode(NodeInfo NodeInfo, object FilterRule)
+		protected override bool FilterNode(NodeInfo NodeInfo, object FilterRule)
 		{
 			//如果搜索条件是物品信息，那么再搜索可购买物品
 			if (FilterRule is ItemData FilterItem)
@@ -257,26 +232,6 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			Store2Scene_SizeChanged(null, null);
 		}
 
-		/// <summary>
-		/// 显示关联Npc列表
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void ucBtnExt1_BtnClick(object sender, EventArgs e)
-		{
-			var thread = new Thread((ThreadStart)delegate
-			{
-				//显示搜索界面
-				var preview = new Npc.Scene.SearcherScene();
-
-				preview.ShowInfo(this.Records);
-				preview.ShowDialog();
-			});
-
-			thread.SetApartmentState(ApartmentState.STA);
-			thread.Start();
-		}
-
 		private void Store2Scene_SizeChanged(object sender, EventArgs e)
 		{
 			this.ListPreview.Height = this.Height - this.ControlPanel.Bottom - 55;
@@ -284,8 +239,27 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 		private void JobSelector_SelectedChangedEvent(object sender, EventArgs e)
 		{
-			Xylia.Configure.Ini.WriteValue(this.Name, "JobFilter", this.JobSelector.TextValue);
+			Ini.WriteValue(this.Name, "JobFilter", this.JobSelector.TextValue);
 			this.TreeView_AfterSelect(null, null);
+		}
+
+
+		/// <summary>
+		/// 显示关联Npc列表
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ucBtnExt1_BtnClick(object sender, EventArgs e)
+		{
+			var records = Npc.Scene.SearcherScene.GetRelativeNpc(this.CurrentAlias);
+			if(records is null || !records.Any())
+			{
+				this.ucBtnExt1.Visible = false;
+				return;
+			}
+
+			this.ucBtnExt1.Visible = true;
+			new Npc.Scene.SearcherScene(records).MyShowDialog();
 		}
 		#endregion
 	}

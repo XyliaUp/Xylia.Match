@@ -58,10 +58,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="IconCell.ItemIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="IconCell.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAGElJREFUeF7lm2twk2d2x/MxX9I4YBtj+SL5Lt9lyxf5bvmK8AUEGOIEx8ExcaJw
+        vQAADr0BR/uQrQAAGElJREFUeF7lm2twk2d2x/MxX9I4YBtj+SL5Lt9lyxf5bvmK8AUEGOIEx8ExcaJw
         SZSYEGVNHAQsQQkBlHgJCsx68ZJQ1GVpPMtClKFD47Kl625KVzPMZj3DTGY97YfQfgndLzk950jn0fva
         ArKdfmoz85vnic1F/985z+W1xCNnfhaC4KU5xcx5PYHpkA7/aT2+47M6vAeDOg4d+qWOpd8/eOCCjj2e
         szqef+EnOjZuPqzD3uFRWKtHwVI+ojCaesGU5oCU5GZFUlKDYsWKamABxDH/bIQPrsLE5EXGtWMGXtz5

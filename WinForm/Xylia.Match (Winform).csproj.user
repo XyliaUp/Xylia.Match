@@ -35,10 +35,10 @@
     <Compile Update="Windows\Quest\QuestSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Windows\Select\OnlineSelect.cs">
+    <Compile Update="Windows\Panel\Main\Select\OnlineSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Windows\Select\SelectMode.cs">
+    <Compile Update="Windows\Panel\Main\Select\ModeSelect.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

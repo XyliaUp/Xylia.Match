@@ -17,7 +17,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		public ItemShowCell()
 		{
 			InitializeComponent();
-			this.BackColor = Color.Transparent;
+			this.AutoSize = false;
 
 			this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.Selectable | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.SupportsTransparentBackColor, true);
 			this.Refresh();
@@ -46,16 +46,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			get => (ItemData)this.IconCell.ObjectRef;
 			set => this.IconCell.ObjectRef = value;
 		}
-
-
-
-		/// <summary>
-		/// 指示在图标不存在的情况下，仍然保留图标的空间
-		/// </summary>
-		private bool m_ReserveIconSpace { get; set; } = true;
-
-		private int m_HeightDiff { get; set; } = 0;
-
 
 
 		[Category("Data"), Description("物品名称")]
@@ -102,6 +92,9 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			}
 		}
 
+
+		private int m_HeightDiff { get; set; } = 0;
+
 		/// <summary>
 		/// 文本高度偏移
 		/// </summary>
@@ -115,6 +108,9 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 				this.Refresh();
 			}
 		}
+
+
+		private bool m_ReserveIconSpace { get; set; } = true;
 
 		/// <summary>
 		/// 在图标不存在的情况下，仍然保留图标的空间
@@ -149,8 +145,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 				this.ItemNameCell.Location = new Point(this.IconCell.Scale + 2, NameLoY);
 			}
 
-
-			this.AutoSize = false;
 			this.Width = this.ItemNameCell.Location.X + this.ItemNameCell.Width;
 			this.Height = Math.Max(this.IconCell.Scale - 1, this.ItemNameCell.Location.Y + this.ItemNameCell.Height);
 		}

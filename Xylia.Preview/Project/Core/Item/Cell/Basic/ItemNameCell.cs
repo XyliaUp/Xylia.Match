@@ -107,7 +107,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 
 		#region 方法
 		float ExpectHeight, ExpectWidth;
-		bool Loaded = false;
 
 		protected override void OnPaint(PaintEventArgs e) => GoPaint(e.Graphics);
 
@@ -119,10 +118,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			int MaxWidth = 0;
 			float LocX = 0, LocY = 0;
 
-			if (this.MaximumSize.Width != 0)
-			{
-				MaxWidth = this.MaximumSize.Width;
-			}
+			if (this.MaximumSize.Width != 0) MaxWidth = this.MaximumSize.Width;
+			else if(this.Parent != null &&   this.Parent.MaximumSize.Width != 0) MaxWidth = this.Parent.MaximumSize.Width - this.Left;
 			#endregion
 
 			#region 绘制文本
@@ -168,19 +165,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			}
 		}
 
-		private void ItemNameCell_Load(object sender, EventArgs e)
-		{
-			Loaded = true;
-			this.Refresh();
-		}
 
 		public override void Refresh()
 		{
 			base.Refresh();
 
 			//如果没有load，则使用空指针方式计算控件大小信息
-			if (!this.Loaded) this.GoPaint(null);
-			else this.OnPaint(new PaintEventArgs(this.CreateGraphics(), new Rectangle()));
+			this.OnPaint(new PaintEventArgs(this.CreateGraphics(), new Rectangle()));
 		}
 
 		public void OnDoubleClick(object sender, EventArgs e) 

@@ -454,6 +454,9 @@
   <data name="GuildBandItemData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\guildbanditemdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
+  <data name="GuildBattleFieldZoneData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\guildbattlefieldzonedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="GuildCraftRecipeData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\guildcraftrecipedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
@@ -712,8 +715,8 @@
   <data name="PcAppearanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\pcappearancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
-  <data name="PcData_tmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\pcdata_tmp.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="PcData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\pcdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="PcRaceSexJobData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\pcracesexjobdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>

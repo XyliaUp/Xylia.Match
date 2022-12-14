@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="random-store-item" version="0.10">
+	<list module="ItemData" type="random-store-item" version="0.2">
 		<record alias="alias" name="" type="Index" />
 		<record alias="item" name="" ref="Item" />
 		<record alias="item-count" name="" type="Int32" />

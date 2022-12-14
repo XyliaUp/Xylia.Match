@@ -193,8 +193,7 @@
 			this.Step1.Steps = new string[] {
         "准备开始",
         "解析资源",
-        "执行匹配",
-        "释放资源",
+        "执行输出",
         "结束操作"};
 			this.Step1.StepWidth = 32;
 			this.Step1.TabIndex = 96;
@@ -388,6 +387,7 @@
         "外部读取"};
 			this.Switch_Mode.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
 			this.Switch_Mode.TrueTextColr = System.Drawing.Color.Black;
+			this.Switch_Mode.Visible = false;
 			this.Switch_Mode.CheckedChanged += new System.EventHandler(this.Switch_Mode_CheckedChanged);
 			// 
 			// ucBtnExt19
@@ -1034,7 +1034,7 @@
 			this.Name = "MatchProp";
 			this.Size = new System.Drawing.Size(854, 493);
 			this.Load += new System.EventHandler(this.MatchProp_Load);
-			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MatchProp_KeyDown);
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TabControl_KeyDown);
 			this.TabControl.ResumeLayout(false);
 			this.MainPage.ResumeLayout(false);
 			this.MainPage.PerformLayout();

@@ -12,18 +12,17 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 	public partial class SearcherScene : Form
 	{
 		#region 构造
-		public SearcherScene()
+		public SearcherScene(IEnumerable<IRecord> Npcs)
 		{
 			InitializeComponent();
+			this.ShowInfo(Npcs);
 		}
-		#endregion
 
-		#region 方法
 		/// <summary>
 		/// 显示信息
 		/// </summary>
 		/// <param name="Npcs"></param>
-		public void ShowInfo(IEnumerable<IRecord> Npcs)
+		private void ShowInfo(IEnumerable<IRecord> Npcs)
 		{
 			var StoreItems = new List<ListCell>();
 			foreach (var Record in Npcs)
@@ -51,34 +50,25 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 		}
 		#endregion
 
-		#region 静态方法
-		/// <summary>
-		/// 是否存在关联Npc
-		/// </summary>
-		/// <param name="Store2Alias"></param>
-		/// <returns></returns>
-		public static bool HasRelativeNpc(string Store2Alias)
-		{
-			return HasRelativeNpc(Store2Alias, out _);
-		}
 
+
+
+		#region 静态方法
 		/// <summary>
 		/// 是否存在关联Npc
 		/// </summary>
 		/// <param name="Store2Alias"></param>
 		/// <param name="SearchResult"></param>
 		/// <returns></returns>
-		public static bool HasRelativeNpc(string Store2Alias, out IEnumerable<IRecord> SearchResult)
+		public static IEnumerable<IRecord> GetRelativeNpc(string Store2Alias)
 		{
-			SearchResult = FileCache.Data.Npc.Where(info =>
+			return FileCache.Data.Npc.Where(info =>
 			  info.Attributes["store2-1"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-2"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-3"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-4"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-5"].MyEquals(Store2Alias) ||
 			  info.Attributes["store2-6"].MyEquals(Store2Alias));
-
-			return SearchResult.Any();
 		}
 		#endregion
 	}

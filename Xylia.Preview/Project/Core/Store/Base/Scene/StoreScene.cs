@@ -9,7 +9,7 @@ using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Project.Core.Store
 {
-	public partial class StoreScene : Form
+	public /*abstract*/ partial class StoreScene : Form
 	{
 		#region 构造
 		public StoreScene()
@@ -33,14 +33,62 @@ namespace Xylia.Preview.Project.Core.Store
 		internal Dictionary<TreeNode, NodeInfo> TreeNodeInfo = new();
 
 		/// <summary>
-		/// 线程
-		/// </summary>
-		private Thread thread;
-
-		/// <summary>
 		/// 筛选信息
 		/// </summary>
 		public readonly FilterList Filter = new();
+
+
+		public string CurrentAlias;
+		#endregion
+
+
+
+
+
+
+		#region 控件方法
+		private void Store2Frm_Load(object sender, EventArgs e)	=> this.LoadData();
+
+
+		private Thread thread;
+
+		public void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
+		{
+			if (this.InLoading) return;
+			if (TreeView.SelectedNode is null || !TreeNodeInfo.ContainsKey(TreeView.SelectedNode)) return;
+			
+			thread = new Thread(act => this.ShowStoreContent(this.CurrentAlias = TreeNodeInfo[TreeView.SelectedNode].AliasText));
+			thread.SetApartmentState(ApartmentState.STA);
+			thread.Start();
+		}
+
+		private void Store2Frm_FormClosing(object sender, FormClosingEventArgs e) => thread?.Interrupt();
+
+		public void Frm_SizeChanged(object sender, EventArgs e)
+		{
+			int TempWidth = this.Width - this.TreeView.Width - 30;
+			this.ListPreview.Width = Math.Max(TempWidth, 315);
+		}
+
+		/// <summary>
+		/// 筛选内容
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void ModifyFilterRule_Click(object sender, EventArgs e)
+		{
+			var Searcher = new Searcher(Filter?.FilterInfo);
+			if (Searcher.ShowDialog() == DialogResult.OK)
+			{
+				string SearchRule = Searcher.textBox1.Text;
+				this.ShowStoreList(SearchRule);
+			}
+		}
+
+		private void CancelFilter_Click(object sender, EventArgs e)
+		{
+			this.ShowStoreList();
+		}
 		#endregion
 
 
@@ -48,18 +96,12 @@ namespace Xylia.Preview.Project.Core.Store
 		/// <summary>
 		/// 载入数据
 		/// </summary>
-		public virtual void LoadData()
-		{
-
-		}
+		protected virtual void LoadData() { }
 
 		/// <summary>
 		/// 展示指定商店内容
 		/// </summary>
-		public virtual void ShowStoreContent(string StoreAlias)
-		{
-
-		}
+		protected virtual void ShowStoreContent(string StoreAlias) { }
 
 		/// <summary>
 		/// 切换显示商店列表
@@ -106,61 +148,9 @@ namespace Xylia.Preview.Project.Core.Store
 		/// <param name="NodeInfo"></param>
 		/// <param name="FilterRule">搜索规则，可以为文本或者实例对象</param>
 		/// <returns></returns>
-		public virtual bool FilterNode(NodeInfo NodeInfo, object FilterRule) => false;
+		protected virtual bool FilterNode(NodeInfo NodeInfo, object FilterRule) => false;
 		#endregion
 
-
-
-
-		#region 控件方法
-		private void Store2Frm_Load(object sender, EventArgs e)
-		{
-			this.LoadData();
-		}
-
-		public void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
-		{
-			thread = new Thread((ThreadStart)delegate
-			{
-				//筛选对象
-				if (TreeView.SelectedNode != null && TreeNodeInfo.ContainsKey(TreeView.SelectedNode))
-				{
-					this.ShowStoreContent(TreeNodeInfo[TreeView.SelectedNode].AliasText);
-				}
-			});
-
-			thread.SetApartmentState(ApartmentState.STA);
-			thread.Start();
-		}
-
-		public void Frm_SizeChanged(object sender, EventArgs e)
-		{
-			int TempWidth = this.Width - this.TreeView.Width - 30;
-			this.ListPreview.Width = Math.Max(TempWidth, 315);
-		}
-
-		private void Store2Frm_FormClosing(object sender, FormClosingEventArgs e) => thread?.Interrupt();
-
-		/// <summary>
-		/// 筛选内容
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void ModifyFilterRule_Click(object sender, EventArgs e)
-		{
-			var Searcher = new Searcher(Filter?.FilterInfo);
-			if (Searcher.ShowDialog() == DialogResult.OK)
-			{
-				string SearchRule = Searcher.textBox1.Text;
-				this.ShowStoreList(SearchRule);
-			}
-		}
-
-		private void CancelFilter_Click(object sender, EventArgs e)
-		{
-			this.ShowStoreList();
-		}
-		#endregion
 	}
 
 

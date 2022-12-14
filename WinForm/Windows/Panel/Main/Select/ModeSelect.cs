@@ -2,28 +2,25 @@
 
 namespace Xylia.Match
 {
-	public partial class Select3 : HZH_Controls.Forms.FrmBack
+	public partial class ModeSelect : HZH_Controls.Forms.FrmBack
 	{
 		#region 构造
-		public Select3()
+		public enum State
+		{
+			None,
+
+			Text,
+			Xlsx,
+		}
+
+		public State Result = State.None;
+
+		public ModeSelect()
 		{
 			InitializeComponent();
 			this.AllowTransparency = true;
 		}
-
-		public enum State
-		{
-			isText = -1,
-			isXlsx,
-			None,
-		}
 		#endregion
-
-		#region 字段
-		public State Result = State.None;
-		#endregion
-
-		#region 方法
 
 		#region 控件方法
 
@@ -39,28 +36,15 @@ namespace Xylia.Match
 
 		private void PictureBox1_Click(object sender, EventArgs e)
 		{
-			Result = State.isText;
+			Result = State.Text;
 			this.Close();
 		}
 
 		private void PictureBox2_Click(object sender, EventArgs e)
 		{
-			Result = State.isXlsx;
+			Result = State.Xlsx;
 			this.Close();
 		}
-
-		private void Select3_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
-		{
-
-		}
-
 		#endregion
-
-		#region 处理函数
-		#endregion
-
-		#endregion
-
-
 	}
 }

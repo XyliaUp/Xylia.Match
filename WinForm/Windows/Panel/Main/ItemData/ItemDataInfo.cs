@@ -1,4 +1,6 @@
-﻿namespace Xylia.Match.Util.ItemMatch.Util
+﻿using System.Collections.Generic;
+
+namespace Xylia.Match.Util.ItemMatch.Util
 {
 	public class ItemDataInfo
 	{
@@ -14,5 +16,14 @@
 
 
 		public string Job;
+	}
+
+
+	public class ItemDataSort : IComparer<ItemDataInfo>
+	{
+		public int Compare(ItemDataInfo x, ItemDataInfo y)
+		{
+			return x.id - y.id;
+		}
 	}
 }

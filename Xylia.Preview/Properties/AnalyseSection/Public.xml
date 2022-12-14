@@ -2115,8 +2115,8 @@
 		</record>	
 		
 		
-		<record alias="key-command" type="dictionary" verision="20200101" >
-			<case alias="none" name="" />
+		<record alias="key-command" type="dictionary" >
+			<case alias="none" name="" default="y" />
 			<case alias="action1" name="" />
 			<case alias="action2" name="" />
 			<case alias="action3" name="" />

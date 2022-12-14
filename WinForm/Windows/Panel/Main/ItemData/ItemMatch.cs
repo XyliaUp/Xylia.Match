@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using NPOI.SS.UserModel;
 
+using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Match.Util.Game.ItemData.Util;
 using Xylia.Match.Util.ItemMatch.Util;
-using Xylia.Preview.Third;
 
 namespace Xylia.Match.Util.ItemList
 {
 	public sealed class ItemMatch
 	{
 		#region 构造
+		private readonly Action<string> GetOutput = null;
+
 		public ItemMatch(Action<string> action)
 		{
 			Application.DoEvents();
@@ -26,7 +28,99 @@ namespace Xylia.Match.Util.ItemList
 		}
 		#endregion
 
-		#region 字段
+
+
+		#region Cache
+		/// <summary>
+		/// 只输出新数据
+		/// </summary>
+		public bool Chk_OnlyNew;
+
+		private HashSet<int> CacheList = null;
+
+		public void LoadCache(string Path)
+		{
+			if (!this.Chk_OnlyNew) return;
+
+			this.CacheList = ChvLoad.LoadData(Path, this.GetOutput);
+		}
+		#endregion
+
+
+
+		#region 读取
+		public TextBinData Localization = null;
+
+		public List<ItemDataInfo> ItemDatas = null;
+
+		/// <summary>
+		/// 读取Dat文件路径
+		/// </summary>
+		/// <param name="is64"></param>
+		/// <param name="FolderPath"></param>
+		public void GetData()
+		{
+			this.GetOutput?.Invoke("正在对比新增道具，资源文件处理耗时较长，请耐心等待。");
+
+			var GameData = FileCache.Data.GameData;
+			this.Localization = new TextBinData(FileCache.Data.LocalData);
+
+
+			this.GetOutput?.Invoke("当前版本: " + GameData._content.UpdateTime.GetTimeStr());
+
+			//加载记录文件
+			this.ItemDatas = ExtractData(GameData);
+
+		}
+
+		private List<ItemDataInfo> ExtractData(BinData GameData)
+		{
+			if (!GameData.ContainsAlias("item", out var ListID)) throw new Exception("无效对象");
+
+			InfoGet.Special = InfoGet.GetSpecial();
+
+			#region 处理数据
+			var Result = new BlockingCollection<ItemDataInfo>();
+			Parallel.ForEach(GameData[ListID].CellDatas(), Table =>
+			{
+				//读取数据编号
+				if (CacheList != null && CacheList.Contains(Table.FID)) return;
+
+				#region 初始化
+				var CurAlias = Table.Alias.Replace("SEW_", "GB_");
+				var ItemDataInfo = new ItemDataInfo()
+				{
+					Alias = CurAlias,
+					id = Table.FID,
+
+					Name2 = Localization?.GetName2(CurAlias),
+					Info = Localization?.GetDesc(CurAlias),
+					Desc = Localization?.GetDesc(CurAlias),
+					Job = CurAlias.GetJob(),
+				};
+
+				Result.Add(ItemDataInfo);
+				#endregion
+			});
+			#endregion
+
+			#region 最后处理
+			var ObjList = Result.ToList();
+			Result.Dispose();
+			Result = null;
+
+			//对数据进行排序处理
+			ObjList.Sort(new ItemDataSort());
+			return ObjList;
+			#endregion
+		}
+		#endregion
+
+
+
+
+
+		#region 输出
 		/// <summary>
 		/// 指明是否输出表格文档
 		/// </summary>
@@ -34,21 +128,8 @@ namespace Xylia.Match.Util.ItemList
 
 		public string Folder_Output = null;
 
-
-		private readonly Action<string> GetOutput = null;
-
 		public FilePath File = new();
 
-		public List<int> Old = null;
-
-		public static Color Default_Font, DefaultColor = new();
-
-		public Read ReadInfo;
-		#endregion
-
-
-
-		#region 方法
 		public static void CheckFile(string Path)
 		{
 			if (System.IO.File.Exists(Path)) return;
@@ -64,9 +145,6 @@ namespace Xylia.Match.Util.ItemList
 		public void StartMatch(DateTime StartTime)
 		{
 			#region 初始化
-			if (Folder_Output.IsNull()) throw new Exception("输出文件夹异常");
-			if (StartTime == default) StartTime = DateTime.Now;
-
 			//文件夹路径
 			File.Directory = Folder_Output + $@"\信息导出\物品列表\{ StartTime:yyyy年MM月\\dd日\\HH时mm分}";
 
@@ -86,58 +164,35 @@ namespace Xylia.Match.Util.ItemList
 			CheckFile(File.Backup);
 
 			StreamWriter outfile_Chv = new(File.Backup);
-			foreach (var item in Old) outfile_Chv.WriteLine(item);
-			Old.Clear();
+
+			if(CacheList != null)
+			{
+				foreach (var item in CacheList) outfile_Chv.WriteLine(item);
+			}
 
 			//重置异常采集集合
 			File.Failures = new BlockingCollection<ItemDataInfo>();
-
-			var Localization = this.ReadInfo.Localization;
-			var Items = new BlockingCollection<ItemDataInfo>();
-
-			//记录数据数量
-			int Count = ReadInfo.XmlData.Count();
 			#endregion
 
-
 			#region 分析数据
-			foreach (var Item in ReadInfo.XmlData)
+			//记录数据数量
+			int Count = this.ItemDatas.Count;
+			foreach (var Item in this.ItemDatas)
 			{
-				#region 初始化
-				var CurAlias = Item.Alias.Replace("SEW_", "GB_");
-				bool Status = Localization.GetName2(CurAlias, Item.FID, out string Text);
+				if (Item.Name2 is null) File.Failures.Add(Item);
 
-				var ItemDataInfo = new ItemDataInfo()
-				{
-					Alias = CurAlias,
-					id = Item.FID,
-
-					Name2 = Text,
-
-					Info = Localization?.GetDesc(CurAlias),
-					Desc = Localization?.GetDesc(CurAlias),
-					Job = CurAlias.GetJob(),
-				};
-				#endregion
-
-				if (!Status) File.Failures.Add(ItemDataInfo);
-
-				outfile_Chv.WriteLine(Item.FID);
-				Items.Add(ItemDataInfo);
+				outfile_Chv.WriteLine(Item.id);
 			}
 
-			ReadInfo.Dispose();
 			outfile_Chv.Close();
 			#endregion
 
-
-
 			#region 输出信息
-			if (UseExcel) this.CreateExcel(Items);
-			else this.CreateText(Items);   //以普通文本形式生成
+			if (UseExcel) this.CreateExcel(this.ItemDatas);
+			else this.CreateText(this.ItemDatas);   //以普通文本形式生成
 
-			Items.Dispose();
-			Items = null;
+			this.ItemDatas.Clear();
+			this.ItemDatas = null;
 			#endregion
 
 			#region 异常信息
@@ -156,13 +211,8 @@ namespace Xylia.Match.Util.ItemList
 
 			File.Failures.Dispose();
 			File.Failures = null;
-
-			GC.Collect();
 			#endregion
 		}
-
-
-
 
 		/// <summary>
 		/// 生成表格格式文件
