@@ -242,12 +242,12 @@ namespace Xylia.Preview.Project.Controls
 						Bitmap bitmap = null;
 						if (Attribute.ContainsName("imagesetpath", out string ImagesetPath))
 						{
-							bitmap = ImagesetPath.GetImageset();
+							bitmap = ImagesetPath.GetUObject().GetImage();
 						}
 
 						if (Attribute.ContainsName("path", out string Path))
 						{
-							bitmap = Path.GetImage();
+							bitmap = Path.GetUObject().GetImage();
 
 							string u = Attribute["u"];
 							string ul = Attribute["ul"];

@@ -57,7 +57,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 			Trace.WriteLine(MapInfo.Attributes);
 
 			this.Text = $"[{MapInfo.Name2.GetText()}]";
-			this.pictureBox1.Image = MapInfo.Imageset.GetImageset();
+			this.pictureBox1.Image = MapInfo.Imageset.GetUObject().GetImage();
 
 			this.LoadMapUint(MapInfo);
 		}
@@ -88,7 +88,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 				if (mapunit.Type == TypeSeq.Npc) continue;    //该类型按接取的任务进行显示
 
 
-				var res = mapunit.Imageset.GetImageset();
+				var res = mapunit.Imageset.GetUObject().GetImage();
 				if (res is null) continue;
 
 				var temp = new PictureBox()

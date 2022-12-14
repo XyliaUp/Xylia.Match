@@ -682,7 +682,7 @@
 			this.ucBtnExt11.BtnBackColor = System.Drawing.Color.Empty;
 			this.ucBtnExt11.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt11.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt11.BtnText = "商店预览";
+			this.ucBtnExt11.BtnText = "商店";
 			this.ucBtnExt11.ConerRadius = 8;
 			this.ucBtnExt11.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ucBtnExt11.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -692,7 +692,7 @@
 			this.ucBtnExt11.IsRadius = true;
 			this.ucBtnExt11.IsShowRect = true;
 			this.ucBtnExt11.IsShowTips = false;
-			this.ucBtnExt11.Location = new System.Drawing.Point(15, 44);
+			this.ucBtnExt11.Location = new System.Drawing.Point(16, 45);
 			this.ucBtnExt11.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt11.Name = "ucBtnExt11";
 			this.ucBtnExt11.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -719,7 +719,7 @@
 			this.ucBtnExt1.IsRadius = true;
 			this.ucBtnExt1.IsShowRect = true;
 			this.ucBtnExt1.IsShowTips = false;
-			this.ucBtnExt1.Location = new System.Drawing.Point(15, 109);
+			this.ucBtnExt1.Location = new System.Drawing.Point(16, 109);
 			this.ucBtnExt1.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt1.Name = "ucBtnExt1";
 			this.ucBtnExt1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -746,7 +746,7 @@
 			this.ucBtnExt20.IsRadius = true;
 			this.ucBtnExt20.IsShowRect = true;
 			this.ucBtnExt20.IsShowTips = false;
-			this.ucBtnExt20.Location = new System.Drawing.Point(153, 251);
+			this.ucBtnExt20.Location = new System.Drawing.Point(16, 237);
 			this.ucBtnExt20.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt20.Name = "ucBtnExt20";
 			this.ucBtnExt20.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -761,9 +761,9 @@
 			// ucBtnExt9
 			// 
 			this.ucBtnExt9.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt9.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt9.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt9.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt9.BtnText = "[调试] 挑战系统";
+			this.ucBtnExt9.BtnText = "挑战";
 			this.ucBtnExt9.ConerRadius = 8;
 			this.ucBtnExt9.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ucBtnExt9.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -773,7 +773,7 @@
 			this.ucBtnExt9.IsRadius = true;
 			this.ucBtnExt9.IsShowRect = true;
 			this.ucBtnExt9.IsShowTips = false;
-			this.ucBtnExt9.Location = new System.Drawing.Point(15, 251);
+			this.ucBtnExt9.Location = new System.Drawing.Point(153, 173);
 			this.ucBtnExt9.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt9.Name = "ucBtnExt9";
 			this.ucBtnExt9.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -817,7 +817,7 @@
 			this.ucBtnExt13.BtnBackColor = System.Drawing.Color.Empty;
 			this.ucBtnExt13.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt13.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt13.BtnText = "查看地图";
+			this.ucBtnExt13.BtnText = "地图";
 			this.ucBtnExt13.ConerRadius = 8;
 			this.ucBtnExt13.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ucBtnExt13.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -827,7 +827,7 @@
 			this.ucBtnExt13.IsRadius = true;
 			this.ucBtnExt13.IsShowRect = true;
 			this.ucBtnExt13.IsShowTips = false;
-			this.ucBtnExt13.Location = new System.Drawing.Point(15, 185);
+			this.ucBtnExt13.Location = new System.Drawing.Point(16, 173);
 			this.ucBtnExt13.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt13.Name = "ucBtnExt13";
 			this.ucBtnExt13.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -873,7 +873,7 @@
 			this.ucBtnExt10.IsRadius = true;
 			this.ucBtnExt10.IsShowRect = true;
 			this.ucBtnExt10.IsShowTips = false;
-			this.ucBtnExt10.Location = new System.Drawing.Point(151, 172);
+			this.ucBtnExt10.Location = new System.Drawing.Point(15, 173);
 			this.ucBtnExt10.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt10.Name = "ucBtnExt10";
 			this.ucBtnExt10.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -927,7 +927,7 @@
 			this.ucBtnExt17.IsRadius = true;
 			this.ucBtnExt17.IsShowRect = true;
 			this.ucBtnExt17.IsShowTips = false;
-			this.ucBtnExt17.Location = new System.Drawing.Point(15, 172);
+			this.ucBtnExt17.Location = new System.Drawing.Point(15, 237);
 			this.ucBtnExt17.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt17.Name = "ucBtnExt17";
 			this.ucBtnExt17.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));

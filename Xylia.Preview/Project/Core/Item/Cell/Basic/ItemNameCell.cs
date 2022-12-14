@@ -18,6 +18,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 	[Designer(typeof(FixedDesigner))]
 	public partial class ItemNameCell : Panel
 	{
+		#region 事件
+		/// <summary>
+		/// 名称改变事件
+		/// </summary>
+		public event EventHandler NameChanged;
+		#endregion
+
 		#region 构造
 		public ItemNameCell()
 		{
@@ -30,20 +37,11 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			this.DoubleBuffered = true;
 			this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.Selectable | ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.SupportsTransparentBackColor, true);
 
-			//this.AutoScaleMode = AutoScaleMode.None;
 			this.ResizeRedraw = false;
 		}
 		#endregion
 
-		#region 委托与事件
-		//定义委托
-		public delegate void NameChangedHandle(object sender, EventArgs e);
 
-		/// <summary>
-		/// 名称改变事件
-		/// </summary>
-		public event NameChangedHandle NameChanged;
-		#endregion
 
 		#region 字段
 		[Browsable(true)]
@@ -103,7 +101,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// </summary>
 		public IRecord ObjectRef;
 		#endregion
-
 
 		#region 方法
 		float ExpectHeight, ExpectWidth;

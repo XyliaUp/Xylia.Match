@@ -9,6 +9,7 @@ using Xylia.Attribute.Component;
 using Xylia.Drawing.Font;
 using Xylia.Extension;
 using Xylia.Preview.Common.Enums;
+using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Controls.Currency;
@@ -45,32 +46,15 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		public Bitmap TagImage { get => this.ItemNameCell.TagImage; set => this.ItemNameCell.TagImage = value; }
 
 
-		#region 道具图标右侧信息处理  
-		/// <summary>
-		/// MainInfo
-		/// </summary>
-		public List<MyInfo> MainInfo { get; set; } = new();
+		public Bitmap CardImage;
 
-		public List<MyInfo> SubInfo { get; set; } = new();
+		private List<MyInfo> MainInfo { get; set; } = new();
 
-		public Dictionary<MainAbility, long> ItemAbility { get; set; } = new();
+		private List<MyInfo> SubInfo { get; set; } = new();
+
+		private Dictionary<MainAbility, long> ItemAbility { get; set; } = new();
 		#endregion
 
-
-		/// <summary>
-		/// 物品品质
-		/// </summary>
-		public byte ItemGrade
-		{
-			get => ItemNameCell.ItemGrade;
-			set
-			{
-				//品质处理
-				ItemNameCell.ItemGrade = value;
-				this.RefreshBackgroundImage();
-			}
-		}
-		#endregion
 
 
 
@@ -172,7 +156,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// <summary>
 		/// 白字属性部分
 		/// </summary>
-		public void LoadAbility()
+		private void LoadAbility()
 		{
 			Dictionary<MainAbility, long> result = new();
 
@@ -207,11 +191,10 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.ItemAbility = result;
 		}
 
-
 		/// <summary>
 		/// 读取宝石类的Buff属性信息
 		/// </summary>
-		public void LoadEffectInfo()
+		private void LoadEffectInfo()
 		{
 			for (int i = 1; i <= 4; i++)
 			{
@@ -231,7 +214,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// <summary>
 		/// 加载奖励信息
 		/// </summary>
-		public void LoadReward()
+		private void LoadReward()
 		{
 			//判断是否为封印物品
 			var Preview = new RewardPreview((this.ItemInfo.Type == ItemType.Grocery && this.ItemInfo.UnsealAcquireItem1.IsNull()) ? "奖励" : "分解");
@@ -268,7 +251,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// <summary>
 		/// 加载额外信息
 		/// </summary>
-		public ContentPanel LoadExtraInfo()
+		private ContentPanel LoadExtraInfo()
 		{
 			string ExtraInfo = null;
 
@@ -340,13 +323,12 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			return null;
 		}
 
-
 		/// <summary>
 		/// 获取交易类别
 		/// </summary>
 		/// <param name="xp"></param>
 		/// <returns></returns>
-		public void LoadTrade()
+		private void LoadTrade()
 		{
 			if (this.ItemInfo.AccountUsed)
 			{
@@ -379,7 +361,44 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadBottomControl("TradeInfo", TradeInfo, Color.FromArgb(255, 88, 66));
 			#endregion
 		}
+
+		public static Bitmap LoadCardImage(Bitmap CardImage, byte ItemGrade)
+		{
+			if (CardImage is null) return null;
+
+			var bitmap = new Bitmap(500, 635 + 60);
+			Graphics g = Graphics.FromImage(bitmap);
+
+			#region 获取背景图
+			var bg = ItemGrade switch
+			{
+				2 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_2,
+				3 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_3,
+				4 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_4,
+				5 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_5,
+				6 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_6,
+				7 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_6,
+				8 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_7,
+				_ => Resources.Resource_BNSR.Museum_CollectionCard_Preview_1,
+			};
+
+			bg = bg.Clone(new Rectangle(118, 70, 276, 372));
+			#endregion
+
+			g.DrawImage(CardImage, 0, 60);
+			g.DrawImage(bg, 0, 0, bitmap.Width, bitmap.Height);
+
+			return bitmap;
+		}
+
+		private void LoadCardImage()
+		{
+			if (this.ItemInfo.Card is null) return;
+
+			this.CardImage = LoadCardImage(this.ItemInfo.Card.CardImage.GetUObject().GetImage(), this.ItemInfo.ItemGrade);
+		}
 		#endregion
+
 
 
 
@@ -392,7 +411,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.Text = $"[{ this.ItemInfo.ID }] { this.ItemInfo.ItemName }";
 
 			this.ItemIcon.Image = this.ItemInfo.IconExtra;
-			this.ItemGrade = this.ItemInfo.ItemGrade;
+			this.ItemNameCell.ItemGrade = this.ItemInfo.ItemGrade;
 			this.lbl_Category.Text = $"Name.item.game-category-3.{ this.ItemInfo.GameCategory3.GetSignal() }".GetText(true);
 			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
 			this.ItemName = this.ItemInfo.ItemName;
@@ -481,7 +500,12 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
 				#endregion
 
-				if (this.ItemInfo.Card != null) System.Diagnostics.Trace.WriteLine(this.ItemInfo.Card?.Attributes);
+				if (this.ItemInfo.Card != null)
+				{
+					System.Diagnostics.Trace.WriteLine(this.ItemInfo.Card.Attributes);
+
+					this.LoadCardImage();
+				}
 			}
 		}
 	}

@@ -47,7 +47,7 @@
 			this.ItemNameCell.TabIndex = 1;
 			this.ItemNameCell.TagImage = null;
 			this.ItemNameCell.Text = "ItemName";
-			this.ItemNameCell.NameChanged += new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell.NameChangedHandle(this.ItemName_NameChanged);
+			this.ItemNameCell.NameChanged += new System.EventHandler(this.ItemName_NameChanged);
 		
 			this.ItemNameCell.DoubleClick += new System.EventHandler(this.ItemName_DoubleClick);
 			// 

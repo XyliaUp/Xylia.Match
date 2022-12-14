@@ -43,12 +43,11 @@ public static class IconTextureExt
 	#region 方法
 	public static void Clear() => Data.Clear();
 
-
 	public static Bitmap GetTextureData(this IconTexture IconTexture)
 	{
 		if (IconTexture.Alias != null && Data.Contains(IconTexture.Alias)) return Data[IconTexture.Alias];
 
-		var TextureData = IconTexture?.iconTexture.GetImage();
+		var TextureData = IconTexture?.iconTexture.GetUObject().GetImage();
 		if (TextureData != null)
 		{
 			if (IconTexture.Alias != null) Data.Add(IconTexture.Alias, TextureData);

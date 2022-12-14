@@ -376,6 +376,7 @@
   <ItemGroup>
     <Compile Remove="Project\ItemForm.cs" />
     <Compile Remove="Project\ItemForm.Designer.cs" />
+    <EmbeddedResource Remove="Project\Core\Item\Scene\ItemFrm_Load.resx" />
     <EmbeddedResource Remove="Project\ItemForm.resx" />
   </ItemGroup>
   <ItemGroup>
@@ -463,7 +464,10 @@
   
   <ItemGroup>
     <Folder Include="Properties\AnalyseSection\Public\" />
-    <Folder Include="Resources\GameUI\GameUI_ImageSet\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="Project\Core\Item\Scene\ItemFrm_Load.resx" />
   </ItemGroup>
   
   <ItemGroup>

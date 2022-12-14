@@ -90,7 +90,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 			//刷新必须放置在最后面，否则会异常
-			this.Refresh();  
+			this.Refresh();
 		}
 
 		protected override void WndProc(ref Message m)
@@ -294,71 +294,87 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		{
 			base.Refresh();
 
-			#region Attribute Section
 			int Info_Top = 30;
-			if (AttributePreview.Visible)
+			var Width = this.Width - 15;
+
+			if (this.CardImage != null)
 			{
-				if (!this.Controls.Contains(AttributePreview)) this.Controls.Add(AttributePreview);
+				this.ItemNameCell.Location = new Point((this.Width - this.ItemNameCell.Width) / 2, 20);
+				this.ItemIcon.Visible = false;
+				this.lbl_Category.Visible = false;
 
-				this.AttributePreview.Location = new Point(this.lbl_SubInfo.Left, Info_Top);
-				this.AttributePreview.Width = this.Width - this.AttributePreview.Left - 20;
 
-				Info_Top = this.AttributePreview.Bottom;
+				var CardPic = new PictureBox()
+				{
+					Size = new Size(Width, Width * this.CardImage.Height / this.CardImage.Width),
+					SizeMode = PictureBoxSizeMode.StretchImage,
+
+					Image = this.CardImage,
+				};
+				this.Controls.Add(CardPic);
+
+				Info_Top = CardPic.Bottom;
 			}
-			#endregion
-
-			#region 获取物品属性
-			List<MyInfo> ValidMainInfo = new(this.MainInfo);
-			List<MyInfo> ValidSubInfo = new(this.SubInfo);
-
-			foreach (var o in this.ItemAbility)
-			{
-				if (o.Value == 0) continue;
-
-				var key = o.Key;
-				var val = new MyInfo($"{key.GetDescription()} {o.Value.ToString(key)}");
-
-				//实际上直接 MainAbility转为此枚举是不正确的，只是简便方法
-				if (key == this.ItemInfo.MainAbility1 || key == this.ItemInfo.MainAbility2) ValidMainInfo.Add(val);
-				else ValidSubInfo.Add(val);
-			}
-			#endregion
-
-			#region 处理信息节
-			ValidMainInfo = ValidMainInfo.Where(Info => !Info.INVALID).ToList();
-			if (!ValidMainInfo.Any()) this.lbl_MainInfo.Visible = false;
 			else
 			{
-				this.lbl_MainInfo.Location = new Point(this.lbl_MainInfo.Left, Info_Top);
-				this.lbl_MainInfo.Text = ValidMainInfo.Select(Info => Info.Text).Aggregate((sum, now) => sum + "<br/>" + now);
-				this.lbl_MainInfo.Visible = true;
-				this.lbl_MainInfo.Refresh();
+				#region Attribute Section
+				Info_Top = 30;
+				if (AttributePreview.Visible)
+				{
+					if (!this.Controls.Contains(AttributePreview)) this.Controls.Add(AttributePreview);
 
-				Info_Top = this.lbl_MainInfo.Bottom + 2;
+					this.AttributePreview.Location = new Point(this.lbl_SubInfo.Left, Info_Top);
+					this.AttributePreview.Width = this.Width - this.AttributePreview.Left - 20;
+
+					Info_Top = this.AttributePreview.Bottom;
+				}
+				#endregion
+
+				#region 获取物品属性
+				List<MyInfo> ValidMainInfo = new(this.MainInfo);
+				List<MyInfo> ValidSubInfo = new(this.SubInfo);
+
+				foreach (var o in this.ItemAbility)
+				{
+					if (o.Value == 0) continue;
+
+					var key = o.Key;
+					var val = new MyInfo($"{key.GetDescription()} {o.Value.ToString(key)}");
+
+					//实际上直接 MainAbility转为此枚举是不正确的，只是简便方法
+					if (key == this.ItemInfo.MainAbility1 || key == this.ItemInfo.MainAbility2) ValidMainInfo.Add(val);
+					else ValidSubInfo.Add(val);
+				}
+				#endregion
+
+				#region 处理信息节
+				ValidMainInfo = ValidMainInfo.Where(Info => !Info.INVALID).ToList();
+				if (ValidMainInfo.Any())
+				{
+					this.lbl_MainInfo.Location = new Point(this.lbl_MainInfo.Left, Info_Top);
+					this.lbl_MainInfo.Text = ValidMainInfo.Select(Info => Info.Text).Aggregate((sum, now) => sum + "<br/>" + now);
+					this.lbl_MainInfo.Visible = true;
+					this.lbl_MainInfo.Refresh();
+
+					Info_Top = this.lbl_MainInfo.Bottom + 2;
+				}
+
+				ValidSubInfo = ValidSubInfo.Where(Info => !Info.INVALID).ToList();
+				if (ValidSubInfo.Any())
+				{
+					this.lbl_SubInfo.Visible = true;
+					this.lbl_SubInfo.Location = new Point(this.lbl_SubInfo.Left, Info_Top);
+					this.lbl_SubInfo.Text = ValidSubInfo.Select(Info => Info.Text).Aggregate((sum, now) => sum + "<br/>" + now);
+					this.lbl_SubInfo.Refresh();
+
+					Info_Top = this.lbl_SubInfo.Bottom;
+				}
+				#endregion
 			}
-
-			ValidSubInfo = ValidSubInfo.Where(Info => !Info.INVALID).ToList();
-			if (!ValidSubInfo.Any()) this.lbl_SubInfo.Visible = false;
-			else
-			{
-				this.lbl_SubInfo.Visible = true;
-				this.lbl_SubInfo.Location = new Point(this.lbl_SubInfo.Left, Info_Top);
-				this.lbl_SubInfo.Text = ValidSubInfo.Select(Info => Info.Text).Aggregate((sum, now) => sum + "<br/>" + now);
-				this.lbl_SubInfo.Refresh();
-
-				Info_Top = this.lbl_SubInfo.Bottom;
-			}
-			#endregion
-
-
-
-			this.lbl_Category.Location = new Point(this.Width - this.lbl_Category.Width - 15, this.lbl_Category.Location.Y);
 
 
 			#region 加载控件列表
-			//请注意，按照预定的控件纵向顺序执行
 			int PosY = Math.Max(ItemIcon.Bottom, Info_Top);
-
 			foreach (var c in PreviewList)
 			{
 				if (!c.Visible) continue;
@@ -398,14 +414,16 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			//这里设置结束高度
 			int EndPadding = 90;
-			this.PricePreview.Location = new Point(this.Width - this.PricePreview.Width - 15, PosY + EndPadding - 68);
+			this.lbl_Category.Location = new Point(Width - this.lbl_Category.Width, this.lbl_Category.Location.Y);
+			this.PricePreview.Location = new Point(Width - this.PricePreview.Width, PosY + EndPadding - 68);
 
 			//设置窗体高度
 			this.Height = PosY + EndPadding;
 			#endregion
 
 
-			this.RefreshBackgroundImage();
+			if (this.CardImage is null)
+				this.RefreshBackgroundImage();
 		}
 
 		/// <summary>

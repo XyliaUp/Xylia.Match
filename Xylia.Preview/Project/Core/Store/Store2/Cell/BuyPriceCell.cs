@@ -18,10 +18,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 	public partial class BuyPriceCell : Panel
 	{
 		#region 构造
-		public BuyPriceCell()
-		{
-			InitializeComponent();
-		}
+		public BuyPriceCell() => InitializeComponent();
 		#endregion
 
 		#region 字段
@@ -58,61 +55,52 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			#endregion
 
 			#region 生成兑换所需物品
-			//生成坐标(X,Y)信息
 			int LoX = 0;
 			LoY += 5;
 
-			//设置兑换物品组
 			ItemCtls.AddItem(this.CreteItemBrandCell(ItemBuyPrice, ref LoX, LoY));
-
-			//设置兑换物品
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem1, ItemBuyPrice.RequiredItemCount1, ref LoX, LoY));
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem2, ItemBuyPrice.RequiredItemCount2, ref LoX, LoY));
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem3, ItemBuyPrice.RequiredItemCount3, ref LoX, LoY));
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem4, ItemBuyPrice.RequiredItemCount4, ref LoX, LoY));
-
-			//追加控件
-			PriceCtls.ForEach(c => this.Controls.Add(c));
-			ItemCtls.ForEach(c => this.Controls.Add(c));
 			#endregion
 
-			//判断高度位置
-			//this.MyHeight = LoY + (ItemCtls.Count == 0 ? 0 : this.Scale);
-			//if (this.ParentHeight != null && this.ParentHeight > this.MyHeight)
-			//{
-			//	//在无货币价格设置时将物品显示在中间
-			//	if (PriceCtls.Count == 0)
-			//	{
-			//		ItemCtls.ForEach(c => c.Location = new Point(c.Location.X, 0 + ((int)this.ParentHeight - c.Height) / 2));
-			//	}
-			//	//必须判断是否只有一个价格控件，不然会发生重叠
-			//	else if (ItemCtls.Count == 0 && PriceCtls.Count == 1)
-			//	{
-			//		PriceCtls.ForEach(c => c.Location = new Point(c.Location.X, ((int)this.ParentHeight - c.Height) / 2));
-			//	}
-			//}
 
-			#region 重新计算信息位置
-			//计算最大需要宽度
-			int MaxWidth = 0, TempWidth = 0;
-			PriceCtls.ForEach(c => MaxWidth = Math.Max(MaxWidth, c.Width));
-			ItemCtls.ForEach(c => MaxWidth = Math.Max(MaxWidth, TempWidth += c.Width + 4));
+			#region 计算位置
+			int MaxWidth = 0;
+			foreach (var o in PriceCtls)
+			{
+				MaxWidth = Math.Max(MaxWidth, o.Width);
+				this.Controls.Add(o);
+			}
 
 
+			if (ItemCtls.Count == 0) this.Height = LoY;
+			else
+			{
+				int TempWidth = 0;
+				foreach (var o in ItemCtls)
+				{
+					MaxWidth = Math.Max(MaxWidth, TempWidth += o.Width + 4);
+					this.Controls.Add(o);
+				}
+
+				this.Height = LoY + this.Scale;
+			}
+			
 			this.Width = MaxWidth += 2;
+			#endregion
 
+
+
+			#region 重新设定位置
 			PriceCtls.ForEach(c => c.Location = new Point(this.Width - c.Width, c.Location.Y));
 
 			//计算出物品图标的起始点
 			int StartLoX = this.Width;
 			ItemCtls.ForEach(c => StartLoX -= c.Width + 4);
-			ItemCtls.ForEach(c =>
-			{
-				c.Location = new Point(StartLoX + c.Location.X, c.Location.Y);
-			});
+			ItemCtls.ForEach(c => c.Location = new Point(StartLoX + c.Location.X, c.Location.Y));
 			#endregion
-
-			this.Refresh();
 		}
 
 

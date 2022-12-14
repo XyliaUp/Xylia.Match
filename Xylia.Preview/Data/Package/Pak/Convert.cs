@@ -19,64 +19,46 @@ namespace Xylia.Preview.Data.Package.Pak
 {
 	public static class Convert
 	{
+		//File.WriteAllText(path + "." + export.ExportType, JsonConvert.SerializeObject(Object, Formatting.Indented));
+
 		public static UObject GetUObject(this string Path) => IconTextureExt.PakData.GetObject(Path);
 
 		public static UObject GetUObject(this FSoftObjectPath Path) => IconTextureExt.PakData.GetObject(Path.ToString());
-
 
 		public static UObject GetUObject(this UObject obj) => IconTextureExt.PakData.GetObject(obj);
 
 
 
-
-
-		//File.WriteAllText(path + "." + export.ExportType, JsonConvert.SerializeObject(Object, Formatting.Indented));
-		public static Bitmap GetImage(this UTexture2D texture)
+		public static Bitmap GetImage(this UObject o)
 		{
-			var bNearest = false;
-			if (texture.TryGetValue(out FName trigger, "LODGroup", "Filter") && !trigger.IsNone)
-				bNearest = trigger.Text.EndsWith("TEXTUREGROUP_Pixels2D", StringComparison.OrdinalIgnoreCase) ||
-						   trigger.Text.EndsWith("TF_Nearest", StringComparison.OrdinalIgnoreCase);
-
-
-			var SKImage = texture.Decode(bNearest);
-			return new Bitmap(SKImage.Encode().AsStream());
-		}
-
-		public static Bitmap GetImage(this string Path)
-		{
-			var Object = Path.GetUObject();
-			if (Object != null)
+			if (o is null) return null;
+			else if (o is UTexture2D texture)
 			{
-				if (Object is UTexture2D texture) return texture.GetImage();
+				var bNearest = false;
+				if (texture.TryGetValue(out FName trigger, "LODGroup", "Filter") && !trigger.IsNone)
+					bNearest = trigger.Text.EndsWith("TEXTUREGROUP_Pixels2D", StringComparison.OrdinalIgnoreCase) ||
+							   trigger.Text.EndsWith("TF_Nearest", StringComparison.OrdinalIgnoreCase);
 
-				//imageset处理
 
+				var SKImage = texture.Decode(bNearest);
+				return new Bitmap(SKImage.Encode().AsStream());
 			}
-
-			return null;
-		}
-
-		public static Bitmap GetImageset(this string ImagesetPath)
-		{
-			var Object = ImagesetPath.GetUObject();
-			if (Object != null)
+			else if (o.ExportType == "ImageSet")
 			{
 				//获取到的可能是 Import 中的 抽象UObject，仍需要去获取完整的 UObject
-				if (!Object.TryGetValue(out UObject o, "Image")) return null;
+				if (!o.TryGetValue(out UObject Image, "Image")) return null;
 
-				var U = (int)Object.GetOrDefault<float>("U");
-				var V = (int)Object.GetOrDefault<float>("V");
-				var UL = (int)Object.GetOrDefault<float>("UL");
-				var VL = (int)Object.GetOrDefault<float>("VL");
+				int U = (int)o.GetOrDefault<float>("U");
+				int V = (int)o.GetOrDefault<float>("V");
+				int UL = (int)o.GetOrDefault<float>("UL");
+				int VL = (int)o.GetOrDefault<float>("VL");
 
-				var Image = IconTextureExt.PakData.GetObject(o.GetPathName());
-				if (Image != null && Image is UTexture2D image) return image.GetImage().Clone(new Rectangle(U, V, UL, VL));
+				var ImageData = IconTextureExt.PakData.GetObject(Image.GetPathName());
+				if (ImageData != null && ImageData is UTexture2D image) return image.GetImage().Clone(new Rectangle(U, V, UL, VL));
 			}
 
 			return null;
 		}
-
 
 		public static FontSet GetFont(this string Path)
 		{
@@ -115,10 +97,6 @@ namespace Xylia.Preview.Data.Package.Pak
 
 			return result;
 		}
-
-
-
-
 
 		public static byte[] GetWave(this UObject Object, int ReferenceIdx = 0)
 		{

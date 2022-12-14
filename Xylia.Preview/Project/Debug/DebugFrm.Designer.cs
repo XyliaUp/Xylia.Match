@@ -30,13 +30,16 @@ namespace Xylia.Preview
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebugFrm));
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(0, 428);
+			this.textBox1.Location = new System.Drawing.Point(0, 0);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(270, 23);
 			this.textBox1.TabIndex = 0;
@@ -54,6 +57,17 @@ namespace Xylia.Preview
 			this.contentPanel1.TabIndex = 1;
 			this.contentPanel1.Text = "施展武功";
 			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+			this.pictureBox2.Location = new System.Drawing.Point(242, 87);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(307, 404);
+			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox2.TabIndex = 25;
+			this.pictureBox2.TabStop = false;
+			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+			// 
 			// DebugFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -62,7 +76,8 @@ namespace Xylia.Preview
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(773, 488);
+			this.ClientSize = new System.Drawing.Size(845, 633);
+			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
@@ -73,6 +88,7 @@ namespace Xylia.Preview
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "调试窗口";
 			this.Load += new System.EventHandler(this.DebugFrm_Load);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -83,6 +99,7 @@ namespace Xylia.Preview
 
 		private System.Windows.Forms.TextBox textBox1;
 		private ContentPanel contentPanel1;
+		private System.Windows.Forms.PictureBox pictureBox2;
 	}
 }
 

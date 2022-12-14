@@ -553,6 +553,16 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap CollectionCard_3D_214_Img {
+            get {
+                object obj = ResourceManager.GetObject("CollectionCard_3D_214_Img", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap dash_block {
             get {
                 object obj = ResourceManager.GetObject("dash_block", resourceCulture);
@@ -1406,6 +1416,176 @@ namespace Xylia.Preview.Resources {
         public static System.Drawing.Bitmap Map_Unit_PartyCamp {
             get {
                 object obj = ResourceManager.GetObject("Map_Unit_PartyCamp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_1 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_2 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_3 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_4 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_5 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_6 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_7 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Defult {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Defult", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Over {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Over", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_1 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_2 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_3 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_4 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_5 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_6 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_7 {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap Museum_CollectionCard_Preview_Defult {
+            get {
+                object obj = ResourceManager.GetObject("Museum_CollectionCard_Preview_Defult", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

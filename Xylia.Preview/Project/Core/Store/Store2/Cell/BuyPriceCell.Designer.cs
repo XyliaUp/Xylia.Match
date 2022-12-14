@@ -39,7 +39,6 @@
 			this.Margin = new System.Windows.Forms.Padding(5);
 			this.Name = "BuyPriceCell";
 			this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.Size = new System.Drawing.Size(10, 10);
 			this.ResumeLayout(false);
 
 		}

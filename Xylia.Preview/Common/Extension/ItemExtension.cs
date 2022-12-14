@@ -124,9 +124,6 @@ namespace Xylia.Preview.Data.Record
 			return null;
 		}
 
-
-
-
 		public static void PreviewShow(this string rule, Action<string, bool> Act = null, IWin32Window window = null)
 		{
 			if (rule.IsNull()) return;

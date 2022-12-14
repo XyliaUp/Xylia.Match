@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -142,27 +143,32 @@ namespace Xylia.Preview.Data.Package.Pak
 			}
 			#endregion
 
+			#region 返回数据
 			//System.Diagnostics.Debug.WriteLine(Ue4Path);
 
-
-			#region 返回数据
 			//先获取资产文件路径，再判断 ExpertMap
 			string AssetPath = Ue4Path.Split('.')[0];
-			if (this._provider.TryFindGameFile(AssetPath, out var file))
+			var exports = GetAssetExports(AssetPath);
+			if (exports != null && exports.Any())
 			{
-				var exports = _provider.LoadObjectExports(file.Path);
-				if (exports != null && exports.Any())
-				{
-					//获取资产文件内 uobject 对象
-					if (OldPath) return exports.First();
+				//获取资产文件内 uobject 对象
+				if (OldPath) return exports.First();
 
-					//判断ExpertMap
-					return exports.FirstOrDefault(o => o.Name.Equals(Ue4Path.Split('.')[1], StringComparison.OrdinalIgnoreCase));
-				}
+				//判断ExpertMap
+				return exports.FirstOrDefault(o => o.Name.Equals(Ue4Path.Split('.')[1], StringComparison.OrdinalIgnoreCase));
 			}
 
 			return null;
 			#endregion
+		}
+
+
+		public IEnumerable<UObject> GetAssetExports(string AssetPath)
+		{
+			if (this._provider.TryFindGameFile(AssetPath, out var file)) 
+				return _provider.LoadObjectExports(file.Path);
+
+			return null;
 		}
 		#endregion
 	}

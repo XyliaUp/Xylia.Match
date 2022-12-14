@@ -32,6 +32,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 		private void InitializeComponent()
 		{
 			this.quotaTxt = new System.Windows.Forms.Label();
+			this.BuyPriceCell = new BuyPriceCell();
 			this.SuspendLayout();
 			// 
 			// ItemShow
@@ -42,9 +43,10 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			// 
 			// lbl_RightText
 			// 
-			this.lbl_RightText.Location = new System.Drawing.Point(312, 0);
+			this.lbl_RightText.Location = new System.Drawing.Point(341, 0);
 			this.lbl_RightText.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
 			this.lbl_RightText.Size = new System.Drawing.Size(10, 60);
+			this.lbl_RightText.Visible = false;
 			// 
 			// quotaTxt
 			// 
@@ -58,16 +60,20 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			this.quotaTxt.TabIndex = 5;
 			this.quotaTxt.Text = "[限购政策信息]";
 			this.quotaTxt.Visible = false;
+
+
+
 			// 
 			// Store2ItemCell
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.quotaTxt);
+			this.Controls.Add(this.quotaTxt); 
+			this.Controls.Add(this.BuyPriceCell);
 			this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.Name = "Store2ItemCell";
-			this.Size = new System.Drawing.Size(322, 60);
+			this.Size = new System.Drawing.Size(351, 60);
 			this.SizeChanged += new System.EventHandler(this.Store2ItemCell_SizeChanged);
 			this.Controls.SetChildIndex(this.ItemShow, 0);
 			this.Controls.SetChildIndex(this.lbl_RightText, 0);

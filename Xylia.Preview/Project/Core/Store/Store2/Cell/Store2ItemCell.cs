@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Store.Cell;
 using Xylia.Preview.Resources;
-
+using System.Drawing;
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
@@ -14,20 +13,21 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 {
 	public partial class Store2ItemCell : ItemListCell
 	{
-		#region 构造
 		public Store2ItemCell(ItemData ItemInfo, ItemBuyPrice ItemBuyPrice = null) : base(ItemInfo)
 		{
 			InitializeComponent();
 
+			this.AutoSize = false;
+
 			//禁止显示右侧文本
 			this.ShowRightText = false;
 
-			this.BuyPriceCell = new BuyPriceCell();
-			this.BuyPriceCell.Dock = System.Windows.Forms.DockStyle.Right;
-			this.Controls.Add(this.BuyPriceCell);
+			//this.BuyPriceCell = new BuyPriceCell();
+			//this.Controls.Add(this.BuyPriceCell);
 
 			this.LoadData(ItemBuyPrice);
 		}
+
 
 		private void LoadData(ItemBuyPrice ItemBuyPrice)
 		{
@@ -40,11 +40,8 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 				return;
 			}
 
-
-			#region 初始化控件信息
 			this.ItemShow.IconCell.FrameImage = null;
 			this.BuyPriceCell.LoadData(ItemBuyPrice);
-			#endregion
 
 			#region 处理限购策略信息
 			List<string> TipInfo = new();
@@ -120,16 +117,14 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			if (TipInfo.Count != 0) this.SetToolTip(TipInfo.Aggregate((sum, now) => sum + "\n" + now));
 			#endregion
 		}
-		#endregion
-
-
 
 		private void Store2ItemCell_SizeChanged(object sender, System.EventArgs e)
 		{
-			//控制物品名称不与购买价格重叠
-			this.ItemShow.MaximumSize = new Size(this.BuyPriceCell.Left - 5, 0);
+			if (this.Height < this.BuyPriceCell.Height) this.Height = this.BuyPriceCell.Height;
+			this.BuyPriceCell.Location = new Point(this.Width - this.BuyPriceCell.Width, (this.Height - this.BuyPriceCell.Height) / 2);
 
-			//this.Height = Math.Max(Math.Max(this.Height, this.BuyPriceCell.MyHeight), this.NameCell.Height);
+			//控制物品名称不与购买价格重叠
+			this.ItemShow.MaximumSize = new Size(this.BuyPriceCell.Left - 3, 0);
 		}
 	}
 }
