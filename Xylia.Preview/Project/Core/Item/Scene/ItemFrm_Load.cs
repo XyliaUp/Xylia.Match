@@ -139,15 +139,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// <param name="Preview"></param>
 		public void LoadPreview(Control Preview)
 		{
-			if (Preview is null) return;
-			if (!Preview.Visible) return;
+			if (Preview is null || !Preview.Visible) return;
 
-			//设置控件宽度（因为有边框宽度所以要减扣主体宽度）
-			Preview.MaximumSize = new Size(this.Width - 10, 999999);
-			Preview.Width = this.Width - 5;
-			Preview.Tag = Preview.GetType();
-
-			Preview.Refresh();
 			this.PreviewList.Add(Preview);
 		}
 		#endregion

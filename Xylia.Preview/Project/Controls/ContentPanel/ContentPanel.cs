@@ -153,11 +153,11 @@ namespace Xylia.Preview.Project.Controls
 				CopyTxt.SetClipboard();
 		}
 
-		protected override void OnAutoSizeChanged(EventArgs e)
-		{
-			base.OnAutoSizeChanged(e);
-			this.Refresh();
-		}
+		//protected override void OnAutoSizeChanged(EventArgs e)
+		//{
+		//	base.OnAutoSizeChanged(e);
+		//	this.Refresh();
+		//}
 		#endregion
 	}
 }

@@ -58,8 +58,8 @@ namespace Xylia.Preview.Project.Controls
 				if (MaxWidth == 0) MaxWidth = o.Width;
 			}
 			
-			else if (o.MaximumSize.Width != 0)
-				MaxWidth = Math.Min(o.MaximumSize.Width, MaxWidth);
+			//获取已设置的限制宽度
+			else if (o.MaximumSize.Width != 0) MaxWidth = o.MaximumSize.Width;
 
 			//计算与母容器关系
 			else if (o.Parent != null)
@@ -72,7 +72,6 @@ namespace Xylia.Preview.Project.Controls
 				}
 			}
 
-			
 
 			return MaxWidth;
 		}
