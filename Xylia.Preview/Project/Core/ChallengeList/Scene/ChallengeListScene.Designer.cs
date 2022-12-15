@@ -148,7 +148,7 @@
 			// RequiredTime
 			// 
 			this.RequiredTime.BackColor = System.Drawing.Color.Transparent;
-			this.RequiredTime.BasicLineHeight = 19;
+			//this.RequiredTime.BasicLineHeight = 19;
 			this.RequiredTime.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.RequiredTime.ForeColor = System.Drawing.Color.White;
 			this.RequiredTime.Location = new System.Drawing.Point(506, 7);

@@ -42,9 +42,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			if (bool.TryParse(Ini.ReadValue("Preview", "item#option_UseUserOperPanel"), out bool f1))
 				this.MenuItem_SwitchUserOperPanel.Checked = f1;
 
-			if (bool.TryParse(Ini.ReadValue("Preview", "item#option_ShowCategory3"), out bool f2))
-				this.lbl_Category.Visible = f2;
-
 			Loading = false;
 			#endregion
 
@@ -258,14 +255,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 						}
 					}
 					break;
-
-					//是否显示目录
-					case Keys.Z:
-					{
-						this.lbl_Category.Visible = !this.lbl_Category.Visible;
-					}
-					break;
-
 				}
 			}
 
@@ -299,7 +288,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			if (this.CardImage != null)
 			{
-				this.ItemNameCell.Location = new Point((this.Width - this.ItemNameCell.Width) / 2, 20);
+				this.ItemNameCell.Location = new Point((this.Width - 15 - this.ItemNameCell.Width) / 2, 20);
 				this.ItemIcon.Visible = false;
 				this.lbl_Category.Visible = false;
 

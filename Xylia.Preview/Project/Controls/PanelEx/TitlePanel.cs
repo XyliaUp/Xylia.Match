@@ -18,27 +18,12 @@ namespace Xylia.Preview.Project.Controls.PanelEx
 		}
 		#endregion
 
-
 		#region 字段
 		/// <summary>
 		/// 标题
 		/// </summary>
 		[Category("外观"), Description("标题")]
 		public virtual string Title { get => this.lbl_Title.Text; set => this.lbl_Title.Text = value; }
-		#endregion
-
-
-		#region 方法
-		private void CustomPanel_Load(object sender, System.EventArgs e)
-		{
-			this.lbl_Title.BringToFront();
-			this.Refresh();
-		}
-
-		private void PanelWithTitle_Resize(object sender, System.EventArgs e)
-		{
-			if (this.Dock != DockStyle.None) return;
-		}
 		#endregion
 	}
 }

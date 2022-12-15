@@ -57,12 +57,12 @@ namespace Xylia.Preview.Project.Controls.Currency
 	{
 		public static Bitmap GetCurrencyIcon(this CurrencyType Type) => Type switch
 		{
-			CurrencyType.DuelPoint => Resource_BNSR.Map_NPC_DuelPoint_Shop,
-			CurrencyType.FactionScore => Resource_BNSR.Coin_Grade_3_Half,
+			CurrencyType.DuelPoint => Resource_BNSR.DuelPoint,
+			CurrencyType.FactionScore => Resource_BNSR.FactionScoreIcon,
 			CurrencyType.FieldPlayPoint => Resource_BNSR.fieldplay,
 			CurrencyType.GoodsStone => Resource_BNSR.GameUI_Coin_GoodsStone,
 			CurrencyType.GoodsStone2 => Resource_BNSR.GameUI_Coin_GoodsStone_002,
-			CurrencyType.PartyBattlePoint => Resource_BNSR.partybattle,
+			CurrencyType.PartyBattlePoint => Resource_BNSR.BattleFieldPoint,
 			CurrencyType.Pearl => Resource_BNSR.Store_Pearl,
 
 			_ => null,

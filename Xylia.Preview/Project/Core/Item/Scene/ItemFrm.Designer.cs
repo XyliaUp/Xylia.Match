@@ -50,7 +50,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// ItemIcon
 			// 
 			this.ItemIcon.BackColor = System.Drawing.Color.SlateGray;
-			this.ItemIcon.Location = new System.Drawing.Point(6, 38);
+			this.ItemIcon.Location = new System.Drawing.Point(6, 30);
 			this.ItemIcon.Margin = new System.Windows.Forms.Padding(4);
 			this.ItemIcon.Name = "ItemIcon";
 			this.ItemIcon.Size = new System.Drawing.Size(84, 84);
@@ -136,10 +136,10 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// lbl_MainInfo
 			// 
 			this.lbl_MainInfo.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_MainInfo.BasicLineHeight = 24;
+			//this.lbl_MainInfo.BasicLineHeight = 24;
 			this.lbl_MainInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_MainInfo.ForeColor = System.Drawing.Color.White;
-			this.lbl_MainInfo.Location = new System.Drawing.Point(108, 42);
+			this.lbl_MainInfo.Location = new System.Drawing.Point(99, 30);
 			this.lbl_MainInfo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.lbl_MainInfo.Name = "lbl_MainInfo";
 			this.lbl_MainInfo.TabIndex = 19;
@@ -149,10 +149,10 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// lbl_SubInfo
 			// 
 			this.lbl_SubInfo.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_SubInfo.BasicLineHeight = 20;
+			//this.lbl_SubInfo.BasicLineHeight = 20;
 			this.lbl_SubInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_SubInfo.ForeColor = System.Drawing.Color.White;
-			this.lbl_SubInfo.Location = new System.Drawing.Point(111, 79);
+			this.lbl_SubInfo.Location = new System.Drawing.Point(99, 56);
 			this.lbl_SubInfo.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.lbl_SubInfo.Name = "lbl_SubInfo";
 			this.lbl_SubInfo.TabIndex = 18;
@@ -196,7 +196,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(26)))), ((int)(((byte)(35)))));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(471, 641);
+			this.ClientSize = new System.Drawing.Size(471, 470);
 			this.ContextMenuStrip = this.MenuStrip;
 			this.Controls.Add(this.lbl_MainInfo);
 			this.Controls.Add(this.lbl_SubInfo);

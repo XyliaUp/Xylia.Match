@@ -84,7 +84,7 @@ namespace Xylia.Preview.Project.Core.ChallengeList.Cell
 			// ChallengeName
 			// 
 			this.ChallengeName.BackColor = System.Drawing.Color.Transparent;
-			this.ChallengeName.BasicLineHeight = 20;
+			//this.ChallengeName.BasicLineHeight = 20;
 			this.ChallengeName.Font = new System.Drawing.Font("Microsoft YaHei UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ChallengeName.ForeColor = System.Drawing.Color.White;
 			this.ChallengeName.Location = new System.Drawing.Point(40, 0);

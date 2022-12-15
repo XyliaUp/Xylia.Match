@@ -1,24 +1,12 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
 
 using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
 
-using Xylia.bns.Modules.DataFormat.Dat;
-using Xylia.Extension;
 using Xylia.Files;
-using Xylia.Files.Xml;
+using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Helper;
-using Xylia.Preview.Properties;
-
-using static Xylia.Extension.String;
-
-using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
 
 namespace Xylia.Preview.Third.Content
@@ -38,59 +26,12 @@ namespace Xylia.Preview.Third.Content
 			};
 
 			if (Save.ShowDialog() != DialogResult.OK) return;
-			#endregion
 
-			#region 读取任务文件资源
-			var Quests = new BlockingCollection<QuestData>();
-			Parallel.ForEach(new BNSDat().ExportFile(ReadData.GetXmlPath(CommonPath.GameFolder)), item =>
-			{
-				if (item.RelativePath.Contains(@"quest\") && int.TryParse(Regex.Replace(item.RelativePath, @"[^0-9]+", ""), out int Result))
-				{
-					try
-					{
-						var QuestData = item.XmlDocument.ReadFile<QuestData>().FirstOrDefault();
-						Quests.Add(QuestData);
-					}
-					catch
-					{
-						Debug.WriteLine(Result + "任务初始化失败");
-						throw;
-					}
-				}
-			});
-			#endregion
-
-			#region 读取关联副本信息
-			var DungeonNameGroup = new Dictionary<string, string>(StringComparer.CurrentCultureIgnoreCase);
-			foreach (var Dungeon in FileCache.Data.Dungeon)
-			{
-				var DungeonName = Dungeon.NameText();
-
-				for (int i = 1; i <= 12; i++)
-				{
-					if (Dungeon.ContainsAttribute("display-quests-" + i, out string AVal) && !AVal.IsNull())
-					{
-						if (!DungeonNameGroup.ContainsKey(AVal)) DungeonNameGroup.Add(AVal, DungeonName);
-					}
-				}
-			}
-
-			foreach (var Dungeon in FileCache.Data.RaidDungeon)
-			{
-				var DungeonName = Dungeon.NameText();
-
-				for (int i = 1; i <= 12; i++)
-				{
-					if (Dungeon.ContainsAttribute("display-quests-" + i, out string AVal) && !AVal.IsNull())
-					{
-						if (!DungeonNameGroup.ContainsKey(AVal)) DungeonNameGroup.Add(AVal, DungeonName);
-					}
-				}
-			}
+			ReadQuestData.GetQuests();
 			#endregion
 
 			#region 输出内容初始化
-			IWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
+			IWorkbook workbook = new XSSFWorkbook();
 			ISheet sheet = workbook.CreateSheet("任务列表");
 
 			//创建字体通用风格
@@ -103,6 +44,12 @@ namespace Xylia.Preview.Third.Content
 			sheet.SetColumnWidth(1, 15 * 256);
 			sheet.SetColumnWidth(2, 30 * 256);
 			sheet.SetColumnWidth(3, 25 * 256);
+			sheet.SetColumnWidth(4, 10 * 256);
+			sheet.SetColumnWidth(5, 10 * 256);
+			sheet.SetColumnWidth(6, 10 * 256);
+			sheet.SetColumnWidth(7, 10 * 256);
+			sheet.SetColumnWidth(8, 10 * 256);
+			sheet.SetColumnWidth(9, 35 * 256);
 
 			//创建行基本信息(标题行）
 			TitleRow.AddCell("任务序号");
@@ -118,12 +65,8 @@ namespace Xylia.Preview.Third.Content
 			#endregion
 
 			#region 开始输出内容
-			var LoadedQuestList = Quests.ToList();
-			LoadedQuestList.Sort((x, y) => x.id - y.id);
-
-
 			int CurProcess = 0;
-			LoadedQuestList.ForEach(Quest =>
+			foreach (var Quest in FileCache.Data.Quest.Values.OrderBy(o => o.id))
 			{
 				IRow TempRow = sheet.CreateRow(++CurProcess);
 				TempRow.RowStyle = style;
@@ -138,18 +81,11 @@ namespace Xylia.Preview.Third.Content
 				TempRow.AddCell(Quest.ResetType);
 				TempRow.AddCell(Quest.Retired);
 				TempRow.AddCell(Quest.Tutorial);
-
-				if (DungeonNameGroup.ContainsKey(Quest.Alias)) TempRow.AddCell(DungeonNameGroup[Quest.Alias]);
-				else TempRow.AddCell(null);
-			});
+				TempRow.AddCell(Quest.AttractionInfo.GetName());
+			}
 
 			workbook.Save(Save.FileName);
 			#endregion
-
-
-			//最后处理
-			Quests = null;
-			LoadedQuestList.Clear();
 
 			Tip.SendMessage("完成!");
 		}
@@ -167,7 +103,7 @@ namespace Xylia.Preview.Third.Content
 			#endregion
 
 			#region 输出内容初始化
-			IWorkbook workbook = new NPOI.XSSF.UserModel.XSSFWorkbook();
+			IWorkbook workbook = new XSSFWorkbook();
 			ISheet sheet = workbook.CreateSheet("主线任务");
 
 			//创建字体通用风格
@@ -188,26 +124,28 @@ namespace Xylia.Preview.Third.Content
 			TitleRow.AddCell("group");
 			#endregion
 
+			#region 开始输出内容
 			int CurRow = 0;
 			ReadQuestData.GetEpicInfo(data =>
 			{
 				#region 创建节点
 				string Group2 = data.Group2.GetText();
-				 string QuestName = data.Name2.GetText();
+				string QuestName = data.Name2.GetText();
 
-				 IRow TempRow = sheet.CreateRow(++CurRow);
-				 TempRow.RowStyle = style;
+				IRow TempRow = sheet.CreateRow(++CurRow);
+				TempRow.RowStyle = style;
 
 				//创建行信息
 				TempRow.AddCell(data.id);
-				 TempRow.AddCell(data.Alias);
-				 TempRow.AddCell(data.Name2.GetText());
-				 TempRow.AddCell(data.Group2.GetText());
+				TempRow.AddCell(data.Alias);
+				TempRow.AddCell(data.Name2.GetText());
+				TempRow.AddCell(data.Group2.GetText());
 				#endregion
 			});
 
-
 			workbook.Save(Save.FileName);
+			#endregion
+
 			Tip.SendMessage("完成!");
 		}
 	}

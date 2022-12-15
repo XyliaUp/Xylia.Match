@@ -17,14 +17,17 @@ namespace Xylia.Preview.Project.Controls
 {
 	public partial class ContentPanel
 	{
+		/// <summary>
+		/// 允许的最大宽度
+		/// </summary>
+		int MaxWidth = 0;
+
 		public void GoPaint(Graphics g)
 		{
-			#region 初始化
+			//初始化
 			this.MaxWidth = GetMaxWidth(this);
-
-			int CurLineHeight = BasicLineHeight;
 			float LocX = 0, LocY = 0;
-			#endregion
+
 
 			#region 执行绘制
 			var Width = this.Execute(new()
@@ -34,7 +37,7 @@ namespace Xylia.Preview.Project.Controls
 				ForeColor = this.ForeColor,
 			},
 			this.Text?.Replace("\n", "<br/>"),
-			ref LocX, ref LocY, ref CurLineHeight, true);
+			ref LocX, ref LocY, true);
 
 			//变更大小
 			if (this.AutoSize)
@@ -57,7 +60,7 @@ namespace Xylia.Preview.Project.Controls
 			{
 				if (MaxWidth == 0) MaxWidth = o.Width;
 			}
-			
+
 			//获取已设置的限制宽度
 			else if (o.MaximumSize.Width != 0) MaxWidth = o.MaximumSize.Width;
 
@@ -76,8 +79,6 @@ namespace Xylia.Preview.Project.Controls
 			return MaxWidth;
 		}
 
-
-
 		/// <summary>
 		/// 执行绘制
 		/// </summary>
@@ -89,8 +90,9 @@ namespace Xylia.Preview.Project.Controls
 		/// <param name="param"></param>
 		/// <param name="Status">是否由主入口方法调用</param>
 		/// <returns></returns>
-		private float Execute(ExecuteParam param, string InfoHtml, ref float LocX, ref float LocY, ref int CurLineHeight, bool Status = false)
+		private float Execute(ExecuteParam param, string InfoHtml, ref float LocX, ref float LocY, bool Status = false)
 		{
+			int CurLineHeight = param.Font.Height;
 			float CurExpextWidth = 0;
 			void TryExtendWidth(float ExpextWidth) => CurExpextWidth = Math.Max(CurExpextWidth, ExpextWidth);
 
@@ -167,8 +169,7 @@ namespace Xylia.Preview.Project.Controls
 
 						//增加对应的行高并重置为基本行高
 						LocX = this.Signal is null ? 0 : SignalWidth;
-						LocY += CurLineHeight;
-						CurLineHeight = BasicLineHeight;
+						LocY += CurLineHeight + this.HeightPadding;
 					}
 					break;
 
@@ -193,12 +194,11 @@ namespace Xylia.Preview.Project.Controls
 						}
 
 						//绘制文本内容
-						TryExtendWidth(this.Execute(param, Node.InnerHtml, ref LocX, ref LocY, ref CurLineHeight));
+						TryExtendWidth(this.Execute(param, Node.InnerHtml, ref LocX, ref LocY));
 
 						//创建新行
 						LocX = this.Signal is null ? 0 : SignalWidth;
 						LocY += CurLineHeight;
-						CurLineHeight = BasicLineHeight;
 					}
 					break;
 
@@ -219,7 +219,7 @@ namespace Xylia.Preview.Project.Controls
 						if (Result is int @value || int.TryParse(TextInfo, out @value)) TextInfo = @value.ToString("N0");
 
 						//绘制文本
-						TryExtendWidth(this.Execute(param, TextInfo, ref LocX, ref LocY, ref CurLineHeight));
+						TryExtendWidth(this.Execute(param, TextInfo, ref LocX, ref LocY));
 					}
 					break;
 
@@ -228,7 +228,9 @@ namespace Xylia.Preview.Project.Controls
 					{
 						//转到 text 节点进行处理
 						var param2 = GetFont(param, Attribute["name"], DesignMode);
-						TryExtendWidth(this.Execute(param2, Node.InnerHtml, ref LocX, ref LocY, ref CurLineHeight));
+						CurLineHeight = param2.Font.Height;
+
+						TryExtendWidth(this.Execute(param2, Node.InnerHtml, ref LocX, ref LocY));
 					}
 					break;
 
@@ -297,7 +299,7 @@ namespace Xylia.Preview.Project.Controls
 
 
 			//如果由主入口函数调用，增加最后一行对应的行高
-			if (Status) LocY += CurLineHeight;
+			if (Status) LocY += CurLineHeight + this.HeightPadding;
 
 			//处理普通标签的最终宽度
 			TryExtendWidth(LocX);
@@ -451,23 +453,22 @@ namespace Xylia.Preview.Project.Controls
 		{
 			if (DesignMode || FontName is null) return LastParam;
 
-			var param2 = (ExecuteParam)LastParam.Clone();
+			var Param = (ExecuteParam)LastParam.Clone();
 
 			//提高处理速度
 			if (FontName.StartsWith("00008130.Program.Fontset_ItemGrade_"))
 			{
-				param2.ForeColor = byte.Parse(FontName.Replace("00008130.Program.Fontset_ItemGrade_", null)).ItemGrade();
+				Param.ForeColor = byte.Parse(FontName.Replace("00008130.Program.Fontset_ItemGrade_", null)).ItemGrade();
 			}
 			else
 			{
 				var BnsFont = FontName.GetFont();
-				if (BnsFont?.Color != null) param2.ForeColor = BnsFont.Color.Value;
-				if (BnsFont?.Height != null) param2.Font = new Font(LastParam.Font.FontFamily, BnsFont.Height.Value);
+				if (BnsFont?.Color != null) Param.ForeColor = BnsFont.Color.Value;
+				if (BnsFont?.Height != null) Param.Font = new Font(LastParam.Font.FontFamily, BnsFont.Height.Value);
 			}
 
-			return param2;
+			return Param;
 		}
-
 	}
 
 

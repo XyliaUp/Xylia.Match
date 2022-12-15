@@ -36,7 +36,7 @@
 			// contentPanel1
 			// 
 			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.contentPanel1.BasicLineHeight = 25;
+			//this.contentPanel1.BasicLineHeight = 25;
 			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.contentPanel1.ForeColor = System.Drawing.Color.White;
 			this.contentPanel1.Location = new System.Drawing.Point(99, 28);

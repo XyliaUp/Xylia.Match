@@ -30,16 +30,13 @@ namespace Xylia.Preview
         /// </summary>
         private void InitializeComponent()
         {
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebugFrm));
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(0, 0);
+			this.textBox1.Location = new System.Drawing.Point(12, 92);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(270, 23);
 			this.textBox1.TabIndex = 0;
@@ -48,25 +45,13 @@ namespace Xylia.Preview
 			// contentPanel1
 			// 
 			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.contentPanel1.BasicLineHeight = 20;
 			this.contentPanel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(56, 105);
+			this.contentPanel1.Location = new System.Drawing.Point(352, 279);
 			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.contentPanel1.Name = "contentPanel1";
 			this.contentPanel1.TabIndex = 1;
-			this.contentPanel1.Text = "施展武功";
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(242, 87);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(307, 404);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox2.TabIndex = 25;
-			this.pictureBox2.TabStop = false;
-			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+			this.contentPanel1.Text = "<font name=\"00008130.ItemGrowth_Awaken_28\">传授</font>";
 			// 
 			// DebugFrm
 			// 
@@ -76,9 +61,9 @@ namespace Xylia.Preview
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(845, 633);
-			this.Controls.Add(this.pictureBox2);
+			this.ClientSize = new System.Drawing.Size(813, 442);
 			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.contentPanel1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -88,7 +73,6 @@ namespace Xylia.Preview
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "调试窗口";
 			this.Load += new System.EventHandler(this.DebugFrm_Load);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -99,7 +83,6 @@ namespace Xylia.Preview
 
 		private System.Windows.Forms.TextBox textBox1;
 		private ContentPanel contentPanel1;
-		private System.Windows.Forms.PictureBox pictureBox2;
 	}
 }
 

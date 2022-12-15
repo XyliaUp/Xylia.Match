@@ -73,8 +73,16 @@ namespace Xylia.Preview.Data.Helper
 
 		public DataTable<Effect> Effect { get; } = new();
 
+		
+		public DataTable<FactionBattleFieldZone> FactionBattleFieldZone { get; } = new();
 		public DataTable<Faction> Faction { get; } = new();
+		public DataTable<FactionLevel> FactionLevel { get; } = new();
+
+
+
 		public DataTable<FieldZone> FieldZone { get; } = new();
+		public DataTable<GuildBattleFieldZone> GuildBattleFieldZone { get; } = new();
+
 
 		public DataTable<IconTexture> IconTexture { get; } = new();
 
@@ -141,6 +149,9 @@ namespace Xylia.Preview.Data.Helper
 
 
 		public ConcurrentDictionary<int, QuestData> Quest { get; set; }
+
+
+
 
 		public DataTable<QuestBonusReward> QuestBonusReward { get; } = new();
 		public DataTable<QuestBonusRewardSetting> QuestBonusRewardSetting { get; } = new();

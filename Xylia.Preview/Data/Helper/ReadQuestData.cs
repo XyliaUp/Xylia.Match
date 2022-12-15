@@ -4,10 +4,8 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Xylia.bns.Modules.DataFormat.Dat;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Files.Xml;
-using Xylia.Preview.Properties;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
@@ -16,7 +14,6 @@ namespace Xylia.Preview.Data.Helper
 	public static class ReadQuestData
 	{
 		static bool InLoading;
-
 
 		public static QuestData GetQuestData(this string QuestAlias)
 		{
@@ -27,14 +24,7 @@ namespace Xylia.Preview.Data.Helper
 		{
 			while (InLoading) Thread.Sleep(100);
 
-			if (FileCache.Data.Quest is null)
-			{
-				InLoading = true;
-				FileCache.Data.Quest = GetQuests();
-				InLoading = false;
-			}
-
-
+			GetQuests();
 			return FileCache.Data.Quest.ContainsKey(QuestID) ? FileCache.Data.Quest[QuestID] : null;
 		}
 
@@ -42,20 +32,22 @@ namespace Xylia.Preview.Data.Helper
 		/// 获取任务列表
 		/// </summary>
 		/// <returns></returns>
-		public static ConcurrentDictionary<int, QuestData> GetQuests()
+		public static void GetQuests()
 		{
+			if (FileCache.Data.Quest != null) return;
+
+			InLoading = true;
+
 			ConcurrentDictionary<int, QuestData> temp = new();
-
-			var TempData = new BNSDat().ExportFile(CommonPath.GameFolder.GetXmlPath());
-			Parallel.ForEach(TempData, item =>
+			Parallel.ForEach(FileCache.Data.GameData.BNSDat.FileTableList.Where(o => o.FilePath.Contains(@"quest\")), item =>
 			{
-				if (!item.RelativePath.Contains(@"quest\")) return;
-
 				var QuestData = item.XmlDocument.ReadFile<QuestData>().FirstOrDefault();
 				temp.GetOrAdd(QuestData.id, QuestData);
 			});
 
-			return temp;
+			FileCache.Data.Quest = temp;
+
+			InLoading = false;
 		}
 
 

@@ -54,7 +54,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				if (QuestPreview.TestMode)
 				{
 					ContentPanel CaseContent = new();
-					CaseContent.BasicLineHeight += 4;
+					//CaseContent.BasicLineHeight += 4;
 					CaseContent.Text = $"[{t.ProgressMission}] {t.GetType()}";
 
 					temp.Add(CaseContent);

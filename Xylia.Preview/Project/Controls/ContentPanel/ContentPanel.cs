@@ -83,6 +83,15 @@ namespace Xylia.Preview.Project.Controls
 				this.Refresh();
 			}
 		}
+
+
+		/// <summary>
+		/// 高度填充
+		/// </summary>
+		[Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		[EditorBrowsable(EditorBrowsableState.Always)]
+		public int HeightPadding = 0;
 		#endregion
 
 
@@ -101,28 +110,6 @@ namespace Xylia.Preview.Project.Controls
 		/// </summary>
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public List<object> Params { get; set; } = ControlHelper.IsDesignMode ? null : new(defaultParams);
-
-		private int m_BasicLineHeight = -1;
-
-		/// <summary>
-		/// 基本行高度
-		/// </summary>
-		public int BasicLineHeight
-		{
-			set => this.m_BasicLineHeight = value;
-			get
-			{
-				if (m_BasicLineHeight == -1)
-					m_BasicLineHeight = this.Font.Height + 1;
-
-				return m_BasicLineHeight;
-			}
-		}
-
-		/// <summary>
-		/// 允许的最大宽度
-		/// </summary>
-		int MaxWidth = 0;
 		#endregion
 
 

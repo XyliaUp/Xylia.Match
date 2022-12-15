@@ -71,7 +71,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// QuestName
 			// 
 			this.QuestName.BackColor = System.Drawing.Color.Transparent;
-			this.QuestName.BasicLineHeight = 26;
+			//this.QuestName.BasicLineHeight = 26;
 			this.QuestName.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
 			this.QuestName.ForeColor = System.Drawing.Color.LightGreen;
 			this.QuestName.Location = new System.Drawing.Point(48, 29);

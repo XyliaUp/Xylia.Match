@@ -63,6 +63,16 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap BattleFieldPoint {
+            get {
+                object obj = ResourceManager.GetObject("BattleFieldPoint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap BNSR_ChattingBack {
             get {
                 object obj = ResourceManager.GetObject("BNSR_ChattingBack", resourceCulture);
@@ -543,16 +553,6 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap Coin_Grade_3_Half {
-            get {
-                object obj = ResourceManager.GetObject("Coin_Grade_3_Half", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         public static System.Drawing.Bitmap CollectionCard_3D_214_Img {
             get {
                 object obj = ResourceManager.GetObject("CollectionCard_3D_214_Img", resourceCulture);
@@ -583,6 +583,16 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap DuelPoint {
+            get {
+                object obj = ResourceManager.GetObject("DuelPoint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap EventMarker_Img {
             get {
                 object obj = ResourceManager.GetObject("EventMarker_Img", resourceCulture);
@@ -606,6 +616,16 @@ namespace Xylia.Preview.Resources {
         public static System.Drawing.Bitmap ExpBoost_02 {
             get {
                 object obj = ResourceManager.GetObject("ExpBoost_02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap FactionScoreIcon {
+            get {
+                object obj = ResourceManager.GetObject("FactionScoreIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1383,16 +1403,6 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        public static System.Drawing.Bitmap Map_NPC_DuelPoint_Shop {
-            get {
-                object obj = ResourceManager.GetObject("Map_NPC_DuelPoint_Shop", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         public static System.Drawing.Bitmap Map_Party {
             get {
                 object obj = ResourceManager.GetObject("Map_Party", resourceCulture);
@@ -1626,16 +1636,6 @@ namespace Xylia.Preview.Resources {
         public static System.Drawing.Bitmap OpenClose_Up {
             get {
                 object obj = ResourceManager.GetObject("OpenClose_Up", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        public static System.Drawing.Bitmap partybattle {
-            get {
-                object obj = ResourceManager.GetObject("partybattle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

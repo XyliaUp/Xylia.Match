@@ -161,9 +161,7 @@ namespace Xylia.Match.Windows
 		{
 			FileCache.Data.TextData.TryLoad();
 
-			if (FileCache.Data.Quest is null)
-				FileCache.Data.Quest = ReadQuestData.GetQuests();
-
+			ReadQuestData.GetQuests();
 			this.RefreshList();
 		}
 

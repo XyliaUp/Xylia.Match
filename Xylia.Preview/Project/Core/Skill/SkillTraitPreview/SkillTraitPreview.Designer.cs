@@ -79,7 +79,7 @@
 			// TooltipEffectDescription
 			// 
 			this.TooltipEffectDescription.BackColor = System.Drawing.Color.Transparent;
-			this.TooltipEffectDescription.BasicLineHeight = 20;
+			//this.TooltipEffectDescription.BasicLineHeight = 20;
 			this.TooltipEffectDescription.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipEffectDescription.ForeColor = System.Drawing.Color.White;
 			this.TooltipEffectDescription.Location = new System.Drawing.Point(641, 60);
@@ -91,7 +91,7 @@
 			// TooltipTrainDescription
 			// 
 			this.TooltipTrainDescription.BackColor = System.Drawing.Color.Transparent;
-			this.TooltipTrainDescription.BasicLineHeight = 20;
+			//this.TooltipTrainDescription.BasicLineHeight = 20;
 			this.TooltipTrainDescription.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipTrainDescription.ForeColor = System.Drawing.Color.White;
 			this.TooltipTrainDescription.Location = new System.Drawing.Point(641, 32);
@@ -103,7 +103,7 @@
 			// TooltipTrainName
 			// 
 			this.TooltipTrainName.BackColor = System.Drawing.Color.Transparent;
-			this.TooltipTrainName.BasicLineHeight = 25;
+			//this.TooltipTrainName.BasicLineHeight = 25;
 			this.TooltipTrainName.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipTrainName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(215)))), ((int)(((byte)(83)))));
 			this.TooltipTrainName.Location = new System.Drawing.Point(641, 1);

@@ -141,6 +141,9 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		{
 			if (Preview is null || !Preview.Visible) return;
 
+			if (Preview is not ContentPanel)
+				Preview.Width = this.Width;
+
 			this.PreviewList.Add(Preview);
 		}
 		#endregion

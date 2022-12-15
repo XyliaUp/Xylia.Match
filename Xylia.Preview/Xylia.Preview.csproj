@@ -390,7 +390,7 @@
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-bottom.png" />
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-thumb-top.png" />
     <None Remove="Project\Controls\ScrollBar\Vertical\vertical-track.png" />
-    <None Remove="Project\Core\ItemGrowth\ItemGrowth2\Preview\ResultWeaponPreview.cs~RF30f96a.TMP" />
+    <None Remove="Project\Core\ItemGrowth\Game_ItemGrowth2\Preview\ResultWeaponPreview.cs~RF30f96a.TMP" />
     <None Remove="Properties\AnalyseSection\Data\MapGroup1ExpeditionData.xml" />
   </ItemGroup>
   
@@ -401,7 +401,7 @@
     <Compile Update="Project\Core\ItemGrowth\Scene\EquipmentGuidePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\ItemImprove\ItemImprovePage.cs">
+    <Compile Update="Project\Core\ItemGrowth\Game_Intension\ItemImprovePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Skill\SkillTrainCategoryPreview\SkillTrainCategoryPreview.cs">
@@ -445,7 +445,7 @@
     <EmbeddedResource Update="Project\Core\ItemGrowth\Scene\EquipmentGuidePage.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Project\Core\ItemGrowth\ItemImprove\ItemImprovePage.resx">
+    <EmbeddedResource Update="Project\Core\ItemGrowth\Game_Intension\ItemImprovePage.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">

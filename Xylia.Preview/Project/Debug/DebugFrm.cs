@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Windows.Forms;
 
-using Xylia.Extension;
 using Xylia.Preview.Project.Core.Skill;
 
 namespace Xylia.Preview
@@ -23,7 +21,11 @@ namespace Xylia.Preview
 			//Debug.WriteLine(FileCache.Data.Effect["Constellation_Effect_StarSong"].Attributes);
 
 
-			this.pictureBox2.Image = Project.Core.Item.Scene.ItemFrm.LoadCardImage(Resources.Resource_BNSR.CollectionCard_3D_214_Img, 7);
+
+			//Xylia.Preview.Data.Package.Pak.Test.Scene();
+
+			//this.pictureBox2.Image = Project.Core.Item.Scene.ItemFrm.LoadCardImage(Resources.Resource_BNSR.CollectionCard_3D_214_Img, 7);
+			//Debug.WriteLine(FileCache.Data.GameData.BNSDat.FileTableList.Find(o => o.FilePath == "attractiontimeeffectdata.xml").XmlDocument.OuterXml);
 		}
 
 		private void textBox1_TextChanged(object sender, EventArgs e)

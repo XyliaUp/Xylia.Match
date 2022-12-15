@@ -53,8 +53,15 @@ namespace Xylia.Preview.Data.Package.Pak
 				int UL = (int)o.GetOrDefault<float>("UL");
 				int VL = (int)o.GetOrDefault<float>("VL");
 
-				var ImageData = IconTextureExt.PakData.GetObject(Image.GetPathName());
-				if (ImageData != null && ImageData is UTexture2D image) return image.GetImage().Clone(new Rectangle(U, V, UL, VL));
+				try
+				{
+					var ImageData = IconTextureExt.PakData.GetObject(Image.GetPathName());
+					if (ImageData != null && ImageData is UTexture2D image) return image.GetImage().Clone(new Rectangle(U, V, UL, VL));
+				}
+				catch
+				{
+					System.Diagnostics.Debug.WriteLine("== CRASH == " + o.GetPathName_Bns());
+				}
 			}
 
 			return null;

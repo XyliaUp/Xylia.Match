@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
-using CUE4Parse.UE4.Assets.Exports.Texture;
-
+using Xylia.Configure;
 using Xylia.Preview.Data.Package.Pak;
+
 
 namespace Xylia.Match.Windows.Panel
 {
@@ -35,12 +35,12 @@ namespace Xylia.Match.Windows.Panel
 				PakData PakData = new();
 				PakData.Initialize(null);
 
-				var _gamefiles = PakData._provider.GameFiles;
-				if (_gamefiles != null)
-				{
-					var tempPath = KeepTree ? Selector : $"GameUI/Resource/{Selector}/";
 
-					foreach (var gamefile in _gamefiles.Where(o => o.Extension == "uasset" && o.Path.Contains(tempPath)))
+				var tempPath = KeepTree ? Selector : $"GameUI/Resource/{Selector}/";
+				var gameFiles = PakData._provider.GameFiles?.Where(o => o.Extension == "uasset" && o.Path.Contains(tempPath));
+				if (gameFiles != null)
+				{
+					foreach (var gamefile in gameFiles)
 					{
 						string dir = KeepTree ? Path.GetDirectoryName(gamefile.Path) : Path.GetFileName(Path.GetDirectoryName(gamefile.Path));
 						dir = this.Path_OutDir.Text + "\\" + dir + "\\";
@@ -51,10 +51,13 @@ namespace Xylia.Match.Windows.Panel
 						var exports = PakData._provider.LoadObjectExports(gamefile.Path);
 						if (exports is null || !exports.Any()) continue;
 
+
 						var export = exports.First();
-						if (export is UTexture2D texture) texture.GetImage().Save(path + ".png");
+						export.GetImage()?.Save(path + ".png");
 					}
 				}
+
+				gameFiles = null;
 
 				PakData._provider.Dispose();
 				PakData = null;
@@ -65,16 +68,6 @@ namespace Xylia.Match.Windows.Panel
 			}).Start();
 		}
 		#endregion
-
-
-
-
-
-
-		private void PakExtract_Load(object sender, EventArgs e)
-		{
-
-		}
 
 		private void ucBtnFillet1_BtnClick(object sender, EventArgs e)
 		{
@@ -87,9 +80,6 @@ namespace Xylia.Match.Windows.Panel
 				Path_OutDir.Text = dialog.SelectedPath;
 		}
 
-		private void Path_OutDir_TextChanged(object sender, EventArgs e)
-		{
-			Xylia.Configure.Ini.WriteValue(this.GetType(), nameof(this.Path_OutDir), this.Path_OutDir.Text);
-		}
+		private void Path_OutDir_TextChanged(object sender, EventArgs e) => Ini.WriteValue(this.GetType(), nameof(this.Path_OutDir), this.Path_OutDir.Text);
 	}
 }

@@ -51,7 +51,7 @@
 			this.Btn_Output.IsRadius = true;
 			this.Btn_Output.IsShowRect = true;
 			this.Btn_Output.IsShowTips = false;
-			this.Btn_Output.Location = new System.Drawing.Point(520, 97);
+			this.Btn_Output.Location = new System.Drawing.Point(493, 97);
 			this.Btn_Output.Margin = new System.Windows.Forms.Padding(0);
 			this.Btn_Output.Name = "Btn_Output";
 			this.Btn_Output.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -74,13 +74,13 @@
 			this.Selector.IsRadius = true;
 			this.Selector.IsShowRect = true;
 			this.Selector.ItemWidth = 30;
-			this.Selector.Location = new System.Drawing.Point(196, 97);
+			this.Selector.Location = new System.Drawing.Point(12, 97);
 			this.Selector.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.Selector.Name = "Selector";
 			this.Selector.RectColor = System.Drawing.Color.RosyBrown;
 			this.Selector.RectWidth = 1;
 			this.Selector.SelectedIndex = -1;
-			this.Selector.Size = new System.Drawing.Size(289, 38);
+			this.Selector.Size = new System.Drawing.Size(345, 38);
 			this.Selector.Source.Add("GameUI_Icon");
 			this.Selector.Source.Add("GameUI_Icon2nd");
 			this.Selector.Source.Add("GameUI_Icon3rd");
@@ -91,6 +91,7 @@
 			this.Selector.Source.Add("GameUI_Icon8th");
 			this.Selector.Source.Add("GameUI_Icon9th");
 			this.Selector.Source.Add("GameUI_TitleImage");
+			this.Selector.Source.Add("GameUI_ImageSet_R");
 			this.Selector.Source.Add("BNSR/Content/Art/UI/V2/Resource");
 			this.Selector.TabIndex = 110;
 			this.Selector.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -147,7 +148,6 @@
 			this.Controls.Add(this.Btn_Output);
 			this.Name = "PakExtract";
 			this.Size = new System.Drawing.Size(725, 390);
-			this.Load += new System.EventHandler(this.PakExtract_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

@@ -31,7 +31,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 		public int StepIdx;
 
-		public override string Text { get => contentPanel1.Text; set => contentPanel1.Text = value; }
+		public override string Text { get => ContentPanel.Text; set => ContentPanel.Text = value; }
 		#endregion
 
 

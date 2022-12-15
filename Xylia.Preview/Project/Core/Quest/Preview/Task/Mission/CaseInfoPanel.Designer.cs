@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaseInfoPanel));
 			this.label1 = new System.Windows.Forms.Label();
-			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.ContentPanel = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -46,17 +46,17 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "◆";
 			// 
-			// contentPanel1
+			// ContentPanel
 			// 
-			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.contentPanel1.BasicLineHeight = 25;
-			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(46, 0);
-			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-			this.contentPanel1.Name = "contentPanel1";
-			this.contentPanel1.TabIndex = 1;
-			this.contentPanel1.Text = "contentPanel1";
+			this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
+			this.ContentPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ContentPanel.ForeColor = System.Drawing.Color.White;
+			this.ContentPanel.Location = new System.Drawing.Point(46, 0);
+			this.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+			this.ContentPanel.Name = "ContentPanel";
+			this.ContentPanel.TabIndex = 1;
+			this.ContentPanel.Text = "内容文本";
+			this.ContentPanel.HeightPadding = 4;
 			// 
 			// pictureBox1
 			// 
@@ -79,9 +79,9 @@
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.contentPanel1);
+			this.Controls.Add(this.ContentPanel);
 			this.Name = "CaseInfoPanel";
-			this.Size = new System.Drawing.Size(149, 30);
+			this.Size = new System.Drawing.Size(108, 28);
 			this.Load += new System.EventHandler(this.CaseInfoPanel_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
@@ -92,7 +92,7 @@
 		#endregion
 
 		private System.Windows.Forms.Label label1;
-		private Controls.ContentPanel contentPanel1;
+		private Controls.ContentPanel ContentPanel;
 		private System.Windows.Forms.PictureBox pictureBox1;
 	}
 }

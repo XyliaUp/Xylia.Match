@@ -40,7 +40,6 @@ namespace Xylia.Preview.Third.Content
 			FrmTips.ShowTipsSuccess("开始执行，请等待结束提示");
 			#endregion
 
-
 			#region 核心方法
 			this.ExcelInfo = new ExcelInfo(SheetName);
 
@@ -49,9 +48,6 @@ namespace Xylia.Preview.Third.Content
 
 			this.ExcelInfo.Save(Save.FileName);
 			#endregion
-
-
-			System.Diagnostics.Debug.WriteLine("[debug] 执行已完成");
 
 			#region 清理资源
 			FrmTips.ShowTipsWarning("执行已完成");

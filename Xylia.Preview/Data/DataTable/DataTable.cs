@@ -305,11 +305,12 @@ namespace Xylia.Preview.Data
 
 			this.TableInfo = TableInfo;
 			this.ListData = DeSerializer.GetList(TableInfo);
-			if (this.ListData is null) throw new Exception($"没有获取到指定数据");
+			this.data = new Lazy<T>[this.ListData?.ObjectCount ?? 0];
 
-			this.data = new Lazy<T>[this.ListData.ObjectCount];
+			if (this.ListData is null) Debug.WriteLine($"== CRASH == 没有获取到指定数据");
 		}
 		#endregion
+
 
 
 
@@ -400,15 +401,19 @@ namespace Xylia.Preview.Data
 			//判断alias对应数组
 			if (this.ht_alias.ContainsKey(Alias)) return (Lazy<T>)this.ht_alias[Alias];
 
+			string TypeName = typeof(T).Name;
 			if (this.LoadFromGame)
 			{
 				if (!this.HasData) return null;
 
 				#region 通过别名表获取对象信息
-				var AliasTable = FileCache.Data.GameData._content.AliasTable.List[typeof(T).Name];
-				if (AliasTable is null) return null;
+				if (!FileCache.Data.GameData._content.AliasTable.List.ContainsKey(TypeName))
+				{
+					Debug.WriteLine($"[{ TypeName }] 别名表获取失败");
+					return null;
+				}
 
-				var AliasInfo = AliasTable[Alias];
+				var AliasInfo = FileCache.Data.GameData._content.AliasTable.List[TypeName][Alias];
 				if (AliasInfo is null) return null;
 				#endregion
 
@@ -423,7 +428,7 @@ namespace Xylia.Preview.Data
 			#endregion
 
 
-			if (this.data.Length != 0) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  alias: {Alias}");
+			if (this.data.Length != 0) Debug.WriteLine($"[{ TypeName }] 读取失败  alias: {Alias}");
 			return null;
 		}
 

@@ -37,7 +37,7 @@ namespace Xylia.Preview.Project.Core.Item
 			// ContentPanel
 			// 
 			this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
-			this.ContentPanel.BasicLineHeight = 20;
+			//this.ContentPanel.BasicLineHeight = 20;
 			this.ContentPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ContentPanel.ForeColor = System.Drawing.Color.White;
 			this.ContentPanel.Location = new System.Drawing.Point(2, 35);

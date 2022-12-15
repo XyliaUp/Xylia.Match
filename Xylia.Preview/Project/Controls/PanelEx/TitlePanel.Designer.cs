@@ -50,8 +50,6 @@
 			this.ForeColor = System.Drawing.Color.Black;
 			this.Name = "TitlePanel";
 			this.Size = new System.Drawing.Size(292, 52);
-			this.Load += new System.EventHandler(this.CustomPanel_Load);
-			this.Resize += new System.EventHandler(this.PanelWithTitle_Resize);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

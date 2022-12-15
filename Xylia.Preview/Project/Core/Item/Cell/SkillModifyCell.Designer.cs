@@ -50,7 +50,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// TooltipText_Txt
 			// 
 			this.TooltipText_Txt.BackColor = System.Drawing.Color.Transparent;
-			this.TooltipText_Txt.BasicLineHeight = 20;
+			//this.TooltipText_Txt.BasicLineHeight = 20;
 			this.TooltipText_Txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipText_Txt.ForeColor = System.Drawing.Color.White;
 			this.TooltipText_Txt.Location = new System.Drawing.Point(0, 33);

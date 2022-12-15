@@ -74,14 +74,14 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 			if (ItemBuyPrice.FactionLevel != 0)
 			{
-				var MainFaction1 = ((MainFaction1)ItemBuyPrice.FactionLevel).ToString().Replace("_", null);
-				var MainFaction2 = ((MainFaction2)ItemBuyPrice.FactionLevel).ToString().Replace("_", null);
+				var FactionLevel = FileCache.Data.FactionLevel.Find(o => o.Level == ItemBuyPrice.FactionLevel);
+				var MainFaction1 = FactionLevel?.GradeName1.GetText();
+				var MainFaction2 = FactionLevel?.GradeName2.GetText();
 
 				TipInfo.Add($"需要势力阶级\n武林盟：{ MainFaction1 }以上\n浑天教：{ MainFaction2 }以上");
 				this.ItemShow.IconCell.ExtraBottomLeft = Resource_BNSR.unuseable_lock;
 			}
 
-			//可以合并显示
 			if (ItemBuyPrice.CheckSoloDuelGrade != 0)
 			{
 				TipInfo.Add("需要个人战：" + ItemBuyPrice.CheckSoloDuelGrade + "以上");
