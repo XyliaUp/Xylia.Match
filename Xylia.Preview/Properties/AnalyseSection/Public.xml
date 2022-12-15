@@ -39,46 +39,46 @@
 
 		<record alias="main-ability" name="" type="Dictionary" >		
 			<case alias="none" name="" default="y" />
-			<case alias="attack-power-equip-min-and-max" name="" />
-			<case alias="defend-power-equip-value" name="" />
-			<case alias="defend-resist-power-equip-value" name="" />
-			<case alias="attack-hit-base-percent" name="" />
-			<case alias="attack-hit-value" name="" />
-			<case alias="attack-critical-base-percent" name="" />
-			<case alias="attack-critical-value" name="" />
-			<case alias="defend-critical-base-percent" name="" />
-			<case alias="defend-critical-value" name="" />
-			<case alias="defend-dodge-base-percent" name="" />
-			<case alias="defend-dodge-value" name="" />
-			<case alias="defend-parry-base-percent" name="" />
-			<case alias="defend-parry-value" name="" />
-			<case alias="attack-stiff-duration-base-percent" name="" />
-			<case alias="attack-stiff-duration-value" name="" />
-			<case alias="defend-stiff-duration-base-percent" name="" />
-			<case alias="defend-stiff-duration-value" name="" />
-			<case alias="cast-duration-base-percent" name="" />
-			<case alias="cast-duration-value" name="" />
-			<case alias="defend-physical-damage-reduce-percent" name="" />
-			<case alias="defend-force-damage-reduce-percent" name="" />
-			<case alias="attack-damage-modify-percent" name="" />
-			<case alias="attack-damage-modify-diff" name="" />
-			<case alias="defend-damage-modify-percent" name="" />
-			<case alias="defend-damage-modify-diff" name="" />
-			<case alias="max-hp" name="" />
-			<case alias="hp-regen" name="" />
-			<case alias="hp-regen-combat" name="" />
-			<case alias="attack-pierce-value" name="" />
-			<case alias="attack-concentrate-value" name="" />
-			<case alias="defend-perfect-parry-reduce-percent" name="" />
-			<case alias="defend-counter-reduce-percent" name="" />
-			<case alias="attack-critical-damage-percent" name="" />
-			<case alias="pve-boss-level-npc-attack-power-equip-min-and-max" name="" />
-			<case alias="pve-boss-level-npc-defend-power-equip-value" name="" />
-			<case alias="pvp-attack-power-equip-min-and-max" name="" />
-			<case alias="pvp-defend-power-equip-value" name="" />
-			<case alias="attack-critical-damage-value" name="" />
-			<case alias="max-guard-gauge" name="" />
-			<case alias="attack-attribute-value" name="" />
+			<case alias="attack-power-equip-min-and-max" name="攻击" />
+			<case alias="defend-power-equip-value" name="防御" />
+			<case alias="defend-resist-power-equip-value" name="抗性" />
+			<case alias="attack-hit-base-percent" name="命中率" />
+			<case alias="attack-hit-value" name="命中" />
+			<case alias="attack-critical-base-percent" name="暴击率" />
+			<case alias="attack-critical-value" name="暴击" />
+			<case alias="defend-critical-base-percent" name="暴击防御率" />
+			<case alias="defend-critical-value" name="暴击防御" />
+			<case alias="defend-dodge-base-percent" name="闪避率" />
+			<case alias="defend-dodge-value" name="闪避" />
+			<case alias="defend-parry-base-percent" name="格挡率" />
+			<case alias="defend-parry-value" name="格挡" />
+			<case alias="attack-stiff-duration-base-percent" name="状态异常时间增加" />
+			<case alias="attack-stiff-duration-value" name="熟练" />
+			<case alias="defend-stiff-duration-base-percent" name="状态异常时间减少" />
+			<case alias="defend-stiff-duration-value" name="韧性" />
+			<case alias="cast-duration-base-percent" name="集中率" />
+			<case alias="cast-duration-value" name="集中" />
+			<case alias="defend-physical-damage-reduce-percent" name="物理伤害减免率" />
+			<case alias="defend-force-damage-reduce-percent" name="气功伤害减免率" />
+			<case alias="attack-damage-modify-percent" name="额外伤害率" />
+			<case alias="attack-damage-modify-diff" name="额外伤害" />
+			<case alias="defend-damage-modify-percent" name="额外伤害减免率" />
+			<case alias="defend-damage-modify-diff" name="额外伤害减" />
+			<case alias="max-hp" name="生命" />
+			<case alias="hp-regen" name="恢复" />
+			<case alias="hp-regen-combat" name="战斗中恢复" />
+			<case alias="attack-pierce-value" name="穿刺" />
+			<case alias="attack-concentrate-value" name="集中" />
+			<case alias="defend-perfect-parry-reduce-percent" name="完全格挡穿刺" />
+			<case alias="defend-counter-reduce-percent" name="反击穿刺" />
+			<case alias="attack-critical-damage-percent" name="暴击伤害率" />
+			<case alias="pve-boss-level-npc-attack-power-equip-min-and-max" name="降魔攻击力" />
+			<case alias="pve-boss-level-npc-defend-power-equip-value" name="降魔防御力" />
+			<case alias="pvp-attack-power-equip-min-and-max" name="PVP攻击力" />
+			<case alias="pvp-defend-power-equip-value" name="PVP防御力" />
+			<case alias="attack-critical-damage-value" name="暴击伤害" />
+			<case alias="max-guard-gauge" name="刚体" />
+			<case alias="attack-attribute-value" name="功力" />
 			<case alias="r-attack-stiff-duration-equip-value" name="" />
 			<case alias="r-defend-stiff-duration-equip-value" name="" />
 			<case alias="r-aoe-defend-power-value-equip" name="" />
@@ -90,12 +90,15 @@
 			<case alias="r-defend-abnormal-dodge-equip-value" name="" />
 			<case alias="r-support-power-equip-value" name="" />
 			<case alias="r-hypermove-power-equip-value" name="" />
-			<case alias="attack-attribute-base-percent" name="" />
-			<case alias="defend-difficulty-type-damage-reduce-percent" name="" />
-
-            54: ???
-			55: 状态异常伤害
-			56: 状态异常防御力
+			<!-- =========================================================== -->
+			<case alias="attack-attribute-base-percent" name="功力伤害率" />
+			<case alias="defend-difficulty-type-damage-reduce-percent" name="狂暴伤害减免" />
+			<case alias="abnormal-attack-power-value" name="状态异常伤害" />
+			<case alias="abnormal-attack-power-value-equip" name="状态异常伤害" />
+			<case alias="abnormal-defend-power-value" name="状态异常防御力" />
+			<case alias="abnormal-attack-power-base-percent" name="状态异常伤害率" />
+			<case alias="abnormal-defend-power-base-percent" name="状态异常防御率" />
+			<case alias="attack-pierce-base-percent" name="穿刺率" />
 		</record>	
 		
 

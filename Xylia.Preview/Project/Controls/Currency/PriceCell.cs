@@ -27,11 +27,6 @@ namespace Xylia.Preview.Project.Controls
 		}
 		#endregion
 
-		#region 隐藏不需要的属性
-		[Browsable(false)]
-		public new bool Visible => base.Visible = this.CurrencyCount != 0 || DesignMode;
-		#endregion
-
 
 
 		#region 字段

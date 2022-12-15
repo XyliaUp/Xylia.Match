@@ -31,27 +31,25 @@ namespace Xylia.Preview
         private void InitializeComponent()
         {
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.optionList1 = new Xylia.Preview.Project.Core.ItemGrowth.Game_Intension.Preview.OptionList();
 			this.SuspendLayout();
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(12, 92);
+			this.textBox1.Location = new System.Drawing.Point(12, 12);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(270, 23);
 			this.textBox1.TabIndex = 0;
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
-			// contentPanel1
+			// optionList1
 			// 
-			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.contentPanel1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(352, 279);
-			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-			this.contentPanel1.Name = "contentPanel1";
-			this.contentPanel1.TabIndex = 1;
-			this.contentPanel1.Text = "<font name=\"00008130.ItemGrowth_Awaken_28\">传授</font>";
+			this.optionList1.BackColor = System.Drawing.Color.Transparent;
+			this.optionList1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.optionList1.Location = new System.Drawing.Point(406, 47);
+			this.optionList1.Name = "optionList1";
+			this.optionList1.Size = new System.Drawing.Size(240, 182);
+			this.optionList1.TabIndex = 1;
 			// 
 			// DebugFrm
 			// 
@@ -61,9 +59,9 @@ namespace Xylia.Preview
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(813, 442);
+			this.ClientSize = new System.Drawing.Size(716, 357);
+			this.Controls.Add(this.optionList1);
 			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.contentPanel1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -82,7 +80,8 @@ namespace Xylia.Preview
 		#endregion
 
 		private System.Windows.Forms.TextBox textBox1;
-		private ContentPanel contentPanel1;
+		private Project.Core.ItemGrowth.Game_Intension.Preview.OptionList optionList1;
+		private System.Windows.Forms.ListBox listBox1;
 	}
 }
 

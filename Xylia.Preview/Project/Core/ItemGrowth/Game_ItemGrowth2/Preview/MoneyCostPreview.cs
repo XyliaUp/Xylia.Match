@@ -15,11 +15,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 		}
 
 		#region 字段
-		/// <summary>
-		/// 折扣率
-		/// </summary>
-		public float DiscountRate = 0.75F;
-
 		public int MoneyCost
 		{
 			get => this.priceCell1.CurrencyCount;
@@ -32,7 +27,30 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 				MoneyCostPreview_SizeChanged(null, null);
 			}
 		}
+
+
+
+		/// <summary>
+		/// 折扣率
+		/// </summary>
+		public float DiscountRate = 0.75F;
+
+
+		private bool _useDiscount = true;
+
+		public bool UseDiscount
+		{
+			get => this._useDiscount;
+			set
+			{
+				this._useDiscount = value;
+
+				this.label1.Visible = this.priceCell2.Visible = value;
+				this.priceCell1.FontStyle = value ? FontStyle.Strikeout : FontStyle.Regular;
+			}
+		}
 		#endregion
+
 
 		private void MoneyCostPreview_SizeChanged(object sender, System.EventArgs e)
 		{

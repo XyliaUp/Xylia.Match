@@ -126,15 +126,7 @@ namespace Xylia.Preview.Data.Record
 
 		public static void PreviewShow(this string rule, Action<string, bool> Act = null, IWin32Window window = null)
 		{
-			if (rule.IsNull()) return;
-
-			var thread = new Thread(() =>
-			{
-				var ResultFrm = GetPreview(rule, Act);
-				if (ResultFrm is null) Console.WriteLine($"窗体无效 ({ rule })");
-				else ResultFrm.PreviewShow(window);
-			});
-
+			var thread = new Thread(() => GetPreview(rule, Act)?.PreviewShow(window));
 			thread.SetApartmentState(ApartmentState.STA);
 			thread.Start();
 		}

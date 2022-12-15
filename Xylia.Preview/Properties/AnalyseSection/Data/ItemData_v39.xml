@@ -788,8 +788,6 @@
 		</record>
 
 
-
-
 		<record alias="pccafe-ncsoft-korea-only" name="" type="Bool" />
 		<record alias="growth-id" type="Int32" name="" />
 		<record alias="growth-level-max" type="Byte" name="" default="1" server="must" />

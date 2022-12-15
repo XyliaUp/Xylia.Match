@@ -33,7 +33,6 @@ namespace Xylia.Preview.Project.Controls
 		}
 		#endregion
 
-
 		#region 重写字段
 		[DefaultValue(true)]
 		[Browsable(true)]
@@ -44,24 +43,9 @@ namespace Xylia.Preview.Project.Controls
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
 		public new Size Size { get => base.Size; set => base.Size = value; }
 
-
-		/// <summary>
-		/// 图标
-		/// </summary>
-		public Bitmap Icon;
-
-
-		/// <summary>
-		/// 符号标记
-		/// </summary>
-		public string Signal;
-
-
-
 		[Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		[EditorBrowsable(EditorBrowsableState.Always)]
-		[Category("Set"), Description("内容")]
 		[Editor("System.ComponentModel.Design.MultilineStringEditor", typeof(UITypeEditor))]
 		public override string Text
 		{
@@ -73,18 +57,6 @@ namespace Xylia.Preview.Project.Controls
 			}
 		}
 
-		[Category("Set"), Description("基础前景色")]
-		public override Color ForeColor
-		{
-			get => base.ForeColor;
-			set
-			{
-				base.ForeColor = value;
-				this.Refresh();
-			}
-		}
-
-
 		/// <summary>
 		/// 高度填充
 		/// </summary>
@@ -94,6 +66,17 @@ namespace Xylia.Preview.Project.Controls
 		public int HeightPadding = 0;
 		#endregion
 
+		#region Signal
+		/// <summary>
+		/// 图标
+		/// </summary>
+		public Bitmap Icon;
+
+		/// <summary>
+		/// 符号标记
+		/// </summary>
+		public string Signal;
+		#endregion
 
 
 		#region 字段

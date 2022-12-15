@@ -22,16 +22,23 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 
 			this.ItemTransformRecipes = ItemTransformRecipe.QueryRecipe(ItemInfo);
 			this.ItemImprove = FileCache.Data.ItemImprove[ItemInfo.ImproveId, ItemInfo.ImproveLevel];
-			this.ItemSpirits = ItemSpirit.Query(MyWeapon.EquipType);
+			this.ItemSpirit = ItemSpirit.Query(MyWeapon);
 		}
 
 		private void EquipmentGuideScene_Load(object sender, System.EventArgs e)
 		{
 			this.ShowItemGrowth2();
-			this.ShowItemImprove();
+			this.ShowIntension();
 			this.ShowItemSpirit();
 		}
 		#endregion
+
+
+		#region 页面控制
+
+		#endregion
+
+
 
 
 		public bool Valid => this.HasItemTransformRecipe || this.HasItemImprove || this.HasItemSpirit;
@@ -40,51 +47,69 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Scene
 		#region ItemTransformRecipe
 		IEnumerable<ItemTransformRecipe> ItemTransformRecipes;
 
-	    bool HasItemTransformRecipe => ItemTransformRecipes != null && ItemTransformRecipes.Any();
+		bool HasItemTransformRecipe => ItemTransformRecipes != null && ItemTransformRecipes.Any();
 
 		private void ShowItemGrowth2()
 		{
-			if (!HasItemTransformRecipe) return;
+			if (!HasItemTransformRecipe)
+			{
+				this.TabControl.TabPages.Remove(this.Page_ItemGrowth2);
+				return;
+			}
 
-			ItemGrowth2Page Page = new() { Dock = DockStyle.Fill };
-			this.Controls.Add(Page);
+			ItemGrowth2Page Page = new();
+			this.Page_ItemGrowth2.Controls.Add(Page);
 
 			Page.MyWeapon = ItemInfo;
 			Page.SetData(ItemTransformRecipes);
 		}
 		#endregion
 
-		#region ItemImprove
+		#region Intension
 		ItemImprove ItemImprove;
 
-		bool HasItemImprove => this.ItemImprove != null;
+		bool HasItemImprove => ItemInfo.ImproveId != 0;
 
-		private void ShowItemImprove()
+		private void ShowIntension()
 		{
-			if (!HasItemImprove) return;
+			if (this.ItemImprove == null) this.TabControl.TabPages.Remove(this.Page_Intension);
+			else
+			{
+				IntensionPanel Page = new();
+				Page.MyWeapon = ItemInfo;
+				Page.SetData(this.ItemImprove, ItemInfo.ImprovePrevItem, ItemInfo.ImproveNextItem);
+				this.Page_Intension.Controls.Add(Page);
+			}
 
-			ItemImprovePage Page = new() { Dock = DockStyle.Fill };
-			this.Controls.Add(Page);
 
-			Page.MyWeapon = ItemInfo;
-			Page.SetData(this.ItemImprove, ItemInfo.ImprovePrevItem, ItemInfo.ImproveNextItem);
+			if (ItemInfo.ImproveId == 0) this.TabControl.TabPages.Remove(this.Page_IntensionResetConfirm);
+			else
+			{
+				IntensionResetConfirmPanel Page2 = new();
+				Page2.SetData(ItemInfo.ImproveId, ItemInfo.ImproveLevel);
+				this.Page_IntensionResetConfirm.Controls.Add(Page2);
+			}
 		}
 		#endregion
 
 		#region ItemSpirit
-		IEnumerable<ItemSpirit> ItemSpirits;
+		ItemSpirit ItemSpirit;
 
-		bool HasItemSpirit => ItemSpirits != null && ItemSpirits.Any();
+		bool HasItemSpirit => ItemSpirit != null;
 
 		private void ShowItemSpirit()
 		{
-			if (!HasItemSpirit) return;
+			if (!HasItemSpirit)
+			{
+				this.TabControl.TabPages.Remove(this.Page_ItemSpirit);
+				return;
+			}
 
-			ItemSpiritPage Page = new() { Dock = DockStyle.Fill };
-			this.Controls.Add(Page);
+			ItemSpiritPage Page = new();
+			this.Page_ItemSpirit.Controls.Add(Page);
 
 			Page.MyWeapon = ItemInfo;
-			Page.SetData(ItemSpirits);
+			Page.SetData(ItemSpirit);
 		}
 		#endregion
 	}

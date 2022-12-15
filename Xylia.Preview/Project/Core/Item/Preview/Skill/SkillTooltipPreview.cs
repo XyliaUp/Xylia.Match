@@ -81,7 +81,7 @@ namespace Xylia.Preview.Project.Core.Item
 			string Txt = null;
 
 			var SkillModifyInfoGroup = FileCache.Data.SkillModifyInfoGroup[ItemCombat.SkillModifyInfoGroup];
-			if (SkillModifyInfoGroup != null) Txt = SkillModifyInfoGroup.CreateInfo();
+			if (SkillModifyInfoGroup != null) Txt = SkillModifyInfoGroup.ToString();
 
 			var ItemSkills = ItemCombat.ItemSkills;
 			if (ItemSkills != null)

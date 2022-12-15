@@ -1,7 +1,7 @@
 ﻿
 namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {
-	partial class ItemImprovePage
+	partial class IntensionPanel
 	{
 		/// <summary> 
 		/// 必需的设计器变量。
@@ -29,19 +29,17 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemImprovePage));
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// pictureBox1
+			// panelContent1
 			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.GrowthState.ForeColor = System.Drawing.Color.Red;
+			this.GrowthState.Text = "<font name=\"00008130.ItemGrowth_Transform_28\">强化</font>";
 			// 
 			// ItemImprovePage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.Name = "ItemImprovePage";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

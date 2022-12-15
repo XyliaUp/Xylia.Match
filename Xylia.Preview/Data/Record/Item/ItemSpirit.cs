@@ -72,6 +72,8 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 方法
+		public static ItemSpirit Query(Item ItemData) => FileCache.Data.ItemSpirit.Find(o => o.MainIngredient == ItemData.Alias);
+
 		public static IEnumerable<ItemSpirit> Query(EquipType EquipType)
 		{
 			if (EquipType == EquipType.None) return null;

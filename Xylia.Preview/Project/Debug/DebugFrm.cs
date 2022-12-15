@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
+using NPOI.SS.Formula.Functions;
+
 using Xylia.Preview.Project.Core.Skill;
 
 namespace Xylia.Preview
@@ -11,6 +13,10 @@ namespace Xylia.Preview
 		public DebugFrm()
 		{
 			InitializeComponent();
+
+			optionList1.Add("1234");
+			optionList1.Add("1234");
+			optionList1.RefreshList();
 		}
 
 		private void DebugFrm_Load(object sender, EventArgs e)
@@ -19,6 +25,9 @@ namespace Xylia.Preview
 
 			Debug.WriteLine(SkillPreview.GetDamageInfo(16000));
 			//Debug.WriteLine(FileCache.Data.Effect["Constellation_Effect_StarSong"].Attributes);
+
+
+			System.Diagnostics.Debug.WriteLine(FileCache.Data.Skill3[101230, 1]?.NameText());
 
 
 

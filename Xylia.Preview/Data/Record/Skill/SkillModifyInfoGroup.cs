@@ -30,48 +30,23 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 
-
-
 		#region 方法
 		public Job SpecificJob;
 
-		/// <summary>
-		/// 获得职业派系描述
-		/// </summary>
-		public string StyleName
+		public override string ToString()
 		{
-			get
-			{
-				return null;
-
-				//不显示Base派系（其实我也不是很清楚Base、Advanced派系有什么区别）
-				if ((int)this.JobStyle > 4)
-				{
-					if (this.SpecificJob != 0) return this.SpecificJob.GetStyleName(this.JobStyle);
-					else if (true) this.JobStyle.ToString();
-				}
-
-				return null;
-			}
-		}
-
-
-		public string CreateInfo()
-		{
-			#region 采集信息
-			var TextList = new List<string>
+			var SkillModifyInfos = new List<string>
 			{
 				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo1]?.ToString(),
 				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo2]?.ToString(),
 				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo3]?.ToString(),
-				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo4]?.ToString(),
-			};
-			#endregion
+				FileCache.Data.SkillModifyInfo[this.SkillModifyInfo4]?.ToString()
 
-			var tempList = TextList.Where(a => !string.IsNullOrWhiteSpace(a));
+			}.Where(a => !string.IsNullOrWhiteSpace(a));
 
-			if (!tempList.Any()) return null;
-			return tempList.Aggregate((sum, now) => sum + "<br/>" + now);
+
+			if (!SkillModifyInfos.Any()) return null;
+			return JobData.GetStyleName(this.SpecificJob, this.JobStyle) + SkillModifyInfos.Aggregate((sum, now) => sum + "<br/>" + now);
 		}
 		#endregion
 	}

@@ -127,7 +127,7 @@ namespace Xylia.Preview.Project.Core.Item
 					{
 						//当前派系对应的技能变更信息
 						var skillModifyInfoGroup = SkillModifyInfoGroup[(byte)(1 + (byte)e.JobStyle)];
-						if (skillModifyInfoGroup != null) SetItemEffect.Text = OriginalText.JudgeLineFeed() + skillModifyInfoGroup.CreateInfo();
+						if (skillModifyInfoGroup != null) SetItemEffect.Text = OriginalText.JudgeLineFeed() + skillModifyInfoGroup.ToString();
 					});
 				}
 				#endregion

@@ -40,13 +40,14 @@
 			// pictureBox3
 			// 
 			this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-			this.pictureBox3.Location = new System.Drawing.Point(64, 10);
+			this.pictureBox3.Location = new System.Drawing.Point(65, 11);
 			this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
 			this.pictureBox3.Name = "pictureBox3";
 			this.pictureBox3.Size = new System.Drawing.Size(33, 30);
 			this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pictureBox3.TabIndex = 2;
 			this.pictureBox3.TabStop = false;
+			//this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
 			// 
 			// itemIconCell2
 			// 
@@ -58,13 +59,15 @@
 			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell2.FrameImage = null;
 			this.itemIconCell2.FrameType = true;
-			this.itemIconCell2.Image = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell2.ItemIcon")));
+			this.itemIconCell2.Image = ((System.Drawing.Image)(resources.GetObject("itemIconCell2.Image")));
 			this.itemIconCell2.Location = new System.Drawing.Point(112, 0);
 			this.itemIconCell2.Margin = new System.Windows.Forms.Padding(4);
 			this.itemIconCell2.Name = "itemIconCell2";
 			this.itemIconCell2.Scale = 52;
+			this.itemIconCell2.ShowFrameImage = true;
 			this.itemIconCell2.ShowStackCount = true;
 			this.itemIconCell2.ShowStackCountOnlyOne = true;
+			this.itemIconCell2.Size = new System.Drawing.Size(52, 52);
 			this.itemIconCell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.itemIconCell2.StackCount = 1;
 			this.itemIconCell2.TabIndex = 7;
@@ -80,13 +83,15 @@
 			this.itemIconCell1.ForeColor = System.Drawing.Color.Black;
 			this.itemIconCell1.FrameImage = null;
 			this.itemIconCell1.FrameType = true;
-			this.itemIconCell1.Image = ((System.Drawing.Bitmap)(resources.GetObject("itemIconCell1.ItemIcon")));
+			this.itemIconCell1.Image = ((System.Drawing.Image)(resources.GetObject("itemIconCell1.Image")));
 			this.itemIconCell1.Location = new System.Drawing.Point(0, 0);
 			this.itemIconCell1.Margin = new System.Windows.Forms.Padding(4);
 			this.itemIconCell1.Name = "itemIconCell1";
 			this.itemIconCell1.Scale = 52;
+			this.itemIconCell1.ShowFrameImage = true;
 			this.itemIconCell1.ShowStackCount = true;
 			this.itemIconCell1.ShowStackCountOnlyOne = true;
+			this.itemIconCell1.Size = new System.Drawing.Size(52, 52);
 			this.itemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.itemIconCell1.StackCount = 1;
 			this.itemIconCell1.TabIndex = 6;
@@ -105,7 +110,6 @@
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ProcessComparisonCell";
 			this.Size = new System.Drawing.Size(168, 56);
-			//this.Load += new System.EventHandler(this.ProcessComparisonCell_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).EndInit();

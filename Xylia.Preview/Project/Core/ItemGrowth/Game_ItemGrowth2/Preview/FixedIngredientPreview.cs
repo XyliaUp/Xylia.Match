@@ -45,9 +45,12 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.DataLoaded?.Invoke(this, null);
 		}
 
+		#endregion
 
 
-		public void LoadData(ItemTransformRecipe record)
+
+		#region SetData
+		public void SetData(ItemTransformRecipe record)
 		{
 			this.Controls.Remove<ItemIconCell>();
 
@@ -67,7 +70,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.HandleSize(LocX);
 		}
 
-		public void LoadData(ItemImprove record, byte Index)
+		public void SetData(ItemImprove record, byte Index)
 		{
 			this.Controls.Remove<ItemIconCell>();
 
@@ -87,7 +90,27 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.HandleSize(LocX);
 		}
 
-		public void LoadData(ItemSpirit record)
+		public void SetData(ItemImproveOptionList record, byte Index)
+		{
+			this.Controls.Remove<ItemIconCell>();
+
+			#region 加载控件
+			int LocX = 0;
+			for (int i = 1; i <= 6; i++)
+			{
+				var DrawCostSubItem = record.Attributes[$"draw-cost-sub-item-{Index}-{i}"].GetItemInfo();
+				if (DrawCostSubItem is null) continue;
+
+				var DrawCostSubItemCount = record.Attributes[$"draw-cost-sub-item-count-{Index}-{i}"].ConvertToShort();
+
+				CreateNew(DrawCostSubItem, DrawCostSubItemCount, ref LocX);
+			}
+			#endregion
+
+			this.HandleSize(LocX);
+		}
+
+		public void SetData(ItemSpirit record)
 		{
 			this.Controls.Remove<ItemIconCell>();
 

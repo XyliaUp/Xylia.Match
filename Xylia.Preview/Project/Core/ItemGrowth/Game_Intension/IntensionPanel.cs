@@ -6,10 +6,9 @@ using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
 
 namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 {
-	public partial class ItemImprovePage : ItemGrowth2Page
+	public partial class IntensionPanel : ItemGrowth2Page
 	{
-		#region 方法
-		public ItemImprovePage() => InitializeComponent();
+		public IntensionPanel() => InitializeComponent();
 
 		public void SetData(ItemImprove ItemImprove, string ImprovePrevItem, string ImproveNextItem)
 		{
@@ -20,16 +19,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			if (ItemImprove.SuccessOptionListId != 0)
 			{
 				var Optionlist = FileCache.Data.ItemImproveOptionList[ItemImprove.SuccessOptionListId];
-				System.Diagnostics.Debug.WriteLine($"{ItemImprove.Level} 强化成功时追加强化效果 ↓↓↓   重置钱币: {Optionlist.DrawCostMoney1} {Optionlist.DrawCostMainItem1}");
-
-				for (int idx = 1; idx <= 100; idx++)
-				{
-					var Option = FileCache.Data.ItemImproveOption[Optionlist.Attributes["option-" + idx]];
-					if (Option is null) break;
-
-					var option = FileCache.Data.ItemImproveOption[Option.ID, ItemImprove.Level + 1];
-					System.Diagnostics.Debug.WriteLine(option.ToString());
-				}
+				System.Diagnostics.Debug.WriteLine($"{ItemImprove.Level} 强化成功时追加强化效果");
 			}
 		}
 
@@ -40,10 +30,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		protected override void SubIngredientPreview_RecipeChanged(RecipeChangedEventArgs e)
 		{
-			//更新固定祭品信息
-			this.FixedIngredientPreview.LoadData(e.ItemImprove, e.Index);
-
-			//更新手续费信息
+			this.FixedIngredientPreview.SetData(e.ItemImprove, e.Index);
 			this.MoneyCostPreview.MoneyCost = e.ItemImprove.Attributes[$"cost-money-{e.Index}"].ToInt();
 
 			//获取特殊说明
@@ -56,6 +43,5 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 				else this.WarningPreview.Text = $"有一定概率强化失败。失败时，强化阶段<font name=\"00008130.UI.Vital_red\">下降</font>{FailDiff}阶段。";
 			}
 		}
-		#endregion
 	}
 }

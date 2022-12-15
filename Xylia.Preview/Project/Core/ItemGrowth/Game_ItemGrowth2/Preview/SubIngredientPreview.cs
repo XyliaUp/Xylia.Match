@@ -68,13 +68,15 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			this.Width = LocX;
 			this.Height = 90;
 
-			this.DataLoaded?.Invoke(this,null);
+			this.DataLoaded?.Invoke(this,new());
 
 			//触发第一个选项 
 			this.Controls.OfType<FeedItemIconCell>().FirstOrDefault()?.CallEvent("OnClick");
 		}
+		#endregion
 
 
+		#region SetData
 		public void SetData(IEnumerable<ItemTransformRecipe> ResultRecipes)
 		{
 			//清理资源
@@ -108,7 +110,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 				#endregion
 
 				//绑定事件
-				this.CreateNew(SubIngredient1, Image, SubIngredientStackCount1, ref LocX).Click += new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(Recipe)));
+				this.CreateNew(SubIngredient1, Image, SubIngredientStackCount1, ref LocX).Click += 
+					new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(Recipe)));
 			}
 			#endregion
 
@@ -132,21 +135,34 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 
 				//绑定事件
 				byte CurIdx = idx;
-				this.CreateNew(CostMainItem, CostMainItem?.Icon, CostMainItemCount, ref LocX).Click += new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImprove, CurIdx)));
+				this.CreateNew(CostMainItem, CostMainItem?.Icon, CostMainItemCount, ref LocX).Click += 
+					new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImprove, CurIdx)));
 			}
 			#endregion
 
 			this.HandleSize(LocX);
 		}
 
-		public void SetData(ItemSpirit ItemSpirit)
+		public void SetData(ItemImproveOptionList ItemImproveOptionList)
 		{
 			//清理资源
 			this.Controls.Remove<FeedItemIconCell>();
 
+			#region 加载控件
 			int LocX = 0;
-			var MainIngredient = ItemSpirit.Attributes["main-ingredient"].GetItemInfo();
-			this.CreateNew(MainIngredient, MainIngredient?.Icon, 1, ref LocX).Click += new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemSpirit)));
+			for (byte idx = 1; idx <= 4; idx++)
+			{
+				var DrawCostMainItem = ItemImproveOptionList.Attributes["draw-cost-main-item-" + idx].GetItemInfo();
+				if (DrawCostMainItem is null) break;
+
+				var DrawCostMainItemCount = ItemImproveOptionList.Attributes["draw-cost-main-item-count-" + idx].ConvertToShort();
+
+				//绑定事件
+				byte CurIdx = idx;
+				this.CreateNew(DrawCostMainItem, DrawCostMainItem?.Icon, DrawCostMainItemCount, ref LocX).Click += 
+					new((s, e) => this.RecipeChanged?.Invoke(new RecipeChangedEventArgs(ItemImproveOptionList, CurIdx)));
+			}
+			#endregion
 
 			this.HandleSize(LocX);
 		}
@@ -171,8 +187,11 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 		}
 
 
-
-		public ItemSpirit ItemSpirit;
-		public RecipeChangedEventArgs(ItemSpirit ItemSpirit) => this.ItemSpirit = ItemSpirit;
+		public ItemImproveOptionList ItemImproveOptionList { get; }
+		public RecipeChangedEventArgs(ItemImproveOptionList ItemImproveOptionList, byte Index)
+		{
+			this.ItemImproveOptionList = ItemImproveOptionList;
+			this.Index = Index;
+		}
 	}
 }

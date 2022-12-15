@@ -226,10 +226,12 @@ namespace Xylia.Preview.Data.Record
 		}
 		#endregion
 
+
+
 		#region 接口方法
 		public string NameText() => this.ItemName;
 
-		public Bitmap MainIcon() => this.Icon;
+		public Bitmap MainIcon() => this.IconExtra;
 		#endregion
 	}
 }

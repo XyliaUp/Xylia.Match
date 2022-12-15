@@ -82,10 +82,11 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 				foreach (var o in ItemCtls)
 				{
 					MaxWidth = Math.Max(MaxWidth, TempWidth += o.Width + 4);
+
 					this.Controls.Add(o);
 				}
 
-				this.Height = LoY + this.Scale;
+				this.Height = LoY + this.Scale + 5;
 			}
 			
 			this.Width = MaxWidth += 2;

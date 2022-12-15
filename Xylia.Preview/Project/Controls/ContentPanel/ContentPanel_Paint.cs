@@ -22,6 +22,8 @@ namespace Xylia.Preview.Project.Controls
 		/// </summary>
 		int MaxWidth = 0;
 
+		public bool UseMaxWidth = false;
+
 		public void GoPaint(Graphics g)
 		{
 			//初始化
@@ -51,7 +53,7 @@ namespace Xylia.Preview.Project.Controls
 		/// <summary>
 		/// 计算最大宽度
 		/// </summary>
-		public static int GetMaxWidth(Control o)
+		private int GetMaxWidth(Control o)
 		{
 			int MaxWidth = 0;
 
@@ -71,7 +73,11 @@ namespace Xylia.Preview.Project.Controls
 				if (o.Parent is not UserControl c || c.AutoSizeMode != AutoSizeMode.GrowAndShrink)
 				{
 					var e = o.Parent;
-					MaxWidth = e.Width - o.Left - (o.Parent is Form ? 20 : 5);
+
+					MaxWidth = e.Width - o.Left - 5;
+					if (e is Form) MaxWidth -= 15;
+
+					//if (UseMaxWidth) MaxWidth -= 18;
 				}
 			}
 
@@ -93,7 +99,7 @@ namespace Xylia.Preview.Project.Controls
 		private float Execute(ExecuteParam param, string InfoHtml, ref float LocX, ref float LocY, bool Status = false)
 		{
 			int CurLineHeight = param.Font.Height;
-			float CurExpextWidth = 0;
+			float CurExpextWidth = UseMaxWidth ? this.MaxWidth : 0;
 			void TryExtendWidth(float ExpextWidth) => CurExpextWidth = Math.Max(CurExpextWidth, ExpextWidth);
 
 			#region 初始化
@@ -451,7 +457,7 @@ namespace Xylia.Preview.Project.Controls
 		/// <returns></returns>
 		private static ExecuteParam GetFont(ExecuteParam LastParam, string FontName, bool DesignMode = false)
 		{
-			if (DesignMode || FontName is null) return LastParam;
+			if (/*DesignMode || */FontName is null) return LastParam;
 
 			var Param = (ExecuteParam)LastParam.Clone();
 

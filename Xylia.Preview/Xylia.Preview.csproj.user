@@ -20,6 +20,9 @@
     <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListRewardPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Game_Intension\Preview\OptionList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Project\Core\ItemGrowth\Game_ItemGrowth2\ItemGrowth2Page.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -38,7 +41,7 @@
     <Compile Update="Project\Core\Store\Base\Scene\Searcher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Project\Core\Store\RandomStore\Cell\ItemDisplayListCell.cs">
+    <Compile Update="Project\Core\Store\RandomStore\Preview\ItemDisplayListCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Skill\SkillPreview\SkillTooltipPanel.cs">
@@ -233,7 +236,7 @@
     <Compile Update="Project\Core\Quest\Preview\Task\TaskInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Store\RandomStore\Cell\DrawRewardCell.cs">
+    <Compile Update="Project\Core\Store\RandomStore\Preview\DrawRewardCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Store\RandomStore\Preview\DrawRewardPreview.cs">

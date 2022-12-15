@@ -88,9 +88,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\net_winform_custom_control\HZH_Controls\HZH_Controls\bin\Release\HZH_Controls.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\..\..\..\Publish\Release\MetroFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\UE4\FModel_xylia\FModel\bin\Release\net5.0-windows\win-x64\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -395,13 +392,16 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Update="Project\Core\ItemGrowth\ItemSpirit\ItemSpiritPage.cs">
+    <Compile Update="Project\Core\ItemGrowth\Game_Intension\IntensionResetConfirmPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\ItemGrowth\Game_ItemGrowth2\ItemSpiritPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\ItemGrowth\Scene\EquipmentGuidePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\ItemGrowth\Game_Intension\ItemImprovePage.cs">
+    <Compile Update="Project\Core\ItemGrowth\Game_Intension\IntensionPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Skill\SkillTrainCategoryPreview\SkillTrainCategoryPreview.cs">
@@ -439,13 +439,16 @@
   </ItemGroup>
   
   <ItemGroup>
-    <EmbeddedResource Update="Project\Core\ItemGrowth\ItemSpirit\ItemSpiritPage.resx">
+    <EmbeddedResource Update="Project\Core\ItemGrowth\Game_Intension\IntensionResetConfirmPanel.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Project\Core\ItemGrowth\Game_ItemGrowth2\ItemSpiritPage.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Project\Core\ItemGrowth\Scene\EquipmentGuidePage.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Project\Core\ItemGrowth\Game_Intension\ItemImprovePage.resx">
+    <EmbeddedResource Update="Project\Core\ItemGrowth\Game_Intension\IntensionPanel.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">

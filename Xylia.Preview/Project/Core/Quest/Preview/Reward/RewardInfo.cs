@@ -319,7 +319,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			this.Refresh();
 		}
 
-
 		/// <summary>
 		/// 获取物品图标信息
 		/// </summary>
@@ -329,19 +328,16 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		private static ItemIconCell GetItem(string AliasInfo, int StackCount)
 		{
 			var Obj = AliasInfo.CastObject();
-			if (Obj != null && Obj is IPicture _Obj)
+			if (Obj is null || Obj is not IPicture o) return null;
+
+			return new ItemIconCell()
 			{
-				return new ItemIconCell()
-				{
-					ShowStackCount = true,
-					StackCount = StackCount,
+				ShowStackCount = true,
+				StackCount = StackCount,
 
-					ObjectRef = Obj,
-					Image = _Obj.MainIcon(),
-				};
-			}
-
-			return null;
+				ObjectRef = Obj,
+				Image = o.MainIcon(),
+			};
 		}
 
 		private static ItemIconCell GetItem(string AliasInfo, string StackCount) => GetItem(AliasInfo, StackCount.ToIntWithNull() ?? 1);
@@ -357,8 +353,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 			return items;
 		}
-
-
 
 		public override void Refresh()
 		{

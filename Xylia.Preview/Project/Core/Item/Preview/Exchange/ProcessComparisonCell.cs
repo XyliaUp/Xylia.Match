@@ -6,10 +6,9 @@ using HZH_Controls;
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
-
-using ItemData = Xylia.Preview.Data.Record.Item;
 
 
 namespace Xylia.Preview.Project.Core.Item.Cell
@@ -35,8 +34,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.LoadData(CrystallRule);
 		}
 		#endregion
-
-
 
 		#region 方法
 		public void LoadData(ItemExchange CrystallRule)
@@ -66,7 +63,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			int LocX = 0;
 			int Padding = 2;
 
-
 			foreach (var c in RequiredItems)
 			{
 				if (!this.Controls.Contains(c)) this.Controls.Add(c);
@@ -91,45 +87,26 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		}
 
 
-		private static ItemIconCell LoadRequiredItem(string ItemAlias, short StackCount)
+		//注意这俩个数据存在区别
+		private static ItemIconCell LoadRequiredItem(string ItemAlias, short StackCount) => GetCell(ItemAlias.CastObject(), StackCount);
+
+		private static ItemIconCell LoadNormalItem(string ItemAlias, short StackCount) => GetCell(ItemAlias.GetItemInfo(), StackCount);
+
+
+		private static ItemIconCell GetCell(IRecord Obj, short StackCount)
 		{
-			var TempObj = ItemAlias?.CastObject();
-			if (TempObj != null && TempObj is ItemData TempItem)
+			if (Obj is null || Obj is not IPicture o) return null;
+
+			return new ItemIconCell()
 			{
-				return new ItemIconCell()
-				{
-					ObjectRef = TempItem,
-					Image = TempItem.IconExtra,
-					Scale = 52,
+				ObjectRef = Obj,
+				Image = o.MainIcon(),
 
-					StackCount = StackCount,
-					ShowStackCount = true,
-					ShowStackCountOnlyOne = false,
-				};
-			}
-
-			return null;
-		}
-
-		private static ItemIconCell LoadNormalItem(string ItemAlias, short StackCount)
-		{
-			//注意这俩个数据存在区别
-			var TempObj = ItemAlias.GetItemInfo();
-			if (TempObj != null && TempObj is ItemData TempItem)
-			{
-				return new ItemIconCell()
-				{
-					ObjectRef = TempItem,
-					Image = TempItem.IconExtra,
-					Scale = 52,
-
-					StackCount = StackCount,
-					ShowStackCount = true,
-					ShowStackCountOnlyOne = false,
-				};
-			}
-
-			return null;
+				Scale = 52,
+				StackCount = StackCount,
+				ShowStackCount = true,
+				ShowStackCountOnlyOne = false,
+			};
 		}
 		#endregion
 	}

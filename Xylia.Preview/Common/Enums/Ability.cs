@@ -117,7 +117,6 @@ namespace Xylia.Preview.Common.Enums
 
 	public enum MainAbility : byte
 	{
-		[Signal("none")]
 		None,
 
 		[Signal("attack-power-equip-min-and-max")]
@@ -129,6 +128,7 @@ namespace Xylia.Preview.Common.Enums
 		DefendPowerEquipValue,
 
 		[Signal("defend-resist-power-equip-value")]
+		[Description("抗性")]
 		DefendResistPowerEquipValue,
 
 		[Signal("attack-hit-base-percent")]
@@ -172,27 +172,35 @@ namespace Xylia.Preview.Common.Enums
 		DefendParryValue,
 
 		[Signal("attack-stiff-duration-base-percent")]
+		[Description("状态异常时间增加")]
 		AttackStiffDurationBasePercent,
 
 		[Signal("attack-stiff-duration-value")]
+		[Description("熟练")]
 		AttackStiffDurationValue,
 
 		[Signal("defend-stiff-duration-base-percent")]
+		[Description("状态异常时间减少")]
 		DefendStiffDurationBasePercent,
 
 		[Signal("defend-stiff-duration-value")]
+		[Description("韧性")]
 		DefendStiffDurationValue,
 
 		[Signal("cast-duration-base-percent")]
+		[Description("集中率")]
 		CastDurationBasePercent,
 
 		[Signal("cast-duration-value")]
+		[Description("集中")]
 		CastDurationValue,
 
 		[Signal("defend-physical-damage-reduce-percent")]
+		[Description("物理伤害减免率")]
 		DefendPhysicalDamageReducePercent,
 
 		[Signal("defend-force-damage-reduce-percent")]
+		[Description("气功伤害减免率")]
 		DefendForceDamageReducePercent,
 
 		[Signal("attack-damage-modify-percent")]
@@ -208,7 +216,7 @@ namespace Xylia.Preview.Common.Enums
 		DefendDamageModifyPercent,
 
 		[Signal("defend-damage-modify-diff")]
-		[Description("额外伤害减免")]
+		[Description("额外伤害减")]
 		DefendDamageModifyDiff,
 
 		[Signal("max-hp")]
@@ -228,12 +236,15 @@ namespace Xylia.Preview.Common.Enums
 		AttackPierceValue,
 
 		[Signal("attack-concentrate-value")]
+		[Description("集中")]
 		AttackConcentrateValue,
 
 		[Signal("defend-perfect-parry-reduce-percent")]
+		[Description("完全格挡穿刺")]
 		DefendPerfectParryReducePercent,
 
 		[Signal("defend-counter-reduce-percent")]
+		[Description("反击穿刺")]
 		DefendCounterReducePercent,
 
 		[Signal("attack-critical-damage-percent")]
@@ -248,8 +259,8 @@ namespace Xylia.Preview.Common.Enums
 		[Description("降魔防御力")]
 		PveBossLevelNpcDefendPowerEquipValue,
 
-		[Description("PVP攻击力")]
 		[Signal("pvp-attack-power-equip-min-and-max")]
+		[Description("PVP攻击力")]
 		PvpAttackPowerEquipMinAndMax,
 
 		[Signal("pvp-defend-power-equip-value")]
@@ -302,10 +313,35 @@ namespace Xylia.Preview.Common.Enums
 		RHypermovePowerEquipValue,
 
 		[Signal("attack-attribute-base-percent")]
-		[Description("功力率")]
+		[Description("功力伤害率")]
 		AttackAttributeBasePercent,
 
 		[Signal("defend-difficulty-type-damage-reduce-percent")]
+		[Description("狂暴伤害减免")]
 		DefendDifficultyTypeDamageReducePercent,
+
+		[Signal("abnormal-attack-power-value")]
+		[Description("状态异常伤害")]
+		AbnormalAttackPowerValue,
+
+		[Signal("abnormal-attack-power-value-equip")]
+		[Description("状态异常伤害")]
+		AbnormalAttackPowerValueEquip,
+
+		[Signal("abnormal-defend-power-value")]
+		[Description("状态异常防御力")]
+		AbnormalDefendPowerValue,
+
+		[Signal("abnormal-attack-power-base-percent")]
+		[Description("状态异常伤害率")]
+		AbnormalAttackPowerBasePercent,
+
+		[Signal("abnormal-defend-power-base-percent")]
+		[Description("状态异常防御率")]
+		AbnormalDefendPowerBasePercent,
+
+		[Signal("attack-pierce-base-percent")]
+		[Description("穿刺率")]
+		AttackPierceBasePercent,
 	}
 }

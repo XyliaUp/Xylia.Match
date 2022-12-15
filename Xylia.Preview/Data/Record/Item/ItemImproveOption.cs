@@ -53,32 +53,28 @@ namespace Xylia.Preview.Data.Record
 			string AdditionalText = Additional.GetText();
 
 			//获取效果类型部分提示
-			if (!string.IsNullOrWhiteSpace(this.EffectDescription)) return AdditionalText + this.EffectDescription.GetText();
+			if (!string.IsNullOrWhiteSpace(this.EffectDescription)) return this.EffectDescription.GetText() + AdditionalText;
 
 			//获取属性加成部分提示
-			if (this.Ability != MainAbility.None) return AdditionalText + this.Ability.GetDescription() + " " + this.AbilityValue;
+			if (this.Ability != MainAbility.None) return this.Ability.GetDescription() + " " + this.AbilityValue + AdditionalText;
 
-
-			List<string> ResultInfo = new();
 
 			//获取武功加成部分提示
-			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup1)?.CreateInfo());
-			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup2)?.CreateInfo());
-			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup3)?.CreateInfo());
-			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup4)?.CreateInfo());
-			//ResultInfo.Add(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup5)?.CreateInfo());
-			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup6)?.CreateInfo());
-			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup7)?.CreateInfo());
-			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup8)?.CreateInfo());
-			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup9)?.CreateInfo());
-			ResultInfo.Add(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup10)?.CreateInfo());
+			List<string> ResultInfo = new();
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup1)?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup2)?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup3)?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup4)?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup5)?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup6)?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup7)?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup8)?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup9)?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup10)?.ToString());
 
 
-			//去除空白文本与Html文本语言
-			var tempList = ResultInfo.Where(a => !string.IsNullOrWhiteSpace(a));
-
-			if (!tempList.Any()) return null;
-			return tempList.Aggregate((sum, now) => sum + "<br/>" + now);
+			if (!ResultInfo.Any()) return null;
+			return ResultInfo.Aggregate((sum, now) => sum + "<br/>" + now);
 		}
 		#endregion
 	}

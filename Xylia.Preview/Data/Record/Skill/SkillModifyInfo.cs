@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Xylia.Attribute.Component;
-using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
-
-using static Xylia.Extension.String;
 
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class SkillModifyInfo : IRecord
 	{
 		#region 属性字段
-		public Type type;
+		public TypeSeq Type;
+		public enum TypeSeq
+		{
+			Normal,
+			Skill,
+			SkillSystematization,
+		}
+
 
 		[Signal("recycle-duration-modify-percent")]
 		public short RecycleDurationModifyPercent;
@@ -48,36 +52,22 @@ namespace Xylia.Preview.Data.Record
 		public string Description;
 
 
-		public int? parent_skill3_id_1;
-		public int? parent_skill3_id_2;
-		public int? parent_skill3_id_3;
-		public int? parent_skill3_id_4;
+
+		[Signal("parent-skill3-id-1")]
+		public int ParentSkill3Id1;
+
+		[Signal("parent-skill3-id-2")]
+		public int ParentSkill3Id2;
+
+		[Signal("parent-skill3-id-3")]
+		public int ParentSkill3Id3;
+
+		[Signal("parent-skill3-id-4")]
+		public int ParentSkill3Id4;
+
+		public string Systematization;
 		#endregion
 
-		#region 枚举
-		private enum SignType
-		{
-			Common,
-			Sp,
-			Drain,
-		}
-
-		public enum Type
-		{
-			normal,
-			skill,
-
-			SkillSystematization,
-		}
-		#endregion
-
-
-		#region 其他字段
-		/// <summary>
-		/// 所属组
-		/// </summary>
-		public SkillModifyInfoGroup OwnerGroup = null;
-		#endregion
 
 		#region 处理信息
 		/// <summary>
@@ -87,31 +77,17 @@ namespace Xylia.Preview.Data.Record
 		{
 			get
 			{
-				if (this.type == Type.normal) return null;
-				else
-				{
-					var skills = new List<int?>()
-					{
-						parent_skill3_id_1,
-						parent_skill3_id_2,
-						parent_skill3_id_3,
-						parent_skill3_id_4,
-					};
+				if (this.Type != TypeSeq.Skill) return null;
 
-					string Result = null;
-					foreach (var skill in skills.Where(a => a != null))
-					{
-						//获取技能文本
-						var SearchResult = FileCache.Data.Skill3.Find(info => info.ID == skill.Value);
-						if (SearchResult != null) Result += SearchResult.NameText() + "，";
-					}
 
-					if (Result.IsNull()) return null;
-					return "<font name=\"00008130.UI.Vital_LightBlue\">" + Result.RemoveSuffixString("，") + "</font>";
-				}
+				var Skill = new List<int>() { ParentSkill3Id1, ParentSkill3Id2, ParentSkill3Id3, ParentSkill3Id4 }.Where(a => a != 0)
+					.Select(skill => FileCache.Data.Skill3[skill, 1]?.NameText())
+					.Aggregate((sum, now) => sum + "，" + now);
+
+				if (string.IsNullOrEmpty(Skill)) return null;
+				return $"<font name=\"00008130.UI.Vital_LightBlue\">{Skill}</font> ";
 			}
 		}
-
 
 		/// <summary>
 		/// 生成信息
@@ -119,45 +95,34 @@ namespace Xylia.Preview.Data.Record
 		/// <returns></returns>
 		public override string ToString()
 		{
-			//获取描述中的技能部分
-			string Result = null, SkillPart = this.SkillPart;
-
-
+			#region 获取信息
 			//冷却时间
-			if (this.RecycleDurationModifyPercent != 0) Result += SkillPart + $" 冷却时间 { Sign((float)this.RecycleDurationModifyPercent / 10) }%\n";
-			if (this.RecycleDurationModifyDiff != 0) Result += SkillPart + $" 冷却时间 { Sign((float)this.RecycleDurationModifyDiff / 1000) }秒\n";
-	
+			List<string> Text = new();
+			if (this.RecycleDurationModifyPercent != 0) Text.Add($"冷却时间 { Sign((float)this.RecycleDurationModifyPercent / 10) }%");
+			if (this.RecycleDurationModifyDiff != 0) Text.Add($"冷却时间 { Sign((float)this.RecycleDurationModifyDiff / 1000) }秒");
+
 			//伤害变更
-			if (this.DamagePowerPercentModifyPercent != 0) Result += SkillPart + $" 伤害 { Sign((float)this.DamagePowerPercentModifyPercent / 10) }%\n";
-			if (this.DamagePowerPercentModifyDiff != 0) Result += SkillPart + $" 伤害 { Sign(this.DamagePowerPercentModifyDiff) }\n";
+			if (this.DamagePowerPercentModifyPercent != 0) Text.Add($"伤害 { Sign((float)this.DamagePowerPercentModifyPercent / 10) }%");
+			if (this.DamagePowerPercentModifyDiff != 0) Text.Add($"伤害 { Sign(this.DamagePowerPercentModifyDiff) }");
 
 			//内力回复
-			if (this.SpConsumeModifyDiff1 != 0) Result += SkillPart + $" { Sign(this.SpConsumeModifyDiff1, SignType.Sp) }点内力\n";
-			if (this.SpConsumeModifyDiff2 != 0) Result += SkillPart + $" { Sign(this.SpConsumeModifyDiff2, SignType.Sp) }点内力\n";
+			if (this.SpConsumeModifyDiff1 != 0) Text.Add($"{ Sign(this.SpConsumeModifyDiff1, SignType.Sp) }点内力");
+			if (this.SpConsumeModifyDiff2 != 0) Text.Add($"{ Sign(this.SpConsumeModifyDiff2, SignType.Sp) }点内力");
 
 			//生命吸收
-			if (this.HpDrainPercentModifyPercent != 0) Result += SkillPart + $" 生命吸收{ (float)this.HpDrainPercentModifyPercent / 10 }%\n";
-			if (this.HpDrainPercentModifyDiff != 0) Result += SkillPart + $" 生命吸收{ this.HpDrainPercentModifyDiff }\n";
+			if (this.HpDrainPercentModifyPercent != 0) Text.Add($"生命吸收{ (float)this.HpDrainPercentModifyPercent / 10 }%");
+			if (this.HpDrainPercentModifyDiff != 0) Text.Add($"生命吸收{ this.HpDrainPercentModifyDiff }");
 
 			//生命恢复
-			if (this.HealPercentModifyPercent != 0) Result += SkillPart + $" 生命恢复{ (float)this.HealPercentModifyPercent / 10 }%\n";
-			if (this.HealPercentModifyDiff != 0) Result += SkillPart + $" 生命恢复{ (int)this.HealPercentModifyDiff }\n";
+			if (this.HealPercentModifyPercent != 0) Text.Add($"生命恢复{ (float)this.HealPercentModifyPercent / 10 }%");
+			if (this.HealPercentModifyDiff != 0) Text.Add($"生命恢复{ (int)this.HealPercentModifyDiff }");
 
 
-
-			#region 返回结果
-			if (string.IsNullOrWhiteSpace(Result)) return null;
-
-			//获取对应的派系名称
-			string StyleName = null;
-			if (OwnerGroup != null)
-			{
-				var tmp = OwnerGroup.StyleName;
-				if (tmp != null) StyleName = $"({ tmp }) ";
-			}
-
-			return StyleName + Result.RemoveSuffixString("\n");
+			if (!Text.Any()) return null;
 			#endregion
+
+			var SkillPart = this.SkillPart;
+			return Text.Select(o => $"{SkillPart}<font name=\"00008130.Program.Fontset_ItemGrade_3\">{o}</font>").Aggregate((sum, now) => sum + "<br/>" + now);
 		}
 
 		/// <summary>
@@ -179,6 +144,13 @@ namespace Xylia.Preview.Data.Record
 			}
 
 			return SignTxt + Math.Abs((float)Val);
+		}
+
+		private enum SignType
+		{
+			Common,
+			Sp,
+			Drain,
 		}
 		#endregion
 	}
