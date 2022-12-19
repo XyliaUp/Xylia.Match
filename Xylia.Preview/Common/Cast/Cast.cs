@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
@@ -71,7 +72,10 @@ namespace Xylia.Preview.Common.Cast
 			var DataTable = FileCache.Data.GetMemberVal(DataTableName, true);
 			if (DataTable != null)
 			{
-				var record = DataTable.GetType().GetMethod("GetInfo", ClassExtension.Flags).Invoke(DataTable, DataKey);
+				var record = DataTable.GetType()
+					.GetMethod("get_Item", BindingFlags.Instance | BindingFlags.Public, new Type[] { typeof(string) })?
+					.Invoke(DataTable, DataKey);
+
 				return record is null ? default : record as IRecord;
 			}
 

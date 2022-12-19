@@ -2,8 +2,8 @@
 using System.Linq;
 
 using Xylia.Extension;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
 
@@ -112,7 +112,7 @@ namespace Xylia.Preview.Project.Core.Item
 
 
 			this.INVALID = Info is null;
-			this.Content = Info;
+			this.Text = Info;
 		}
 		#endregion
 	}

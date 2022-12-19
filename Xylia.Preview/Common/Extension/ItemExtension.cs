@@ -43,7 +43,7 @@ namespace Xylia.Preview.Data.Record
 		#region 物品处理
 		public static Item GetItemInfo(this string _alias, bool IgnoreError = true)
 		{
-			var Info = FileCache.Data.Item.GetInfo(_alias);
+			var Info = FileCache.Data.Item[_alias];
 			if (Info is null && !IgnoreError) throw new Exception($"物品查询无效 ({ _alias })");
 
 			return Info;

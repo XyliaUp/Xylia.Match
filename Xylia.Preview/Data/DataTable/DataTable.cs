@@ -42,61 +42,12 @@ namespace Xylia.Preview.Data
 		/// 是否显示调试信息
 		/// </summary>
 		internal virtual bool ShowDebugInfo => true;
-
-
-
-
-		public string DefaultPath;
-
-		public string ResFilePath
-		{
-			get
-			{
-				//获取相对路径
-				var RelativeFilePath = DefaultPath is null ? typeof(T).Name : DefaultPath?.Trim();
-
-				string IPath = null;
-				bool Success = false;
-
-				//逐次查询
-				if (!Success) Success = VaildPath(RelativeFilePath, out IPath);
-				if (!Success) Success = VaildPath(RelativeFilePath + ".xml", out IPath);
-				if (!Success) Success = VaildPath(RelativeFilePath + "Data.xml", out IPath);
-
-				//if (!Success) Console.WriteLine("配置文件不存在: " + RelativeFilePath);
-				return IPath;
-			}
-		}
-
-		/// <summary>
-		/// 路径验证
-		/// </summary>
-		/// <returns></returns>
-		public bool VaildPath(string Path, out string PathCopy)
-		{
-			PathCopy = CommonPath.WorkingDirectory + @"\" + Path;
-
-			//判断是否存在测试模式文件
-			if (true)
-			{
-				string TempPath = System.IO.Path.GetDirectoryName(PathCopy) + @"\" +
-					   System.IO.Path.GetFileNameWithoutExtension(PathCopy) + "_test" +
-					   System.IO.Path.GetExtension(PathCopy);
-
-				if (File.Exists(TempPath))
-				{
-					Console.WriteLine("目前读取的是测试用文件");
-
-					PathCopy = TempPath;
-					return true;
-				}
-			}
-
-			return File.Exists(PathCopy);
-		}
 		#endregion
 
 		#region 数据处理
+		protected readonly Hashtable ht_alias = new(StringComparer.Create(CultureInfo.InvariantCulture, true));
+		protected readonly Hashtable ht_id = new();
+
 		/// <summary>
 		/// 正在加载状态中
 		/// </summary>
@@ -120,35 +71,12 @@ namespace Xylia.Preview.Data
 				return this.data;
 			}
 		}
-
-
-		protected readonly Hashtable ht_alias = new(StringComparer.Create(CultureInfo.InvariantCulture, true));
-		protected readonly Hashtable ht_id = new();
-
-		/// <summary>
-		/// 错误配置路径
-		/// </summary>
-
-		private readonly List<string> ErrorConfigPath = new();
 		#endregion
 
 
 
 		#region 加载方法
 		protected virtual bool LoadFromGame => CommonPath.DataLoadMode;
-
-		/// <summary>
-		/// 配置内容
-		/// </summary>
-		protected virtual string ConfigContent => null;
-
-		BDAT_LIST ListData;
-
-		DeSerializer DeSerializer;
-
-		TableInfo TableInfo;
-
-
 
 		/// <summary>
 		/// 尝试载入数据
@@ -161,7 +89,7 @@ namespace Xylia.Preview.Data
 		/// </summary>
 		/// <param name="Path"></param>
 		/// <param name="Reload">指示在存在数据时，是否可以重新加载</param>
-		protected void Load(bool Reload = false, string Path = null)
+		protected void Load(bool Reload = false)
 		{
 			#region 初始化
 			//如果是设计器模式，则不进行处理
@@ -191,7 +119,7 @@ namespace Xylia.Preview.Data
 				{
 					try
 					{
-						if (!LoadFromGame) this.LoadXml(Path);
+						if (!LoadFromGame) this.LoadXml();
 						else this.LoadGame();
 					}
 					catch (Exception ex)
@@ -200,7 +128,7 @@ namespace Xylia.Preview.Data
 						this.data = Array.Empty<Lazy<T>>();
 						this.FullLoad = true;
 
-						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { Path ?? typeof(T).Name } -> {ex}");
+						Trace.WriteLine($"[{ DateTime.Now }] 加载失败: { typeof(T).Name } -> {ex}");
 					}
 
 					//资源清理
@@ -217,48 +145,29 @@ namespace Xylia.Preview.Data
 		/// 加载外部配置文件
 		/// </summary>
 		/// <param name="Path"></param>
-		private void LoadXml(string Path)
+		private void LoadXml()
 		{
-			#region 路径判断
-			if (string.IsNullOrWhiteSpace(Path)) Path = ResFilePath;
+			var Files = new DirectoryInfo(CommonPath.WorkingDirectory).GetFiles(typeof(T).Name + "Data*");
+			if (!Files.Any()) throw new FileNotFoundException("数据不存在");
 
-			if (!File.Exists(Path))
-			{
-				//限制配置文件不存在提示仅首次提示
-				if (!ErrorConfigPath.Contains(Path))
-				{
-					ErrorConfigPath.Add(Path);
-					Trace.WriteLine($"路径 { Path } 不存在");
-				}
 
-				//防止出现异常
-				this.data = Array.Empty<Lazy<T>>();
-				this.InLoading = false;
-				return;
-			}
-
-			var FileName = System.IO.Path.GetFileNameWithoutExtension(Path);
-			#endregion
-
-			#region 载入数据
-			var xElements = (from ele in XElement.Load(Path).Elements() select ele).ToArray();
-
-			this.data = new Lazy<T>[xElements.Length];
+			var objs = Files.SelectMany(o => (from ele in XElement.Load(o.FullName).Elements() select ele)).ToArray();
+			this.data = new Lazy<T>[objs.Length];
 			for (var x = 0; x < this.data.Length; x++)
 			{
 				int CurIndex = x;
-				var CurElement = xElements[x];
+				var CurElement = objs[x];
 				this.data[x] = new Lazy<T>(() =>
 				{
-					//实例化对象
-					var Obejct = new T()
+						//实例化对象
+						var Obejct = new T()
 					{
 						Index = CurIndex,
 						Attributes = new XElementData(CurElement),
 					};
 
-					//向成员赋值
-					if (this.PublicSet)
+						//向成员赋值
+						if (this.PublicSet)
 					{
 						foreach (var Attr in CurElement.Attributes())
 							Obejct.SetMember(Attr.Name.LocalName, Attr.Value, true, ShowDebugInfo ? null : true);
@@ -276,18 +185,29 @@ namespace Xylia.Preview.Data
 				this.ht_id[CurID] = this.data[x];
 			}
 
-			Trace.WriteLine($"[{ DateTime.Now }] 完成信息载入: { FileName } ({ this.data.Length }项)");
-			#endregion
+			Trace.WriteLine($"[{ DateTime.Now }] 完成信息载入: { typeof(T).Name } ({ this.data.Length }项)");
 		}
 
 
 
+
+		/// <summary>
+		/// 配置内容
+		/// </summary>
+		protected virtual string ConfigContent => null;
+
+		BDAT_LIST ListData;
+
+		DeSerializer DeSerializer;
+
+		TableInfo TableInfo;
+
 		private void LoadGame()
 		{
 			string content = ConfigContent;
-			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_Simple");
-			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
 			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name);
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data");
+			if (content is null) content = DataRes.ResourceManager.GetString(typeof(T).Name + "Data_Simple");
 			if (content is null) throw new FileNotFoundException($"没有获取到结构配置数据");
 
 			var TableInfo = LoadConfig.LoadSingleByXml(content, DataRes.Public);
@@ -315,31 +235,21 @@ namespace Xylia.Preview.Data
 
 
 		#region 对象处理
-		private ObjectOutput GetObject(int MainID, int Variation)
+		private Lazy<T> GetInstance(int MainID, int Variation)
 		{
 			var o = DeSerializer?.GetObject(ListData, TableInfo, MainID, Variation);
-			if (o is null) Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
-
-			return o;
-		}
-
-		private Lazy<T> Test(int MainID, int Variation)
-		{
-			var o = this.GetObject(MainID, Variation);
-			if (o is null) return null;
+			if (o is null)
+			{
+				Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
+				return null;
+			}
 
 			return new Lazy<T>(() => CreateNew(o, MainID));
 		}
 
-		/// <summary>
-		/// 目前未支持缓存读取
-		/// </summary>
-		/// <param name="o"></param>
-		/// <param name="Index"></param>
-		/// <returns></returns>
 		private T CreateNew(ObjectOutput o, int Index = 0)
 		{
-			//新建一个对象，需要进行缓存
+			//新建一个对象
 			var temp = new T()
 			{
 				Index = Index,
@@ -348,11 +258,6 @@ namespace Xylia.Preview.Data
 			temp.SetAttribute(o, this.PublicSet, ShowDebugInfo);
 			return temp;
 		}
-
-
-
-
-
 
 
 		bool FullLoad = false;
@@ -381,12 +286,13 @@ namespace Xylia.Preview.Data
 		#endregion
 
 
+
+
+
 		#region 获取对象信息
-		public T this[string Alias] => this.GetInfo(Alias);
+		public T this[string Alias] => this.GetLazyInfo(Alias)?.Value;
 
 		public T this[int MainID, int Variation = 0] => this.GetLazyInfo(MainID, Variation)?.Value;
-
-		public T GetInfo(string Alias) => GetLazyInfo(Alias)?.Value;
 
 		protected virtual Lazy<T> GetLazyInfo(string Alias)
 		{
@@ -418,7 +324,7 @@ namespace Xylia.Preview.Data
 				#endregion
 
 				#region 返回最终结果
-				var result = this.Test(AliasInfo.MainID, AliasInfo.Variation);
+				var result = this.GetInstance(AliasInfo.MainID, AliasInfo.Variation);
 				if (result is null) return null;
 
 				this.ht_alias[Alias] = result;
@@ -441,7 +347,7 @@ namespace Xylia.Preview.Data
 			#endregion
 
 			#region 获取对象
-			if (this.LoadFromGame) return this.Test(MainID, Variation);
+			if (this.LoadFromGame) return this.GetInstance(MainID, Variation);
 			else if (this.ht_id.ContainsKey(MainID)) return (Lazy<T>)this.ht_id[MainID];
 			#endregion
 
@@ -450,6 +356,8 @@ namespace Xylia.Preview.Data
 			return null;
 		}
 		#endregion
+
+
 
 		#region 处理类方法
 		/// <summary>
@@ -473,41 +381,24 @@ namespace Xylia.Preview.Data
 		/// </summary>
 		/// <param name="SearchRule"></param>
 		/// <returns></returns>
-		public IEnumerable<T> Where(Predicate<T> SearchRule)
+		public IEnumerable<T> Where(Predicate<T> SearchRule, bool TestMode = false)
 		{
 			if (!this.HasData) this.Load();
 			if (!this.LoadFromGame) return this.Data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
 
-			return CreateTest().Where(Info => SearchRule(Info));
-		}
 
+			var result = CreateTest(TestMode).Where(Info => SearchRule(Info));
+			if (!TestMode) return result;
 
+			return result.Select(o =>
+			{
+				var Output = ((OutputData)o.Attributes).Object;
+				if (Output.FullLoad) return o;
 
-		/// <summary>
-		/// 查询测试
-		/// </summary>
-		/// <param name="AttrName"></param>
-		/// <param name="SearchRule"></param>
-		/// <returns></returns>
-		/// <exception cref="Exception"></exception>
-		public IEnumerable<T> WhereTest(string AttrName, Predicate<string> SearchRule)
-		{
-			if (!this.HasData) this.Load();
-			if (!this.LoadFromGame) throw new Exception("不支持的加载方式");
-
-
-			return CreateTest(true)
-				.Where(o => SearchRule(o.Attributes[AttrName]))
-				.Select(o =>
-				{
-					var Output = (o.Attributes as OutputData).Object;
-					if (Output.FullLoad) return o;
-
-
-					Output.DesObject();
-					o.SetAttribute(Output, this.PublicSet, ShowDebugInfo);
-					return o;
-				});
+				Output.DesObject();
+				o.SetAttribute(Output, this.PublicSet, ShowDebugInfo);
+				return o;
+			});
 		}
 		#endregion
 

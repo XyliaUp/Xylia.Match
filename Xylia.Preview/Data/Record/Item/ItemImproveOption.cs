@@ -5,6 +5,8 @@ using Xylia.Attribute.Component;
 using Xylia.Extension;
 using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Common.Extension;
+
 
 namespace Xylia.Preview.Data.Record
 {
@@ -21,7 +23,6 @@ namespace Xylia.Preview.Data.Record
 
 		[Signal("effect-description")]
 		public string EffectDescription;
-
 
 		public string SkillModifyInfoGroup1;
 		public string SkillModifyInfoGroup2;
@@ -41,8 +42,6 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 
-
-
 		#region 方法
 		/// <summary>
 		/// 获取显示文本
@@ -56,21 +55,21 @@ namespace Xylia.Preview.Data.Record
 			if (!string.IsNullOrWhiteSpace(this.EffectDescription)) return this.EffectDescription.GetText() + AdditionalText;
 
 			//获取属性加成部分提示
-			if (this.Ability != MainAbility.None) return this.Ability.GetDescription() + " " + this.AbilityValue + AdditionalText;
+			if (this.Ability != MainAbility.None) return this.Ability.GetDescription() + " " + AbilityEx.ToString(this.AbilityValue, this.Ability) + AdditionalText;
 
 
 			//获取武功加成部分提示
 			List<string> ResultInfo = new();
-			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup1)?.ToString());
-			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup2)?.ToString());
-			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup3)?.ToString());
-			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup4)?.ToString());
-			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup5)?.ToString());
-			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup6)?.ToString());
-			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup7)?.ToString());
-			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup8)?.ToString());
-			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup9)?.ToString());
-			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup.GetInfo(this.SkillModifyInfoGroup10)?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup1]?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup2]?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup3]?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup4]?.ToString());
+			//ResultInfo.AddItem(FileCacheData.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup5]?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup6]?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup7]?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup8]?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup9]?.ToString());
+			ResultInfo.AddItem(FileCache.Data.SkillModifyInfoGroup[this.SkillModifyInfoGroup10]?.ToString());
 
 
 			if (!ResultInfo.Any()) return null;

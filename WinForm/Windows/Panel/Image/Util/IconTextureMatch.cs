@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using System.Windows.Forms;
 
 using HZH_Controls.Forms;
 
@@ -30,30 +29,15 @@ namespace Xylia.Match.Util.Paks
 		public string FormatSelect;
 		#endregion
 
+
+
+
 		#region 方法
 		public void StartMatch(Textures.IconOutBase IconOutBase, ref Thread RunThread, Action<string> action)
 		{
 			#region 初始化
 			//清理tip
 			FrmTips.ClearTips();
-			if (RunThread != null)
-			{
-				if (new FrmWithOKCancel1() { Content = "是否确认强制结束？" }.ShowDialog() != DialogResult.OK) return;
-
-				try
-				{
-					RunThread.Interrupt();
-					RunThread = null;
-
-					action($"任务已强制结束");
-				}
-				catch
-				{
-
-				}
-
-				return;
-			}
 
 			if (CheckFormat && (FormatSelect.IsNull() || !FormatSelect.Contains("[")))
 			{
@@ -63,10 +47,10 @@ namespace Xylia.Match.Util.Paks
 			#endregion
 
 			#region 执行
-			RunThread = new Thread((ThreadStart)delegate
+			RunThread = new Thread(o =>
 			{
 				//触发开始事件
-				Start?.Invoke(null, null);
+				Start?.Invoke(null, new());
 
 				try
 				{
@@ -75,7 +59,7 @@ namespace Xylia.Match.Util.Paks
 					using (IconOutBase)
 					{
 						//初始化
-						IconOutBase.StartInit();
+						IconOutBase.StartInit(action);
 
 						//核心方法 - 存储图标
 						IconOutBase.SaveAsPicture(FormatSelect);
@@ -84,7 +68,7 @@ namespace Xylia.Match.Util.Paks
 					TimeSpan Ts = DateTime.Now - d1;
 					action($"任务已经全部结束！ 共计 { Ts.Hours }小时 { Ts.Minutes }分 { Ts.Seconds }秒。");
 				}
-				catch (ThreadAbortException) { return; }
+				catch (ThreadInterruptedException) { return; }
 				catch (Exception ee)
 				{
 					action("由于发生了错误，进程已提前结束。");
@@ -99,10 +83,9 @@ namespace Xylia.Match.Util.Paks
 					MySet.ClearMemory();
 				}
 			});
-			#endregion
-
 			RunThread.Start();
+			#endregion
 		}
 		#endregion
 	}
-}
+} 

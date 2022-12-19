@@ -38,7 +38,7 @@ namespace Xylia.Preview.Project.Core.Store
 		public readonly FilterList Filter = new();
 
 
-		public string CurrentAlias;
+		public string StoreAlias;
 		#endregion
 
 
@@ -57,7 +57,7 @@ namespace Xylia.Preview.Project.Core.Store
 			if (this.InLoading) return;
 			if (TreeView.SelectedNode is null || !TreeNodeInfo.ContainsKey(TreeView.SelectedNode)) return;
 			
-			thread = new Thread(act => this.ShowStoreContent(this.CurrentAlias = TreeNodeInfo[TreeView.SelectedNode].AliasText));
+			thread = new Thread(act => this.ShowStoreContent(this.StoreAlias = TreeNodeInfo[TreeView.SelectedNode].AliasText));
 			thread.SetApartmentState(ApartmentState.STA);
 			thread.Start();
 		}

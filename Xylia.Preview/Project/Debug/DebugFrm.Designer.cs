@@ -31,7 +31,6 @@ namespace Xylia.Preview
         private void InitializeComponent()
         {
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.optionList1 = new Xylia.Preview.Project.Core.ItemGrowth.Game_Intension.Preview.OptionList();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -42,15 +41,6 @@ namespace Xylia.Preview
 			this.textBox1.TabIndex = 0;
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
-			// optionList1
-			// 
-			this.optionList1.BackColor = System.Drawing.Color.Transparent;
-			this.optionList1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.optionList1.Location = new System.Drawing.Point(406, 47);
-			this.optionList1.Name = "optionList1";
-			this.optionList1.Size = new System.Drawing.Size(240, 182);
-			this.optionList1.TabIndex = 1;
-			// 
 			// DebugFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -59,8 +49,7 @@ namespace Xylia.Preview
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(716, 357);
-			this.Controls.Add(this.optionList1);
+			this.ClientSize = new System.Drawing.Size(691, 338);
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
@@ -80,7 +69,6 @@ namespace Xylia.Preview
 		#endregion
 
 		private System.Windows.Forms.TextBox textBox1;
-		private Project.Core.ItemGrowth.Game_Intension.Preview.OptionList optionList1;
 		private System.Windows.Forms.ListBox listBox1;
 	}
 }

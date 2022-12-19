@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-<!--
-     normal和random组是互斥关系，通过use-random选择
-	 normal和rare组是互存关系（成功概率总和最大值为1000，类似G1/G2）
-     normal组：
-        normal-item-[1-10]、normal-item-stack-count-[1-10]
-		normal-item-success-probability (MAX 1000)
-		normal-item-select-count 可获得的 normal-item 对象数（如2就是从所有物品中抽取2种）
-		normal-item-total-count  normal-item 对象总数
-	
-	 rare组：
-	    rare-item-[1-20]、rare-item-stack-count-[1-20]
-		rare-item-success-probability (MAX 1000)
-		rare-item-select-count  可获得的 rare-item 对象数
-		rare-item-total-count	rare-item 对象总数
-	========================================================
-	
-	注意：legend-weapon类型必须使用random组
-	
-	 random组：
-	    random-item-[1-10]、random-item-select-prop-weight-[1-10]、random-item-stack-count-[1-10]   概率权重总和10000
-		random-item-success-probability (MAX 100)
-		random-item-total-count
-	
--->
-	<list module="ItemData" type="ItemTransformRecipe" version="3" >
+	<list module="ItemData" type="ItemTransformRecipe" version="3.0" >
 		<record alias="alias" type="Index" name="别名" />
 		<record alias="upgrade-grocery" ref="ItemTransformUpgradeItem" />
 		<record alias="required-inven-capacity" type="Int32" name="" default="1" apply="must" />

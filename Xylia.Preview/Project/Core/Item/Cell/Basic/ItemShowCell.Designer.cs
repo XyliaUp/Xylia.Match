@@ -28,28 +28,26 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemShowCell));
-			this.ItemNameCell = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell();
+			this.NameCell = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell();
 			this.IconCell = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			((System.ComponentModel.ISupportInitialize)(this.IconCell)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// ItemNameCell
+			// NameCell
 			// 
-			this.ItemNameCell.AutoSize = true;
-			this.ItemNameCell.BackColor = System.Drawing.Color.Transparent;
-			this.ItemNameCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.ItemNameCell.ItemGrade = ((byte)(7));
-			this.ItemNameCell.Location = new System.Drawing.Point(63, 16);
-			this.ItemNameCell.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
-			this.ItemNameCell.Name = "ItemNameCell";
-			this.ItemNameCell.Size = new System.Drawing.Size(85, 22);
-			this.ItemNameCell.TabIndex = 1;
-			this.ItemNameCell.TagImage = null;
-			this.ItemNameCell.Text = "ItemName";
-			this.ItemNameCell.NameChanged += new System.EventHandler(this.ItemName_NameChanged);
-		
-			this.ItemNameCell.DoubleClick += new System.EventHandler(this.ItemName_DoubleClick);
+			this.NameCell.AutoSize = true;
+			this.NameCell.BackColor = System.Drawing.Color.Transparent;
+			this.NameCell.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.NameCell.ItemGrade = ((byte)(7));
+			this.NameCell.Location = new System.Drawing.Point(63, 16);
+			this.NameCell.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+			this.NameCell.Name = "NameCell";
+			this.NameCell.Size = new System.Drawing.Size(85, 21);
+			this.NameCell.TabIndex = 1;
+			this.NameCell.TagImage = null;
+			this.NameCell.Text = "ItemName";
+			this.NameCell.NameChanged += new System.EventHandler(this.ItemName_NameChanged);
+			this.NameCell.DoubleClick += new System.EventHandler(this.ItemName_DoubleClick);
 			// 
 			// IconCell
 			// 
@@ -61,13 +59,14 @@
 			this.IconCell.ForeColor = System.Drawing.Color.Black;
 			this.IconCell.FrameImage = null;
 			this.IconCell.FrameType = true;
-			this.IconCell.Image = ((System.Drawing.Bitmap)(resources.GetObject("IconCell.ItemIcon")));
 			this.IconCell.Location = new System.Drawing.Point(0, 0);
 			this.IconCell.Margin = new System.Windows.Forms.Padding(4);
 			this.IconCell.Name = "IconCell";
 			this.IconCell.Scale = 52;
+			this.IconCell.ShowFrameImage = true;
 			this.IconCell.ShowStackCount = false;
 			this.IconCell.ShowStackCountOnlyOne = true;
+			this.IconCell.Size = new System.Drawing.Size(52, 52);
 			this.IconCell.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.IconCell.StackCount = 1;
 			this.IconCell.TabIndex = 2;
@@ -81,12 +80,11 @@
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.IconCell);
-			this.Controls.Add(this.ItemNameCell);
+			this.Controls.Add(this.NameCell);
 			this.ForeColor = System.Drawing.Color.Black;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ItemShowCell";
 			this.Size = new System.Drawing.Size(154, 56);
-			
 			((System.ComponentModel.ISupportInitialize)(this.IconCell)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -94,7 +92,7 @@
 		}
 
 		#endregion
-		public ItemNameCell ItemNameCell;
 		public ItemIconCell IconCell;
+		public ItemNameCell NameCell;
 	}
 }

@@ -48,13 +48,14 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 			#region 获取强化效果列表
 			AcquirableOptionList.Clear();
-			for (int idx = 1; idx <= 100; idx++)
+			for (int idx = 1; idx <= 50; idx++)
 			{
 				var Option = FileCache.Data.ItemImproveOption[OptionList.Attributes["option-" + idx]];
 				if (Option is null) break;
 
-				var CurLevelOption = FileCache.Data.ItemImproveOption[Option.ID, ImproveLevel];
-				AcquirableOptionList.Add((CurLevelOption ?? Option).ToString());
+
+				if (Option.Level > ImproveLevel) AcquirableOptionList.Add(Option.ToString());
+				else AcquirableOptionList.Add((FileCache.Data.ItemImproveOption[Option.ID, ImproveLevel] ?? Option).ToString());
 			}
 
 			AcquirableOptionList.RefreshList();

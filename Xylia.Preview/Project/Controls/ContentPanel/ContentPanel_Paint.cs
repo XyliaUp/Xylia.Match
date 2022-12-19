@@ -11,6 +11,7 @@ using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Public.Attribute.arg;
 
 namespace Xylia.Preview.Project.Controls
@@ -41,13 +42,15 @@ namespace Xylia.Preview.Project.Controls
 			this.Text?.Replace("\n", "<br/>"),
 			ref LocX, ref LocY, true);
 
+			#endregion
+
+
 			//变更大小
 			if (this.AutoSize)
 			{
 				this.Width = (int)Math.Ceiling(Width + 4.0f);
 				this.Height = (int)Math.Floor(LocY);
 			}
-			#endregion
 		}
 
 		/// <summary>
@@ -69,6 +72,8 @@ namespace Xylia.Preview.Project.Controls
 			//计算与母容器关系
 			else if (o.Parent != null)
 			{
+				if (o.Parent is TitleContentPanel) return GetMaxWidth(o.Parent);
+
 				//如果上级控件启用缩放，会导致大量计算。因此此时不应进行宽度处理
 				if (o.Parent is not UserControl c || c.AutoSizeMode != AutoSizeMode.GrowAndShrink)
 				{
@@ -76,8 +81,6 @@ namespace Xylia.Preview.Project.Controls
 
 					MaxWidth = e.Width - o.Left - 5;
 					if (e is Form) MaxWidth -= 15;
-
-					//if (UseMaxWidth) MaxWidth -= 18;
 				}
 			}
 
@@ -136,17 +139,6 @@ namespace Xylia.Preview.Project.Controls
 			}
 			#endregion
 
-			#region 绘制特殊符号
-			//获取符号宽度
-			float SignalWidth = 0;
-			if (this.Signal != null) SignalWidth = this.Signal.MeasureString(param.Font).Width + 2;
-
-			if (Status && this.Signal != null)
-			{
-				ContentPanel.DrawString(param, this.Signal, ref LocX, ref LocY, this.MaxWidth);
-				LocX = SignalWidth;
-			}
-			#endregion
 
 
 
@@ -174,7 +166,7 @@ namespace Xylia.Preview.Project.Controls
 						TryExtendWidth(LocX);
 
 						//增加对应的行高并重置为基本行高
-						LocX = this.Signal is null ? 0 : SignalWidth;
+						LocX = 0;
 						LocY += CurLineHeight + this.HeightPadding;
 					}
 					break;
@@ -203,7 +195,7 @@ namespace Xylia.Preview.Project.Controls
 						TryExtendWidth(this.Execute(param, Node.InnerHtml, ref LocX, ref LocY));
 
 						//创建新行
-						LocX = this.Signal is null ? 0 : SignalWidth;
+						LocX = 0;
 						LocY += CurLineHeight;
 					}
 					break;

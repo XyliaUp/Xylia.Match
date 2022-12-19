@@ -124,7 +124,7 @@
     <Compile Update="Windows\Panel\Main\MatchProp.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Windows\Quest\QuestMatch.cs">
+    <Compile Update="Windows\Frm\Quest\QuestMatch.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Windows\Panel\ModifyLoading.cs">

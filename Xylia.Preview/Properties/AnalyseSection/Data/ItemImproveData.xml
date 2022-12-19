@@ -3,7 +3,6 @@
 	<list module="ItemData" type="item-improve" version="6.1" >
 		<record alias="id" type="id" name="" />
 		<record alias="level" type="Level" name="" show-zero="y" start="0" />
-
 		<record alias="cost-main-item" name="" ref="Item" repeat="5" />
 		<record alias="cost-main-item-count" type="Short" name="" repeat="5" max="30000" min="0" />
 		<record alias="cost-sub-item-1" name="" ref="Item" repeat="8" />
@@ -24,7 +23,7 @@
 		<record alias="random-failure-mileage" type="Byte" name="" repeat="5" />
 		<record alias="unk-" type="Bool" name="" />
 		<record alias="success-option-list-id" type="Int32" name="" />
-		<record alias="unk-" type="Byte" name="" />
+		<record alias="unk-" type="Byte" name="继承后损失阶段" />
 		<record alias="fail-level-diff" type="Byte" name="" repeat="5" />
 	</list>
 </table>

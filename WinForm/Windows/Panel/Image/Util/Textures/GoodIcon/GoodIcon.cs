@@ -6,7 +6,7 @@ namespace Xylia.Match.Util.Paks.Textures
 	public sealed class GoodIcon : IconOutBase
 	{
 		#region 方法
-		public GoodIcon(Action<string> action, string GameFolder = null) : base(action, GameFolder) { }
+		public GoodIcon(string GameFolder = null) : base(GameFolder) { }
 
 		internal override void AnalyseSourceData()
 		{

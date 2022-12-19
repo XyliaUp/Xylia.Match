@@ -164,8 +164,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		[Category("Reward"), Description("物品品质")]
 		public byte ItemGrade
 		{
-			get => this.ItemShow.ItemNameCell.ItemGrade;
-			set => this.ItemShow.ItemNameCell.ItemGrade = value;
+			get => this.ItemShow.ItemGrade;
+			set => this.ItemShow.ItemGrade = value;
 		}
 
 

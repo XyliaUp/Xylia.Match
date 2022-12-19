@@ -28,7 +28,6 @@ namespace Xylia.Preview.Project.RunForm
 		};
 		
 
-
 		public static DayOfWeek WeeklyResetDayOfWeek = DayOfWeek.Friday;
 
 		public static byte DailyResetTime = 6;

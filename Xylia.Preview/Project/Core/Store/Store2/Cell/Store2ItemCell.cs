@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Store.Cell;
 using Xylia.Preview.Resources;
-using System.Drawing;
+
 using ItemData = Xylia.Preview.Data.Record.Item;
 
 
@@ -21,9 +22,6 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 			//禁止显示右侧文本
 			this.ShowRightText = false;
-
-			//this.BuyPriceCell = new BuyPriceCell();
-			//this.Controls.Add(this.BuyPriceCell);
 
 			this.LoadData(ItemBuyPrice);
 		}

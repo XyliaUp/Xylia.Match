@@ -44,8 +44,8 @@ namespace Xylia.Preview.Project.Core.Skill.Util
 		/// <param name="SkillAlias"></param>
 		public void StartTest(string SkillAlias)
 		{
-			var Skill3 = FileCache.Data.Skill3.GetInfo(SkillAlias);
-			var CastCondition = FileCache.Data.SkillCastCondition3.GetInfo(Skill3.CastCondition);
+			var Skill3 = FileCache.Data.Skill3[SkillAlias];
+			var CastCondition = FileCache.Data.SkillCastCondition3[Skill3.CastCondition];
 
 
 			Console.WriteLine();
@@ -62,8 +62,8 @@ namespace Xylia.Preview.Project.Core.Skill.Util
 
 		public void SkillCompare(string MainSkillAlias, string ComparedSkillAlias)
 		{
-			var MainSkill = FileCache.Data.Skill3.GetInfo(MainSkillAlias);
-			var ComparedSkill = FileCache.Data.Skill3.GetInfo(ComparedSkillAlias);
+			var MainSkill = FileCache.Data.Skill3[MainSkillAlias];
+			var ComparedSkill = FileCache.Data.Skill3[ComparedSkillAlias];
 
 
 			foreach (var MainSkillAttr in MainSkill.Attributes)

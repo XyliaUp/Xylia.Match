@@ -63,7 +63,7 @@
 			<case alias="attack-damage-modify-percent" name="额外伤害率" />
 			<case alias="attack-damage-modify-diff" name="额外伤害" />
 			<case alias="defend-damage-modify-percent" name="额外伤害减免率" />
-			<case alias="defend-damage-modify-diff" name="额外伤害减" />
+			<case alias="defend-damage-modify-diff" name="额外伤害减免" />
 			<case alias="max-hp" name="生命" />
 			<case alias="hp-regen" name="恢复" />
 			<case alias="hp-regen-combat" name="战斗中恢复" />

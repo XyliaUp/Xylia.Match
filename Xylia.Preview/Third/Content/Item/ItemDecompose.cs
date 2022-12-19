@@ -57,7 +57,7 @@ namespace Xylia.Preview.Third.Content
 					return;
 
 
-				var RewardInfo = FileCache.Data.Reward.GetInfo(RewardAlias);
+				var RewardInfo = FileCache.Data.Reward[RewardAlias];
 
 				var CurRow = this.ExcelInfo.CreateRow(RowIdx++);
 				CurRow.AddCell(Info.ID);

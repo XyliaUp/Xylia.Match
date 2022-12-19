@@ -358,11 +358,8 @@
   <data name="DungeonData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\dungeondata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="EffectData_Simple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\effectdata_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
-  </data>
-  <data name="EffectData_v25_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\effectdata_v25.0.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="EffectData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\effectdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="EffectGroupData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\effectgroupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

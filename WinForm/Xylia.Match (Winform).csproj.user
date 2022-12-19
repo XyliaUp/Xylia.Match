@@ -29,10 +29,10 @@
     <Compile Update="Windows\Frm\PublicSet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Windows\Quest\Epic.cs">
+    <Compile Update="Windows\Frm\Quest\Epic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Windows\Quest\QuestSelect.cs">
+    <Compile Update="Windows\Frm\Quest\QuestSelect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Windows\Panel\Main\Select\OnlineSelect.cs">

@@ -1,16 +1,14 @@
 ﻿
 using System;
 using System.Collections.Concurrent;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using System.Drawing;
 using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Read;
 using Xylia.Extension;
-using Xylia.Preview.Common.Interface.RecordAttribute;
 using Xylia.Preview.Data.Record;
 
 
@@ -19,17 +17,12 @@ namespace Xylia.Match.Util.Paks.Textures
 	public abstract class IconOutBase : IDisposable
 	{
 		#region 构造
-		/// <summary>
-		/// 构造
-		/// </summary>
-		/// <param name="action"></param>
-		/// <param name="GameFolder"></param>
-		public IconOutBase(Action<string> action, string GameFolder = null)
+		public IconOutBase( string GameFolder = null)
 		{
-			this.Action = action;
 			this.GameDirectory = GameFolder;
 		}
 		#endregion
+
 
 		#region	字段
 		/// <summary>
@@ -86,15 +79,19 @@ namespace Xylia.Match.Util.Paks.Textures
 		/// <summary>
 		/// 开始初始化
 		/// </summary>
-		public void StartInit()
+		public void StartInit(Action<string> Action)
 		{
 			#region 读取资源
 			this.LogHelper = new OutLogHelper(Path.GetDirectoryName(this.OutputDirectory));  //设置日志输出路径
+			this.Action = Action;
+
 
 			var select = new GetDataPath(this.GameDirectory, null);    //初始化数据文件
 			this.Path_XML = select.TargetXml;
 			this.Path_Local = select.TargetLocal;
 			#endregion
+
+
 
 
 			#region 分析数据
@@ -190,9 +187,39 @@ namespace Xylia.Match.Util.Paks.Textures
 
 				try
 				{
-					//调用图标创建
-					var bitmap = GetTexture(QuoteInfo);
-					if (bitmap is null) return;
+					#region 获取图标
+					string ItemMsg = $"数据ID { QuoteInfo.MainId } { (QuoteInfo.Name != null ? $"[{ QuoteInfo.Name }]" : null) } ";
+					if (QuoteInfo.IconTextureId == 0)
+					{
+						LogHelper.Record(ItemMsg + $"缺少道具图标", OutLogHelper.LogGroup.错误记录);
+						return;
+					}
+					else if (!IconTextures.ContainsKey(QuoteInfo.IconTextureId))
+					{
+						Console.WriteLine($"{ QuoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo：{ IconTextures.Count })");
+						return;
+					}
+
+
+					var IconTexture = IconTextures[QuoteInfo.IconTextureId];
+					if (string.IsNullOrWhiteSpace(IconTexture.iconTexture))
+					{
+						LogHelper.Record($"{ ItemMsg } => 图标({ IconTexture.iconTexture }) 由于图标名为空，跳过执行", OutLogHelper.LogGroup.错误记录);
+						return;
+					}
+
+					var bitmap = IconTextureExt.GetIcon(IconTexture, QuoteInfo.IconIndex);
+					if (bitmap is null)
+					{
+						LogHelper.Record($"{ItemMsg} => 图标({ IconTexture.iconTexture } 图标资源获取失败", OutLogHelper.LogGroup.错误记录);
+						return;
+					}
+
+
+					lock (bitmap) bitmap = (Bitmap)bitmap.Clone();
+					bitmap = QuoteInfo.ProcessImage(bitmap);
+					#endregion
+
 
 
 					#region 输出名称处理
@@ -231,6 +258,7 @@ namespace Xylia.Match.Util.Paks.Textures
 					bitmap.Dispose();
 					bitmap = null;
 
+
 					//创建成功日志
 					if (this.ShowLog_CreateInfo)
 					{
@@ -241,7 +269,7 @@ namespace Xylia.Match.Util.Paks.Textures
 				}
 				catch (Exception ee)
 				{
-					LogHelper.Record($@"{ QuoteInfo.MainId } => { ee.Message }", OutLogHelper.LogGroup.错误记录);
+					LogHelper.Record($@"{ QuoteInfo.MainId } => { ee }", OutLogHelper.LogGroup.错误记录);
 				}
 			});
 			#endregion
@@ -252,54 +280,6 @@ namespace Xylia.Match.Util.Paks.Textures
 
 			GC.Collect();
 			#endregion
-		}
-
-		/// <summary>
-		/// 获得图标
-		/// </summary>
-		/// <param name="IconId"></param>
-		/// <param name="IconIdx"></param>
-		/// <param name="MainId">提示用</param>
-		/// <param name="Bitmap"></param>
-		/// <param name="icon"></param>
-		/// <param name="Name">提示用</param>
-		/// <returns></returns>
-		internal Bitmap GetTexture(QuoteInfo quoteInfo)
-		{
-			#region 初始处理
-			string ItemMsg = $"数据ID { quoteInfo.MainId } { (quoteInfo.Name != null ? $"[{ quoteInfo.Name }]" : null) } ";
-
-			if (quoteInfo.IconTextureId == 0)
-			{
-				LogHelper.Record(ItemMsg + $"缺少道具图标", OutLogHelper.LogGroup.错误记录);
-				return null;
-			}
-			else if (!IconTextures.ContainsKey(quoteInfo.IconTextureId))
-			{
-				Console.WriteLine($"{ quoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo：{ IconTextures.Count })");
-				return null;
-			}
-			#endregion
-
-
-			#region 异常处理
-			var IconTexture = IconTextures[quoteInfo.IconTextureId];
-			if (string.IsNullOrWhiteSpace(IconTexture.iconTexture))
-			{
-				LogHelper.Record($"{ ItemMsg } => 图标({ IconTexture.iconTexture }) 由于图标名为空，跳过执行", OutLogHelper.LogGroup.错误记录);
-				return null;
-			}
-
-			var bitmap = IconTextureExt.GetIcon(IconTexture, quoteInfo.IconIndex);
-			if (bitmap is null)
-			{
-				LogHelper.Record($"{ItemMsg} => 图标({ IconTexture.iconTexture } 图标资源获取失败", OutLogHelper.LogGroup.错误记录);
-				return null;
-			}
-			#endregion
-
-
-			return quoteInfo.ProcessImage(bitmap);
 		}
 		#endregion
 

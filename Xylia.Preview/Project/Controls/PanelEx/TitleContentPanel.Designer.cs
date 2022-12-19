@@ -34,7 +34,6 @@
 			// ContentPanel
 			// 
 			this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
-			//this.ContentPanel.BasicLineHeight = 19;
 			this.ContentPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ContentPanel.ForeColor = System.Drawing.Color.White;
 			this.ContentPanel.Location = new System.Drawing.Point(7, 26);
@@ -48,9 +47,8 @@
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.ContentPanel);
 			this.Name = "TitleContentPanel";
-			this.Size = new System.Drawing.Size(282, 50);
-			this.Title = "信息";
-			//this.SizeChanged += new System.EventHandler(this.TitleContentPanel_SizeChanged);
+			this.Size = new System.Drawing.Size(359, 52);
+			this.Title = "标题";
 			this.Controls.SetChildIndex(this.ContentPanel, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();

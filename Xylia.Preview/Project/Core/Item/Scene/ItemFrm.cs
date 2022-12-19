@@ -328,7 +328,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 					if (o.Value == 0) continue;
 
 					var key = o.Key;
-					var val = new MyInfo($"{key.GetDescription()} {o.Value.ToString(key)}");
+					var val = new MyInfo($"{key.GetDescription()} {AbilityEx.ToString(o.Value, key)}");
 
 					//实际上直接 MainAbility转为此枚举是不正确的，只是简便方法
 					if (key == this.ItemInfo.MainAbility1 || key == this.ItemInfo.MainAbility2) ValidMainInfo.Add(val);

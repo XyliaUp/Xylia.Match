@@ -216,7 +216,7 @@ namespace Xylia.Preview.Common.Enums
 		DefendDamageModifyPercent,
 
 		[Signal("defend-damage-modify-diff")]
-		[Description("额外伤害减")]
+		[Description("额外伤害减免")]
 		DefendDamageModifyDiff,
 
 		[Signal("max-hp")]
@@ -343,5 +343,7 @@ namespace Xylia.Preview.Common.Enums
 		[Signal("attack-pierce-base-percent")]
 		[Description("穿刺率")]
 		AttackPierceBasePercent,
+
+
 	}
 }

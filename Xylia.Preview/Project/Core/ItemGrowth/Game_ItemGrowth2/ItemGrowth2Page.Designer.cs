@@ -31,24 +31,11 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemGrowth2Page));
-			this.MyWeapon_Title = new System.Windows.Forms.Label();
+
 			this.label1 = new System.Windows.Forms.Label();
 			this.ResultWeaponPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.ResultWeaponPreview();
 			this.GrowthState = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.SuspendLayout();
-			// 
-			// MyWeapon_Title
-			// 
-			this.MyWeapon_Title.AutoSize = true;
-			this.MyWeapon_Title.BackColor = System.Drawing.Color.Transparent;
-			this.MyWeapon_Title.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.MyWeapon_Title.ForeColor = System.Drawing.Color.White;
-			this.MyWeapon_Title.Location = new System.Drawing.Point(42, 17);
-			this.MyWeapon_Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.MyWeapon_Title.Name = "MyWeapon_Title";
-			this.MyWeapon_Title.Size = new System.Drawing.Size(74, 21);
-			this.MyWeapon_Title.TabIndex = 11;
-			this.MyWeapon_Title.Text = "当前装备";
 			// 
 			// label1
 			// 
@@ -92,7 +79,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
 			this.Controls.Add(this.GrowthState);
-			this.Controls.Add(this.MyWeapon_Title);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.ResultWeaponPreview);
 			this.Name = "ItemGrowth2Page";
@@ -107,7 +93,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		}
 
 		#endregion
-		private System.Windows.Forms.Label MyWeapon_Title;
+	
 		private System.Windows.Forms.Label label1;
 		protected ResultWeaponPreview ResultWeaponPreview;
 		protected Controls.ContentPanel GrowthState;

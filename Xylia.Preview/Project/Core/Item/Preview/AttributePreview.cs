@@ -29,12 +29,12 @@ namespace Xylia.Preview.Project.Core.Item
 			var InfoCells = new List<AttributeInfoCell>();
 
 			//读取主属性
-			var MainAbilityFixed = FileCache.Data.ItemRandomAbilitySlot.GetInfo(record.Attributes["main-ability-fixed"]);
+			var MainAbilityFixed = FileCache.Data.ItemRandomAbilitySlot[record.Attributes["main-ability-fixed"]];
 			if (MainAbilityFixed != null) InfoCells.Add(new AttributeInfoCell(MainAbilityFixed));
 
 
 			#region 读取子属性
-			var SubAbilityFixed = FileCache.Data.ItemRandomAbilitySlot.GetInfo(record.Attributes["sub-ability-fixed"]);
+			var SubAbilityFixed = FileCache.Data.ItemRandomAbilitySlot[record.Attributes["sub-ability-fixed"]];
 			if (SubAbilityFixed != null) InfoCells.Add(new AttributeInfoCell(SubAbilityFixed));
 
 
@@ -48,8 +48,8 @@ namespace Xylia.Preview.Project.Core.Item
 			{
 				if (record.ContainsAttribute("sub-ability-random-" + i, out string SubAbilityRandomAlias))
 				{
-					var SubAbilityRandom = FileCache.Data.ItemRandomAbilitySlot.GetInfo(SubAbilityRandomAlias);
-					if(SubAbilityRandom != null) InfoCells.Add(new AttributeInfoCell(SubAbilityRandom));
+					var SubAbilityRandom = FileCache.Data.ItemRandomAbilitySlot[SubAbilityRandomAlias];
+					if (SubAbilityRandom != null) InfoCells.Add(new AttributeInfoCell(SubAbilityRandom));
 				}
 			}
 			#endregion

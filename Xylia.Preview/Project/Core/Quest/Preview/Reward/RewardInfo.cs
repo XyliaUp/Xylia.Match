@@ -54,8 +54,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			{
 				foreach (var step in MissionStep)
 				{
-					var Reward1 = FileCache.Data.QuestReward.GetInfo(step.Reward1);
-					var Reward2 = FileCache.Data.QuestReward.GetInfo(step.Reward2);
+					var Reward1 = FileCache.Data.QuestReward[step.Reward1];
+					var Reward2 = FileCache.Data.QuestReward[step.Reward2];
 
 					if (Reward1 != null)
 					{

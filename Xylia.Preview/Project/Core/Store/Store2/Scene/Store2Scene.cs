@@ -152,7 +152,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			Job SelectedJob = temp?.Name.ToEnum<Job>() ?? Job.JobNone;
 
 			this.ListPreview.StoreAlias = Store2.Alias;
-			Clipboard.SetText(Store2.Alias);
+			this.Invoke(() => Clipboard.SetText(Store2.Alias));
 			#endregion
 
 			#region 读取数据
@@ -185,7 +185,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 			//获取是否存在出售NPC
 			//var HasRelativeNpc = Npc.Scene.SearcherScene.HasRelativeNpc(StoreAlias, out Records);
-			this.Invoke(new Action(() => this.ucBtnExt1.Visible = true));
+			this.Invoke(() => this.ucBtnExt1.Visible = true);
 
 
 
@@ -197,7 +197,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			//如果搜索条件是物品信息，那么再搜索可购买物品
 			if (FilterRule is ItemData FilterItem)
 			{
-				var Store2 = FileCache.Data.Store2.GetInfo(NodeInfo.AliasText);
+				var Store2 = FileCache.Data.Store2[NodeInfo.AliasText];
 				if (Store2 is null) return false;
 
 				//遍历可购买物品字段
@@ -251,8 +251,16 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 		/// <param name="e"></param>
 		private void ucBtnExt1_BtnClick(object sender, EventArgs e)
 		{
-			var records = Npc.Scene.SearcherScene.GetRelativeNpc(this.CurrentAlias);
-			if(records is null || !records.Any())
+			var records = FileCache.Data.Npc.Where(info =>
+				info.Attributes["store2-1"].MyEquals(StoreAlias) ||
+				info.Attributes["store2-2"].MyEquals(StoreAlias) ||
+				info.Attributes["store2-3"].MyEquals(StoreAlias) ||
+				info.Attributes["store2-4"].MyEquals(StoreAlias) ||
+				info.Attributes["store2-5"].MyEquals(StoreAlias) ||
+				info.Attributes["store2-6"].MyEquals(StoreAlias), true);
+
+
+			if (records is null || !records.Any())
 			{
 				this.ucBtnExt1.Visible = false;
 				return;

@@ -43,16 +43,12 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		[Category("Item"), Description("物品详细信息")]
 		public string ItemName { get => this.ItemNameCell.Text; set => this.ItemNameCell.Text = value; }
 
-		public Bitmap TagImage { get => this.ItemNameCell.TagImage; set => this.ItemNameCell.TagImage = value; }
-
 
 		public Bitmap CardImage;
 
 		private List<MyInfo> MainInfo { get; set; } = new();
 
 		private List<MyInfo> SubInfo { get; set; } = new();
-
-		private Dictionary<MainAbility, long> ItemAbility { get; set; } = new();
 		#endregion
 
 
@@ -95,11 +91,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		{
 			if (Title is null || Text is null) return null;
 
-			return new TitleContentPanel()
-			{
-				Title = Title,
-				Content = Text,
-			};
+			return new TitleContentPanel(Title, Text);
 		}
 
 		/// <summary>
@@ -149,6 +141,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		#endregion
 
 		#region 载入数据
+		private Dictionary<MainAbility, long> ItemAbility { get; set; } = new();
+
 		/// <summary>
 		/// 白字属性部分
 		/// </summary>
@@ -187,6 +181,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.ItemAbility = result;
 		}
 
+
 		/// <summary>
 		/// 读取宝石类的Buff属性信息
 		/// </summary>
@@ -194,7 +189,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		{
 			for (int i = 1; i <= 4; i++)
 			{
-				var EffectEquip = FileCache.Data.Effect.GetInfo(this.ItemInfo.Attributes[$"effect-equip-{i}"]);
+				var EffectEquip = FileCache.Data.Effect[this.ItemInfo.Attributes[$"effect-equip-{i}"]];
 				if (EffectEquip is not null)
 				{
 					//显示附加效果文本提示信息
@@ -408,10 +403,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			this.ItemIcon.Image = this.ItemInfo.IconExtra;
 			this.ItemNameCell.ItemGrade = this.ItemInfo.ItemGrade;
+			this.ItemNameCell.TagImage = this.ItemInfo.TagIconGrade;
 			this.lbl_Category.Text = $"Name.item.game-category-3.{ this.ItemInfo.GameCategory3.GetSignal() }".GetText(true);
 			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
 			this.ItemName = this.ItemInfo.ItemName;
-			this.TagImage = this.ItemInfo.TagIconGrade;
+			
 
 			this.MainInfo = new List<MyInfo>()
 			{
@@ -496,12 +492,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				if (Skill3Data != null) System.Diagnostics.Trace.WriteLine($"发动技能 => { Skill3Data.Alias } ({ Skill3Data.NameText() })");
 				#endregion
 
-				if (this.ItemInfo.Card != null)
-				{
-					System.Diagnostics.Trace.WriteLine(this.ItemInfo.Card.Attributes);
-
-					this.LoadCardImage();
-				}
+				if (this.ItemInfo.Card != null) this.LoadCardImage();
 			}
 		}
 	}

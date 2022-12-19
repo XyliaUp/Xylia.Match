@@ -9,6 +9,7 @@ using HZH_Controls;
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Attribute.ArgTest;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Designer;
 
 namespace Xylia.Preview.Project.Controls
@@ -71,11 +72,6 @@ namespace Xylia.Preview.Project.Controls
 		/// 图标
 		/// </summary>
 		public Bitmap Icon;
-
-		/// <summary>
-		/// 符号标记
-		/// </summary>
-		public string Signal;
 		#endregion
 
 
@@ -120,14 +116,8 @@ namespace Xylia.Preview.Project.Controls
 		{
 			var CopyTxt = this.Text/*.CutText()*/;
 			if (!string.IsNullOrWhiteSpace(CopyTxt))
-				CopyTxt.SetClipboard();
+				this.Invoke(() => Clipboard.SetText(CopyTxt));
 		}
-
-		//protected override void OnAutoSizeChanged(EventArgs e)
-		//{
-		//	base.OnAutoSizeChanged(e);
-		//	this.Refresh();
-		//}
 		#endregion
 	}
 }

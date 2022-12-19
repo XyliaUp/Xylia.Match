@@ -13,27 +13,17 @@ namespace Xylia.Preview.Data.Record
 	public sealed class ItemTransformRecipe : IRecord
 	{
 		#region 属性字段
-		public int RequiredInvenCapacity;
 		public int MoneyCost;
 
-		/// <summary>
-		/// 主祭品
-		/// </summary>
 		public string MainIngredient;
 		public ConditionType MainIngredientConditionType;
 		public int MainIngredientMinLevel;
 		public int MainIngredientStackCount;
 		public string MainIngredientTitleName;
 
-		public bool KeepMainIngredientWeaponGemSlot;
-		public bool KeepMainIngredientWeaponAppearance;
-		public bool KeepMainIngredientSpirit;
-
 		public string TitleItem;
 		public string TitleName;
-		public string TitleReward;
 
-		public string RandomboxPreview;
 		public CategorySeq Category;
 		public bool UseRandom;
 
@@ -172,13 +162,11 @@ namespace Xylia.Preview.Data.Record
 		/// </summary>
 		public static IEnumerable<ItemTransformRecipe> QueryRecipe(Item ItemInfo)
 		{
-			if (ItemInfo is null) return null;
-
-			return FileCache.Data.ItemTransformRecipe.WhereTest("main-ingredient", CurMainIngredient =>
+			return FileCache.Data.ItemTransformRecipe.Where(o =>
 			{
-				if (CurMainIngredient is null) return false;
-				else if (CurMainIngredient.MyStartsWith("Item:")) return CurMainIngredient.MyEquals("Item:" + ItemInfo.Alias);
-				else if (CurMainIngredient.MyStartsWith("ItemBrand:") && CurMainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand))
+				if (o.MainIngredient is null) return false;
+				else if (o.MainIngredient.MyStartsWith("Item:")) return o.MainIngredient.MyEquals("Item:" + ItemInfo.Alias);
+				else if (o.MainIngredient.MyStartsWith("ItemBrand:") && o.MainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand))
 				{
 					//校验条件类型
 					//if (ItemInfo.ConditionTypes.Contains(a.MainIngredientConditionType))
@@ -192,7 +180,9 @@ namespace Xylia.Preview.Data.Record
 				}
 
 				return false;
-			});
+
+
+			},true);
 		}
 		#endregion
 	}

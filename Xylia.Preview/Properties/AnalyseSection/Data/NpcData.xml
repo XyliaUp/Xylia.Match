@@ -28,7 +28,7 @@
 		<record alias="immune-breaker-show" type="Index" name="" server="n" repeat="8" />
         <record alias="store" name="" ref="Store" />	
         <record alias="store-by-item" name="" ref="StoreByItem" />		
-		<record alias="store2" name="" ref="Store2" repeat="6" />
+		<record alias="store2" name="" ref="Store2" repeat="6" preload="y" />
 		<record alias="teleport" name="" ref="Teleport" />
 		<record alias="repairer" type="Bool" name="" />
 		<record alias="production" type="Seq" name="" seq="$production-type" />		

@@ -4,6 +4,9 @@ namespace Xylia.Preview.Data.Record
 {
 	public sealed class Npc : IRecord, IName
 	{
+		public string Animset;
+
+
 		public string Name2;
 		public string Title2;
 

@@ -49,27 +49,5 @@ namespace Xylia.Preview.Project.Core.Npc.Scene
 			this.storeListPreview1.Cells = StoreItems;
 		}
 		#endregion
-
-
-
-
-		#region 静态方法
-		/// <summary>
-		/// 是否存在关联Npc
-		/// </summary>
-		/// <param name="Store2Alias"></param>
-		/// <param name="SearchResult"></param>
-		/// <returns></returns>
-		public static IEnumerable<IRecord> GetRelativeNpc(string Store2Alias)
-		{
-			return FileCache.Data.Npc.Where(info =>
-			  info.Attributes["store2-1"].MyEquals(Store2Alias) ||
-			  info.Attributes["store2-2"].MyEquals(Store2Alias) ||
-			  info.Attributes["store2-3"].MyEquals(Store2Alias) ||
-			  info.Attributes["store2-4"].MyEquals(Store2Alias) ||
-			  info.Attributes["store2-5"].MyEquals(Store2Alias) ||
-			  info.Attributes["store2-6"].MyEquals(Store2Alias));
-		}
-		#endregion
 	}
 }

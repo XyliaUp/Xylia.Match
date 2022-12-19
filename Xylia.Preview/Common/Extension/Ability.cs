@@ -3,7 +3,7 @@ using Xylia.Extension;
 
 namespace Xylia.Preview.Common.Extension
 {
-	public static class Ability
+	public static class AbilityEx
 	{
 		/// <summary>
 		/// 获取值文本

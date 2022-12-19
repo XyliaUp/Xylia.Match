@@ -3,12 +3,13 @@
 	<list module="ItemData" type="item-improve-option-list" version="5.0" >
 		<record alias="id" type="id" name="" />
 		<record alias="job" seq="$job" type="Seq" name="" start="0" />	
-		<record alias="option" name="" ref="ItemImproveOption" repeat="63" />
-		
+		<record alias="option" name="" ref="ItemImproveOption" repeat="50" />
+		<record alias="option-prob-weight" name="" type="Short" repeat="50" />
+		<record alias="option-prob-max" name="" type="Short" />
+
 		<record alias="draw-cost-money" type="Int32" name="" repeat="4" />
 		<record alias="draw-cost-main-item" name="" ref="Item" repeat="4" />
 		<record alias="draw-cost-main-item-count" name="" type="Short" repeat="4" />
-
 		<record alias="draw-cost-sub-item-1" name="" ref="Item" repeat="6" />
 		<record alias="draw-cost-sub-item-count-1" type="Short" name="" repeat="6" max="30000" min="0" />
 		<record alias="draw-cost-sub-item-2" name="" ref="Item" repeat="6" />

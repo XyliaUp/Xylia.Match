@@ -8,18 +8,30 @@ namespace Xylia.Preview.Project.Controls.PanelEx
 	/// </summary>
 	public partial class TitleContentPanel : TitlePanel
 	{
-		public TitleContentPanel() => InitializeComponent();
+		public TitleContentPanel()
+		{
+			InitializeComponent();
+		}
+
+		public TitleContentPanel(string Title, string Content) : this()
+		{
+			this.Title = Title;
+			this.Text = Content;
+		}
+
 
 		[Editor("System.ComponentModel.Design.MultilineStringEditor", typeof(UITypeEditor))]
 		[Category("外观"), Description("内容")]
-		public string Content
+		public override string Text
 		{
 			get => this.ContentPanel.Text;
-			set
-			{
-				this.ContentPanel.Text = value;
-				this.Height = this.ContentPanel.Bottom;
-			}													  
+			set => this.ContentPanel.Text = value;
+		}
+
+
+		public override void Refresh()
+		{
+			this.Height = this.ContentPanel.Bottom;
 		}
 	}
 }

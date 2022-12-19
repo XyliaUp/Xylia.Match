@@ -1588,38 +1588,19 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;CombatData&quot; type=&quot;effect&quot; version=&quot;28.2&quot; rule=&quot;simple&quot; &gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;effect&quot; version=&quot;28.2&quot; rule=&quot;&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
-        ///
-        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; seq=&quot;$type-seq&quot; /&gt;
-        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;name2&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
-        ///		&lt;record alias=&quot;name3&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
-        ///		&lt;record alias=&quot;level&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;show-icon&quot; type=&quot;Bool&quot; name=&quot;&quot; server=&quot; [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; seq=&quot;$type-seq&quot; &gt;
+        ///			&lt;case alias=&quot;none&quot; name=&quot;&quot; default=&quot;y&quot; /&gt;
+        ///			&lt;case alias=&quot;accumulated-damage-to-anyone&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;accumulated-damage-from-1&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;accumulated-damage-from-2&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;accumulated-damage-from-3&quot; name=&quot;&quot; /&gt;
+        ///			&lt;case alias=&quot;melee- [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
-        public static string EffectData_Simple {
+        public static string EffectData {
             get {
-                return ResourceManager.GetString("EffectData_Simple", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-        ///&lt;table&gt;
-        ///	&lt;list module=&quot;CombatData&quot; type=&quot;effect&quot; version=&quot;25.0&quot; check-version=&quot;y&quot; &gt;
-        ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
-        ///
-        ///		&lt;record alias=&quot;type&quot; name=&quot;&quot; type=&quot;type&quot; seq=&quot;$type-seq&quot; /&gt;
-        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;name2&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
-        ///		&lt;record alias=&quot;name3&quot; type=&quot;TextAlias&quot; name=&quot;&quot; server=&quot;n&quot; /&gt;
-        ///		&lt;record alias=&quot;level&quot; type=&quot;Short&quot; name=&quot;&quot; /&gt;
-        ///		&lt;record alias=&quot;show-icon&quot; type=&quot;Bool&quot; name=&quot;&quot; serv [字符串的其余部分被截断]&quot;; 的本地化字符串。
-        /// </summary>
-        public static string EffectData_v25_0 {
-            get {
-                return ResourceManager.GetString("EffectData_v25_0", resourceCulture);
+                return ResourceManager.GetString("EffectData", resourceCulture);
             }
         }
         
@@ -1761,7 +1742,7 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;ItemData&quot; type=&quot;faction&quot; version=&quot;0.19&quot; &gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;faction&quot; version=&quot;0.2&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;hostile-faction&quot; name=&quot;&quot; ref=&quot;this&quot; link=&quot;id&quot; /&gt;
@@ -1770,7 +1751,8 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///			&lt;case alias=&quot;main&quot; name=&quot;&quot; /&gt;
         ///			&lt;case alias=&quot;second&quot; name=&quot;&quot; /&gt;
         ///		&lt;/record&gt;
-        ///		&lt;record alias=&quot;name2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		&lt;record alias=&quot;name2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
+        ///		&lt; [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string FactionData {
             get {
@@ -2687,11 +2669,10 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-improve&quot; version=&quot;6.1&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot; /&gt;
         ///		&lt;record alias=&quot;level&quot; type=&quot;Level&quot; name=&quot;&quot; show-zero=&quot;y&quot; start=&quot;0&quot; /&gt;
-        ///
         ///		&lt;record alias=&quot;cost-main-item&quot; name=&quot;&quot; ref=&quot;Item&quot; repeat=&quot;5&quot; /&gt;
         ///		&lt;record alias=&quot;cost-main-item-count&quot; type=&quot;Short&quot; name=&quot;&quot; repeat=&quot;5&quot; max=&quot;30000&quot; min=&quot;0&quot; /&gt;
         ///		&lt;record alias=&quot;cost-sub-item-1&quot; name=&quot;&quot; ref=&quot;Item&quot; repeat=&quot;8&quot; /&gt;
-        ///		&lt;record alias=&quot;cost-sub-item-count-1&quot; type=&quot;Short&quot;  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		&lt;record alias=&quot;cost-sub-item-count-1&quot; type=&quot;Short&quot; na [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string ItemImproveData {
             get {
@@ -2724,11 +2705,12 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-improve-option-list&quot; version=&quot;5.0&quot; &gt;
         ///		&lt;record alias=&quot;id&quot; type=&quot;id&quot; name=&quot;&quot; /&gt;
         ///		&lt;record alias=&quot;job&quot; seq=&quot;$job&quot; type=&quot;Seq&quot; name=&quot;&quot; start=&quot;0&quot; /&gt;	
-        ///		&lt;record alias=&quot;option&quot; name=&quot;&quot; ref=&quot;ItemImproveOption&quot; repeat=&quot;63&quot; /&gt;
-        ///		
+        ///		&lt;record alias=&quot;option&quot; name=&quot;&quot; ref=&quot;ItemImproveOption&quot; repeat=&quot;50&quot; /&gt;
+        ///		&lt;record alias=&quot;option-prob-weight&quot; name=&quot;&quot; type=&quot;Short&quot; repeat=&quot;50&quot; /&gt;
+        ///		&lt;record alias=&quot;option-prob-max&quot; name=&quot;&quot; type=&quot;Short&quot; /&gt;
+        ///
         ///		&lt;record alias=&quot;draw-cost-money&quot; type=&quot;Int32&quot; name=&quot;&quot; repeat=&quot;4&quot; /&gt;
-        ///		&lt;record alias=&quot;draw-cost-main-item&quot; name=&quot;&quot; ref=&quot;Item&quot; repeat=&quot;4&quot; /&gt;
-        ///		&lt;record alias=&quot;draw-cost-main-item-count&quot; name=&quot;&quot; type=&quot;Sh [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///	 [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string ItemImproveOptionListData {
             get {
@@ -2921,19 +2903,13 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///&lt;!--
-        ///     normal和random组是互斥关系，通过use-random选择
-        ///	 normal和rare组是互存关系（成功概率总和最大值为1000，类似G1/G2）
-        ///     normal组：
-        ///        normal-item-[1-10]、normal-item-stack-count-[1-10]
-        ///		normal-item-success-probability (MAX 1000)
-        ///		normal-item-select-count 可获得的 normal-item 对象数（如2就是从所有物品中抽取2种）
-        ///		normal-item-total-count  normal-item 对象总数
-        ///	
-        ///	 rare组：
-        ///	    rare-item-[1-20]、rare-item-stack-count-[1-20]
-        ///		rare-item-success-probability (MAX 1000)
-        ///		rare-item-select-count  可获得的 r [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;ItemTransformRecipe&quot; version=&quot;3.0&quot; &gt;
+        ///		&lt;record alias=&quot;alias&quot; type=&quot;Index&quot; name=&quot;别名&quot; /&gt;
+        ///		&lt;record alias=&quot;upgrade-grocery&quot; ref=&quot;ItemTransformUpgradeItem&quot; /&gt;
+        ///		&lt;record alias=&quot;required-inven-capacity&quot; type=&quot;Int32&quot; name=&quot;&quot; default=&quot;1&quot; apply=&quot;must&quot; /&gt;
+        ///		&lt;record alias=&quot;money-cost&quot; type=&quot;Int32&quot; name=&quot;&quot; /&gt;
+        ///		&lt;record alias=&quot;main-ingredient&quot; name=&quot;&quot; use-group=&quot;y&quot; preload=&quot;y&quot; /&gt;
+        ///		&lt;record alias=&quot;main-ingredient-condition-type&quot; type=&quot;S [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string ItemTransformRecipeData {
             get {
@@ -4239,7 +4215,7 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;ItemData&quot; type=&quot;random-store-item&quot; version=&quot;0.10&quot;&gt;
+        ///	&lt;list module=&quot;ItemData&quot; type=&quot;random-store-item&quot; version=&quot;0.2&quot;&gt;
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;item&quot; name=&quot;&quot; ref=&quot;Item&quot; /&gt;
         ///		&lt;record alias=&quot;item-count&quot; name=&quot;&quot; type=&quot;Int32&quot; /&gt;

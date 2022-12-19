@@ -56,9 +56,7 @@ namespace Xylia.Match.Windows.Panel
 		#endregion
 
 		#region 字段
-		private Thread Thread_ItemIcon;
-
-		private Thread Thread_GoodIcon;
+		
 
 		CombineOption.Prop GetProp = new();
 
@@ -221,20 +219,12 @@ namespace Xylia.Match.Windows.Panel
 
 		}
 
-	
 
 
 
-	
-		private void MetroButton3_Click(object sender, EventArgs e)
-		{
-			if (Folder.ShowDialog() == DialogResult.OK) Path_GameFolder.Text = Folder.SelectedPath;
-		}
 
-		private void Btn_Search_2_Click(object sender, EventArgs e)
-		{
-			if (Folder.ShowDialog() == DialogResult.OK) Path_ResultPath.Text = Folder.SelectedPath;
-		}
+
+
 
 		private void Match_ICON_DragEnter(object sender, DragEventArgs e)
 		{
@@ -302,74 +292,13 @@ namespace Xylia.Match.Windows.Panel
 			}
 		}
 
-		private void Btn_Search_3_Click(object sender, EventArgs e)
-		{
-			Open.Filter = "数据配置文件|*.chv|所有文件|*.*";
-
-			if (int.TryParse(Xylia.Configure.Ini.ReadValue("Match_ICON", "Filter1"), out int Result)) Open.FilterIndex = Result;
-
-			if (Open.ShowDialog() == DialogResult.OK)
-			{
-				metroTextBox1.Text = Open.FileName;
-				Ini.WriteValue("Match_ICON", "Filter1", Open.FilterIndex);
-			}
-		}
-
+		
 		private void MetroTextBox1_TextChanged(object sender, EventArgs e)
 		{
 			MySet.Core.Icon_Chv = ((Control)sender).Text;
 		}
 
-		private void MetroButton1_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog.FileName = "配置文件";
-			SaveFileDialog.Filter = "Xylia Value 配置文件|*.chv";
-
-			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
-			{
-				Thread thread = new((ThreadStart)delegate
-				{
-					int Count = 1;
-
-					using (StreamWriter sw = new(SaveFileDialog.FileName))
-					{
-						string FolderPath = this.Path_ResultPath.Text + @"\物品";
-						if (!Directory.Exists(FolderPath))
-						{
-							FolderPath = Path_ResultPath.Text;
-							this.Invoke(new Action(() => Xylia.Tip.SendMessage("由于不存在目标子文件夹，已变更为扫描所选的<输出目录>")));
-						}
-
-						var Files = new DirectoryInfo(FolderPath).GetFiles();
-						foreach (FileInfo fileInfo in Files)
-						{
-							this.Invoke(new Action(() => Footer.Text = $"正在生成配置文件  { 100 * Count++ / Files.Length  }%"));
-
-							if (fileInfo.Name.Contains('_'))
-							{
-								string[] Temp = fileInfo.Name.Split('_');
-
-								foreach (var T in Temp) if (int.TryParse(T.Replace(".png", null), out int Result)) sw.WriteLine(Result);
-							}
-							else if (int.TryParse(fileInfo.Name.Replace(".png", null), out int ItemID))
-							{
-								sw.WriteLine(ItemID);
-							}
-						}
-					}
-
-					this.Invoke(new Action(() =>
-					{
-						Footer.Text = $"输出配置文件已完成";
-						Xylia.Tip.SendMessage("输出配置文件已完成！");
-					}));
-				});
-
-				thread.SetApartmentState(ApartmentState.STA);
-				thread.Start();
-			}
-		}
-
+		
 		private void MetroComboBox1_TextChanged(object sender, EventArgs e)
 		{
 			if (IsInitialization) return;
@@ -496,6 +425,46 @@ namespace Xylia.Match.Windows.Panel
 		}
 
 
+		private void Match_ICON_Enter(object sender, EventArgs e)
+		{
+			IsInitialization = false;
+		}
+
+
+
+
+
+
+	
+		#endregion
+
+
+
+
+		#region 输出图标
+		private void MetroButton3_Click(object sender, EventArgs e)
+		{
+			if (Folder.ShowDialog() == DialogResult.OK) Path_GameFolder.Text = Folder.SelectedPath;
+		}
+
+		private void Btn_Search_2_Click(object sender, EventArgs e)
+		{
+			if (Folder.ShowDialog() == DialogResult.OK) Path_ResultPath.Text = Folder.SelectedPath;
+		}
+
+		private void Btn_Search_3_Click(object sender, EventArgs e)
+		{
+			Open.Filter = "数据配置文件|*.chv|所有文件|*.*";
+
+			if (int.TryParse(Xylia.Configure.Ini.ReadValue("Match_ICON", "Filter1"), out int Result)) Open.FilterIndex = Result;
+
+			if (Open.ShowDialog() == DialogResult.OK)
+			{
+				metroTextBox1.Text = Open.FileName;
+				Ini.WriteValue("Match_ICON", "Filter1", Open.FilterIndex);
+			}
+		}
+
 		private void Switch_HasBG_MouseEnter(object sender, EventArgs e)
 		{
 			string Msg = checkBox1.Checked ? "生成道具图标时\n会附带道具品级" : "只生成出道具的\n透明背景图标";
@@ -506,7 +475,6 @@ namespace Xylia.Match.Windows.Panel
 		{
 			FrmAnchorTips.CloseLastTip();
 		}
-
 
 		private void Switch_Mode_MouseEnter(object sender, EventArgs e)
 		{
@@ -523,21 +491,15 @@ namespace Xylia.Match.Windows.Panel
 			Switch_Mode_MouseEnter(null, null);
 		}
 
-		private void Match_ICON_Enter(object sender, EventArgs e)
-		{
-			IsInitialization = false;
-		}
-
 		private void metroButton1_MouseEnter(object sender, EventArgs e)
 		{
 			FrmAnchorTips.ShowTips(metroButton1, "按照已生成的图标生成配置列表，便于版本更新\n\n注意：如果修改了输出文件夹的名字（即\"生成\"文件夹）\n\n输出栏 直接选择新文件夹，点击按钮即可", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
 		}
-
+		
 		private void metroButton1_MouseLeave(object sender, EventArgs e)
 		{
 			FrmAnchorTips.CloseLastTip();
 		}
-
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)
 		{
@@ -551,76 +513,146 @@ namespace Xylia.Match.Windows.Panel
 
 		private void checkBox2_CheckedChanged(object sender, EventArgs e)
 		{
-			Xylia.Configure.Ini.WriteValue("Match_ICON", "WriteLog", checkBox2.Checked);
+			Ini.WriteValue("Match_ICON", "WriteLog", checkBox2.Checked);
 		}
-		#endregion
 
-		#region 输出图标
+
+
+
+
+
+
+		private void MetroButton1_Click(object sender, EventArgs e)
+		{
+			SaveFileDialog.FileName = "配置文件";
+			SaveFileDialog.Filter = "Xylia Value 配置文件|*.chv";
+
+			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				Thread thread = new((ThreadStart)delegate
+				{
+					int Count = 1;
+
+					using (StreamWriter sw = new(SaveFileDialog.FileName))
+					{
+						string FolderPath = this.Path_ResultPath.Text + @"\物品";
+						if (!Directory.Exists(FolderPath))
+						{
+							FolderPath = Path_ResultPath.Text;
+							this.Invoke(new Action(() => Xylia.Tip.SendMessage("由于不存在目标子文件夹，已变更为扫描所选的<输出目录>")));
+						}
+
+						var Files = new DirectoryInfo(FolderPath).GetFiles();
+						foreach (FileInfo fileInfo in Files)
+						{
+							this.Invoke(new Action(() => Footer.Text = $"正在生成配置文件  { 100 * Count++ / Files.Length  }%"));
+
+							if (fileInfo.Name.Contains('_'))
+							{
+								string[] Temp = fileInfo.Name.Split('_');
+
+								foreach (var T in Temp) if (int.TryParse(T.Replace(".png", null), out int Result)) sw.WriteLine(Result);
+							}
+							else if (int.TryParse(fileInfo.Name.Replace(".png", null), out int ItemID))
+							{
+								sw.WriteLine(ItemID);
+							}
+						}
+					}
+
+					this.Invoke(new Action(() =>
+					{
+						Footer.Text = $"输出配置文件已完成";
+						Xylia.Tip.SendMessage("输出配置文件已完成！");
+					}));
+				});
+
+				thread.SetApartmentState(ApartmentState.STA);
+				thread.Start();
+			}
+		}
+
+
+
+
+		private Thread Thread_ItemIcon;
+
 		private void MetroButton2_Click(object sender, EventArgs e)
 		{
+			#region 结束任务 
+			if (Thread_ItemIcon != null)
+			{
+				if (new FrmWithOKCancel1() { Content = "是否确认强制结束？" }.ShowDialog() != DialogResult.OK) return;
+
+				try
+				{
+					Thread_ItemIcon.Interrupt();
+					Thread_ItemIcon = null;
+
+					Footer.Text = $"任务已强制结束";
+				}
+				catch
+				{
+
+				}
+
+				return;
+			}
+			#endregion
+
+			#region 初始化
 			string ChvPath = metroTextBox1.Text;
 
-			try
+			if (!ChvPath.IsNull() && !File.Exists(ChvPath))
 			{
-				#region 初始化
-				if (!ChvPath.IsNull() && !File.Exists(ChvPath)) throw new ArgumentException("Chv文件路径错误或不存在，请重新确认！");
-				if (!this.Switch_Mode.Checked && !File.Exists(metroTextBox1.Text)) throw new ArgumentException("选择白名单模式时，必须选择配置文件!");
-				#endregion
-
-
-				#region 执行	 
-				var IconTextureMatch = new IconTextureMatch()
-				{
-					FormatSelect = this.FormatSelect.TextValue,
-					CheckFormat = true,
-
-					//起始执行
-					Start = (r, t) =>
-					{
-						metroButton2.Text = "终止";
-						this.FormatSelect.Enabled = this.checkBox1.Enabled = this.checkBox2.Enabled = this.Switch_Mode.Enabled = this.pictureBox1.Enabled = false;
-					},
-
-					//结束执行
-					Finish = (r, t) =>
-					{
-						//委托要求关闭线程
-						this.Invoke((Action)(() => Thread_ItemIcon = null));
-
-						this.FormatSelect.Enabled = this.checkBox1.Enabled = this.checkBox2.Enabled = this.Switch_Mode.Enabled = this.pictureBox1.Enabled = true;
-						metroButton2.Text = "输出物品图标";
-					},
-				};
-
-
-				IconTextureMatch.StartMatch(new Util.Paks.Textures.ItemIcon(act => Footer.Text = act, Path_GameFolder.Text)
-				{
-					// UE4 临时支持
-					//ResourceFolder = ResourceFolder,
-
-					OutputDirectory = this.Path_ResultPath.Text + @"\物品",
-					ChvPath = metroTextBox1.Text,
-					UseBackground = this.checkBox1.Checked,
-					isWhiteList = !Switch_Mode.Checked,
-					ShowLog_CreateInfo = this.checkBox2.Checked,
-
-				}, ref Thread_ItemIcon,
-				act => this.Invoke(new Action(() => Footer.Text = act)));
-				#endregion
-			}
-			catch (ArgumentException ee)
-			{
-				Xylia.Tip.Message(ee.Message);
+				Xylia.Tip.Message("Chv文件路径错误或不存在，请重新确认！"); 
 				return;
 			}
-			catch (Exception ee)
+
+			if (!this.Switch_Mode.Checked && !File.Exists(metroTextBox1.Text))
 			{
-				Xylia.Tip.Message(ee.Message);
+				Xylia.Tip.Message("选择白名单模式时，必须选择配置文件!"); 
 				return;
 			}
+			#endregion
+
+			#region 执行
+			var IconTextureMatch = new IconTextureMatch()
+			{
+				FormatSelect = this.FormatSelect.TextValue,
+				CheckFormat = true,
+
+				Start = (r, t) =>
+				{
+					metroButton2.Text = "终止";
+					this.FormatSelect.Enabled = this.checkBox1.Enabled = this.checkBox2.Enabled = this.Switch_Mode.Enabled = this.pictureBox1.Enabled = false;
+				},
+
+				Finish = (r, t) =>
+				{
+					//委托要求关闭线程
+					this.Invoke(() => Thread_ItemIcon = null);
+
+					this.FormatSelect.Enabled = this.checkBox1.Enabled = this.checkBox2.Enabled = this.Switch_Mode.Enabled = this.pictureBox1.Enabled = true;
+					metroButton2.Text = "输出物品图标";
+				},
+			};
+			IconTextureMatch.StartMatch(new Util.Paks.Textures.ItemIcon(Path_GameFolder.Text)
+			{
+				OutputDirectory = this.Path_ResultPath.Text + @"\物品",
+				ChvPath = metroTextBox1.Text,
+				UseBackground = this.checkBox1.Checked,
+				isWhiteList = !Switch_Mode.Checked,
+				ShowLog_CreateInfo = this.checkBox2.Checked,
+
+			}, ref Thread_ItemIcon, act => this.Invoke(() => Footer.Text = act));
+			#endregion
 		}
 
 
+
+
+		private Thread Thread_GoodIcon;
 
 		private void metroButton9_Click(object sender, EventArgs e)
 		{
@@ -641,7 +673,7 @@ namespace Xylia.Match.Windows.Panel
 			};
 
 
-			IconTextureMatch.StartMatch(new Util.Paks.Textures.GoodIcon(act => Footer.Text = act, Path_GameFolder.Text)
+			IconTextureMatch.StartMatch(new Util.Paks.Textures.GoodIcon(Path_GameFolder.Text)
 			{
 				OutputDirectory = this.Path_ResultPath.Text + @"\商品",
 

@@ -68,7 +68,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.AcquirableOptionListTitle.Size = new System.Drawing.Size(104, 17);
 			this.AcquirableOptionListTitle.TabIndex = 33;
 			this.AcquirableOptionListTitle.Text = "可获得的强化效果";
-			this.ToolTip.SetToolTip(this.AcquirableOptionListTitle, "根据当前强化阶段显示强化效果");
+			this.ToolTip.SetToolTip(this.AcquirableOptionListTitle, "显示当前强化阶段的强化效果\n若无则显示获得阶段的强化效果");
 			// 
 			// CurrentOptionListTitle
 			// 

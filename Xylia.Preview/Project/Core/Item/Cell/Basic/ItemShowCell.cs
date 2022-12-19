@@ -30,11 +30,12 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 
 		public void LoadData(ItemData ItemData, Bitmap Icon = null)
 		{
-			this.ItemIcon = Icon;
-
 			this.ItemData = ItemData;
-			this.ItemName = ItemData.NameText();
-			this.ItemGrade = ItemData.ItemGrade;
+
+			this.IconCell.Image = Icon;
+			this.NameCell.Text = ItemData.NameText();
+			this.NameCell.TagImage = ItemData.TagIconGrade;
+			this.NameCell.ItemGrade = ItemData.ItemGrade;
 		}
 		#endregion
 
@@ -51,22 +52,22 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		[Category("Data"), Description("物品名称")]
 		public string ItemName
 		{
-			get => this.ItemNameCell.Text;
-			set => this.ItemNameCell.Text = value;
+			get => this.NameCell.Text;
+			set => this.NameCell.Text = value;
 		}
 
 		[Category("Data"), Description("物品品质")]
 		public byte ItemGrade
 		{
-			get => this.ItemNameCell.ItemGrade;
-			set => this.ItemNameCell.ItemGrade = value;
+			get => this.NameCell.ItemGrade;
+			set => this.NameCell.ItemGrade = value;
 		}
 
 		[Category("Data"), Description("是否使用标签")]
 		public Bitmap TagImage
 		{
-			get => this.ItemNameCell.TagImage;
-			set => this.ItemNameCell.TagImage = value;
+			get => this.NameCell.TagImage;
+			set => this.NameCell.TagImage = value;
 		}
 
 
@@ -127,7 +128,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// <summary>
 		/// 获得中心Y位置
 		/// </summary>
-		private int GetCenterLoY => (this.Scale - this.ItemNameCell.Height) / 2;
+		private int GetCenterLoY => (this.Scale - this.NameCell.Height) / 2;
 
 		public override void Refresh()
 		{
@@ -137,16 +138,16 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			if (!ReserveIconSpace && this.ItemIcon is null)
 			{
 				this.IconCell.Visible = false;
-				this.ItemNameCell.Location = new Point(0, NameLoY);
+				this.NameCell.Location = new Point(0, NameLoY);
 			}
 			else
 			{
 				this.IconCell.Visible = true;
-				this.ItemNameCell.Location = new Point(this.IconCell.Scale + 2, NameLoY);
+				this.NameCell.Location = new Point(this.IconCell.Scale + 2, NameLoY);
 			}
 
-			this.Width = this.ItemNameCell.Location.X + this.ItemNameCell.Width;
-			this.Height = Math.Max(this.IconCell.Scale - 1, this.ItemNameCell.Location.Y + this.ItemNameCell.Height);
+			this.Width = this.NameCell.Location.X + this.NameCell.Width;
+			this.Height = Math.Max(this.IconCell.Scale - 1, this.NameCell.Location.Y + this.NameCell.Height);
 		}
 
 
@@ -157,7 +158,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// <param name="e"></param>
 		private void ItemName_NameChanged(object sender, EventArgs e)
 		{
-			this.Width = this.ItemNameCell.Location.X + this.ItemNameCell.Width;
+			this.Width = this.NameCell.Location.X + this.NameCell.Width;
 		}
 
 		private void ItemName_DoubleClick(object sender, EventArgs e)
