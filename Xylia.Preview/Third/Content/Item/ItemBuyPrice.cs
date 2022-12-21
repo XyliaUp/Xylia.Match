@@ -75,7 +75,7 @@ namespace Xylia.Preview.Third.Content
 				{
 					//搜索对象
 					var ItemBrand = FileCache.Data.ItemBrand[Info.RequiredItembrand];
-					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == Info.RequiredItembrandConditionType);
+					var ItemTooltip = FileCache.Data.ItemBrandTooltip[ItemBrand.ID, (byte)Info.RequiredItembrandConditionType];
 
 					//物品组信息 (tooltip获取出现问题会导致输出异常)
 					var ItemBrandInfo = ItemTooltip?.NameText() ?? Info.RequiredItembrand;

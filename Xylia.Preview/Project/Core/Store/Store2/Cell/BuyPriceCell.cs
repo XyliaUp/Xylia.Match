@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
+using Xylia.bns.Modules.GameData.Enums;
+
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls.Currency;
@@ -58,7 +60,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 			int LoX = 0;
 			LoY += 5;
 
-			ItemCtls.AddItem(this.CreteItemBrandCell(ItemBuyPrice, ref LoX, LoY));
+			ItemCtls.AddItem(this.CreteItemBrandCell(ItemBuyPrice.RequiredItembrand, ItemBuyPrice.RequiredItembrandConditionType, ref LoX, LoY));
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem1, ItemBuyPrice.RequiredItemCount1, ref LoX, LoY));
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem2, ItemBuyPrice.RequiredItemCount2, ref LoX, LoY));
 			ItemCtls.AddItem(this.CreteItemCell(ItemBuyPrice.RequiredItem3, ItemBuyPrice.RequiredItemCount3, ref LoX, LoY));
@@ -88,7 +90,7 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 
 				this.Height = LoY + this.Scale + 5;
 			}
-			
+
 			this.Width = MaxWidth += 2;
 			#endregion
 
@@ -131,17 +133,20 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 		/// <summary>
 		/// 创建兑换物品组元素
 		/// </summary>
+		/// <param name="Itembrand"></param>
+		/// <param name="ConditionType"></param>
 		/// <param name="LoX"></param>
 		/// <param name="LoY"></param>
-		private Control CreteItemBrandCell(ItemBuyPrice ItemBuyPrice, ref int LoX, int LoY)
+		/// <returns></returns>
+		private Control CreteItemBrandCell(string Itembrand, ConditionType ConditionType, ref int LoX, int LoY)
 		{
 			//获取对应的 组ID
-			var ItemBrand = FileCache.Data.ItemBrand[ItemBuyPrice.RequiredItembrand];
+			var ItemBrand = FileCache.Data.ItemBrand[Itembrand];
 			if (ItemBrand is null) return null;
 
 			//搜索对象
-			var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.BrandID == ItemBrand.ID && info.ItemConditionType == ItemBuyPrice.RequiredItembrandConditionType);
-			if (ItemBrandTooltip is null) Trace.WriteLine($"[CreteItemBrandCell] { ItemBrand.ID } => { ItemBuyPrice.RequiredItembrandConditionType } 不存在");
+			var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip[ItemBrand.ID, (byte)ConditionType];
+			if (ItemBrandTooltip is null) Trace.WriteLine($"[CreteItemBrandCell] { ItemBrand.ID } => { ConditionType } 不存在");
 
 			int ExtraScale = 10;
 			var FrameIconCell = new ItemIconCell()

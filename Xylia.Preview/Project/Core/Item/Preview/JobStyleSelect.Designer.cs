@@ -85,6 +85,7 @@
 			this.JobStyle9.TabIndex = 7;
 			this.JobStyle9.TabStop = false;
 			this.JobStyle9.Visible = false;
+			this.JobStyle9.Click += new System.EventHandler(this.JobStyle9_Click);
 			// 
 			// JobStyle10
 			// 
@@ -96,6 +97,7 @@
 			this.JobStyle10.TabIndex = 8;
 			this.JobStyle10.TabStop = false;
 			this.JobStyle10.Visible = false;
+			this.JobStyle10.Click += new System.EventHandler(this.JobStyle10_Click);
 			// 
 			// JobStyleSelect
 			// 

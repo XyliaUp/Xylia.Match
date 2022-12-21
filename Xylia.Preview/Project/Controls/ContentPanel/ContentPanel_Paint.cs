@@ -9,9 +9,9 @@ using Xylia.Attribute;
 using Xylia.Drawing;
 using Xylia.Extension;
 using Xylia.Preview.Common.Cast;
+using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Public.Attribute.arg;
 
 namespace Xylia.Preview.Project.Controls
@@ -72,7 +72,8 @@ namespace Xylia.Preview.Project.Controls
 			//计算与母容器关系
 			else if (o.Parent != null)
 			{
-				if (o.Parent is TitleContentPanel) return GetMaxWidth(o.Parent);
+				if (o.Parent is PreviewControl || o.Parent is IPreview) return GetMaxWidth(o.Parent);
+
 
 				//如果上级控件启用缩放，会导致大量计算。因此此时不应进行宽度处理
 				if (o.Parent is not UserControl c || c.AutoSizeMode != AutoSizeMode.GrowAndShrink)

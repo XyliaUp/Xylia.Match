@@ -11,16 +11,9 @@ namespace Xylia.Preview.Common.Interface
 	public class IRecord : IArgParam
 	{
 		#region 设定字段
-		/// <summary>
-		/// 指示此实例是无效的
-		/// </summary>
-		public virtual bool INVALID { get; set; } = false;
-
-
 		public IAttributeCollection Attributes;
 
 		public bool ContainsAttribute(string AttrName, out string AttrValue) => this.Attributes.ContainsName(AttrName, out AttrValue);
-
 
 
 		public void SetAttribute(ObjectOutput o, bool SetMember, bool ShowDebugInfo)

@@ -68,7 +68,7 @@ namespace Xylia.Preview.Third.Content
 					{
 						if (MainIngredient is ItemBrand)
 						{
-							var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip.Find(d => d.ID == MainIngredient.ID && d.ItemConditionType == Info.MainIngredientConditionType);
+							var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip[MainIngredient.ID, (byte)Info.MainIngredientConditionType];
 							MainIngredient = ItemBrandTooltip;
 
 							if (ItemBrandTooltip != null) CurCells[CurCellIdx].SetCellValue(ItemBrandTooltip.Name2);

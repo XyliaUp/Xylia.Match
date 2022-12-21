@@ -102,7 +102,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 				else if (SubIngredient1 is ItemBrand ItemBrand)
 				{
 					//搜索对象
-					var ItemTooltip = FileCache.Data.ItemBrandTooltip.Find(info => info.ID == ItemBrand.ID && info.ItemConditionType == SubIngredientConditionType1);
+					var ItemTooltip = FileCache.Data.ItemBrandTooltip[ItemBrand.ID, (byte)SubIngredientConditionType1];
 
 					ItemAlias = ItemBrand.Alias + "_" + ItemTooltip?.ItemConditionType + $" ({ ItemTooltip?.Name2.GetText() })";
 					Image = ItemTooltip?.MainIcon();

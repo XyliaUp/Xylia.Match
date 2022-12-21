@@ -32,7 +32,7 @@
     <Compile Update="Project\Core\ItemGrowth\Game_ItemGrowth2\Preview\FixedIngredientPreview.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Preview\AttributePreview.cs">
+    <Compile Update="Project\Core\Item\Preview\Attribute\AttributePreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Quest\Preview\Task\Mission\CaseInfoPanel.cs">
@@ -110,7 +110,7 @@
     <Compile Update="Project\Core\ItemGrowth\Scene\EquipmentGuideScene.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Cell\AttributeInfoCell.cs">
+    <Compile Update="Project\Core\Item\Preview\Attribute\AttributeInfoCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Cell\Basic\ItemIconCell.cs">
@@ -122,7 +122,7 @@
     <Compile Update="Project\Core\Item\Cell\Basic\ItemShowCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Cell\GemCircle.cs">
+    <Compile Update="Project\Core\Item\Preview\Gem\GemCircle.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Preview\Exchange\ProcessComparisonCell.cs">
@@ -137,7 +137,7 @@
     <Compile Update="Project\Core\Item\Preview\SetItem\SetItemEffect.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Cell\SkillModifyCell.cs">
+    <Compile Update="Project\Core\Item\Preview\Skill\SkillModifyCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Preview\SlateScroll\SlateScrollCell.cs">
@@ -152,7 +152,7 @@
     <Compile Update="Project\Core\Item\Preview\Exchange\ExchangePreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Preview\GemPreview.cs">
+    <Compile Update="Project\Core\Item\Preview\Gem\GemPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Preview\Reward\RewardPreview.cs">
@@ -274,7 +274,7 @@
     <EmbeddedResource Update="Project\Core\ItemGrowth\Game_ItemGrowth2\ItemGrowth2Page.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Project\Core\Item\Preview\GemPreview.resx">
+    <EmbeddedResource Update="Project\Core\Item\Preview\Gem\GemPreview.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">

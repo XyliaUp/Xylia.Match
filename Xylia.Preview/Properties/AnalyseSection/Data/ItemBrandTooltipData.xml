@@ -3,6 +3,7 @@
 	<list module="ItemData" type="item-brand-tooltip" version="0.8">
 		<record alias="brand-id" name="" type="id" />
 		<record start="0" alias="item-condition-type" name="" seq="$condition-type" type="Seq" />
+		
 		<record alias="name2" name="" type="TextAlias" />
 		<record alias="game-category-3" name="" type="Seq16" seq="$game-category-3" />
 		<record alias="item-grade" name="" type="Byte" />

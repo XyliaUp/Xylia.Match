@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Data.Package.Pak;
-using System.Drawing;
 
 namespace Xylia.Preview.Project.Core.Item.Preview
 {
@@ -65,6 +65,9 @@ namespace Xylia.Preview.Project.Core.Item.Preview
 		private void JobStyle6_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced1));
 		private void JobStyle7_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced2));
 		private void JobStyle8_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced3));
+		private void JobStyle9_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced4));
+		private void JobStyle10_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced5));
+
 		#endregion
 	}
 

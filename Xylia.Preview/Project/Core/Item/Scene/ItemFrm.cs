@@ -291,6 +291,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				this.ItemNameCell.Location = new Point((this.Width - 15 - this.ItemNameCell.Width) / 2, 20);
 				this.ItemIcon.Visible = false;
 				this.lbl_Category.Visible = false;
+				this.BackgroundImage = null;
 
 
 				var CardPic = new PictureBox()

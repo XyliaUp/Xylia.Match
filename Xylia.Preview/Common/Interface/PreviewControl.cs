@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-
-using Xylia.bns.Modules.GameData.Enums;
+﻿using System.Windows.Forms;
 
 namespace Xylia.Preview.Common.Interface
 {
