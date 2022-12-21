@@ -104,7 +104,7 @@
     <Compile Update="Project\Controls\Currency\PriceCell.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\ChallengeList\Cell\ChallengeCell.cs">
+    <Compile Update="Project\Core\ChallengeList\Scene\ChallengeCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListScene.cs">

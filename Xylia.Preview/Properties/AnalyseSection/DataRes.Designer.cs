@@ -2499,11 +2499,12 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///	&lt;list module=&quot;ItemData&quot; type=&quot;item-brand-tooltip&quot; version=&quot;0.8&quot;&gt;
         ///		&lt;record alias=&quot;brand-id&quot; name=&quot;&quot; type=&quot;id&quot; /&gt;
         ///		&lt;record start=&quot;0&quot; alias=&quot;item-condition-type&quot; name=&quot;&quot; seq=&quot;$condition-type&quot; type=&quot;Seq&quot; /&gt;
+        ///		
         ///		&lt;record alias=&quot;name2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; /&gt;
         ///		&lt;record alias=&quot;game-category-3&quot; name=&quot;&quot; type=&quot;Seq16&quot; seq=&quot;$game-category-3&quot; /&gt;
         ///		&lt;record alias=&quot;item-grade&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
         ///		&lt;record alias=&quot;equip-level&quot; name=&quot;&quot; type=&quot;Byte&quot; /&gt;
-        ///		&lt;record al [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        ///		&lt;recor [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         public static string ItemBrandTooltipData {
             get {
@@ -2993,7 +2994,7 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;table&gt;
-        ///	&lt;list module=&quot;CombatData&quot; type=&quot;job&quot; version=&quot;0.1&quot; &gt;
+        ///	&lt;list module=&quot;CombatData&quot; type=&quot;job&quot; version=&quot;0.6&quot; &gt;
         ///		&lt;record alias=&quot;job&quot; type=&quot;id&quot; name=&quot;&quot; seq=&quot;$job&quot; /&gt;
         ///
         ///		&lt;record alias=&quot;name2&quot; name=&quot;&quot; type=&quot;TextAlias&quot; server=&quot;n&quot; /&gt;
@@ -4424,9 +4425,9 @@ namespace Xylia.Preview.Properties.AnalyseSection {
         ///		&lt;record alias=&quot;alias&quot; name=&quot;&quot; type=&quot;Index&quot; /&gt;
         ///		&lt;record alias=&quot;revised-effect-equip-probability-in-exec&quot; name=&quot;&quot; type=&quot;Short&quot; def [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
-        public static string Skill3Data_202211 {
+        public static string Skill3Data {
             get {
-                return ResourceManager.GetString("Skill3Data_202211", resourceCulture);
+                return ResourceManager.GetString("Skill3Data", resourceCulture);
             }
         }
         

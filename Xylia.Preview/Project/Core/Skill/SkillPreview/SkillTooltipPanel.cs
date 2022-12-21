@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 
 using Xylia.Preview.Project.Controls;
 
 
 namespace Xylia.Preview.Project.Core.Skill
 {
-	public sealed class SkillTooltipPanel : System.Windows.Forms.Panel
+	public sealed class SkillTooltipPanel : Panel
 	{
 		public List<List<ContentPanel>> Tooltips = new();
 

@@ -46,8 +46,15 @@ namespace Xylia.Preview.Project.Core.Skill
 
 			this.SkillName.Text = Skill.NameText();   //获取技能名称
 			this.SkillIcon.Image = Skill.MainIcon();  //获取图标信息
+
+
 			this.DamageRateStandardStats.Text = ((float)Skill.DamageRateStandardStats / 1000).ToString("F3");
 			this.DamageRatePvp.Text = ((float)Skill.DamageRatePvp / 1000).ToString("F3");
+
+
+			this.label1.Text = GetDuration(Skill.RecycleGroupDuration);
+
+
 
 			//读取提示信息
 			foreach (var Tooltip in FileCache.Data.SkillTooltip.Where(tooltip => tooltip.Skill == Skill.Alias))
@@ -64,18 +71,13 @@ namespace Xylia.Preview.Project.Core.Skill
 
 				if (group is null) continue;
 
-
 				List<ContentPanel> panels = new();
 				group.Tooltips.Add(panels);
 				#endregion
 
-
-				#region 获取默认文本
+				#region 获取属性 
 				//获取字体
-				var _font = Tooltip.tooltipGroup == SkillTooltip.TooltipGroup.M1 ?
-					new Font(this.Font.FontFamily, this.Font.Size + 3, FontStyle.Regular) :
-					this.Font;
-
+				var _font = Tooltip.tooltipGroup == SkillTooltip.TooltipGroup.M1 ? new Font(this.Font.FontFamily, this.Font.Size + 3, FontStyle.Regular) : this.Font;
 				if (Tooltip.DefaultText != null)
 				{
 					ContentPanel MainContent = new()
@@ -87,9 +89,7 @@ namespace Xylia.Preview.Project.Core.Skill
 
 					panels.Add(MainContent);
 				}
-				#endregion
 
-				#region 获取属性 
 				var ConditionAttribute = FileCache.Data.SkillTooltipAttribute[Tooltip.ConditionAttribute];
 				if (ConditionAttribute != null)
 				{
@@ -152,6 +152,7 @@ namespace Xylia.Preview.Project.Core.Skill
 						Icon = EffectAttribute.Icon?.GetIcon(),
 					};
 
+
 					LoadArg(EffectContent, EffectAttribute.ArgType1, Tooltip.EffectArg1, Tooltip);
 					LoadArg(EffectContent, EffectAttribute.ArgType2, Tooltip.EffectArg2, Tooltip);
 					LoadArg(EffectContent, EffectAttribute.ArgType3, Tooltip.EffectArg3, Tooltip);
@@ -177,17 +178,16 @@ namespace Xylia.Preview.Project.Core.Skill
 			{
 				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(Arg.Split(',')[0].ToInt(), Arg.Split(',')[1].ToInt(), Tooltip.SkillAttackAttributeCoefficientPercent),
 				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg.ToInt(), 0, Tooltip.SkillAttackAttributeCoefficientPercent),
-
 				SkillTooltipAttribute.ArgType.Time => (float)ValueConvert / 1000 + "秒",
 				SkillTooltipAttribute.ArgType.StackCount => ValueConvert,
 				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.Program.Fontset_ItemGrade_6\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.HealPercent => (float)ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.DrainPercent => null,
+				SkillTooltipAttribute.ArgType.HealPercent => ValueConvert + "%",
+				SkillTooltipAttribute.ArgType.DrainPercent => ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.Program.Fontset_ItemGrade_4\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.ConsumePercent => (float)ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.ProbabilityPercent => (float)ValueConvert + "%",
+				SkillTooltipAttribute.ArgType.ConsumePercent => ValueConvert + "%",
+				SkillTooltipAttribute.ArgType.ProbabilityPercent => ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.StanceType => Arg.ToEnum<Stance>().GetDescription(),
-				SkillTooltipAttribute.ArgType.Percent => (float)ValueConvert + "%",
+				SkillTooltipAttribute.ArgType.Percent => ValueConvert + "%",
 				SkillTooltipAttribute.ArgType.Counter => ValueConvert + "次",
 				SkillTooltipAttribute.ArgType.Distance => (float)ValueConvert / 100 + "米",
 				SkillTooltipAttribute.ArgType.KeyCommand => FileCache.Data.Skill3[Arg]?.ShortCutKey.GetDescription(),
@@ -198,6 +198,7 @@ namespace Xylia.Preview.Project.Core.Skill
 			});
 		}
 
+		public static string GetDuration(int Duration) => Duration == 0 ? "即时" : TimeSpan.FromMilliseconds(Duration).ToMyString();
 
 
 

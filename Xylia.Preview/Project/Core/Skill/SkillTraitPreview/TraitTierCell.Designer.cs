@@ -28,41 +28,43 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.TraitName = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.TraitIcon = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.TraitIcon)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// contentPanel1
+			// TraitName
 			// 
-			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
-			//this.contentPanel1.BasicLineHeight = 25;
-			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(99, 28);
-			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-			this.contentPanel1.Name = "contentPanel1";
-			this.contentPanel1.TabIndex = 3;
-			this.contentPanel1.Text = "特性名称";
+			this.TraitName.BackColor = System.Drawing.Color.Transparent;
+			this.TraitName.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.TraitName.ForeColor = System.Drawing.Color.White;
+			this.TraitName.Location = new System.Drawing.Point(76, 24);
+			this.TraitName.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+			this.TraitName.Name = "TraitName";
+			this.TraitName.TabIndex = 3;
+			this.TraitName.Text = "特性名称";
 			// 
-			// pictureBox1
+			// TraitIcon
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-			this.pictureBox1.TabIndex = 2;
-			this.pictureBox1.TabStop = false;
+			this.TraitIcon.Image = global::Xylia.Preview.Resources.Resource_Common.ItemIcon;
+			this.TraitIcon.Location = new System.Drawing.Point(2, 2);
+			this.TraitIcon.Name = "TraitIcon";
+			this.TraitIcon.Size = new System.Drawing.Size(64, 64);
+			this.TraitIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.TraitIcon.TabIndex = 2;
+			this.TraitIcon.TabStop = false;
 			// 
 			// TraitTierCell
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.contentPanel1);
-			this.Controls.Add(this.pictureBox1);
+			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.TraitName);
+			this.Controls.Add(this.TraitIcon);
 			this.Name = "TraitTierCell";
-			this.Size = new System.Drawing.Size(207, 83);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.Size = new System.Drawing.Size(200, 69);
+			((System.ComponentModel.ISupportInitialize)(this.TraitIcon)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -70,7 +72,7 @@
 
 		#endregion
 
-		private Controls.ContentPanel contentPanel1;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private Controls.ContentPanel TraitName;
+		private System.Windows.Forms.PictureBox TraitIcon;
 	}
 }

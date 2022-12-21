@@ -22,6 +22,7 @@ namespace Xylia.Preview
 			//Debug.WriteLine(FileCache.Data.Npc["CH_PB_WantedCoinShop_0001_Exchange_01"]?.Attributes);
 			//Debug.WriteLine(FileCache.Data.Npc.Where(o => o.Attributes["store2-1"] == "CH_BoardGacha_Grocery", true).FirstOrDefault());
 
+			Debug.WriteLine(SkillPreview.GetDuration(8000));
 
 
 			//Xylia.Preview.Data.Package.Pak.Test.Scene();

@@ -37,15 +37,15 @@
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(737, 457);
+			this.ClientSize = new System.Drawing.Size(753, 547);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.MaximumSize = new System.Drawing.Size(2147483647, 850);
 			this.Name = "SkillBook3_IconView";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "查看图标";
+			//this.Load += new System.EventHandler(this.SkillBook3_IconView_Load);
 			this.ResumeLayout(false);
 
         }

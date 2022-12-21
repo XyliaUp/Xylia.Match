@@ -73,7 +73,11 @@
 		<record alias="stance-tooltip" name="" ref="0" server="n" repeat="5" />
 		<record alias="condition-tooltip" name="" ref="0" server="n" repeat="5" />
 		<record alias="ui-combo" name="" ref="SkillCombo2" server="n" />
-		<record alias="ui-category-display-type" name="" type="Seq" seq="0=main|1=sub" server="n" />
+		<record alias="ui-category-display-type" name="" type="Seq" server="n" >
+			<case alias="main" name="" />
+			<case alias="sub" name="" />
+		</record>
+
 		<record alias="ui-main-buff" name="" ref="Effect" server="n" />
 		<record alias="show-cast-bar" name="" type="Bool" default="y" />
 		<record alias="show-exec-bar" name="" type="Bool" default="y" />
@@ -154,18 +158,18 @@
 			<case alias="은사" name="" />
 			<case alias="도발" name="" />
 		</record>
-		<record alias="category" name="" type="Byte" filter="active-skill" >
+		<record alias="category" name="" type="Seq" filter="active-skill" >
 			<case alias="melee-physical" name="" />
 			<case alias="range-physical" name="" />
 			<case alias="force" name="" />
 		</record>
-		<record alias="flowtype" name="" type="Byte" filter="active-skill" >
+		<record alias="flowtype" name="" type="Seq" filter="active-skill" >
 			<case alias="keep-mainslot" name="原地" />
 			<case alias="leave-caster" name="" />
 			<case alias="transfer-simslot" name="" />
 			<case alias="directly-simslot" name="" />
 		</record>
-		<record alias="skill-type" name="" type="Byte" filter="active-skill" >
+		<record alias="skill-type" name="" type="Seq" filter="active-skill" >
 			<case alias="caster" name="" />
 			<case alias="target" name="" />
 			<case alias="ground" name="" />
@@ -184,9 +188,9 @@
 		<record alias="campfire" name="" filter="active-skill" ref="Campfire" />
 		<record alias="dash-attribute" name="" filter="active-skill" ref="SkillDashAttribute3" />
 		<record alias="sit-down" name="" type="Bool" filter="active-skill" />
-		<record alias="hostile-type" name="" type="Byte" filter="active-skill" default="hostile" >
+		<record alias="hostile-type" name="" type="Seq" filter="active-skill" >
 			<case alias="none" name="" />
-			<case alias="hostile" name="" />
+			<case alias="hostile" name="" default="y" />
 			<case alias="support" name="" />
 		</record>
 		<record alias="target-filter" name="" filter="active-skill" ref="SkillTargetFilter3" />
@@ -200,7 +204,7 @@
 		<record alias="switch-off-id" name="" filter="active-skill" ref="this" />
 		<record alias="passive-effect" name="" filter="active-skill" ref="Effect" repeat="8" />
 		<record alias="result-controll" name="" filter="active-skill" ref="SkillResultControll3" />
-		<record alias="skill-result-rule" name="" type="Byte" filter="active-skill" >
+		<record alias="skill-result-rule" name="" type="Seq" filter="active-skill" >
 			<case alias="decide-execute" name="" />
 			<case alias="decide-execute-finish-each" name="" />
 			<case alias="decide-each" name="" />
@@ -208,8 +212,8 @@
 			<case alias="decide-each-finish-all-hit" name="" />
 			<case alias="decide-each-finish-last-result" name="" />
 		</record>
-		<record alias="auto-skill-result" name="" type="Byte" filter="active-skill" seq="$skill-result" default="none" />
-		<record alias="cancel-by-override-skill" name="" type="Byte" filter="active-skill" >
+		<record alias="auto-skill-result" name="" type="Seq" filter="active-skill" seq="$skill-result" />
+		<record alias="cancel-by-override-skill" name="" type="Seq" filter="active-skill" >
 			<case alias="none" name="" default="y" />
 			<case alias="override-skill" name="" />
 			<case alias="all-skill" name="" />
@@ -241,14 +245,14 @@
 		<record alias="consume-sp-type-1" name="" filter="active-skill" type="Seq" seq="$consume-type" />
 		<record alias="consume-sp-type-2" name="" filter="active-skill" type="Seq" seq="$consume-type" />
 		<record alias="consume-summoned-hp-value" name="" type="Short" filter="active-skill" />
-		<record alias="consume-summoned-hp-type" name="" type="Byte" filter="active-skill" seq="$consume-type" />
+		<record alias="consume-summoned-hp-type" name="" type="Seq" filter="active-skill" seq="$consume-type" />
 		<record alias="target-kill-effect" name="" filter="active-skill" ref="Effect" repeat="4" />
 		<record alias="gain-style-score" name="" filter="active-skill" type="Short" />
 		<record alias="max-style-score" name="" filter="active-skill" type="Short" />
 		<record alias="style-duration" name="" filter="active-skill" type="Int32" />
 		<record alias="clear-style-score" name="" filter="active-skill" type="Bool" />
-		<record alias="replace-target" name="" filter="active-skill" type="Byte" default="none" >
-			<case alias="none" name="" />
+		<record alias="replace-target" name="" filter="active-skill" type="Seq" >
+			<case alias="none" name="" default="y" />
 			<case alias="targets-target" name="" />
 			<case alias="my-summoned" name="" />
 			<case alias="my-summoneds-target" name="" />
@@ -366,9 +370,9 @@
 			<case alias="immune-caster-nontarget-move" name="" />
 		</record>
 		<record alias="boss-resistible-skill-message" name="" type="TextAlias" filter="active-skill" server="n" />
-		<record alias="boss-resistance-skill-cast" type="Byte" filter="active-skill" name="" seq="$skill-stage" server="n" />
-		<record alias="boss-resistance-skill-exec" type="Byte" filter="active-skill" name="" seq="$skill-stage" server="n" />
-		<record alias="boss-resistance-skill-finish" type="Byte" filter="active-skill" name="" seq="$skill-stage" server="n" />
+		<record alias="boss-resistance-skill-cast" type="Seq" filter="active-skill" name="" seq="$skill-stage" server="n" />
+		<record alias="boss-resistance-skill-exec" type="Seq" filter="active-skill" name="" seq="$skill-stage" server="n" />
+		<record alias="boss-resistance-skill-finish" type="Seq" filter="active-skill" name="" seq="$skill-stage" server="n" />
 		<record alias="boss-resistance-skill-time-offset" type="Int32" filter="active-skill" name="" server="n" />
 		<record alias="reset-boss-resistance-skill" name="" filter="active-skill" type="Bool" default="y" />
 		<record alias="resistance-skill-type" name="" filter="active-skill" type="Seq" server="n" >
@@ -381,7 +385,7 @@
 		</record>
 		<record alias="resistance-skill-priority" name="" filter="active-skill" type="Byte" server="n" />
 
-		
+
 		<record alias="auto-combat-approach-skill" type="Short" filter="active-skill" name="" server="n" />
 		<record alias="auto-combat-cannot-override" type="Bool" filter="active-skill" name="" server="n" />
 		<record alias="auto-combat-npc-resistible-skill-type" type="Seq" filter="active-skill" server="n" repeat="5" >
@@ -412,7 +416,12 @@
 		<record alias="catch-detach-caster-anim" type="Index" filter="active-skill" name="" server="n" />
 		<record alias="catch-detach-target-anim" type="Index" filter="active-skill" name="" server="n" />
 		<record alias="catch-detach-target-landing-anim" type="Index" filter="active-skill" name="" server="n" />
-		<record alias="phantom-end-type" name="" filter="active-skill" type="Seq" seq="1=exec-end|2=finish-end" />
+		<record alias="phantom-end-type" name="" filter="active-skill" type="Seq">
+			<case alias="none" name="" default="y" />
+			<case alias="exec-end" name="" />
+			<case alias="finish-end" name="" />
+		</record>
+
 		<record alias="summoned-weapon-type" name="" filter="active-skill" type="Seq" >
 			<case alias="summoned-none" name="" default="y" />
 			<case alias="summoned-sword" name="" />
@@ -422,8 +431,8 @@
 		</record>
 
 		<record alias="override-skill" name="" filter="active-skill" type="Bool" default="y" />
-		<record alias="ground-type" name="" filter="active-skill" type="Byte" default="ground" >
-			<case alias="ground" name="" />
+		<record alias="ground-type" name="" filter="active-skill" type="Seq" >
+			<case alias="ground" name="" default="y" />
 			<case alias="target" name="" />
 		</record>
 
@@ -434,7 +443,7 @@
 		<record alias="ui-recycle-name" name="" filter="active-skill" type="TextAlias" server="n" />
 		<record alias="ui-recycle-description" name="" filter="active-skill" type="TextAlias" server="n" />
 		<record alias="ui-sp-heal-value" name="" filter="active-skill" type="Short" server="n" />
-		<record alias="ui-sp-heal-type" name="" filter="active-skill" type="Byte" server="n" seq="$consume-type" />
+		<record alias="ui-sp-heal-type" name="" filter="active-skill" type="Seq" server="n" seq="$consume-type" />
 		<record alias="casting-target" name="" filter="active-skill" type="Seq" >
 			<case alias="none" name="" default="y" />
 			<case alias="self" name="" />

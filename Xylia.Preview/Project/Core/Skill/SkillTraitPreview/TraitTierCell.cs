@@ -22,8 +22,9 @@ namespace Xylia.Preview.Project.Core.Skill
 				this._skillTrait = value;
 				if (value is null) return;
 
-				this.contentPanel1.Text = value.Name2.GetText();
-				this.pictureBox1.Image = value.Icon.GetIcon();
+				this.Visible = value.Enable;
+				this.TraitName.Text = value.Name2.GetText();
+				this.TraitIcon.Image = value.Icon.GetIcon();
 			}
 		}
 	}

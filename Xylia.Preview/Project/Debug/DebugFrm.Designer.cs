@@ -31,6 +31,7 @@ namespace Xylia.Preview
         private void InitializeComponent()
         {
 			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// textBox1
@@ -41,6 +42,15 @@ namespace Xylia.Preview
 			this.textBox1.TabIndex = 0;
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(356, 183);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(44, 17);
+			this.label1.TabIndex = 1;
+			this.label1.Text = "Action";
+			// 
 			// DebugFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -50,6 +60,7 @@ namespace Xylia.Preview
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(691, 338);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
@@ -70,6 +81,7 @@ namespace Xylia.Preview
 
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.Label label1;
 	}
 }
 

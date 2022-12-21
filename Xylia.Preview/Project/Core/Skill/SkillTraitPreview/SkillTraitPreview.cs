@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using Xylia.bns.Modules.GameData.Enums;
+using Xylia.Extension;
 using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Record;
 
@@ -13,19 +14,49 @@ namespace Xylia.Preview.Project.Core.Skill
 	public partial class SkillTraitPreview : Form
 	{
 		#region 构造
-		public SkillTraitPreview() => InitializeComponent();
+		public SkillTraitPreview()
+		{
+			InitializeComponent();
+
+			Select_Job.Source = Job.GetPcJob();
+			Select_Job.SelectedIndex = 0;
+		}
+
+
+		JobSeq SelectedJob;
+		IEnumerable<JobStyle> JobStyles;
+
+		private void Select_Job_SelectedChangedEvent(object sender, EventArgs e)
+		{
+			this.SelectedJob = Job.GetJob(this.Select_Job.TextValue);
+			this.JobStyles = FileCache.Data.JobStyle
+				.Where(o => o.job == this.SelectedJob)
+				.Where(o => o.jobStyle >= JobStyleSeq.Advanced1);
+
+			Select_JobStyle.Source = JobStyles.Select(o => o.IntroduceJobStyleName.GetText()).ToList();
+			Select_JobStyle.SelectedIndex = 0;
+		}
+
+		private void Select_JobStyle_SelectedChangedEvent(object sender, EventArgs e)
+		{
+			this.LoadData(this.SelectedJob, JobStyles.First(o => o.IntroduceJobStyleName.GetText() == this.Select_JobStyle.TextValue).jobStyle);
+		}
 		#endregion
+
+
 
 		#region 方法
 		SkillTrait Default;
 
 		Dictionary<byte, TraitTier> TraitTiers;
 
-		public void LoadData()
+		public void LoadData(JobSeq Job, JobStyleSeq JobStyle)
 		{
 			this.TraitTiers = new();
+			this.Controls.Remove<TraitTier>();
 
-			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == JobSeq.소환사 && o.JobStyle == JobStyleSeq.Advanced2))
+
+			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job && o.JobStyle == JobStyle))
 			{
 				if (SkillTrait.Tier == 0)
 				{
@@ -44,7 +75,7 @@ namespace Xylia.Preview.Project.Core.Skill
 				else if (SkillTrait.TierVariation == 3) CurTier.Variation3 = SkillTrait;
 			}
 
-			int PosY = 0;
+			int PosY = 90;
 			foreach (var o in TraitTiers.Values)
 			{
 				if (!this.Controls.Contains(o)) this.Controls.Add(o);
@@ -112,8 +143,6 @@ namespace Xylia.Preview.Project.Core.Skill
 		#endregion
 
 		#region 控件方法
-		private void Form1_Load(object sender, EventArgs e) => this.LoadData();
-
 		private void ucBtnExt1_BtnClick(object sender, EventArgs e) => new SkillBook3_IconView(this.GetSkills()).MyShowDialog();
 
 		public override void Refresh()

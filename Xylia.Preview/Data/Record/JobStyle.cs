@@ -8,7 +8,7 @@ namespace Xylia.Preview.Data.Record
 	public sealed class JobStyle : IRecord
 	{
 		#region	属性字段
-		public JobSeq Job;
+		public JobSeq job;
 
 		public JobStyleSeq jobStyle;
 

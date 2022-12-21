@@ -67,13 +67,16 @@ namespace Xylia.Preview.Project.RunForm
 			var DiffDay = (int)DayOfWeek - (int)TodayDate.DayOfWeek;
 			if (DiffDay < 0) DiffDay += 7;
 
-
 			//获取到指定重置时间的剩余时间
 			var ResetTime = TodayDate.Date.AddDays(DiffDay).AddHours(DailyResetTime);
-			var span = ResetTime - TodayDate;
+			return GetTimeInfo(ResetTime - TodayDate);
+		}
+
+		public static string GetTimeInfo(TimeSpan span)
+		{
 			if (span.Days > 0) return string.Format("{0:dd}日 {0:hh}小时 {0:mm}分钟", span);
 			else if (span.Hours > 0) return string.Format("{0:hh}小时 {0:mm}分钟", span);
-			else if (span.Milliseconds > 0) return string.Format("{0:mm}分钟", span);
+			else if (span.Minutes > 0) return string.Format("{0:mm}分钟", span);
 			else return "不足1分钟";
 		}
 

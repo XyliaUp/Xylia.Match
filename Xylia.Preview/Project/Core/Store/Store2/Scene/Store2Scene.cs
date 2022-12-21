@@ -45,12 +45,8 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			#endregion
 
 			#region 获取职业信息
-			var Source = typeof(JobSeq).GetFields()
-				.Where(f => f.FieldType.IsEnum && (JobSeq)f.GetValue() > JobSeq.JobNone && (JobSeq)f.GetValue() < JobSeq.PcMax)
-				.Select(f => f.GetDescription() ?? f.Name).ToList();
-
+			var Source = Job.GetPcJob();
 			Source.Insert(0, "全部");
-
 			this.JobSelector.Source = Source;
 
 			var LastJobSelect = Ini.ReadValue(this.Name, "JobFilter");
@@ -149,8 +145,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			InLoading = true;
 
 			//获取当前选择的职业
-			var temp = typeof(JobSeq).GetFields().ToList().Find(f => this.JobSelector.TextValue == (f.GetDescription() ?? f.Name));
-			JobSeq SelectedJob = temp?.Name.ToEnum<JobSeq>() ?? JobSeq.JobNone;
+			JobSeq SelectedJob = Job.GetJob(this.JobSelector.TextValue);
 
 			this.ListPreview.StoreAlias = Store2.Alias;
 			this.Invoke(() => Clipboard.SetText(Store2.Alias));

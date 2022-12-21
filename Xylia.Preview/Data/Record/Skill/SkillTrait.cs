@@ -20,7 +20,7 @@ namespace Xylia.Preview.Data.Record
 		[Signal("tier-variation")]
 		public byte TierVariation;
 
-		public bool Enable;
+		public bool Enable = true;
 
 
 

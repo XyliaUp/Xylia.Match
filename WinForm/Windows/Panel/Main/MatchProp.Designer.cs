@@ -734,9 +734,9 @@
 			// ucBtnExt20
 			// 
 			this.ucBtnExt20.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt20.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ucBtnExt20.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt20.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt20.BtnText = "[调试] 查看技能";
+			this.ucBtnExt20.BtnText = "技能";
 			this.ucBtnExt20.ConerRadius = 8;
 			this.ucBtnExt20.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ucBtnExt20.DialogResult = System.Windows.Forms.DialogResult.None;
