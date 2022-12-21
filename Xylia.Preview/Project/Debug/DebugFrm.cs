@@ -19,11 +19,6 @@ namespace Xylia.Preview
 
 			Debug.WriteLine(SkillPreview.GetDamageInfo(16000));
 
-
-			Debug.WriteLine(Common.Extension.AbilityEx.ToString(6, "test-percent"));
-
-
-
 			//Debug.WriteLine(FileCache.Data.Npc["CH_PB_WantedCoinShop_0001_Exchange_01"]?.Attributes);
 			//Debug.WriteLine(FileCache.Data.Npc.Where(o => o.Attributes["store2-1"] == "CH_BoardGacha_Grocery", true).FirstOrDefault());
 
@@ -35,6 +30,7 @@ namespace Xylia.Preview
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
+			Debug.WriteLine(FileCache.Data.TextData[this.textBox1.Text]);
 
 
 			//var data = "/Game/FaceFXImporter/220622/q_2209_2_voice_1_show.q_2209_2_voice_1_show".GetUObject().GetWave();

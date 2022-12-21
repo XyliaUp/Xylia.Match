@@ -3,15 +3,17 @@ using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Interface;
 
+
+
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class SkillTrait : IRecord
 	{
 		#region 数据字段
-		public Job Job;
+		public JobSeq Job;
 
 		[Signal("job-style")]
-		public JobStyle JobStyle;
+		public JobStyleSeq JobStyle;
 
 		public byte Tier;
 

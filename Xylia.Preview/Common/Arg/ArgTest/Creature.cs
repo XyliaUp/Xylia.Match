@@ -17,7 +17,7 @@ namespace Xylia.Preview.Common.Attribute.ArgTest
 
 		public Sex Sex;
 
-		public Job Job;
+		public Xylia.Preview.Data.Record.Job Job;
 
 		public byte Appearance1;
 

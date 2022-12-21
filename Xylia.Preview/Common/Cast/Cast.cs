@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Reflection;
 
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
-
-using GameSeq = Xylia.bns.Modules.GameData.Enums;
 
 namespace Xylia.Preview.Common.Cast
 {
@@ -23,9 +22,8 @@ namespace Xylia.Preview.Common.Cast
 		public static object CastSeq(this string SeqValue, string SeqName)
 		{
 			if (!SeqName.TryParseToEnum<SeqType>(out var SeqType)) return null;
-
 			else if (SeqType == SeqType.KeyCap) return CastSeq<KeyCode>(SeqValue);
-			else if (SeqType == SeqType.KeyCommand) return CastSeq<GameSeq.KeyCommand>(SeqValue);
+			else if (SeqType == SeqType.KeyCommand) return CastSeq<KeyCommandSeq>(SeqValue);
 
 			throw new Exception("未支持的枚举类型");
 		}

@@ -3,6 +3,8 @@ using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
 
+
+
 namespace Xylia.Preview.Data.Record
 {
 	public enum QuestRewardGroupType
@@ -107,7 +109,7 @@ namespace Xylia.Preview.Data.Record
 			{
 				if (!Attributes.ContainsName($"{this.Group}-job-{i}", out string job)) break;
 
-				var CurJob = job.ToEnum<Job>();
+				var CurJob = job.ToEnum<JobSeq>();
 				groupName += CurJob.GetDescription();
 			}
 			#endregion

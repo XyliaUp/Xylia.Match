@@ -61,7 +61,7 @@ namespace Xylia.Preview.Third.Content
 				CurRow.AddCell(ItemInfo.EquipType.GetAttribute<Chinese>()?.Description ?? ItemInfo.EquipType.ToString());
 
 				CurRow.AddCell(ItemInfo.ClosetGroupId);
-				CurRow.AddCell(FileCache.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.category.GetDescription());
+				CurRow.AddCell(FileCache.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.Category.GetDescription());
 
 				return CurRow;
 			}

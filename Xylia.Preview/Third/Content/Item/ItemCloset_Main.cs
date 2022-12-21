@@ -73,7 +73,7 @@ namespace Xylia.Preview.Third.Content
 
 				if (Info.ClosetGroupId != 0)
 				{
-					CurRow.AddCell(FileCache.Data.ClosetGroup[Info.ClosetGroupId]?.category.GetDescription());
+					CurRow.AddCell(FileCache.Data.ClosetGroup[Info.ClosetGroupId]?.Category.GetDescription());
 				}
 			});
 			#endregion

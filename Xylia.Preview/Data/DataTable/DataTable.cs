@@ -269,8 +269,8 @@ namespace Xylia.Preview.Data
 		{
 			if (!FullLoad)
 			{
-				var Objects = DeSerializer.GetObjects(this.ListData, this.TableInfo, Preload);
-				for (var x = 0; x < Objects.Count; x++)
+				var Objects = DeSerializer.GetObjects(this.ListData, this.TableInfo, Preload).ToArray();
+				for (var x = 0; x < Objects.Length; x++)
 				{
 					var idx = x;
 					var obj = Objects[x];

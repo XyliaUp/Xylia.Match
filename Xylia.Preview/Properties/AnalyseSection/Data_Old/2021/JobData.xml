@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="job" version="0.1" >
+	<list module="CombatData" type="job" version="0.6" >
 		<record alias="job" type="id" name="" seq="$job" />
 
 		<record alias="name2" name="" type="TextAlias" server="n" />
@@ -11,7 +11,7 @@
 		<record alias="character-info-job-imageset2" name="" type="Index" server="n" />
 		<record alias="item-map-job-icon" name="" type="TextAlias" server="n" />
 		<record alias="item-map-job-style-icon" name="" type="TextAlias" server="n" repeat="3" />
-		<record alias="stance" name="" type="Seq" seq="$stance_20" server="n" repeat="3" />
+		<record alias="stance" name="" type="Seq" seq="$stance" server="n" repeat="3" />
 		<record alias="skillmap-backimageset" name="" type="Index" server="n" />
 		<record alias="skillmap-backimageset-width" name="" type="Short" server="n" />
 		<record alias="skillmap-backimageset-height" name="" type="Short" server="n" />

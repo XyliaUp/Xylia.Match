@@ -1,6 +1,6 @@
 ﻿namespace Xylia.Preview.Project.Core.Skill
 {
-    partial class SkillTrainCategoryPreview
+    partial class SkillBook3_IconView
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -30,23 +30,22 @@
         {
 			this.SuspendLayout();
 			// 
-			// SkillTrainCategoryPreview
+			// SkillBook3_IconView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(853, 456);
+			this.ClientSize = new System.Drawing.Size(737, 457);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximumSize = new System.Drawing.Size(2147483647, 850);
-			this.Name = "SkillTrainCategoryPreview";
+			this.Name = "SkillBook3_IconView";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "修炼目录";
-			
+			this.Text = "查看图标";
 			this.ResumeLayout(false);
 
         }

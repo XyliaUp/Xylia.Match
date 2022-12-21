@@ -1,17 +1,17 @@
-﻿using System.ComponentModel;
-
+﻿
 using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
-	public sealed class JobStyleData : IRecord
+	public sealed class JobStyle : IRecord
 	{
 		#region	属性字段
-		public Job Job;
+		public JobSeq Job;
 
-		public JobStyle JobStyle;
+		public JobStyleSeq jobStyle;
+
 
 		[Signal("introduce-job-style-icon")]
 		public string IntroduceJobStyleIcon;

@@ -11,6 +11,8 @@ using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
 using Xylia.Preview.Resources;
 
+
+
 namespace Xylia.Preview.Data.Record
 {
 	/// <summary>
@@ -63,19 +65,19 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 		#region 职业校验
-		public Job EquipJobCheck1 => this.Attributes["equip-job-check-1"].ToEnum<Job>();
-		public Job EquipJobCheck2 => this.Attributes["equip-job-check-2"].ToEnum<Job>();
-		public Job EquipJobCheck3 => this.Attributes["equip-job-check-3"].ToEnum<Job>();
-		public Job EquipJobCheck4 => this.Attributes["equip-job-check-4"].ToEnum<Job>();
-		public Job EquipJobCheck5 => this.Attributes["equip-job-check-5"].ToEnum<Job>();
+		public JobSeq EquipJobCheck1 => this.Attributes["equip-job-check-1"].ToEnum<JobSeq>();
+		public JobSeq EquipJobCheck2 => this.Attributes["equip-job-check-2"].ToEnum<JobSeq>();
+		public JobSeq EquipJobCheck3 => this.Attributes["equip-job-check-3"].ToEnum<JobSeq>();
+		public JobSeq EquipJobCheck4 => this.Attributes["equip-job-check-4"].ToEnum<JobSeq>();
+		public JobSeq EquipJobCheck5 => this.Attributes["equip-job-check-5"].ToEnum<JobSeq>();
 
-		public bool CheckEquipJob(Job MyJob)
+		public bool CheckEquipJob(JobSeq MyJob)
 		{
 			//如果职业不存在
-			if (MyJob == Job.JobNone) return true;
+			if (MyJob == JobSeq.JobNone) return true;
 
 			//如果当前物品无职业限制
-			if (EquipJobCheck1 == Job.JobNone) return true;
+			if (EquipJobCheck1 == JobSeq.JobNone) return true;
 
 
 			//如果职业存在，且当前物品存在职业限制
@@ -95,7 +97,7 @@ namespace Xylia.Preview.Data.Record
 		{
 			get
 			{
-				var tmp = new Job[] { EquipJobCheck1, EquipJobCheck2, EquipJobCheck3, EquipJobCheck4, EquipJobCheck5 }.Where(o => o != Job.JobNone);
+				var tmp = new JobSeq[] { EquipJobCheck1, EquipJobCheck2, EquipJobCheck3, EquipJobCheck4, EquipJobCheck5 }.Where(o => o != JobSeq.JobNone);
 
 				if (!tmp.Any()) return null;
 				else return tmp.Select(t => t.GetDescription()).Aggregate((sum, now) => sum + "," + now);

@@ -11,7 +11,7 @@ namespace Xylia.Preview.Data.Record
 	{
 		#region 属性字段
 		[Signal("job-style")]
-		public JobStyle JobStyle;
+		public JobStyleSeq JobStyle;
 
 
 		[Signal("item-skill-1")]

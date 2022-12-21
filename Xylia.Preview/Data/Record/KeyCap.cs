@@ -1,12 +1,9 @@
 ﻿
 using System.Drawing;
 
-using NPOI.POIFS.Crypt.Dsig;
-
 using Xylia.Attribute.Component;
-using Xylia.Preview.Data.Package.Pak;
+using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
-
 
 namespace Xylia.Preview.Data.Record
 {
@@ -33,6 +30,20 @@ namespace Xylia.Preview.Data.Record
 		public Bitmap Icon => this.Attributes["icon"].GetIcon();
 
 		public string Image => this.Attributes["image"].GetText();
+		#endregion
+
+
+		#region 方法
+		public static KeyCap GetKeyCap(KeyCode KeyCode) => FileCache.Data.KeyCap[(short)KeyCode];
+
+		public static KeyCap GetKeyCap(string o) => GetKeyCap(GetKeyCode(o));
+
+		public static KeyCode GetKeyCode(string o)
+		{
+			if (o == "SPACEBAR") return KeyCode.Space;
+
+			return o.ToEnum<KeyCode>();
+		}
 		#endregion
 	}
 

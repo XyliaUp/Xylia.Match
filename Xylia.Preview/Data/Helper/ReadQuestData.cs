@@ -53,9 +53,9 @@ namespace Xylia.Preview.Data.Helper
 
 
 		#region 处理方法
-		public static void GetEpicInfo(Action<QuestData> act, Job TargetJob = Job.소환사) => GetEpicInfo(221, act, TargetJob);
+		public static void GetEpicInfo(Action<QuestData> act, JobSeq TargetJob = JobSeq.소환사) => GetEpicInfo(221, act, TargetJob);
 
-		public static void GetEpicInfo(this int QuestID, Action<QuestData> act, Job TargetJob = Job.소환사)
+		public static void GetEpicInfo(this int QuestID, Action<QuestData> act, JobSeq TargetJob = JobSeq.소환사)
 		{
 			var QuestData = ReadQuestData.GetQuestData(QuestID);
 			if (QuestData is null) return;
@@ -67,7 +67,7 @@ namespace Xylia.Preview.Data.Helper
 			if (QuestData.Completion.Value is null) return;
 			foreach (var NextQuest in QuestData.Completion.Value.NextQuests)
 			{
-				if (NextQuest.Job1 == Job.JobNone || NextQuest.Job1 == TargetJob)
+				if (NextQuest.Job1 == JobSeq.JobNone || NextQuest.Job1 == TargetJob)
 					GetEpicInfo(NextQuest.GetQuestID, act, TargetJob);
 			}
 			#endregion

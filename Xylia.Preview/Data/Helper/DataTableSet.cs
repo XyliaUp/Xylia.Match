@@ -113,8 +113,8 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<ItemTransformRecipe> ItemTransformRecipe { get; } = new();
 
 
-		public DataTable<JobData> Job { get; } = new();
-		public DataTable<JobStyleData> JobStyle { get; } = new();
+		public DataTable<Job> Job { get; } = new();
+		public DataTable<JobStyle> JobStyle { get; } = new();
 
 
 

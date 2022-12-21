@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 using HZH_Controls;
 
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Attribute.ArgTest;
 using Xylia.Preview.Data.Record;
@@ -81,7 +82,7 @@ namespace Xylia.Preview.Project.Controls
 		/// </summary>
 		public readonly static List<object> defaultParams = new()
 		{
-			new Creature(),
+			new Creature() { Job = FileCache.Data.Job.Find(o => o.job == JobSeq.검사) },
 		};
 
 		/// <summary>

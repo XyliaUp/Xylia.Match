@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" type="job" version="0.1" >
+	<list module="CombatData" type="job" version="0.6" >
 		<record alias="job" type="id" name="" seq="$job" />
 
 		<record alias="name2" name="" type="TextAlias" server="n" />
@@ -11,216 +11,24 @@
 		<record alias="character-info-job-imageset2" name="" type="Index" server="n" />
 		<record alias="item-map-job-icon" name="" type="TextAlias" server="n" />
 		<record alias="item-map-job-style-icon" name="" type="TextAlias" server="n" repeat="3" />
+		<record alias="unk-job-imageset" name="" type="Index" server="n" />
 		<record alias="stance" name="" type="Seq" seq="$stance" server="n" repeat="3" />
 		<record alias="skillmap-backimageset" name="" type="Index" server="n" />
 		<record alias="skillmap-backimageset-width" name="" type="Short" server="n" />
 		<record alias="skillmap-backimageset-height" name="" type="Short" server="n" />
 		<record alias="lobby-slot-job-icon-texture" name="" ref="IconTexture" server="n" />
 		<record alias="lobby-slot-job-icon-index" name="" type="Short" server="n" />
+		<record alias="unk-" name="" type="Index" server="n" />
+		<record alias="unk-" name="" ref="0" server="n" />
+		<record alias="unk-" name="" ref="0" server="n" />
+		<record alias="unk-" name="" ref="0" server="n" />
 		<record alias="play-style-desc" name="" type="TextAlias" server="n" />
 		<record alias="play-style-imageset" name="" type="Index" server="n" />
 		<record alias="play-difficulty" name="" type="Byte" default="1" server="n" />
 		<record alias="play-difficulty-desc" name="" type="TextAlias" server="n" />
-		<record alias="hud-character-info-imageset" name="" type="Index" server="n" />
-		<record alias="hud-character-info-over-imageset" name="" type="Index" server="n" />
-		<record alias="hud-character-info-pressed-imageset" name="" type="Index" server="n" />
-		
-		<record alias="action-key-type" name="" type="Dictionary" >
-			<case alias="none" name=""  />
-			<case alias="action1" name=""  />
-			<case alias="action2" name=""  />
-			<case alias="action3" name=""  />
-			<case alias="classic-action1" name=""  />
-			<case alias="classic-action2" name=""  />
-			<case alias="classic-action3" name=""  />
-			<case alias="skill-recommend" name=""  />
-			<case alias="skill-stance" name=""  />
-			<case alias="skill-slot1" name=""  />
-			<case alias="skill-slot2" name=""  />
-			<case alias="skill-slot3" name=""  />
-			<case alias="skill-slot4" name=""  />
-			<case alias="skill-slot5" name=""  />
-			<case alias="skill-slot6" name=""  />
-			<case alias="skill-slot7" name=""  />
-			<case alias="skill-slot8" name=""  />
-			<case alias="skill-slot9" name=""  />
-			<case alias="skill-slot10" name=""  />
-			<case alias="skill-slot11" name=""  />
-			<case alias="skill-slot12" name=""  />
-			<case alias="skill-q" name=""  />
-			<case alias="skill-e" name=""  />
-			<case alias="skill-special-1" name=""  />
-			<case alias="skill-special-2" name=""  />
-			<case alias="item-slot1" name=""  />
-			<case alias="item-slot2" name=""  />
-			<case alias="item-slot3" name=""  />
-			<case alias="item-slot4" name=""  />
-			<case alias="extra-skill-slot5" name=""  />
-			<case alias="skill-duel-tag" name=""  />
-			<case alias="toggle-help" name=""  />
-			<case alias="toggle-dungeon-guide" name=""  />
-			<case alias="toggle-inventory" name=""  />
-			<case alias="toggle-gem" name=""  />
-			<case alias="toggle-equipped" name=""  />
-			<case alias="toggle-skill-book" name=""  />
-			<case alias="toggle-quest-journal" name=""  />
-			<case alias="toggle-minimap-scale" name=""  />
-			<case alias="toggle-minimap-visible" name=""  />
-			<case alias="toggle-quest-quick-slot" name=""  />
-			<case alias="toggle-collect-manufacture" name=""  />
-			<case alias="toggle-petition" name=""  />
-			<case alias="toggle-option" name=""  />
-			<case alias="toggle-minimap-alpha" name=""  />
-			<case alias="toggle-party-panel" name=""  />
-			<case alias="toggle-party-mark" name=""  />
-			<case alias="toggle-party-search" name=""  />
-			<case alias="toggle-hud-customize" name=""  />
-			<case alias="party-match" name=""  />
-			<case alias="manual-targeting" name=""  />
-			<case alias="strafe-left" name=""  />
-			<case alias="strafe-right" name=""  />
-			<case alias="dash-forward" name=""  />
-			<case alias="move-forward" name=""  />
-			<case alias="move-backward" name=""  />
-			<case alias="turn-left" name=""  />
-			<case alias="turn-right" name=""  />
-			<case alias="jump-up" name=""  />
-			<case alias="toggle-walk-run" name=""  />
-			<case alias="social-action1" name=""  />
-			<case alias="social-action2" name=""  />
-			<case alias="social-action3" name=""  />
-			<case alias="social-action4" name=""  />
-			<case alias="social-action5" name=""  />
-			<case alias="social-action6" name=""  />
-			<case alias="social-action7" name=""  />
-			<case alias="social-action8" name=""  />
-			<case alias="social-action9" name=""  />
-			<case alias="social-action10" name=""  />
-			<case alias="toggle-auto-move-forward" name=""  />
-			<case alias="enter-slash-chatting" name=""  />
-			<case alias="enter-normal-chatting" name=""  />
-			<case alias="enter-party-chatting" name=""  />
-			<case alias="enter-local-chatting" name=""  />
-			<case alias="enter-private-chatting" name=""  />
-			<case alias="toggle-hud" name=""  />
-			<case alias="toggle-light-hud-mode" name=""  />
-			<case alias="camera-up" name=""  />
-			<case alias="camera-down" name=""  />
-			<case alias="camera-zoomin" name=""  />
-			<case alias="camera-zoomout" name=""  />
-			<case alias="toggle-voice-chat-option" name=""  />
-			<case alias="mark1" name=""  />
-			<case alias="mark2" name=""  />
-			<case alias="mark3" name=""  />
-			<case alias="mark4" name=""  />
-			<case alias="mark5" name=""  />
-			<case alias="mark6" name=""  />
-			<case alias="mark7" name=""  />
-			<case alias="mark8" name=""  />
-			<case alias="mark-timer" name=""  />
-			<case alias="mark-timer-immune-break-down" name=""  />
-			<case alias="mark-timer-immune-break-kneel" name=""  />
-			<case alias="mark-timer-immune-break-stun" name=""  />
-			<case alias="mark-timer-immune-break-knockback" name=""  />
-			<case alias="unmark" name=""  />
-			<case alias="headline-start-timer" name=""  />
-			<case alias="minimap-depth-plus" name=""  />
-			<case alias="minimap-depth-minus" name=""  />
-			<case alias="rotate-camera" name=""  />
-			<case alias="rotate-player" name=""  />
-			<case alias="reset-camera" name=""  />
-			<case alias="toggle-bns" name=""  />
-			<case alias="notification-accept" name=""  />
-			<case alias="notification-decline" name=""  />
-			<case alias="toggle-joypad-ui-mode" name=""  />
-			<case alias="close-floating-panels" name=""  />
-			<case alias="joypad-esc" name=""  />
-			<case alias="joypad-set-mouse-position" name=""  />
-			<case alias="joypad-toggle-rotate-type" name=""  />
-			<case alias="turn-on-social-mode" name=""  />
-			<case alias="enter-party-search-channel-in-party-match" name=""  />
-			<case alias="toggle-sns" name=""  />
-			<case alias="toggle-powerbook" name=""  />
-			<case alias="toggle-skill-powerbook" name=""  />
-			<case alias="toggle-nshop" name=""  />
-			<case alias="toggle-character-info" name=""  />
-			<case alias="toggle-market" name=""  />
-			<case alias="toggle-money-market" name=""  />
-			<case alias="toggle-postbox" name=""  />
-			<case alias="toggle-tencent-in-game-shop" name=""  />
-			<case alias="toggle-tencent-cross" name=""  />
-			<case alias="toggle-second-password" name=""  />
-			<case alias="toggle-achievement" name=""  />
-			<case alias="toggle-pc-filter-hidden" name=""  />
-			<case alias="toggle-guild2" name=""  />
-			<case alias="toggle-economy-communication" name=""  />
-			<case alias="cancel-order" name=""  />
-			<case alias="invite-party" name=""  />
-			<case alias="duel-start" name=""  />
-			<case alias="toggle-friend" name=""  />
-			<case alias="toggle-wardrobe" name=""  />
-			<case alias="toggle-dragon-jade-shop" name=""  />
-			<case alias="toggle-ranking" name=""  />
-			<case alias="toggle-ingame-notice" name=""  />
-			<case alias="change-item-bar-page" name=""  />
-			<case alias="duel-tag-order-first" name=""  />
-			<case alias="duel-tag-order-random" name=""  />
-			<case alias="leave-arena-square" name=""  />
-			<case alias="quick-turn" name=""  />
-			<case alias="joypad-special-function1" name=""  />
-			<case alias="joypad-special-function2" name=""  />
-			<case alias="accelerate-mouse-cursor-speed" name=""  />
-			<case alias="joypad-mouse-left-button" name=""  />
-			<case alias="joypad-mouse-right-button" name=""  />
-			<case alias="change-pet-filter-hidden" name=""  />
-			<case alias="toggle-damage-meter" name=""  />
-			<case alias="toggle-item-graph" name=""  />
-			<case alias="duel-camera-fitpawn-new" name=""  />
-			<case alias="duel-camera-free-new" name=""  />
-			<case alias="duel-camera-quater-new" name=""  />
-			<case alias="duel-camera-alpha-new" name=""  />
-			<case alias="duel-camera-beta-new" name=""  />
-			<case alias="duel-camera-free-up-new" name=""  />
-			<case alias="duel-camera-free-down-new" name=""  />
-			<case alias="toggle-goods-store" name=""  />
-			<case alias="enter-skill-training-room" name=""  />
-			<case alias="toggle-arena-entrance" name=""  />
-			<case alias="toggle-appearance-pictorial" name=""  />
-			<case alias="toggle-hybrid-mode" name=""  />
-			<case alias="toggle-personal-customize" name=""  />
-			<case alias="toggle-context-simple-mode" name=""  />
-			<case alias="toggle-mentoring" name=""  />
-			<case alias="toggle-pvp-enable" name=""  />
-			<case alias="nova-equip-skill-quick-slot" name=""  />
-			<case alias="toggle-account-contents" name=""  />
-			<case alias="toggle-contents-journal-2" name=""  />
-			<case alias="toggle-fish-collecting" name=""  />
-			<case alias="toggle-slate" name=""  />
-			<case alias="toggle-auto-mode" name=""  />
-			<case alias="toggle-auto-mode-option" name=""  />
-			<case alias="toggle-auto-mode-enable-item-support" name=""  />
-		</record>	
-	
-		<record alias="action-key" name="" type="Seq16" seq="$action-key-type" server="n" />
-		<record alias="bns-action-key" name="" type="Seq16" seq="$action-key-type" server="n" />
-		<record alias="attack-attr-1-simple-branch-group-icon-texture" name="" ref="IconTexture" repeat="4" server="n" />
-		<record alias="attack-attr-1-simple-branch-group-icon-index" name="" type="Short" repeat="4" server="n" />
-		<record alias="attack-attr-1-simple-branch-group-desc" name="" type="TextAlias" repeat="4" server="n" />
-		<record alias="attack-attr-2-simple-branch-group-icon-texture" name="" ref="IconTexture" repeat="4" server="n" />
-		<record alias="attack-attr-2-simple-branch-group-icon-index" name="" type="Short" repeat="4" server="n" />
-		<record alias="attack-attr-2-simple-branch-group-desc" name="" type="TextAlias" repeat="4" server="n" />
-		<record alias="simple-branch-group-key-1-icon-texture" name="" ref="IconTexture" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-1-icon-index" name="" type="Short" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-1-desc" name="" type="TextAlias" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-2-icon-texture" name="" ref="IconTexture" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-2-icon-index" name="" type="Short" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-2-desc" name="" type="TextAlias" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-3-icon-texture" name="" ref="IconTexture" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-3-icon-index" name="" type="Short" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-3-desc" name="" type="TextAlias" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-4-icon-texture" name="" ref="IconTexture" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-4-icon-index" name="" type="Short" repeat="10" server="n" />
-		<record alias="simple-branch-group-key-4-desc" name="" type="TextAlias" repeat="10" server="n" />
+		<record alias="unk-" name="" type="Index" server="n" />
+		<record alias="action-key" name="" type="Seq16" seq="$key-command" server="n" />
+		<record alias="bns-action-key" name="" type="Seq16" seq="$key-command" server="n" />
 		<record alias="training-desc-default" name="" type="TextAlias" server="n" />
 		<record alias="training-desc-attack" name="" type="TextAlias" server="n" />
 		<record alias="training-desc-defence" name="" type="TextAlias" server="n" />
@@ -242,12 +50,14 @@
 		<record alias="lobby-chart-value-defense" name="" type="Short" server="n" />
 		<record alias="lobby-chart-value-melee" name="" type="Short" server="n" />
 		<record alias="lobby-play-bink" name="" type="Index" server="n" />
-		<record alias="filter-name-1" name="" type="Index" server="n" />
-		<record alias="filter-name-2" name="" type="Index" server="n" />
-		<record alias="filter-name-3" name="" type="Index" server="n" />
+		<record alias="filter-name" name="" type="Index" server="n" repeat="3" />
 		<record alias="highlight-font" name="" type="Index" server="n" />
+		<record alias="unk-" name="" type="Int32" />
+		<record alias="unk-" name="" type="Int32" />
 		<record alias="damage-show-split-percent" name="" type="Short" server="n" />
 		<record alias="job-style-name" name="" type="TextAlias" server="n" repeat="10" />
+		
+		<!-- ===================================================================== -->
 		<record alias="skill-train-ui-job-style-name" name="" type="TextAlias" server="n" repeat="10" />
 		<record alias="skill-train-ui-job-style-imageset" name="" type="Index" server="n" repeat="10" />
 		<record alias="skill-train-ui-trait-open-button-text" name="" type="TextAlias" server="n" repeat="10" />
@@ -255,10 +65,6 @@
 		<record alias="skill-train-ui-page-job-style-imageset" name="" type="Index" server="n" repeat="10" />
 		<record alias="skill-trainingroom-ui-job-style-imageset" name="" type="Index" server="n" repeat="10" />
 		<record alias="use-guard-gauge" name="" type="Bool" server="n" />
-		<record alias="phantom-sword-customized-attach-scale" name="" type="Bool" server="n" />
-		<record alias="use-ui-skill-combo" name="" type="Bool" server="n" />
-		<record alias="use-ui-skill-train-combo-action" name="" type="Short" server="n" />
-		<record alias="contents-journal-job-style-icon" name="" type="TextAlias" server="n" repeat="3" />
 		<!-- ===================================================================== -->
 		<record alias="guard-gauge-effect" name="" ref="Effect" repeat="2" client="n" />
 	</list>

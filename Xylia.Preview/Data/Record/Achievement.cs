@@ -12,7 +12,7 @@ namespace Xylia.Preview.Data.Record
 		#region 属性字段
 		public short Step;
 
-		public Job Job;
+		public JobSeq Job;
 
 
 		public bool Deprecated;

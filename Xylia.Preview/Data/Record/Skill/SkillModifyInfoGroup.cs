@@ -5,6 +5,8 @@ using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Interface;
 
+
+
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class SkillModifyInfoGroup : IRecord
@@ -14,7 +16,7 @@ namespace Xylia.Preview.Data.Record
 		/// 职业派系
 		/// </summary>
 		[Signal("job-style")]
-		public JobStyle JobStyle;
+		public JobStyleSeq JobStyle;
 
 		[Signal("skill-modify-info-1")]
 		public string SkillModifyInfo1;
@@ -31,7 +33,7 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 方法
-		public Job SpecificJob;
+		public JobSeq SpecificJob;
 
 		public override string ToString()
 		{
@@ -46,7 +48,7 @@ namespace Xylia.Preview.Data.Record
 
 
 			if (!SkillModifyInfos.Any()) return null;
-			return JobData.GetStyleName(this.SpecificJob, this.JobStyle) + SkillModifyInfos.Aggregate((sum, now) => sum + "<br/>" + now);
+			return Job.GetStyleName(this.SpecificJob, this.JobStyle) + SkillModifyInfos.Aggregate((sum, now) => sum + "<br/>" + now);
 		}
 		#endregion
 	}

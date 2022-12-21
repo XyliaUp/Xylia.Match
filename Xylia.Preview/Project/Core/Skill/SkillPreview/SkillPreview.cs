@@ -13,10 +13,7 @@ namespace Xylia.Preview.Project.Core.Skill
 	public partial class SkillPreview : UserControl
 	{
 		#region 构造
-		public SkillPreview()
-		{
-			InitializeComponent();
-		}
+		public SkillPreview() => InitializeComponent();
 		#endregion
 
 

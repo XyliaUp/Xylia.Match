@@ -404,7 +404,7 @@
     <Compile Update="Project\Core\ItemGrowth\Game_Intension\IntensionPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Skill\SkillTrainCategoryPreview\SkillTrainCategoryPreview.cs">
+    <Compile Update="Project\Core\Skill\SkillTraitPreview\SkillBook3_IconView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Project\Core\Skill\SkillTraitPreview\SkillTraitPreview.cs">

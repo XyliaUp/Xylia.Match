@@ -13,10 +13,7 @@ namespace Xylia.Preview.Project.Core.Skill
 	public partial class SkillTraitPreview : Form
 	{
 		#region 构造
-		public SkillTraitPreview()
-		{
-			InitializeComponent();
-		}
+		public SkillTraitPreview() => InitializeComponent();
 		#endregion
 
 		#region 方法
@@ -28,7 +25,7 @@ namespace Xylia.Preview.Project.Core.Skill
 		{
 			this.TraitTiers = new();
 
-			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == Job.소환사 && o.JobStyle == JobStyle.Advanced3))
+			foreach (var SkillTrait in FileCache.Data.SkillTrait.Where(o => o.Job == JobSeq.소환사 && o.JobStyle == JobStyleSeq.Advanced2))
 			{
 				if (SkillTrait.Tier == 0)
 				{
@@ -117,7 +114,7 @@ namespace Xylia.Preview.Project.Core.Skill
 		#region 控件方法
 		private void Form1_Load(object sender, EventArgs e) => this.LoadData();
 
-		private void ucBtnExt1_BtnClick(object sender, EventArgs e) => new SkillTrainCategoryPreview(this.GetSkills()).MyShowDialog();
+		private void ucBtnExt1_BtnClick(object sender, EventArgs e) => new SkillBook3_IconView(this.GetSkills()).MyShowDialog();
 
 		public override void Refresh()
 		{

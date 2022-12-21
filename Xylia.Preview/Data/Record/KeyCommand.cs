@@ -1,22 +1,20 @@
 ﻿using System.Collections.Generic;
 
 using Xylia.Attribute.Component;
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 
-using GameSeq = Xylia.bns.Modules.GameData.Enums;
-
 namespace Xylia.Preview.Data.Record
 {
-	//KeyCommond >> KEYCAP 组合 >> 按键图片
 	public sealed class KeyCommand : IRecord
 	{
 		#region 属性字段
 		[Signal("key-command")]
-		public GameSeq.KeyCommand keyCommand;
+		public KeyCommandSeq keyCommand;
 
 		[Signal("pc-job")]
-		public GameSeq.Job PcJob;
+		public JobSeq PcJob;
 
 
 
@@ -51,8 +49,6 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 方法
-		private KeyCap GetKeyCap(KeyCode KeyCode) => FileCache.Data.KeyCap.Find(o => o.KeyCode == KeyCode);
-
 		/// <summary>
 		/// 获取组合键
 		/// </summary>
@@ -62,30 +58,34 @@ namespace Xylia.Preview.Data.Record
 			var result = new List<KeyCap>();
 
 			#region 处理默认组合键
-			//逗号分隔多个快捷键，实际未支持处理
-			foreach (var o in this.DefaultKeycap.Split(','))
+			if(this.DefaultKeycap != null)
 			{
-				if (string.IsNullOrWhiteSpace(o) || o == "none") continue;
+				//逗号分隔多个快捷键，实际未支持处理
+				foreach (var o in this.DefaultKeycap.Split(','))
+				{
+					if (string.IsNullOrWhiteSpace(o) || o == "none") continue;
 
-				if (o.StartsWith("^"))
-				{
-					result.Add(GetKeyCap(KeyCode.Control));
-					result.Add(GetKeyCap(o[1..].ToEnum<KeyCode>()));
+					if (o.StartsWith("^"))
+					{
+						result.Add(KeyCap.GetKeyCap(KeyCode.Control));
+						result.Add(KeyCap.GetKeyCap(o[1..]));
+					}
+					else if (o.StartsWith("~"))
+					{
+						result.Add(KeyCap.GetKeyCap(KeyCode.Alt));
+						result.Add(KeyCap.GetKeyCap(o[1..]));
+					}
+					else result.Add(KeyCap.GetKeyCap(o));
 				}
-				else if (o.StartsWith("~"))
-				{
-					result.Add(GetKeyCap(KeyCode.Alt));
-					result.Add(GetKeyCap(o[1..].ToEnum<KeyCode>()));
-				}
-				else result.Add(GetKeyCap(o.ToEnum<KeyCode>()));
 			}
 			#endregion
 
 			return result.ToArray();
 		}
 
-
-		public KeyCap Key1 => this.GetKeyCaps()[0];
+		private KeyCap GetKey(int Index) => this.GetKeyCaps().Length >= Index + 1 ? this.GetKeyCaps()[Index] : null;
+		public KeyCap Key1 => GetKey(0);
+		public KeyCap Key2 => GetKey(1);
 		#endregion
 	}
 }

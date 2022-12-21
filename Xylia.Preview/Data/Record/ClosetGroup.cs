@@ -7,7 +7,7 @@ namespace Xylia.Preview.Data.Record
 	public sealed class ClosetGroup : IRecord
 	{
 		#region	属性字段
-		public Category category;
+		public CategorySeq Category;
 		public short SortNo;
 
 		public string ChargeOfItemForInstantPayment;
@@ -16,7 +16,7 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 枚举
-		public enum Category : short
+		public enum CategorySeq : byte
 		{
 			none = 1,
 
@@ -70,11 +70,6 @@ namespace Xylia.Preview.Data.Record
 
 			[Description("时尚达人")]
 			fashionista,
-
-
-
-			[Description("无法使用")]
-			unusable = 99,
 		}
 		#endregion
 	}

@@ -4,6 +4,8 @@ using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Interface;
 
+
+
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class ItemBrandTooltip : IRecord ,IName ,IPicture
@@ -33,16 +35,18 @@ namespace Xylia.Preview.Data.Record
 		public byte EquipMasteryLevel;
 
 		[Signal("equip-job-check-1")]
-		public Job EquipJobCheck1;
+		public JobSeq EquipJobCheck1;
 
 		[Signal("equip-job-check-2")]
-		public Job EquipJobCheck2;
+		public JobSeq EquipJobCheck2;
 
 		[Signal("equip-job-check-3")]
-		public Job EquipJobCheck3;
+		public JobSeq EquipJobCheck3;
 
 		[Signal("equip-job-check-4")]
-		public Job EquipJobCheck4;
+		public JobSeq EquipJobCheck4;
+
+
 
 		[Signal("equip-sex")]
 		public Sex EquipSex;

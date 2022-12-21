@@ -282,10 +282,15 @@ namespace Xylia.Preview.Project.Controls
 					{
 						var IgnoreInput = Attribute["ignoreinput"].ToBool();
 
-						var ID = Attribute["id"];
-						if (ID is "none") break;
+						var id = Attribute["id"];
+						if (id == "none") break;
 
-						var obj = ID.CastObject();
+						//achievement:291_event_SoulEvent_Extreme_0004_step1:123.3.0.1.1.1.626f57f5.1.0.0.0.1
+						//item-name:3d0a04.1.270F
+						//skill:SRK_B1_DollQueen_AirBomb
+
+
+						var obj = id.CastObject();
 						if (obj is Text @text) this.SetToolTip(text.GetText());
 						else obj.PreviewShow();
 					}

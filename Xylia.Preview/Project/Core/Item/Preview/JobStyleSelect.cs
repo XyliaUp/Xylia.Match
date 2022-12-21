@@ -31,22 +31,22 @@ namespace Xylia.Preview.Project.Core.Item.Preview
 		/// 加载派系图标
 		/// </summary>
 		/// <param name="job"></param>
-		public void LoadStyleIcon(Job job)
+		public void LoadStyleIcon(JobSeq job)
 		{
-			if (job == Job.JobNone) return;
+			if (job == JobSeq.JobNone) return;
 
 			foreach (var o in FileCache.Data.JobStyle.Where(o => o.Job == job))
 			{
 				var icon = o.IntroduceJobStyleIcon.GetUObject().GetImage();
 				if (icon is null) continue;
 
-				switch (o.JobStyle)
+				switch (o.jobStyle)
 				{
-					case JobStyle.Advanced1: SetImage(this.JobStyle6, icon); break;
-					case JobStyle.Advanced2: SetImage(this.JobStyle7, icon); break;
-					case JobStyle.Advanced3: SetImage(this.JobStyle8, icon); break;
-					case JobStyle.Advanced4: SetImage(this.JobStyle9, icon); break;
-					case JobStyle.Advanced5: SetImage(this.JobStyle10, icon); break;
+					case JobStyleSeq.Advanced1: SetImage(this.JobStyle6, icon); break;
+					case JobStyleSeq.Advanced2: SetImage(this.JobStyle7, icon); break;
+					case JobStyleSeq.Advanced3: SetImage(this.JobStyle8, icon); break;
+					case JobStyleSeq.Advanced4: SetImage(this.JobStyle9, icon); break;
+					case JobStyleSeq.Advanced5: SetImage(this.JobStyle10, icon); break;
 				}
 			}
 		}
@@ -59,15 +59,13 @@ namespace Xylia.Preview.Project.Core.Item.Preview
 
 
 
+		public void SelectDefault() => JobStyleChanged?.Invoke(null, new(JobStyleSeq.Advanced1));
 
-		public void SelectDefault() => JobStyleChanged?.Invoke(null, new(JobStyle.Advanced1));
-
-		private void JobStyle6_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced1));
-		private void JobStyle7_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced2));
-		private void JobStyle8_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced3));
-		private void JobStyle9_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced4));
-		private void JobStyle10_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyle.Advanced5));
-
+		private void JobStyle6_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyleSeq.Advanced1));
+		private void JobStyle7_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyleSeq.Advanced2));
+		private void JobStyle8_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyleSeq.Advanced3));
+		private void JobStyle9_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyleSeq.Advanced4));
+		private void JobStyle10_Click(object sender, EventArgs e) => JobStyleChanged?.Invoke(sender, new(JobStyleSeq.Advanced5));
 		#endregion
 	}
 
@@ -82,16 +80,14 @@ namespace Xylia.Preview.Project.Core.Item.Preview
 	{
 		public JobStyleChangedEvent(byte JobStyle)
 		{
-			this.JobStyle = (JobStyle)JobStyle;
+			this.JobStyle = (JobStyleSeq)JobStyle;
 		}
 
-		public JobStyleChangedEvent(JobStyle JobStyle)
+		public JobStyleChangedEvent(JobStyleSeq JobStyle)
 		{
 			this.JobStyle = JobStyle;
 		}
 
-
-
-		public JobStyle JobStyle;
+		public JobStyleSeq JobStyle;
 	}
 }

@@ -57,7 +57,7 @@ namespace Xylia.Preview.Project.Core.Item
 		/// 选择派系
 		/// </summary>
 		/// <param name="JobStyle"></param>
-		private void SelectStyle(JobStyle JobStyle = JobStyle.Advanced1)
+		private void SelectStyle(JobStyleSeq JobStyle = JobStyleSeq.Advanced1)
 		{
 			#region 初始化
 			var ItemCombat = this.ItemCombat[(byte)(1 + (byte)JobStyle)];

@@ -1,10 +1,9 @@
 ﻿using System.Drawing;
 
 using Xylia.Attribute.Component;
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Common.Interface;
-
-using GameSeq = Xylia.bns.Modules.GameData.Enums;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -34,13 +33,13 @@ namespace Xylia.Preview.Data.Record
 		public string Name2;
 
 		[Signal("short-cut-key")]
-		public GameSeq.KeyCommand ShortCutKey;
+		public KeyCommandSeq ShortCutKey;
 
 		[Signal("short-cut-key-classic")]
-		public GameSeq.KeyCommand ShortCutKeyClassic;
+		public KeyCommandSeq ShortCutKeyClassic;
 
 		[Signal("short-cut-key-simple-context")]
-		public GameSeq.KeyCommand ShortCutKeySimpleContext;
+		public KeyCommandSeq ShortCutKeySimpleContext;
 
 
 
@@ -59,7 +58,7 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 当前快捷键
 		/// </summary>
-		public GameSeq.KeyCommand CurrentShortCutKey => this.ShortCutKey;
+		public KeyCommandSeq CurrentShortCutKey => this.ShortCutKey;
 		#endregion
 
 		#region 接口方法

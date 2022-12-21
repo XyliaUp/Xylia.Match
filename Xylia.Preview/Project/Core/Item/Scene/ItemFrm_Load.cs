@@ -37,7 +37,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		readonly List<Control> BottomControl = new();
 
 
-		AttributePreview AttributePreview = new();
+		readonly AttributePreview AttributePreview = new();
 		#endregion
 
 		#region 控件属性
