@@ -33,8 +33,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.components = new System.ComponentModel.Container();
 			this.ItemIcon = new System.Windows.Forms.PictureBox();
 			this.lbl_Category = new System.Windows.Forms.Label();
-			this.lbl_JobLimit = new System.Windows.Forms.Label();
-			this.lbl_Trade_Account = new System.Windows.Forms.Label();
 			this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.MenuItem_IconSaveAs = new System.Windows.Forms.ToolStripMenuItem();
 			this.MenuItem_SaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,33 +71,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.lbl_Category.TextChanged += new System.EventHandler(this.lbl_Category_TextChanged);
 			this.lbl_Category.VisibleChanged += new System.EventHandler(this.lbl_Category_VisibleChanged);
 			// 
-			// lbl_JobLimit
-			// 
-			this.lbl_JobLimit.AutoSize = true;
-			this.lbl_JobLimit.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_JobLimit.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbl_JobLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(88)))), ((int)(((byte)(66)))));
-			this.lbl_JobLimit.Location = new System.Drawing.Point(6, 363);
-			this.lbl_JobLimit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lbl_JobLimit.Name = "lbl_JobLimit";
-			this.lbl_JobLimit.Size = new System.Drawing.Size(66, 20);
-			this.lbl_JobLimit.TabIndex = 5;
-			this.lbl_JobLimit.Text = "JobLimit";
-			// 
-			// lbl_Trade_Account
-			// 
-			this.lbl_Trade_Account.AutoSize = true;
-			this.lbl_Trade_Account.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_Trade_Account.Font = new System.Drawing.Font("Microsoft YaHei UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.lbl_Trade_Account.ForeColor = System.Drawing.Color.White;
-			this.lbl_Trade_Account.Location = new System.Drawing.Point(6, 392);
-			this.lbl_Trade_Account.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.lbl_Trade_Account.Name = "lbl_Trade_Account";
-			this.lbl_Trade_Account.Size = new System.Drawing.Size(65, 20);
-			this.lbl_Trade_Account.TabIndex = 8;
-			this.lbl_Trade_Account.Text = "账号专用";
-			this.lbl_Trade_Account.Visible = false;
-			// 
 			// MenuStrip
 			// 
 			this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -136,7 +107,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// lbl_MainInfo
 			// 
 			this.lbl_MainInfo.BackColor = System.Drawing.Color.Transparent;
-			//this.lbl_MainInfo.BasicLineHeight = 24;
 			this.lbl_MainInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_MainInfo.ForeColor = System.Drawing.Color.White;
 			this.lbl_MainInfo.Location = new System.Drawing.Point(99, 30);
@@ -149,7 +119,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			// lbl_SubInfo
 			// 
 			this.lbl_SubInfo.BackColor = System.Drawing.Color.Transparent;
-			//this.lbl_SubInfo.BasicLineHeight = 20;
 			this.lbl_SubInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_SubInfo.ForeColor = System.Drawing.Color.White;
 			this.lbl_SubInfo.Location = new System.Drawing.Point(99, 56);
@@ -168,7 +137,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.PricePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.PricePreview.FontStyle = System.Drawing.FontStyle.Regular;
 			this.PricePreview.ForeColor = System.Drawing.Color.White;
-			this.PricePreview.Location = new System.Drawing.Point(335, 445);
+			this.PricePreview.Location = new System.Drawing.Point(335, 164);
 			this.PricePreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.PricePreview.Name = "PricePreview";
 			this.PricePreview.Size = new System.Drawing.Size(134, 23);
@@ -196,13 +165,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(26)))), ((int)(((byte)(35)))));
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(471, 470);
+			this.ClientSize = new System.Drawing.Size(471, 190);
 			this.ContextMenuStrip = this.MenuStrip;
 			this.Controls.Add(this.lbl_MainInfo);
 			this.Controls.Add(this.lbl_SubInfo);
 			this.Controls.Add(this.PricePreview);
-			this.Controls.Add(this.lbl_Trade_Account);
-			this.Controls.Add(this.lbl_JobLimit);
 			this.Controls.Add(this.ItemIcon);
 			this.Controls.Add(this.lbl_Category);
 			this.Controls.Add(this.ItemNameCell);
@@ -210,6 +177,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.KeyPreview = true;
 			this.Margin = new System.Windows.Forms.Padding(4);
+			this.MaximizeBox = false;
 			this.Name = "ItemFrm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ItemScene  1.57";
@@ -228,8 +196,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		#endregion
 		private System.Windows.Forms.PictureBox ItemIcon;
 		private System.Windows.Forms.Label lbl_Category;
-		private System.Windows.Forms.Label lbl_JobLimit;
-		private System.Windows.Forms.Label lbl_Trade_Account;
 		private Xylia.Preview.Project.Controls.PriceCell PricePreview;
 		private ContentPanel lbl_SubInfo;
 		private ContentPanel lbl_MainInfo;

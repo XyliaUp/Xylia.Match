@@ -3,13 +3,13 @@ using System.ComponentModel;
 using System.Drawing;
 
 using Xylia.Preview.Common.Interface;
-using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls.PanelEx;
 
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class EventTimePreview : TitlePanel, IPreview
+	public partial class EventTimePreview : TitlePanel
 	{
 		#region 构造
 		public EventTimePreview()
@@ -63,15 +63,13 @@ namespace Xylia.Preview.Project.Core.Item
 
 
 		#region 方法
-		public void LoadData(IRecord record)
+		public override void LoadData(IRecord record)
 		{
 			ItemEvent Record = record as ItemEvent;
 
 			this.Title = Record.Name2.GetText();
 			this.EventExpirationTime = Record.EventExpirationTime;
 		}
-
-		bool IPreview.INVALID() => false;
 		#endregion
 	}
 }

@@ -70,8 +70,9 @@ namespace Xylia.Preview.Data.Record
 					break;
 				}
 
-				if (!ResetInfo.IsNull()) return $"{ ResetInfo }";
-				else return null;
+
+				if (ResetInfo is null) return null;
+				return ResetInfo + "初始化购买限制";
 			}
 		}
 	}

@@ -62,11 +62,12 @@
 			// 
 			// itemShowCell2
 			// 
-			//this.itemShowCell2.Alias = null;
+			this.itemShowCell2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.itemShowCell2.BackColor = System.Drawing.Color.Transparent;
 			this.itemShowCell2.ForeColor = System.Drawing.Color.Black;
 			this.itemShowCell2.HeightDiff = 0;
-			this.itemShowCell2.ItemGrade = 7;
+			this.itemShowCell2.ItemData = null;
+			this.itemShowCell2.ItemGrade = ((byte)(7));
 			this.itemShowCell2.ItemIcon = ((System.Drawing.Bitmap)(resources.GetObject("itemShowCell2.ItemIcon")));
 			this.itemShowCell2.ItemName = "ItemName";
 			this.itemShowCell2.Location = new System.Drawing.Point(8, 34);
@@ -82,6 +83,7 @@
 			// GemPreview
 			// 
 			this.GemPreview.AutoSize = true;
+			this.GemPreview.BackColor = System.Drawing.Color.Transparent;
 			this.GemPreview.Location = new System.Drawing.Point(7, 35);
 			this.GemPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.GemPreview.Meta1 = null;
@@ -93,7 +95,7 @@
 			this.GemPreview.Meta7 = null;
 			this.GemPreview.Meta8 = null;
 			this.GemPreview.Name = "GemPreview";
-			this.GemPreview.PublicGrade = 7;
+			this.GemPreview.PublicGrade = ((byte)(7));
 			this.GemPreview.Size = new System.Drawing.Size(334, 214);
 			this.GemPreview.TabIndex = 9;
 			// 
@@ -104,7 +106,7 @@
 			this.JobStyleSelect.BackColor = System.Drawing.Color.Transparent;
 			this.JobStyleSelect.Location = new System.Drawing.Point(296, 244);
 			this.JobStyleSelect.Name = "JobStyleSelect";
-			this.JobStyleSelect.Size = new System.Drawing.Size(109, 34);
+			this.JobStyleSelect.Size = new System.Drawing.Size(73, 34);
 			this.JobStyleSelect.TabIndex = 11;
 			// 
 			// SetItemPreview
@@ -118,7 +120,7 @@
 			this.Controls.Add(this.GemPreview);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "SetItemPreview";
-			this.Size = new System.Drawing.Size(419, 285);
+			this.Size = new System.Drawing.Size(372, 281);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

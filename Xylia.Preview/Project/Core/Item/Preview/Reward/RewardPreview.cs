@@ -14,7 +14,7 @@ using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Item.Preview.Reward;
 using Xylia.Preview.Resources;
 
-using ItemData = Xylia.Preview.Data.Record.Item;   
+using ItemData = Xylia.Preview.Data.Record.Item;
 
 
 namespace Xylia.Preview.Project.Core.Item
@@ -22,7 +22,7 @@ namespace Xylia.Preview.Project.Core.Item
 	/// <summary>
 	/// 奖励预览控件
 	/// </summary>
-	public partial class RewardPreview : TitlePanel, IPreview
+	public partial class RewardPreview : TitlePanel
 	{
 		#region 构造
 		public RewardPreview()
@@ -293,7 +293,9 @@ namespace Xylia.Preview.Project.Core.Item
 		#endregion
 
 		#region 接口方法
-		void IPreview.LoadData(IRecord record)
+		public override bool INVALID() => !this.HasReward;
+
+		public override void LoadData(IRecord record)
 		{
 			//初始化
 			//清理分页数据
@@ -309,8 +311,6 @@ namespace Xylia.Preview.Project.Core.Item
 			//开始渲染
 			this.CreateControl();
 		}
-
-		bool IPreview.INVALID() => !this.HasReward;
 		#endregion
 	}
 }

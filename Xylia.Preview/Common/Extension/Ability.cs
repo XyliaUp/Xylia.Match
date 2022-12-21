@@ -12,7 +12,7 @@ namespace Xylia.Preview.Common.Extension
 		/// <param name="AbiltyName"></param>
 		/// <returns></returns>
 		public static string ToString(this long Value, object AbiltyName) => AbiltyName != null && AbiltyName.ToString().MyEndsWith("percent") ?
-			(Value / 10).ToString("0.0") + "%" :
+			((float)Value / 10).ToString("0.0") + "%" :
 			Value.ToString();
 	}
 }

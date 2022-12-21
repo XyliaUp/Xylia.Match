@@ -15,20 +15,11 @@ namespace Xylia.Preview.Project.Core.Item
 	/// <summary>
 	/// 封印解印提示工具
 	/// </summary>
-	public partial class SealPreview : TitleContentPanel, IPreview
+	public partial class SealPreview : TitleContentPanel
 	{
-		#region 构造
-		public SealPreview() : base()
-		{
-			InitializeComponent();
-		}
-		#endregion
+		public SealPreview() : base() => InitializeComponent();
 
-		#region 接口方法
-		bool INVALID;
-		bool IPreview.INVALID() => this.INVALID;
-
-		void IPreview.LoadData(IRecord Record)
+		public override void LoadData(IRecord Record)
 		{
 			#region 封印数据
 			//新封印方法
@@ -60,7 +51,6 @@ namespace Xylia.Preview.Project.Core.Item
 				if (!item.INVALID) UnsealConsumeItem2.Add(item);
 			}
 			#endregion
-
 
 			#region 加载信息
 			string Info = null;
@@ -111,9 +101,8 @@ namespace Xylia.Preview.Project.Core.Item
 			#endregion
 
 
-			this.INVALID = Info is null;
+			this.Visible = Info != null;
 			this.Text = Info;
 		}
-		#endregion
 	}
 }

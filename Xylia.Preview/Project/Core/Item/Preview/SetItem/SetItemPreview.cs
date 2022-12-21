@@ -15,7 +15,7 @@ using ItemData = Xylia.Preview.Data.Record.Item;
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class SetItemPreview : PreviewControl, IPreview
+	public partial class SetItemPreview : PreviewControl
 	{
 		#region 构造
 		public SetItemPreview()
@@ -35,17 +35,14 @@ namespace Xylia.Preview.Project.Core.Item
 
 
 		#region 接口方法
-		bool INVALID = false;
-		bool IPreview.INVALID() => INVALID;
-
-		void IPreview.LoadData(IRecord record)
+		public override void LoadData(IRecord record)
 		{
 			#region 初始化
 			var Item = record as ItemData;
 			var Record = FileCache.Data.SetItem[record.Attributes["set-item"]];
 			if (Record is null)
 			{
-				INVALID = true;
+				this.Visible = false;
 				return;
 			}
 
@@ -156,12 +153,11 @@ namespace Xylia.Preview.Project.Core.Item
 			#endregion
 		}
 
-
 		public override void Refresh()
 		{
 			base.Refresh();
 
-			int LoY = 0;
+			int LoY;
 			if (this.GemPreview.Visible) LoY = this.GemPreview.Bottom;
 			else LoY = this.lbl_Title.Bottom + 2;
 

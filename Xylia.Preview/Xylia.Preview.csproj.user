@@ -17,6 +17,12 @@
     <Compile Update="Project\Controls\ContentPanel\ContentPanel_Paint.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Project\Controls\PanelEx\TitleContentPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Controls\PanelEx\TitlePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Project\Core\ChallengeList\Scene\ChallengeListRewardPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -33,6 +39,21 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Preview\Attribute\AttributePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\EventTimePreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Reward\RewardPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SealPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\Skill\SkillByEquipmentTooltip.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Project\Core\Item\Preview\SlateScroll\SlateScrollTooltip.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Quest\Preview\Task\Mission\CaseInfoPanel.cs">
@@ -71,12 +92,6 @@
     <Compile Update="Project\Controls\ContentPanel\ContentPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Controls\PanelEx\TitleContentPanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Controls\PanelEx\TitlePanel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Project\Controls\ScrollBar\HideScrollBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,16 +128,16 @@
     <Compile Update="Project\Core\Item\Preview\Attribute\AttributeInfoCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Cell\Basic\ItemIconCell.cs">
+    <Compile Update="Project\Core\Item\Cell\ItemIconCell.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Cell\Basic\ItemNameCell.cs">
+    <Compile Update="Project\Core\Item\Cell\ItemNameCell.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Cell\Basic\ItemShowCell.cs">
+    <Compile Update="Project\Core\Item\Cell\ItemShowCell.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Preview\Gem\GemCircle.cs">
+    <Compile Update="Project\Core\Item\Preview\SetItem\Gem\GemCircle.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Preview\Exchange\ProcessComparisonCell.cs">
@@ -146,28 +161,13 @@
     <Compile Update="Project\Core\Item\Preview\DurabilityPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Preview\EventTimePreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Project\Core\Item\Preview\Exchange\ExchangePreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Project\Core\Item\Preview\Gem\GemPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Core\Item\Preview\Reward\RewardPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Core\Item\Preview\SealPreview.cs">
+    <Compile Update="Project\Core\Item\Preview\SetItem\Gem\GemPreview.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Preview\SetItem\SetItemPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Core\Item\Preview\Skill\SkillByEquipmentTooltip.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="Project\Core\Item\Preview\SlateScroll\SlateScrollTooltip.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Project\Core\Item\Scene\DataGridScene.cs">
@@ -274,7 +274,7 @@
     <EmbeddedResource Update="Project\Core\ItemGrowth\Game_ItemGrowth2\ItemGrowth2Page.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Update="Project\Core\Item\Preview\Gem\GemPreview.resx">
+    <EmbeddedResource Update="Project\Core\Item\Preview\SetItem\Gem\GemPreview.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\AnalyseSection\DataRes.resx">

@@ -12,7 +12,7 @@ using Xylia.Preview.Project.Core.Item.Cell;
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class SlateScrollTooltip : TitlePanel, IPreview
+	public partial class SlateScrollTooltip : TitlePanel
 	{
 		#region 构造
 		public SlateScrollTooltip()
@@ -33,9 +33,7 @@ namespace Xylia.Preview.Project.Core.Item
 
 
 		#region 接口方法
-		bool IPreview.INVALID() => false;
-
-		void IPreview.LoadData(IRecord record)
+		public override void LoadData(IRecord record)
 		{
 			#region 筛选出刻印书与血石的对应信息
 			//执行排序：将推荐血石排序到前面，同时抽取部分非推荐血石

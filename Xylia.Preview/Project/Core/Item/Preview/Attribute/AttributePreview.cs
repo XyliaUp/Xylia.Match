@@ -2,87 +2,80 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Core.Item.Cell;
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class AttributePreview : PreviewControl, IPreview
+	public partial class AttributePreview : PreviewControl
 	{
 		#region 构造
-		public AttributePreview()
-		{
-			InitializeComponent();
-
-			this.BackColor = Color.Transparent;
-		}
+		public AttributePreview() => InitializeComponent();
 		#endregion
 
 
 		#region 接口方法
-		bool IPreview.INVALID() => false;
-
-		void IPreview.LoadData(IRecord record)
+		public override void LoadData(IRecord record)
 		{
-			var InfoCells = new List<AttributeInfoCell>();
-
+			#region 读取属性
 			//读取主属性
 			var MainAbilityFixed = FileCache.Data.ItemRandomAbilitySlot[record.Attributes["main-ability-fixed"]];
-			if (MainAbilityFixed != null) InfoCells.Add(new AttributeInfoCell(MainAbilityFixed));
 
-
-			#region 读取子属性
+			//读取子属性
 			var SubAbilityFixed = FileCache.Data.ItemRandomAbilitySlot[record.Attributes["sub-ability-fixed"]];
-			if (SubAbilityFixed != null) InfoCells.Add(new AttributeInfoCell(SubAbilityFixed));
 
 
-			//获取随机子属性数量
-			if (record.ContainsAttribute("sub-ability-random-count", out string Value) && byte.TryParse(Value.ToString(), out byte SubAbilityRandomCount))
-			{
-
-			}
-
+			//获取随机子属性
+			var SubAbilityRandomCount = record.Attributes["sub-ability-random-count"].ConvertToByte();
+			var SubAbilityRandoms = new List<ItemRandomAbilitySlot>();
 			for (int i = 1; i <= 5; i++)
 			{
-				if (record.ContainsAttribute("sub-ability-random-" + i, out string SubAbilityRandomAlias))
-				{
-					var SubAbilityRandom = FileCache.Data.ItemRandomAbilitySlot[SubAbilityRandomAlias];
-					if (SubAbilityRandom != null) InfoCells.Add(new AttributeInfoCell(SubAbilityRandom));
-				}
+				if (record.ContainsAttribute("sub-ability-random-" + i, out string SubAbilityRandom))
+					SubAbilityRandoms.AddItem(FileCache.Data.ItemRandomAbilitySlot[SubAbilityRandom]);
 			}
 			#endregion
+
 
 			#region 处理前端
-			this.Visible = InfoCells.Any();
-			if (this.Visible)
+			int NextTop = 0;
+			void AddAbilitySlot(ItemRandomAbilitySlot slot)
 			{
-				this.SuspendLayout();
-				int NextTop = 0;
-
-				foreach (var cell in InfoCells)
-				{
-					if (!this.Controls.Contains(cell)) this.Controls.Add(cell);
-
-					cell.Location = new Point(0, NextTop);
-					cell.Width = this.Width;
-					cell.Refresh();
-
-					NextTop = cell.Bottom;
-				}
-
-				this.Height = NextTop;
-				this.ResumeLayout();
+				if (slot is null) return;
+				AddControl(new AttributeInfoCell(slot));
 			}
+			void AddControl(Control c)
+			{
+				c.Location = new Point(0, NextTop);
+				this.Controls.Add(c);
+
+				NextTop = c.Bottom;
+			}
+
+
+			AddAbilitySlot(MainAbilityFixed);
+			AddAbilitySlot(SubAbilityFixed);
+			if (SubAbilityRandomCount > 0)
+			{
+				AddControl(new ContentPanel($"从以下属性中随机获得{SubAbilityRandomCount}个"));
+
+				SubAbilityRandoms.ForEach(o => AddAbilitySlot(o));
+			}
+
+
+			this.Height = NextTop;
+			this.Visible = NextTop != 0;
 			#endregion
 		}
-		#endregion
 
 		private void AttributePreview_Resize(object sender, EventArgs e)
 		{
-			foreach (var c in this.Controls.OfType<AttributeInfoCell>())
-				c.Width = this.Width;
+			foreach (var c in this.Controls.OfType<AttributeInfoCell>()) c.Width = this.Width;
 		}
+		#endregion
 	}
 }

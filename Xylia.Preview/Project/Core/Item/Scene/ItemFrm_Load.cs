@@ -36,7 +36,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 		readonly List<Control> BottomControl = new();
 
-		AttributePreview AttributePreview { get; set; }
+
+		AttributePreview AttributePreview = new();
 		#endregion
 
 		#region 控件属性
@@ -72,13 +73,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		{
 			if (Text is null) return null;
 
-			return new ContentPanel()
-			{
-				Name = "Panel_Description7",
-
-				ForeColor = Xylia.Drawing.Font.Util.GetFontStruct("UI.Label_Green03_12").Color,
-				Text = Text,
-			};
+			return new ContentPanel(Text);
 		}
 
 		/// <summary>
@@ -106,23 +101,25 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			if (Font is null) Font = new Font("Microsoft YaHei UI", 10F);
 			if (ForeColor is null) ForeColor = Color.FromArgb(255, 88, 66);
 
-
 			//目标控件
-			var tc = this.BottomControl.Find(c => (string)c.Tag == Tag) ?? new Label()
+			var tc = this.BottomControl.Find(c => (string)c.Tag == Tag);
+			if (tc != null) return;
+
+
+
+			var o = new Label()
 			{
 				BackColor = Color.Transparent,
 				Font = new Font("Microsoft YaHei UI", 10F),
 				ForeColor = ForeColor.Value,
 				Text = Text,
+				Tag = Tag,
 
 				AutoSize = true,
 			};
-
-			if (!this.BottomControl.Contains(tc))
-			{
-				tc.Tag = Tag;
-				this.BottomControl.Add(tc);
-			}
+			
+			this.Controls.Add(o);
+			this.BottomControl.Add(o);
 		}
 
 		/// <summary>
@@ -136,9 +133,14 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			if (Preview is not ContentPanel)
 				Preview.Width = this.Width;
 
+
+			this.Controls.Add(Preview);
 			this.PreviewList.Add(Preview);
 		}
 		#endregion
+
+
+
 
 		#region 载入数据
 		private Dictionary<MainAbility, long> ItemAbility { get; set; } = new();
@@ -347,7 +349,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 			#region 控件处理
-			if (TradeInfo.IsNull()) return;
+			if (TradeInfo is null) return;
 
 			this.LoadBottomControl("TradeInfo", TradeInfo, Color.FromArgb(255, 88, 66));
 			#endregion
@@ -407,7 +409,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.lbl_Category.Text = $"Name.item.game-category-3.{ this.ItemInfo.GameCategory3.GetSignal() }".GetText(true);
 			this.PricePreview.CurrencyCount = this.ItemInfo.Attributes["price"].ConvertToInt();
 			this.ItemName = this.ItemInfo.ItemName;
-			
+
 
 			this.MainInfo = new List<MyInfo>()
 			{
@@ -432,15 +434,16 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			if (this.ItemInfo.ContainsAttribute("valid-attraction-name", out string ValidAttractionName))
 				this.LoadBottomControl("valid-attraction-name", ValidAttractionName.GetText() + "，专用");
 
-			//加载交易信息
-			this.LoadTrade();
-
 
 			//显示职业信息
 			var JobInfo = this.ItemInfo?.JobInfo;
-			if (JobInfo != null) this.lbl_JobLimit.Text = JobInfo += ", 专用";
-			this.lbl_JobLimit.Visible = JobInfo != null;
+			if (JobInfo != null) this.LoadBottomControl("JobLimit", JobInfo + ", 专用", Color.FromArgb(255, 88, 66));
+
+			//加载交易信息
+			this.LoadTrade();
 			#endregion
+
+
 
 			#region 载入提示工具 (按纵向顺序)
 			this.LoadPreview(new ExchangePreview().LoadInfo(this.ItemInfo));

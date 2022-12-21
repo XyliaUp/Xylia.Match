@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Linq;
 
 using Xylia.Preview.Common.Cast;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls.PanelEx;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
@@ -14,7 +14,7 @@ using ItemData = Xylia.Preview.Data.Record.Item;
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class ExchangePreview : PreviewControl, IPreview
+	public partial class ExchangePreview : PreviewControl
 	{
 		#region 构造
 		public ExchangePreview()
@@ -24,12 +24,8 @@ namespace Xylia.Preview.Project.Core.Item
 		#endregion
 
 
-		#region 接口方法
-		bool Valid = false;
-
-		bool IPreview.INVALID() => !Valid;
-
-		void IPreview.LoadData(IRecord record)
+		#region 方法
+		public override void LoadData(IRecord record)
 		{
 			var Item = record as ItemData;
 
@@ -86,8 +82,12 @@ namespace Xylia.Preview.Project.Core.Item
 
 
 			#region 生成兑换关系
-			this.Valid = CrystallRules.Any();
-			if (!this.Valid) return;
+			var HasAny = CrystallRules.Any();
+			if (!HasAny)
+			{
+				this.Visible = false;
+				return;
+			}
 
 			ProcessComparison.Location = new Point(0, PosY);
 			PosY += ProcessComparison.Height + 2;
@@ -105,11 +105,8 @@ namespace Xylia.Preview.Project.Core.Item
 			this.Height = PosY + 5;
 			#endregion
 		}
-		#endregion
 
-
-		#region 方法
-		public void LoadCrystallTo(IEnumerable<ItemExchange> Rule, ref int PosY, string Title)
+		private void LoadCrystallTo(IEnumerable<ItemExchange> Rule, ref int PosY, string Title)
 		{
 			//校验是否存在内容
 			if (!Rule.Any()) return;

@@ -32,7 +32,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		private void InitializeComponent()
 		{
 			this.SkillName_Txt = new System.Windows.Forms.Label();
-			this.TooltipText_Txt = new ContentPanel();
+			this.TooltipText_Txt = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
 			// SkillName_Txt
@@ -50,7 +50,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// TooltipText_Txt
 			// 
 			this.TooltipText_Txt.BackColor = System.Drawing.Color.Transparent;
-			//this.TooltipText_Txt.BasicLineHeight = 20;
 			this.TooltipText_Txt.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.TooltipText_Txt.ForeColor = System.Drawing.Color.White;
 			this.TooltipText_Txt.Location = new System.Drawing.Point(0, 33);
@@ -68,7 +67,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.Controls.Add(this.SkillName_Txt);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "SkillModifyCell";
-			this.Size = new System.Drawing.Size(416, 74);
+			this.Size = new System.Drawing.Size(338, 81);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

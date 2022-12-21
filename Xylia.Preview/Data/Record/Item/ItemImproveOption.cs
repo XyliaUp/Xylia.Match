@@ -52,10 +52,10 @@ namespace Xylia.Preview.Data.Record
 			string AdditionalText = Additional.GetText();
 
 			//获取效果类型部分提示
-			if (!string.IsNullOrWhiteSpace(this.EffectDescription)) return this.EffectDescription.GetText() + AdditionalText;
+			if (!string.IsNullOrWhiteSpace(this.EffectDescription)) return $"{this.EffectDescription.GetText()}{AdditionalText}";
 
 			//获取属性加成部分提示
-			if (this.Ability != MainAbility.None) return this.Ability.GetDescription() + " " + AbilityEx.ToString(this.AbilityValue, this.Ability) + AdditionalText;
+			if (this.Ability != MainAbility.None) return $"{this.Ability.GetDescription()} {AbilityEx.ToString(this.AbilityValue, this.Ability)}{AdditionalText}";
 
 
 			//获取武功加成部分提示

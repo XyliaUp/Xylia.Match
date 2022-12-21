@@ -51,7 +51,8 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 				this.quotaTxt.Text = ContentQuota.Info;
 				this.quotaTxt.BringToFront();
 
-				TipInfo.Add(ContentQuota.ResetInfo + "初始化购买限制");
+				var ResetInfo = ContentQuota.ResetInfo;
+				if (ResetInfo != null) TipInfo.Add(ResetInfo);
 			}
 			#endregion
 

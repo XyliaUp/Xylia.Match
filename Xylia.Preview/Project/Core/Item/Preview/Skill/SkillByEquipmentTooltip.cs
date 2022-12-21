@@ -9,7 +9,7 @@ using Xylia.Preview.Project.Core.Item.Cell;
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class SkillByEquipmentTooltip : TitlePanel, IPreview
+	public partial class SkillByEquipmentTooltip : TitlePanel
 	{
 		#region 构造
 		public SkillByEquipmentTooltip()
@@ -24,10 +24,10 @@ namespace Xylia.Preview.Project.Core.Item
 		List<SkillModifyCell> SkillModifyCells = new();
 		#endregion
 
-		#region 接口方法
-		bool IPreview.INVALID() => false;
 
-		public void LoadData(IRecord record)
+
+		#region 接口方法
+		public override void LoadData(IRecord record)
 		{
 			var Record = record as SkillByEquipment;
 
@@ -62,8 +62,6 @@ namespace Xylia.Preview.Project.Core.Item
 			return null;
 		}
 		#endregion
-
-
 
 		#region 重写方法
 		public override void Refresh()

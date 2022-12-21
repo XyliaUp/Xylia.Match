@@ -37,10 +37,9 @@
 			// SealPreview
 			// 
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Text = "封印时，需要炽热的白青封印符NaN个";
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "SealPreview";
-			this.Size = new System.Drawing.Size(630, 50);
+			this.Size = new System.Drawing.Size(295, 50);
 			this.Title = "封印";
 			this.ResumeLayout(false);
 			this.PerformLayout();

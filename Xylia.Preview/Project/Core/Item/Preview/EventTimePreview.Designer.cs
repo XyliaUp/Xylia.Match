@@ -64,7 +64,7 @@
 			this.Controls.Add(this.pictureBox1);
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "EventTimePreview";
-			this.Size = new System.Drawing.Size(352, 52);
+			this.Size = new System.Drawing.Size(191, 52);
 			this.Title = "EventName";
 			this.Controls.SetChildIndex(this.pictureBox1, 0);
 			this.Controls.SetChildIndex(this.EventTime_FixedDate, 0);

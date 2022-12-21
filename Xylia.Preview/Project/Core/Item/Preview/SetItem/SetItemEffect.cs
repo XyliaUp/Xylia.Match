@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 
 using Xylia.Preview.Resources;
@@ -12,9 +11,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		public SetItemEffect()
 		{
 			InitializeComponent();
-			this.BackColor = Color.Transparent;
-			this.PanelContent.AutoSize = true;
-			this.PanelContent.ForeColor = Xylia.Drawing.Font.Util.GetFontStruct("UI.Label_Green03_12").Color;
+	
+			this.ContentPanel.ForeColor = Xylia.Drawing.Font.Util.GetFontStruct("UI.Label_Green03_12").Color;
 		}
 		#endregion
 
@@ -55,20 +53,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		[Category("Set"), Description("套装效果")]
 		public override string Text
 		{
-			get => this.PanelContent.Text;
+			get => this.ContentPanel.Text;
 			set
 			{
-				this.PanelContent.Text = value;
-				this.Height = this.PanelContent.Height + 5;
+				this.ContentPanel.Text = value;
+				this.Height = this.ContentPanel.Height + 5;
 			}
 		}
-		#endregion
-
-
-		#region 方法
-			//设置层宽度
-			//int Width = this.Width - this.PanelContent.Location.X;
-			//this.PanelContent.MaximumSize = new Size(Width, this.PanelContent.Height);
 		#endregion
 	}
 }

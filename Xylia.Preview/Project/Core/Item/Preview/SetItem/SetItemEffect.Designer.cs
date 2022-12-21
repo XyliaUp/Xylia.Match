@@ -33,7 +33,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SetItemEffect));
 			this.CountTooltip = new System.Windows.Forms.PictureBox();
-			this.PanelContent = new ContentPanel();
+			this.ContentPanel = new ContentPanel();
 			((System.ComponentModel.ISupportInitialize)(this.CountTooltip)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -48,18 +48,18 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.CountTooltip.TabIndex = 0;
 			this.CountTooltip.TabStop = false;
 			// 
-			// PanelContent
+			// ContentPanel
 			// 
-			this.PanelContent.BackColor = System.Drawing.Color.Transparent;
-			//this.PanelContent.BasicLineHeight = 20;
-			this.PanelContent.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.PanelContent.ForeColor = System.Drawing.Color.White;
-			this.PanelContent.Location = new System.Drawing.Point(33, 0);
-			this.PanelContent.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
-			this.PanelContent.MaximumSize = new System.Drawing.Size(400, 99999);
-			this.PanelContent.Name = "PanelContent";
-			this.PanelContent.TabIndex = 1;
-			this.PanelContent.Text = "PanelContent";
+			this.ContentPanel.AutoSize = true;
+			this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
+			this.ContentPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ContentPanel.ForeColor = System.Drawing.Color.White;
+			this.ContentPanel.Location = new System.Drawing.Point(33, 0);
+			this.ContentPanel.Margin = new System.Windows.Forms.Padding(3, 6, 3, 6);
+			this.ContentPanel.MaximumSize = new System.Drawing.Size(400, 99999);
+			this.ContentPanel.Name = "PanelContent";
+			this.ContentPanel.TabIndex = 1;
+			this.ContentPanel.Text = "PanelContent";
 			// 
 			// SetItemEffect
 			// 
@@ -68,7 +68,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.AutoSize = true;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.PanelContent);
+			this.Controls.Add(this.ContentPanel);
 			this.Controls.Add(this.CountTooltip);
 			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -84,6 +84,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		#endregion
 
 		private System.Windows.Forms.PictureBox CountTooltip;
-		private ContentPanel PanelContent;
+		private ContentPanel ContentPanel;
 	}
 }

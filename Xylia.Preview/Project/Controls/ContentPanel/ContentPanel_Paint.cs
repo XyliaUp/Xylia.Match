@@ -72,7 +72,7 @@ namespace Xylia.Preview.Project.Controls
 			//计算与母容器关系
 			else if (o.Parent != null)
 			{
-				if (o.Parent is PreviewControl || o.Parent is IPreview) return GetMaxWidth(o.Parent);
+				if (o.Parent is PreviewControl) return GetMaxWidth(o.Parent);
 
 
 				//如果上级控件启用缩放，会导致大量计算。因此此时不应进行宽度处理

@@ -45,7 +45,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			Loading = false;
 			#endregion
 
-
 			#region 实例化操作按钮
 			this.UserOperScene = new UserOperPanel(this);
 
@@ -66,13 +65,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			//不使用多线程，无法退出主窗体
 			this.Activated += new EventHandler((s, o) => new Thread(t => this.UserOperScene?.BringToFront()).Start());
 			#endregion
-
-			#region 实例化额外控件
-			this.AttributePreview = new AttributePreview()
-			{
-				Visible = false,
-			};
-			#endregion
 		}
 
 		private void Preview_Load(object sender, EventArgs e)
@@ -82,12 +74,9 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			this.LoadData();
 
-			var p = this.Params;
-			foreach (var c in this.Controls.OfType<ContentPanel>()) c.Params = p;
-
-
-			//刷新必须放置在最后面，否则会异常
+			this.TestRefresh();
 			this.Refresh();
+			this.RefreshBackgroundImage();
 		}
 
 		protected override void WndProc(ref Message m)
@@ -125,10 +114,9 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 		private void Preview_SizeChanged(object sender, EventArgs e)
 		{
-			if (this.WindowState != FormWindowState.Minimized)
-			{
-				base.Refresh();
-			}
+			if (this.WindowState == FormWindowState.Minimized) return;
+
+			this.Refresh();
 		}
 
 
@@ -271,10 +259,14 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 		#region 数据处理
-		/// <summary>
-		/// 第二个参数是物品数据
-		/// </summary>
-		public List<object> Params => new(ContentPanel.defaultParams) { ItemInfo };
+		private void TestRefresh()
+		{
+			var param = new List<object>(ContentPanel.defaultParams) { ItemInfo };
+			foreach (var c in this.Controls.OfType<ContentPanel>()) c.Params = param;
+
+			foreach (var c in PreviewList) c.Refresh();
+		}
+
 
 		/// <summary>
 		/// 刷新数据
@@ -314,13 +306,13 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 					if (!this.Controls.Contains(AttributePreview)) this.Controls.Add(AttributePreview);
 
 					this.AttributePreview.Location = new Point(this.lbl_SubInfo.Left, Info_Top);
-					this.AttributePreview.Width = this.Width - this.AttributePreview.Left - 20;
+					this.AttributePreview.Width = Width - this.AttributePreview.Left;
 
 					Info_Top = this.AttributePreview.Bottom;
 				}
 				#endregion
 
-				#region 获取物品属性
+				#region 获取属性
 				List<MyInfo> ValidMainInfo = new(this.MainInfo);
 				List<MyInfo> ValidSubInfo = new(this.SubInfo);
 
@@ -337,7 +329,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				}
 				#endregion
 
-				#region 处理信息节
+				#region 处理信息
 				ValidMainInfo = ValidMainInfo.Where(Info => !Info.INVALID).ToList();
 				if (ValidMainInfo.Any())
 				{
@@ -367,41 +359,18 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			int PosY = Math.Max(ItemIcon.Bottom, Info_Top);
 			foreach (var c in PreviewList)
 			{
-				if (!c.Visible) continue;
-
-				//如果控件组中不包含当前控件，则进行追加操作
-				if (!this.Controls.Contains(c)) this.Controls.Add(c);
-
-				//根据不同的类型分配不同的起始位置
-				c.Location = new Point(c is ContentPanel ? 5 : 0, PosY);
-				c.Refresh();
-
+				c.Location = new Point(c is ContentPanel ? 5 : 0, PosY);   
 				PosY = c.Bottom + 2;
-			}
-			#endregion
-
-			#region 底部信息
-			if (lbl_JobLimit.Visible)
-			{
-				lbl_JobLimit.Location = new Point(lbl_JobLimit.Location.X, PosY);
-				PosY = lbl_JobLimit.Bottom;
 			}
 
 			foreach (var c in BottomControl)
 			{
-				if (!this.Controls.Contains(c)) this.Controls.Add(c);
-
 				c.Location = new Point(2, PosY);
 				PosY = c.Bottom;
 			}
+			#endregion
 
-			if (lbl_Trade_Account.Visible)
-			{
-				lbl_Trade_Account.Location = new Point(lbl_Trade_Account.Location.X, PosY);
-				PosY = lbl_Trade_Account.Bottom;
-			}
-
-
+			#region 其他处理
 			//这里设置结束高度
 			int EndPadding = 90;
 			this.lbl_Category.Location = new Point(Width - this.lbl_Category.Width, this.lbl_Category.Location.Y);
@@ -410,10 +379,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			//设置窗体高度
 			this.Height = PosY + EndPadding;
 			#endregion
-
-
-			if (this.CardImage is null)
-				this.RefreshBackgroundImage();
 		}
 
 		/// <summary>
@@ -421,13 +386,16 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// </summary>
 		private void RefreshBackgroundImage()
 		{
+			if (this.CardImage != null) return;
+			if (this.WindowState == FormWindowState.Maximized) return;
+
+
 			Bitmap res;
 			if (ItemInfo.LegendGradeBackgroundParticleType == ItemData.LegendGradeBackgroundParticleTypeSeq.TypeGold) res = Resource_BNSR.T_tooltip_legend2_texture_cn_NEW;
 			else if (ItemInfo.LegendGradeBackgroundParticleType == ItemData.LegendGradeBackgroundParticleTypeSeq.TypeGoldup) res = Resource_BNSR.T_tooltip_legend3_GoldUp;
 			else if (ItemInfo.LegendGradeBackgroundParticleType == ItemData.LegendGradeBackgroundParticleTypeSeq.TypeRedup) res = Resource_BNSR.T_tooltip_legend3_RedUp;
 			else if (ItemInfo.ItemGrade >= 7) res = Resource_BNSR.T_tooltip_legend_texture_cn;
 			else return;
-
 
 
 			var b = new Bitmap(this.Width, this.Height);

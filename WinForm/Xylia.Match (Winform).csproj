@@ -179,10 +179,7 @@
     <None Remove="Windows\Panel\MatchProp.cs~RF3278382.TMP" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xylia.Preview\Xylia.Preview.csproj">
-      <CopyLocal>False</CopyLocal>
-      <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
-    </ProjectReference>
+    <ProjectReference Include="..\Xylia.Preview\Xylia.Preview.csproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resx\Progrm.resx">

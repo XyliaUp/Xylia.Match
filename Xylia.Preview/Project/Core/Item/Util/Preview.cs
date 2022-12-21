@@ -1,9 +1,5 @@
-﻿
-using Xylia.Extension;
-using Xylia.Preview.Common.Interface;
+﻿using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data;
-
-using static Xylia.Extension.String;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
 
@@ -21,17 +17,13 @@ namespace Xylia.Preview.Project.Core.Item.Util
 		/// <param name="FileInfo"></param>
 		/// <param name="Preview">用于传递 Preview 组件参数</param>
 		/// <param name="ItemInfo"></param>
-		public static TPreview LoadInfo<TPreview, TRecord>(this TPreview Preview, string AttrName, DataTable<TRecord> FileInfo, ItemData ItemInfo = null)
+		public static TPreview LoadInfo<TPreview, TRecord>(this TPreview Preview, string AttrName, DataTable<TRecord> FileInfo, ItemData ItemInfo)
 			where TPreview : PreviewControl, IPreview, new()
 			where TRecord : IRecord, new()
 		{
-			if (ItemInfo?.Attributes is null || !ItemInfo.ContainsAttribute(AttrName, out string AttrVal) || AttrVal.IsNull()) return null;
+			if (ItemInfo?.Attributes is null || !ItemInfo.ContainsAttribute(AttrName, out string AttrVal) || AttrVal is null) return null;
 
-			//类型校验
-			if (FileInfo.GetType().HasImplementedRawGeneric(typeof(DataTable<>)))
-				return LoadInfo(Preview, FileInfo[AttrVal]);
-
-			return null;
+			return LoadInfo(Preview, FileInfo[AttrVal]);
 		}
 
 		/// <summary>
@@ -42,13 +34,13 @@ namespace Xylia.Preview.Project.Core.Item.Util
 		/// <param name="Preview"></param>
 		/// <param name="Record"></param>
 		/// <returns></returns>
-		public static TPreview LoadInfo<TPreview, TRecord>(this TPreview Preview, TRecord Record = default)
+		public static TPreview LoadInfo<TPreview, TRecord>(this TPreview Preview, TRecord Record)
 			where TPreview : PreviewControl, IPreview, new()
 			where TRecord : IRecord, new()
 		{
 			if (Record is null) return null;
 
-			System.Diagnostics.Debug.WriteLine($"[{ Record.GetType() }] { Record.Alias }");
+			//System.Diagnostics.Debug.WriteLine($"[{ Record.GetType() }] { Record.Alias }");
 
 			//传递额外信息 (注意要在LoadData方法之前)
 			Preview.LoadData(Record);

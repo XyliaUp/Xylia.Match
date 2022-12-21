@@ -30,21 +30,20 @@ namespace Xylia.Preview.Project.Core.Item
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.ContentPanel = new ContentPanel();
+			this.ContentPanel = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.JobStyleSelect = new Xylia.Preview.Project.Core.Item.Preview.JobStyleSelect();
 			this.SuspendLayout();
 			// 
 			// ContentPanel
 			// 
 			this.ContentPanel.BackColor = System.Drawing.Color.Transparent;
-			//this.ContentPanel.BasicLineHeight = 20;
 			this.ContentPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ContentPanel.ForeColor = System.Drawing.Color.White;
 			this.ContentPanel.Location = new System.Drawing.Point(2, 35);
 			this.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.ContentPanel.Name = "ContentPanel";
 			this.ContentPanel.TabIndex = 0;
-			this.ContentPanel.Text = "ContentPanel";
+			this.ContentPanel.Text = "描述文本内容";
 			// 
 			// JobStyleSelect
 			// 
@@ -53,7 +52,7 @@ namespace Xylia.Preview.Project.Core.Item
 			this.JobStyleSelect.BackColor = System.Drawing.Color.Transparent;
 			this.JobStyleSelect.Location = new System.Drawing.Point(1, 0);
 			this.JobStyleSelect.Name = "JobStyleSelect";
-			this.JobStyleSelect.Size = new System.Drawing.Size(109, 34);
+			this.JobStyleSelect.Size = new System.Drawing.Size(73, 34);
 			this.JobStyleSelect.TabIndex = 1;
 			// 
 			// SkillTooltipPreview
@@ -65,7 +64,7 @@ namespace Xylia.Preview.Project.Core.Item
 			this.Controls.Add(this.ContentPanel);
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "SkillTooltipPreview";
-			this.Size = new System.Drawing.Size(113, 60);
+			this.Size = new System.Drawing.Size(92, 58);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

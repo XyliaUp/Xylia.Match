@@ -14,7 +14,7 @@ using ItemData = Xylia.Preview.Data.Record.Item;
 
 namespace Xylia.Preview.Project.Core.Item
 {
-	public partial class SkillTooltipPreview : PreviewControl, IPreview
+	public partial class SkillTooltipPreview : PreviewControl
 	{
 		#region 构造
 		public SkillTooltipPreview()
@@ -31,11 +31,8 @@ namespace Xylia.Preview.Project.Core.Item
 		#endregion
 
 
-
 		#region 方法
-		bool IPreview.INVALID() => this.Visible;
-
-		void IPreview.LoadData(IRecord record)
+		public override void LoadData(IRecord record)
 		{
 			#region 初始化
 			var Item = record as ItemData;
@@ -55,7 +52,6 @@ namespace Xylia.Preview.Project.Core.Item
 
 			this.Visible = false;
 		}
-
 
 		/// <summary>
 		/// 选择派系
@@ -88,9 +84,8 @@ namespace Xylia.Preview.Project.Core.Item
 			}
 			#endregion
 
-			this.ContentPanel.Text = Txt;
-			this.Height = this.ContentPanel.Bottom;
 
+			this.ContentPanel.Text = Txt;
 			this.Parent?.Refresh();
 		}
 		#endregion

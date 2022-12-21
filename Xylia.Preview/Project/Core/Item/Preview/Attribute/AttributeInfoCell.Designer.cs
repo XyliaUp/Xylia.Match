@@ -30,14 +30,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.lbl_MainInfo = new ContentPanel();
-			this.panelContent1 = new ContentPanel();
+			this.lbl_MainInfo = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.panelContent1 = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
 			// lbl_MainInfo
 			// 
 			this.lbl_MainInfo.BackColor = System.Drawing.Color.Transparent;
-			//this.lbl_MainInfo.BasicLineHeight = 20;
 			this.lbl_MainInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.lbl_MainInfo.ForeColor = System.Drawing.Color.White;
 			this.lbl_MainInfo.Location = new System.Drawing.Point(0, 0);
@@ -50,7 +49,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			// panelContent1
 			// 
 			this.panelContent1.BackColor = System.Drawing.Color.Transparent;
-			//this.panelContent1.BasicLineHeight = 20;
 			this.panelContent1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.panelContent1.ForeColor = System.Drawing.Color.Yellow;
 			this.panelContent1.Location = new System.Drawing.Point(136, 0);
@@ -71,7 +69,6 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
 			this.Name = "AttributeInfoCell";
 			this.Size = new System.Drawing.Size(212, 20);
-			this.Load += new System.EventHandler(this.AttributeInfoCell_Load);
 			this.Resize += new System.EventHandler(this.AttributeInfoCell_Resize);
 			this.ResumeLayout(false);
 			this.PerformLayout();

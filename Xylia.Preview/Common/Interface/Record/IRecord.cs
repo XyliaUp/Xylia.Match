@@ -6,7 +6,7 @@ using Xylia.Preview.Common.Interface.RecordAttribute;
 namespace Xylia.Preview.Common.Interface
 {
 	/// <summary>
-	/// 通用化配置文件 record 接口
+	/// 通用化配置文件接口
 	/// </summary>
 	public class IRecord : IArgParam
 	{
