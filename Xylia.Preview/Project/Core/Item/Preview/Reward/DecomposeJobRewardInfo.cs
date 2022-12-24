@@ -16,9 +16,9 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 		/// <summary>
 		/// 职业奖励特征名
 		/// </summary>
-		public ItemDecomposeJobReward Signal;
+		public readonly ItemDecomposeJobReward Signal;
 
-		public DecomposeJobRewardInfo(ItemDecomposeJobReward Signal, RewardData Reward) : base(Reward)
+		public DecomposeJobRewardInfo(ItemDecomposeJobReward Signal, RewardData Reward) : base(Reward)  
 		{
 			this.Signal = Signal;
 		}

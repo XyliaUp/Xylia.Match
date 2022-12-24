@@ -232,7 +232,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 				}
 
 
-				var SelectedItemAssuredCount = s.Page.RewardInfo.DecomposeReward.Attributes["selected-item-assured-count"].ConvertToInt();
+
+				var SelectedItemAssuredCount = s.Page.RewardInfo.DecomposeReward?.Attributes["selected-item-assured-count"].ConvertToInt() ?? 0;
 				if (SelectedItemAssuredCount != 0) this.MainInfo.Add(new MyInfo($"可选择{ SelectedItemAssuredCount }项", "RewardPreview"));
 
 				this.Refresh();

@@ -35,7 +35,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.g2));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.rare));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.g3));
-					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.selected));
+					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.Selected));
 					_preview.AddRange(CreateGroupPreview(RewardCell.CellGroup.Random));
 
 					//物品实例化
@@ -66,6 +66,8 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				Extra = jobReward.Signal.GetDescription();
 			#endregion
 
+
+
 			#region 获取奖励字段名称
 			switch (RewardGroup)
 			{
@@ -82,7 +84,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				{
 					RewardAttr = "group-1-item-";
 					CountMinAttr = "group-1-item-stack-count-";
-					Extra = "G1";
+					Extra += "G1";
 				}
 				break;
 
@@ -90,7 +92,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				{
 					RewardAttr = "group-2-item-";
 					CountMinAttr = "group-2-item-stack-count-";
-					Extra = "G2";
+					Extra += "G2";
 				}
 				break;
 
@@ -98,7 +100,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				{
 					RewardAttr = "group-3-item-";
 					CountMinAttr = "group-3-item-stack-count-";
-					Extra = "G3";
+					Extra += "G3";
 				}
 				break;
 
@@ -106,19 +108,18 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				{
 					RewardAttr = "rare-item-";
 					CountMinAttr = "rare-item-stack-count-";
-					Extra = "Rare";
+					Extra += "Rare";
 				}
 				break;
 
 				case RewardCell.CellGroup.Random:
 				{
 					RewardAttr = "random-item-";
-					Extra = "Random";
 				}
 				break;
 
 
-				case RewardCell.CellGroup.selected:
+				case RewardCell.CellGroup.Selected:
 				{
 					RewardAttr = "selected-item-";
 					CountMinAttr = "selected-item-count-";

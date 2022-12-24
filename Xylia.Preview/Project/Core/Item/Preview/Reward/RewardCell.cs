@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 using Xylia.Drawing;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Properties;
 using Xylia.Preview.Resources;
 
 using ItemData = Xylia.Preview.Data.Record.Item;
@@ -24,6 +23,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		public enum CellGroup
 		{
 			Fixed,
+			Selected,
+			Random,
 
 			g1,
 			g2,
@@ -31,14 +32,8 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			rare,
 
 			g3,
-
-			selected,
-
 			g4,
 			g5,
-
-
-			Random,
 		}
 		#endregion
 
@@ -46,10 +41,10 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		public RewardCell()
 		{
 			InitializeComponent();
-			this.AutoSize = true;
-			this.BackColor = Color.Transparent;
 		}
 		#endregion
+
+
 
 		#region 字段
 		public bool IsJobReward;
@@ -86,11 +81,11 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 
 				this.m_Type.Visible = true;
 
-				if (value == CellGroup.selected) this.m_Type.Image = Resource_BNSR.Tag_199.ImageThumbnail(0.9);
+				if (value == CellGroup.Selected) this.m_Type.Image = Resource_BNSR.Tag_199.ImageThumbnail(0.9);
 				else this.m_Type.Image = Resource_BNSR.Tag_090.ImageThumbnail(0.9);
 			}
 		}
-
+		#endregion
 
 		#region 数量
 		private int? m_countmin = null;
@@ -118,37 +113,9 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			}
 		}
 		#endregion
-		#endregion
 
-
-		#region 图标处理
-
-		/// <summary>
-		/// 物品图标
-		/// </summary>
-		[Category("Reward"), Description("")]
-		public Bitmap ItemIcon
-		{
-			set => this.ItemShow.ItemIcon = value;
-			get => this.ItemShow.ItemIcon;
-		}
-		#endregion
 
 		#region 物品信息
-		private ItemData m_ItemInfo;
-
-		public ItemData ItemInfo
-		{
-			get
-			{
-				if (m_ItemInfo is null)
-					m_ItemInfo = ItemAlias.GetItemInfo();
-
-				return m_ItemInfo;
-			}
-		}
-
-
 		/// <summary>
 		/// 物品别名
 		/// </summary>
@@ -174,10 +141,12 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		/// </summary>
 		public void ItemInstace()
 		{
-			this.ItemShow.ItemData = ItemInfo;
-			this.ItemGrade = ItemInfo.ItemGrade;
-			this.ItemName = ItemInfo.NameText();
-			this.ItemIcon = ItemInfo.FrontIcon;
+			var ItemData = ItemAlias.GetItemInfo();
+
+			this.ItemShow.ItemData = ItemData;
+			this.ItemShow.ItemIcon = ItemData.FrontIcon;
+			this.ItemGrade = ItemData.ItemGrade;
+			this.ItemName = ItemData.NameText();
 
 			this.Refresh();
 		}
@@ -192,7 +161,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 			if (!this.Visible) return;
 
 			#region 是否显示额外信息
-			if (this.ShowExtra && ItemExtra != null) this.ItemShow.ItemName = $"[{ItemExtra}] {this.RealName}";
+			if (this.ShowExtra && this.ItemExtra != null) this.ItemShow.ItemName = $"[{this.ItemExtra}] {this.RealName}";
 			else this.ItemShow.ItemName = this.RealName;
 			#endregion
 
