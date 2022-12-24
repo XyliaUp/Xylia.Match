@@ -53,7 +53,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 				var Option = FileCache.Data.ItemImproveOption[OptionList.Attributes["option-" + idx]];
 				if (Option is null) break;
 
-
 				if (Option.Level > ImproveLevel) AcquirableOptionList.Add(Option.ToString());
 				else AcquirableOptionList.Add((FileCache.Data.ItemImproveOption[Option.ID, ImproveLevel] ?? Option).ToString());
 			}

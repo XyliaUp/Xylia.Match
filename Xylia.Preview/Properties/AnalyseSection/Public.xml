@@ -2,7 +2,7 @@
 <table>
 	<public >
 	
-		<record alias="attach-ability" type="dictionary" >
+		<record alias="attach-ability">
 			<case alias="none" name="" default="y" />
 			<case alias="attack-power-creature-min-max" name="攻击" />
 			<case alias="pve-boss-level-npc-attack-power-creature-min-max" name="降魔攻击力" />
@@ -35,9 +35,7 @@
 			<case alias="r-support-power-value" name="" />
 		</record>
 
-
-
-		<record alias="main-ability" name="" type="Dictionary" >		
+		<record alias="main-ability" name="">		
 			<case alias="none" name="" default="y" />
 			<case alias="attack-power-equip-min-and-max" name="攻击" />
 			<case alias="defend-power-equip-value" name="防御" />
@@ -103,7 +101,7 @@
 		
 
 
-		<record alias="angle" type="dictionary" >
+		<record alias="angle">
 			<case alias="0" name="" default="y" />
 			<case alias="45" name="" />
 			<case alias="90" name="" />
@@ -114,15 +112,7 @@
 			<case alias="315" name="" />
 		</record>	
 		
-		<record alias="brain-type" >
-			<case alias="none" name="" default="y" desc="NPC不会响应任何请求（包括对话和战斗）" />
-			<case alias="citizen" name="" />			
-			<case alias="monster" name="" />
-			<case alias="boss" name="" />
-			<case alias="follower" name="" />
-		</record>		
-		
-		<record alias="condition-type" >
+		<record alias="condition-type">
 			<case alias="none" name="" />
 			<case alias="all" name="" default="y" />
 			<case alias="weapon" name="" />
@@ -176,9 +166,1398 @@
 			<case alias="vehicle" name="" />
 		</record>	
 
+		<record alias="detach-slot" name="">
+			<case alias="none" name="" default="y" />
+			<case alias="other" name="" />
+			<case alias="attack-hit" name="" />
+			<case alias="attack-miss" name="" />
+			<case alias="attack-dodge" name="" />
+			<case alias="attack-parry" name="" />
+			<case alias="attack-perfect-parry" name="" />
+			<case alias="attack-bounce" name="" />
+			<case alias="attack-critical" name="" />
+			<case alias="attack-counter" name="" />			
+			<case alias="attacked-hit" name="" />
+			<case alias="attacked-miss" name="" />
+			<case alias="attacked-dodge" name="" />
+			<case alias="attacked-parry" name="" />
+			<case alias="attacked-perfect-parry" name="" />
+			<case alias="attacked-bounce" name="" />
+			<case alias="attacked-critical" name="" />
+			<case alias="attacked-counter" name="" />
+			<case alias="casting-start" name="技能使用开始" />
+			<case alias="casting-end" name="技能使用结束" />
+        </record>
+
+		<record alias="effect-target-type" name="">	
+			<case alias="none" name="" default="y" />		
+			<case alias="effect-owner" name="" />
+			<case alias="effect-eventer" name="" />
+			<case alias="effect-giver" name="" />
+			<case alias="skill-target" name="" />
+        </record>
+
+	    <record alias="effect-attribute" name="">
+			<case alias="none" name="" default="y" />
+			<case alias="회복" name="" />
+			<case alias="진드기" name="" />
+			<case alias="불" name="" />
+			<case alias="은사" name="" />
+			<case alias="거미줄" name="" />
+			<case alias="독" name="" />
+			<case alias="은신" name="" />
+			<case alias="투명" name="" />
+			<case alias="광기" name="" />
+			<case alias="얼음감옥" name="" />
+			<case alias="독나방" name="" />
+			<case alias="가젯드랍" name="" />
+			<case alias="다운" name="" />
+			<case alias="넉백대시" name="" />
+			<case alias="방어불가" name="" />
+			<case alias="도발" name="" />
+			<case alias="도망" name="" />
+			<case alias="이동불가" name="" />
+			<case alias="대시불가" name="" />
+			<case alias="감속" name="" />
+			<case alias="기절" name="" />
+			<case alias="얼어붙음" name="" />
+			<case alias="행동불가" name="" />
+			<case alias="출혈" name="" />
+			<case alias="치유" name="" />
+			<case alias="얼음" name="" />
+			<case alias="맹독" name="" />
+			<case alias="막기" name="" />
+			<case alias="속박" name="" />
+			<case alias="제압" name="" />
+			<case alias="위치바꾸기" name="" />
+			<case alias="장악연계" name="" />
+			<case alias="무적" name="" />
+			<case alias="멍해짐" name="" />
+			<case alias="앞차기" name="" />
+			<case alias="혼절" name="" />
+			<case alias="광폭해짐" name="" />
+			<case alias="공중" name="" />
+			<case alias="그로기" name="" />
+			<case alias="난무" name="" />
+			<case alias="넉백" name="" />
+			<case alias="흡공" name="" />
+			<case alias="퀘스트-1" name="" />
+			<case alias="퀘스트-2" name="" />
+			<case alias="퀘스트-3" name="" />
+			<case alias="퀘스트-4" name="" />
+			<case alias="퀘스트-5" name="" />
+			<case alias="대상공중" name="" />
+			<case alias="보스-1" name="" />
+			<case alias="보스-2" name="" />
+			<case alias="보스-3" name="" />
+			<case alias="보스대쉬" name="" />
+			<case alias="그림자" name="" />
+			<case alias="중첩불가1" name="" />
+			<case alias="중첩불가2" name="" />
+			<case alias="조건만족" name="" />
+			<case alias="소환사독" name="" />
+			<case alias="탱킹장판" name="" />
+			<case alias="검막" name="" />
+			<case alias="비트" name="" />
+			<case alias="홍옥" name="" />
+			<case alias="녹주석" name="" />
+			<case alias="보스저항-1" name="" />
+			<case alias="보스저항-2" name="" />
+			<case alias="보스저항-3" name="" />
+			<case alias="보스저항-4" name="" />
+			<case alias="보스저항-5" name="" />
+			<case alias="낙인저항-1" name="" />
+			<case alias="낙인저항-2" name="" />
+			<case alias="낙인저항-3" name="" />
+			<case alias="낙인저항-4" name="" />
+			<case alias="마성-1" name="" />
+			<case alias="마성-2" name="" />
+			<case alias="마성-3" name="" />
+			<case alias="마성-4" name="" />
+			<case alias="주술체" name="" />
+			<case alias="소울" name="" />
+			<case alias="부적" name="" />
+			<case alias="환마" name="" />
+			<case alias="반사" name="" />
+			<case alias="NPC-1" name="" />
+			<case alias="NPC-2" name="" />
+			<case alias="NPC-3" name="" />
+			<case alias="NPC-4" name="" />
+			<case alias="NPC-5" name="" />
+			<case alias="NPC-6" name="" />
+			<case alias="NPC-7" name="" />
+			<case alias="NPC-8" name="" />
+			<case alias="NPC-9" name="" />
+			<case alias="NPC-10" name="" />
+			<case alias="낙인저항-5" name="" />
+			<case alias="낙인저항-6" name="" />
+			<case alias="낙인저항-7" name="" />
+			<case alias="낙인저항-8" name="" />
+			<case alias="클래스-1" name="" />
+			<case alias="클래스-2" name="" />
+			<case alias="클래스-3" name="" />
+			<case alias="클래스-4" name="" />
+			<case alias="클래스-5" name="" />
+			<case alias="클래스-6" name="" />
+			<case alias="클래스-7" name="" />
+			<case alias="클래스-8" name="" />
+			<case alias="클래스-9" name="" />
+			<case alias="클래스-10" name="" />
+			<case alias="클래스-11" name="" />
+			<case alias="클래스-12" name="" />
+			<case alias="클래스-13" name="" />
+			<case alias="클래스-14" name="" />
+			<case alias="클래스-15" name="" />
+			<case alias="클래스-16" name="" />
+			<case alias="클래스-17" name="" />
+			<case alias="클래스-18" name="" />
+			<case alias="클래스-19" name="" />
+			<case alias="클래스-20" name="" />
+			<case alias="클래스-21" name="" />
+			<case alias="클래스-22" name="" />
+			<case alias="클래스-23" name="" />
+			<case alias="클래스-24" name="" />
+			<case alias="클래스-25" name="" />
+			<case alias="클래스-26" name="" />
+			<case alias="클래스-27" name="" />
+			<case alias="클래스-28" name="" />
+			<case alias="클래스-29" name="" />
+			<case alias="클래스-30" name="" />
+			<case alias="클래스-31" name="" />
+			<case alias="클래스-32" name="" />
+			<case alias="클래스-33" name="" />
+			<case alias="클래스-34" name="" />
+			<case alias="클래스-35" name="" />
+			<case alias="클래스-36" name="" />
+			<case alias="클래스-37" name="" />
+			<case alias="클래스-38" name="" />
+			<case alias="클래스-39" name="" />
+			<case alias="클래스-40" name="" />
+			<case alias="클래스-41" name="" />
+			<case alias="클래스-42" name="" />
+			<case alias="클래스-43" name="" />
+			<case alias="클래스-44" name="" />
+			<case alias="클래스-45" name="" />
+			<case alias="클래스-46" name="" />
+			<case alias="클래스-47" name="" />
+			<case alias="클래스-48" name="" />
+			<case alias="클래스-49" name="" />
+			<case alias="클래스-50" name="" />
+			<case alias="클래스-51" name="" />
+			<case alias="클래스-52" name="" />
+			<case alias="클래스-53" name="" />
+			<case alias="클래스-54" name="" />
+			<case alias="클래스-55" name="" />
+			<case alias="클래스-56" name="" />
+			<case alias="클래스-57" name="" />
+			<case alias="클래스-58" name="" />
+			<case alias="클래스-59" name="" />
+			<case alias="클래스-60" name="" />
+			<case alias="아이템조건-1" name="" />
+			<case alias="어택글라이드" name="" />
+			
+			<!-- 以下为虚幻4版本内容 -->
+			<case alias="문양-1" name="" />
+			<case alias="문양-2" name="" />
+			<case alias="문양-3" name="" />
+			<case alias="문양-4" name="" />
+			<case alias="문양-5" name="" />
+			<case alias="문양-6" name="" />
+			<case alias="문양-7" name="" />
+			<case alias="문양-8" name="" />
+			<case alias="문양-9" name="" />
+			<case alias="문양-10" name="" />
+			<case alias="문양-11" name="" />
+			<case alias="문양-12" name="" />
+			<case alias="문양-13" name="" />
+			<case alias="문양-14" name="" />
+			<case alias="문양-15" name="" />
+			<case alias="문양-16" name="" />
+			<case alias="문양-17" name="" />
+			<case alias="문양-18" name="" />
+			<case alias="문양-19" name="" />
+			<case alias="문양-20" name="" />
+			<case alias="기믹-1" name="" />
+			<case alias="기믹-2" name="" />
+			<case alias="기믹-3" name="" />
+			<case alias="기믹-4" name="" />
+			<case alias="기믹-5" name="" />
+			<case alias="던전보스-1" name="" />
+		</record>
+
+		<record alias="flag" name="">
+			<case key="0" alias="none" name="" default="y" />
+			<case key="1" alias="stun" name="" />
+			<case key="2" alias="airdash" name="" />
+			<case key="3" alias="knockback" name="" />
+			<case key="4" alias="bind-phantom" name="" />
+			<case key="5" alias="link" name="" />
+			<case key="6" alias="detection" name="" />
+			<case key="7" alias="internal-injury" name="" />
+			<case key="8" alias="immediately-exec" name="" />
+			<case key="9" alias="concentration" name="" />
+			<case key="10" alias="infinity-shot" name="" />
+			<case key="11" alias="down" name="" />
+			<case key="12" alias="swoon" name="" />
+			<case key="13" alias="defence" name="" />
+			<case key="14" alias="kneel" name="" />
+			<case key="15" alias="provocation" name="" />
+			<case key="16" alias="midair-1" name="" />
+			<case key="17" alias="midair-2" name="" />
+			<case key="18" alias="midair-3" name="" />
+			<case key="19" alias="frostbite" name="" />
+			<case key="20" alias="magnetic-seal" name="" />
+			<case key="21" alias="fast-freezing" name="" />
+			<case key="22" alias="rupture" name="" />
+			<case key="23" alias="impregnability" name="" />
+			<case key="24" alias="prickblood" name="" />
+			<case key="25" alias="wildfire-1" name="" />
+			<case key="26" alias="wildfire-2" name="" />
+			<case key="27" alias="wildfire-3" name="" />
+			<case key="28" alias="hide" name="" />
+			<case key="29" alias="burrow" name="" />
+			<case key="30" alias="smokescreen" name="" />
+			<case key="31" alias="embers" name="" />
+			<case key="32" alias="poison" name="" />
+			<case key="33" alias="applied-poison" name="" />
+			<case key="34" alias="spider-web" name="" />
+			<case key="35" alias="time-bomb" name="" />
+			<case key="36" alias="defence-block" name="" />
+			<case key="37" alias="dash-block" name="" />
+			<case key="38" alias="dexterity" name="" />
+			<case key="39" alias="soulblade-1" name="" />
+			<case key="40" alias="soulblade-2" name="" />
+			<case key="41" alias="soulblade-3" name="" />
+			<case key="42" alias="joint" name="" />
+			<case key="43" alias="flydragon" name="" />
+			<case key="44" alias="landdragon" name="" />
+			<case key="45" alias="silverweb-1" name="" />
+			<case key="46" alias="silverweb-2" name="" />
+			<case key="47" alias="justguard" name="" />
+			<case key="48" alias="force-flag-1" name="" />
+			<case key="49" alias="force-flag-2" name="" />
+			<case key="50" alias="force-flag-3" name="" />
+			<case key="51" alias="catchshield" name="" />
+			<case key="52" alias="poundshort" name="" />
+			<case key="53" alias="axechopshort" name="" />
+			<case key="54" alias="swingstrikeshort" name="" />
+			<case key="55" alias="chilblain" name="" />
+			<case key="56" alias="frontdown" name="" />
+			<case key="57" alias="bleeding" name="" />
+			<case key="58" alias="npc-state-1" name="" />
+			<case key="59" alias="npc-state-2" name="" />
+			<case key="60" alias="npc-state-3" name="" />
+			<case key="61" alias="npc-state-4" name="" />
+			<case key="62" alias="npc-state-5" name="" />
+			<case key="63" alias="npc-state-6" name="" />
+			<case key="64" alias="npc-state-7" name="" />
+			<case key="65" alias="npc-state-8" name="" />
+			<case key="66" alias="hardwall-break" name="" />
+			<case key="67" alias="react-link" name="" />
+			<case key="68" alias="Counter" name="" />
+			<case key="69" alias="Shadow" name="" />
+			<case key="70" alias="Shuriken" name="" />
+			<case key="71" alias="Instantkick" name="" />
+			<case key="72" alias="Hyperkick" name="" />
+			<case key="73" alias="Saver" name="" />
+			<case key="74" alias="HeartStab" name="" />
+			<case key="75" alias="LeafDodge" name="" />
+			<case key="76" alias="DragonKick" name="" />
+			<case key="77" alias="BurstBlow" name="" />
+			<case key="78" alias="Blood" name="" />
+			<case key="79" alias="BloodFullStack" name="" />
+			<case key="80" alias="Poison2" name="" />
+			<case key="81" alias="Poison2FullStack" name="" />
+			<case key="82" alias="TankingDrain" name="" />
+			<case key="83" alias="EmberFullStack" name="" />
+			<case key="84" alias="PoisonFullStack" name="" />
+			<case key="85" alias="FireBit" name="" />
+			<case key="86" alias="FireBitFullStack" name="" />
+			<case key="87" alias="IceBit" name="" />
+			<case key="88" alias="Hole" name="" />
+			<case key="89" alias="HoleFullStack" name="" />
+			<case key="90" alias="Bubble" name="" />
+			<case key="91" alias="Swallow" name="" />
+			<case key="92" alias="FireBit2" name="" />
+			<case key="93" alias="IceBit2" name="" />
+			<case key="94" alias="IceBitFullStack" name="" />
+			<case key="95" alias="FireWall1" name="" />
+			<case key="96" alias="FireWall2" name="" />
+			<case key="97" alias="FireWall3" name="" />
+			<case key="98" alias="FireWall4" name="" />
+			<case key="99" alias="HighKick" name="" />
+			<case key="100" alias="Abdomen" name="" />
+			<case key="101" alias="ShortBurst" name="" />
+			<case key="102" alias="MartialFullHit" name="" />
+			<case key="103" alias="Smash" name="" />
+			<case key="104" alias="Hole1" name="" />
+			<case key="105" alias="Hole2" name="" />
+			<case key="106" alias="Hole3" name="" />
+			<case key="107" alias="TargetHole1" name="" />
+			<case key="108" alias="TargetHole2" name="" />
+			<case key="109" alias="TargetHole3" name="" />
+			<case key="110" alias="Hornet" name="" />
+			<case key="111" alias="MorningGlory" name="" />
+			<case key="112" alias="cannot-resurrect" name="" />
+			<case key="113" alias="enable-guild-battle-field" name="" />
+			<case key="114" alias="Immune-link" name="" />
+			<case key="115" alias="GhostX0" name="" />
+			<case key="116" alias="GhostX1" name="" />
+			<case key="117" alias="GhostX2" name="" />
+			<case key="118" alias="GhostX3" name="" />
+			<case key="119" alias="Thornbus" name="" />
+			<case key="120" alias="BloodBurst" name="" />
+			<case key="121" alias="AdventMark1" name="" />
+			<case key="122" alias="AdventMark2" name="" />
+			<case key="123" alias="HyperMove" name="" />
+			<case key="124" alias="Talisman" name="" />
+			<case key="125" alias="Spector01" name="" />
+			<case key="126" alias="Spector02" name="" />
+			<case key="127" alias="Spector03" name="" />
+			<case key="128" alias="Phantomsoul" name="" />
+			<case key="129" alias="Bluesky" name="" />
+			<case key="130" alias="EgoAutoParry" name="" />
+			<case key="131" alias="Pierce" name="" />
+			<case key="132" alias="burn" name="" />
+			<case key="133" alias="AttackGlide" name="" />
+			<case key="134" alias="SecondGaugeStopped" name="" />
+			<case key="135" alias="BigBossJump" name="" />
+			<case key="136" alias="bigbossstate-1" name="" />
+			<case key="137" alias="JobSkillFlag-1" name="" />
+			<case key="138" alias="JobSkillFlag-2" name="" />
+			<case key="139" alias="JobSkillFlag-3" name="" />
+			<case key="140" alias="JobSkillFlag-4" name="" />
+			<case key="141" alias="JobSkillFlag-5" name="" />
+			<case key="142" alias="JobSkillFlag-6" name="" />
+			<case key="143" alias="JobSkillFlag-7" name="" />
+			<case key="144" alias="JobSkillFlag-8" name="" />
+			<case key="145" alias="JobSkillFlag-9" name="" />
+			<case key="146" alias="JobSkillFlag-10" name="" />
+			<case key="147" alias="JobSkillFlag-11" name="" />
+			<case key="148" alias="JobSkillFlag-12" name="" />
+			<case key="149" alias="JobSkillFlag-13" name="" />
+			<case key="150" alias="JobSkillFlag-14" name="" />
+			<case key="151" alias="JobSkillFlag-15" name="" />
+			<case key="152" alias="JobSkillFlag-16" name="" />
+			<case key="153" alias="JobSkillFlag-17" name="" />
+			<case key="154" alias="JobSkillFlag-18" name="" />
+			<case key="155" alias="JobSkillFlag-19" name="" />
+			<case key="156" alias="JobSkillFlag-20" name="" />
+			<case key="157" alias="JobSkillFlag-21" name="" />
+			<case key="158" alias="JobSkillFlag-22" name="" />
+			<case key="159" alias="JobSkillFlag-23" name="" />
+			<case key="160" alias="JobSkillFlag-24" name="" />
+			<case key="161" alias="JobSkillFlag-25" name="" />
+			<case key="162" alias="JobSkillFlag-26" name="" />
+			<case key="163" alias="JobSkillFlag-27" name="" />
+			<case key="164" alias="JobSkillFlag-28" name="" />
+			<case key="165" alias="JobSkillFlag-29" name="" />
+			<case key="166" alias="JobSkillFlag-30" name="" />
+			<case key="167" alias="JobSkillFlag-31" name="" />
+			<case key="168" alias="JobSkillFlag-32" name="" />
+			<case key="169" alias="JobSkillFlag-33" name="" />
+			<case key="170" alias="JobSkillFlag-34" name="" />
+			<case key="171" alias="JobSkillFlag-35" name="" />
+			<case key="172" alias="JobSkillFlag-36" name="" />
+			<case key="173" alias="JobSkillFlag-37" name="" />
+			<case key="174" alias="JobSkillFlag-38" name="" />
+			<case key="175" alias="JobSkillFlag-39" name="" />
+			<case key="176" alias="JobSkillFlag-40" name="" />
+			<case key="177" alias="JobSkillFlag-41" name="" />
+			<case key="178" alias="JobSkillFlag-42" name="" />
+			<case key="179" alias="JobSkillFlag-43" name="" />
+			<case key="180" alias="JobSkillFlag-44" name="" />
+			<case key="181" alias="JobSkillFlag-45" name="" />
+			<case key="182" alias="JobSkillFlag-46" name="" />
+			<case key="183" alias="npc-skill-1" name="" />
+			<case key="184" alias="npc-skill-2" name="" />
+			<case key="185" alias="npc-skill-3" name="" />
+			<case key="186" alias="npc-skill-4" name="" />
+			<case key="187" alias="npc-skill-5" name="" />
+			<case key="188" alias="npc-skill-6" name="" />
+			<case key="189" alias="npc-skill-7" name="" />
+			<case key="190" alias="npc-skill-8" name="" />
+			<case key="191" alias="npc-skill-9" name="" />
+			<case key="192" alias="npc-skill-10" name="" />
+			<case key="193" alias="npc-skill-11" name="" />
+			<case key="194" alias="npc-skill-12" name="" />
+			<case key="195" alias="stun-miss" name="" />
+			<case key="196" alias="down-miss" name="" />
+			<case key="197" alias="Struggle" name="" />
+			<case key="198" alias="boutiquefree" name="" />
+			<case key="199" alias="tumbling-block" name="" />
+			<case key="200" alias="PeaceArea" name="" />
+			<case key="201" alias="perfect-dodged" name="" />
+
+			<!-- 之后的均为虚幻4版本内容 -->
+			<case alias="kneel-miss" name="" />
+			<case alias="glyph-1" name="" />
+			<case alias="glyph-2" name="" />
+			<case alias="glyph-3" name="" />
+			<case alias="glyph-4" name="" />
+			<case alias="glyph-5" name="" />
+			<case alias="glyph-6" name="" />
+			<case alias="glyph-7" name="" />
+			<case alias="glyph-8" name="" />
+			<case alias="glyph-9" name="" />
+			<case alias="glyph-10" name="" />
+			<case alias="glyph-11" name="" />
+			<case alias="glyph-12" name="" />
+			<case alias="glyph-13" name="" />
+			<case alias="glyph-14" name="" />
+			<case alias="glyph-15" name="" />
+			<case alias="glyph-16" name="" />
+			<case alias="glyph-17" name="" />
+			<case alias="glyph-18" name="" />
+			<case alias="glyph-19" name="" />
+			<case alias="glyph-20" name="" />
+			<case alias="Break-1" name="" />
+			<case alias="Break-2" name="" />
+			<case alias="Break-3" name="" />
+			<case alias="condition-event-1" name="" />
+			<case alias="condition-event-2" name="" />
+			<case alias="condition-event-3" name="" />
+			<case alias="condition-event-4" name="" />
+			<case alias="condition-event-5" name="" />
+			<case alias="condition-event-6" name="" />
+			<case alias="condition-event-7" name="" />
+			<case alias="condition-event-8" name="" />
+			<case alias="condition-event-9" name="" />
+			<case alias="condition-event-10" name="" />
+		</record>
+
+		<record alias="env-operation">
+			<case alias="none" name="" default="y" />
+			<case alias="open" name="" />
+			<case alias="close" name="" />
+			<case alias="enable" name="" />
+			<case alias="disable" name="" />
+        </record>
+
+		<record alias="env-state">
+			<case alias="none" name="" default="y" />
+			<case alias="open" name="" />
+			<case alias="close" name="" />
+			<case alias="empty" name="" />
+			<case alias="step-1" name="" />
+			<case alias="step-2" name="" />
+			<case alias="step-3" name="" />
+			<case alias="step-4" name="" />
+			<case alias="step-5" name="" />
+			<case alias="step-6" name="" />
+			<case alias="step-7" name="" />
+        </record>
+
+		<record alias="function" name="功能">
+			<case alias="none" name="" default="y" />
+			<case alias="block-move" name="阻止移动" />
+			<case alias="block-rotate" name="阻止旋转" />
+			<case alias="block-skill" name="阻止技能" />
+			<case alias="block-physical-skill" name="阻止物理技能" />
+			<case alias="block-force-skill" name="阻止强制技能" />
+			<case alias="immune-damage" name="免疫伤害" />
+			<case alias="immune-death" name="免疫死亡" />
+			<case alias="immune-debuff" name="免疫负面效果" />
+			<case alias="immune-casting-delay" name="免疫执行延迟" />
+			<case alias="block-dodge" name="" />
+			<case alias="block-bounce" name="" />
+			<case alias="block-parry" name="" />
+			<case alias="block-perfect-parry" name="" />
+			<case alias="block-jump" name="" />
+			<case alias="block-hyper" name="" />
+			<case alias="front-perfect-parry" name="" />
+			<case alias="back-perfect-parry" name="" />
+			<case alias="front-bounce" name="" />
+			<case alias="back-bounce" name="" />
+        </record>
+
+		<record alias="ghost-type">
+			<case alias="none" name="" default="y" />
+			<case alias="basic" name="" />
+			<case alias="beyond" name="" />
+			<case alias="phase" name="" />
+        </record>
 
 
-	    <record alias="creature_field_20" name="" version="20200630" >
+
+		<record alias="job_20" version="20200101">
+			<case alias="job-none" name="" default="y" />
+			<case alias="검사" name="" />
+			<case alias="권사" name="" />
+			<case alias="기공사" name="" />
+			<case alias="격사" name="" />
+			<case alias="역사" name="" />
+			<case alias="소환사" name="" />
+			<case alias="암살자" name="" />
+			<case alias="귀검사" name="" />
+			<case alias="주술사" name="" />
+			<case alias="기권사" name="" />
+			<case alias="투사" name="" />
+			<case alias="궁사" name="" />
+			<case alias="창술사" name="" />
+			<case alias="뇌전술사" name="" />	
+			<case alias="pc-max" name="" />
+			<case alias="소환수-루키" name="" />
+			<case alias="소환수-striker" name="" />
+			<case alias="소환수-defender" name="" />
+			<case alias="소환수-controller" name="" />
+		</record>
+		
+		<record alias="job" version="202208">
+			<case alias="job-none" name="" default="y" />
+			<case alias="검사" name="" />
+			<case alias="권사" name="" />
+			<case alias="기공사" name="" />
+			<case alias="격사" name="" />
+			<case alias="역사" name="" />
+			<case alias="소환사" name="" />
+			<case alias="암살자" name="" />
+			<case alias="귀검사" name="" />
+			<case alias="주술사" name="" />
+			<case alias="기권사" name="" />
+			<case alias="투사" name="" />
+			<case alias="궁사" name="" />
+			<case alias="창술사" name="" />
+			<case alias="뇌전술사" name="" />
+			<case alias="쌍검사" name="双剑士_2107版本新增" />
+			<case alias="악사" name="乐师_2207版本新增" />		
+			<case alias="pc-max" name="" />
+			<case alias="소환수-루키" name="" />
+			<case alias="소환수-striker" name="" />
+			<case alias="소환수-defender" name="" />
+			<case alias="소환수-controller" name="" />
+		</record>
+		
+		
+		
+		<record alias="sex">
+			<case alias="none" name="" default="y" />
+			<case alias="남" name="" />
+			<case alias="여" name="" />
+			<case alias="중" name="" />
+        </record>
+		
+		<record alias="race">
+			<case alias="none" name="" default="y" />
+			<case alias="건" name="天族" />
+			<case alias="곤" name="龙族" />
+			<case alias="린" name="灵族" />
+			<case alias="진" name="人族" />
+			<case alias="나쁜몹" name="" />
+			<case alias="더나쁜몹" name="" />
+			<case alias="무서운몹" name="" />
+			<case alias="더무서운몹" name="" />
+			<case alias="더더무서운몹" name="" />
+			<case alias="고양이" name="" />
+			<case alias="강림체" name="" />
+			<case alias="악귀" name="" />
+          </record>
+
+		<record alias="rotate" name="">
+			<case alias="keep" name="" default="y" />
+			<case alias="server-yaw" name="" />
+			<case alias="toplayer" name="" />
+        </record>
+
+
+		<record alias="difficulty-type" >
+			<case alias="none" name="" default="y" />
+			<case alias="easy" name="入门" />
+			<case alias="normal" name="普通" />
+			<case alias="hard" name="熟练" />
+		</record>	
+
+		<record alias="direction">
+			<case alias="front" name="" default="y" />
+			<case alias="back" name="" />
+			<case alias="left" name="" />
+			<case alias="right" name="" />
+			<case alias="front-right" name="" />
+			<case alias="front-left" name="" />
+			<case alias="back-right" name="" />
+			<case alias="back-left" name="" />
+		</record>	
+		
+		<record alias="key-command">
+			<case alias="none" name="" default="y" />
+			<case alias="action1" name="" />
+			<case alias="action2" name="" />
+			<case alias="action3" name="" />
+			<case alias="classic-action1" name="" />
+			<case alias="classic-action2" name="" />
+			<case alias="classic-action3" name="" />
+			<case alias="skill-recommend" name="" />
+			<case alias="skill-stance" name="" />
+			<case alias="skill-slot1" name="" />
+			<case alias="skill-slot2" name="" />
+			<case alias="skill-slot3" name="" />
+			<case alias="skill-slot4" name="" />
+			<case alias="skill-slot5" name="" />
+			<case alias="skill-slot6" name="" />
+			<case alias="skill-slot7" name="" />
+			<case alias="skill-slot8" name="" />
+			<case alias="skill-slot9" name="" />
+			<case alias="skill-slot10" name="" />
+			<case alias="skill-slot11" name="" />
+			<case alias="skill-slot12" name="" />
+			<case alias="skill-q" name="" />
+			<case alias="skill-e" name="" />
+			<case alias="skill-special-1" name="" />
+			<case alias="skill-special-2" name="" />
+			<case alias="item-slot1" name="" />
+			<case alias="item-slot2" name="" />
+			<case alias="item-slot3" name="" />
+			<case alias="item-slot4" name="" />
+			<case alias="extra-skill-slot5" name="" />
+			<case alias="skill-duel-tag" name="" />
+			<case alias="toggle-help" name="" />
+			<case alias="toggle-dungeon-guide" name="" />
+			<case alias="toggle-inventory" name="" />
+			<case alias="toggle-gem" name="" />
+			<case alias="toggle-equipped" name="" />
+			<case alias="toggle-skill-book" name="" />
+			<case alias="toggle-quest-journal" name="" />
+			<case alias="toggle-minimap-scale" name="" />
+			<case alias="toggle-minimap-visible" name="" />
+			<case alias="toggle-quest-quick-slot" name="" />
+			<case alias="toggle-collect-manufacture" name="" />
+			<case alias="toggle-petition" name="" />
+			<case alias="toggle-option" name="" />
+			<case alias="toggle-minimap-alpha" name="" />
+			<case alias="toggle-party-panel" name="" />
+			<case alias="toggle-party-mark" name="" />
+			<case alias="toggle-party-search" name="" />
+			<case alias="toggle-hud-customize" name="" />
+			<case alias="party-match" name="" />
+			<case alias="manual-targeting" name="" />
+			<case alias="strafe-left" name="" />
+			<case alias="strafe-right" name="" />
+			<case alias="dash-forward" name="" />
+			<case alias="move-forward" name="" />
+			<case alias="move-backward" name="" />
+			<case alias="turn-left" name="" />
+			<case alias="turn-right" name="" />
+			<case alias="jump-up" name="" />
+			<case alias="toggle-walk-run" name="" />
+			<case alias="social-action1" name="" />
+			<case alias="social-action2" name="" />
+			<case alias="social-action3" name="" />
+			<case alias="social-action4" name="" />
+			<case alias="social-action5" name="" />
+			<case alias="social-action6" name="" />
+			<case alias="social-action7" name="" />
+			<case alias="social-action8" name="" />
+			<case alias="social-action9" name="" />
+			<case alias="social-action10" name="" />
+			<case alias="toggle-auto-move-forward" name="" />
+			<case alias="enter-slash-chatting" name="" />
+			<case alias="enter-normal-chatting" name="" />
+			<case alias="enter-party-chatting" name="" />
+			<case alias="enter-local-chatting" name="" />
+			<case alias="enter-private-chatting" name="" />
+			<case alias="toggle-hud" name="" />
+			<case alias="toggle-light-hud-mode" name="" />
+			<case alias="camera-up" name="" />
+			<case alias="camera-down" name="" />
+			<case alias="camera-zoomin" name="" />
+			<case alias="camera-zoomout" name="" />
+			<case alias="toggle-voice-chat-option" name="" />
+			<case alias="mark1" name="" />
+			<case alias="mark2" name="" />
+			<case alias="mark3" name="" />
+			<case alias="mark4" name="" />
+			<case alias="mark5" name="" />
+			<case alias="mark6" name="" />
+			<case alias="mark7" name="" />
+			<case alias="mark8" name="" />
+			<case alias="mark-timer" name="" />
+			<case alias="mark-timer-immune-break-down" name="" />
+			<case alias="mark-timer-immune-break-kneel" name="" />
+			<case alias="mark-timer-immune-break-stun" name="" />
+			<case alias="mark-timer-immune-break-knockback" name="" />
+			<case alias="unmark" name="" />
+			<case alias="headline-start-timer" name="" />
+			<case alias="minimap-depth-plus" name="" />
+			<case alias="minimap-depth-minus" name="" />
+			<case alias="rotate-camera" name="" />
+			<case alias="rotate-player" name="" />
+			<case alias="reset-camera" name="" />
+			<case alias="toggle-bns" name="" />
+			<case alias="notification-accept" name="" />
+			<case alias="notification-decline" name="" />
+			<case alias="toggle-joypad-ui-mode" name="" />
+			<case alias="close-floating-panels" name="" />
+			<case alias="joypad-esc" name="" />
+			<case alias="joypad-set-mouse-position" name="" />
+			<case alias="joypad-toggle-rotate-type" name="" />
+			<case alias="turn-on-social-mode" name="" />
+			<case alias="enter-party-search-channel-in-party-match" name="" />
+			<case alias="toggle-sns" name="" />
+			<case alias="toggle-powerbook" name="" />
+			<case alias="toggle-skill-powerbook" name="" />
+			<case alias="toggle-nshop" name="" />
+			<case alias="toggle-character-info" name="" />
+			<case alias="toggle-market" name="" />
+			<case alias="toggle-money-market" name="" />
+			<case alias="toggle-postbox" name="" />
+			<case alias="toggle-tencent-in-game-shop" name="" />
+			<case alias="toggle-tencent-cross" name="" />
+			<case alias="toggle-second-password" name="" />
+			<case alias="toggle-achievement" name="" />
+			<case alias="toggle-pc-filter-hidden" name="" />
+			<case alias="toggle-guild2" name="" />
+			<case alias="toggle-economy-communication" name="" />
+			<case alias="cancel-order" name="" />
+			<case alias="invite-party" name="" />
+			<case alias="duel-start" name="" />
+			<case alias="toggle-friend" name="" />
+			<case alias="toggle-wardrobe" name="" />
+			<case alias="toggle-dragon-jade-shop" name="" />
+			<case alias="toggle-ranking" name="" />
+			<case alias="toggle-ingame-notice" name="" />
+			<case alias="change-item-bar-page" name="" />
+			<case alias="duel-tag-order-first" name="" />
+			<case alias="duel-tag-order-random" name="" />
+			<case alias="leave-arena-square" name="" />
+			<case alias="quick-turn" name="" />
+			<case alias="joypad-special-function1" name="" />
+			<case alias="joypad-special-function2" name="" />
+			<case alias="accelerate-mouse-cursor-speed" name="" />
+			<case alias="joypad-mouse-left-button" name="" />
+			<case alias="joypad-mouse-right-button" name="" />
+			<case alias="change-pet-filter-hidden" name="" />
+			<case alias="toggle-damage-meter" name="" />
+			<case alias="toggle-item-graph" name="" />
+			<case alias="duel-camera-fitpawn-new" name="" />
+			<case alias="duel-camera-free-new" name="" />
+			<case alias="duel-camera-quater-new" name="" />
+			<case alias="duel-camera-alpha-new" name="" />
+			<case alias="duel-camera-beta-new" name="" />
+			<case alias="duel-camera-free-up-new" name="" />
+			<case alias="duel-camera-free-down-new" name="" />
+			<case alias="toggle-goods-store" name="" />
+			<case alias="enter-skill-training-room" name="" />
+			<case alias="toggle-arena-entrance" name="" />
+			<case alias="toggle-appearance-pictorial" name="" />
+			<case alias="toggle-hybrid-mode" name="" />
+			<case alias="toggle-personal-customize" name="" />
+			<case alias="toggle-context-simple-mode" name="" />
+			<case alias="toggle-mentoring" name="" />
+			<case alias="toggle-pvp-enable" name="" />
+			<case alias="nova-equip-skill-quick-slot" name="" />
+			<case alias="toggle-account-contents" name="" />
+			<case alias="toggle-contents-journal-2" name="" />
+			<case alias="toggle-fish-collecting" name="" />
+			<case alias="toggle-slate" name="" />
+			<case alias="toggle-auto-mode" name="" />
+			<case alias="toggle-auto-mode-option" name="" />
+			<case alias="toggle-auto-mode-enable-item-support" name="" />
+
+
+			<case alias="toggle-pvp-data" name="" />
+			<case alias="toggle-ride-vehicle" name="" />
+			<case alias="toggle-museum" name="" />
+			<case alias="equip-spare-item" name="" />
+			<case alias="toggle-spare-item" name="未确认" />
+			<case alias="unk-" name="" />
+			<case alias="toggle-glyph-inventory" name="" />
+			<case alias="toggle-constellation" name="" />
+			<case alias="toggle-sealed-scroll" name="" />
+			<case alias="toggle-inter-battle-field" name="" />
+			<case alias="toggle-wanted-mission" name="" />
+			<case alias="toggle-expedition" name="" />
+        </record>		
+		
+		<record alias="skill-result">
+			<case alias="none" name="" default="y" />
+			<case alias="hit" name="命中 (不包括暴击)" />
+			<case alias="miss" name="" />
+			<case alias="dodge" name="闪避" />
+			<case alias="parry" name="格挡" />
+			<case alias="perfect-parry" name="完美格挡" />
+			<case alias="bounce" name="反弹" />
+			<case alias="counter" name="" />
+			<case alias="critical-hit" name="暴击命中" />
+			<case alias="hit-critical-hit" name="命中和暴击命中 (命中时一般指这个)" />
+			<case alias="back-hit-critical-hit" name="背后命中" />
+			<case alias="not-hit" name="" />
+			<case alias="all" name="全部" />
+			<case alias="hit-critical-hit-parry" name="" />
+			<case alias="parry-perfect-parry" name="" />
+			<case alias="front-hit-critical-hit" name="" />
+			<case alias="parry-perfect-parry-counter" name="" desc="反制穿刺" />
+			<case alias="parry-perfect-parry-dodge" name="" />
+			<case alias="parry-dodge" name="" />
+		</record>
+		
+
+	    <record alias="stance_20" name="" version="20200600">
+			<case alias="stance-none" name="" default="y" />
+			<case alias="npc기본자세" name="" />
+			<case alias="천검세" name="" />
+			<case alias="검령세" name="" />
+			<case alias="단타" name="" />
+			<case alias="연계" name="" />
+			<case alias="체술" name="" />
+			<case alias="납도" name="" />
+			<case alias="경기공" name="" />
+			<case alias="연기공" name="" />
+			<case alias="강기공" name="" />
+			<case alias="스나이퍼모드" name="" />
+			<case alias="건너모드" name="" />
+			<case alias="파괴" name="" />
+			<case alias="보호" name="" />
+			<case alias="철벽" name="" />
+			<case alias="소환" name="" />
+			<case alias="교란" name="" />
+			<case alias="은신" name="" />
+			<case alias="암살" name="" />
+			<case alias="검술" name="" />
+			<case alias="어검" name="" />
+			<case alias="발도" name="" />
+			<case alias="npc자세1" name="" />
+			<case alias="npc자세2" name="" />
+			<case alias="npc자세3" name="" />
+			<case alias="소환수-follow" name="" />
+			<case alias="소환수-command-1" name="" />
+			<case alias="주술" name="" />
+			<case alias="강림" name="" />
+			<case alias="유권" name="" />
+			<case alias="기공" name="" />
+			<case alias="냉정" name="" />
+			<case alias="광기" name="" />
+			<case alias="장궁" name="" />
+			<case alias="정령궁" name="" />
+			<case alias="찌르기" name="" />
+			<case alias="베기" name="" />
+			<case alias="청뢰" name="" />
+			<case alias="혈뢰" name="" />
+			<case alias="어검세" name="" />
+			<case alias="쌍월" name="" />
+			<case alias="뇌신" name="" />
+			<case alias="npc주시자세1" name="" />
+			<case alias="npc주시자세2" name="" />
+			<case alias="npc주시자세3" name="" />
+		</record>
+		
+	    <record alias="stance" name="" version="20210727">
+			<case alias="stance-none" name="" default="y" />
+			<case alias="npc기본자세" name="" />
+			<case alias="천검세" name="" />
+			<case alias="검령세" name="" />
+			<case alias="단타" name="" />
+			<case alias="연계" name="" />
+			<case alias="체술" name="" />
+			<case alias="납도" name="" />
+			<case alias="경기공" name="" />
+			<case alias="연기공" name="" />
+			<case alias="강기공" name="" />
+			<case alias="스나이퍼모드" name="" />
+			<case alias="건너모드" name="" />
+			<case alias="파괴" name="" />
+			<case alias="보호" name="" />
+			<case alias="철벽" name="" />
+			<case alias="소환" name="" />
+			<case alias="교란" name="" />
+			<case alias="은신" name="" />
+			<case alias="암살" name="" />
+			<case alias="검술" name="" />
+			<case alias="어검" name="" />
+			<case alias="발도" name="" />
+			<case alias="npc자세1" name="" />
+			<case alias="npc자세2" name="" />
+			<case alias="npc자세3" name="" />
+			<case alias="소환수-follow" name="" />
+			<case alias="소환수-command-1" name="" />
+			<case alias="소환수-flying" name="" />
+			<case alias="주술" name="" />
+			<case alias="강림" name="" />
+			<case alias="유권" name="" />
+			<case alias="기공" name="" />
+			<case alias="냉정" name="" />
+			<case alias="광기" name="" />
+			<case alias="장궁" name="" />
+			<case alias="정령궁" name="" />
+			<case alias="찌르기" name="" />
+			<case alias="베기" name="" />
+			<case alias="청뢰" name="" />
+			<case alias="혈뢰" name="" />
+			<case alias="어검세" name="" />
+			<case alias="정수" name="" />
+			<case alias="역수" name="" />
+			<case alias="한손역수" name="" />
+			<case alias="쌍월" name="" />
+			<case alias="뇌신" name="" />
+			<case alias="침식" name="" />
+			<case alias="npc주시자세1" name="" />
+			<case alias="npc주시자세2" name="" />
+			<case alias="npc주시자세3" name="" />							
+		</record>
+		
+		
+
+		<record alias="env2-state">
+			<case alias="none" name="" default="y" />
+			<case alias="open" name="" />
+			<case alias="close" name="" />
+			<case alias="empty" name="" />
+			<case alias="step-1" name="" />
+			<case alias="step-2" name="" />
+			<case alias="step-3" name="" />
+			<case alias="step-4" name="" />
+			<case alias="step-5" name="" />
+			<case alias="step-6" name="" />
+			<case alias="step-7" name="" />
+		</record>
+
+		<record alias="event-type">
+			<case alias="none" name="" default="y" />
+		    <case alias="attack" name="" />
+			<case alias="attacked" name="" />
+		</record>
+		
+		<record alias="equip-type">
+			<case key="0" alias="none" name="" default="y" />
+			<case key="1" alias="weapon" name="" />
+			<case key="2" alias="costume" name="" />
+			<case key="3" alias="earring" name="" />
+			<case key="4" alias="eyeglass" name="" />
+			<case key="5" alias="hat" name="" />
+			<case key="6" alias="ring" name="" />
+			<case key="7" alias="necklace" name="" />
+			<case key="8" alias="Gem-1" name="" />
+			<case key="9" alias="Gem-2" name="" />
+			<case key="10" alias="Gem-3" name="" />
+			<case key="11" alias="Gem-4" name="" />
+			<case key="12" alias="Gem-5" name="" />
+			<case key="13" alias="Gem-6" name="" />
+			<case key="14" alias="Gem-7" name="" />
+			<case key="15" alias="Gem-8" name="" />
+			<case key="16" alias="attach" name="" />
+			<case key="17" alias="belt" name="" />
+			<case key="18" alias="bracelet" name="" />
+			<case key="19" alias="soul" name="" />
+			<case key="20" alias="soul-2" name="" />
+			<case key="21" alias="Gloves" name="" />
+			<case key="22" alias="pet-1" name="" />
+			<case key="23" alias="pet-2" name="" />
+			<case key="24" alias="rune-1" name="" />
+			<case key="25" alias="rune-2" name="" />
+			<case key="26" alias="nova" name="" />
+			<case key="27" alias="badge-1-premium" name="" />
+			<case key="28" alias="badge-2-premium" name="" />
+			<case key="29" alias="badge-3-premium" name="" />
+			<case key="30" alias="badge-1-normal" name="" />
+			<case key="31" alias="badge-2-normal" name="" />
+			<case key="32" alias="badge-3-normal" name="" />
+			<case key="33" alias="badge-appearance" name="" />
+
+			<!-- 2021年12月新增 -->
+			<case alias="vehicle" name="" />
+			<case alias="appearance-normal" name="" />
+			<case alias="appearance-idle" name="" />
+			<case alias="appearance-chat" name="" />
+			<case alias="appearance-frame" name="" />
+			<case alias="appearance-hypermove" name="" />
+		</record>
+		
+		
+		<record alias="gather-type_21">
+			<case alias="target" name="" default="y" />
+			<case alias="target-360" name="" />
+			<case alias="target-front-180" name="" />
+			<case alias="target-back-180" name="" />
+			<case alias="target-front-90" name="" />
+			<case alias="target-back-90" name="" />
+			<case alias="target-front-30" name="" />
+			<case alias="target-front-45" name="" />
+			<case alias="target-front-60" name="" />
+			<case alias="target-front-120" name="" />
+			<case alias="target-front-270" name="" />
+			<case alias="laser" name="矩形" />
+			<case alias="target-and-link-target" name="" />
+			<case alias="shifting-laser" name="" />
+        </record>
+		
+		<record alias="gather-type">
+			<case alias="target" name="单一目标" default="y" />
+			<case alias="target-360" name="" />
+			<case alias="target-front-180" name="" />
+			<case alias="target-back-180" name="" />
+			<case alias="target-front-90" name="" />
+			<case alias="target-back-90" name="" />
+			<case alias="target-front-15" name="" />
+			<case alias="target-front-30" name="" />
+			<case alias="target-front-45" name="" />
+			<case alias="target-front-60" name="" />
+			<case alias="target-front-120" name="" />
+			<case alias="target-front-270" name="" />
+			<case alias="laser" name="矩形" />
+			<case alias="target-and-link-target" name="" />
+			<case alias="shifting-laser" name="移动矩形" />
+        </record>
+
+
+		<record alias="weapon-gem-type">
+			<case alias="none" default="y" />
+			<case key="1" alias="ruby" name="红玉" />
+			<case key="2" alias="topaz" name="黄玉" />
+			<case key="3" alias="sapphire" name="青玉" />
+			<case key="4" alias="jade" name="翡翠" />
+			<case key="5" alias="amethyst" name="紫水晶" />
+			<case key="6" alias="emerald" name="绿柱石" />
+			<case key="7" alias="diamond" name="" />
+			<case key="8" alias="obsidian" name="" />
+			<case key="9" alias="amber" name="" />
+			<case key="10" alias="garnet" name="" />
+			<case key="11" alias="aquamarine" name="" />
+			<case key="12" alias="ruby-topaz" name="" />
+			<case key="13" alias="ruby-sapphire" name="" />
+			<case key="14" alias="ruby-jade" name="" />
+			<case key="15" alias="ruby-amethyst" name="" />
+			<case key="16" alias="ruby-emerald" name="" />
+			<case key="17" alias="ruby-diamond" name="" />
+			<case key="18" alias="topaz-sapphire" name="" />
+			<case key="19" alias="topaz-jade" name="" />
+			<case key="20" alias="topaz-amethyst" name="" />
+			<case key="21" alias="topaz-emerald" name="" />
+			<case key="22" alias="topaz-diamond" name="" />
+			<case key="23" alias="sapphire-jade" name="" />
+			<case key="24" alias="sapphire-amethyst" name="" />
+			<case key="25" alias="sapphire-emerald" name="" />
+			<case key="26" alias="sapphire-diamond" name="" />
+			<case key="27" alias="jade-amethyst" name="" />
+			<case key="28" alias="jade-emerald" name="" />
+			<case key="29" alias="jade-diamond" name="" />
+			<case key="30" alias="amethyst-emerald" name="" />
+			<case key="31" alias="amethyst-diamond" name="" />
+			<case key="32" alias="emerald-diamond" name="" />
+			<case key="33" alias="aquamarine-diamond" name="" />
+			<case key="34" alias="amber-diamond" name="" />
+			<case key="35" alias="obsidian-garnet" name="" />
+			<case key="36" alias="corundum-white" name="" />
+			<case key="37" alias="corundum-black" name="" />
+			<case key="38" alias="corundum-pink" name="" />
+			<case key="39" alias="corundum-yellow" name="" />
+			<case key="40" alias="corundum-bluegreen" name="" />
+			<case key="41" alias="corundum-blue" name="" />
+			<case key="42" alias="corundum-aquamarine" name="" />
+			<case key="43" alias="corundum-amber" name="" />
+			<case key="44" alias="corundum-red" name="" />
+		</record>
+	
+		<record alias="forwarding-type">
+			<case alias="none" name="" default="y" />
+			<case alias="acquire-quest" name="" />
+			<case alias="skill-target" name="" />
+			<case alias="mission-step-rollback" name="" />
+		</record>
+		
+		<record alias="consume-type">
+			<case alias="point" name="" default="y" />
+			<case alias="point-below" name="" />
+			<case alias="point-above" name="" />
+			<case alias="base-max-percent" name="" />
+			<case alias="total-max-percent" name="" />
+			<case alias="current-percent" name="" />
+		</record>
+	
+
+
+		<record alias="link">
+		    <case alias="attach" name="" default="y" />		
+		    <case alias="not-attach" name="" />
+		    <case alias="dispel" name="" />	
+        </record>
+		
+        <record alias="link-stage">
+		    <case alias="none" name="" default="y" />
+		    <case alias="stage-1" name="" />
+		    <case alias="stage-2" name="" />
+        </record>
+		
+		<record alias="link-state">
+			<case alias="none" name="" default="y" />
+		    <case alias="link" name="" />
+		    <case alias="linked" name="" />	
+        </record>
+
+		<record alias="link-type">
+			<case alias="none" name="" default="y" />
+		    <case alias="mount" name="" />
+		    <case alias="inhalation" name="" />
+		    <case alias="slugfest" name="" />		
+			<case alias="catch" name="" />
+			<case alias="catch-none-human" name="" />
+			<case alias="catch-friend" name="" />
+			<case alias="inhalation-catch" name="" />
+        </record>
+		
+
+		
+		<record alias="dead-state" name="">
+			<case alias="all" name="" />
+			<case alias="not-dead-restoration" name="" default="y" />
+			<case alias="not-dead" name="" />
+			<case alias="dead" name="" />
+			<case alias="exhaustion" name="" />
+			<case alias="restoration" name="" />
+			<case alias="dead-exhaustion" name="" />
+			<case alias="not-dead-restoration-exhaustion" name="" />
+		</record>
+
+		<record alias="move-state" name="">
+			<case alias="none" name="" default="y" />	
+			<case alias="sprint" name="" />
+			<case alias="sprint-jump" name="" />
+			<case alias="drift" name="" />
+			<case alias="glide" name="" />
+			<case alias="swim" name="" />
+			<case alias="boost" name="" />
+			<case alias="dive" name="" />
+			<case alias="wall-run" name="" />
+			<case alias="wall-jump" name="" />
+		</record>
+	
+		<record alias="npc-grade2" name="">		
+			<case alias="none" name="" default="y" />
+			<case alias="boss" name="" />
+			<case alias="champion" name="" />
+			<case alias="normal" name="" />
+			<case alias="follower" name="" />
+			<case alias="tool" name="" />
+			<case alias="weakest" name="" />
+			<case alias="weak" name="" />
+			<case alias="regular" name="" />
+			<case alias="strong" name="" />
+		</record>
+		
+		<record alias="op" name="">
+		    <case alias="or" name="" default="y" />	
+		    <case alias="and" name="" />	
+		</record>
+		
+		<record alias="op2" name="">
+			<case alias="eq" name="相等" default="y" />
+			<case alias="neq" name="不等" />
+			<case alias="gt" name="大于" />
+			<case alias="ge" name="大于等于" />
+			<case alias="lt" name="小于" />
+			<case alias="le" name="小于等于" />
+		</record>
+		
+		<record alias="pouch-appearance" name="掉落物外观">
+			<case alias="none" name="" default="y" />	
+			<case alias="money" name="money" />
+			<case alias="effect" name="effect" />
+			<case alias="distribution-pouch" name="distribution-pouch" />
+			<case alias="Normal-Pouch-Grade1" name="(10)" />
+			<case alias="Normal-Pouch-Grade2" name="(190)" />
+			<case alias="Normal-Pouch-Grade3" name="(370)" />
+			<case alias="Normal-Pouch-Grade4" name="(550)" />
+			<case alias="Normal-Pouch-Grade5" name="(730)" />
+			<case alias="Quality-Pouch-Grade1" name="(30)" />
+			<case alias="Quality-Pouch-Grade2" name="(210)" />
+			<case alias="Quality-Pouch-Grade3" name="(390)" />
+			<case alias="Quality-Pouch-Grade4" name="(570)" />
+			<case alias="Quality-Pouch-Grade5" name="(750)" />
+			<case alias="High-Quality-Pouch-Grade1" name="(50)" />
+			<case alias="High-Quality-Pouch-Grade2" name="(230)" />
+			<case alias="High-Quality-Pouch-Grade3" name="(410)" />
+			<case alias="High-Quality-Pouch-Grade4" name="(590)" />
+			<case alias="High-Quality-Pouch-Grade5" name="(770)" />
+			<case alias="Normal-Box-Grade1" name="(70)" />
+			<case alias="Normal-Box-Grade2" name="(250)" />
+			<case alias="Normal-Box-Grade3" name="(430)" />
+			<case alias="Normal-Box-Grade4" name="(610)" />
+			<case alias="Normal-Box-Grade5" name="(790)" />
+			<case alias="Quality-Box-Grade1" name="(90)" />
+			<case alias="Quality-Box-Grade2" name="(270)" />
+			<case alias="Quality-Box-Grade3" name="(450)" />
+			<case alias="Quality-Box-Grade4" name="(630)" />
+			<case alias="Quality-Box-Grade5" name="(810)" />
+			<case alias="High-Quality-Box-Grade1" name="(110)" />
+			<case alias="High-Quality-Box-Grade2" name="(290)" />
+			<case alias="High-Quality-Box-Grade3" name="(470)" />
+			<case alias="High-Quality-Box-Grade4" name="(650)" />
+			<case alias="High-Quality-Box-Grade5" name="(830)" />
+			<case alias="Normal-GemBox-Grade1" name="" />
+			<case alias="Normal-GemBox-Grade2" name="" />
+			<case alias="Normal-GemBox-Grade3" name="" />
+			<case alias="Normal-GemBox-Grade4" name="" />
+			<case alias="Normal-GemBox-Grade5" name="" />
+			<case alias="Quality-Gembox-Grade1" name="" />
+			<case alias="Quality-Gembox-Grade2" name="" />
+			<case alias="Quality-Gembox-Grade3" name="" />
+			<case alias="Quality-Gembox-Grade4" name="" />
+			<case alias="Quality-Gembox-Grade5" name="" />
+			<case alias="High-Quality-Gembox-Grade1" name="" />
+			<case alias="High-Quality-Gembox-Grade2" name="" />
+			<case alias="High-Quality-Gembox-Grade3" name="" />
+			<case alias="High-Quality-Gembox-Grade4" name="" />
+			<case alias="High-Quality-Gembox-Grade5" name="" />
+		</record>
+
+		<record alias="recycle-group" name="">
+			<case alias="none" name="" default="y" />
+			<case alias="class" name="" />
+			<case alias="item-1" name="" />
+			<case alias="item-2" name="" />
+			<case alias="class-2" name="" />
+			<case alias="db" name="" />
+			<case alias="gadget" name="" />
+		</record>		
+	
+		<record alias="reset-type" name="">
+			<case alias="none" name="" default="y" />
+			<case alias="daily" name="" />
+			<case alias="weekly" name="" />
+			<case alias="monthly" name="" />
+		</record>
+
+		<record alias="skill-stage" name="">
+			<case alias="none" name="" default="y" />	
+			<case alias="cast" name="施展时" />
+			<case alias="fire-1" name="" />
+			<case alias="exec-1" name="" />
+			<case alias="fire-2" name="" />
+			<case alias="exec-2" name="" />
+			<case alias="fire-3" name="" />
+			<case alias="exec-3" name="" />
+			<case alias="fire-4" name="" />
+			<case alias="exec-4" name="" />
+			<case alias="fire-5" name="" />
+			<case alias="exec-5" name="" />
+			<case alias="finish" name="" />
+		</record>
+
+		<record alias="skill-attribute" name="">
+			<case alias="none" name="" default="y" />
+			<case alias="막기" name="" />
+			<case alias="반격" name="" />
+			<case alias="튕기기" name="" />
+			<case alias="방어행동" name="" />
+			<case alias="대쉬" name="" />
+			<case alias="이동" name="" />
+			<case alias="회피" name="" />
+			<case alias="다운" name="" />
+			<case alias="넉백" name="" />
+			<case alias="기절" name="" />
+			<case alias="그로기" name="" />
+			<case alias="공중" name="" />
+			<case alias="행동불가" name="" />
+			<case alias="이동불가" name="" />
+			<case alias="다운대응" name="" />
+			<case alias="막기조건" name="" />
+			<case alias="회피조건" name="" />
+			<case alias="치명타조건" name="" />
+			<case alias="연계기" name="" />
+			<case alias="스탠스" name="" />
+			<case alias="회복" name="" />
+			<case alias="게이지회복" name="" />
+			<case alias="부활" name="" />
+			<case alias="지원" name="" />
+			<case alias="즉시시전" name="" />
+			<case alias="캐스팅" name="" />
+			<case alias="가드브레이크" name="" />
+			<case alias="발사체" name="" />
+			<case alias="발사체2" name="" />
+			<case alias="제압" name="" />
+			<case alias="관절기" name="" />
+			<case alias="장악" name="" />
+			<case alias="비인간장악" name="" />
+			<case alias="흡공" name="" />
+			<case alias="제압대응" name="" />
+			<case alias="장악대응" name="" />
+			<case alias="흡공대응" name="" />
+			<case alias="해제" name="" />
+			<case alias="독" name="" />
+			<case alias="쿨타임" name="" />
+			<case alias="불" name="" />
+			<case alias="얼음" name="" />
+			<case alias="전기" name="" />
+			<case alias="기공" name="" />
+			<case alias="트리거" name="" />
+			<case alias="워프" name="" />
+			<case alias="근거리" name="" />
+			<case alias="원거리" name="" />
+			<case alias="광역" name="" />
+			<case alias="이동가능" name="" />
+			<case alias="데미지존" name="" />
+			<case alias="상태면역" name="" />
+			<case alias="위치바꾸기" name="" />
+			<case alias="은사" name="" />
+			<case alias="도발" name="" />
+        </record>
+
+		<record alias="target-type" name="">
+		    <case alias="all" name="" default="y" />	
+		    <case alias="friend" name="" />
+		    <case alias="enemy" name="" />
+		    <case alias="my-party" name="" />	
+		    <case alias="my-team" name="" />	
+		</record>
+	
+		<record alias="job-style" name="">
+		    <case alias="base-1" name="" />
+		    <case alias="base-2" name="" />
+		    <case alias="base-3" name="" />
+			<case alias="base-4" name="" />
+			<case alias="base-5" name="" />
+		    <case alias="advanced-1" name="" />
+		    <case alias="advanced-2" name="" />
+		    <case alias="advanced-3" name="" />
+			<case alias="advanced-4" name="" />
+			<case alias="advanced-5" name="" />
+		</record>
+	
+    	<record alias="production-type">	
+ 			<case alias="none" name="" default="y" />
+			<case alias="production-type-1" name="" />
+			<case alias="production-type-2" name="" />
+			<case alias="production-type-3" name="" />
+			<case alias="production-type-4" name="" />
+			<case alias="production-type-5" name="" />
+			<case alias="production-type-6" name="" />
+			<case alias="production-type-7" name="" />
+			<case alias="gathering-type-1" name="" />
+			<case alias="gathering-type-2" name="" />
+			<case alias="gathering-type-3" name="" />
+			<case alias="gathering-type-4" name="" />
+			<case alias="gathering-type-5" name="" />
+			<case alias="gathering-type-6" name="" />
+			<case alias="gathering-type-7" name="" />
+		</record>
+
+		<record alias="weapon-type">
+			<case alias="none" name="" default="y" />		
+			<case alias="bare-hand" name="" />
+			<case alias="sword" name="" />
+			<case alias="gauntlet" name="" />
+			<case alias="aura-bangle" name="" />
+			<case alias="pistol" name="" />
+			<case alias="rifle" name="" />
+			<case alias="two-handed-axe" name="" />
+			<case alias="bow" name="" />
+			<case alias="staff" name="" />
+			<case alias="dagger" name="" />
+			<case alias="pet-1" name="" />
+			<case alias="pet-2" name="" />
+			<case alias="gun" name="" />
+			<case alias="great-sword" name="" />
+			<case alias="long-bow" name="" />
+			<case alias="spear" name="" />
+			<case alias="orb" name="" />
+
+                                                <!-- 虚幻4新增 -->
+			<case alias="dual-blade" name="" />
+		</record>
+	</public>
+
+
+
+	<public name="creature_field" >
+		<record alias="creature_field_20" name="" version="20200630">
 			<case alias="creature_field_none" name="" default="y" />
 			<case alias="world-id" name="" />
 			<case alias="race" name="" />
@@ -604,7 +1983,7 @@
 			<case alias="hypermove-power-equip-value" name="" />
 		</record>
 
-	    <record alias="creature_field_21" name="" version="20211028" >
+		<record alias="creature_field_21" name="" version="20211028">
 			<case alias="creature_field_none" name="" default="y" />
 			<case alias="world-id" name="" />
 			<case alias="race" name="" />
@@ -1046,7 +2425,7 @@
 			<case alias="hypermove-power-equip-value" name="" />
 		</record>
 
-	    <record alias="creature_field" name="" version="20220421" >
+		<record alias="creature_field" name="" version="20220421">
 			<case alias="creature_field_none" name="" default="y" />
 			<case alias="world-id" name="" />
 			<case alias="race" name="" />
@@ -1490,1513 +2869,10 @@
 		</record>
 
 
-
-
-
-		<record alias="detach-slot" name="" type="dictionary" >
-			<case alias="none" name="" default="y" />
-			<case alias="other" name="" />
-			<case alias="attack-hit" name="" />
-			<case alias="attack-miss" name="" />
-			<case alias="attack-dodge" name="" />
-			<case alias="attack-parry" name="" />
-			<case alias="attack-perfect-parry" name="" />
-			<case alias="attack-bounce" name="" />
-			<case alias="attack-critical" name="" />
-			<case alias="attack-counter" name="" />			
-			<case alias="attacked-hit" name="" />
-			<case alias="attacked-miss" name="" />
-			<case alias="attacked-dodge" name="" />
-			<case alias="attacked-parry" name="" />
-			<case alias="attacked-perfect-parry" name="" />
-			<case alias="attacked-bounce" name="" />
-			<case alias="attacked-critical" name="" />
-			<case alias="attacked-counter" name="" />
-			<case alias="casting-start" name="技能使用开始" />
-			<case alias="casting-end" name="技能使用结束" />
-        </record>
-
-		<record alias="effect-target-type" name="" type="dictionary" >	
-			<case alias="none" name="" default="y" />		
-			<case alias="effect-owner" name="" />
-			<case alias="effect-eventer" name="" />
-			<case alias="effect-giver" name="" />
-			<case alias="skill-target" name="" />
-        </record>
-
-		
-		
-		
-	    <record alias="effect-attribute" name="" >
-			<case alias="none" name="" default="y" />
-			<case alias="회복" name="" />
-			<case alias="진드기" name="" />
-			<case alias="불" name="" />
-			<case alias="은사" name="" />
-			<case alias="거미줄" name="" />
-			<case alias="독" name="" />
-			<case alias="은신" name="" />
-			<case alias="투명" name="" />
-			<case alias="광기" name="" />
-			<case alias="얼음감옥" name="" />
-			<case alias="독나방" name="" />
-			<case alias="가젯드랍" name="" />
-			<case alias="다운" name="" />
-			<case alias="넉백대시" name="" />
-			<case alias="방어불가" name="" />
-			<case alias="도발" name="" />
-			<case alias="도망" name="" />
-			<case alias="이동불가" name="" />
-			<case alias="대시불가" name="" />
-			<case alias="감속" name="" />
-			<case alias="기절" name="" />
-			<case alias="얼어붙음" name="" />
-			<case alias="행동불가" name="" />
-			<case alias="출혈" name="" />
-			<case alias="치유" name="" />
-			<case alias="얼음" name="" />
-			<case alias="맹독" name="" />
-			<case alias="막기" name="" />
-			<case alias="속박" name="" />
-			<case alias="제압" name="" />
-			<case alias="위치바꾸기" name="" />
-			<case alias="장악연계" name="" />
-			<case alias="무적" name="" />
-			<case alias="멍해짐" name="" />
-			<case alias="앞차기" name="" />
-			<case alias="혼절" name="" />
-			<case alias="광폭해짐" name="" />
-			<case alias="공중" name="" />
-			<case alias="그로기" name="" />
-			<case alias="난무" name="" />
-			<case alias="넉백" name="" />
-			<case alias="흡공" name="" />
-			<case alias="퀘스트-1" name="" />
-			<case alias="퀘스트-2" name="" />
-			<case alias="퀘스트-3" name="" />
-			<case alias="퀘스트-4" name="" />
-			<case alias="퀘스트-5" name="" />
-			<case alias="대상공중" name="" />
-			<case alias="보스-1" name="" />
-			<case alias="보스-2" name="" />
-			<case alias="보스-3" name="" />
-			<case alias="보스대쉬" name="" />
-			<case alias="그림자" name="" />
-			<case alias="중첩불가1" name="" />
-			<case alias="중첩불가2" name="" />
-			<case alias="조건만족" name="" />
-			<case alias="소환사독" name="" />
-			<case alias="탱킹장판" name="" />
-			<case alias="검막" name="" />
-			<case alias="비트" name="" />
-			<case alias="홍옥" name="" />
-			<case alias="녹주석" name="" />
-			<case alias="보스저항-1" name="" />
-			<case alias="보스저항-2" name="" />
-			<case alias="보스저항-3" name="" />
-			<case alias="보스저항-4" name="" />
-			<case alias="보스저항-5" name="" />
-			<case alias="낙인저항-1" name="" />
-			<case alias="낙인저항-2" name="" />
-			<case alias="낙인저항-3" name="" />
-			<case alias="낙인저항-4" name="" />
-			<case alias="마성-1" name="" />
-			<case alias="마성-2" name="" />
-			<case alias="마성-3" name="" />
-			<case alias="마성-4" name="" />
-			<case alias="주술체" name="" />
-			<case alias="소울" name="" />
-			<case alias="부적" name="" />
-			<case alias="환마" name="" />
-			<case alias="반사" name="" />
-			<case alias="NPC-1" name="" />
-			<case alias="NPC-2" name="" />
-			<case alias="NPC-3" name="" />
-			<case alias="NPC-4" name="" />
-			<case alias="NPC-5" name="" />
-			<case alias="NPC-6" name="" />
-			<case alias="NPC-7" name="" />
-			<case alias="NPC-8" name="" />
-			<case alias="NPC-9" name="" />
-			<case alias="NPC-10" name="" />
-			<case alias="낙인저항-5" name="" />
-			<case alias="낙인저항-6" name="" />
-			<case alias="낙인저항-7" name="" />
-			<case alias="낙인저항-8" name="" />
-			<case alias="클래스-1" name="" />
-			<case alias="클래스-2" name="" />
-			<case alias="클래스-3" name="" />
-			<case alias="클래스-4" name="" />
-			<case alias="클래스-5" name="" />
-			<case alias="클래스-6" name="" />
-			<case alias="클래스-7" name="" />
-			<case alias="클래스-8" name="" />
-			<case alias="클래스-9" name="" />
-			<case alias="클래스-10" name="" />
-			<case alias="클래스-11" name="" />
-			<case alias="클래스-12" name="" />
-			<case alias="클래스-13" name="" />
-			<case alias="클래스-14" name="" />
-			<case alias="클래스-15" name="" />
-			<case alias="클래스-16" name="" />
-			<case alias="클래스-17" name="" />
-			<case alias="클래스-18" name="" />
-			<case alias="클래스-19" name="" />
-			<case alias="클래스-20" name="" />
-			<case alias="클래스-21" name="" />
-			<case alias="클래스-22" name="" />
-			<case alias="클래스-23" name="" />
-			<case alias="클래스-24" name="" />
-			<case alias="클래스-25" name="" />
-			<case alias="클래스-26" name="" />
-			<case alias="클래스-27" name="" />
-			<case alias="클래스-28" name="" />
-			<case alias="클래스-29" name="" />
-			<case alias="클래스-30" name="" />
-			<case alias="클래스-31" name="" />
-			<case alias="클래스-32" name="" />
-			<case alias="클래스-33" name="" />
-			<case alias="클래스-34" name="" />
-			<case alias="클래스-35" name="" />
-			<case alias="클래스-36" name="" />
-			<case alias="클래스-37" name="" />
-			<case alias="클래스-38" name="" />
-			<case alias="클래스-39" name="" />
-			<case alias="클래스-40" name="" />
-			<case alias="클래스-41" name="" />
-			<case alias="클래스-42" name="" />
-			<case alias="클래스-43" name="" />
-			<case alias="클래스-44" name="" />
-			<case alias="클래스-45" name="" />
-			<case alias="클래스-46" name="" />
-			<case alias="클래스-47" name="" />
-			<case alias="클래스-48" name="" />
-			<case alias="클래스-49" name="" />
-			<case alias="클래스-50" name="" />
-			<case alias="클래스-51" name="" />
-			<case alias="클래스-52" name="" />
-			<case alias="클래스-53" name="" />
-			<case alias="클래스-54" name="" />
-			<case alias="클래스-55" name="" />
-			<case alias="클래스-56" name="" />
-			<case alias="클래스-57" name="" />
-			<case alias="클래스-58" name="" />
-			<case alias="클래스-59" name="" />
-			<case alias="클래스-60" name="" />
-			<case alias="아이템조건-1" name="" />
-			<case alias="어택글라이드" name="" />
-			
-			<!-- 以下为虚幻4版本内容 -->
-			<case alias="문양-1" name="" />
-			<case alias="문양-2" name="" />
-			<case alias="문양-3" name="" />
-			<case alias="문양-4" name="" />
-			<case alias="문양-5" name="" />
-			<case alias="문양-6" name="" />
-			<case alias="문양-7" name="" />
-			<case alias="문양-8" name="" />
-			<case alias="문양-9" name="" />
-			<case alias="문양-10" name="" />
-			<case alias="문양-11" name="" />
-			<case alias="문양-12" name="" />
-			<case alias="문양-13" name="" />
-			<case alias="문양-14" name="" />
-			<case alias="문양-15" name="" />
-			<case alias="문양-16" name="" />
-			<case alias="문양-17" name="" />
-			<case alias="문양-18" name="" />
-			<case alias="문양-19" name="" />
-			<case alias="문양-20" name="" />
-			<case alias="기믹-1" name="" />
-			<case alias="기믹-2" name="" />
-			<case alias="기믹-3" name="" />
-			<case alias="기믹-4" name="" />
-			<case alias="기믹-5" name="" />
-			<case alias="던전보스-1" name="" />
-		</record>
-
-		<record alias="flag" type="dictionary" name="" >
-			<case key="0" alias="none" name="" default="y" />
-			<case key="1" alias="stun" name="" />
-			<case key="2" alias="airdash" name="" />
-			<case key="3" alias="knockback" name="" />
-			<case key="4" alias="bind-phantom" name="" />
-			<case key="5" alias="link" name="" />
-			<case key="6" alias="detection" name="" />
-			<case key="7" alias="internal-injury" name="" />
-			<case key="8" alias="immediately-exec" name="" />
-			<case key="9" alias="concentration" name="" />
-			<case key="10" alias="infinity-shot" name="" />
-			<case key="11" alias="down" name="" />
-			<case key="12" alias="swoon" name="" />
-			<case key="13" alias="defence" name="" />
-			<case key="14" alias="kneel" name="" />
-			<case key="15" alias="provocation" name="" />
-			<case key="16" alias="midair-1" name="" />
-			<case key="17" alias="midair-2" name="" />
-			<case key="18" alias="midair-3" name="" />
-			<case key="19" alias="frostbite" name="" />
-			<case key="20" alias="magnetic-seal" name="" />
-			<case key="21" alias="fast-freezing" name="" />
-			<case key="22" alias="rupture" name="" />
-			<case key="23" alias="impregnability" name="" />
-			<case key="24" alias="prickblood" name="" />
-			<case key="25" alias="wildfire-1" name="" />
-			<case key="26" alias="wildfire-2" name="" />
-			<case key="27" alias="wildfire-3" name="" />
-			<case key="28" alias="hide" name="" />
-			<case key="29" alias="burrow" name="" />
-			<case key="30" alias="smokescreen" name="" />
-			<case key="31" alias="embers" name="" />
-			<case key="32" alias="poison" name="" />
-			<case key="33" alias="applied-poison" name="" />
-			<case key="34" alias="spider-web" name="" />
-			<case key="35" alias="time-bomb" name="" />
-			<case key="36" alias="defence-block" name="" />
-			<case key="37" alias="dash-block" name="" />
-			<case key="38" alias="dexterity" name="" />
-			<case key="39" alias="soulblade-1" name="" />
-			<case key="40" alias="soulblade-2" name="" />
-			<case key="41" alias="soulblade-3" name="" />
-			<case key="42" alias="joint" name="" />
-			<case key="43" alias="flydragon" name="" />
-			<case key="44" alias="landdragon" name="" />
-			<case key="45" alias="silverweb-1" name="" />
-			<case key="46" alias="silverweb-2" name="" />
-			<case key="47" alias="justguard" name="" />
-			<case key="48" alias="force-flag-1" name="" />
-			<case key="49" alias="force-flag-2" name="" />
-			<case key="50" alias="force-flag-3" name="" />
-			<case key="51" alias="catchshield" name="" />
-			<case key="52" alias="poundshort" name="" />
-			<case key="53" alias="axechopshort" name="" />
-			<case key="54" alias="swingstrikeshort" name="" />
-			<case key="55" alias="chilblain" name="" />
-			<case key="56" alias="frontdown" name="" />
-			<case key="57" alias="bleeding" name="" />
-			<case key="58" alias="npc-state-1" name="" />
-			<case key="59" alias="npc-state-2" name="" />
-			<case key="60" alias="npc-state-3" name="" />
-			<case key="61" alias="npc-state-4" name="" />
-			<case key="62" alias="npc-state-5" name="" />
-			<case key="63" alias="npc-state-6" name="" />
-			<case key="64" alias="npc-state-7" name="" />
-			<case key="65" alias="npc-state-8" name="" />
-			<case key="66" alias="hardwall-break" name="" />
-			<case key="67" alias="react-link" name="" />
-			<case key="68" alias="Counter" name="" />
-			<case key="69" alias="Shadow" name="" />
-			<case key="70" alias="Shuriken" name="" />
-			<case key="71" alias="Instantkick" name="" />
-			<case key="72" alias="Hyperkick" name="" />
-			<case key="73" alias="Saver" name="" />
-			<case key="74" alias="HeartStab" name="" />
-			<case key="75" alias="LeafDodge" name="" />
-			<case key="76" alias="DragonKick" name="" />
-			<case key="77" alias="BurstBlow" name="" />
-			<case key="78" alias="Blood" name="" />
-			<case key="79" alias="BloodFullStack" name="" />
-			<case key="80" alias="Poison2" name="" />
-			<case key="81" alias="Poison2FullStack" name="" />
-			<case key="82" alias="TankingDrain" name="" />
-			<case key="83" alias="EmberFullStack" name="" />
-			<case key="84" alias="PoisonFullStack" name="" />
-			<case key="85" alias="FireBit" name="" />
-			<case key="86" alias="FireBitFullStack" name="" />
-			<case key="87" alias="IceBit" name="" />
-			<case key="88" alias="Hole" name="" />
-			<case key="89" alias="HoleFullStack" name="" />
-			<case key="90" alias="Bubble" name="" />
-			<case key="91" alias="Swallow" name="" />
-			<case key="92" alias="FireBit2" name="" />
-			<case key="93" alias="IceBit2" name="" />
-			<case key="94" alias="IceBitFullStack" name="" />
-			<case key="95" alias="FireWall1" name="" />
-			<case key="96" alias="FireWall2" name="" />
-			<case key="97" alias="FireWall3" name="" />
-			<case key="98" alias="FireWall4" name="" />
-			<case key="99" alias="HighKick" name="" />
-			<case key="100" alias="Abdomen" name="" />
-			<case key="101" alias="ShortBurst" name="" />
-			<case key="102" alias="MartialFullHit" name="" />
-			<case key="103" alias="Smash" name="" />
-			<case key="104" alias="Hole1" name="" />
-			<case key="105" alias="Hole2" name="" />
-			<case key="106" alias="Hole3" name="" />
-			<case key="107" alias="TargetHole1" name="" />
-			<case key="108" alias="TargetHole2" name="" />
-			<case key="109" alias="TargetHole3" name="" />
-			<case key="110" alias="Hornet" name="" />
-			<case key="111" alias="MorningGlory" name="" />
-			<case key="112" alias="cannot-resurrect" name="" />
-			<case key="113" alias="enable-guild-battle-field" name="" />
-			<case key="114" alias="Immune-link" name="" />
-			<case key="115" alias="GhostX0" name="" />
-			<case key="116" alias="GhostX1" name="" />
-			<case key="117" alias="GhostX2" name="" />
-			<case key="118" alias="GhostX3" name="" />
-			<case key="119" alias="Thornbus" name="" />
-			<case key="120" alias="BloodBurst" name="" />
-			<case key="121" alias="AdventMark1" name="" />
-			<case key="122" alias="AdventMark2" name="" />
-			<case key="123" alias="HyperMove" name="" />
-			<case key="124" alias="Talisman" name="" />
-			<case key="125" alias="Spector01" name="" />
-			<case key="126" alias="Spector02" name="" />
-			<case key="127" alias="Spector03" name="" />
-			<case key="128" alias="Phantomsoul" name="" />
-			<case key="129" alias="Bluesky" name="" />
-			<case key="130" alias="EgoAutoParry" name="" />
-			<case key="131" alias="Pierce" name="" />
-			<case key="132" alias="burn" name="" />
-			<case key="133" alias="AttackGlide" name="" />
-			<case key="134" alias="SecondGaugeStopped" name="" />
-			<case key="135" alias="BigBossJump" name="" />
-			<case key="136" alias="bigbossstate-1" name="" />
-			<case key="137" alias="JobSkillFlag-1" name="" />
-			<case key="138" alias="JobSkillFlag-2" name="" />
-			<case key="139" alias="JobSkillFlag-3" name="" />
-			<case key="140" alias="JobSkillFlag-4" name="" />
-			<case key="141" alias="JobSkillFlag-5" name="" />
-			<case key="142" alias="JobSkillFlag-6" name="" />
-			<case key="143" alias="JobSkillFlag-7" name="" />
-			<case key="144" alias="JobSkillFlag-8" name="" />
-			<case key="145" alias="JobSkillFlag-9" name="" />
-			<case key="146" alias="JobSkillFlag-10" name="" />
-			<case key="147" alias="JobSkillFlag-11" name="" />
-			<case key="148" alias="JobSkillFlag-12" name="" />
-			<case key="149" alias="JobSkillFlag-13" name="" />
-			<case key="150" alias="JobSkillFlag-14" name="" />
-			<case key="151" alias="JobSkillFlag-15" name="" />
-			<case key="152" alias="JobSkillFlag-16" name="" />
-			<case key="153" alias="JobSkillFlag-17" name="" />
-			<case key="154" alias="JobSkillFlag-18" name="" />
-			<case key="155" alias="JobSkillFlag-19" name="" />
-			<case key="156" alias="JobSkillFlag-20" name="" />
-			<case key="157" alias="JobSkillFlag-21" name="" />
-			<case key="158" alias="JobSkillFlag-22" name="" />
-			<case key="159" alias="JobSkillFlag-23" name="" />
-			<case key="160" alias="JobSkillFlag-24" name="" />
-			<case key="161" alias="JobSkillFlag-25" name="" />
-			<case key="162" alias="JobSkillFlag-26" name="" />
-			<case key="163" alias="JobSkillFlag-27" name="" />
-			<case key="164" alias="JobSkillFlag-28" name="" />
-			<case key="165" alias="JobSkillFlag-29" name="" />
-			<case key="166" alias="JobSkillFlag-30" name="" />
-			<case key="167" alias="JobSkillFlag-31" name="" />
-			<case key="168" alias="JobSkillFlag-32" name="" />
-			<case key="169" alias="JobSkillFlag-33" name="" />
-			<case key="170" alias="JobSkillFlag-34" name="" />
-			<case key="171" alias="JobSkillFlag-35" name="" />
-			<case key="172" alias="JobSkillFlag-36" name="" />
-			<case key="173" alias="JobSkillFlag-37" name="" />
-			<case key="174" alias="JobSkillFlag-38" name="" />
-			<case key="175" alias="JobSkillFlag-39" name="" />
-			<case key="176" alias="JobSkillFlag-40" name="" />
-			<case key="177" alias="JobSkillFlag-41" name="" />
-			<case key="178" alias="JobSkillFlag-42" name="" />
-			<case key="179" alias="JobSkillFlag-43" name="" />
-			<case key="180" alias="JobSkillFlag-44" name="" />
-			<case key="181" alias="JobSkillFlag-45" name="" />
-			<case key="182" alias="JobSkillFlag-46" name="" />
-			<case key="183" alias="npc-skill-1" name="" />
-			<case key="184" alias="npc-skill-2" name="" />
-			<case key="185" alias="npc-skill-3" name="" />
-			<case key="186" alias="npc-skill-4" name="" />
-			<case key="187" alias="npc-skill-5" name="" />
-			<case key="188" alias="npc-skill-6" name="" />
-			<case key="189" alias="npc-skill-7" name="" />
-			<case key="190" alias="npc-skill-8" name="" />
-			<case key="191" alias="npc-skill-9" name="" />
-			<case key="192" alias="npc-skill-10" name="" />
-			<case key="193" alias="npc-skill-11" name="" />
-			<case key="194" alias="npc-skill-12" name="" />
-			<case key="195" alias="stun-miss" name="" />
-			<case key="196" alias="down-miss" name="" />
-			<case key="197" alias="Struggle" name="" />
-			<case key="198" alias="boutiquefree" name="" />
-			<case key="199" alias="tumbling-block" name="" />
-			<case key="200" alias="PeaceArea" name="" />
-			<case key="201" alias="perfect-dodged" name="" />
-
-			<!-- 之后的均为虚幻4版本内容 -->
-			<case alias="kneel-miss" name="" />
-			<case alias="glyph-1" name="" />
-			<case alias="glyph-2" name="" />
-			<case alias="glyph-3" name="" />
-			<case alias="glyph-4" name="" />
-			<case alias="glyph-5" name="" />
-			<case alias="glyph-6" name="" />
-			<case alias="glyph-7" name="" />
-			<case alias="glyph-8" name="" />
-			<case alias="glyph-9" name="" />
-			<case alias="glyph-10" name="" />
-			<case alias="glyph-11" name="" />
-			<case alias="glyph-12" name="" />
-			<case alias="glyph-13" name="" />
-			<case alias="glyph-14" name="" />
-			<case alias="glyph-15" name="" />
-			<case alias="glyph-16" name="" />
-			<case alias="glyph-17" name="" />
-			<case alias="glyph-18" name="" />
-			<case alias="glyph-19" name="" />
-			<case alias="glyph-20" name="" />
-			<case alias="Break-1" name="" />
-			<case alias="Break-2" name="" />
-			<case alias="Break-3" name="" />
-			<case alias="condition-event-1" name="" />
-			<case alias="condition-event-2" name="" />
-			<case alias="condition-event-3" name="" />
-			<case alias="condition-event-4" name="" />
-			<case alias="condition-event-5" name="" />
-			<case alias="condition-event-6" name="" />
-			<case alias="condition-event-7" name="" />
-			<case alias="condition-event-8" name="" />
-			<case alias="condition-event-9" name="" />
-			<case alias="condition-event-10" name="" />
-		</record>
-
-
-
-
-
-		<record alias="env-operation" >
-			<case alias="none" name="" default="y" />
-			<case alias="open" name="" />
-			<case alias="close" name="" />
-			<case alias="enable" name="" />
-			<case alias="disable" name="" />
-        </record>
-
-		<record alias="env-state" >
-			<case alias="none" name="" default="y" />
-			<case alias="open" name="" />
-			<case alias="close" name="" />
-			<case alias="empty" name="" />
-			<case alias="step-1" name="" />
-			<case alias="step-2" name="" />
-			<case alias="step-3" name="" />
-			<case alias="step-4" name="" />
-			<case alias="step-5" name="" />
-			<case alias="step-6" name="" />
-			<case alias="step-7" name="" />
-        </record>
-
-		<record alias="function" name="功能" >
-			<case alias="none" name="" default="y" />
-			<case alias="block-move" name="阻止移动" />
-			<case alias="block-rotate" name="阻止旋转" />
-			<case alias="block-skill" name="阻止技能" />
-			<case alias="block-physical-skill" name="阻止物理技能" />
-			<case alias="block-force-skill" name="阻止强制技能" />
-			<case alias="immune-damage" name="免疫伤害" />
-			<case alias="immune-death" name="免疫死亡" />
-			<case alias="immune-debuff" name="免疫负面效果" />
-			<case alias="immune-casting-delay" name="免疫执行延迟" />
-			<case alias="block-dodge" name="" />
-			<case alias="block-bounce" name="" />
-			<case alias="block-parry" name="" />
-			<case alias="block-perfect-parry" name="" />
-			<case alias="block-jump" name="" />
-			<case alias="block-hyper" name="" />
-			<case alias="front-perfect-parry" name="" />
-			<case alias="back-perfect-parry" name="" />
-			<case alias="front-bounce" name="" />
-			<case alias="back-bounce" name="" />
-        </record>
-
-
-
-		<record alias="ghost-type" >
-			<case alias="none" name="" default="y" />
-			<case alias="basic" name="" />
-			<case alias="beyond" name="" />
-			<case alias="phase" name="" />
-        </record>
-
-
-		
-		
-		
-		<record alias="job_20" type="dictionary" version="20200101" >
-			<case alias="job-none" name="" default="y" />
-			<case alias="검사" name="" />
-			<case alias="권사" name="" />
-			<case alias="기공사" name="" />
-			<case alias="격사" name="" />
-			<case alias="역사" name="" />
-			<case alias="소환사" name="" />
-			<case alias="암살자" name="" />
-			<case alias="귀검사" name="" />
-			<case alias="주술사" name="" />
-			<case alias="기권사" name="" />
-			<case alias="투사" name="" />
-			<case alias="궁사" name="" />
-			<case alias="창술사" name="" />
-			<case alias="뇌전술사" name="" />	
-			<case alias="pc-max" name="" />
-			<case alias="소환수-루키" name="" />
-			<case alias="소환수-striker" name="" />
-			<case alias="소환수-defender" name="" />
-			<case alias="소환수-controller" name="" />
-		</record>
-		
-		<record alias="job" type="dictionary" version="202208" >
-			<case alias="job-none" name="" default="y" />
-			<case alias="검사" name="" />
-			<case alias="권사" name="" />
-			<case alias="기공사" name="" />
-			<case alias="격사" name="" />
-			<case alias="역사" name="" />
-			<case alias="소환사" name="" />
-			<case alias="암살자" name="" />
-			<case alias="귀검사" name="" />
-			<case alias="주술사" name="" />
-			<case alias="기권사" name="" />
-			<case alias="투사" name="" />
-			<case alias="궁사" name="" />
-			<case alias="창술사" name="" />
-			<case alias="뇌전술사" name="" />
-			<case alias="쌍검사" name="双剑士_2107版本新增" />
-			<case alias="악사" name="乐师_2207版本新增" />		
-			<case alias="pc-max" name="" />
-			<case alias="소환수-루키" name="" />
-			<case alias="소환수-striker" name="" />
-			<case alias="소환수-defender" name="" />
-			<case alias="소환수-controller" name="" />
-		</record>
-		
-		
-		
-		<record alias="sex" >
-			<case alias="none" name="" default="y" />
-			<case alias="남" name="" />
-			<case alias="여" name="" />
-			<case alias="중" name="" />
-        </record>
-		
-		<record alias="race" type="dictionary" >
-			<case alias="none" name="" default="y" />
-			<case alias="건" name="天族" />
-			<case alias="곤" name="龙族" />
-			<case alias="린" name="灵族" />
-			<case alias="진" name="人族" />
-			<case alias="나쁜몹" name="" />
-			<case alias="더나쁜몹" name="" />
-			<case alias="무서운몹" name="" />
-			<case alias="더무서운몹" name="" />
-			<case alias="더더무서운몹" name="" />
-			<case alias="고양이" name="" />
-			<case alias="강림체" name="" />
-			<case alias="악귀" name="" />
-          </record>
-
-		<record alias="rotate" name="" type="dictionary" >
-			<case alias="keep" name="" default="y" />
-			<case alias="server-yaw" name="" />
-			<case alias="toplayer" name="" />
-        </record>
-
-
-		<record alias="difficulty-type" type="dictionary" use-range-name="false" >
-			<case alias="none" name="" default="y" />
-			<case alias="easy" name="入门" />
-			<case alias="normal" name="普通" />
-			<case alias="hard" name="熟练" />
-		</record>	
-
-
-		<record alias="direction" type="dictionary" >
-			<case alias="front" name="" default="y" />
-			<case alias="back" name="" />
-			<case alias="left" name="" />
-			<case alias="right" name="" />
-			<case alias="front-right" name="" />
-			<case alias="front-left" name="" />
-			<case alias="back-right" name="" />
-			<case alias="back-left" name="" />
-		</record>	
-		
-		
-		<record alias="key-command" type="dictionary" >
-			<case alias="none" name="" default="y" />
-			<case alias="action1" name="" />
-			<case alias="action2" name="" />
-			<case alias="action3" name="" />
-			<case alias="classic-action1" name="" />
-			<case alias="classic-action2" name="" />
-			<case alias="classic-action3" name="" />
-			<case alias="skill-recommend" name="" />
-			<case alias="skill-stance" name="" />
-			<case alias="skill-slot1" name="" />
-			<case alias="skill-slot2" name="" />
-			<case alias="skill-slot3" name="" />
-			<case alias="skill-slot4" name="" />
-			<case alias="skill-slot5" name="" />
-			<case alias="skill-slot6" name="" />
-			<case alias="skill-slot7" name="" />
-			<case alias="skill-slot8" name="" />
-			<case alias="skill-slot9" name="" />
-			<case alias="skill-slot10" name="" />
-			<case alias="skill-slot11" name="" />
-			<case alias="skill-slot12" name="" />
-			<case alias="skill-q" name="" />
-			<case alias="skill-e" name="" />
-			<case alias="skill-special-1" name="" />
-			<case alias="skill-special-2" name="" />
-			<case alias="item-slot1" name="" />
-			<case alias="item-slot2" name="" />
-			<case alias="item-slot3" name="" />
-			<case alias="item-slot4" name="" />
-			<case alias="extra-skill-slot5" name="" />
-			<case alias="skill-duel-tag" name="" />
-			<case alias="toggle-help" name="" />
-			<case alias="toggle-dungeon-guide" name="" />
-			<case alias="toggle-inventory" name="" />
-			<case alias="toggle-gem" name="" />
-			<case alias="toggle-equipped" name="" />
-			<case alias="toggle-skill-book" name="" />
-			<case alias="toggle-quest-journal" name="" />
-			<case alias="toggle-minimap-scale" name="" />
-			<case alias="toggle-minimap-visible" name="" />
-			<case alias="toggle-quest-quick-slot" name="" />
-			<case alias="toggle-collect-manufacture" name="" />
-			<case alias="toggle-petition" name="" />
-			<case alias="toggle-option" name="" />
-			<case alias="toggle-minimap-alpha" name="" />
-			<case alias="toggle-party-panel" name="" />
-			<case alias="toggle-party-mark" name="" />
-			<case alias="toggle-party-search" name="" />
-			<case alias="toggle-hud-customize" name="" />
-			<case alias="party-match" name="" />
-			<case alias="manual-targeting" name="" />
-			<case alias="strafe-left" name="" />
-			<case alias="strafe-right" name="" />
-			<case alias="dash-forward" name="" />
-			<case alias="move-forward" name="" />
-			<case alias="move-backward" name="" />
-			<case alias="turn-left" name="" />
-			<case alias="turn-right" name="" />
-			<case alias="jump-up" name="" />
-			<case alias="toggle-walk-run" name="" />
-			<case alias="social-action1" name="" />
-			<case alias="social-action2" name="" />
-			<case alias="social-action3" name="" />
-			<case alias="social-action4" name="" />
-			<case alias="social-action5" name="" />
-			<case alias="social-action6" name="" />
-			<case alias="social-action7" name="" />
-			<case alias="social-action8" name="" />
-			<case alias="social-action9" name="" />
-			<case alias="social-action10" name="" />
-			<case alias="toggle-auto-move-forward" name="" />
-			<case alias="enter-slash-chatting" name="" />
-			<case alias="enter-normal-chatting" name="" />
-			<case alias="enter-party-chatting" name="" />
-			<case alias="enter-local-chatting" name="" />
-			<case alias="enter-private-chatting" name="" />
-			<case alias="toggle-hud" name="" />
-			<case alias="toggle-light-hud-mode" name="" />
-			<case alias="camera-up" name="" />
-			<case alias="camera-down" name="" />
-			<case alias="camera-zoomin" name="" />
-			<case alias="camera-zoomout" name="" />
-			<case alias="toggle-voice-chat-option" name="" />
-			<case alias="mark1" name="" />
-			<case alias="mark2" name="" />
-			<case alias="mark3" name="" />
-			<case alias="mark4" name="" />
-			<case alias="mark5" name="" />
-			<case alias="mark6" name="" />
-			<case alias="mark7" name="" />
-			<case alias="mark8" name="" />
-			<case alias="mark-timer" name="" />
-			<case alias="mark-timer-immune-break-down" name="" />
-			<case alias="mark-timer-immune-break-kneel" name="" />
-			<case alias="mark-timer-immune-break-stun" name="" />
-			<case alias="mark-timer-immune-break-knockback" name="" />
-			<case alias="unmark" name="" />
-			<case alias="headline-start-timer" name="" />
-			<case alias="minimap-depth-plus" name="" />
-			<case alias="minimap-depth-minus" name="" />
-			<case alias="rotate-camera" name="" />
-			<case alias="rotate-player" name="" />
-			<case alias="reset-camera" name="" />
-			<case alias="toggle-bns" name="" />
-			<case alias="notification-accept" name="" />
-			<case alias="notification-decline" name="" />
-			<case alias="toggle-joypad-ui-mode" name="" />
-			<case alias="close-floating-panels" name="" />
-			<case alias="joypad-esc" name="" />
-			<case alias="joypad-set-mouse-position" name="" />
-			<case alias="joypad-toggle-rotate-type" name="" />
-			<case alias="turn-on-social-mode" name="" />
-			<case alias="enter-party-search-channel-in-party-match" name="" />
-			<case alias="toggle-sns" name="" />
-			<case alias="toggle-powerbook" name="" />
-			<case alias="toggle-skill-powerbook" name="" />
-			<case alias="toggle-nshop" name="" />
-			<case alias="toggle-character-info" name="" />
-			<case alias="toggle-market" name="" />
-			<case alias="toggle-money-market" name="" />
-			<case alias="toggle-postbox" name="" />
-			<case alias="toggle-tencent-in-game-shop" name="" />
-			<case alias="toggle-tencent-cross" name="" />
-			<case alias="toggle-second-password" name="" />
-			<case alias="toggle-achievement" name="" />
-			<case alias="toggle-pc-filter-hidden" name="" />
-			<case alias="toggle-guild2" name="" />
-			<case alias="toggle-economy-communication" name="" />
-			<case alias="cancel-order" name="" />
-			<case alias="invite-party" name="" />
-			<case alias="duel-start" name="" />
-			<case alias="toggle-friend" name="" />
-			<case alias="toggle-wardrobe" name="" />
-			<case alias="toggle-dragon-jade-shop" name="" />
-			<case alias="toggle-ranking" name="" />
-			<case alias="toggle-ingame-notice" name="" />
-			<case alias="change-item-bar-page" name="" />
-			<case alias="duel-tag-order-first" name="" />
-			<case alias="duel-tag-order-random" name="" />
-			<case alias="leave-arena-square" name="" />
-			<case alias="quick-turn" name="" />
-			<case alias="joypad-special-function1" name="" />
-			<case alias="joypad-special-function2" name="" />
-			<case alias="accelerate-mouse-cursor-speed" name="" />
-			<case alias="joypad-mouse-left-button" name="" />
-			<case alias="joypad-mouse-right-button" name="" />
-			<case alias="change-pet-filter-hidden" name="" />
-			<case alias="toggle-damage-meter" name="" />
-			<case alias="toggle-item-graph" name="" />
-			<case alias="duel-camera-fitpawn-new" name="" />
-			<case alias="duel-camera-free-new" name="" />
-			<case alias="duel-camera-quater-new" name="" />
-			<case alias="duel-camera-alpha-new" name="" />
-			<case alias="duel-camera-beta-new" name="" />
-			<case alias="duel-camera-free-up-new" name="" />
-			<case alias="duel-camera-free-down-new" name="" />
-			<case alias="toggle-goods-store" name="" />
-			<case alias="enter-skill-training-room" name="" />
-			<case alias="toggle-arena-entrance" name="" />
-			<case alias="toggle-appearance-pictorial" name="" />
-			<case alias="toggle-hybrid-mode" name="" />
-			<case alias="toggle-personal-customize" name="" />
-			<case alias="toggle-context-simple-mode" name="" />
-			<case alias="toggle-mentoring" name="" />
-			<case alias="toggle-pvp-enable" name="" />
-			<case alias="nova-equip-skill-quick-slot" name="" />
-			<case alias="toggle-account-contents" name="" />
-			<case alias="toggle-contents-journal-2" name="" />
-			<case alias="toggle-fish-collecting" name="" />
-			<case alias="toggle-slate" name="" />
-			<case alias="toggle-auto-mode" name="" />
-			<case alias="toggle-auto-mode-option" name="" />
-			<case alias="toggle-auto-mode-enable-item-support" name="" />
-
-
-			<case alias="toggle-pvp-data" name="" />
-			<case alias="toggle-ride-vehicle" name="" />
-			<case alias="toggle-museum" name="" />
-			<case alias="equip-spare-item" name="" />
-			<case alias="toggle-spare-item" name="未确认" />
-			<case alias="unk-" name="" />
-			<case alias="toggle-glyph-inventory" name="" />
-			<case alias="toggle-constellation" name="" />
-			<case alias="toggle-sealed-scroll" name="" />
-			<case alias="toggle-inter-battle-field" name="" />
-			<case alias="toggle-wanted-mission" name="" />
-			<case alias="toggle-expedition" name="" />
-        </record>		
-		
-		
-		
-		<record alias="skill-result" type="dictionary" >
-			<case alias="none" name="" default="y" />
-			<case alias="hit" name="命中 (不包括暴击)" />
-			<case alias="miss" name="" />
-			<case alias="dodge" name="闪避" />
-			<case alias="parry" name="格挡" />
-			<case alias="perfect-parry" name="完美格挡" />
-			<case alias="bounce" name="反弹" />
-			<case alias="counter" name="" />
-			<case alias="critical-hit" name="暴击命中" />
-			<case alias="hit-critical-hit" name="命中和暴击命中 (命中时一般指这个)" />
-			<case alias="back-hit-critical-hit" name="背后命中" />
-			<case alias="not-hit" name="" />
-			<case alias="all" name="全部" />
-			<case alias="hit-critical-hit-parry" name="" />
-			<case alias="parry-perfect-parry" name="" />
-			<case alias="front-hit-critical-hit" name="" />
-			<case alias="parry-perfect-parry-counter" name="" desc="反制穿刺" />
-			<case alias="parry-perfect-parry-dodge" name="" />
-			<case alias="parry-dodge" name="" />
-		</record>
-		
-
-
-	
-	    <record alias="stance_20" type="dictionary" name="" version="20200600" >
-			<case alias="stance-none" name="" default="y" />
-			<case alias="npc기본자세" name="" />
-			<case alias="천검세" name="" />
-			<case alias="검령세" name="" />
-			<case alias="단타" name="" />
-			<case alias="연계" name="" />
-			<case alias="체술" name="" />
-			<case alias="납도" name="" />
-			<case alias="경기공" name="" />
-			<case alias="연기공" name="" />
-			<case alias="강기공" name="" />
-			<case alias="스나이퍼모드" name="" />
-			<case alias="건너모드" name="" />
-			<case alias="파괴" name="" />
-			<case alias="보호" name="" />
-			<case alias="철벽" name="" />
-			<case alias="소환" name="" />
-			<case alias="교란" name="" />
-			<case alias="은신" name="" />
-			<case alias="암살" name="" />
-			<case alias="검술" name="" />
-			<case alias="어검" name="" />
-			<case alias="발도" name="" />
-			<case alias="npc자세1" name="" />
-			<case alias="npc자세2" name="" />
-			<case alias="npc자세3" name="" />
-			<case alias="소환수-follow" name="" />
-			<case alias="소환수-command-1" name="" />
-			<case alias="주술" name="" />
-			<case alias="강림" name="" />
-			<case alias="유권" name="" />
-			<case alias="기공" name="" />
-			<case alias="냉정" name="" />
-			<case alias="광기" name="" />
-			<case alias="장궁" name="" />
-			<case alias="정령궁" name="" />
-			<case alias="찌르기" name="" />
-			<case alias="베기" name="" />
-			<case alias="청뢰" name="" />
-			<case alias="혈뢰" name="" />
-			<case alias="어검세" name="" />
-			<case alias="쌍월" name="" />
-			<case alias="뇌신" name="" />
-			<case alias="npc주시자세1" name="" />
-			<case alias="npc주시자세2" name="" />
-			<case alias="npc주시자세3" name="" />
-		</record>
-		
-	    <record alias="stance" type="dictionary" name="" version="20210727" >
-			<case alias="stance-none" name="" default="y" />
-			<case alias="npc기본자세" name="" />
-			<case alias="천검세" name="" />
-			<case alias="검령세" name="" />
-			<case alias="단타" name="" />
-			<case alias="연계" name="" />
-			<case alias="체술" name="" />
-			<case alias="납도" name="" />
-			<case alias="경기공" name="" />
-			<case alias="연기공" name="" />
-			<case alias="강기공" name="" />
-			<case alias="스나이퍼모드" name="" />
-			<case alias="건너모드" name="" />
-			<case alias="파괴" name="" />
-			<case alias="보호" name="" />
-			<case alias="철벽" name="" />
-			<case alias="소환" name="" />
-			<case alias="교란" name="" />
-			<case alias="은신" name="" />
-			<case alias="암살" name="" />
-			<case alias="검술" name="" />
-			<case alias="어검" name="" />
-			<case alias="발도" name="" />
-			<case alias="npc자세1" name="" />
-			<case alias="npc자세2" name="" />
-			<case alias="npc자세3" name="" />
-			<case alias="소환수-follow" name="" />
-			<case alias="소환수-command-1" name="" />
-			<case alias="소환수-flying" name="" />
-			<case alias="주술" name="" />
-			<case alias="강림" name="" />
-			<case alias="유권" name="" />
-			<case alias="기공" name="" />
-			<case alias="냉정" name="" />
-			<case alias="광기" name="" />
-			<case alias="장궁" name="" />
-			<case alias="정령궁" name="" />
-			<case alias="찌르기" name="" />
-			<case alias="베기" name="" />
-			<case alias="청뢰" name="" />
-			<case alias="혈뢰" name="" />
-			<case alias="어검세" name="" />
-			<case alias="정수" name="" />
-			<case alias="역수" name="" />
-			<case alias="한손역수" name="" />
-			<case alias="쌍월" name="" />
-			<case alias="뇌신" name="" />
-			<case alias="침식" name="" />
-			<case alias="npc주시자세1" name="" />
-			<case alias="npc주시자세2" name="" />
-			<case alias="npc주시자세3" name="" />							
-		</record>
-		
-		
-		
-		
-
-		<record alias="env2-state" type="dictionary" >
-			<case alias="none" name="" default="y" />
-			<case alias="open" name="" />
-			<case alias="close" name="" />
-			<case alias="empty" name="" />
-			<case alias="step-1" name="" />
-			<case alias="step-2" name="" />
-			<case alias="step-3" name="" />
-			<case alias="step-4" name="" />
-			<case alias="step-5" name="" />
-			<case alias="step-6" name="" />
-			<case alias="step-7" name="" />
-		</record>
-
-		<record alias="event-type" type="dictionary" >
-			<case alias="none" name="" default="y" />
-		    <case alias="attack" name="" />
-			<case alias="attacked" name="" />
-		</record>
-		
-
-
-		<record alias="equip-type" type="dictionary" >
-			<case key="0" alias="none" name="" default="y" />
-			<case key="1" alias="weapon" name="" />
-			<case key="2" alias="costume" name="" />
-			<case key="3" alias="earring" name="" />
-			<case key="4" alias="eyeglass" name="" />
-			<case key="5" alias="hat" name="" />
-			<case key="6" alias="ring" name="" />
-			<case key="7" alias="necklace" name="" />
-			<case key="8" alias="Gem-1" name="" />
-			<case key="9" alias="Gem-2" name="" />
-			<case key="10" alias="Gem-3" name="" />
-			<case key="11" alias="Gem-4" name="" />
-			<case key="12" alias="Gem-5" name="" />
-			<case key="13" alias="Gem-6" name="" />
-			<case key="14" alias="Gem-7" name="" />
-			<case key="15" alias="Gem-8" name="" />
-			<case key="16" alias="attach" name="" />
-			<case key="17" alias="belt" name="" />
-			<case key="18" alias="bracelet" name="" />
-			<case key="19" alias="soul" name="" />
-			<case key="20" alias="soul-2" name="" />
-			<case key="21" alias="Gloves" name="" />
-			<case key="22" alias="pet-1" name="" />
-			<case key="23" alias="pet-2" name="" />
-			<case key="24" alias="rune-1" name="" />
-			<case key="25" alias="rune-2" name="" />
-			<case key="26" alias="nova" name="" />
-			<case key="27" alias="badge-1-premium" name="" />
-			<case key="28" alias="badge-2-premium" name="" />
-			<case key="29" alias="badge-3-premium" name="" />
-			<case key="30" alias="badge-1-normal" name="" />
-			<case key="31" alias="badge-2-normal" name="" />
-			<case key="32" alias="badge-3-normal" name="" />
-			<case key="33" alias="badge-appearance" name="" />
-
-			<!-- 2021年12月新增 -->
-			<case alias="vehicle" name="" />
-			<case alias="appearance-normal" name="" />
-			<case alias="appearance-idle" name="" />
-			<case alias="appearance-chat" name="" />
-			<case alias="appearance-frame" name="" />
-			<case alias="appearance-hypermove" name="" />
-		</record>
-		
-		
-
-		<record alias="gather-type" >
-			<case key="0" alias="target" name="单一目标" default="y" />
-			<case key="1" alias="target-360" name="" />
-			<case key="2" alias="target-front-180" name="" />
-			<case key="3" alias="target-back-180" name="" />
-			<case key="4" alias="target-front-90" name="" />
-			<case key="5" alias="target-back-90" name="" />
-			<case key="6" alias="target-front-30" name="" />
-			<case key="7" alias="target-front-45" name="" />
-			<case key="8" alias="target-front-60" name="" />
-			<case key="9" alias="target-front-120" name="" />
-			<case key="10" alias="target-front-270" name="" />
-			<case key="11" alias="laser" name="矩形" />
-			<case key="12" alias="target-and-link-target" name="" />
-			<case key="13" alias="shifting-laser" name="移动矩形" />
-        </record>
-		
-
-		<record alias="gather-type_22" >
-			<case alias="target" name="单一目标" default="y" />
-			<case alias="target-360" name="" />
-			<case alias="target-front-180" name="" />
-			<case alias="target-back-180" name="" />
-			<case alias="target-front-90" name="" />
-			<case alias="target-back-90" name="" />
-			<case alias="unk-" name="" />
-			<case alias="target-front-30" name="" />
-			<case alias="target-front-45" name="" />
-			<case alias="target-front-60" name="" />
-			<case alias="target-front-120" name="" />
-			<case alias="target-front-270" name="" />
-			<case alias="laser" name="矩形" />
-			<case alias="target-and-link-target" name="" />
-			<case alias="shifting-laser" name="移动矩形" />
-        </record>
-
-
-
-		<record alias="gem-slot-type" type="dictionary" >
-			<case key="1" alias="minus-one" name="" />
-			<case key="2" alias="plus-zero" name="" />
-			<case key="3" alias="plus-one" name="" />
-			<case key="4" alias="minus-four" name="" />
-			<case key="5" alias="minus-three" name="" />
-			<case key="6" alias="minus-two" name="" />
-			<case key="7" alias="plus-two" name="" />
-			<case key="8" alias="plus-three" name="" />
-			<case key="9" alias="plus-four" name="" />
-		</record>
-		
-		<record alias="weapon-gem-type" type="dictionary" >
-			<case key="1" alias="ruby" name="红玉" />
-			<case key="2" alias="topaz" name="黄玉" />
-			<case key="3" alias="sapphire" name="青玉" />
-			<case key="4" alias="jade" name="翡翠" />
-			<case key="5" alias="amethyst" name="紫水晶" />
-			<case key="6" alias="emerald" name="绿柱石" />
-			<case key="7" alias="diamond" name="" />
-			<case key="8" alias="obsidian" name="" />
-			<case key="9" alias="amber" name="" />
-			<case key="10" alias="garnet" name="" />
-			<case key="11" alias="aquamarine" name="" />
-			<case key="12" alias="ruby-topaz" name="" />
-			<case key="13" alias="ruby-sapphire" name="" />
-			<case key="14" alias="ruby-jade" name="" />
-			<case key="15" alias="ruby-amethyst" name="" />
-			<case key="16" alias="ruby-emerald" name="" />
-			<case key="17" alias="ruby-diamond" name="" />
-			<case key="18" alias="topaz-sapphire" name="" />
-			<case key="19" alias="topaz-jade" name="" />
-			<case key="20" alias="topaz-amethyst" name="" />
-			<case key="21" alias="topaz-emerald" name="" />
-			<case key="22" alias="topaz-diamond" name="" />
-			<case key="23" alias="sapphire-jade" name="" />
-			<case key="24" alias="sapphire-amethyst" name="" />
-			<case key="25" alias="sapphire-emerald" name="" />
-			<case key="26" alias="sapphire-diamond" name="" />
-			<case key="27" alias="jade-amethyst" name="" />
-			<case key="28" alias="jade-emerald" name="" />
-			<case key="29" alias="jade-diamond" name="" />
-			<case key="30" alias="amethyst-emerald" name="" />
-			<case key="31" alias="amethyst-diamond" name="" />
-			<case key="32" alias="emerald-diamond" name="" />
-			<case key="33" alias="aquamarine-diamond" name="" />
-			<case key="34" alias="amber-diamond" name="" />
-			<case key="35" alias="obsidian-garnet" name="" />
-			<case key="36" alias="corundum-white" name="" />
-			<case key="37" alias="corundum-black" name="" />
-			<case key="38" alias="corundum-pink" name="" />
-			<case key="39" alias="corundum-yellow" name="" />
-			<case key="40" alias="corundum-bluegreen" name="" />
-			<case key="41" alias="corundum-blue" name="" />
-			<case key="42" alias="corundum-aquamarine" name="" />
-			<case key="43" alias="corundum-amber" name="" />
-			<case key="44" alias="corundum-red" name="" />
-		</record>
-	
-		<record alias="forwarding-type" type="dictionary" >
-			<case alias="none" name="" default="y" />
-			<case alias="acquire-quest" name="" />
-			<case alias="skill-target" name="" />
-			<case alias="mission-step-rollback" name="" />
-		</record>
-		
-		<record alias="consume-type" type="dictionary" >
-			<case alias="point" name="" default="y" />
-			<case alias="point-below" name="" />
-			<case alias="point-above" name="" />
-			<case alias="base-max-percent" name="" />
-			<case alias="total-max-percent" name="" />
-			<case alias="current-percent" name="" />
-		</record>
-	
-
-
-
-		<record alias="link" type="dictionary" >
-		    <case alias="attach" name="" default="y" />		
-		    <case alias="not-attach" name="" />
-		    <case alias="dispel" name="" />	
-        </record>
-		
-		<record alias="abnormal-link" type="dictionary" >
-			<case key="1" alias="mount-linkee" name="" />
-			<case key="2" alias="mount-linker" name="" />
-			<case key="3" alias="catch" name="" />
-			<case key="4" alias="catched" name="" />
-			<case key="5" alias="catched-friend" name="" />
-			<case key="6" alias="catched-none-human" name="" />
-			<case key="7" alias="catch-friend" name="" />
-			<case key="8" alias="catch-none-human" name="" />
-			<case key="9" alias="inhalation_linker" name="" />
-			<case key="10" alias="inhalation_linkee" name="" />
-			<case key="11" alias="catch-inhalation" name="" />
-			<case key="12" alias="catched-inhalation" name="" />
-			<case key="13" alias="air_inhalation_linker" name="" />
-			<case key="14" alias="air_inhalation_linkee" name="" />
-			<case key="15" alias="inhalation_linker_bk" name="" />
-			<case key="16" alias="inhalation_linker_sw" name="" />
-			<case key="17" alias="catch-inhalation_sw" name="" />
-			<case key="18" alias="catch-inhalation-none-human_sw" name="" />	
-        </record>
-
-        <record alias="link-stage" type="dictionary" >
-		    <case alias="none" name="" default="y" />
-		    <case alias="stage-1" name="" />
-		    <case alias="stage-2" name="" />
-        </record>
-		
-		<record alias="link-state" type="dictionary" >
-			<case alias="none" name="" default="y" />
-		    <case alias="link" name="" />
-		    <case alias="linked" name="" />	
-        </record>
-
-		<record alias="link-type" type="dictionary" >
-			<case alias="none" name="" default="y" />
-		    <case alias="mount" name="" />
-		    <case alias="inhalation" name="" />
-		    <case alias="slugfest" name="" />		
-			<case alias="catch" name="" />
-			<case alias="catch-none-human" name="" />
-			<case alias="catch-friend" name="" />
-			<case alias="inhalation-catch" name="" />
-        </record>
-		
-
-		
-		<record alias="dead-state" type="dictionary" name="" >
-			<case alias="all" name="" />
-			<case alias="not-dead-restoration" name="" default="y" />
-			<case alias="not-dead" name="" />
-			<case alias="dead" name="" />
-			<case alias="exhaustion" name="" />
-			<case alias="restoration" name="" />
-			<case alias="dead-exhaustion" name="" />
-			<case alias="not-dead-restoration-exhaustion" name="" />
-		</record>
-
-		<record alias="move-state" type="dictionary" name="" >
-			<case alias="none" name="" default="y" />	
-			<case alias="sprint" name="" />
-			<case alias="sprint-jump" name="" />
-			<case alias="drift" name="" />
-			<case alias="glide" name="" />
-			<case alias="swim" name="" />
-			<case alias="boost" name="" />
-			<case alias="dive" name="" />
-			<case alias="wall-run" name="" />
-			<case alias="wall-jump" name="" />
-		</record>
-	
-	
-		<record alias="npc-grade2" name="" type="dictionary" >		
-			<case alias="none" name="" default="y" />
-			<case alias="boss" name="" />
-			<case alias="champion" name="" />
-			<case alias="normal" name="" />
-			<case alias="follower" name="" />
-			<case alias="tool" name="" />
-			<case alias="weakest" name="" />
-			<case alias="weak" name="" />
-			<case alias="regular" name="" />
-			<case alias="strong" name="" />
-		</record>
-	
-	
-	
-	
-	
-	
-	
-		<record alias="op" type="dictionary" name="" >
-		    <case alias="or" name="" default="y" />	
-		    <case alias="and" name="" />	
-		</record>
-		
-		<record alias="op2" name="" type="dictionary" >
-			<case alias="eq" name="相等" default="y" />
-			<case alias="neq" name="不等" />
-			<case alias="gt" name="大于" />
-			<case alias="ge" name="大于等于" />
-			<case alias="lt" name="小于" />
-			<case alias="le" name="小于等于" />
-		</record>
-		
-		
-		
-		
-		<record alias="pouch-appearance" name="掉落物外观" type="dictionary" >
-			<case alias="none" name="" default="y" />	
-			<case alias="money" name="money" />
-			<case alias="effect" name="effect" />
-			<case alias="distribution-pouch" name="distribution-pouch" />
-			<case alias="Normal-Pouch-Grade1" name="(10)" />
-			<case alias="Normal-Pouch-Grade2" name="(190)" />
-			<case alias="Normal-Pouch-Grade3" name="(370)" />
-			<case alias="Normal-Pouch-Grade4" name="(550)" />
-			<case alias="Normal-Pouch-Grade5" name="(730)" />
-			<case alias="Quality-Pouch-Grade1" name="(30)" />
-			<case alias="Quality-Pouch-Grade2" name="(210)" />
-			<case alias="Quality-Pouch-Grade3" name="(390)" />
-			<case alias="Quality-Pouch-Grade4" name="(570)" />
-			<case alias="Quality-Pouch-Grade5" name="(750)" />
-			<case alias="High-Quality-Pouch-Grade1" name="(50)" />
-			<case alias="High-Quality-Pouch-Grade2" name="(230)" />
-			<case alias="High-Quality-Pouch-Grade3" name="(410)" />
-			<case alias="High-Quality-Pouch-Grade4" name="(590)" />
-			<case alias="High-Quality-Pouch-Grade5" name="(770)" />
-			<case alias="Normal-Box-Grade1" name="(70)" />
-			<case alias="Normal-Box-Grade2" name="(250)" />
-			<case alias="Normal-Box-Grade3" name="(430)" />
-			<case alias="Normal-Box-Grade4" name="(610)" />
-			<case alias="Normal-Box-Grade5" name="(790)" />
-			<case alias="Quality-Box-Grade1" name="(90)" />
-			<case alias="Quality-Box-Grade2" name="(270)" />
-			<case alias="Quality-Box-Grade3" name="(450)" />
-			<case alias="Quality-Box-Grade4" name="(630)" />
-			<case alias="Quality-Box-Grade5" name="(810)" />
-			<case alias="High-Quality-Box-Grade1" name="(110)" />
-			<case alias="High-Quality-Box-Grade2" name="(290)" />
-			<case alias="High-Quality-Box-Grade3" name="(470)" />
-			<case alias="High-Quality-Box-Grade4" name="(650)" />
-			<case alias="High-Quality-Box-Grade5" name="(830)" />
-			<case alias="Normal-GemBox-Grade1" name="" />
-			<case alias="Normal-GemBox-Grade2" name="" />
-			<case alias="Normal-GemBox-Grade3" name="" />
-			<case alias="Normal-GemBox-Grade4" name="" />
-			<case alias="Normal-GemBox-Grade5" name="" />
-			<case alias="Quality-Gembox-Grade1" name="" />
-			<case alias="Quality-Gembox-Grade2" name="" />
-			<case alias="Quality-Gembox-Grade3" name="" />
-			<case alias="Quality-Gembox-Grade4" name="" />
-			<case alias="Quality-Gembox-Grade5" name="" />
-			<case alias="High-Quality-Gembox-Grade1" name="" />
-			<case alias="High-Quality-Gembox-Grade2" name="" />
-			<case alias="High-Quality-Gembox-Grade3" name="" />
-			<case alias="High-Quality-Gembox-Grade4" name="" />
-			<case alias="High-Quality-Gembox-Grade5" name="" />
-		</record>
-
-		
-		
-		
-		
-		
-		
-		
-		<record alias="recycle-group" type="dictionary" name="" >
-			<case alias="none" name="" default="y" />
-			<case alias="class" name="" />
-			<case alias="item-1" name="" />
-			<case alias="item-2" name="" />
-			<case alias="class-2" name="" />
-			<case alias="db" name="" />
-			<case alias="gadget" name="" />
-		</record>		
-	
-		<record alias="reset-type" type="dictionary" name="" >
-			<case alias="none" name="" default="y" />
-			<case alias="daily" name="" />
-			<case alias="weekly" name="" />
-			<case alias="monthly" name="" />
-		</record>
-
-		<record alias="skill-stage" name="" type="dictionary" >
-			<case alias="none" name="" default="y" />	
-			<case alias="cast" name="施展时" />
-			<case alias="fire-1" name="" />
-			<case alias="exec-1" name="" />
-			<case alias="fire-2" name="" />
-			<case alias="exec-2" name="" />
-			<case alias="fire-3" name="" />
-			<case alias="exec-3" name="" />
-			<case alias="fire-4" name="" />
-			<case alias="exec-4" name="" />
-			<case alias="fire-5" name="" />
-			<case alias="exec-5" name="" />
-			<case alias="finish" name="" />
-		</record>
-
-
-		<record alias="skill-attribute" type="Dictionary" name="" >
-			<case alias="none" name="" default="y" />
-			<case alias="막기" name="" />
-			<case alias="반격" name="" />
-			<case alias="튕기기" name="" />
-			<case alias="방어행동" name="" />
-			<case alias="대쉬" name="" />
-			<case alias="이동" name="" />
-			<case alias="회피" name="" />
-			<case alias="다운" name="" />
-			<case alias="넉백" name="" />
-			<case alias="기절" name="" />
-			<case alias="그로기" name="" />
-			<case alias="공중" name="" />
-			<case alias="행동불가" name="" />
-			<case alias="이동불가" name="" />
-			<case alias="다운대응" name="" />
-			<case alias="막기조건" name="" />
-			<case alias="회피조건" name="" />
-			<case alias="치명타조건" name="" />
-			<case alias="연계기" name="" />
-			<case alias="스탠스" name="" />
-			<case alias="회복" name="" />
-			<case alias="게이지회복" name="" />
-			<case alias="부활" name="" />
-			<case alias="지원" name="" />
-			<case alias="즉시시전" name="" />
-			<case alias="캐스팅" name="" />
-			<case alias="가드브레이크" name="" />
-			<case alias="발사체" name="" />
-			<case alias="발사체2" name="" />
-			<case alias="제압" name="" />
-			<case alias="관절기" name="" />
-			<case alias="장악" name="" />
-			<case alias="비인간장악" name="" />
-			<case alias="흡공" name="" />
-			<case alias="제압대응" name="" />
-			<case alias="장악대응" name="" />
-			<case alias="흡공대응" name="" />
-			<case alias="해제" name="" />
-			<case alias="독" name="" />
-			<case alias="쿨타임" name="" />
-			<case alias="불" name="" />
-			<case alias="얼음" name="" />
-			<case alias="전기" name="" />
-			<case alias="기공" name="" />
-			<case alias="트리거" name="" />
-			<case alias="워프" name="" />
-			<case alias="근거리" name="" />
-			<case alias="원거리" name="" />
-			<case alias="광역" name="" />
-			<case alias="이동가능" name="" />
-			<case alias="데미지존" name="" />
-			<case alias="상태면역" name="" />
-			<case alias="위치바꾸기" name="" />
-			<case alias="은사" name="" />
-			<case alias="도발" name="" />
-		 
-        </record>
-
-
-
-
-		<record alias="flow-stage" name="" type="dictionary" >
-			<case alias="none" name="" default="y" />	
-			<case alias="fly-1" name="" />
-			<case alias="exec-1" name="" />
-			<case alias="fly-2" name="" />
-			<case alias="exec-2" name="" />
-			<case alias="fly-3" name="" />
-			<case alias="exec-3" name="" />
-			<case alias="fly-4" name="" />
-			<case alias="exec-4" name="" />
-			<case alias="fly-5" name="" />
-			<case alias="exec-5" name="" />
-		</record>
-
-		<record alias="boss-resistible-skill-type" name="" type="dictionary" >
-			<case alias="none" name="" default="y" />	
-			<case alias="immune-party-all" name="" />
-			<case alias="immune-party-projectile" name="" />
-			<case alias="immune-caster-target-long" name="" />
-			<case alias="immune-caster-target-short" name="" />
-			<case alias="immune-caster-nontarget-move" name="" />
-		</record>
-
-		<record alias="npc-resistible-skill-type" name="" type="dictionary" >
-			<case alias="none" name="" default="y" />		
-			<case alias="parry-counter" name="" />
-			<case alias="move" name="" />
-			<case alias="immune-type-1" name="" />
-			<case alias="immune-type-2" name="" />
-			<case alias="immune-type-3" name="" />
-		</record>
-
-
-
-		<record alias="target-type" type="dictionary" name="" >
-		    <case alias="all" name="" default="y" />	
-		    <case alias="friend" name="" />
-		    <case alias="enemy" name="" />
-		    <case alias="my-party" name="" />	
-		    <case alias="my-team" name="" />	
-		</record>
-	
-		<record alias="job-style" type="dictionary" name="" >
-		    <case key="0" alias="base-1" name="" />
-		    <case key="1" alias="base-2" name="" />
-		    <case key="2" alias="base-3" name="" />
-			<case key="3" alias="base-4" name="" />
-			<case key="4" alias="base-5" name="" />
-		    <case key="5" alias="advanced-1" name="" />
-		    <case key="6" alias="advanced-2" name="" />
-		    <case key="7" alias="advanced-3" name="" />
-			<case key="8" alias="advanced-4" name="" />
-			<case key="9" alias="advanced-5" name="" />
-		</record>
-	
-    	<record alias="production-type" type="dictionary" >	
- 			<case alias="none" name="" default="y" />
-			<case alias="production-type-1" name="" />
-			<case alias="production-type-2" name="" />
-			<case alias="production-type-3" name="" />
-			<case alias="production-type-4" name="" />
-			<case alias="production-type-5" name="" />
-			<case alias="production-type-6" name="" />
-			<case alias="production-type-7" name="" />
-			<case alias="gathering-type-1" name="" />
-			<case alias="gathering-type-2" name="" />
-			<case alias="gathering-type-3" name="" />
-			<case alias="gathering-type-4" name="" />
-			<case alias="gathering-type-5" name="" />
-			<case alias="gathering-type-6" name="" />
-			<case alias="gathering-type-7" name="" />
-		</record>
-
-		<record alias="weapon-type" type="dictionary" >
-			<case alias="none" name="" default="y" />		
-			<case alias="bare-hand" name="" />
-			<case alias="sword" name="" />
-			<case alias="gauntlet" name="" />
-			<case alias="aura-bangle" name="" />
-			<case alias="pistol" name="" />
-			<case alias="rifle" name="" />
-			<case alias="two-handed-axe" name="" />
-			<case alias="bow" name="" />
-			<case alias="staff" name="" />
-			<case alias="dagger" name="" />
-			<case alias="pet-1" name="" />
-			<case alias="pet-2" name="" />
-			<case alias="gun" name="" />
-			<case alias="great-sword" name="" />
-			<case alias="long-bow" name="" />
-			<case alias="spear" name="" />
-			<case alias="orb" name="" />
-
-                                                <!-- 虚幻4新增 -->
-			<case alias="dual-blade" name="" />
-		</record>
 	</public>
-
-
-	<public >
-		<record alias="type-seq_20" name="" version="20200101" >
+	
+	<public name="Effect.Type" >
+		<record alias="type-seq_20" name="" version="20200101">
 			<case key="0" alias="none" name="" default="y" />		
 			<case key="1" alias="accumulated-damage-to-anyone" name="" />
 			<case key="2" alias="accumulated-damage-from-1" name="" />
@@ -3671,7 +3547,7 @@
 			<case key="671" alias="npc-change-appearance" name="" />
 		</record>
 
-		<record alias="type-seq" name="" version="20220301" >
+		<record alias="type-seq" name="" version="20220301">
 			<case alias="none" name="" default="y" />
 			<case alias="accumulated-damage-to-anyone" name="" />
 			<case alias="accumulated-damage-from-1" name="" />

@@ -2,7 +2,6 @@
 
 using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Preview.Common.Enums;
 using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
@@ -58,55 +57,15 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 当前快捷键
 		/// </summary>
-		public KeyCommandSeq CurrentShortCutKey => this.ShortCutKey;
+		public KeyCommand CurrentShortCutKey => this.ShortCutKey.GetKeyCommand();
 		#endregion
+
+
 
 		#region 接口方法
 		public string NameText() => this.Name2.GetText();
 
 		public Bitmap MainIcon() => this.IconTexture.GetIcon(this.IconIndex);
 		#endregion
-	}
-
-
-
-
-	public static partial class ItemExtension
-	{
-		/// <summary>
-		/// 获得技能目标范围
-		/// </summary>
-		/// <param name="Skill"></param>
-		/// <returns></returns>
-		public static string GetSkillRange(this Skill3 Skill)
-		{
-			//类型
-			var GatherType = Skill.ExecGatherType1;
-
-			//GatherRange控制范围信息，但是距离和范围形状由技能本身控制
-			var GatherRange = FileCache.Data.SkillGatherRange3[Skill.GatherRange];
-
-
-			//Console.WriteLine(GatherRange?.XElement);
-
-			var CurFlowType = Skill.flowType switch
-			{
-				Skill3.FlowType.KeepMainslot => "原地",
-				_ => GatherRange.RangeCastMax.ToMetre() + $"m ({ Skill.flowType })",
-			};
-
-
-			return CurFlowType + "   " + GatherType switch
-			{
-				GatherType.Target => $"单一目标",
-				GatherType.Target360 => GatherRange.GatherRadiusMax1.ToMetre() + $"m 内圆形目标",
-				GatherType.TargetFront180 => GatherRange.GatherRadiusMax1.ToMetre() + $"m 内半圆形前方目标",
-				GatherType.TargetBack180 => GatherRange.GatherRadiusMax1.ToMetre() + $"m 内半圆形后方目标",
-				GatherType.TargetFront90 => GatherRange.GatherRadiusMax1.ToMetre() + $"m 内1/4圆形前方目标",
-				GatherType.TargetBack90 => GatherRange.GatherRadiusMax1.ToMetre() + $"m 内1/4圆形后方目标",
-
-				_ => GatherRange.GatherRadiusMax1.ToMetre() + "m 内 " + GatherType,
-			};
-		}
 	}
 }

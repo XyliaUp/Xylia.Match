@@ -394,7 +394,13 @@
 		<record alias="apply-pouch-pickup-rights-for-team" name="" type="Bool" client="n" />
 		<record alias="deadbody-hide-duration" name="" type="Msec" client="n" />
 		<record alias="equip_hand" name="装备武器" ref="Item" client="n" />
-		<record alias="brain" type="Seq" client="n" name="智力类型" seq="$brain-type" />
+		<record alias="brain" type="Seq" client="n" name="智力类型" >
+			<case alias="none" name="" default="y" />
+			<case alias="citizen" name="" />			
+			<case alias="monster" name="" />
+			<case alias="boss" name="" />
+			<case alias="follower" name="" />
+		</record>
 		<record alias="brain-parameters" name="" type="Ref" client="n" />
 		<record alias="chase-distance" name="追逐距离" type="" client="n" />
 		<record alias="chase-radius" name="追逐半径" type="" client="n" />

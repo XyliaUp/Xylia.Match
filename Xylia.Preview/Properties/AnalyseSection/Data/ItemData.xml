@@ -1028,9 +1028,20 @@
 		<record alias="identify-enable" name="" filter="weapon" type="Bool" />
 		<record alias="identify-grocery" name="" filter="weapon" ref="this" type="Int32" />
 		<record alias="gem-slot-by-probability" name="" filter="weapon" type="Bool" default="n" />
-		<record alias="gem-slot-type" name="" filter="weapon" seq="$gem-slot-type" type="Seq" repeat="4" />
+		<record alias="gem-slot-type" name="" filter="weapon" type="Seq" repeat="4" >
+			<case alias="closed" name="" default="y" />
+			<case alias="minus-one" name="" />
+			<case alias="plus-zero" name="" />
+			<case alias="plus-one" name="" />
+			<case alias="minus-four" name="" />
+			<case alias="minus-three" name="" />
+			<case alias="minus-two" name="" />
+			<case alias="plus-two" name="" />
+			<case alias="plus-three" name="" />
+			<case alias="plus-four" name="" />
+		</record>
 		<record alias="open-gem-slot-grocery" name="开启宝石孔 需要物品" filter="weapon" ref="Item" repeat="8" />
-		<record alias="open-gem-slot-grocery-count" name="开启宝石孔 需要物品数量" filter="weapon" type="Short" out-cond="Exist: open-gem-slot-grocery-*" default="1" repeat="8" />
+		<record alias="open-gem-slot-grocery-count" name="开启宝石孔 需要物品数量" filter="weapon" type="Short" out-cond="Exist: open-gem-slot-grocery-" default="1" repeat="8" />
 		<record alias="open-gem-slot-price" name="开启宝石孔 需要钱币" filter="weapon" type="Int32" repeat="8" />
 		<!-- ========================================================================================= -->
 		<!-- 服务端用：宝石孔开启成功概率 -->
@@ -1042,25 +1053,20 @@
 		<record alias="open-gem-slot-percent-6" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-6" />
 		<record alias="open-gem-slot-percent-7" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-7" />
 		<record alias="open-gem-slot-percent-8" name="" filter="weapon" type="Int32" client="n" apply="must" default="100" valid-cond="Exist: open-gem-slot-grocery-8" />
+		<!-- 服务端用：可额外获得宝石孔的概率 -->
+		<record alias="zero-gem-slot-prob-weight" name="0孔权重" filter="weapon" type="Int32" client="n" apply="must" default="370" valid-cond="ge: max-gem-slot-count : 0" />
+		<record alias="one-gem-slot-prob-weight" name="1孔权重" filter="weapon" type="Int32" client="n" apply="must" default="350" valid-cond="ge: max-gem-slot-count : 1" />
+		<record alias="two-gem-slot-prob-weight" name="2孔权重" filter="weapon" type="Int32" client="n" apply="must" default="160" valid-cond="ge: max-gem-slot-count : 2" />
+		<record alias="three-gem-slot-prob-weight" name="3孔权重" filter="weapon" type="Int32" client="n" apply="must" default="60" valid-cond="ge: max-gem-slot-count : 3" />
+		<record alias="four-gem-slot-prob-weight" name="4孔权重" filter="weapon" type="Int32" client="n" apply="must" default="30" valid-cond="ge: max-gem-slot-count : 4" />
+		<record alias="five-gem-slot-prob-weight" name="5孔权重" filter="weapon" type="Int32" client="n" apply="must" default="15" valid-cond="ge: max-gem-slot-count : 5" />
+		<record alias="six-gem-slot-prob-weight" name="6孔权重" filter="weapon" type="Int32" client="n" apply="must" default="10" valid-cond="ge: max-gem-slot-count : 6" />
+		<record alias="seven-gem-slot-prob-weight" name="7孔权重" filter="weapon" type="Int32" client="n" apply="must" default="4" valid-cond="ge: max-gem-slot-count : 7" />
+		<record alias="eight-gem-slot-prob-weight" name="8孔权重" filter="weapon" type="Int32" client="n" apply="must" default="1" valid-cond="ge: max-gem-slot-count : 8" />
 
-		<!--
-zero-gem-slot-prob-weight
-one-gem-slot-prob-weight  
-probability-block-gem-slot-1
-probability-block-gem-slot-2
-probability-block-gem-slot-3
-probability-block-gem-slot-4
-probability-plus-one-gem-slot-1
-probability-plus-one-gem-slot-2
-probability-plus-one-gem-slot-3
-probability-plus-zero-gem-slot-1
-probability-plus-zero-gem-slot-2
-probability-plus-zero-gem-slot-3
-probability-plus-zero-gem-slot-4
--->
-		<!-- ========================================================================================= -->
 		<record alias="fixed-open-gem-slot" name="固定开启宝石孔数量" filter="weapon" type="Byte" />
 		<record alias="max-gem-slot-count" name="最大宝石孔数量" filter="weapon" type="Byte" />
+		<!-- ========================================================================================= -->
 		<record alias="enchant-gem-slot-usable-1" name="" filter="weapon" type="Bool" />
 		<record alias="enchant-gem-slot-usable-2" name="" filter="weapon" type="Bool" />
 		<record alias="repairable" name="可修理" filter="weapon" type="Bool" default="y" apply="Must" />
@@ -1083,7 +1089,6 @@ probability-plus-zero-gem-slot-4
 		<record alias="unseal-consume-item2-stack-count" name="" filter="weapon" type="Short" repeat="4" />
 		<record alias="unk-weapon" name="" filter="weapon" type="Int32" />
 		<!-- ========================================================================================= -->
-
 
 		<!-- ================================== [1] Costume 专用部分 ================================== -->
 		<record alias="guild-used" name="门派专用" filter="costume" type="Bool" />
@@ -1126,7 +1131,6 @@ probability-plus-zero-gem-slot-4
 			<case alias="glyph" name="" />
 			<case alias="soul-boost" name="" />
 		</record>
-
 		<record alias="stack-count" name="堆叠数量" filter="grocery" type="Short" default="1" />
 		<record alias="store-bundle-count" name="商店批量" filter="grocery" type="Short" default="1" server="n" />
 		<record alias="skill3" name="" filter="grocery" ref="Skill3" type="Int32" />
@@ -1174,31 +1178,12 @@ probability-plus-zero-gem-slot-4
 		<record alias="expand-weapon-gem-slot-level-1" name="" filter="grocery" type="Byte" default="3" />
 		<record alias="expand-weapon-gem-slot-level-2" name="" filter="grocery" type="Byte" default="3" />
 		<record alias="unseal-acquire-item" name="" filter="grocery" ref="Item" repeat="20" />
-		<record alias="unseal-consume-item2" name="" filter="grocery" ref="this" repeat="4" />
-		<record alias="unseal-consume-item2-stack-count" name="" filter="grocery" type="Short" repeat="4" />
 		<!-- ========================================================================================= -->
 		<!-- 服务端用：解印获得物品权重 -->
-		<record alias="unseal-acquire-item-prob-weight-1" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-1" />
-		<record alias="unseal-acquire-item-prob-weight-2" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-2" />
-		<record alias="unseal-acquire-item-prob-weight-3" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-3" />
-		<record alias="unseal-acquire-item-prob-weight-4" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-4" />
-		<record alias="unseal-acquire-item-prob-weight-5" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-5" />
-		<record alias="unseal-acquire-item-prob-weight-6" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-6" />
-		<record alias="unseal-acquire-item-prob-weight-7" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-7" />
-		<record alias="unseal-acquire-item-prob-weight-8" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-8" />
-		<record alias="unseal-acquire-item-prob-weight-9" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-9" />
-		<record alias="unseal-acquire-item-prob-weight-10" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-10" />
-		<record alias="unseal-acquire-item-prob-weight-11" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-11" />
-		<record alias="unseal-acquire-item-prob-weight-12" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-12" />
-		<record alias="unseal-acquire-item-prob-weight-13" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-13" />
-		<record alias="unseal-acquire-item-prob-weight-14" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-14" />
-		<record alias="unseal-acquire-item-prob-weight-15" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-15" />
-		<record alias="unseal-acquire-item-prob-weight-16" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-16" />
-		<record alias="unseal-acquire-item-prob-weight-17" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-17" />
-		<record alias="unseal-acquire-item-prob-weight-18" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-18" />
-		<record alias="unseal-acquire-item-prob-weight-19" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-19" />
-		<record alias="unseal-acquire-item-prob-weight-20" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-20" />
+		<record alias="unseal-acquire-item-prob-weight" name="" filter="grocery" type="Int32" client="n" apply="must" default="1" valid-cond="Exist: unseal-acquire-item-" repeat="20" />
 		<!-- ========================================================================================= -->
+		<record alias="unseal-consume-item2" name="" filter="grocery" ref="this" repeat="4" />
+		<record alias="unseal-consume-item2-stack-count" name="" filter="grocery" type="Short" repeat="4" />
 		<record alias="unseal-result-preview-item" name="" filter="grocery" ref="Item" server="n" />
 		<record alias="transform-add-probability" name="" filter="grocery" type="Short" />
 		<record alias="transform-change-group" name="" filter="grocery" type="Bool" />
@@ -1320,7 +1305,6 @@ probability-plus-zero-gem-slot-4
 			<case alias="first" name="" />
 			<case alias="second" name="" />
 		</record>
-
 		<record alias="reveal-consumable-item" name="" filter="gem" ref="this" repeat="4" />
 		<record alias="reveal-consumable-item-count" name="" filter="gem" out-cond="Exist: reveal-consumable-item-" type="Byte" repeat="4" />
 		<record alias="equip-gem-piece" name="" filter="gem" type="Long" repeat="4" />

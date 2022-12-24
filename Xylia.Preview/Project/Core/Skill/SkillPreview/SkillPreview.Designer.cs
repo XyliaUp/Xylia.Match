@@ -37,10 +37,17 @@
 			this.CONDITION_Panel = new Xylia.Preview.Project.Core.Skill.SkillTooltipPanel();
 			this.DamageRateStandardStats = new System.Windows.Forms.Label();
 			this.DamageRatePvp = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.label1 = new System.Windows.Forms.Label();
+			this.SkillGatherType = new System.Windows.Forms.PictureBox();
+			this.Reuse = new System.Windows.Forms.Label();
+			this.Scale = new System.Windows.Forms.Label();
+			this.UI_Tooltip_Reuse = new System.Windows.Forms.Label();
+			this.UI_Tooltip_Casting = new System.Windows.Forms.Label();
+			this.UI_Tooltip_Scale = new System.Windows.Forms.Label();
+			this.UI_Tooltip_Distance = new System.Windows.Forms.Label();
+			this.Distance = new System.Windows.Forms.Label();
+			this.Casting = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.SkillIcon)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.SkillGatherType)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// SkillName
@@ -89,12 +96,12 @@
 			this.SUB_Panel.Location = new System.Drawing.Point(6, 137);
 			this.SUB_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.SUB_Panel.Name = "SUB_Panel";
-			this.SUB_Panel.Size = new System.Drawing.Size(419, 168);
+			this.SUB_Panel.Size = new System.Drawing.Size(419, 115);
 			this.SUB_Panel.TabIndex = 28;
 			// 
 			// CONDITION_Panel
 			// 
-			this.CONDITION_Panel.Location = new System.Drawing.Point(6, 380);
+			this.CONDITION_Panel.Location = new System.Drawing.Point(6, 437);
 			this.CONDITION_Panel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.CONDITION_Panel.Name = "CONDITION_Panel";
 			this.CONDITION_Panel.Size = new System.Drawing.Size(419, 84);
@@ -104,7 +111,7 @@
 			// 
 			this.DamageRateStandardStats.AutoSize = true;
 			this.DamageRateStandardStats.ForeColor = System.Drawing.Color.White;
-			this.DamageRateStandardStats.Location = new System.Drawing.Point(99, 351);
+			this.DamageRateStandardStats.Location = new System.Drawing.Point(99, 281);
 			this.DamageRateStandardStats.Name = "DamageRateStandardStats";
 			this.DamageRateStandardStats.Size = new System.Drawing.Size(39, 17);
 			this.DamageRateStandardStats.TabIndex = 29;
@@ -114,34 +121,103 @@
 			// 
 			this.DamageRatePvp.AutoSize = true;
 			this.DamageRatePvp.ForeColor = System.Drawing.Color.White;
-			this.DamageRatePvp.Location = new System.Drawing.Point(299, 351);
+			this.DamageRatePvp.Location = new System.Drawing.Point(316, 281);
 			this.DamageRatePvp.Name = "DamageRatePvp";
 			this.DamageRatePvp.Size = new System.Drawing.Size(39, 17);
 			this.DamageRatePvp.TabIndex = 30;
 			this.DamageRatePvp.Text = "1.000";
 			// 
-			// pictureBox1
+			// SkillGatherType
 			// 
-			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(99, 478);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(50, 29);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-			this.pictureBox1.TabIndex = 31;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.Visible = false;
+			this.SkillGatherType.BackColor = System.Drawing.Color.Transparent;
+			this.SkillGatherType.Image = ((System.Drawing.Image)(resources.GetObject("SkillGatherType.Image")));
+			this.SkillGatherType.Location = new System.Drawing.Point(121, 368);
+			this.SkillGatherType.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+			this.SkillGatherType.Name = "SkillGatherType";
+			this.SkillGatherType.Size = new System.Drawing.Size(50, 50);
+			this.SkillGatherType.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.SkillGatherType.TabIndex = 31;
+			this.SkillGatherType.TabStop = false;
 			// 
-			// label1
+			// Reuse
 			// 
-			this.label1.AutoSize = true;
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(299, 490);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(27, 17);
-			this.label1.TabIndex = 32;
-			this.label1.Text = "0秒";
+			this.Reuse.AutoSize = true;
+			this.Reuse.ForeColor = System.Drawing.Color.White;
+			this.Reuse.Location = new System.Drawing.Point(368, 386);
+			this.Reuse.Name = "Reuse";
+			this.Reuse.Size = new System.Drawing.Size(27, 17);
+			this.Reuse.TabIndex = 32;
+			this.Reuse.Text = "0秒";
+			// 
+			// Scale
+			// 
+			this.Scale.AutoSize = true;
+			this.Scale.ForeColor = System.Drawing.Color.White;
+			this.Scale.Location = new System.Drawing.Point(130, 386);
+			this.Scale.Name = "Scale";
+			this.Scale.Size = new System.Drawing.Size(32, 17);
+			this.Scale.TabIndex = 33;
+			this.Scale.Text = "测试";
+			// 
+			// UI_Tooltip_Reuse
+			// 
+			this.UI_Tooltip_Reuse.AutoSize = true;
+			this.UI_Tooltip_Reuse.ForeColor = System.Drawing.Color.White;
+			this.UI_Tooltip_Reuse.Location = new System.Drawing.Point(365, 342);
+			this.UI_Tooltip_Reuse.Name = "UI_Tooltip_Reuse";
+			this.UI_Tooltip_Reuse.Size = new System.Drawing.Size(32, 17);
+			this.UI_Tooltip_Reuse.TabIndex = 34;
+			this.UI_Tooltip_Reuse.Text = "冷却";
+			// 
+			// UI_Tooltip_Casting
+			// 
+			this.UI_Tooltip_Casting.AutoSize = true;
+			this.UI_Tooltip_Casting.ForeColor = System.Drawing.Color.White;
+			this.UI_Tooltip_Casting.Location = new System.Drawing.Point(260, 342);
+			this.UI_Tooltip_Casting.Name = "UI_Tooltip_Casting";
+			this.UI_Tooltip_Casting.Size = new System.Drawing.Size(32, 17);
+			this.UI_Tooltip_Casting.TabIndex = 35;
+			this.UI_Tooltip_Casting.Text = "施展";
+			// 
+			// UI_Tooltip_Scale
+			// 
+			this.UI_Tooltip_Scale.AutoSize = true;
+			this.UI_Tooltip_Scale.ForeColor = System.Drawing.Color.White;
+			this.UI_Tooltip_Scale.Location = new System.Drawing.Point(129, 342);
+			this.UI_Tooltip_Scale.Name = "UI_Tooltip_Scale";
+			this.UI_Tooltip_Scale.Size = new System.Drawing.Size(32, 17);
+			this.UI_Tooltip_Scale.TabIndex = 36;
+			this.UI_Tooltip_Scale.Text = "范围";
+			// 
+			// UI_Tooltip_Distance
+			// 
+			this.UI_Tooltip_Distance.AutoSize = true;
+			this.UI_Tooltip_Distance.ForeColor = System.Drawing.Color.White;
+			this.UI_Tooltip_Distance.Location = new System.Drawing.Point(26, 342);
+			this.UI_Tooltip_Distance.Name = "UI_Tooltip_Distance";
+			this.UI_Tooltip_Distance.Size = new System.Drawing.Size(32, 17);
+			this.UI_Tooltip_Distance.TabIndex = 37;
+			this.UI_Tooltip_Distance.Text = "距离";
+			// 
+			// Distance
+			// 
+			this.Distance.AutoSize = true;
+			this.Distance.ForeColor = System.Drawing.Color.White;
+			this.Distance.Location = new System.Drawing.Point(26, 386);
+			this.Distance.Name = "Distance";
+			this.Distance.Size = new System.Drawing.Size(32, 17);
+			this.Distance.TabIndex = 38;
+			this.Distance.Text = "测试";
+			// 
+			// Casting
+			// 
+			this.Casting.AutoSize = true;
+			this.Casting.ForeColor = System.Drawing.Color.White;
+			this.Casting.Location = new System.Drawing.Point(261, 386);
+			this.Casting.Name = "Casting";
+			this.Casting.Size = new System.Drawing.Size(27, 17);
+			this.Casting.TabIndex = 39;
+			this.Casting.Text = "0秒";
 			// 
 			// SkillPreview
 			// 
@@ -150,8 +226,15 @@
 			this.AutoSize = true;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.Casting);
+			this.Controls.Add(this.Distance);
+			this.Controls.Add(this.UI_Tooltip_Distance);
+			this.Controls.Add(this.UI_Tooltip_Scale);
+			this.Controls.Add(this.UI_Tooltip_Casting);
+			this.Controls.Add(this.UI_Tooltip_Reuse);
+			this.Controls.Add(this.Scale);
+			this.Controls.Add(this.Reuse);
+			this.Controls.Add(this.SkillGatherType);
 			this.Controls.Add(this.CONDITION_Panel);
 			this.Controls.Add(this.DamageRatePvp);
 			this.Controls.Add(this.DamageRateStandardStats);
@@ -163,9 +246,9 @@
 			this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.Name = "SkillPreview";
-			this.Size = new System.Drawing.Size(428, 510);
+			this.Size = new System.Drawing.Size(428, 523);
 			((System.ComponentModel.ISupportInitialize)(this.SkillIcon)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.SkillGatherType)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -181,7 +264,14 @@
 
 		private System.Windows.Forms.Label DamageRateStandardStats;
 		private System.Windows.Forms.Label DamageRatePvp;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.PictureBox SkillGatherType;
+		private System.Windows.Forms.Label Reuse;
+		private System.Windows.Forms.Label Scale;
+		private System.Windows.Forms.Label UI_Tooltip_Reuse;
+		private System.Windows.Forms.Label UI_Tooltip_Casting;
+		private System.Windows.Forms.Label UI_Tooltip_Scale;
+		private System.Windows.Forms.Label UI_Tooltip_Distance;
+		private System.Windows.Forms.Label Distance;
+		private System.Windows.Forms.Label Casting;
 	}
 }

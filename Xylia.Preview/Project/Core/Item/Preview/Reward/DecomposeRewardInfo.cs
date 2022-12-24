@@ -14,12 +14,10 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 	public class DecomposeRewardInfo
 	{
 		#region 构造
-		public RewardData DecomposeReward;
+		public readonly RewardData DecomposeReward;
 
 		public DecomposeRewardInfo(RewardData Reward) => this.DecomposeReward = Reward;
 		#endregion
-
-
 
 
 		#region 控件方法

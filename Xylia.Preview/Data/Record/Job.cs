@@ -46,7 +46,7 @@ namespace Xylia.Preview.Data.Record
 
 
 
-	   public KeyCommand CurrentActionKey => FileCache.Data.KeyCommand.Find(o => o.keyCommand == KeyCommandSeq.Action3);
+	   public KeyCommand CurrentActionKey => KeyCommandSeq.Action3.GetKeyCommand();
 		#endregion
 	}
 }

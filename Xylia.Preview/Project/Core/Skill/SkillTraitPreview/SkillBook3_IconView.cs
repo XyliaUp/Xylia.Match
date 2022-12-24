@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Linq;
-using Xylia.Extension;
+using System.Windows.Forms;
+
 using Xylia.bns.Modules.GameData.Enums;
+using Xylia.Extension;
 using Xylia.Preview.Data.Record;
+using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 
 namespace Xylia.Preview.Project.Core.Skill
@@ -37,9 +39,9 @@ namespace Xylia.Preview.Project.Core.Skill
 			foreach(var pair in skills.OrderBy(o => o.Key))
 			{
 				#region	加载标题
-				Label Title = new()
+				ContentPanel Title = new()
 				{
-					Text = pair.Key.GetDescription(),
+					Text = pair.Key.GetKeyCommand().GetImage() ?? "无",
 
 					AutoSize = true,
 					ForeColor = Color.White,

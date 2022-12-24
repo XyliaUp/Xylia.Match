@@ -67,7 +67,7 @@ namespace Xylia.Match.Util.Paks.Textures
 
 				//获取 GroceryType
 				byte GroceryType = 0;
-				if (field.FType.Value == 2) GroceryType = Data[LocDefine.GroceryType];
+				if (field.FType == 2) GroceryType = Data[LocDefine.GroceryType];
 				#endregion
 
 				this.QuoteInfos.Add(new ItemQuoteInfo()

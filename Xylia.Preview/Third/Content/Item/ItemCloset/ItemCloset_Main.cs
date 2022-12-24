@@ -9,11 +9,8 @@ namespace Xylia.Preview.Third.Content
 {
 	public class ItemCloset_Main : OutBase
 	{
-		#region 字段
 		public override string SheetName => "Item_closet";
-		#endregion
 
-		#region 方法
 		public override void CreateData()
 		{
 			#region 配置标题
@@ -40,44 +37,40 @@ namespace Xylia.Preview.Third.Content
 
 			#region 配置内容
 			int RowIdx = 1;
-
-			//FileCacheData.Data.Item.Sort(new MySort());
-			FileCache.Data.Item.ForEach(Info =>
+			FileCache.Data.Item.ForEach(ItemInfo =>
 			{
 				#region 初始化
 				//指示是否需要输出
 				bool Flag = false;
 
 				//对于服装类型，不需要额外判断
-				if (Info.Type == ItemType.Costume) Flag = true;
+				if (ItemInfo.Type == ItemType.Costume) Flag = true;
 				//对于武器类型，需要判断是否存在衣柜关联
-				else if (Info.Type == ItemType.Weapon && Info.ClosetGroupId != 0) Flag = true;
+				else if (ItemInfo.Type == ItemType.Weapon && ItemInfo.ClosetGroupId != 0) Flag = true;
 				//对于饰品，需要判断其饰品类型
-				else if (Info.Type == ItemType.Accessory &&
-					(Info.AccessoryType == AccessoryTypeSeq.CostumeAttach || Info.AccessoryType == AccessoryTypeSeq.Vehicle)) Flag = true;
+				else if (ItemInfo.Type == ItemType.Accessory &&
+					(ItemInfo.AccessoryType == AccessoryTypeSeq.CostumeAttach || ItemInfo.AccessoryType == AccessoryTypeSeq.Vehicle)) Flag = true;
 
 
 				if (!Flag) return;
-				else if (Info.UsableDuration != 0) return;  //过滤所有期限型物品
+				else if (ItemInfo.UsableDuration != 0) return;  //过滤所有期限型物品
 				#endregion
+							   
 
 				var CurRow = this.ExcelInfo.CreateRow(RowIdx++);
 
-				CurRow.AddCell(Info.ID);
-				CurRow.AddCell(Info.Alias);
-				CurRow.AddCell(Info.NameText());
-				CurRow.AddCell(Info.EquipType.GetDescription());
-				CurRow.AddCell(Info.EquipSex.GetDescription(true));
-				CurRow.AddCell(Info.EquipRace.GetDescription(true));
-				CurRow.AddCell(Info.ClosetGroupId);
+				CurRow.AddCell(ItemInfo.ID);
+				CurRow.AddCell(ItemInfo.Alias);
+				CurRow.AddCell(ItemInfo.NameText());
+				CurRow.AddCell(ItemInfo.EquipType.GetDescription());
+				CurRow.AddCell(ItemInfo.EquipSex.GetDescription(true));
+				CurRow.AddCell(ItemInfo.EquipRace.GetDescription(true));
+				CurRow.AddCell(ItemInfo.ClosetGroupId);
 
-				if (Info.ClosetGroupId != 0)
-				{
-					CurRow.AddCell(FileCache.Data.ClosetGroup[Info.ClosetGroupId]?.Category.GetDescription());
-				}
+				if (ItemInfo.ClosetGroupId != 0)
+					CurRow.AddCell($"Name.closet-group.category.{ FileCache.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.Category.GetSignal() }".GetText());
 			});
 			#endregion
 		}
-		#endregion
 	}
 }

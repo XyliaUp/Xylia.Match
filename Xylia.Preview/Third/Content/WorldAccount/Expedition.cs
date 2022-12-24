@@ -1,8 +1,6 @@
 ﻿using Xylia.Extension;
 using Xylia.Files;
 using Xylia.Files.Excel;
-using Xylia.Preview.Common.Interface;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Common.Enums;
 
@@ -10,12 +8,8 @@ namespace Xylia.Preview.Third.Content
 {
 	public class Expedition : OutBase
 	{
-		#region 字段
-		public override string SheetName => "Expedition";
-		#endregion
+		public override string SheetName => "探险日志";
 
-
-		#region 方法
 		public override void CreateData()
 		{
 			#region 配置标题
@@ -86,6 +80,5 @@ namespace Xylia.Preview.Third.Content
 			}
 			#endregion
 		}
-		#endregion
 	}
 }

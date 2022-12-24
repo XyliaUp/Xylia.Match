@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="CombatData" rule="extra" type="SkillGatherRange3" version="0.15">
+	<list module="CombatData" rule="extra" type="SkillGatherRange3" version="0.16">
 		<record alias="alias" type="Index" name="" />
 		<record alias="dir" type="dictionary" name="" >
 			<case alias="360" name="" default="y" />
@@ -17,7 +17,6 @@
 
 		<record alias="cast-dir-caster" type="Seq" name="" seq="$dir" />
 		<record alias="cast-dir-target" type="Seq" name="" seq="$dir" />
-
 		<record alias="range-cast-min" name="" type="distance" />
 		<record alias="range-cast-max" name="" type="distance" default="5000" />
 		<record alias="range-cast-height" name="" type="distance" default="5000" />
@@ -50,7 +49,6 @@
 			<case alias="caster-to-target" name="" />
 		</record>
 		<record alias="summon-base-dir-relative-angle" name="" type="Short" />
-
 		<!-- ============================================================================= -->
 		<record alias="gather-depth" name="" type="distance" client="n" repeat="5" />
 		<record alias="gather-height" name="" type="distance" client="n" repeat="5" />
@@ -64,5 +62,6 @@
 		<record alias="range-fire-laser-width" name="" type="distance" client="n" repeat="5" />
 		<record alias="range-fire-max" name="" type="distance" client="n" repeat="5" />
 		<record alias="range-fire-min" name="" type="distance" client="n" repeat="5" />
+		<!-- ============================================================================= -->
 	</list>
 </table>

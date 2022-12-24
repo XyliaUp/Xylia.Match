@@ -61,7 +61,6 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 			#endregion
 
 
-
 			#region 处理职业专用组
 			var RewardGroup_Job = DecomposeInfo.DecomposeJobRewards;
 			if (RewardGroup_Job != null && RewardGroup_Job.Any())
@@ -77,9 +76,7 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 				{
 					//创建一个临时组，以实现合并显示
 					DecomposeJobRewardInfo tempReward = new(ItemDecomposeJobReward.None, null);
-
-					tempReward._preview = new();
-					foreach (var group in RewardGroup_Job) tempReward._preview.AddRange(group.Preview);
+					tempReward._preview = RewardGroup_Job.SelectMany(group => group.Preview).ToList();
 
 					result.Add(new RewardPage(tempReward, DecomposeInfo.Job_Decompose_By_Item2_1));
 				}

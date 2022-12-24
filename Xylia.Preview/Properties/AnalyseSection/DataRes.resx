@@ -511,8 +511,8 @@
   <data name="ItemCombatData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemcombatdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ItemData_v39" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\itemdata_v39.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ItemData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\itemdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="ItemEventData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\itemeventdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -811,17 +811,23 @@
   <data name="Skill3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\skill3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Skill3Data_Simple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>data\skill3data_simple.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  <data name="SkillBuildUpData" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillbuildupdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SkillByEquipmentData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\skillbyequipmentdata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SkillCastCondition3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillcastcondition3.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SkillCombo2Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\skillcombo2data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
   </data>
   <data name="SkillDashAttribute3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\skilldashattribute3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="SkillGatherRange3Data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>data\skillgatherrange3data.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SkillInheritanceData" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>data\skillinheritancedata.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>

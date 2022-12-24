@@ -11,6 +11,6 @@ namespace Xylia.Preview.Data
 	{
 		public override bool PublicSet => false;
 
-		protected override string ConfigContent => DataRes.ItemData_v39;
+		protected override string ConfigContent => DataRes.ItemData;
 	}
 }

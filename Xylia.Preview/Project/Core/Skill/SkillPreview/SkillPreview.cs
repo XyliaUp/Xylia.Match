@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
+using Xylia.Preview.Common.Enums;
+using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Controls;
 
@@ -13,15 +14,21 @@ namespace Xylia.Preview.Project.Core.Skill
 	public partial class SkillPreview : UserControl
 	{
 		#region 构造
-		public SkillPreview() => InitializeComponent();
+		public SkillPreview()
+		{
+			InitializeComponent();
+
+			this.UI_Tooltip_Scale.Text = "UI.Tooltip.Scale".GetText();
+			this.UI_Tooltip_Casting.Text = "UI.Tooltip.Casting".GetText();
+			this.UI_Tooltip_Reuse.Text = "UI.Tooltip.Reuse".GetText();
+		}
 		#endregion
 
 
 		#region 方法
-		public void LoadData(string SkillAlias) => LoadData(FileCache.Data.Skill3[SkillAlias]);
-
 		public void LoadData(Skill3 Skill)
 		{
+			#region 初始化
 			this.M1_Panel.Tooltips.Clear();
 			this.M2_Panel.Tooltips.Clear();
 			this.SUB_Panel.Tooltips.Clear();
@@ -32,32 +39,77 @@ namespace Xylia.Preview.Project.Core.Skill
 				this.SkillName.Text = "无效技能";
 				this.SkillIcon.Image = null;
 
-				this.Refresh();
 				return;
 			}
+			#endregion
 
 
-			//System.Diagnostics.Debug.WriteLine(FileCacheData.Data.SkillCastCondition3[Skill.CastCondition]?.Property.OuterText);
-
-			//var GatherRange = FileCacheData.Data.SkillGatherRange3[Skill.GatherRange];
-			//System.Diagnostics.Debug.WriteLine(Skill.Property.OuterText);
-			//System.Diagnostics.Debug.WriteLine("冷却时间: " + Skill.RecycleGroupDuration);
-			//System.Diagnostics.Debug.WriteLine($"GatherRange: {GatherRange?.Distance} {GatherRange?.Radius}" + GatherRange?.Property.OuterText);
+			#region 获取基本信息
+			System.Diagnostics.Debug.WriteLine(Skill.Attributes);
 
 			this.SkillName.Text = Skill.NameText();   //获取技能名称
 			this.SkillIcon.Image = Skill.MainIcon();  //获取图标信息
 
-
 			this.DamageRateStandardStats.Text = ((float)Skill.DamageRateStandardStats / 1000).ToString("F3");
 			this.DamageRatePvp.Text = ((float)Skill.DamageRatePvp / 1000).ToString("F3");
 
+			this.Casting.Text = Skill.CastDuration.GetDuration();
+			this.Reuse.Text = Skill.RecycleGroupDuration.GetDuration();
+			#endregion
 
-			this.label1.Text = GetDuration(Skill.RecycleGroupDuration);
 
 
 
-			//读取提示信息
-			foreach (var Tooltip in FileCache.Data.SkillTooltip.Where(tooltip => tooltip.Skill == Skill.Alias))
+			var GatherRange = FileCache.Data.SkillGatherRange3[Skill.GatherRange];
+			if (GatherRange != null)
+			{
+				System.Diagnostics.Debug.WriteLine($"GatherRange: 距离 {GatherRange.CastMax}  范围 {GatherRange.RadiusMax}\n" + GatherRange.Attributes);
+
+				Distance.Text = GatherRange.CastMax / 100 + "米";
+			}
+			
+			//Distance.Text = "Name.Skill.CastingRange.Default".GetText();
+			//"Name.Skill.CastingRange".GetText();
+			//"Name.Skill.CastingRange.MinMax".GetText();
+			//"Name.Skill.ScaleRange".GetText();
+			//"Name.Skill.ScaleRange.WidthHeight".GetText();
+			//"Name.Skill.ScaleRange.Default".GetText();
+
+
+			System.Diagnostics.Debug.WriteLine($"FlowType: " + Skill.FlowType);
+			System.Diagnostics.Debug.WriteLine($"FlowRepeat: " + Skill.FlowRepeat);
+			System.Diagnostics.Debug.WriteLine($"ExecGatherType1: " + Skill.ExecGatherType1);
+			System.Diagnostics.Debug.WriteLine($"ExecGatherType2: " + Skill.ExecGatherType2);
+			System.Diagnostics.Debug.WriteLine($"ExecGatherType3: " + Skill.ExecGatherType3);
+			System.Diagnostics.Debug.WriteLine($"ExecGatherType4: " + Skill.ExecGatherType4);
+			System.Diagnostics.Debug.WriteLine($"ExecGatherType5: " + Skill.ExecGatherType5);
+
+
+			#region GatherType
+			GatherType GatherType = Skill.ExecGatherType1;
+			if (GatherType == GatherType.Target && Skill.FlowRepeat >= 2) GatherType = Skill.ExecGatherType2;
+			if (GatherType == GatherType.Target && Skill.FlowRepeat >= 3) GatherType = Skill.ExecGatherType3;
+			if (GatherType == GatherType.Target && Skill.FlowRepeat >= 4) GatherType = Skill.ExecGatherType4;
+			if (GatherType == GatherType.Target && Skill.FlowRepeat >= 5) GatherType = Skill.ExecGatherType5;
+
+
+			if (GatherType == GatherType.Target)
+			{
+				Scale.Text = "Name.Skill.ScaleRange.Default".GetText();
+				this.SkillGatherType.Image = null;
+			}
+			else
+			{
+				Scale.Text = GatherRange.RadiusMax / 100 + "米";
+
+				string res = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_ImageSet/SkillGatherType/" + GatherType.GetSignal().Replace("-", "_");
+				this.SkillGatherType.Image = res.GetUObject().GetImage();
+			}
+			#endregion
+
+
+			#region 获取提示信息
+			foreach (var Tooltip in Skill.GetSkillTooltips())
 			{
 				#region 获取组信息
 				var group = Tooltip.tooltipGroup switch
@@ -101,8 +153,8 @@ namespace Xylia.Preview.Project.Core.Skill
 						Icon = ConditionAttribute.Icon?.GetIcon(),
 					};
 
-					LoadArg(CondContent, ConditionAttribute.ArgType1, Tooltip.ConditionArg1, Tooltip);
-					LoadArg(CondContent, ConditionAttribute.ArgType2, Tooltip.ConditionArg2, Tooltip);
+					CondContent.LoadArg(ConditionAttribute.ArgType1, Tooltip.ConditionArg1, Tooltip);
+					CondContent.LoadArg(ConditionAttribute.ArgType2, Tooltip.ConditionArg2, Tooltip);
 					panels.Add(CondContent);
 				}
 
@@ -153,76 +205,19 @@ namespace Xylia.Preview.Project.Core.Skill
 					};
 
 
-					LoadArg(EffectContent, EffectAttribute.ArgType1, Tooltip.EffectArg1, Tooltip);
-					LoadArg(EffectContent, EffectAttribute.ArgType2, Tooltip.EffectArg2, Tooltip);
-					LoadArg(EffectContent, EffectAttribute.ArgType3, Tooltip.EffectArg3, Tooltip);
-					LoadArg(EffectContent, EffectAttribute.ArgType4, Tooltip.EffectArg4, Tooltip);
+					EffectContent.LoadArg(EffectAttribute.ArgType1, Tooltip.EffectArg1, Tooltip);
+					EffectContent.LoadArg(EffectAttribute.ArgType2, Tooltip.EffectArg2, Tooltip);
+					EffectContent.LoadArg(EffectAttribute.ArgType3, Tooltip.EffectArg3, Tooltip);
+					EffectContent.LoadArg(EffectAttribute.ArgType4, Tooltip.EffectArg4, Tooltip);
 
 					panels.Add(EffectContent);
 				}
 				#endregion
 			}
-
-			this.Refresh();
+			#endregion
 		}
 
-		private static void LoadArg(ContentPanel Panel, SkillTooltipAttribute.ArgType ArgType, string Arg, SkillTooltip Tooltip)
-		{
-			if (ArgType == SkillTooltipAttribute.ArgType.None) return;
 
-			//防止出现空值导致处理崩溃
-			if (!int.TryParse(Arg, out int ValueConvert)) ValueConvert = 0;
-
-			//填充参数
-			Panel.Params.Add(ArgType switch
-			{
-				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(Arg.Split(',')[0].ToInt(), Arg.Split(',')[1].ToInt(), Tooltip.SkillAttackAttributeCoefficientPercent),
-				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg.ToInt(), 0, Tooltip.SkillAttackAttributeCoefficientPercent),
-				SkillTooltipAttribute.ArgType.Time => (float)ValueConvert / 1000 + "秒",
-				SkillTooltipAttribute.ArgType.StackCount => ValueConvert,
-				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.Program.Fontset_ItemGrade_6\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.HealPercent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.DrainPercent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.Program.Fontset_ItemGrade_4\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.ConsumePercent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.ProbabilityPercent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.StanceType => Arg.ToEnum<Stance>().GetDescription(),
-				SkillTooltipAttribute.ArgType.Percent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.Counter => ValueConvert + "次",
-				SkillTooltipAttribute.ArgType.Distance => (float)ValueConvert / 100 + "米",
-				SkillTooltipAttribute.ArgType.KeyCommand => FileCache.Data.Skill3[Arg]?.ShortCutKey.GetDescription(),
-				SkillTooltipAttribute.ArgType.Number => ValueConvert,
-				SkillTooltipAttribute.ArgType.TextAlias => Arg.GetText(),
-
-				_ => null,
-			});
-		}
-
-		public static string GetDuration(int Duration) => Duration == 0 ? "即时" : TimeSpan.FromMilliseconds(Duration).ToMyString();
-
-
-
-		public static int AttackPower = 6464;
-
-		public static double AttackAttributePercent = 3.8837;
-
-		public static string GetDamageInfo(int Value) => GetDamageInfo(Value, Value, 100);
-
-		public static string GetDamageInfo(int MinValue, int MaxValue, int AttributePercent)
-		{
-			if (false)
-			{
-				string result = MaxValue == 0 ? $"{MinValue}%" : $"{MinValue}~{MaxValue}%";
-				return AttributePercent > 0 ? result + " [功力]" : result;
-			}
-			else
-			{
-				var temp = AttackPower * 0.01;
-				if (AttributePercent > 0) temp = temp * (AttributePercent * 0.01) * (AttackAttributePercent * 0.97);
-
-				return $"{ MinValue * temp * 0.985 :N0}~{ MaxValue * temp * 1.015 :N0}";
-			}
-		}
 
 
 		public override void Refresh()

@@ -59,6 +59,9 @@
     <Compile Update="Project\Core\Quest\Preview\Task\Mission\CaseInfoPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Project\Core\Skill\SkillPreview\SkillPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Project\Core\Store\Base\Scene\Searcher.cs">
       <SubType>Form</SubType>
     </Compile>

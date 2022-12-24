@@ -113,15 +113,15 @@ namespace Xylia.Preview.Data.Package.Pak
 				else if (filePath.StartsWith("00052219")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Icon3rd/" + filePath[9..];
 				else if (filePath.StartsWith("00078990")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Icon4th/" + filePath[9..];
 
-				else if (filePath.StartsWith("00033689")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_KeyKap/" + filePath[9..];
 				else if (filePath.StartsWith("00008130")) Ue4Path = "BNSR/Content/Art/UI/GameUI_BNSR/Resource/GameUI_FontSet_R/" + filePath[9..];
 				else if (filePath.StartsWith("00009076")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Window/" + filePath[9..];
 				else if (filePath.StartsWith("00009499")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Map_Indicator/" + filePath[9..];
+				else if (filePath.StartsWith("00010047")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_ImageSet/" + filePath[9..];
 				else if (filePath.StartsWith("00015590")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Tag/" + filePath[9..];
 				else if (filePath.StartsWith("00027918")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_Portrait/" + filePath[9..];
+				else if (filePath.StartsWith("00033689")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_KeyKap/" + filePath[9..];
 				else if (filePath.StartsWith("00043230")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_SkillBookImage/" + filePath[9..];
 				else if (filePath.StartsWith("00064443")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_FishIcon/" + filePath[9..];
-
 				else if (filePath.StartsWith("00079972")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard2D/" + filePath[9..];
 				else if (filePath.StartsWith("00079973")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard3D/" + filePath[9..];
 				else if (filePath.StartsWith("00080271")) Ue4Path = "BNSR/Content/Art/UI/GameUI/Resource/GameUI_CollectionCard3D2nd/" + filePath[9..];
@@ -151,11 +151,12 @@ namespace Xylia.Preview.Data.Package.Pak
 			var exports = GetAssetExports(AssetPath);
 			if (exports != null && exports.Any())
 			{
-				//获取资产文件内 uobject 对象
-				if (OldPath) return exports.First();
+				//获取资产文件内 UObject
+				if (OldPath || !Ue4Path.Contains('.')) return exports.First();
 
 				//判断ExpertMap
-				return exports.FirstOrDefault(o => o.Name.Equals(Ue4Path.Split('.')[1], StringComparison.OrdinalIgnoreCase));
+				string ObjectName = Ue4Path.Split('.')[1];
+				return exports.FirstOrDefault(o => o.Name.Equals(ObjectName, StringComparison.OrdinalIgnoreCase));
 			}
 
 			return null;

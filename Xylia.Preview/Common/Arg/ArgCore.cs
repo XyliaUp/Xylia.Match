@@ -175,7 +175,7 @@ namespace Xylia.Preview.Public.Attribute.arg
 			//处理枚举信息
 			else if (param is Enum @enum)
 			{
-				if (param is KeyCommandSeq KeyCommond) return FileCache.Data.KeyCommand.Find(o => o.keyCommand == KeyCommond)?.GetInfo(ParentTarget, target);
+				if (param is KeyCommandSeq KeyCommond) return KeyCommond.GetKeyCommand()?.GetInfo(ParentTarget, target);
 				else if (param is KeyCode keyCode) return FileCache.Data.KeyCap.Find(o => o.KeyCode == keyCode)?.GetInfo(ParentTarget, target);
 
 				return $"[{ @enum.GetDescription() }]";    //实际处理比这个复杂的多

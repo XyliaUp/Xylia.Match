@@ -27,6 +27,7 @@ using Xylia.Preview.Project.Core.Store.Store2;
 using Xylia.Preview.Properties;
 using Xylia.Preview.Properties.AnalyseSection;
 using Xylia.Preview.Third.Content;
+using Output = Xylia.Preview.Third.Content;
 
 using static Xylia.Tip;
 
@@ -376,7 +377,7 @@ namespace Xylia.Match.Windows.Panel
 			{
 				Chv_Path.Text = Path.GetFullPath(Open.FileName);
 				Ini.WriteValue("Match", "Chv_Path", Chv_Path.Text);
-			}	
+			}
 		}
 
 
@@ -418,7 +419,7 @@ namespace Xylia.Match.Windows.Panel
 			}
 			#endregion
 
-			
+
 			this.StartTime = DateTime.Now;
 			this.Timer.Start();
 
@@ -463,26 +464,8 @@ namespace Xylia.Match.Windows.Panel
 			thread.Start();
 		}
 
-		private void Timer_Tick(object sender, EventArgs e)
-		{
-			int Second = (int)DateTime.Now.Subtract(StartTime).TotalSeconds;
-			if (Second >= 180)
-			{
-				TimeInfo.ForeColor = Color.OrangeRed;
-				TimeInfo.Text = "已持续 " + Second + " 秒（已超过3分钟，如仍无响应，可能出现异常）";
-			}
-			else
-			{
-				TimeInfo.ForeColor = Color.Black;
-				TimeInfo.Text = "已持续 " + Second + " 秒";
-			}
-		}
 
-
-		private void Chk_OnlyNew_CheckedChanged(object sender, EventArgs e)
-		{
-			Note_Chv.Visible = Chv_Path.Visible = /*Online_Searcher.Visible = */File_Searcher.Visible = Chk_OnlyNew.Checked;
-		}
+		private void Chk_OnlyNew_CheckedChanged(object sender, EventArgs e) => Note_Chv.Visible = Chv_Path.Visible = /*Online_Searcher.Visible = */File_Searcher.Visible = Chk_OnlyNew.Checked;
 
 		private void File_Searcher_MouseEnter(object sender, EventArgs e) => FrmAnchorTips.ShowTips(File_Searcher, "选择本地文件\n\n如无，请选择云端资源。", AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 3500, false);
 
@@ -599,15 +582,16 @@ namespace Xylia.Match.Windows.Panel
 		private void ucBtnExt6_BtnClick(object sender, EventArgs e) => new ItemFrm(null).Show();
 		private void ucBtnExt8_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Xylia.Preview.Project.Core.Store.RandomStore.RandomStoreListScene>();
 		private void ucBtnExt9_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Xylia.Preview.Project.RunForm.ChallengeListFrm>();
-		private void ucBtnExt10_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Expedition>();
 		private void ucBtnExt11_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Store2Scene>();
-		private void ucBtnExt12_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<ItemCloset_Main>();
 		private void ucBtnExt13_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<MapInfoScene>();
-		private void ucBtnExt14_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Preview.Third.Content.ItemBuyPrice>();
-		private void ucBtnExt16_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Preview.Third.Content.ItemTransformRecipe>();
-		private void ucBtnExt17_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Preview.Third.Content.ItemImproveOptionList>();
-		private void ucBtnExt18_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<ItemCloset_Type>();
 		private void ucBtnExt20_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<SkillTraitPreview>();
+
+
+		private void ucBtnExt10_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Output.Expedition>();
+		private void ucBtnExt12_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Output.ItemCloset_Main>();
+		private void ucBtnExt14_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Output.ItemBuyPrice>();
+		private void ucBtnExt16_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Output.ItemTransformRecipe>();
+		private void ucBtnExt18_BtnClick(object sender, EventArgs e) => Execute.ThirdStart<Output.ItemCloset_Type>();
 		#endregion
 	}
 }

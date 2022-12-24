@@ -4,15 +4,15 @@ using System.ComponentModel;
 using NPOI.SS.UserModel;
 
 using Xylia.Extension;
+using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Common.Cast;
 
 namespace Xylia.Preview.Third.Content
 {
 	public class ItemTransformRecipe : OutBase
 	{
-		public override string SheetName => "ItemTransformRecipe";
+		public override string SheetName => "物品成长配方";
 
 		public override void CreateData()
 		{

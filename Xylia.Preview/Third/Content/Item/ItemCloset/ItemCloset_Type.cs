@@ -15,7 +15,6 @@ namespace Xylia.Preview.Third.Content
 	{
 		public override string SheetName => "衣柜";
 
-		#region 方法
 		public override void CreateData()
 		{
 			//移除掉默认的数据表
@@ -59,15 +58,14 @@ namespace Xylia.Preview.Third.Content
 				CurRow.AddCell(ItemInfo.Alias);
 				CurRow.AddCell(ItemInfo.NameText());
 				CurRow.AddCell(ItemInfo.EquipType.GetAttribute<Chinese>()?.Description ?? ItemInfo.EquipType.ToString());
-
 				CurRow.AddCell(ItemInfo.ClosetGroupId);
-				CurRow.AddCell(FileCache.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.Category.GetDescription());
+
+				if (ItemInfo.ClosetGroupId != 0)
+					CurRow.AddCell($"Name.closet-group.category.{ FileCache.Data.ClosetGroup[ItemInfo.ClosetGroupId]?.Category.GetSignal() }".GetText());
 
 				return CurRow;
 			}
 			#endregion
-
-
 
 
 			#region 时装  
@@ -93,9 +91,6 @@ namespace Xylia.Preview.Third.Content
 				CurRow.AddCell(item.CustomDressDesignState, ExcelRow.DisplayType.HideValue);
 			}
 			#endregion
-
-
-
 
 			#region 幻影石 
 			var PetSheet = CreateSheet("幻影石", out _);
@@ -141,6 +136,5 @@ namespace Xylia.Preview.Third.Content
 				CreateRow(item, AppearanceItem);
 			#endregion
 		}
-		#endregion
 	}
 }

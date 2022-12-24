@@ -94,6 +94,13 @@ namespace Xylia.Preview.Data.Record
 		public string UnsealAcquireItem4 => this.Attributes["unseal-acquire-item-4"];
 
 
+
+
+		public int BadgeGearScore => this.Attributes["badge-gear-score"].ConvertToInt();
+		public int BadgeSynthesisScore => this.Attributes["badge-synthesis-score"].ConvertToInt();
+
+
+
 		public SlateScroll SlateScroll => FileCache.Data.SlateScroll[this.Attributes["slate-scroll"]];
 
 		public WorldAccountCard Card => FileCache.Data.WorldAccountCard[this.Attributes["card"]];

@@ -40,13 +40,19 @@
 		<record alias="break-gauge-limit-increase-value" name="" type="Short" />
 		<record alias="max-break-count" name="" type="Byte" default="5" />
 
-		<!-- ========== 服务端专用 ========== -->
+		<!-- ================================================================== -->
 		<record alias="berserk-sequence" name="狂暴化技能序列" ref="CombatSequence" client="n" />
 		<record alias="use-bleeding" name="" type="Bool" client="n" />
 		<record alias="use-hp-zone-broadcast" name="" type="Bool" client="n" />
 		<record alias="disable-contribution-reward-range-check" name="" type="Bool" client="n" />
 
-		<record alias="boss-brain-type" name="" type="Seq" client="n" seq="$brain-type" />
+		<record alias="boss-brain-type" name="" type="Seq" client="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="citizen" name="" />			
+			<case alias="monster" name="" />
+			<case alias="boss" name="" />
+			<case alias="follower" name="" />
+		</record>
 		<record alias="skill-spawn-attack-target" name="" type="Seq" client="n" />
 		<record alias="skill-spawn-group" name="" ref="ZoneNpcSquad" client="n" repeat="8" />
 

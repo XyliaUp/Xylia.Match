@@ -3,13 +3,14 @@
 using NPOI.SS.UserModel;
 
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Controls;
 using Xylia.Preview.Project.Controls.Currency;
 
 namespace Xylia.Preview.Third.Content
 {
 	public sealed class ItemBuyPrice : OutBase
 	{
+		public override string SheetName => "物品购买价格";
+
 		public override void CreateData()
 		{
 			#region 配置列宽
@@ -51,7 +52,6 @@ namespace Xylia.Preview.Third.Content
 			TitleCells[CurCellIdx++].SetCellValue("满足银河遗迹等级");
 			TitleCells[CurCellIdx++].SetCellValue("限购设置");
 			#endregion
-
 
 
 			#region 输出内容

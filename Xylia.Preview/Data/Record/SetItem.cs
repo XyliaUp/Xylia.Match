@@ -1,10 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-using Xylia.bns.Modules.GameData.Enums; 
-using Xylia.Extension;
-using Xylia.Files.XmlEx;
-using Xylia.Preview.Common.Interface;
+﻿using Xylia.Preview.Common.Interface;
 
 
 namespace Xylia.Preview.Data.Record
@@ -14,7 +8,6 @@ namespace Xylia.Preview.Data.Record
 		#region 字段
 		public string Name2;
 		#endregion
-
 
 		#region 接口字段
 		public string NameText() => this.Name2.GetText();

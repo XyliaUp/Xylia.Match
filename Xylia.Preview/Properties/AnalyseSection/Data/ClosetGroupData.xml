@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="closet-group" version="0.14" >
+	<list module="ItemData" type="closet-group" version="0.4" >
 		<record alias="id" type="id" name=""/>
+		
 		<record alias="category" type="Seq" name="" >
 			<case alias="none" name="" default="y" />
 			<case alias="custom" name="" />
@@ -23,11 +24,11 @@
 			<case alias="yongyuenshop" name="" />
 			<case alias="fashionista" name="" />
 			<case alias="unusable" name="" />
- 		</record>
+			<case alias="northland-east" name="" />
+		</record>
 		<record alias="sort-no" type="Short" name="" />
 		<record alias="charge-of-item-for-instant-payment" name="" ref="Item" />
 		<record alias="item-to-be-paid" name="" ref="Item" />
-		<record alias="title-item" name="" ref="Item" repeat="30" server="n" />
 		<record alias="check-equip-characteristics" type="Bool" name="" default="y" />
 	</list>
 </table>

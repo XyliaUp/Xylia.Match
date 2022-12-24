@@ -2,7 +2,6 @@
 
 using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
@@ -47,7 +46,6 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 
-
 		#region 方法
 		/// <summary>
 		/// 获取组合键
@@ -87,5 +85,12 @@ namespace Xylia.Preview.Data.Record
 		public KeyCap Key1 => GetKey(0);
 		public KeyCap Key2 => GetKey(1);
 		#endregion
+	}
+
+	public static partial class Extension
+	{
+		public static KeyCommand GetKeyCommand(this KeyCommandSeq KeyCommand) => FileCache.Data.KeyCommand.Find(o => o.keyCommand == KeyCommand);
+
+		public static string GetImage(this KeyCommand KeyCommand) => KeyCommand.Key1?.Image.GetText();
 	}
 }

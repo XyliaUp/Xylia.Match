@@ -8,7 +8,7 @@ namespace Xylia.Preview.Common.Interface
 	/// <summary>
 	/// 通用化配置文件接口
 	/// </summary>
-	public class IRecord : IArgParam
+	public abstract class IRecord : IArgParam
 	{
 		#region 设定字段
 		public IAttributeCollection Attributes;
@@ -54,7 +54,6 @@ namespace Xylia.Preview.Common.Interface
 		/// </summary>
 		public virtual string Alias => alias ?? this.Attributes?["alias"];
 		#endregion
-
 
 		#region 接口字段
 		public override string ToString() => this.GetType().Name + ":" + (this.Alias ?? this.ID.ToString());

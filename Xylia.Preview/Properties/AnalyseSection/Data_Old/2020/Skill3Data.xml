@@ -18,7 +18,7 @@
 		<record alias="alias" name="" type="Index" />
 		<record alias="skill-modify-limit" name="" ref="SkillModifyLimit" input="n" />
 		<record alias="is-ego-skill" name="" type="Bool" />
-		<record alias="use-ego-skill-training-sequence" name="" type="Bool" default="y" />		
+		<record alias="use-ego-skill-training-sequence" name="" type="Bool" default="y" />
 		<record alias="systematization" name="" ref="SkillSystematization" repeat="16" />
 		<record alias="damage-rate-pvp" name="" type="Short" default="1000" />
 		<record alias="damage-rate-standard-stats" name="" type="Short" default="1000" />
@@ -31,7 +31,7 @@
 		<record alias="name" name="" type="Index" server="n" />
 		<record alias="name2" name="" type="TextAlias" server="n" error-type="Single" />
 		<record alias="ui-stance" name="" type="Seq" seq="$stance_20" server="n" repeat="3" error-type="Jump" />
-		<record alias="short-cut-key" name="" type="Dictionary" >		
+		<record alias="short-cut-key" name="" type="Dictionary" >
 			<case alias="none" name="" default="y" />
 			<case alias="action1" name="" />
 			<case alias="action2" name="" />
@@ -206,7 +206,7 @@
 			<case alias="toggle-auto-mode-option" name="" />
 			<case alias="toggle-auto-mode-enable-item-support" name="" />
 		</record>
-		
+
 		<record alias="short-cut-key" name="" type="Seq16" seq="$short-cut-key" server="n" />
 		<record alias="short-cut-key-classic" name="" type="Seq16" seq="$short-cut-key" server="n" />
 		<record alias="short-cut-key-image-bns-simple-context" name="" type="TextAlias" server="n" />
@@ -241,7 +241,7 @@
 		<record alias="stop-exec-show" name="" type="Bool" server="n" />
 		<record alias="weapon-property" name="" type="Bool" server="n" />
 		<record alias="auto-casting" name="" type="Bool" server="n" />
-		
+
 		<record alias="icon-texture" name="" server="n" ref="IconTexture" />
 		<record alias="icon-index" name="" type="Short" server="n" />
 		<record alias="icon" name="" type="Icon" server="n" />
@@ -297,7 +297,7 @@
 
 
 
-        <!-- ================================================================== -->
+		<!-- ================================================================== -->
 		<record alias="attribute" name="" type="Seq" filter="active-skill" repeat="4" >
 			<case alias="none" name="" default="y" />
 			<case alias="막기" name="" />
@@ -359,15 +359,15 @@
 
 		<record alias="category" name="" type="Byte" filter="active-skill" >
 			<case alias="melee-physical" name="" />
-			<case alias="range-physical" name="" />	
-			<case alias="force" name="" />	
+			<case alias="range-physical" name="" />
+			<case alias="force" name="" />
 		</record>
 
 		<record alias="flowtype" name="" type="Byte" filter="active-skill" >
 			<case alias="keep-mainslot" name="原地" />
 			<case alias="leave-caster" name="" />
 			<case alias="transfer-simslot" name="" />
-			<case alias="directly-simslot" name="" />		
+			<case alias="directly-simslot" name="" />
 		</record>
 
 		<record alias="skill-type" name="" type="Byte" filter="active-skill" >
@@ -386,7 +386,7 @@
 			<case alias="duel-tag" name="" />
 			<case alias="duel-interference" name="" />
 		</record>
-		
+
 		<record alias="campfire" name="" filter="active-skill" ref="Campfire" />
 		<record alias="dash-attribute" name="" filter="active-skill" ref="SkillDashAttribute3" />
 
@@ -411,14 +411,14 @@
 			<case alias="decide-each-finish-execute" name="" />
 			<case alias="decide-each-finish-all-hit" name="" />
 			<case alias="decide-each-finish-last-result" name="" />
-        </record>
+		</record>
 		<record alias="auto-skill-result" name="" type="Byte" filter="active-skill" seq="$skill-result" default="none" />
 
 		<record alias="cancel-by-override-skill" name="" type="Byte" filter="active-skill" >
 			<case alias="none" name="" default="y" />
 			<case alias="override-skill" name="" />
 			<case alias="all-skill" name="" />
-        </record>
+		</record>
 
 		<record alias="combo-duration" name="" filter="active-skill" type="Msec" default="3000" />
 		<record alias="save-combo" name="" type="Bool" filter="active-skill" default="y" />
@@ -430,17 +430,17 @@
 		<record alias="cast-duration" name="" filter="active-skill" type="Msec" />
 		<record alias="cast-effect" name="" filter="active-skill" ref="Effect" repeat="6" input="n" />
 		<record alias="cast-effect-to-my-summoned-summoner" name="" filter="active-skill" ref="Effect" repeat="4" input="n" />
-		<record alias="cast-effect-to-my-summoned-summoner-distance" name="" type="Int32" filter="active-skill" default="625" apply="must" valid-cond="Exist: cast-effect-to-my-summoned-summoner-1" client="n" />	
-		
+		<record alias="cast-effect-to-my-summoned-summoner-distance" name="" type="Int32" filter="active-skill" default="625" apply="must" valid-cond="Exist: cast-effect-to-my-summoned-summoner-1" client="n" />
+
 
 		<record alias="throw-link-target" name="" filter="active-skill" type="Bool" />
 		<record alias="casting-delay" name="" filter="active-skill" type="Bool" default="y" />
 		<record alias="fire-miss" name="" filter="active-skill" type="Bool" />
-		
-		
+
+
 		<record alias="global-recycle-group" name="" filter="active-skill" type="Byte" />
 		<record alias="global-recycle-group-duration" name="" filter="active-skill" type="Int32" />
-		
+
 		<record alias="recycle-group" name="" filter="active-skill" type="Byte" default="none" >
 			<case alias="none" name="" />
 			<case alias="class" name="" />
@@ -466,24 +466,24 @@
 			<case alias="gadget" name="" />
 		</record>
 		<record alias="bound-recycle-group-id" name="" filter="active-skill" type="Byte" />
-		
+
 		<record alias="consume-hp-value" name="" filter="active-skill" type="Short" />
-	    <record alias="consume-hp-type" name="" filter="active-skill" type="Seq" seq="$consume-type" />
-		
+		<record alias="consume-hp-type" name="" filter="active-skill" type="Seq" seq="$consume-type" />
+
 		<record alias="consume-sp-value-1" name="" filter="active-skill" type="Short" />
 		<record alias="consume-sp-value-2" name="" filter="active-skill" type="Short" />
-	    <record alias="consume-sp-type-1" name="" filter="active-skill" type="Seq" seq="$consume-type" />
-	    <record alias="consume-sp-type-2" name="" filter="active-skill" type="Seq" seq="$consume-type" />
-		
-		
+		<record alias="consume-sp-type-1" name="" filter="active-skill" type="Seq" seq="$consume-type" />
+		<record alias="consume-sp-type-2" name="" filter="active-skill" type="Seq" seq="$consume-type" />
+
+
 		<record alias="consume-summoned-hp-value" name="" type="Short" filter="active-skill" />
 		<record alias="consume-summoned-hp-type" name="" type="Byte" filter="active-skill" seq="$consume-type" />
 		<record alias="target-kill-effect" name="" filter="active-skill" ref="Effect" input="n" repeat="4" />
 
 		<record alias="gain-style-score" name="" filter="active-skill" type="Short" />
-		<record alias="max-style-score" name="" filter="active-skill" type="Short" />		
-		<record alias="style-duration" name="" filter="active-skill" type="Int32" />		
-		<record alias="clear-style-score" name="" filter="active-skill" type="Bool" />	
+		<record alias="max-style-score" name="" filter="active-skill" type="Short" />
+		<record alias="style-duration" name="" filter="active-skill" type="Int32" />
+		<record alias="clear-style-score" name="" filter="active-skill" type="Bool" />
 		<record alias="replace-target" name="" filter="active-skill" type="Byte" default="none" >
 			<case alias="none" name="" />
 			<case alias="targets-target" name="" />
@@ -545,33 +545,32 @@
 		<record alias="perfect-dodge-success-effect" name="" filter="active-skill" ref="Effect" />
 
 		<record alias="Exec" type="struct">
-			<case alias="swing-duration-*" type="Msec" />
-			<case alias="fly-speed-*" type="Velocity" />
-			<case alias="exec-duration-*" type="Msec" />
-			<case alias="exec-gather-type-*" type="Seq" seq="$gather-type" />
-			<case alias="exec-negation-dir-gather-*" type="Bool" />
-			<case alias="exec-target-angle-*" type="Short" />
-			<case alias="exec-target-offset-angle-*" type="Short" />
-			<case alias="exec-target-offset-distance-*" type="Distance" />
-			<case alias="exec-effect-*-1" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-2" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-3" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-4" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-5" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-6" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-7" ref="EffectGroup" input="n" />
-			<case alias="exec-effect-*-8" ref="EffectGroup" input="n" />
-			<case alias="return-speed-*" type="Velocity" />
-			<case alias="return-duration-*" type="Msec" />
+			<case alias="swing-duration-$" type="Msec" />
+			<case alias="fly-speed-$" type="Velocity" />
+			<case alias="exec-duration-$" type="Msec" />
+			<case alias="exec-gather-type-$" type="Seq" seq="$gather-type" default="target" />
+			<case alias="exec-negation-dir-gather-$" type="Bool" />
+			<case alias="exec-target-angle-$" type="Short" />
+			<case alias="exec-target-offset-angle-$" type="Short" />
+			<case alias="exec-target-offset-distance-$" type="Distance" />
+			<case alias="exec-effect-$-1" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-2" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-3" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-4" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-5" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-6" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-7" ref="EffectGroup" input="n" />
+			<case alias="exec-effect-$-8" ref="EffectGroup" input="n" />
+			<case alias="return-speed-$" type="Velocity" />
+			<case alias="return-duration-$" type="Msec" />
 		</record>
-
 		<record alias="1" name="" struct="Exec" filter="active-skill" />
 		<record alias="2" name="" struct="Exec" filter="active-skill" />
 		<record alias="3" name="" struct="Exec" filter="active-skill" />
 		<record alias="4" name="" struct="Exec" filter="active-skill" />
 		<record alias="5" name="" struct="Exec" filter="active-skill" />
 
-		<record alias="trigger-gather-type" type="Byte" filter="active-skill" name="" seq="$gather-type" default="target" />
+		<record alias="trigger-gather-type" type="Byte" filter="active-skill" name="" seq="$gather-type_21" default="target" />
 		<record alias="trigger-negation-dir-gather" type="Bool" filter="active-skill" name="" />
 		<record alias="trigger-effect" name="" filter="active-skill" ref="EffectGroup" repeat="8" input="n" />
 		<record alias="trigger-prev-skill" name="" filter="active-skill" ref="this" />
@@ -579,18 +578,24 @@
 		<record alias="succession-prev-skill" name="" filter="active-skill" ref="this" />
 		<record alias="succession-prev-skill-id" type="Int32" filter="active-skill" name="" />
 		<record alias="simultaneous-group" name="" filter="active-skill" type="Seq" >
-		         <case alias="none" name="" default="y" />
-		         <case alias="phantom" name="" />
+			<case alias="none" name="" default="y" />
+			<case alias="phantom" name="" />
 		</record>
 
 		<record alias="unnecessary-acquired" name="" filter="active-skill" type="Bool" />
 		<record alias="gather-view-index" name="" filter="active-skill" type="Byte" server="n" />
 		<record alias="recommend-priority" type="Short" name="" filter="active-skill" server="n" />
-		<record alias="recommend-distance" name="" filter="active-skill" type="Short" server="n" />	
+		<record alias="recommend-distance" name="" filter="active-skill" type="Short" server="n" />
 		<record alias="recommend-distance-min" name="" filter="active-skill" type="Short" server="n" />
 		<record alias="recommend-distance-max" name="" filter="active-skill" type="Short" server="n" />
-
-		<record alias="boss-resistible-skill-type" name="" filter="active-skill" type="Seq" seq="$boss-resistible-skill-type" server="n" repeat="5" />
+		<record alias="boss-resistible-skill-type" name="" filter="active-skill" type="Seq" server="n" repeat="5" >
+			<case alias="none" name="" default="y" />
+			<case alias="immune-party-all" name="" />
+			<case alias="immune-party-projectile" name="" />
+			<case alias="immune-caster-target-long" name="" />
+			<case alias="immune-caster-target-short" name="" />
+			<case alias="immune-caster-nontarget-move" name="" />
+		</record>
 		<record alias="boss-resistible-skill-message" name="" type="TextAlias" filter="active-skill" server="n" />
 		<record alias="boss-resistance-skill-cast" type="Byte" filter="active-skill" name="" seq="$skill-stage" server="n" />
 		<record alias="boss-resistance-skill-exec" type="Byte" filter="active-skill" name="" seq="$skill-stage" server="n" />
@@ -600,11 +605,25 @@
 		<record alias="resistance-skill-type" name="" filter="active-skill" type="Seq" seq="$boss-resistible-skill-type" server="n" />
 		<record alias="resistance-skill-priority" name="" filter="active-skill" type="Byte" server="n" />
 		<record alias="auto-combat-approach-skill" type="Short" filter="active-skill" name="" server="n" />
-		<record alias="auto-combat-cannot-override" type="Bool" filter="active-skill" name="" server="n" />	
-		<record alias="auto-combat-npc-resistible-skill-type" type="Byte" filter="active-skill" seq="$npc-resistible-skill-type" server="n" repeat="5" />		
-		<record alias="auto-combat-npc-resistance-skill-exec" type="Byte" filter="active-skill" seq="$skill-stage" server="n" />	
+		<record alias="auto-combat-cannot-override" type="Bool" filter="active-skill" name="" server="n" />
+		<record alias="auto-combat-npc-resistible-skill-type" type="Byte" filter="active-skill" server="n" repeat="5" >
+			<case alias="none" name="" default="y" />
+			<case alias="parry-counter" name="" />
+			<case alias="move" name="" />
+			<case alias="immune-type-1" name="" />
+			<case alias="immune-type-2" name="" />
+			<case alias="immune-type-3" name="" />
+		</record>
+		<record alias="auto-combat-npc-resistance-skill-exec" type="Byte" filter="active-skill" seq="$skill-stage" server="n" />
 		<record alias="auto-combat-npc-resistance-skill-time-offset" type="Int32" filter="active-skill" name="" server="n" />
-		<record alias="auto-combat-resistance-skill-type" type="Byte" filter="active-skill" server="n" seq="$npc-resistible-skill-type" />	
+		<record alias="auto-combat-resistance-skill-type" type="Byte" filter="active-skill" server="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="parry-counter" name="" />
+			<case alias="move" name="" />
+			<case alias="immune-type-1" name="" />
+			<case alias="immune-type-2" name="" />
+			<case alias="immune-type-3" name="" />
+		</record>
 		<record alias="auto-combat-resistance-skill-priority" type="Short" filter="active-skill" name="" server="n" />
 		<record alias="skip-damage-split" type="Bool" filter="active-skill" name="" server="n" />
 		<record alias="catch-casting-target-anim" type="Index" filter="active-skill" name="" server="n" />
@@ -620,17 +639,14 @@
 			<case alias="summoned-glove" name="" />
 			<case alias="summoned-hammer" name="" />
 		</record>
-           
 		<record alias="override-skill" name="" filter="active-skill" type="Bool" default="y" />
 		<record alias="ground-type" name="" filter="active-skill" type="Seq" >
 			<case alias="ground" name="" default="y" />
 			<case alias="target" name="" />
 		</record>
-
 		<record alias="ui-show-force-instant-recycle" name="" filter="active-skill" type="Bool" server="n" />
 		<record alias="ui-show-recycle" name="" filter="active-skill" type="Bool" server="n" />
 		<record alias="ui-show-recycle-simple-context-mode" name="" filter="active-skill" type="Bool" server="n" />
-
 		<record alias="ui-recycle-icon" name="" filter="active-skill" type="Icon" server="n" />
 		<record alias="ui-recycle-name" name="" filter="active-skill" type="TextAlias" server="n" />
 		<record alias="ui-recycle-description" name="" filter="active-skill" type="TextAlias" server="n" />
@@ -638,8 +654,8 @@
 		<record alias="ui-sp-heal-type" name="" filter="active-skill" type="Byte" server="n" seq="$consume-type" />
 		<record alias="casting-target" name="" filter="active-skill" type="Seq" >
 			<case alias="none" name="" default="y" />
-			<case alias="self" name="" />	
-			<case alias="target" name="" />	
+			<case alias="self" name="" />
+			<case alias="target" name="" />
 			<case alias="wide" name="" />
 			<case alias="wide-laser" name="" />
 			<case alias="ground" name="" />
@@ -670,14 +686,23 @@
 		<record alias="ui-show-effect-stack" name="" filter="active-skill"  ref="Effect" />
 		<record alias="use-skill-message" name="" type="Bool" filter="active-skill" server="n" />
 
-        <!-- ================================================================== -->
-		<record alias="cast-caster-change-stance" name="施展后进入姿态" type="" client="n" seq="$stance" />	
+		<!-- ================================================================== -->
+		<record alias="cast-caster-change-stance" name="施展后进入姿态" type="" client="n" seq="$stance" />
 		<record alias="cast-caster-dispel-attribute" name="施展后清除效果" type="" client="n" repeat="8" />
-		<record alias="cannot-override-flow" name="" type="" client="n" seq="$flow-stage" />
+		<record alias="cannot-override-flow" name="" type="" client="n" >
+			<case alias="none" name="" default="y" />
+			<case alias="fly-1" name="" />
+			<case alias="exec-1" name="" />
+			<case alias="fly-2" name="" />
+			<case alias="exec-2" name="" />
+			<case alias="fly-3" name="" />
+			<case alias="exec-3" name="" />
+			<case alias="fly-4" name="" />
+			<case alias="exec-4" name="" />
+			<case alias="fly-5" name="" />
+			<case alias="exec-5" name="" />
+		</record>
 		<record alias="request-user-cancel" type="" client="n" name="请求用户取消" />
-
-
-
 		<record alias="burrow-gather" name="" type="" filter="active-skill" client="n" />
 		<record alias="caster-function-control" name="" type="" filter="active-skill" client="n" />
 		<record alias="caster-yaw-to-knockback" type="" filter="active-skill" client="n" name="从施展者方向击退" />
@@ -706,7 +731,6 @@
 		<record alias="range-counter-dir-2" name="" type="" filter="active-skill" client="n" />
 		<record alias="range-counter-skill-1" name="" type="" filter="active-skill" client="n" />
 		<record alias="range-counter-skill-2" name="" type="" filter="active-skill" client="n" />
-
 		<record alias="gather-laser-except-caster" name="" type="" filter="active-skill" client="n" />
 		<record alias="ignore-cast-fly-los" name="" type="" filter="active-skill" client="n" />
 		<record alias="ignore-fire-exec-fail" name="忽略执行失败" type="Bool" filter="active-skill" client="n" />
@@ -715,21 +739,17 @@
 		<record alias="npc-skill-spawn-group-index-1" name="" type="" filter="active-skill" client="n" />
 		<record alias="npc-skill-spawn-group-index-2" name="" type="" filter="active-skill" client="n" />
 		<record alias="repeat-chain" name="" type="" filter="active-skill" client="n" />
-		<record alias="revised-effect-equip-probability-in-exec-1" name="道具效果修正概率" type="" filter="active-skill" client="n" />
-		<record alias="revised-effect-equip-probability-in-exec-2" name="道具效果修正概率" type="" filter="active-skill" client="n" />
-		<record alias="revised-effect-equip-probability-in-exec-3" name="道具效果修正概率" type="" filter="active-skill" client="n" />
-		<record alias="revised-effect-equip-probability-in-exec-4" name="道具效果修正概率" type="" filter="active-skill" client="n" />
-		<record alias="revised-effect-equip-probability-in-exec-5" name="道具效果修正概率" type="" filter="active-skill" client="n" />
+		<record alias="revised-effect-equip-probability-in-exec" name="道具效果修正概率" type="" filter="active-skill" client="n" repeat="5"/>
 		<record alias="swing-duration-formula" name="" type="" filter="active-skill" client="n" />
-        <!-- ================================================================== -->
+		<!-- ================================================================== -->
 
-        <!-- ================================================================== -->
+		<!-- ================================================================== -->
 		<record alias="passive-effect" name="" filter="passive-skill" ref="Effect" repeat="8" input="n"/>
 		<record alias="summoned-job" name="" filter="passive-skill" type="Seq" seq="$job_20" />
 		<record alias="summoned-use-only" name="" type="Bool" filter="passive-skill" />
-        <!-- ================================================================== -->
-		
-        <!-- ================================================================== -->
+		<!-- ================================================================== -->
+
+		<!-- ================================================================== -->
 		<record alias="action-type" name="" filter="action" type="Seq" >
 			<case alias="airdash" name="" />
 			<case alias="pickup-deadbody" name="" />
@@ -747,6 +767,6 @@
 
 		<record alias="max-hyper-energy-point" name="" filter="action" type="Int32" />
 		<record alias="consume-hyper-energy-point" name="" filter="action" type="Int32" />
-        <!-- ================================================================== -->
+		<!-- ================================================================== -->
 	</list>
 </table>

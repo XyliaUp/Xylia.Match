@@ -26,7 +26,6 @@ namespace Xylia.Match.Windows.Panel
 		private void Btn_Output_BtnClick(object sender, EventArgs e)
 		{
 			var Selector = this.Selector.TextValue;
-			bool KeepTree = Selector.Contains('/');
 
 			new Thread(t =>
 			{
@@ -36,13 +35,13 @@ namespace Xylia.Match.Windows.Panel
 				PakData.Initialize(null);
 
 
-				var tempPath = KeepTree ? Selector : $"GameUI/Resource/{Selector}/";
+				var tempPath = Selector.Contains('/') ? Selector : $"GameUI/Resource/{Selector}/";
 				var gameFiles = PakData._provider.GameFiles?.Where(o => o.Extension == "uasset" && o.Path.Contains(tempPath));
 				if (gameFiles != null)
 				{
 					foreach (var gamefile in gameFiles)
 					{
-						string dir = KeepTree ? Path.GetDirectoryName(gamefile.Path) : Path.GetFileName(Path.GetDirectoryName(gamefile.Path));
+						string dir = true ? Path.GetDirectoryName(gamefile.Path) : Path.GetFileName(Path.GetDirectoryName(gamefile.Path));
 						dir = this.Path_OutDir.Text + "\\" + dir + "\\";
 
 						string path = dir + Path.GetFileNameWithoutExtension(gamefile.Path);

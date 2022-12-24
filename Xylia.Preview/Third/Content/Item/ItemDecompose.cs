@@ -1,4 +1,5 @@
-﻿using Xylia.Files;
+﻿using Xylia.Extension;
+using Xylia.Files;
 using Xylia.Files.Excel;
 using Xylia.Preview.Data.Record;
 
@@ -10,11 +11,8 @@ namespace Xylia.Preview.Third.Content
 	/// </summary>
 	public class ItemDecompose : OutBase
 	{
-		#region 字段
 		public override string SheetName => "分解数据";
-		#endregion
 
-		#region 方法
 		public override void CreateData()
 		{
 			#region 配置标题
@@ -53,28 +51,33 @@ namespace Xylia.Preview.Third.Content
 					return;
 
 				//判断是否可以分解
-				if (!Info.ContainsAttribute("decompose-reward-1", out string RewardAlias))
+				if (!Info.ContainsAttribute("decompose-reward-1", out string DecomposeReward1))
 					return;
 
 
-				var RewardInfo = FileCache.Data.Reward[RewardAlias];
-
+				var Reward = FileCache.Data.Reward[DecomposeReward1];
 				var CurRow = this.ExcelInfo.CreateRow(RowIdx++);
 				CurRow.AddCell(Info.ID);
 				CurRow.AddCell(Info.Alias);
 				CurRow.AddCell(Info.NameText());
 
-				CurRow.AddCell(RewardInfo.FixedItemInfo1);
-				CurRow.AddCell(RewardInfo.FixedItemInfo2);
-				CurRow.AddCell(RewardInfo.FixedItemInfo3);
-				CurRow.AddCell(RewardInfo.FixedItemInfo4);
-				CurRow.AddCell(RewardInfo.FixedItemInfo5);
-				CurRow.AddCell(RewardInfo.FixedItemInfo6);
-				CurRow.AddCell(RewardInfo.FixedItemInfo7);
-				CurRow.AddCell(RewardInfo.FixedItemInfo8);
+				for (int idx = 1; idx <= 8; idx++)
+				{
+					var FixedItem = Reward.Attributes["fixed-item-" + idx];
+					var FixedItemMin = Reward.Attributes["fixed-item-min-" + idx].ConvertToInt();
+					var FixedItemMax= Reward.Attributes["fixed-item-max-" + idx].ConvertToInt();
+
+					CurRow.AddCell(GetFixedItem(FixedItem, FixedItemMin, FixedItemMax));
+				}
 			});
 			#endregion
 		}
-		#endregion
+
+		private string GetFixedItem(string Item, int Min, int Max)
+		{
+			if (string.IsNullOrWhiteSpace(Item)) return null;
+			else if (Min == Max) return Item.GetItemInfo().NameText() + $" {Min}个";
+			else return Item.GetItemInfo().NameText() + $" {Min}~{Max}个";
+		}
 	}
 }

@@ -1,8 +1,4 @@
-﻿using System.Linq;
-
-using Xylia.Extension;
-using Xylia.Files.XmlEx;
-using Xylia.Preview.Common.Interface;  
+﻿using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -13,7 +9,6 @@ namespace Xylia.Preview.Data.Record
 
 		public byte Grade;
 		#endregion
-
 
 		#region 接口方法
 		public string NameText() => this.Name2.GetText();

@@ -117,7 +117,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 				AutoSize = true,
 			};
-			
+
 			this.Controls.Add(o);
 			this.BottomControl.Add(o);
 		}
@@ -231,7 +231,8 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 					this.MainInfo.Insert(0, new MyInfo(Info, "RewardPreview"));
 				}
 
-				var SelectedItemAssuredCount = s.Page.RewardInfo.DecomposeReward?.SelectedItemAssuredCount ?? 0;
+
+				var SelectedItemAssuredCount = s.Page.RewardInfo.DecomposeReward.Attributes["selected-item-assured-count"].ConvertToInt();
 				if (SelectedItemAssuredCount != 0) this.MainInfo.Add(new MyInfo($"可选择{ SelectedItemAssuredCount }项", "RewardPreview"));
 
 				this.Refresh();
@@ -251,68 +252,60 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			#region 加载辉石信息
 			var BadgeInfo = new List<string>();
 
-			if (this.ItemInfo.ContainsAttribute("badge-gear-score", out string BadgeGearScore)) BadgeInfo.Add("徽章套装点数 " + BadgeGearScore);
-			if (this.ItemInfo.ContainsAttribute("badge-synthesis-score", out string BadgeSynthesisScore)) BadgeInfo.Add("徽章合成点数 " + BadgeSynthesisScore);
+			if (this.ItemInfo.BadgeGearScore != 0) BadgeInfo.Add("徽章套装点数 " + this.ItemInfo.BadgeGearScore);
+			if (this.ItemInfo.BadgeSynthesisScore != 0) BadgeInfo.Add("徽章合成点数 " + this.ItemInfo.BadgeSynthesisScore);
 
 			if (BadgeInfo.Any()) this.LoadPreview(new ContentPanel(BadgeInfo.Aggregate((sum, now) => sum + "<br/>" + now)));
 			#endregion
 
-
 			#region 加载邮寄费用
-			if (this.ItemInfo.ContainsAttribute("decompose-money-cost", out string Val))
-			{
-				this.MainInfo.Insert(0, new MyInfo("需要" + new MoneyConvert(Val)));
-			}
-
-			int BaseFee = this.ItemInfo.Attributes["base-fee"].ToIntWithNull() ?? 0;
+			if (this.ItemInfo.DecomposeInfo.DecomposeMoneyCost != 0)
+				this.MainInfo.Insert(0, new MyInfo("需要" + new MoneyConvert(this.ItemInfo.DecomposeInfo.DecomposeMoneyCost)));
 
 			//判断是否可以邮寄，限制5铜以上邮费价格道具才能显示追加信息
-			if (BaseFee > 5 && (this.ItemInfo.AccountUsed || !this.ItemInfo.CannotTrade))
+			if (this.ItemInfo.BaseFee > 5 && (this.ItemInfo.AccountUsed || !this.ItemInfo.CannotTrade))
 			{
-				string Info = $"邮寄时，每个需要 { new MoneyConvert(BaseFee) }<br/>";
+				string Info = $"邮寄时，每个需要 { new MoneyConvert(this.ItemInfo.BaseFee) }<br/>";
 				ExtraInfo += Info;
 			}
 
-			if (this.ItemInfo.ContainsAttribute("account-post-charge", out string accountpostcharge))
+			var AccountPostCharge = this.ItemInfo.AccountPostCharge;
+			if (AccountPostCharge != null)
 			{
-				var AccountPostCharge = FileCache.Data.AccountPostCharge[accountpostcharge];
-				if (AccountPostCharge != null)
-				{
-					var ChargeItem1 = AccountPostCharge.ChargeItem1.GetItemInfo();
-					var ChargeItem2 = AccountPostCharge.ChargeItem2.GetItemInfo();
+				var ChargeItem1 = AccountPostCharge.ChargeItem1.GetItemInfo();
+				var ChargeItem2 = AccountPostCharge.ChargeItem2.GetItemInfo();
 
-					if (ChargeItem1 != null || ChargeItem2 != null)
+				if (ChargeItem1 != null || ChargeItem2 != null)
+				{
+					if (ChargeItem1 != null && ChargeItem2 != null)
 					{
-						if (ChargeItem1 != null && ChargeItem2 != null)
-						{
-							ExtraInfo += $"账号交易时，需要" +
-							 $"{ ChargeItem1.ItemNameWithGrade }<ga/> { AccountPostCharge.ChargeItemAmount1 }个、<wa/> " +
-							 $"{ ChargeItem2.ItemNameWithGrade }<ga/> { AccountPostCharge.ChargeItemAmount2 }个。";
-						}
+						ExtraInfo += $"账号交易时，需要" +
+						 $"{ ChargeItem1.ItemNameWithGrade }<ga/> { AccountPostCharge.ChargeItemAmount1 }个、<wa/> " +
+						 $"{ ChargeItem2.ItemNameWithGrade }<ga/> { AccountPostCharge.ChargeItemAmount2 }个。";
+					}
+					else
+					{
+						var ChargeItem = ChargeItem1;
+						int ItemCount;
+						if (ChargeItem != null) ItemCount = AccountPostCharge.ChargeItemAmount1;
 						else
 						{
-							var ChargeItem = ChargeItem1;
-							int ItemCount;
-							if (ChargeItem != null) ItemCount = AccountPostCharge.ChargeItemAmount1;
-							else
-							{
-								ChargeItem = ChargeItem2;
-								ItemCount = AccountPostCharge.ChargeItemAmount2;
-							}
-
-							ExtraInfo += $"账号交易时，需要{ ChargeItem.ItemNameWithGrade }</font><ga/> { ItemCount }个。";
+							ChargeItem = ChargeItem2;
+							ItemCount = AccountPostCharge.ChargeItemAmount2;
 						}
+
+						ExtraInfo += $"账号交易时，需要{ ChargeItem.ItemNameWithGrade }</font><ga/> { ItemCount }个。";
 					}
 				}
 			}
 			#endregion
 
 
-			if (this.ItemInfo.ContainsAttribute("recycle-group-duration", out Val)) this.MainInfo.Add(new MyInfo("冷却时间 " + Val.MSToTimeSpan().ToMyString()));
+			if (this.ItemInfo.UseRecycleGroupDuration != 0)
+				this.MainInfo.Add(new MyInfo("冷却时间 " + TimeSpan.FromMilliseconds(this.ItemInfo.UseRecycleGroupDuration).ToMyString()));
 
 
 			if (ExtraInfo != null) return new ContentPanel(ExtraInfo);
-
 			return null;
 		}
 
@@ -324,9 +317,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		private void LoadTrade()
 		{
 			if (this.ItemInfo.AccountUsed)
-			{
-				this.LoadBottomControl("TradeInfo_Account", "账号专用", Color.FromArgb(255, 88, 66));
-			}
+				this.LoadBottomControl("TradeInfo_Account", "账号专用");
 
 			#region 处理前端文本
 			string TradeInfo;
@@ -347,12 +338,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			else TradeInfo = "无法拍卖行交易";
 			#endregion
 
-
-			#region 控件处理
-			if (TradeInfo is null) return;
-
-			this.LoadBottomControl("TradeInfo", TradeInfo, Color.FromArgb(255, 88, 66));
-			#endregion
+			if (TradeInfo != null) this.LoadBottomControl("TradeInfo", TradeInfo);
 		}
 
 		public static Bitmap LoadCardImage(Bitmap CardImage, byte ItemGrade)
@@ -365,17 +351,16 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			#region 获取背景图
 			var bg = ItemGrade switch
 			{
-				2 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_2,
-				3 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_3,
-				4 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_4,
-				5 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_5,
-				6 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_6,
-				7 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_6,
-				8 => Resources.Resource_BNSR.Museum_CollectionCard_Preview_7,
-				_ => Resources.Resource_BNSR.Museum_CollectionCard_Preview_1,
+				2 => Resources.Resource_BNSR.CollectionCard_Preview_2,
+				3 => Resources.Resource_BNSR.CollectionCard_Preview_3,
+				4 => Resources.Resource_BNSR.CollectionCard_Preview_4,
+				5 => Resources.Resource_BNSR.CollectionCard_Preview_5,
+				6 => Resources.Resource_BNSR.CollectionCard_Preview_6,
+				7 => Resources.Resource_BNSR.CollectionCard_Preview_7,
+				8 => Resources.Resource_BNSR.CollectionCard_Preview_8,
+				9 => Resources.Resource_BNSR.CollectionCard_Preview_9,
+				_ => Resources.Resource_BNSR.CollectionCard_Preview_1,
 			};
-
-			bg = bg.Clone(new Rectangle(118, 70, 276, 372));
 			#endregion
 
 			g.DrawImage(CardImage, 0, 60);
@@ -432,12 +417,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 			//限制使用区域
 			if (this.ItemInfo.ContainsAttribute("valid-attraction-name", out string ValidAttractionName))
-				this.LoadBottomControl("valid-attraction-name", ValidAttractionName.GetText() + "，专用");
-
+				this.LoadBottomControl("valid-attraction-name", ValidAttractionName.GetText() + "专用");
 
 			//显示职业信息
-			var JobInfo = this.ItemInfo?.JobInfo;
-			if (JobInfo != null) this.LoadBottomControl("JobLimit", JobInfo + ", 专用", Color.FromArgb(255, 88, 66));
+			var JobInfo = this.ItemInfo.JobInfo;
+			if (JobInfo != null) this.LoadBottomControl("JobLimit", JobInfo + ", 专用");
 
 			//加载交易信息
 			this.LoadTrade();

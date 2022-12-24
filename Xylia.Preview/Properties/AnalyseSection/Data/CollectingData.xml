@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="collecting" version="0.10" >
+	<list module="ItemData" type="collecting" version="0.6" >
 		<record alias="type" name="" type="type" > 
 			<case alias="closet" name="" />
 		</record>
@@ -24,9 +24,9 @@
 			<case alias="category-special" name="" />
 		</record>
 
-		<record alias="collect-closet" name="" ref="ClosetGroupData" repeat="8" link="id" />
-		<record alias="collect-closet-replace" name="" ref="ClosetGroupData" repeat="8" link="id" />
-		<record alias="collect-closet-subreplace" name="" ref="ClosetGroupData" repeat="8" link="id" />
+		<record alias="collect-closet" name="" ref="ClosetGroup" repeat="8" link="id" />
+		<record alias="collect-closet-replace" name="" ref="ClosetGroup" repeat="8" link="id" />
+		<record alias="collect-closet-subreplace" name="" ref="ClosetGroup" repeat="8" link="id" />
 		<record alias="collect-skill-skin" name="" ref="SkillSkin" repeat="4" />
 		<record alias="reward-item" name="" ref="Item" repeat="6" />
 		<record alias="reward-item-count" name="" type="Short" repeat="6" />

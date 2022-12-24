@@ -69,7 +69,6 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.ucBtnExt10 = new HZH_Controls.Controls.UCBtnExt();
 			this.ucBtnExt18 = new HZH_Controls.Controls.UCBtnExt();
-			this.ucBtnExt17 = new HZH_Controls.Controls.UCBtnExt();
 			this.ucBtnExt12 = new HZH_Controls.Controls.UCBtnExt();
 			this.ucBtnExt14 = new HZH_Controls.Controls.UCBtnExt();
 			this.ucBtnExt16 = new HZH_Controls.Controls.UCBtnExt();
@@ -844,7 +843,6 @@
 			this.groupBox1.BackColor = System.Drawing.Color.Transparent;
 			this.groupBox1.Controls.Add(this.ucBtnExt10);
 			this.groupBox1.Controls.Add(this.ucBtnExt18);
-			this.groupBox1.Controls.Add(this.ucBtnExt17);
 			this.groupBox1.Controls.Add(this.ucBtnExt12);
 			this.groupBox1.Controls.Add(this.ucBtnExt14);
 			this.groupBox1.Controls.Add(this.ucBtnExt16);
@@ -911,33 +909,6 @@
 			this.ucBtnExt18.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
 			this.ucBtnExt18.TipsText = "";
 			this.ucBtnExt18.BtnClick += new System.EventHandler(this.ucBtnExt18_BtnClick);
-			// 
-			// ucBtnExt17
-			// 
-			this.ucBtnExt17.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt17.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.ucBtnExt17.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt17.BtnText = "物品强化";
-			this.ucBtnExt17.ConerRadius = 8;
-			this.ucBtnExt17.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.ucBtnExt17.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.ucBtnExt17.EnabledMouseEffect = false;
-			this.ucBtnExt17.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt17.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			this.ucBtnExt17.IsRadius = true;
-			this.ucBtnExt17.IsShowRect = true;
-			this.ucBtnExt17.IsShowTips = false;
-			this.ucBtnExt17.Location = new System.Drawing.Point(15, 237);
-			this.ucBtnExt17.Margin = new System.Windows.Forms.Padding(0);
-			this.ucBtnExt17.Name = "ucBtnExt17";
-			this.ucBtnExt17.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt17.RectWidth = 1;
-			this.ucBtnExt17.Size = new System.Drawing.Size(112, 48);
-			this.ucBtnExt17.TabIndex = 123;
-			this.ucBtnExt17.TabStop = false;
-			this.ucBtnExt17.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-			this.ucBtnExt17.TipsText = "";
-			this.ucBtnExt17.BtnClick += new System.EventHandler(this.ucBtnExt17_BtnClick);
 			// 
 			// ucBtnExt12
 			// 
@@ -1086,7 +1057,6 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt12;
-		private HZH_Controls.Controls.UCBtnExt ucBtnExt17;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt18;
 		private System.Windows.Forms.Timer Timer;
 		private System.Windows.Forms.OpenFileDialog Open;

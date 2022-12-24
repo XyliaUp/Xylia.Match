@@ -72,13 +72,11 @@
 		<record alias="gather-range" name="" ref="SkillGatherRange3"  server="n" />
 		<record alias="check-style-score" type="Short" name="" />
 		<record alias="check-hp-value" name="" type="Short" />
-		<record alias="check-hp-type" name="" type="Seq" seq="$consume-type" out-cond="Exist: check-hp-value" />
-		<record alias="check-sp-value-1" name="" type="Short" />
-		<record alias="check-sp-value-2" name="" type="Short" />
-		<record alias="check-sp-type-1" type="Byte" name="" seq="$consume-type" out-cond="Exist: check-sp-value-1" />
-		<record alias="check-sp-type-2" type="Byte" name="" seq="$consume-type" out-cond="Exist: check-sp-value-2" />
+		<record alias="check-hp-type" name="" type="Seq" seq="$consume-type" />
+		<record alias="check-sp-value" name="" type="Short" repeat="2" />
+		<record alias="check-sp-type" type="Byte" name="" seq="$consume-type" repeat="2" />
 		<record alias="check-summoned-hp-value" name="" type="Short" />
-		<record alias="check-summoned-hp-type" name="" type="Seq" seq="$consume-type" out-cond="Exist: check-summoned-hp-value" />
+		<record alias="check-summoned-hp-type" name="" type="Seq" seq="$consume-type" />
 
 		<record alias="success-caster-move-state" name="" type="Seq" seq="$move-state" server="n" repeat="9" />
 		<record alias="fail-caster-move-state" type="Seq" seq="$move-state" server="n" repeat="9" />
@@ -89,7 +87,6 @@
 			<case alias="cast-block" name="" />
 			<case alias="whole-block" name="" />
 		</record>
-
 		<record alias="prev-combo-id" type="Int32" name="" repeat="4" />
 		<record alias="prev-combo-event-type" type="Seq" name="" seq="$event-type" repeat="4" />
 		<record alias="prev-combo-check-point" type="Seq" name="" seq="$combo-check-point" repeat="4"  >
@@ -108,7 +105,6 @@
 		<record alias="last-event-1-result" type="Seq" name="" seq="$skill-result" out-cond="Exist: last-event-result-1" repeat="8" />
 		<record alias="last-event-2-result" type="Seq" name="" seq="$skill-result" out-cond="Exist: last-event-result-2" repeat="8" />
 
-
 		<record alias="success-recycle-group" name="" type="Seq" seq="$recycle-group" repeat="4" />
 		<record alias="success-recycle-group-id" name="" type="Byte" repeat="4" />
 		<record alias="success-recycle-group-op" name="" type="Seq" seq="$op" out-cond="Exist: success-recycle-group-id-2" />
@@ -117,8 +113,7 @@
 		<record alias="fail-recycle-group-id" name="" type="Byte" repeat="4" />
 		<record alias="fail-recycle-group-op" name="" type="Seq" seq="$op" out-cond="Exist: fail-recycle-group-2" default="or" apply="must" />
 
-		<record alias="soul-mask-1" ref="SoulMaskSet" />
-		<record alias="soul-mask-2" ref="SoulMaskSet" />
+		<record alias="soul-mask" ref="SoulMaskSet" repeat="2" />
 		<record alias="fail-soulmask-except-normal" type="Bool" name="" default="y" />
 		<record alias="is-special-skill" name="" type="Bool" />
 		<record alias="lockon-skill-type" name="" type="Seq" server="n" >
@@ -129,8 +124,7 @@
 		</record>
 		<record alias="is-ground-pitch-dash-skill" name="" type="Bool" />
 
-		
-		
+
 		<record alias="simple-context-success-caster-flag" type="Seq16" name="" seq="$flag" server="n" repeat="4" />
 		<record alias="simple-context-success-caster-op" type="Byte" name="" seq="$op" server="n" out-cond="Exist: simple-context-success-caster-flag-2" apply="must" />
 		<record alias="simple-context-fail-caster-flag" type="Seq16" name="" seq="$flag" server="n" repeat="4" />

@@ -39,18 +39,7 @@
 		<record alias="check-caster-recycle-skill-id" name="" type="Int32" repeat="4" />
 		<record alias="check-caster-recycle-skill-variation-id" name="" type="Byte" repeat="4" />
 		<record alias="check-caster-recycle-skill-op" name="" type="Seq" seq="$op" />
-		<record alias="check-target-npc-grade2" name="" type="Seq" >
-			<case alias="none" name="" default="y" />
-			<case alias="boss" name="" />
-			<case alias="champion" name="" />
-			<case alias="normal" name="" />
-			<case alias="follower" name="" />
-			<case alias="tool" name="" />
-			<case alias="weakest" name="" />
-			<case alias="weak" name="" />
-			<case alias="regular" name="" />
-			<case alias="strong" name="" />
-		</record>
+		<record alias="check-target-npc-grade2" name="" type="Seq" seq="$npc-grade2" />
 		<record alias="check-target-npc-grade2-op" name="" type="Seq" seq="$op2" />
 		<record alias="check-target-distance-target-type" name="" type="Seq" >
 			<case alias="caster" name="" />

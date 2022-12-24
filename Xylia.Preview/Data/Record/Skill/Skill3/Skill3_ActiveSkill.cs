@@ -6,16 +6,14 @@ namespace Xylia.Preview.Data.Record
 {
 	public sealed partial class Skill3
 	{
-		public enum FlowType
+		public FlowTypeSeq FlowType;
+		public enum FlowTypeSeq
 		{
 			KeepMainslot,
 			LeaveCaster,
 			TransferSimslot,
 			DirectlySimslot,
 		}
-
-		public FlowType flowType;
-
 
 
 		[Signal("dash-attribute")]
@@ -39,38 +37,6 @@ namespace Xylia.Preview.Data.Record
 		[Signal("cast-duration")]
 		public int CastDuration;
 
-		[Signal("cast-effect-1")]
-		public string CastEffect1;
-
-		[Signal("cast-effect-2")]
-		public string CastEffect2;
-
-		[Signal("cast-effect-3")]
-		public string CastEffect3;
-
-		[Signal("cast-effect-4")]
-		public string CastEffect4;
-
-		[Signal("cast-effect-5")]
-		public string CastEffect5;
-
-		[Signal("cast-effect-6")]
-		public string CastEffect6;
-
-		[Signal("cast-effect-to-my-summoned-summoner-1")]
-		public string CastEffectToMySummonedSummoner1;
-
-		[Signal("cast-effect-to-my-summoned-summoner-2")]
-		public string CastEffectToMySummonedSummoner2;
-
-		[Signal("cast-effect-to-my-summoned-summoner-3")]
-		public string CastEffectToMySummonedSummoner3;
-
-		[Signal("cast-effect-to-my-summoned-summoner-4")]
-		public string CastEffectToMySummonedSummoner4;
-
-		[Signal("cast-effect-to-my-summoned-summoner-distance")]
-		public int CastEffectToMySummonedSummonerDistance;
 
 		[Signal("throw-link-target")]
 		public bool ThrowLinkTarget;
@@ -103,10 +69,62 @@ namespace Xylia.Preview.Data.Record
 		public byte BoundRecycleGroupId;
 
 
+		public enum ConsumeType
+		{
+			Point,
+
+			[Signal("point-below")]
+			PointBelow,
+
+			[Signal("point-above")]
+			PointAbove,
+
+			[Signal("base-max-percent")]
+			BaseMaxPercent,
+
+			[Signal("total-max-percent")]
+			TotalMaxPercent,
+
+			[Signal("current-percent")]
+			CurrentPercent,
+		}
+
+		[Signal("consume-hp-value")]
+		public short ConsumeHpValue;
+
+		[Signal("consume-hp-type")]
+		public ConsumeType ConsumeHpType;
+
+		[Signal("consume-sp-value-1")]
+		public short ConsumeSpValue1;
+
+		[Signal("consume-sp-value-2")]
+		public short ConsumeSpValue2;
+
+		[Signal("consume-sp-type-1")]
+		public ConsumeType ConsumeSpType1;
+
+		[Signal("consume-sp-type-2")]
+		public ConsumeType ConsumeSpType2;
+
+		[Signal("consume-summoned-hp-value")]
+		public short ConsumeSummonedHpValue;
+
+		[Signal("consume-summoned-hp-type")]
+		public ConsumeType ConsumeSummonedHpType;
 
 
 
 
+
+		[Signal("flow-repeat")]
+		public byte FlowRepeat = 1;
+
+		[Signal("expanded-flow-repeat-count")]
+		public byte ExpandedFlowRepeatCount;
+
+		[Signal("expanded-flow-repeat-start-flow-step")]
+		public byte ExpandedFlowRepeatStartFlowStep = 1;
 
 
 

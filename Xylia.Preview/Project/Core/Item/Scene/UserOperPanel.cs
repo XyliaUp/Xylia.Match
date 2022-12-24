@@ -9,7 +9,6 @@ using System.Xml;
 using HZH_Controls.Controls;
 
 using Xylia.Preview.Common.Extension;
-using Xylia.Preview.Project.Core.ItemGrowth.Page;
 using Xylia.Preview.Project.Core.ItemGrowth.Scene;
 using Xylia.Preview.Properties.AnalyseSection;
 
@@ -312,7 +311,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 					var XmlDoc = new XmlDocument();
 
-					var res = DataRes.ItemData_v39;
+					var res = DataRes.ItemData;
 					if (res is null) return null;
 
 					XmlDoc.LoadXml(res);

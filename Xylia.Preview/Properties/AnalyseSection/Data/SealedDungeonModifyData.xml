@@ -23,8 +23,8 @@
 		<record alias="use-level-first-clear-next-level" type="Byte" name="" />
 		<record alias="dungeon-id" name="" ref="Dungeon" />
 		<record alias="reward-summary" name="" ref="RewardSummary" />
-		<record alias="scroll-boss-imageset" type="Int32" name="" />
-		<record alias="scroll-boss-back-imageset" type="Int32" name="" />
+		<record alias="scroll-boss-imageset" type="Index" name="" />
+		<record alias="scroll-boss-back-imageset" type="Index" name="" />
 		<record alias="recommend-attack-power-sealed-dungeon" type="Short" name="" />
 		<record alias="recommend-alias-sealed-dungeon" name="" ref="ContentsJournal" />
 	</list>

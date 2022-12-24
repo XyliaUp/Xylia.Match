@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="key-command" version="0.2" >
+	<list module="ItemData" type="key-command" version="0.99" >
 		<record alias="key-command" type="Id" extra="Short1" seq="$key-command" />
 		<record alias="pc-job" name="" type="Id" extra="Byte3" seq="$job" />
 

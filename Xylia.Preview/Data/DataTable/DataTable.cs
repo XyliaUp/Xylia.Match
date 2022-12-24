@@ -159,15 +159,15 @@ namespace Xylia.Preview.Data
 				var CurElement = objs[x];
 				this.data[x] = new Lazy<T>(() =>
 				{
-						//实例化对象
-						var Obejct = new T()
+					//实例化对象
+					var Obejct = new T()
 					{
 						Index = CurIndex,
 						Attributes = new XElementData(CurElement),
 					};
 
-						//向成员赋值
-						if (this.PublicSet)
+					//向成员赋值
+					if (this.PublicSet)
 					{
 						foreach (var Attr in CurElement.Attributes())
 							Obejct.SetMember(Attr.Name.LocalName, Attr.Value, true, ShowDebugInfo ? null : true);
@@ -240,7 +240,7 @@ namespace Xylia.Preview.Data
 			var o = DeSerializer?.GetObject(ListData, TableInfo, MainID, Variation);
 			if (o is null)
 			{
-				Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID} variation: {Variation}");
+				Debug.WriteLine($"[{ typeof(T).Name }] 读取失败  id: {MainID}  variation: {Variation}");
 				return null;
 			}
 
@@ -419,7 +419,7 @@ namespace Xylia.Preview.Data
 		{
 			if (!this.HasData) this.Load();
 
-			if (this.LoadFromGame) foreach (var info in this.CreateTest()) yield return info;
+			if (this.LoadFromGame) foreach (var info in this.CreateTest(!this.PublicSet)) yield return info;
 			else foreach (var info in this.Data) yield return info.Value;
 
 			//结束迭代

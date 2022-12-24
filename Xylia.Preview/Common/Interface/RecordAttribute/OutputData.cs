@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using NPOI.SS.Formula.Functions;
-
 using Xylia.bns.Modules.DataFormat.Analyse.Output;
 
 namespace Xylia.Preview.Common.Interface.RecordAttribute
@@ -13,14 +11,15 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 	public sealed class OutputData : IAttributeCollection
 	{
 		#region 构造
-		public readonly ObjectOutput Object;
-
 		public OutputData(ObjectOutput output) => this.Object = output;
+
+		public readonly ObjectOutput Object;
 		#endregion
 
 
 
 		OutputCellCollection OutputCells => this.Object.Cells;
+
 
 		public IEnumerable<object> Attributes => this.OutputCells;
 

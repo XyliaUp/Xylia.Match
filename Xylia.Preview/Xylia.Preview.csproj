@@ -418,9 +418,7 @@
     </Compile>
     <Compile Update="Project\Controls\PanelEx\TitleContentPanel.cs" />
     <Compile Update="Project\Core\Quest\Preview\Reward\RewardCell\FixedItem.cs" />
-    <Compile Update="Project\Core\Skill\SkillPreview\SkillPreview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Update="Project\Core\Skill\SkillPreview\SkillPreview.cs" />
     <Compile Update="Properties\AnalyseSection\DataRes.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

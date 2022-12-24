@@ -80,7 +80,7 @@
 			this.Selector.RectColor = System.Drawing.Color.RosyBrown;
 			this.Selector.RectWidth = 1;
 			this.Selector.SelectedIndex = -1;
-			this.Selector.Size = new System.Drawing.Size(345, 38);
+			this.Selector.Size = new System.Drawing.Size(463, 38);
 			this.Selector.Source.Add("GameUI_Icon");
 			this.Selector.Source.Add("GameUI_Icon2nd");
 			this.Selector.Source.Add("GameUI_Icon3rd");
@@ -91,6 +91,7 @@
 			this.Selector.Source.Add("GameUI_Icon8th");
 			this.Selector.Source.Add("GameUI_Icon9th");
 			this.Selector.Source.Add("GameUI_TitleImage");
+			this.Selector.Source.Add("GameUI_ImageSet");
 			this.Selector.Source.Add("GameUI_ImageSet_R");
 			this.Selector.Source.Add("BNSR/Content/Art/UI/V2/Resource");
 			this.Selector.TabIndex = 110;

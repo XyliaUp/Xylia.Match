@@ -1,9 +1,6 @@
-﻿using System.Linq;
-
+﻿
 using Xylia.Attribute.Component;
-using Xylia.Extension;
-using Xylia.Files.XmlEx;
-using Xylia.Preview.Common.Interface;  
+using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -25,7 +22,6 @@ namespace Xylia.Preview.Data.Record
 		[Signal("publicraid-image")]
 		public string PublicraidImage;
 		#endregion
-
 
 		#region 接口方法
 		public string NameText() => this.PublicraidName2.GetText();

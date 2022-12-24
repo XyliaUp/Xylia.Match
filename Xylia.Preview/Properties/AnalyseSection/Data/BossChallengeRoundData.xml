@@ -4,9 +4,8 @@
 		<record alias="id" name="" type="id" />
 		<record alias="round" name="" type="Int32" start="0" />
 		<record alias="alias" name="" type="Index" />
-		<record alias="spawn-effect" ref="Effect" name="" type="Int32" repeat="2" />
-		<record alias="boss-spawn-delay" name="" type="Int32" />
-
+		<record alias="spawn-effect" ref="Effect" name="" repeat="2" />
+		<record alias="boss-spawn-delay" name="" type="Msec" />
 		<!-- ============================================= -->
 		<record alias="boss-npc" name="" client="n" />
 		<record alias="prob-weight-by-npc-killed-group1" name="" client="n" repeat="2" />

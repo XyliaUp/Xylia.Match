@@ -5,6 +5,7 @@ using NPOI.SS.UserModel;
 
 using Xylia.Files;
 
+
 namespace Xylia.Preview.Third.Content
 {
 	public class ItemImprove : OutBase
@@ -33,7 +34,7 @@ namespace Xylia.Preview.Third.Content
 				foreach (var option in OptionLevel)
 				{
 					//获取行位置
-					IRow CurRow = null;
+					IRow CurRow = null;													   
 
 					int CurRowIdx = RowIdx++;
 					if (Rows.ContainsKey(CurRowIdx)) CurRow = Rows[CurRowIdx];

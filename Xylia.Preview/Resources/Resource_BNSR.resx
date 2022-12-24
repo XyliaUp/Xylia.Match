@@ -265,8 +265,62 @@
   <data name="Chatting_Whisper_Out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gameui\gameui_window_r\chatting_whisper_out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CollectionCard_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CollectionCard_3D_214_Img" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>collectioncard_3d_214_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CollectionCard_Preview_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>gameui\gameui_imageset\collectioncard_preview_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dash_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gameui\gameui_window_r\dash_block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -528,57 +582,6 @@
   </data>
   <data name="Map_Unit_PartyCamp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gameui\gameui_window_r\map_unit_partycamp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Defult" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_defult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Over" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Museum_CollectionCard_Preview_Defult" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>gameui\gameui_imageset\museum_collectioncard_preview_defult.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="OpenClose_Down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\gameui\gameui_window_r\openclose_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

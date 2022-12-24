@@ -11,24 +11,19 @@ namespace Xylia.Preview.Project.Core.Skill
 		public Form1()
 		{
 			InitializeComponent();
-
 			this.textBox1.Text = Ini.ReadValue("Option", "SkillPreview_Rule");
 
 			this.Controls.Add(this.SkillPreview);
 			this.SkillPreview.Refresh();
 		}
 
-		public Form1(Skill3 SkillData) 
+		public Form1(Skill3 Skill) 
 		{
 			InitializeComponent();
-			this.SkillPreview.LoadData(SkillData);
-
+			this.Controls.Add(this.SkillPreview);
 			this.textBox1.Visible = true;
 
-			this.Controls.Add(this.SkillPreview);
-			this.SkillPreview.Refresh();
-
-			this.Text = "查看技能 " + SkillData.Alias;
+			this.LoadData(Skill);
 		}	  
 
 
@@ -36,15 +31,17 @@ namespace Xylia.Preview.Project.Core.Skill
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
-			this.Text = "查看技能 " + this.textBox1.Text;
-
-			this.SkillPreview.LoadData(this.textBox1.Text);
 			Ini.WriteValue("Option", "SkillPreview_Rule", this.textBox1.Text);
+			this.LoadData(FileCache.Data.Skill3[this.textBox1.Text]);
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
-		{
 
+		public void LoadData(Skill3 Skill)
+		{
+			this.Text = "查看技能 " + Skill.Alias;
+
+			this.SkillPreview.LoadData(Skill);
+			this.SkillPreview.Refresh();
 		}
 	}
 }

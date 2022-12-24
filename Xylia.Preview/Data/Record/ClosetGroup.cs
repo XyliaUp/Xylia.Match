@@ -1,5 +1,5 @@
-﻿using System.ComponentModel;
-
+﻿
+using Xylia.Attribute.Component;
 using Xylia.Preview.Common.Interface;
 
 namespace Xylia.Preview.Data.Record
@@ -8,69 +8,68 @@ namespace Xylia.Preview.Data.Record
 	{
 		#region	属性字段
 		public CategorySeq Category;
-		public short SortNo;
 
-		public string ChargeOfItemForInstantPayment;
-		public string ItemToBePaid;
-		#endregion
-
-
-		#region 枚举
 		public enum CategorySeq : byte
 		{
-			none = 1,
+			None,
 
-			[Description("御龙林")]
-			jeryoung,
+			Custom,
 
-			[Description("大漠")]
-			daesanak,
+			Jeryoung,
 
-			[Description("水月平原")]
-			suwal,
+			Daesanak,
 
-			[Description("白青山脉")]
-			baekchung,
+			Suwal,
 
-			[Description("建元城都")]
-			geonwon,
+			Baekchung,
 
-			[Description("西洛")]
-			seorock,
+			Geonwon,
 
-			[Description("仙界")]
-			seongye,
+			Seorock,
 
-			[Description("从商人处购买")]
+			Seongye,
+
+			[Signal("npc-trade")]
 			NpcTrade,
 
-			[Description("变换")]
-			transform,
+			Transform,
 
-			[Description("活动")]
 			Event,
 
-			[Description("商店")]
-			shop,
+			Shop,
 
-			[Description("势力")]
 			Faction,
 
-			[Description("其他")]
-			etc,
+			Etc,
 
-			[Description("商城")]
 			Cashshop,
 
-			[Description("游戏内商店")]
-			ingameshop,
+			Ingameshop,
 
-			[Description("龙银商店")]
-			yongyuenshop,
+			Yongyuenshop,
 
-			[Description("时尚达人")]
-			fashionista,
+			Fashionista,
+
+			Unusable,
+
+			[Signal("northland-east")]
+			NorthlandEast,
 		}
+
+
+
+
+		[Signal("sort-no")]
+		public short SortNo;
+
+		[Signal("charge-of-item-for-instant-payment")]
+		public string ChargeOfItemForInstantPayment;
+
+		[Signal("item-to-be-paid")]
+		public string ItemToBePaid;
+
+		[Signal("check-equip-characteristics")]
+		public bool CheckEquipCharacteristics;
 		#endregion
 	}
 }
