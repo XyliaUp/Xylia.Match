@@ -12,7 +12,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		public void SetData(ItemSpirit ItemSpirit)
 		{
-			if (ItemSpirit is null) throw new Exception("没有数据");
+			if (ItemSpirit is null) throw new ArgumentNullException(nameof(ItemSpirit));
 
 
 			string Text = "无变更";

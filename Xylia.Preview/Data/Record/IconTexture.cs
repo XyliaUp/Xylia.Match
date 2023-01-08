@@ -62,7 +62,7 @@ public static class IconTextureExt
 	/// <summary>
 	/// 获得图标信息
 	/// </summary>
-	/// <param name="v"></param>
+	/// <param name="IconInfo"></param>
 	/// <returns></returns>
 	public static Bitmap GetIcon(this string IconInfo)
 	{

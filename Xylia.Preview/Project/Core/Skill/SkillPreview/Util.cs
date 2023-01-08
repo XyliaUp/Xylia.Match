@@ -41,28 +41,41 @@ namespace Xylia.Preview.Project.Core.Skill
 		{
 			if (ArgType == SkillTooltipAttribute.ArgType.None) return;
 
+
+			int ArgValue1 = 0;
+			int ArgValue2 = 0;
+
 			//防止出现空值导致处理崩溃
-			if (!int.TryParse(Arg, out int ValueConvert)) ValueConvert = 0;
+			if (!int.TryParse(Arg, out ArgValue1))
+			{
+				if(Arg.Contains(','))
+				{
+					var v = Arg.Split(',');
+					ArgValue1 = v[0].ToInt();
+					ArgValue2 = v[1].ToInt();
+				}
+			}
+
 
 
 			Panel.Params.Add(ArgType switch
 			{
-				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(Arg.Split(',')[0].ToInt(), Arg.Split(',')[1].ToInt(), Tooltip.SkillAttackAttributeCoefficientPercent),
+				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(ArgValue1, ArgValue2, Tooltip.SkillAttackAttributeCoefficientPercent),
 				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg.ToInt(), 0, Tooltip.SkillAttackAttributeCoefficientPercent),
-				SkillTooltipAttribute.ArgType.Time => (float)ValueConvert / 1000 + "秒",
-				SkillTooltipAttribute.ArgType.StackCount => ValueConvert,
+				SkillTooltipAttribute.ArgType.Time => (float)ArgValue1 / 1000 + "秒",
+				SkillTooltipAttribute.ArgType.StackCount => ArgValue1,
 				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.Program.Fontset_ItemGrade_6\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.HealPercent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.DrainPercent => ValueConvert + "%",
+				SkillTooltipAttribute.ArgType.HealPercent => ArgValue1 + "%",
+				SkillTooltipAttribute.ArgType.DrainPercent => ArgValue1 + "%",
 				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.Program.Fontset_ItemGrade_4\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
-				SkillTooltipAttribute.ArgType.ConsumePercent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.ProbabilityPercent => ValueConvert + "%",
+				SkillTooltipAttribute.ArgType.ConsumePercent => ArgValue1 + "%",
+				SkillTooltipAttribute.ArgType.ProbabilityPercent => ArgValue1 + "%",
 				SkillTooltipAttribute.ArgType.StanceType => Arg.ToEnum<Stance>().GetDescription(),
-				SkillTooltipAttribute.ArgType.Percent => ValueConvert + "%",
-				SkillTooltipAttribute.ArgType.Counter => ValueConvert + "次",
-				SkillTooltipAttribute.ArgType.Distance => (float)ValueConvert / 100 + "米",
+				SkillTooltipAttribute.ArgType.Percent => ArgValue1 + "%",
+				SkillTooltipAttribute.ArgType.Counter => ArgValue1 + "次",
+				SkillTooltipAttribute.ArgType.Distance => (float)ArgValue1 / 100 + "米",
 				SkillTooltipAttribute.ArgType.KeyCommand => FileCache.Data.Skill3[Arg]?.CurrentShortCutKey.GetImage(),
-				SkillTooltipAttribute.ArgType.Number => ValueConvert,
+				SkillTooltipAttribute.ArgType.Number => ArgValue1,
 				SkillTooltipAttribute.ArgType.TextAlias => Arg.GetText(),
 
 				_ => null,

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="ItemSpirit" version="0.6">
+	<list module="ItemData" type="ItemSpirit" version="0.5">
 		<record alias="id" name="" type="id" />	
 		<record alias="level" name="" type="Byte" start="0" />
 		
@@ -8,12 +8,9 @@
 		<record alias="main-ingredient" name="" ref="Item" />
 		<record alias="applicable-part" seq="$equip-type" type="Seq" repeat="4" />
 		<record alias="use-random-ability-value" name="" type="Bool" showzero="y" />
-		<record alias="success-probability" name="" type="Byte" default="100" apply="must" />
-		<record alias="money-cost" name="" type="Money" />
-		<record alias="unk-" name="" type="Int32" />
-		<record alias="unk-" name="" type="Int32" />		
-		<record alias="fixed-ingredient" name="" ref="Item" repeat="8" />
-		<record alias="fixed-ingredient-stack-count" name="" type="Short" repeat="8" />
+		<record alias="money-cost" name="" type="Money" />		
+		<record alias="fixed-ingredient" name="材料" ref="Item" repeat="8" />
+		<record alias="fixed-ingredient-stack-count" name="材料数量" type="Short" repeat="8" />
 		<record alias="attach-ability" name="" seq="$main-ability" type="Seq" repeat="2" />
 		<record alias="ability-min" name="" type="Int32" repeat="2" />
 		<record alias="ability-max" name="" type="Int32" repeat="2" />
@@ -24,6 +21,7 @@
 			 <case alias="fail" />
 		</record>
 		<!-- ======================================================= -->
+		<record alias="success-probability" name="" type="Byte" default="100" apply="must" client="n" />	
 		<record alias="distribution-type" name="" default="Spirit_0001" apply="must" client="n" ref="RandomDistribution" />
 		<record alias="attach-distribution-bundle" name="" type="Bool" showzero="y" client="n" />
 	</list>

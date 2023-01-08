@@ -42,7 +42,16 @@ namespace Xylia.Preview.Data
 		/// 是否显示调试信息
 		/// </summary>
 		internal virtual bool ShowDebugInfo => true;
+
+		/// <summary>
+		/// 使用分支
+		/// </summary>
+		public virtual bool UseVariation { get; set; } = false;
 		#endregion
+
+
+
+
 
 		#region 数据处理
 		protected readonly Hashtable ht_alias = new(StringComparer.Create(CultureInfo.InvariantCulture, true));
@@ -194,7 +203,7 @@ namespace Xylia.Preview.Data
 		/// <summary>
 		/// 配置内容
 		/// </summary>
-		protected virtual string ConfigContent => null;
+		public virtual string ConfigContent { get; set; } = null;
 
 		BDAT_LIST ListData;
 
@@ -298,7 +307,7 @@ namespace Xylia.Preview.Data
 		{
 			#region 初始化
 			if (string.IsNullOrWhiteSpace(Alias)) return null;
-			if (int.TryParse(Alias, out int MainID)) return GetLazyInfo(MainID, this is ItemTable ? 1 : 0);
+			if (int.TryParse(Alias, out int MainID)) return GetLazyInfo(MainID, UseVariation ? 1 : 0);
 
 			if (!this.HasData) this.Load();
 			#endregion

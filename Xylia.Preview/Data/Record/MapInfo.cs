@@ -80,7 +80,6 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 
-
 		#region 处理字段
 		public string NameText() => this.Name2.GetText();
 

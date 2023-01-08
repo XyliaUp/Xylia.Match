@@ -24,6 +24,10 @@ namespace Xylia.Preview.Data.Record
 		[Signal("applicable-part-4")]
 		public EquipType ApplicablePart4;
 
+		[Signal("applicable-part-5")]
+		public EquipType ApplicablePart5;
+
+
 		[Signal("use-random-ability-value")]
 		public bool UseRandomAbilityValue;
 
@@ -78,7 +82,8 @@ namespace Xylia.Preview.Data.Record
 		{
 			if (EquipType == EquipType.None) return null;
 
-			return FileCache.Data.ItemSpirit.Where(o => EquipType == o.ApplicablePart1 || EquipType == o.ApplicablePart2 || EquipType == o.ApplicablePart3 || EquipType == o.ApplicablePart4);
+			return FileCache.Data.ItemSpirit.Where(o => EquipType == o.ApplicablePart1 || EquipType == o.ApplicablePart2 || 
+			    EquipType == o.ApplicablePart3 || EquipType == o.ApplicablePart4 || EquipType == o.ApplicablePart5);
 		}
 		#endregion
 	}

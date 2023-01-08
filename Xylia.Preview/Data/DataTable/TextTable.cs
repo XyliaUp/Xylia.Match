@@ -6,9 +6,10 @@ using Xylia.Preview.Properties.AnalyseSection;
 
 namespace Xylia.Preview.Data
 {
-	public class TextTable : DataTable<Text>
+	public sealed class TextTable : DataTable<Text>
 	{
-		protected override string ConfigContent => DataRes.TextData;
+		public override string ConfigContent => DataRes.TextData;
+
 
 
 		private bool HasMessage = false;

@@ -49,17 +49,12 @@ namespace Xylia.Preview.Data.Record
 		public short IconIndex;
 		#endregion
 
-
-
-
-
 		#region 结构字段
 		/// <summary>
 		/// 当前快捷键
 		/// </summary>
 		public KeyCommand CurrentShortCutKey => this.ShortCutKey.GetKeyCommand();
 		#endregion
-
 
 
 		#region 接口方法

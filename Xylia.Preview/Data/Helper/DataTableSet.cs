@@ -8,6 +8,7 @@ using Xylia.bns.Read;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Properties;
+using Xylia.Preview.Properties.AnalyseSection;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
@@ -73,7 +74,7 @@ namespace Xylia.Preview.Data.Helper
 
 		public DataTable<Effect> Effect { get; } = new();
 
-		
+
 		public DataTable<FactionBattleFieldZone> FactionBattleFieldZone { get; } = new();
 		public DataTable<Faction> Faction { get; } = new();
 		public DataTable<FactionLevel> FactionLevel { get; } = new();
@@ -87,8 +88,7 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<IconTexture> IconTexture { get; } = new();
 
 
-		public ItemTable Item { get; } = new();
-
+		
 
 
 
@@ -96,8 +96,18 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<ItemBrandTooltip> ItemBrandTooltip { get; } = new();
 		public DataTable<ItemBuyPrice> ItemBuyPrice { get; } = new();
 		public DataTable<ItemCombat> ItemCombat { get; } = new();
-		public DataTable<ItemEvent> ItemEvent { get; } = new();
+
+		public DataTable<Item> Item { get; } = new()
+		{
+			PublicSet = false,
+			ConfigContent = DataRes.ItemData,
+			UseVariation = true,
+		};
+
+		
 		public DataTable<ItemExchange> ItemExchange { get; } = new();
+
+		public DataTable<ItemEvent> ItemEvent { get; } = new();
 
 		public DataTable<ItemImprove> ItemImprove { get; } = new();
 		public DataTable<ItemImproveOption> ItemImproveOption { get; } = new();
@@ -176,8 +186,7 @@ namespace Xylia.Preview.Data.Helper
 
 		public DataTable<SetItem> SetItem { get; } = new();
 
-		public DataTable<Skill3> Skill3 { get; } = new();
-
+		public DataTable<Skill3> Skill3 { get; } = new() { UseVariation = true, };
 
 		public DataTable<SkillByEquipment> SkillByEquipment { get; } = new();
 		public DataTable<SkillCastCondition3> SkillCastCondition3 { get; } = new();
@@ -208,6 +217,9 @@ namespace Xylia.Preview.Data.Helper
 		public DataTable<WorldAccountExpedition> WorldAccountExpedition { get; } = new();
 		public DataTable<WorldAccountMuseum> WorldAccountMuseum { get; } = new();
 
+
+
+
 		public DataTable<ZoneEnv2> ZoneEnv2 { get; } = new();
 
 
@@ -228,6 +240,7 @@ namespace Xylia.Preview.Data.Helper
 				//类型校验后清理数据
 				if (finfo.HasImplementedRawGeneric(typeof(DataTable<>)))
 				{
+					//调用 DataTable.Clear 方法
 					var DataTable = finfo.GetValue(this);
 					DataTable.GetType().GetMethod("Clear", ClassExtension.Flags).Invoke(DataTable);
 				}

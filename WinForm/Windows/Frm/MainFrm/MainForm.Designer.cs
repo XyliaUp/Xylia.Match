@@ -38,7 +38,6 @@
 			this.OpenFolder = new System.Windows.Forms.ToolStripMenuItem();
 			this.Faction = new System.Windows.Forms.ToolStripMenuItem();
 			this.OpenRes = new System.Windows.Forms.ToolStripMenuItem();
-			this.Function_Dev = new System.Windows.Forms.ToolStripMenuItem();
 			this.Footer = new System.Windows.Forms.Label();
 			this.GetUsedMemory = new System.Windows.Forms.Timer(this.components);
 			this.Btn_log = new System.Windows.Forms.PictureBox();
@@ -110,7 +109,7 @@
 			this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.OpenFolder,
             this.Faction,
-            this.Function_Dev});
+            });
 			this.MainMenu.Name = "Right";
 			this.MainMenu.Size = new System.Drawing.Size(137, 70);
 			// 
@@ -139,13 +138,6 @@
 			this.OpenRes.Text = "下载资源";
 			this.OpenRes.Click += new System.EventHandler(this.OpenRes_Click);
 			// 
-			// Function_Dev
-			// 
-			this.Function_Dev.Image = ((System.Drawing.Image)(resources.GetObject("Function_Dev.Image")));
-			this.Function_Dev.Name = "Function_Dev";
-			this.Function_Dev.Size = new System.Drawing.Size(136, 22);
-			this.Function_Dev.Text = "开发者工具";
-			// 
 			// Footer
 			// 
 			this.Footer.BackColor = System.Drawing.Color.Transparent;
@@ -155,7 +147,7 @@
 			this.Footer.Name = "Footer";
 			this.Footer.Size = new System.Drawing.Size(814, 20);
 			this.Footer.TabIndex = 80;
-			this.Footer.Text = "剑灵资源检索工具     Powered by  雪依        2018~2021";
+			this.Footer.Text = "剑灵资源检索工具     Powered by  雪依        2018~2023";
 			this.Footer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			this.Footer.Click += new System.EventHandler(this.Footer_Click);
 			// 
@@ -294,7 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem Faction;
         private System.Windows.Forms.ToolStripMenuItem OpenRes;
         private System.Windows.Forms.ToolStripMenuItem OpenFolder;
-        private System.Windows.Forms.ToolStripMenuItem Function_Dev;
+
         private System.Windows.Forms.SaveFileDialog Save;
         private System.Windows.Forms.Label Footer;
         private System.Windows.Forms.Timer Tips;

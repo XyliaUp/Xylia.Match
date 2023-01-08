@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 using Xylia.Drawing;
-using Xylia.Preview.Resources;
 
 using static Xylia.Drawing.Compose;
 using static Xylia.Preview.Resources.Resource_BNSR;
@@ -10,56 +10,70 @@ using static Xylia.Preview.Resources.Resource_BNSR;
 namespace Xylia.Match.Windows.Panel
 {
 	/// <summary>
+	/// 合成器
+	/// </summary>
+	public sealed class ItemImageCompose
+	{
+		#region 事件与委托
+		public delegate void RefreshHandle(EventArgs e);
+		public event RefreshHandle refreshHandle;
+
+		public void Refresh() => this.refreshHandle?.Invoke(null);
+		#endregion
+
+
+		#region 方法
+		public Bitmap GradeImage;
+
+		public ImageInfo BottomLeft;
+
+		public ImageInfo TopRight;
+
+		public byte[] Icon;
+
+		public Bitmap DrawICON(double? Ratio = null)
+		{
+			Bitmap Temp = new(GradeImage);
+
+			//比例缩放
+			if (Ratio != null) Temp = Temp.ImageThumbnail((double)Ratio);
+
+			if (Icon != null) Temp = Temp.ImageCombine(SetImage.Load(Icon), DrawLocation.Centre);
+
+
+			if (BottomLeft?.bitmap != null)
+			{
+				var tmp = BottomLeft.bitmap;
+				if (Ratio != null) tmp = BottomLeft.bitmap.ImageThumbnail((double)Ratio);
+
+				Temp = Temp.ImageCombine(tmp, DrawLocation.BottomLeft);
+			}
+
+			if (TopRight?.bitmap != null) Temp = Temp.ImageCombine(TopRight.bitmap, DrawLocation.TopRight);
+
+
+			return Temp;
+		}
+		#endregion
+	}
+
+	/// <summary>
 	/// 合成选项
 	/// </summary>
 	public class CombineOption
 	{
-		#region 物品品级
-		public class Grade
+		public static List<GradeInfo> Grades = new()
 		{
-			public Grade(byte ItemGrade, string Name)
-			{
-				this.Name = Name;
-				this.ItemGrade = ItemGrade;
-			}
-
-
-			public string Name;
-
-			public byte ItemGrade = 1;
-		}
-
-
-		public static List<Grade> Grades = new()
-		{
-			{ new Grade(1, "粗糙级") },
-			{ new Grade(2, "凡品级") },
-			{ new Grade(3, "奇巧级") },
-			{ new Grade(4, "精粹级") },
-			{ new Grade(5, "至尊级") },
-			{ new Grade(6, "进化级") },
-			{ new Grade(7, "传说级") },
-			{ new Grade(8, "古代级") },
-			{ new Grade(9, "神话级") },
+			{ new(1, "粗糙级") },
+			{ new(2, "凡品级") },
+			{ new(3, "奇巧级") },
+			{ new(4, "精粹级") },
+			{ new(5, "至尊级") },
+			{ new(6, "进化级") },
+			{ new(7, "传说级") },
+			{ new(8, "古代级") },
+			{ new(9, "神话级") },
 		};
-		#endregion
-
-
-
-		public sealed class ImageInfo
-		{
-			public ImageInfo(string Name, Bitmap bitmap)
-			{
-				this.Name = Name;
-				this.bitmap = bitmap;
-			}
-
-
-			public string Name;
-
-			public Bitmap bitmap;
-		}
-
 
 		public static List<ImageInfo> BLImage = new()
 		{
@@ -80,48 +94,35 @@ namespace Xylia.Match.Windows.Panel
 			{ new("拍卖行交易", SlotItem_marketBusiness) },
 			{ new("账号通用", SlotItem_privateSale) },
 		};
+	}
 
 
 
-
-
-
-
-		public sealed class Prop
+	public sealed class GradeInfo
+	{
+		public GradeInfo(byte ItemGrade, string Name)
 		{
-			public Bitmap GradeImage = Resource_BNSR.ItemIcon_Bg_Grade_7;
-
-			public ImageInfo BottomLeft;
-
-			public ImageInfo TopRight;
-
-			public byte[] Icon;
-
-
-			public Bitmap DrawICON(double? Ratio = null)
-			{
-				Bitmap Temp = new(GradeImage);
-
-				//比例缩放
-				if (Ratio != null) Temp = Temp.ImageThumbnail((double)Ratio);
-
-
-				if (Icon != null) Temp = Temp.ImageCombine(SetImage.Load(Icon), DrawLocation.Centre);
-
-
-				if (BottomLeft?.bitmap != null)
-				{
-					var tmp = BottomLeft.bitmap;
-					if (Ratio != null) tmp = BottomLeft.bitmap.ImageThumbnail((double)Ratio);
-
-					Temp = Temp.ImageCombine(tmp, DrawLocation.BottomLeft);
-}
-
-				if (TopRight?.bitmap != null) Temp = Temp.ImageCombine(TopRight.bitmap, DrawLocation.TopRight);
-
-
-				return Temp;
-			}
+			this.Name = Name;
+			this.ItemGrade = ItemGrade;
 		}
+
+
+		public string Name;
+
+		public byte ItemGrade = 1;
+	}
+
+	public sealed class ImageInfo
+	{
+		public ImageInfo(string Name, Bitmap bitmap)
+		{
+			this.Name = Name;
+			this.bitmap = bitmap;
+		}
+
+
+		public string Name;
+
+		public Bitmap bitmap;
 	}
 }

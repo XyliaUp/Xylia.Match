@@ -59,7 +59,7 @@
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
 			this.metroButton4 = new MetroFramework.Controls.MetroButton();
-			this.metroButton3 = new MetroFramework.Controls.MetroButton();
+			this.ImageCompose_Reset = new MetroFramework.Controls.MetroButton();
 			this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
 			this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
 			this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
@@ -123,8 +123,8 @@
 			this.metroTabPage1.TabIndex = 2;
 			this.metroTabPage1.Text = "道具图标";
 			this.metroTabPage1.VerticalScrollbarBarColor = true;
-			this.metroTabPage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.Match_ICON_DragDrop);
-			this.metroTabPage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.Match_ICON_DragEnter);
+			this.metroTabPage1.DragDrop += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragDrop);
+			this.metroTabPage1.DragEnter += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragEnter);
 			// 
 			// groupBox2
 			// 
@@ -241,6 +241,7 @@
 			this.FormatSelect.RectWidth = 1;
 			this.FormatSelect.SelectedIndex = -1;
 			this.FormatSelect.Size = new System.Drawing.Size(214, 32);
+			this.FormatSelect.Source.Add("[id]");
 			this.FormatSelect.Source.Add("[id]_[name]");
 			this.FormatSelect.Source.Add("[name]_[id]");
 			this.FormatSelect.TabIndex = 108;
@@ -287,7 +288,7 @@
 			this.metroLabel3.Name = "metroLabel3";
 			this.metroLabel3.Size = new System.Drawing.Size(135, 19);
 			this.metroLabel3.TabIndex = 25;
-			this.metroLabel3.Text = "请选择文件列表数据";
+			this.metroLabel3.Text = "请选择物品缓存数据";
 			// 
 			// metroTextBox1
 			// 
@@ -331,7 +332,6 @@
 			this.metroLabel1.Size = new System.Drawing.Size(131, 19);
 			this.metroLabel1.TabIndex = 5;
 			this.metroLabel1.Text = "请选择游戏根目录 *";
-			
 			// 
 			// Btn_Search_1
 			// 
@@ -340,7 +340,7 @@
 			this.Btn_Search_1.Size = new System.Drawing.Size(75, 23);
 			this.Btn_Search_1.TabIndex = 4;
 			this.Btn_Search_1.Text = "浏览";
-			this.Btn_Search_1.Click += new System.EventHandler(this.MetroButton3_Click);
+			this.Btn_Search_1.Click += new System.EventHandler(this.ImageCompose_Reset_Click);
 			// 
 			// Path_GameFolder
 			// 
@@ -358,11 +358,11 @@
 			this.Footer.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Footer.LineColor = System.Drawing.Color.White;
 			this.Footer.Location = new System.Drawing.Point(3, 387);
-			this.Footer.MaximumSize = new System.Drawing.Size(0, 23);
-			this.Footer.MinimumSize = new System.Drawing.Size(150, 23);
+			this.Footer.MaximumSize = new System.Drawing.Size(0, 22);
+			this.Footer.MinimumSize = new System.Drawing.Size(150, 22);
 			this.Footer.Name = "Footer";
 			this.Footer.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-			this.Footer.Size = new System.Drawing.Size(150, 23);
+			this.Footer.Size = new System.Drawing.Size(150, 22);
 			this.Footer.TabIndex = 35;
 			this.Footer.Text = "信息提示";
 			// 
@@ -375,7 +375,7 @@
 			this.metroTabPage2.Controls.Add(this.pictureBox4);
 			this.metroTabPage2.Controls.Add(this.metroLabel4);
 			this.metroTabPage2.Controls.Add(this.metroButton4);
-			this.metroTabPage2.Controls.Add(this.metroButton3);
+			this.metroTabPage2.Controls.Add(this.ImageCompose_Reset);
 			this.metroTabPage2.Controls.Add(this.metroComboBox3);
 			this.metroTabPage2.Controls.Add(this.metroComboBox2);
 			this.metroTabPage2.Controls.Add(this.metroComboBox1);
@@ -383,12 +383,12 @@
 			this.metroTabPage2.HorizontalScrollbarBarColor = true;
 			this.metroTabPage2.Location = new System.Drawing.Point(4, 36);
 			this.metroTabPage2.Name = "metroTabPage2";
-			this.metroTabPage2.Size = new System.Drawing.Size(192, 60);
+			this.metroTabPage2.Size = new System.Drawing.Size(781, 413);
 			this.metroTabPage2.TabIndex = 3;
 			this.metroTabPage2.Text = "图标合成";
 			this.metroTabPage2.VerticalScrollbarBarColor = true;
-			this.metroTabPage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.Match_ICON_DragDrop);
-			this.metroTabPage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.Match_ICON_DragEnter);
+			this.metroTabPage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragDrop);
+			this.metroTabPage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragEnter);
 			// 
 			// Radio_128px
 			// 
@@ -422,7 +422,7 @@
 			this.ucCheckBox1.Size = new System.Drawing.Size(152, 30);
 			this.ucCheckBox1.TabIndex = 33;
 			this.ucCheckBox1.TextValue = "使用新版本背景";
-			this.ucCheckBox1.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox1_CheckedChangeEvent);
+			this.ucCheckBox1.CheckedChangeEvent += new System.EventHandler(this.MetroComboBox1_TextChanged);
 			// 
 			// pictureBox4
 			// 
@@ -451,14 +451,14 @@
 			this.metroButton4.Text = "存储为";
 			this.metroButton4.Click += new System.EventHandler(this.MetroButton4_Click);
 			// 
-			// metroButton3
+			// ImageCompose_Reset
 			// 
-			this.metroButton3.Location = new System.Drawing.Point(654, 62);
-			this.metroButton3.Name = "metroButton3";
-			this.metroButton3.Size = new System.Drawing.Size(75, 23);
-			this.metroButton3.TabIndex = 29;
-			this.metroButton3.Text = "重置";
-			this.metroButton3.Click += new System.EventHandler(this.MetroButton3_Click_1);
+			this.ImageCompose_Reset.Location = new System.Drawing.Point(654, 62);
+			this.ImageCompose_Reset.Name = "ImageCompose_Reset";
+			this.ImageCompose_Reset.Size = new System.Drawing.Size(75, 23);
+			this.ImageCompose_Reset.TabIndex = 29;
+			this.ImageCompose_Reset.Text = "重置";
+			this.ImageCompose_Reset.Click += new System.EventHandler(this.ImageCompose_Reset_Click);
 			// 
 			// metroComboBox3
 			// 
@@ -488,7 +488,6 @@
 			this.metroComboBox1.Name = "metroComboBox1";
 			this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
 			this.metroComboBox1.TabIndex = 26;
-			this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
 			this.metroComboBox1.TextChanged += new System.EventHandler(this.MetroComboBox1_TextChanged);
 			// 
 			// pictureBox1
@@ -511,7 +510,7 @@
 			this.GemPage.HorizontalScrollbarBarColor = true;
 			this.GemPage.Location = new System.Drawing.Point(4, 36);
 			this.GemPage.Name = "GemPage";
-			this.GemPage.Size = new System.Drawing.Size(192, 60);
+			this.GemPage.Size = new System.Drawing.Size(781, 413);
 			this.GemPage.TabIndex = 5;
 			this.GemPage.Text = "八卦牌合成";
 			this.GemPage.VerticalScrollbarBarColor = true;
@@ -617,10 +616,9 @@
 			this.Controls.Add(this.tabControl1);
 			this.Name = "IconOperator";
 			this.Size = new System.Drawing.Size(789, 453);
-			this.Load += new System.EventHandler(this.UPK_Load);
-			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Match_ICON_DragDrop);
-			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Match_ICON_DragEnter);
-			this.Enter += new System.EventHandler(this.Match_ICON_Enter);
+			this.Load += new System.EventHandler(this.IconOperator_Load);
+			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragDrop);
+			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragEnter);
 			this.tabControl1.ResumeLayout(false);
 			this.metroTabPage1.ResumeLayout(false);
 			this.metroTabPage1.PerformLayout();
@@ -665,7 +663,7 @@
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private MetroFramework.Controls.MetroButton metroButton4;
-        private MetroFramework.Controls.MetroButton metroButton3;
+        private MetroFramework.Controls.MetroButton ImageCompose_Reset;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private HZH_Controls.Controls.UCSplitLabel Footer;
         private HZH_Controls.Controls.UCSwitch Switch_Mode;

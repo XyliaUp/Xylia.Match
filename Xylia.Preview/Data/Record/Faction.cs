@@ -20,7 +20,6 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 
-
 		#region 接口字段
 		public string NameText() => this.Name2.GetText();
 

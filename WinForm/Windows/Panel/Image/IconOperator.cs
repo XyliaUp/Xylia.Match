@@ -13,11 +13,9 @@ using Xylia.Configure;
 using Xylia.Drawing;
 using Xylia.Extension;
 using Xylia.Match.Util.Paks;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Item.Cell;
 using Xylia.Windows.Forms;
-
-using static Xylia.Drawing.Compose;
-using static Xylia.Preview.Resources.Resource_Common;
 
 
 
@@ -28,47 +26,29 @@ namespace Xylia.Match.Windows.Panel
 		#region 构造
 		public IconOperator()
 		{
-			IsInitialization = true;
-
-			//Logger.Write($"启用图标匹配模块");
-
-			InitializeComponent();
-
 			this.DoubleBuffered = true;
 			CheckForIllegalCrossThreadCalls = false;
-
-			this.tabControl1.SelectedIndex = 0;
-
-
-			#region 初始化道具属性选择框
-			foreach (var Item in CombineOption.Grades) metroComboBox1.Items.Add(Item.Name);
-			foreach (var Item in CombineOption.BLImage) metroComboBox2.Items.Add(Item.Name);
-			foreach (var Item in CombineOption.TRImage) metroComboBox3.Items.Add(Item.Name);
-
-			MetroButton3_Click_1(null, null);
-			#endregion
-
 
 			SetStyle(ControlStyles.UserPaint, true);
 			SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景.
 			SetStyle(ControlStyles.DoubleBuffer, true); // 双缓冲
+
+			IsInitialization = true;
+			InitializeComponent();
+			
+			#region 初始化道具属性选择框
+			foreach (var Item in CombineOption.Grades) metroComboBox1.Items.Add(Item.Name);
+			foreach (var Item in CombineOption.BLImage) metroComboBox2.Items.Add(Item.Name);
+			foreach (var Item in CombineOption.TRImage) metroComboBox3.Items.Add(Item.Name);
+			
+			ImageCompose_Reset_Click(null, null);
+			#endregion
+
+
+			this.tabControl1.SelectedIndex = 0;
 		}
-		#endregion
 
-		#region 字段
-		
-
-		CombineOption.Prop GetProp = new();
-
-		bool IsInitialization = false;
-
-		private string IconPath;
-		#endregion
-
-
-
-		#region 控件方法
-		private void UPK_Load(object sender, EventArgs e)
+		private void IconOperator_Load(object sender, EventArgs e)
 		{
 			//初始化文本框路径
 			//this.ReadConfig(this.GetType().Name);
@@ -79,19 +59,21 @@ namespace Xylia.Match.Windows.Panel
 
 
 			#region  读取输出格式设置
-			string FormatSel = Xylia.Configure.Ini.ReadValue("Match_ICON", "FormatSel");
+			string FormatSel = Ini.ReadValue("IconOperator", "FormatSel");
 
 			if (FormatSel.IsNull() || !FormatSel.Contains('[')) FormatSelect.Text = FormatSelect.Source.First().ToString();
 			else FormatSelect.TextValue = FormatSel;
 			#endregion
 
-
-			if (bool.TryParse(Ini.ReadValue("Match_ICON", "Mode"), out bool Result)) Switch_Mode.Checked = Result;
-			if (bool.TryParse(Ini.ReadValue("Match_ICON", "HasBG"), out Result)) checkBox1.Checked = Result;
-			if (bool.TryParse(Ini.ReadValue("Match_ICON", "WriteLog"), out Result)) checkBox2.Checked = Result;
-
+			if (bool.TryParse(Ini.ReadValue("IconOperator", "Mode"), out bool Result)) Switch_Mode.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue("IconOperator", "HasBG"), out Result)) checkBox1.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue("IconOperator", "WriteLog"), out Result)) checkBox2.Checked = Result;
 		}
+		#endregion
 
+			 
+
+		#region 输出道具图标
 		private void FormatSelect_MouseEnter(object sender, EventArgs e)
 		{
 			string Msg = "*可自定义输出格式  特殊规则为 [id]、[name/名称]、[alias/别名]\n（建议使用英文，英文不区分大小写)";
@@ -101,7 +83,7 @@ namespace Xylia.Match.Windows.Panel
 		private void FormatSelect_TextChanged(object sender, EventArgs e)
 		{
 			string SaveTxt = FormatSelect.TextValue;
-			Ini.WriteValue("Match_ICON", "FormatSel", SaveTxt);
+			Ini.WriteValue("IconOperator", "FormatSel", SaveTxt);
 		}
 
 		private void Path_ResultPath_TextChanged(object sender, EventArgs e)
@@ -109,339 +91,17 @@ namespace Xylia.Match.Windows.Panel
 			MySet.Core.Icon_ResultPath = ((Control)sender).Text;
 		}
 
-		private static bool GetBitmap(List<string> Files, string Key, out Bitmap Bitmap)
-		{
-			var fs = Files.Where(f => Path.GetFileNameWithoutExtension(f).ToLower().Contains(Key.ToLower()));
-			if (fs.Any())
-			{
-				Bitmap = SetImage.Load(fs.First());
-				return true;
-			}
-
-			Bitmap = null;
-			return false;
-		}
 
 
-
-		private void GemPage_DragDrop(object sender, DragEventArgs e)
-		{
-			var Files = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList();
-			if (Files.Count >= 2)
-			{
-				if (GetBitmap(Files, "pos1", out Bitmap temp)) GemCircle.Meta1 = temp;
-				if (GetBitmap(Files, "pos2", out temp)) GemCircle.Meta2 = temp;
-				if (GetBitmap(Files, "pos3", out temp)) GemCircle.Meta3 = temp;
-				if (GetBitmap(Files, "pos4", out temp)) GemCircle.Meta4 = temp;
-				if (GetBitmap(Files, "pos5", out temp)) GemCircle.Meta5 = temp;
-				if (GetBitmap(Files, "pos6", out temp)) GemCircle.Meta6 = temp;
-				if (GetBitmap(Files, "pos7", out temp)) GemCircle.Meta7 = temp;
-				if (GetBitmap(Files, "pos8", out temp)) GemCircle.Meta8 = temp;
-			}
-			else if (Files.Count != 0)
-			{
-				Bitmap bitmap = SetImage.Load(Files.First());
-
-				switch (GemCircle.PartSel)
-				{
-					case GemCircle.PartSection.Part1: GemCircle.Meta1 = bitmap; break;
-					case GemCircle.PartSection.Part2: GemCircle.Meta2 = bitmap; break;
-					case GemCircle.PartSection.Part3: GemCircle.Meta3 = bitmap; break;
-					case GemCircle.PartSection.Part4: GemCircle.Meta4 = bitmap; break;
-					case GemCircle.PartSection.Part5: GemCircle.Meta5 = bitmap; break;
-					case GemCircle.PartSection.Part6: GemCircle.Meta6 = bitmap; break;
-					case GemCircle.PartSection.Part7: GemCircle.Meta7 = bitmap; break;
-					case GemCircle.PartSection.Part8: GemCircle.Meta8 = bitmap; break;
-
-					default:
-					{
-						Xylia.Tip.Message("请先通过鼠标选择一个八卦牌部位");
-						Console.WriteLine("暂不支持类型：" + GemCircle.PartSel);
-					}
-					break;
-				}
-			}
-		}
-
-		private void GemPage_DragEnter(object sender, DragEventArgs e)
-		{
-			if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true) e.Effect = DragDropEffects.All;
-		}
-
-		private void GemPage_Click(object sender, EventArgs e)
-		{
-			this.GemCircle.PartSel = GemCircle.PartSection.Init;
-		}
-
-		private void metroButton6_Click(object sender, EventArgs e)
-		{
-			SaveFileDialog.Filter = "PNG格式|*.png|GIF格式|*.gif|JPEG格式|*.jpg|位图格式|*.bmp|ICO格式|*.ico";
-			SaveFileDialog.FileName = "ItemSet_Compose";
-
-
-			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
-			{
-				ImageFormat Format = ImageFormat.Png;
-
-				switch (SaveFileDialog.DefaultExt)
-				{
-					case ".png": Format = ImageFormat.Png; break;
-					case ".gif": Format = ImageFormat.Gif; break;
-					case ".jpg": Format = ImageFormat.Jpeg; break;
-					case ".bmp": Format = ImageFormat.Bmp; break;
-					case ".ico": Format = ImageFormat.Icon; break;
-				}
-
-				GemCircle.Image.Save(SaveFileDialog.FileName, Format);
-			}
-		}
-
-		private void metroButton7_Click(object sender, EventArgs e)
-		{
-			this.GemCircle.Clear();
-			this.GemCircle.PartSel = GemCircle.PartSection.Part1;
-		}
-
-		private void GemCircle_SelectPartChanged(object sender, EventArgs e)
-		{
-			string PartName = GemCircle.PartConvert.ContainsKey(this.GemCircle.PartSel) ? GemCircle.PartConvert[this.GemCircle.PartSel] : this.GemCircle.PartSel.ToString();
-
-			metroLabel6.Text = $"需要更改部位时，请点击对应的区域\n\n当前选择：{ PartName }";
-		}
-
-		private void ucSwitch1_CheckedChanged(object sender, EventArgs e)
-		{
-			this.GemCircle.Transparent = !this.GemCircle.Transparent;
-		}
-
-		private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-
-
-
-
-
-
-
-		private void Match_ICON_DragEnter(object sender, DragEventArgs e)
-		{
-			if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true) e.Effect = DragDropEffects.All;
-		}
-
-		private void Match_ICON_DragDrop(object sender, DragEventArgs e)
-		{
-			string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-			if (files.Length == 0) return;
-
-			this.IconPath = Path.GetFileNameWithoutExtension(files[0]);
-
-			byte[] ByteArray = null;
-
-			Stream stream = new FileStream(files[0], FileMode.Open);
-
-			if (stream != null && stream.Length > 0)
-			{
-				stream.Position = 0;
-
-				using BinaryReader br = new(stream);
-				ByteArray = br.ReadBytes((int)stream.Length);
-			}
-
-
-			GetProp.Icon = ByteArray;
-
-			//配置默认另存选项
-			if (SetImage.Load(GetProp.Icon).Width > 64) Radio_128px.Checked = true;
-			else Radio_64px.Checked = true;
-
-			RenderPropImg();
-		}
-
-
-		/// <summary>
-		/// 图层重绘
-		/// </summary>
-		public void RenderPropImg()
-		{
-			pictureBox1.Image = GetProp.DrawICON();
-			pictureBox4.Image = GetProp.DrawICON(2);
-		}
+		private void MetroTextBox1_TextChanged(object sender, EventArgs e) => MySet.Core.Icon_Chv = ((Control)sender).Text;
 
 		private void Path_GameFolder_TextChanged(object sender, EventArgs e)
 		{
 			if (Directory.Exists(Path_GameFolder.Text))
-			{
 				MySet.Core.Folder_Game_Bns = ((Control)sender).Text;
-			}
-		}
-
-		private void 清除临时文件ToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Announcement announcement = new("即将进行资源清理操作，是否确认？")
-			{
-				ExitText = "退出",
-				OkText = "确认"
-			};
-
-			if (announcement.ShowDialog() == DialogResult.OK)
-			{
-				return;
-			}
-		}
-
-		
-		private void MetroTextBox1_TextChanged(object sender, EventArgs e)
-		{
-			MySet.Core.Icon_Chv = ((Control)sender).Text;
-		}
-
-		
-		private void MetroComboBox1_TextChanged(object sender, EventArgs e)
-		{
-			if (IsInitialization) return;
-
-			foreach (var Item in CombineOption.Grades)
-			{
-				if (Item.Name == metroComboBox1.Text)
-				{
-					GetProp.GradeImage = Xylia.Preview.Data.Record.ItemExtension.GetBackGround(Item.ItemGrade, ucCheckBox1.Checked);
-					break;
-				}
-			}
-
-			RenderPropImg();
-		}
-
-		private void MetroComboBox2_TextChanged(object sender, EventArgs e)
-		{
-			if (IsInitialization) return;
-			GetProp.BottomLeft = CombineOption.BLImage.Find(o => o.Name == metroComboBox2.Text);
-
-			RenderPropImg();
-		}
-
-		private void MetroComboBox3_TextChanged(object sender, EventArgs e)
-		{
-			if (IsInitialization) return;
-			GetProp.TopRight = CombineOption.TRImage.Find(o => o.Name == metroComboBox3.Text);
-
-			RenderPropImg();
-		}
-
-		private void MetroButton4_Click(object sender, EventArgs e)
-		{
-			string ItemName = "道具名称";
-
-			#region 获取道具名称
-			if (!this.IconPath.IsNull())
-			{
-				foreach (var Item in CombineOption.Grades)
-				{
-					if (Item.Name == metroComboBox1.Text)
-					{
-						ItemName = this.IconPath + "_" + Item.ItemGrade;
-						break;
-					}
-				}
-			}
-			#endregion
-
-			SaveFileDialog.FileName = ItemName;
-			SaveFileDialog.Filter = "PNG格式|*.png|GIF格式|*.gif|JPEG格式|*.jpg|位图格式|*.bmp|ICO格式|*.ico";
-
-			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
-			{
-				ImageFormat Format = ImageFormat.Png;
-
-				switch (SaveFileDialog.DefaultExt)
-				{
-					case ".png": Format = ImageFormat.Png; break;
-					case ".gif": Format = ImageFormat.Gif; break;
-					case ".jpg": Format = ImageFormat.Jpeg; break;
-					case ".bmp": Format = ImageFormat.Bmp; break;
-					case ".ico": Format = ImageFormat.Icon; break;
-				}
-
-
-				if (Radio_64px.Checked)
-				{
-					pictureBox1.Image.Save(SaveFileDialog.FileName, Format);
-				}
-				else
-				{
-					pictureBox4.Image.Save(SaveFileDialog.FileName, Format);
-				}
-			}
-		}
-
-		private void MetroButton3_Click_1(object sender, EventArgs e)
-		{
-			if (metroComboBox1.Items.Count > 7) metroComboBox1.Text = metroComboBox1.Items[7].ToString();
-			if (metroComboBox2.Items.Count != 0) metroComboBox2.Text = metroComboBox2.Items[0].ToString();
-			if (metroComboBox3.Items.Count != 0) metroComboBox3.Text = metroComboBox3.Items[0].ToString();
-
-			GetProp = new CombineOption.Prop();
-
-			pictureBox1.Image = ItemIcon_Bg_Grade_7;
-			pictureBox4.Image = ItemIcon_Bg_Grade_7.ImageThumbnail(2);
-		}
-
-		private void tabPage1_DragDrop(object sender, DragEventArgs e)
-		{
-			string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-			if (files.Length == 0) return;
-
-
-			try
-			{
-				Stream stream = new FileStream(files[0], FileMode.Open);
-				if (stream != null && stream.Length > 0)
-				{
-					stream.Position = 0;
-
-					using BinaryReader br = new(stream);
-					byte[] ByteArray = br.ReadBytes((int)stream.Length);
-				}
-			}
-			catch
-			{
-
-			}
-		}
-
-		private void tabPage1_DragEnter(object sender, DragEventArgs e)
-		{
-			if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-				e.Effect = DragDropEffects.All;
-		}
-
-		private void ucCheckBox1_CheckedChangeEvent(object sender, EventArgs e)
-		{
-			MetroComboBox1_TextChanged(null, null);
-			RenderPropImg();
 		}
 
 
-		private void Match_ICON_Enter(object sender, EventArgs e)
-		{
-			IsInitialization = false;
-		}
-
-
-
-
-
-
-	
-		#endregion
-
-
-
-
-		#region 输出图标
 		private void MetroButton3_Click(object sender, EventArgs e)
 		{
 			if (Folder.ShowDialog() == DialogResult.OK) Path_GameFolder.Text = Folder.SelectedPath;
@@ -456,12 +116,12 @@ namespace Xylia.Match.Windows.Panel
 		{
 			Open.Filter = "数据配置文件|*.chv|所有文件|*.*";
 
-			if (int.TryParse(Xylia.Configure.Ini.ReadValue("Match_ICON", "Filter1"), out int Result)) Open.FilterIndex = Result;
+			if (int.TryParse(Ini.ReadValue("IconOperator", "Filter1"), out int Result)) Open.FilterIndex = Result;
 
 			if (Open.ShowDialog() == DialogResult.OK)
 			{
 				metroTextBox1.Text = Open.FileName;
-				Ini.WriteValue("Match_ICON", "Filter1", Open.FilterIndex);
+				Ini.WriteValue("IconOperator", "Filter1", Open.FilterIndex);
 			}
 		}
 
@@ -486,10 +146,11 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			Ini.WriteValue("Match_ICON", "Mode", Switch_Mode.Checked);
+			Ini.WriteValue("IconOperator", "Mode", Switch_Mode.Checked);
 			FrmAnchorTips.CloseLastTip();
 			Switch_Mode_MouseEnter(null, null);
 		}
+
 
 		private void metroButton1_MouseEnter(object sender, EventArgs e)
 		{
@@ -500,27 +161,6 @@ namespace Xylia.Match.Windows.Panel
 		{
 			FrmAnchorTips.CloseLastTip();
 		}
-
-		private void checkBox1_CheckedChanged(object sender, EventArgs e)
-		{
-			if (IsInitialization) return;
-
-			Ini.WriteValue("Match_ICON", "HasBG", checkBox1.Checked);
-
-			FrmAnchorTips.CloseLastTip();
-			Switch_HasBG_MouseEnter(null, null);
-		}
-
-		private void checkBox2_CheckedChanged(object sender, EventArgs e)
-		{
-			Ini.WriteValue("Match_ICON", "WriteLog", checkBox2.Checked);
-		}
-
-
-
-
-
-
 
 		private void MetroButton1_Click(object sender, EventArgs e)
 		{
@@ -571,6 +211,39 @@ namespace Xylia.Match.Windows.Panel
 				thread.Start();
 			}
 		}
+
+
+
+		private void checkBox1_CheckedChanged(object sender, EventArgs e)
+		{
+			if (IsInitialization) return;
+
+			Ini.WriteValue("IconOperator", "HasBG", checkBox1.Checked);
+
+			FrmAnchorTips.CloseLastTip();
+			Switch_HasBG_MouseEnter(null, null);
+		}
+
+		private void checkBox2_CheckedChanged(object sender, EventArgs e)
+		{
+			Ini.WriteValue("IconOperator", "WriteLog", checkBox2.Checked);
+		}
+
+		private void 清除临时文件ToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Announcement announcement = new("即将进行资源清理操作，是否确认？")
+			{
+				ExitText = "退出",
+				OkText = "确认"
+			};
+
+			if (announcement.ShowDialog() == DialogResult.OK)
+			{
+				return;
+			}
+		}
+
+		
 
 
 
@@ -680,6 +353,239 @@ namespace Xylia.Match.Windows.Panel
 			}, ref Thread_GoodIcon,
 
 			act => this.Invoke(new Action(() => Footer.Text = act)));
+		}
+		#endregion
+
+		#region 合成图标
+		private ItemImageCompose ImageCompose;
+
+		bool IsInitialization = false;
+
+		private string IconPath;
+
+
+
+		private void ImageCompose_Reset_Click(object sender, EventArgs e)
+		{
+			if (metroComboBox1.Items.Count > 7) metroComboBox1.Text = metroComboBox1.Items[7].ToString();
+			if (metroComboBox2.Items.Count != 0) metroComboBox2.Text = metroComboBox2.Items[0].ToString();
+			if (metroComboBox3.Items.Count != 0) metroComboBox3.Text = metroComboBox3.Items[0].ToString();
+			IsInitialization = false;
+
+
+
+			this.ImageCompose = new();
+			this.ImageCompose.refreshHandle += new(e =>
+			{
+				pictureBox1.Image = ImageCompose.DrawICON();
+				pictureBox4.Image = ImageCompose.DrawICON(2);
+			});
+
+			this.MetroComboBox1_TextChanged(sender, e);
+		}
+
+		private byte ImageCompose_GetGrade() => CombineOption.Grades.Find(o => o.Name == metroComboBox1.Text)?.ItemGrade ?? 0;
+
+
+
+
+		private void MetroComboBox1_TextChanged(object sender, EventArgs e)
+		{
+			if (IsInitialization) return;
+
+			this.ImageCompose.GradeImage = ImageCompose_GetGrade().GetBackGround(ucCheckBox1.Checked);
+			this.ImageCompose.Refresh();
+		}
+
+		private void MetroComboBox2_TextChanged(object sender, EventArgs e)
+		{
+			if (IsInitialization) return;
+
+			this.ImageCompose.BottomLeft = CombineOption.BLImage.Find(o => o.Name == metroComboBox2.Text);
+			this.ImageCompose.Refresh();
+		}
+
+		private void MetroComboBox3_TextChanged(object sender, EventArgs e)
+		{
+			if (IsInitialization) return;
+
+			this.ImageCompose.TopRight = CombineOption.TRImage.Find(o => o.Name == metroComboBox3.Text);
+			this.ImageCompose.Refresh();
+		}
+
+		private void MetroButton4_Click(object sender, EventArgs e)
+		{
+			//获取道具名称
+			string ItemName = string.IsNullOrEmpty(this.IconPath) ? "道具名称" : this.IconPath + "_" + ImageCompose_GetGrade();
+
+
+			SaveFileDialog.FileName = ItemName;
+			SaveFileDialog.Filter = "PNG格式|*.png|GIF格式|*.gif|JPEG格式|*.jpg|位图格式|*.bmp|ICO格式|*.ico";
+
+			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				ImageFormat Format = ImageFormat.Png;
+
+				switch (SaveFileDialog.DefaultExt)
+				{
+					case ".png": Format = ImageFormat.Png; break;
+					case ".gif": Format = ImageFormat.Gif; break;
+					case ".jpg": Format = ImageFormat.Jpeg; break;
+					case ".bmp": Format = ImageFormat.Bmp; break;
+					case ".ico": Format = ImageFormat.Icon; break;
+				}
+
+
+				if (Radio_64px.Checked) pictureBox1.Image.Save(SaveFileDialog.FileName, Format);
+				else pictureBox4.Image.Save(SaveFileDialog.FileName, Format);
+			}
+		}
+
+
+		private void IconOperator_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+				e.Effect = DragDropEffects.All;
+		}
+
+		private void IconOperator_DragDrop(object sender, DragEventArgs e)
+		{
+			string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+			if (files.Length == 0) return;
+
+			this.IconPath = Path.GetFileNameWithoutExtension(files[0]);
+
+			byte[] ByteArray = null;
+
+			Stream stream = new FileStream(files[0], FileMode.Open);
+			if (stream != null && stream.Length > 0)
+			{
+				stream.Position = 0;
+
+				using BinaryReader br = new(stream);
+				ByteArray = br.ReadBytes((int)stream.Length);
+			}
+
+			//配置默认另存选项
+			if (SetImage.Load(ByteArray).Width > 64) Radio_128px.Checked = true;
+			else Radio_64px.Checked = true;
+
+
+			this.ImageCompose.Icon = ByteArray;
+			this.ImageCompose.Refresh();
+		}
+		#endregion
+
+
+
+		#region 合成八卦牌 
+		private void GemPage_DragDrop(object sender, DragEventArgs e)
+		{
+			var Files = ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList();
+			if (Files.Count >= 2)
+			{
+				if (GetBitmap(Files, "pos1", out Bitmap temp)) GemCircle.Meta1 = temp;
+				if (GetBitmap(Files, "pos2", out temp)) GemCircle.Meta2 = temp;
+				if (GetBitmap(Files, "pos3", out temp)) GemCircle.Meta3 = temp;
+				if (GetBitmap(Files, "pos4", out temp)) GemCircle.Meta4 = temp;
+				if (GetBitmap(Files, "pos5", out temp)) GemCircle.Meta5 = temp;
+				if (GetBitmap(Files, "pos6", out temp)) GemCircle.Meta6 = temp;
+				if (GetBitmap(Files, "pos7", out temp)) GemCircle.Meta7 = temp;
+				if (GetBitmap(Files, "pos8", out temp)) GemCircle.Meta8 = temp;
+			}
+			else if (Files.Count != 0)
+			{
+				Bitmap bitmap = SetImage.Load(Files.First());
+
+				switch (GemCircle.PartSel)
+				{
+					case GemCircle.PartSection.Part1: GemCircle.Meta1 = bitmap; break;
+					case GemCircle.PartSection.Part2: GemCircle.Meta2 = bitmap; break;
+					case GemCircle.PartSection.Part3: GemCircle.Meta3 = bitmap; break;
+					case GemCircle.PartSection.Part4: GemCircle.Meta4 = bitmap; break;
+					case GemCircle.PartSection.Part5: GemCircle.Meta5 = bitmap; break;
+					case GemCircle.PartSection.Part6: GemCircle.Meta6 = bitmap; break;
+					case GemCircle.PartSection.Part7: GemCircle.Meta7 = bitmap; break;
+					case GemCircle.PartSection.Part8: GemCircle.Meta8 = bitmap; break;
+
+					default:
+					{
+						Xylia.Tip.Message("请先通过鼠标选择一个八卦牌部位");
+						Console.WriteLine("暂不支持类型：" + GemCircle.PartSel);
+					}
+					break;
+				}
+			}
+		}
+
+		private void GemPage_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(DataFormats.FileDrop, false) == true) 
+				e.Effect = DragDropEffects.All;
+		}
+
+		private void GemPage_Click(object sender, EventArgs e)
+		{
+			this.GemCircle.PartSel = GemCircle.PartSection.Init;
+		}
+
+
+
+		private static bool GetBitmap(List<string> Files, string Key, out Bitmap Bitmap)
+		{
+			var fs = Files.Where(f => Path.GetFileNameWithoutExtension(f).ToLower().Contains(Key.ToLower()));
+			if (fs.Any())
+			{
+				Bitmap = SetImage.Load(fs.First());
+				return true;
+			}
+
+			Bitmap = null;
+			return false;
+		}
+
+
+
+
+		private void metroButton6_Click(object sender, EventArgs e)
+		{
+			SaveFileDialog.Filter = "PNG格式|*.png|GIF格式|*.gif|JPEG格式|*.jpg|位图格式|*.bmp|ICO格式|*.ico";
+			SaveFileDialog.FileName = "ItemSet_Compose";
+
+
+			if (SaveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				ImageFormat Format = ImageFormat.Png;
+
+				switch (SaveFileDialog.DefaultExt)
+				{
+					case ".png": Format = ImageFormat.Png; break;
+					case ".gif": Format = ImageFormat.Gif; break;
+					case ".jpg": Format = ImageFormat.Jpeg; break;
+					case ".bmp": Format = ImageFormat.Bmp; break;
+					case ".ico": Format = ImageFormat.Icon; break;
+				}
+
+				GemCircle.Image.Save(SaveFileDialog.FileName, Format);
+			}
+		}
+
+		private void metroButton7_Click(object sender, EventArgs e)
+		{
+			this.GemCircle.Clear();
+			this.GemCircle.PartSel = GemCircle.PartSection.Part1;
+		}
+
+		private void GemCircle_SelectPartChanged(object sender, EventArgs e)
+		{
+			string PartName = GemCircle.PartConvert.ContainsKey(this.GemCircle.PartSel) ? GemCircle.PartConvert[this.GemCircle.PartSel] : this.GemCircle.PartSel.ToString();
+
+			metroLabel6.Text = $"需要更改部位时，请点击对应的区域\n\n当前选择：{ PartName }";
+		}
+
+		private void ucSwitch1_CheckedChanged(object sender, EventArgs e)
+		{
+			this.GemCircle.Transparent = !this.GemCircle.Transparent;
 		}
 		#endregion
 	}

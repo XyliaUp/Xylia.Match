@@ -4,7 +4,6 @@ using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Interface;
 
 
-
 namespace Xylia.Preview.Data.Record
 {
 	public sealed class SkillTrainCategory : IRecord

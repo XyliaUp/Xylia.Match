@@ -21,6 +21,13 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.UI_Tooltip_Scale.Text = "UI.Tooltip.Scale".GetText();
 			this.UI_Tooltip_Casting.Text = "UI.Tooltip.Casting".GetText();
 			this.UI_Tooltip_Reuse.Text = "UI.Tooltip.Reuse".GetText();
+
+			//Distance.Text = "Name.Skill.CastingRange.Default".GetText();
+			//"Name.Skill.CastingRange".GetText();
+			//"Name.Skill.CastingRange.MinMax".GetText();
+			//"Name.Skill.ScaleRange".GetText();
+			//"Name.Skill.ScaleRange.WidthHeight".GetText();
+			//"Name.Skill.ScaleRange.Default".GetText();
 		}
 		#endregion
 
@@ -42,7 +49,6 @@ namespace Xylia.Preview.Project.Core.Skill
 				return;
 			}
 			#endregion
-
 
 			#region 获取基本信息
 			System.Diagnostics.Debug.WriteLine(Skill.Attributes);
@@ -67,22 +73,15 @@ namespace Xylia.Preview.Project.Core.Skill
 
 				Distance.Text = GatherRange.CastMax / 100 + "米";
 			}
-			
-			//Distance.Text = "Name.Skill.CastingRange.Default".GetText();
-			//"Name.Skill.CastingRange".GetText();
-			//"Name.Skill.CastingRange.MinMax".GetText();
-			//"Name.Skill.ScaleRange".GetText();
-			//"Name.Skill.ScaleRange.WidthHeight".GetText();
-			//"Name.Skill.ScaleRange.Default".GetText();
-
 
 			System.Diagnostics.Debug.WriteLine($"FlowType: " + Skill.FlowType);
 			System.Diagnostics.Debug.WriteLine($"FlowRepeat: " + Skill.FlowRepeat);
-			System.Diagnostics.Debug.WriteLine($"ExecGatherType1: " + Skill.ExecGatherType1);
-			System.Diagnostics.Debug.WriteLine($"ExecGatherType2: " + Skill.ExecGatherType2);
-			System.Diagnostics.Debug.WriteLine($"ExecGatherType3: " + Skill.ExecGatherType3);
-			System.Diagnostics.Debug.WriteLine($"ExecGatherType4: " + Skill.ExecGatherType4);
-			System.Diagnostics.Debug.WriteLine($"ExecGatherType5: " + Skill.ExecGatherType5);
+
+			if (Skill.FlowRepeat >= 1) System.Diagnostics.Debug.WriteLine($"ExecGatherType1: " + Skill.ExecGatherType1);
+			if (Skill.FlowRepeat >= 2) System.Diagnostics.Debug.WriteLine($"ExecGatherType2: " + Skill.ExecGatherType2);
+			if (Skill.FlowRepeat >= 3) System.Diagnostics.Debug.WriteLine($"ExecGatherType3: " + Skill.ExecGatherType3);
+			if (Skill.FlowRepeat >= 4) System.Diagnostics.Debug.WriteLine($"ExecGatherType4: " + Skill.ExecGatherType4);
+			if (Skill.FlowRepeat >= 5) System.Diagnostics.Debug.WriteLine($"ExecGatherType5: " + Skill.ExecGatherType5);
 
 
 			#region GatherType

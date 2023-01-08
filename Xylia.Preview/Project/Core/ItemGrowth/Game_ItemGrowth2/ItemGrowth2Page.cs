@@ -13,7 +13,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		public void SetData(IEnumerable<ItemTransformRecipe> Recipes)
 		{
-			if (Recipes is null) throw new Exception("没有成长路径");
+			if (Recipes is null) throw new ArgumentNullException(nameof(Recipes));
 			this.ResultWeaponPreview.SetData(Recipes);
 		}
 

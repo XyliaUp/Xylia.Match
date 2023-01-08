@@ -27,6 +27,8 @@ namespace Xylia.Preview.Project.Core.Skill
 		}	  
 
 
+
+
 		public SkillPreview SkillPreview = new();
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
@@ -35,10 +37,9 @@ namespace Xylia.Preview.Project.Core.Skill
 			this.LoadData(FileCache.Data.Skill3[this.textBox1.Text]);
 		}
 
-
 		public void LoadData(Skill3 Skill)
 		{
-			this.Text = "查看技能 " + Skill.Alias;
+			this.Text = "查看技能 " + Skill?.Alias;
 
 			this.SkillPreview.LoadData(Skill);
 			this.SkillPreview.Refresh();
