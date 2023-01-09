@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 
 using NPOI.SS.UserModel;
 
 using Xylia.Extension;
+using Xylia.Files;
 using Xylia.Preview.Common.Cast;
-using Xylia.Preview.Common.Interface;
 using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Third.Content
@@ -16,32 +15,36 @@ namespace Xylia.Preview.Third.Content
 
 		public override void CreateData()
 		{
-			#region 配置列宽
-			ExcelInfo.sheet.SetColumnWidth(0, 40 * 256);
-			ExcelInfo.sheet.SetColumnWidth(1, 25 * 256);
-			ExcelInfo.sheet.SetColumnWidth(2, 25 * 256);
-			ExcelInfo.sheet.SetColumnWidth(3, 15 * 256);
-			ExcelInfo.sheet.SetColumnWidth(4, 20 * 256);
-			ExcelInfo.sheet.SetColumnWidth(5, 20 * 256);
-			ExcelInfo.sheet.SetColumnWidth(6, 15 * 256);
-			#endregion
-
 			#region 配置标题
 			var TitleRow = MainSheet.CreateRow(0);
 
 			var TitleCells = new List<ICell>();
-			for (int i = 0; i <= 30; i++) TitleCells.Add(this.ExcelInfo.CreateCell(TitleRow, i));
+			for (int i = 0; i <= 10; i++) TitleCells.Add(this.ExcelInfo.CreateCell(TitleRow, i));
 
 			int CurCellIdx = 0;
-			TitleCells[CurCellIdx++].SetCellValue("alias");
-			TitleCells[CurCellIdx++].SetCellValue("目标道具");
-			TitleCells[CurCellIdx++].SetCellValue("结果道具");
-			TitleCells[CurCellIdx++].SetCellValue("概率方式");
-			TitleCells[CurCellIdx++].SetCellValue("配方目录");
-			TitleCells[CurCellIdx++].SetCellValue("装备类型");
-			TitleCells[CurCellIdx++].SetCellValue("物品等级");
-			#endregion
 
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 40 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("alias");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 25 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("目标道具");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 20 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("装备类型");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 15 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("物品等级");
+
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 25 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("结果道具");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 15 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("概率方式");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 20 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("配方目录");
+			#endregion
 
 			#region 输出内容
 			int RowIdx = 1;
@@ -51,7 +54,7 @@ namespace Xylia.Preview.Third.Content
 				var CurRow = MainSheet.CreateRow(RowIdx++);
 
 				var CurCells = new List<ICell>();
-				for (int i = 0; i <= 30; i++) CurCells.Add(this.ExcelInfo.CreateCell(CurRow, i));
+				for (int i = 0; i <= 10; i++) CurCells.Add(this.ExcelInfo.CreateCell(CurRow, i));
 				#endregion
 
 				#region	设置内容
@@ -59,53 +62,26 @@ namespace Xylia.Preview.Third.Content
 				CurCells[CurCellIdx++].SetCellValue(Info.Alias);
 
 				#region 获取主祭品
-				IRecord MainIngredient = null;
-				if (Info.MainIngredient != null)
+				var MainIngredient = Info.MainIngredient?.CastObject();
+				if (MainIngredient is ItemBrand)
 				{
-					//主祭品信息转换
-					MainIngredient = Info.MainIngredient.CastObject();
-					if (MainIngredient != null)
-					{
-						if (MainIngredient is ItemBrand)
-						{
-							var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip[MainIngredient.ID, (byte)Info.MainIngredientConditionType];
-							MainIngredient = ItemBrandTooltip;
-
-							if (ItemBrandTooltip != null) CurCells[CurCellIdx].SetCellValue(ItemBrandTooltip.Name2);
-						}
-						else if (MainIngredient is Item item)
-						{
-							MainIngredient = item;
-							CurCells[CurCellIdx].SetCellValue(item.NameText());
-						}
-					}
+					var ItemBrandTooltip = FileCache.Data.ItemBrandTooltip[MainIngredient.ID, (byte)Info.MainIngredientConditionType];
+					CurCells[CurCellIdx++].SetCellValue(ItemBrandTooltip?.Name2);
+					CurCells[CurCellIdx++].SetCellValue("CondType: " + ItemBrandTooltip?.ItemConditionType);
+					CurCells[CurCellIdx++].SetCellValue(ItemBrandTooltip?.ItemGrade);
 				}
-
-				CurCellIdx++;
+				else if (MainIngredient is Item Item)
+				{
+					CurCells[CurCellIdx++].SetCellValue(Item.ItemName);
+					CurCells[CurCellIdx++].SetCellValue(Item.EquipType.GetDescription());
+					CurCells[CurCellIdx++].SetCellValue(Item.ItemGrade);
+				}
+				else CurCellIdx += 3;
 				#endregion
 
-				CurCells[CurCellIdx++].SetCellValue(Info.TitleItem.GetItemInfo()?.NameText());
+				CurCells[CurCellIdx++].SetCellValue(Info.TitleItem.GetItemInfo()?.ItemName);
 				CurCells[CurCellIdx++].SetCellValue(Info.UseRandom ? "随机" : "必成");
-
-				//目录信息
-				string CategoryInfo = Info.Category.ContainAttribute(out DescriptionAttribute description) ? description.Description : Info.Category.ToString();
-				CurCells[CurCellIdx++].SetCellValue(CategoryInfo);
-
-
-				if (MainIngredient is null) return;
-				if (MainIngredient is ItemBrandTooltip ItemBrandTooltip2)
-				{
-					CurCells[CurCellIdx++].SetCellValue("CondType: " + ItemBrandTooltip2.ItemConditionType);
-					CurCells[CurCellIdx++].SetCellValue(ItemBrandTooltip2.ItemGrade);
-				}
-				else if (MainIngredient is Item itemInfo)
-				{
-					//类型信息
-					string EquipTypeInfo = itemInfo.EquipType.ContainAttribute(out DescriptionAttribute description2) ? description2.Description : itemInfo.EquipType.ToString();
-
-					CurCells[CurCellIdx++].SetCellValue(EquipTypeInfo);
-					CurCells[CurCellIdx++].SetCellValue(itemInfo.ItemGrade);
-				}
+				CurCells[CurCellIdx++].SetCellValue(Info.Category.GetDescription());
 				#endregion
 			});
 			#endregion

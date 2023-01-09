@@ -53,6 +53,9 @@
 		<record alias="title-item" ref="Item" />
 		<record alias="title-name" type="TextAlias" name="" server="n" />
 		<record alias="title-reward" ref="RandomboxPreview" server="n" />
+		<record alias="category2" type="Seq" name="" >
+			<case alias="none" name="" default="y" />
+		</record>
 		<record alias="category" type="Seq" name="" >
 			<case alias="none" name="" default="y" />
 			<case alias="event" name="" />
@@ -76,9 +79,6 @@
 			<case alias="weapon-transform" name="" />
 			<case alias="accessory-transform" name="" />
 			<case alias="equip-gem" name="" />
-		</record>
-		<record alias="category2" type="Seq" name="" >
-			<case alias="none" name="" default="y" />
 		</record>
 		<record alias="use-random" type="Bool" name="" />
 		<record alias="fail-effect" ref="Effect" />

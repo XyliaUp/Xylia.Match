@@ -142,11 +142,14 @@ namespace Xylia.Preview.Project.Core.Item.Cell
 		public void ItemInstace()
 		{
 			var ItemData = ItemAlias.GetItemInfo();
+			if (ItemData != null)
+			{
+				this.ItemShow.ItemData = ItemData;
+				this.ItemShow.ItemIcon = ItemData.FrontIcon;
+				this.ItemGrade = ItemData.ItemGrade;
+				this.ItemName = ItemData.NameText();
+			}
 
-			this.ItemShow.ItemData = ItemData;
-			this.ItemShow.ItemIcon = ItemData.FrontIcon;
-			this.ItemGrade = ItemData.ItemGrade;
-			this.ItemName = ItemData.NameText();
 
 			this.Refresh();
 		}

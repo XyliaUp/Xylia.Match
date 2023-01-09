@@ -51,23 +51,54 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 				this.quotaTxt.Visible = true;
 				this.quotaTxt.BringToFront();
 
-				//读取重置数量信息
+				//读取目标信息
+				string TargetInfo = ("UI.ItemStore.ContentQuota." + Quota.TargetType).GetText();
 				string ChargeInfo = Quota.ChargeInterval == ResetType.None ? null : Quota.ChargeInterval.GetDescription() + " ";
-				this.quotaTxt.Text = $"{ Quota.TargetType.GetDescription() } { ChargeInfo }{ Quota.MaxValue }个";
+
+				this.quotaTxt.Text = $"{ TargetInfo } { ChargeInfo }{ Quota.MaxValue }个";
 
 
-				//读取重置时间信息
-				if (Quota.ChargeInterval != ResetType.None)
+				//UI.ItemStore.ContentQuota.ItemBuyCount
+				//UI.ItemStore.ContentQuota.ExpirationTime
+				//UI.Confirm.AccountLimit 购买限制
+
+				//读取重置信息
+				if (Quota.ExpirationTime != default)
 				{
-					TipInfo.Add(Quota.ChargeInterval switch
+					//Params = new()
+					//{
+					//  Quota.ExpirationTime,
+					//	BasicQuota.ChargeTime < 12 ? "Name.Time.Morning".GetText() : "Name.Time.Afternoon".GetText(),
+					//	BasicQuota.ChargeTime,
+					//};
+
+					TipInfo.Add("UI.ItemStore.BuyConfirm.Expiration.QuotaDesc".GetText());
+				}
+
+				if (Quota.ChargeInterval == ResetType.None) TipInfo.Add("UI.ItemStore.BuyConfirm.None.QuotaDesc".GetText());
+				else if (Quota.ChargeInterval == ResetType.Hourly) TipInfo.Add("UI.ItemStore.BuyConfirm.EveryHour.QuotaDesc".GetText());
+				else if (Quota.ChargeInterval == ResetType.Daily || Quota.ChargeInterval == ResetType.Weekly)
+				{
+					//Params = new()
+					//{
+					//	BasicQuota.ChargeTime < 12 ? "Name.Time.Morning".GetText() : "Name.Time.Afternoon".GetText(),
+					//	BasicQuota.ChargeTime,
+					//};
+
+					if (Quota.ChargeInterval == ResetType.Daily) TipInfo.Add("UI.ItemStore.BuyConfirm.Daily.QuotaDesc".GetText());
+					else if (Quota.ChargeInterval == ResetType.Weekly)
 					{
-						ResetType.None => null,
-						ResetType.Daily => $"每日{ Quota.ChargeTime }时",
-						ResetType.Weekly => $"每{ Quota.ChargeDayOfWeek.GetDescription() } { Quota.ChargeTime }时",
-
-						_ => "未知重置信息",
-
-					} + "初始化购买限制");
+						TipInfo.Add(Quota.ChargeDayOfWeek switch
+						{
+							DayOfWeek.Sun => "UI.ItemStore.BuyConfirm.Sun.QuotaDesc".GetText(),
+							DayOfWeek.Mon => "UI.ItemStore.BuyConfirm.Mon.QuotaDesc".GetText(),
+							DayOfWeek.Tue => "UI.ItemStore.BuyConfirm.Tue.QuotaDesc".GetText(),
+							DayOfWeek.Wed => "UI.ItemStore.BuyConfirm.Wed.QuotaDesc".GetText(),
+							DayOfWeek.Thu => "UI.ItemStore.BuyConfirm.Thu.QuotaDesc".GetText(),
+							DayOfWeek.Fri => "UI.ItemStore.BuyConfirm.Fri.QuotaDesc".GetText(),
+							DayOfWeek.Sat => "UI.ItemStore.BuyConfirm.Sat.QuotaDesc".GetText(),
+						});
+					}
 				}
 			}
 			#endregion

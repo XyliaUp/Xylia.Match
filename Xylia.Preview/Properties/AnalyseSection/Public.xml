@@ -1117,40 +1117,40 @@
 		</record>
 		
 		<record alias="equip-type">
-			<case key="0" alias="none" name="" default="y" />
-			<case key="1" alias="weapon" name="" />
-			<case key="2" alias="costume" name="" />
-			<case key="3" alias="earring" name="" />
-			<case key="4" alias="eyeglass" name="" />
-			<case key="5" alias="hat" name="" />
-			<case key="6" alias="ring" name="" />
-			<case key="7" alias="necklace" name="" />
-			<case key="8" alias="Gem-1" name="" />
-			<case key="9" alias="Gem-2" name="" />
-			<case key="10" alias="Gem-3" name="" />
-			<case key="11" alias="Gem-4" name="" />
-			<case key="12" alias="Gem-5" name="" />
-			<case key="13" alias="Gem-6" name="" />
-			<case key="14" alias="Gem-7" name="" />
-			<case key="15" alias="Gem-8" name="" />
-			<case key="16" alias="attach" name="" />
-			<case key="17" alias="belt" name="" />
-			<case key="18" alias="bracelet" name="" />
-			<case key="19" alias="soul" name="" />
-			<case key="20" alias="soul-2" name="" />
-			<case key="21" alias="Gloves" name="" />
-			<case key="22" alias="pet-1" name="" />
-			<case key="23" alias="pet-2" name="" />
-			<case key="24" alias="rune-1" name="" />
-			<case key="25" alias="rune-2" name="" />
-			<case key="26" alias="nova" name="" />
-			<case key="27" alias="badge-1-premium" name="" />
-			<case key="28" alias="badge-2-premium" name="" />
-			<case key="29" alias="badge-3-premium" name="" />
-			<case key="30" alias="badge-1-normal" name="" />
-			<case key="31" alias="badge-2-normal" name="" />
-			<case key="32" alias="badge-3-normal" name="" />
-			<case key="33" alias="badge-appearance" name="" />
+			<case alias="none" name="" default="y" />
+			<case alias="weapon" name="" />
+			<case alias="costume" name="" />
+			<case alias="earring" name="" />
+			<case alias="eyeglass" name="" />
+			<case alias="hat" name="" />
+			<case alias="ring" name="" />
+			<case alias="necklace" name="" />
+			<case alias="Gem-1" name="" />
+			<case alias="Gem-2" name="" />
+			<case alias="Gem-3" name="" />
+			<case alias="Gem-4" name="" />
+			<case alias="Gem-5" name="" />
+			<case alias="Gem-6" name="" />
+			<case alias="Gem-7" name="" />
+			<case alias="Gem-8" name="" />
+			<case alias="attach" name="" />
+			<case alias="belt" name="" />
+			<case alias="bracelet" name="" />
+			<case alias="soul" name="" />
+			<case alias="soul-2" name="" />
+			<case alias="Gloves" name="" />
+			<case alias="pet-1" name="" />
+			<case alias="pet-2" name="" />
+			<case alias="rune-1" name="" />
+			<case alias="rune-2" name="" />
+			<case alias="nova" name="" />
+			<case alias="badge-1-premium" name="" />
+			<case alias="badge-2-premium" name="" />
+			<case alias="badge-3-premium" name="" />
+			<case alias="badge-1-normal" name="" />
+			<case alias="badge-2-normal" name="" />
+			<case alias="badge-3-normal" name="" />
+			<case alias="badge-appearance" name="" />
 
 			<!-- 2021年12月新增 -->
 			<case alias="vehicle" name="" />

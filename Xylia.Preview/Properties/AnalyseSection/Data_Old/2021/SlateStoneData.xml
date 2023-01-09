@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<list module="ItemData" type="SlateStone" version="0.5" >
+	<list module="ItemData" type="SlateStone" version="0.4" >
 		<record alias="id" type="id" name="" />
 
 		<record alias="alias" type="Index" name="" />
 		<record alias="name" type="TextAlias" name="名称" server="n" />
+
 		<record alias="group" type="Byte" name="互斥组"/>
-		<record alias="grade" type="Byte" name=""/>
-		<record alias="unk-" type="Byte" name=""/>
+		<record alias="grade" type="Byte" name="品质"/>
+		
 		<record alias="modify-ability" name="" type="Seq" repeat="4" seq="$attach-ability" />
 		<record alias="duplication-permission" type="Bool" name="" showzero="y" />
 		<record alias="init-ability-value" type="Int32" name="属性最小值" repeat="4" />
 		<record alias="unit-ability-value" type="Int32" name="属性系数" repeat="4" />
 		<record alias="max-ability-value" type="Int32" name="属性最大值" repeat="4" />
+
 		<record alias="icon" type="Icon" server="n" />
 		<record alias="icon-case" type="Icon" server="n" />
 	</list>

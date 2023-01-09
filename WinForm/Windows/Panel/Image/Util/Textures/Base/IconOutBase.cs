@@ -1,11 +1,12 @@
 ﻿
 using System;
 using System.Collections.Concurrent;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Drawing;
+
 using Xylia.bns.Modules.DataFormat.Bin;
 using Xylia.bns.Read;
 using Xylia.Extension;
@@ -196,7 +197,7 @@ namespace Xylia.Match.Util.Paks.Textures
 					}
 					else if (!IconTextures.ContainsKey(QuoteInfo.IconTextureId))
 					{
-						Console.WriteLine($"{ QuoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo：{ IconTextures.Count })");
+						Console.WriteLine($"{ QuoteInfo.IconTextureId } 没有对应结果，是无效的数据。(IconInfo: { IconTextures.Count })");
 						return;
 					}
 
@@ -204,14 +205,14 @@ namespace Xylia.Match.Util.Paks.Textures
 					var IconTexture = IconTextures[QuoteInfo.IconTextureId];
 					if (string.IsNullOrWhiteSpace(IconTexture.iconTexture))
 					{
-						LogHelper.Record($"{ ItemMsg } => 图标({ IconTexture.iconTexture }) 由于图标名为空，跳过执行", OutLogHelper.LogGroup.错误记录);
+						LogHelper.Record(ItemMsg + $"图标异常 ({ IconTexture.alias })", OutLogHelper.LogGroup.错误记录);
 						return;
 					}
 
 					var bitmap = IconTextureExt.GetIcon(IconTexture, QuoteInfo.IconIndex);
 					if (bitmap is null)
 					{
-						LogHelper.Record($"{ItemMsg} => 图标({ IconTexture.iconTexture } 图标资源获取失败", OutLogHelper.LogGroup.错误记录);
+						LogHelper.Record(ItemMsg + $"资源获取失败 ({ IconTexture.iconTexture })", OutLogHelper.LogGroup.错误记录);
 						return;
 					}
 

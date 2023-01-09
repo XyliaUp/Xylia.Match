@@ -26,6 +26,7 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 			{
 				ObjectRef = Item,
 				Image = Item.Icon,
+				ShowStackCountOnlyOne = true,
 				ShowStackCount = true,
 				StackCount = StackCount,
 

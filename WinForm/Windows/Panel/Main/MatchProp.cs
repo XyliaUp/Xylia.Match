@@ -579,7 +579,7 @@ namespace Xylia.Match.Windows.Panel
 
 		private void ucBtnExt1_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Xylia.Preview.Project.RunForm.RandomStoreExhibitionScene>();
 		private void ucBtnExt4_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Xylia.Preview.Project.Core.Item.Helper>();
-		private void ucBtnExt6_BtnClick(object sender, EventArgs e) => new ItemFrm(null).Show();
+	
 		private void ucBtnExt8_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Xylia.Preview.Project.Core.Store.RandomStore.RandomStoreListScene>();
 		private void ucBtnExt9_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Xylia.Preview.Project.RunForm.ChallengeListFrm>();
 		private void ucBtnExt11_BtnClick(object sender, EventArgs e) => Execute.MyShowDialog<Store2Scene>();

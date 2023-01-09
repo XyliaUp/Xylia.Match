@@ -121,5 +121,22 @@ namespace Xylia.Preview.Common.Enums
 
 		[Description("坐骑")]
 		Vehicle,
+
+		[Signal("appearance-normal")]
+		AppearanceNormal,
+
+		[Description("待机特效")]
+		[Signal("appearance-idle")]
+		AppearanceIdle,
+
+		[Description("聊天符号")]
+		[Signal("appearance-chat")]
+		AppearanceChat,
+
+		[Signal("appearance-frame")]
+		AppearanceFrame,
+
+		[Signal("appearance-hypermove")]
+		AppearanceHypermove,
 	}
 }

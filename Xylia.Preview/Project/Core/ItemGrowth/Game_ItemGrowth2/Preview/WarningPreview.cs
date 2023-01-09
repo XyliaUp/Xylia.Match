@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing.Design;
 using System.Windows.Forms;
 
 namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
@@ -10,6 +12,10 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview
 		#endregion
 
 		#region 字段
+		[Browsable(true)]
+		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+		[EditorBrowsable(EditorBrowsableState.Always)]
+		[Editor("System.ComponentModel.Design.MultilineStringEditor", typeof(UITypeEditor))]
 		public override string Text
 		{
 			get => this.panelContent1.Text;

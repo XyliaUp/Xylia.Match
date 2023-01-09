@@ -2,10 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-using NPOI.SS.Formula;
-
-using Xylia.Extension;
-using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview;
 
 using ItemData = Xylia.Preview.Data.Record.Item;

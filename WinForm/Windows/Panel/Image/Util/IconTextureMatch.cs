@@ -29,9 +29,6 @@ namespace Xylia.Match.Util.Paks
 		public string FormatSelect;
 		#endregion
 
-
-
-
 		#region 方法
 		public void StartMatch(Textures.IconOutBase IconOutBase, ref Thread RunThread, Action<string> action)
 		{

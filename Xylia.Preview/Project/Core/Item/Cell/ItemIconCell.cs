@@ -109,13 +109,13 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// 显示物品数量
 		/// </summary>
 		[Category("Item"), Description("显示物品数量")]
-		public bool ShowStackCount { get; set; }
+		public bool ShowStackCount { get; set; } = false;
 
 		/// <summary>
 		/// 显示物品数量
 		/// </summary>
 		[Category("Item"), Description("当数量为1时，是否显示物品数量")]
-		public bool ShowStackCountOnlyOne { get; set; }
+		public bool ShowStackCountOnlyOne { get; set; } = true;
 		#endregion
 
 

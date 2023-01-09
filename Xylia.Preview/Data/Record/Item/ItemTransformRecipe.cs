@@ -16,7 +16,7 @@ namespace Xylia.Preview.Data.Record
 		public int MoneyCost;
 
 		public string MainIngredient;
-		public ConditionType MainIngredientConditionType;
+		public ConditionType MainIngredientConditionType = ConditionType.All;
 		public int MainIngredientMinLevel;
 		public int MainIngredientStackCount;
 		public string MainIngredientTitleName;
@@ -25,16 +25,6 @@ namespace Xylia.Preview.Data.Record
 		public string TitleName;
 
 		public CategorySeq Category;
-		public bool UseRandom;
-
-
-		/// <summary>
-		/// 警告信息
-		/// </summary>
-		public WarningSeq Warning;
-		#endregion
-
-		#region 枚举
 		public enum CategorySeq : byte
 		{
 			None,
@@ -92,6 +82,14 @@ namespace Xylia.Preview.Data.Record
 			EquipGem,
 		}
 
+
+		public bool UseRandom;
+
+
+		/// <summary>
+		/// 警告信息
+		/// </summary>
+		public WarningSeq Warning;
 		public enum WarningSeq : byte
 		{
 			None,
@@ -155,7 +153,6 @@ namespace Xylia.Preview.Data.Record
 
 
 
-
 		#region 方法
 		/// <summary>
 		/// 查询物品成长路径
@@ -169,14 +166,7 @@ namespace Xylia.Preview.Data.Record
 				else if (o.MainIngredient.MyStartsWith("ItemBrand:") && o.MainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand))
 				{
 					//校验条件类型
-					//if (ItemInfo.ConditionTypes.Contains(a.MainIngredientConditionType))
-					//{
-					//	return CurMainIngredient.MyEquals("ItemBrand:" + ItemInfo.Brand);
-					//}
-					//else
-					//{
-					//	//Console.WriteLine($"没有对应数据 => " a.alias + "_" + a.MainIngredientConditionType);
-					//}
+					if (ItemInfo.ConditionTypes.Contains(o.MainIngredientConditionType)) return true;
 				}
 
 				return false;

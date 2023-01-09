@@ -19,10 +19,8 @@ namespace Xylia.Preview.Data.Record
 		public TargetTypeSeq TargetType;
 		public enum TargetTypeSeq
 		{
-			[Description("角色")]
 			Character,
 
-			[Description("账号")]
 			Account,
 		}
 

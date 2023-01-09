@@ -369,6 +369,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 			}
 
 			this.Refresh();
+			this.Parent.Refresh();
 		}
 
 		public override void Refresh()

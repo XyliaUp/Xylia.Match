@@ -51,7 +51,6 @@
 			this.ItemPreview_Search = new HZH_Controls.Controls.UCTextBoxEx();
 			this.ucBtnExt7 = new HZH_Controls.Controls.UCBtnExt();
 			this.label4 = new System.Windows.Forms.Label();
-			this.ucBtnExt6 = new HZH_Controls.Controls.UCBtnExt();
 			this.ucBtnExt5 = new HZH_Controls.Controls.UCBtnExt();
 			this.ucBtnExt4 = new HZH_Controls.Controls.UCBtnExt();
 			this.label1 = new System.Windows.Forms.Label();
@@ -74,6 +73,7 @@
 			this.ucBtnExt16 = new HZH_Controls.Controls.UCBtnExt();
 			this.Timer = new System.Windows.Forms.Timer(this.components);
 			this.Open = new System.Windows.Forms.OpenFileDialog();
+			this.label3 = new System.Windows.Forms.Label();
 			this.TabControl.SuspendLayout();
 			this.MainPage.SuspendLayout();
 			this.PreviewPage_Item.SuspendLayout();
@@ -350,7 +350,6 @@
 			this.PreviewPage_Item.Controls.Add(this.ItemPreview_Search);
 			this.PreviewPage_Item.Controls.Add(this.ucBtnExt7);
 			this.PreviewPage_Item.Controls.Add(this.label4);
-			this.PreviewPage_Item.Controls.Add(this.ucBtnExt6);
 			this.PreviewPage_Item.Controls.Add(this.ucBtnExt5);
 			this.PreviewPage_Item.Controls.Add(this.ucBtnExt4);
 			this.PreviewPage_Item.Controls.Add(this.label1);
@@ -498,34 +497,6 @@
 			this.label4.Text = "工作目录：未设置";
 			this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
 			// 
-			// ucBtnExt6
-			// 
-			this.ucBtnExt6.BtnBackColor = System.Drawing.Color.Empty;
-			this.ucBtnExt6.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.ucBtnExt6.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt6.BtnText = "界面预览";
-			this.ucBtnExt6.ConerRadius = 8;
-			this.ucBtnExt6.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.ucBtnExt6.DialogResult = System.Windows.Forms.DialogResult.None;
-			this.ucBtnExt6.EnabledMouseEffect = false;
-			this.ucBtnExt6.FillColor = System.Drawing.Color.White;
-			this.ucBtnExt6.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-			this.ucBtnExt6.IsRadius = true;
-			this.ucBtnExt6.IsShowRect = true;
-			this.ucBtnExt6.IsShowTips = false;
-			this.ucBtnExt6.Location = new System.Drawing.Point(589, 356);
-			this.ucBtnExt6.Margin = new System.Windows.Forms.Padding(0);
-			this.ucBtnExt6.Name = "ucBtnExt6";
-			this.ucBtnExt6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt6.RectWidth = 1;
-			this.ucBtnExt6.Size = new System.Drawing.Size(102, 50);
-			this.ucBtnExt6.TabIndex = 111;
-			this.ucBtnExt6.TabStop = false;
-			this.ucBtnExt6.TipsColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(30)))), ((int)(((byte)(99)))));
-			this.ucBtnExt6.TipsText = "";
-			this.ucBtnExt6.Visible = false;
-			this.ucBtnExt6.BtnClick += new System.EventHandler(this.ucBtnExt6_BtnClick);
-			// 
 			// ucBtnExt5
 			// 
 			this.ucBtnExt5.BtnBackColor = System.Drawing.Color.Empty;
@@ -541,7 +512,7 @@
 			this.ucBtnExt5.IsRadius = true;
 			this.ucBtnExt5.IsShowRect = true;
 			this.ucBtnExt5.IsShowTips = false;
-			this.ucBtnExt5.Location = new System.Drawing.Point(708, 287);
+			this.ucBtnExt5.Location = new System.Drawing.Point(579, 356);
 			this.ucBtnExt5.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt5.Name = "ucBtnExt5";
 			this.ucBtnExt5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -560,7 +531,7 @@
 			this.ucBtnExt4.BtnBackColor = System.Drawing.Color.Empty;
 			this.ucBtnExt4.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.ucBtnExt4.BtnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-			this.ucBtnExt4.BtnText = "帮助页面";
+			this.ucBtnExt4.BtnText = "帮助信息";
 			this.ucBtnExt4.ConerRadius = 8;
 			this.ucBtnExt4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.ucBtnExt4.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -841,6 +812,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.ucBtnExt10);
 			this.groupBox1.Controls.Add(this.ucBtnExt18);
 			this.groupBox1.Controls.Add(this.ucBtnExt12);
@@ -871,7 +843,7 @@
 			this.ucBtnExt10.IsRadius = true;
 			this.ucBtnExt10.IsShowRect = true;
 			this.ucBtnExt10.IsShowTips = false;
-			this.ucBtnExt10.Location = new System.Drawing.Point(15, 173);
+			this.ucBtnExt10.Location = new System.Drawing.Point(151, 45);
 			this.ucBtnExt10.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt10.Name = "ucBtnExt10";
 			this.ucBtnExt10.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -898,7 +870,7 @@
 			this.ucBtnExt18.IsRadius = true;
 			this.ucBtnExt18.IsShowRect = true;
 			this.ucBtnExt18.IsShowTips = false;
-			this.ucBtnExt18.Location = new System.Drawing.Point(151, 109);
+			this.ucBtnExt18.Location = new System.Drawing.Point(151, 222);
 			this.ucBtnExt18.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt18.Name = "ucBtnExt18";
 			this.ucBtnExt18.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -925,7 +897,7 @@
 			this.ucBtnExt12.IsRadius = true;
 			this.ucBtnExt12.IsShowRect = true;
 			this.ucBtnExt12.IsShowTips = false;
-			this.ucBtnExt12.Location = new System.Drawing.Point(15, 109);
+			this.ucBtnExt12.Location = new System.Drawing.Point(15, 222);
 			this.ucBtnExt12.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt12.Name = "ucBtnExt12";
 			this.ucBtnExt12.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -979,7 +951,7 @@
 			this.ucBtnExt16.IsRadius = true;
 			this.ucBtnExt16.IsShowRect = true;
 			this.ucBtnExt16.IsShowTips = false;
-			this.ucBtnExt16.Location = new System.Drawing.Point(151, 45);
+			this.ucBtnExt16.Location = new System.Drawing.Point(15, 162);
 			this.ucBtnExt16.Margin = new System.Windows.Forms.Padding(0);
 			this.ucBtnExt16.Name = "ucBtnExt16";
 			this.ucBtnExt16.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -994,6 +966,17 @@
 			// Timer
 			// 
 			this.Timer.Interval = 500;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.label3.Location = new System.Drawing.Point(15, 123);
+			this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(260, 34);
+			this.label3.TabIndex = 128;
+			this.label3.Text = "由于涉及读取大量物品数据，以下功能处理缓慢\r\n后续版本将会优化此问题";
 			// 
 			// MatchProp
 			// 
@@ -1014,6 +997,7 @@
 			this.PreviewPage_Else.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 
         }
@@ -1043,7 +1027,6 @@
 		private System.Windows.Forms.Label label1;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt5;
 		private MetroFramework.Controls.MetroTabPage PreviewPage_Else;
-		private HZH_Controls.Controls.UCBtnExt ucBtnExt6;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt11;
 		private System.Windows.Forms.Label label4;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt7;
@@ -1064,5 +1047,6 @@
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt10;
 		private HZH_Controls.Controls.UCBtnExt ucBtnExt20;
 		private HZH_Controls.Controls.UCSwitch Switch_Mode;
+		private System.Windows.Forms.Label label3;
 	}
 }

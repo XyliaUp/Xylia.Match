@@ -17,7 +17,7 @@ namespace Xylia.Preview.Data.Record
 		public string RequiredItembrand;
 
 		[Signal("required-itembrand-condition-type")]
-		public ConditionType RequiredItembrandConditionType;
+		public ConditionType RequiredItembrandConditionType = ConditionType.All;
 
 		[Signal("required-item-1")]
 		public string RequiredItem1;

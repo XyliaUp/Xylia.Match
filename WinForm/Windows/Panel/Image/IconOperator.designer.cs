@@ -169,7 +169,7 @@
 			// 
 			this.checkBox2.AutoSize = true;
 			this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-			this.checkBox2.Location = new System.Drawing.Point(134, 126);
+			this.checkBox2.Location = new System.Drawing.Point(150, 123);
 			this.checkBox2.Name = "checkBox2";
 			this.checkBox2.Size = new System.Drawing.Size(99, 21);
 			this.checkBox2.TabIndex = 113;
@@ -183,7 +183,7 @@
 			this.checkBox1.BackColor = System.Drawing.Color.Transparent;
 			this.checkBox1.Checked = true;
 			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Location = new System.Drawing.Point(134, 99);
+			this.checkBox1.Location = new System.Drawing.Point(150, 96);
 			this.checkBox1.Name = "checkBox1";
 			this.checkBox1.Size = new System.Drawing.Size(99, 21);
 			this.checkBox1.TabIndex = 112;
@@ -199,14 +199,16 @@
 			this.Switch_Mode.Checked = true;
 			this.Switch_Mode.FalseColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
 			this.Switch_Mode.FalseTextColr = System.Drawing.Color.White;
-			this.Switch_Mode.Location = new System.Drawing.Point(21, 96);
+			this.Switch_Mode.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Switch_Mode.ForeColor = System.Drawing.Color.Black;
+			this.Switch_Mode.Location = new System.Drawing.Point(19, 96);
 			this.Switch_Mode.Name = "Switch_Mode";
-			this.Switch_Mode.Size = new System.Drawing.Size(95, 40);
+			this.Switch_Mode.Size = new System.Drawing.Size(109, 40);
 			this.Switch_Mode.SwitchType = HZH_Controls.Controls.SwitchType.Ellipse;
 			this.Switch_Mode.TabIndex = 100;
 			this.Switch_Mode.Texts = new string[] {
-        "黑名单 ",
-        "白名单 "};
+        "过滤列表",
+        "按照列表"};
 			this.Switch_Mode.TrueColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
 			this.Switch_Mode.TrueTextColr = System.Drawing.Color.Black;
 			this.Switch_Mode.CheckedChanged += new System.EventHandler(this.Switch_Mode_CheckedChanged);
@@ -240,7 +242,7 @@
 			this.FormatSelect.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
 			this.FormatSelect.RectWidth = 1;
 			this.FormatSelect.SelectedIndex = -1;
-			this.FormatSelect.Size = new System.Drawing.Size(214, 32);
+			this.FormatSelect.Size = new System.Drawing.Size(223, 32);
 			this.FormatSelect.Source.Add("[id]");
 			this.FormatSelect.Source.Add("[id]_[name]");
 			this.FormatSelect.Source.Add("[name]_[id]");

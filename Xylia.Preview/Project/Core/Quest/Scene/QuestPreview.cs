@@ -8,6 +8,7 @@ using CSCore.SoundOut;
 
 using Xylia.bns.Modules.Quest.Enums;
 using Xylia.Extension;
+using Xylia.Preview.Project.Core.Quest.Preview.SubGroup;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
@@ -19,10 +20,14 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 	public partial class QuestPreview : Form
 	{
 		#region 构造
-		public QuestPreview() => InitializeComponent();
-
+		public QuestPreview()
+		{
+			InitializeComponent();
+			this.MaximumSize = new(int.MaxValue, 1000);
+		}
 		public QuestPreview(QuestData QuestData) : this() => this.LoadData(QuestData);
 		#endregion
+
 
 		#region 字段
 		public readonly WaveOut SoundOut = new() { Latency = 100 };
@@ -50,16 +55,9 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 
 		public override void Refresh()
 		{
-			var Sections = new List<Control>
-			{
-				this.DescInfo,
-				this.TaskInfo,
-				this.RewardInfo
-			};
-
-
-			int LocY = 60;
-			foreach (var s in Sections)
+			#region 处理内容组
+			int LocY = QuestName.Bottom + 10;
+			foreach (var s in this.Controls.OfType<GroupBase>())
 			{
 				if (!s.Visible) continue;
 
@@ -67,9 +65,10 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 				s.Location = new Point(0, LocY);
 				LocY = s.Bottom;
 			}
+			#endregion 
 
-			base.Refresh();
 			this.Height = LocY + 45;
+			base.Refresh();
 		}
 		#endregion
 

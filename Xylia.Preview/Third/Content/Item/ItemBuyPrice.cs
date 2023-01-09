@@ -13,16 +13,6 @@ namespace Xylia.Preview.Third.Content
 
 		public override void CreateData()
 		{
-			#region 配置列宽
-			ExcelInfo.sheet.SetColumnWidth(0, 40 * 256);
-			ExcelInfo.sheet.SetColumnWidth(1, 16 * 256);
-			ExcelInfo.sheet.SetColumnWidth(2, 20 * 256);
-			ExcelInfo.sheet.SetColumnWidth(3, 25 * 256);
-			ExcelInfo.sheet.SetColumnWidth(4, 25 * 256);
-			ExcelInfo.sheet.SetColumnWidth(5, 25 * 256);
-			ExcelInfo.sheet.SetColumnWidth(6, 25 * 256);
-			#endregion
-
 			#region 配置标题
 			var TitleRow = this.ExcelInfo.CreateRow(0);
 
@@ -30,20 +20,36 @@ namespace Xylia.Preview.Third.Content
 			for (int i = 0; i <= 30; i++) TitleCells.Add(this.ExcelInfo.CreateCell(TitleRow, i));
 
 			int CurCellIdx = 0;
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 70 * 256);
 			TitleCells[CurCellIdx++].SetCellValue("alias");
-			TitleCells[CurCellIdx++].SetCellValue("需要钱币");
-			TitleCells[CurCellIdx++].SetCellValue("需要物品组");
-			TitleCells[CurCellIdx++].SetCellValue("需要物品1");
-			TitleCells[CurCellIdx++].SetCellValue("需要物品2");
-			TitleCells[CurCellIdx++].SetCellValue("需要物品3");
-			TitleCells[CurCellIdx++].SetCellValue("需要物品4");
-			TitleCells[CurCellIdx++].SetCellValue("需要灵气");
-			TitleCells[CurCellIdx++].SetCellValue("需要仙豆");
-			TitleCells[CurCellIdx++].SetCellValue("需要龙果");
-			TitleCells[CurCellIdx++].SetCellValue("需要仙桃");
-			TitleCells[CurCellIdx++].SetCellValue("需要珍珠");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 15 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("钱币");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 20 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("物品组");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 25 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("物品1");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 25 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("物品2");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 25 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("物品3");
+
+			ExcelInfo.sheet.SetColumnWidth(CurCellIdx, 25 * 256);
+			TitleCells[CurCellIdx++].SetCellValue("物品4");
+
+			TitleCells[CurCellIdx++].SetCellValue("灵气");
+			TitleCells[CurCellIdx++].SetCellValue("仙豆");
+			TitleCells[CurCellIdx++].SetCellValue("龙果");
+			TitleCells[CurCellIdx++].SetCellValue("仙桃");
+			TitleCells[CurCellIdx++].SetCellValue("珍珠");
+
+
 			TitleCells[CurCellIdx++].SetCellValue("满足成就点数");
-			TitleCells[CurCellIdx++].SetCellValue("满足完成成就（最小阶段）");
+			TitleCells[CurCellIdx++].SetCellValue("满足完成成就");
 			TitleCells[CurCellIdx++].SetCellValue("满足势力等级");
 			TitleCells[CurCellIdx++].SetCellValue("满足个人战比武等级");
 			TitleCells[CurCellIdx++].SetCellValue("满足车轮战比武等级");

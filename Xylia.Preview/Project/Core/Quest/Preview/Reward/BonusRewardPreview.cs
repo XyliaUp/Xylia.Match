@@ -19,7 +19,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 		{
 			InitializeComponent();
 
-			 this.Title.Text = "UI.BonusReward.Title".GetText();
+			this.Title.Text = "UI.BonusReward.Title".GetText();
 		}
 		#endregion
 
@@ -30,25 +30,31 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 
 		public void LoadData(QuestBonusRewardSetting QuestBonusRewardSetting)
 		{
-			this.Controls.Remove<ItemIconCell>();
+			int ContentY = 0;
+			this.BonusRewardPanel.Controls.Remove<ItemIconCell>();
+			this.PaidBonusRewardPanel.Controls.Remove<ItemIconCell>();
 
 			if (INVALID = QuestBonusRewardSetting is null) return;
-
-
-			#region	ContentsReset
-			var ContentsReset = FileCache.Data.ContentsReset[QuestBonusRewardSetting.ContentsReset1];
-			if (ContentsReset != null) System.Diagnostics.Trace.WriteLine(ContentsReset.Attributes["reset-item-1"].GetItemInfo().NameText());
-			#endregion
 
 			#region	BasicQuota
 			var BasicQuota = FileCache.Data.ContentQuota[QuestBonusRewardSetting.BasicQuota];
 			if (BasicQuota is null) this.WarningPreview.Visible = false;
 			else
 			{
+				#region ContentQuota
 				this.AttractionReward_ChanceNum.Text = "UI.AttractionReward.ChanceNum".GetText() + $" {BasicQuota.MaxValue}/{BasicQuota.MaxValue}";
 
+				var ContentsReset = FileCache.Data.ContentsReset[QuestBonusRewardSetting.ContentsReset1];
+				if (ContentsReset != null)
+				{
+					var ResetItem = ContentsReset.Attributes["reset-item-1"].GetItemInfo();
+					//System.Diagnostics.Trace.WriteLine(ResetItem.NameText());
 
+					this.AttractionReward_ChanceNum.Text += "\n(+" + ResetItem.ItemNameWithGrade + ")";
+				}
+				#endregion
 
+				#region WarningPreview
 				this.WarningPreview.Visible = true;
 				this.WarningPreview.Params = new()
 				{
@@ -71,17 +77,14 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 					};
 				}
 				else this.WarningPreview.Text = "未知重置信息";
+				#endregion
 			}
 			#endregion
 
 
-
-
-
-			//额外奖励数据
 			#region BonusReward
 			var Reward = FileCache.Data.QuestBonusReward[QuestBonusRewardSetting.Reward];
-			System.Diagnostics.Trace.WriteLine(Reward.Attributes);
+			//System.Diagnostics.Trace.WriteLine(Reward.Attributes);
 
 			void RandomItemClickEvent(bool Paid = false)
 			{
@@ -96,16 +99,21 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 					System.Diagnostics.Trace.WriteLine($"{RandomItem?.NameText()}  {StackCountMin}~{StackCountMax}");
 				}
 			}
-			#endregion
 
 
 			#region	NormalBonusReward
-			if (Reward.NormalBonusRewardTotalCount != 0)
+			ContentY = BonusRewardPanel.Top;
+			if (Reward.NormalBonusRewardTotalCount == 0) this.BonusRewardPanel.Visible = false;
+			else
 			{
+				this.BonusRewardPanel.Visible = true;
+				this.BonusRewardPanel.Location = new Point(0, ContentY);
+
+				#region Items
 				var items = new List<ItemIconCell>();
 
 				#region FixedItem
-				System.Diagnostics.Trace.WriteLine("FixedItemTotalCount: " + Reward.FixedItemTotalCount);
+				//System.Diagnostics.Trace.WriteLine("FixedItemTotalCount: " + Reward.FixedItemTotalCount);
 				items.AddItem(Reward.FixedItem1.GetObjIcon(Reward.FixedItemCount1));
 				items.AddItem(Reward.FixedItem2.GetObjIcon(Reward.FixedItemCount2));
 				items.AddItem(Reward.FixedItem3.GetObjIcon(Reward.FixedItemCount3));
@@ -113,7 +121,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				#endregion
 
 				#region RandomItem
-				System.Diagnostics.Trace.WriteLine("RandomItemSelectedCount: " + Reward.RandomItemSelectedCount);
+				//System.Diagnostics.Trace.WriteLine("RandomItemSelectedCount: " + Reward.RandomItemSelectedCount);
 				for (int i = 0; i < Reward.RandomItemSelectedCount; i++)
 				{
 					var o = Resources.Resource_Common.RandomItem.GetObjIcon();
@@ -127,17 +135,24 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				int ContentX = 0;
 				foreach (var c in items)
 				{
-					this.Controls.Add(c);
+					this.BonusRewardPanel.Controls.Add(c);
 
-					c.Location = new Point(ContentX, 87);
+					c.Location = new Point(ContentX, 0);
 					ContentX = c.Right + 5;
 				}
+				#endregion
+
+				ContentY = BonusRewardPanel.Bottom;
 			}
 			#endregion
 
 			#region PaidBonusReward
-			if (Reward.PaidBonusRewardTotalCount != 0)
+			if (Reward.PaidBonusRewardTotalCount == 0) this.PaidBonusRewardPanel.Visible = false;
+			else
 			{
+				this.PaidBonusRewardPanel.Visible = true;
+				this.PaidBonusRewardPanel.Location = new Point(0, ContentY);
+
 				#region PaidItemCost
 				if (Reward.PaidItemCost == 0) this.CostToggle.Visible = false;
 				else
@@ -149,10 +164,11 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				#endregion
 
 
+				#region Items
 				var items = new List<ItemIconCell>();
 
 				#region FixedItem
-				System.Diagnostics.Trace.WriteLine("FixedItemTotalCount: " + Reward.PaidFixedItemTotalCount);
+				//System.Diagnostics.Trace.WriteLine("FixedItemTotalCount: " + Reward.PaidFixedItemTotalCount);
 				items.AddItem(Reward.PaidFixedItem1.GetObjIcon(Reward.PaidFixedItemCount1));
 				items.AddItem(Reward.PaidFixedItem2.GetObjIcon(Reward.PaidFixedItemCount2));
 				items.AddItem(Reward.PaidFixedItem3.GetObjIcon(Reward.PaidFixedItemCount3));
@@ -160,7 +176,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				#endregion
 
 				#region RandomItem
-				System.Diagnostics.Trace.WriteLine("PaidRandomItemSelectedCount: " + Reward.PaidRandomItemSelectedCount);
+				//System.Diagnostics.Trace.WriteLine("PaidRandomItemSelectedCount: " + Reward.PaidRandomItemSelectedCount);
 				for (int i = 0; i < Reward.RandomItemSelectedCount; i++)
 				{
 					var o = Resources.Resource_Common.RandomItem.GetObjIcon();
@@ -175,12 +191,26 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				int ContentX = 0;
 				foreach (var c in items)
 				{
-					this.Controls.Add(c);
+					this.PaidBonusRewardPanel.Controls.Add(c);
 
-					c.Location = new Point(ContentX, 190);
+					c.Location = new Point(ContentX, 30);
 					ContentX = c.Right + 5;
 				}
+				#endregion
+
+				ContentY = PaidBonusRewardPanel.Bottom;
 			}
+			#endregion
+			#endregion
+
+			#region 最后处理
+			if (BasicQuota != null)
+			{
+				this.WarningPreview.Location = new Point((this.Width - this.WarningPreview.Width) / 2, ContentY + 20);
+				ContentY = this.WarningPreview.Bottom;
+			}
+
+			this.Height = ContentY;
 			#endregion
 		}
 		#endregion

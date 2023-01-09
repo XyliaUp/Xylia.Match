@@ -1,8 +1,7 @@
-﻿using System.ComponentModel;
-
+﻿
+using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Preview.Common.Interface;
-using Xylia.Attribute.Component;
 
 namespace Xylia.Preview.Data.Record
 {

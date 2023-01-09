@@ -46,7 +46,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 			this.RewardSelect.Location = new System.Drawing.Point(426, 20);
 			this.RewardSelect.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.RewardSelect.Name = "RewardSelect";
-			this.RewardSelect.RectColor = System.Drawing.Color.Transparent;
+			this.RewardSelect.RectColor = System.Drawing.Color.DimGray;
 			this.RewardSelect.RectWidth = 1;
 			this.RewardSelect.SelectedIndex = -1;
 			this.RewardSelect.Size = new System.Drawing.Size(109, 45);
@@ -66,7 +66,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "RewardPanel";
 			this.Size = new System.Drawing.Size(540, 72);
-			//this.Load += new System.EventHandler(this.RewardPanel_Load);
 			this.Controls.SetChildIndex(this.RewardSelect, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
