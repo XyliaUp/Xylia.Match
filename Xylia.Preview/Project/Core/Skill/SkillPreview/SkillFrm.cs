@@ -6,18 +6,18 @@ using Xylia.Preview.Data.Record;
 
 namespace Xylia.Preview.Project.Core.Skill
 {
-	public partial class Form1 : Form
+	public partial class SkillFrm : Form
 	{
-		public Form1()
+		public SkillFrm()
 		{
 			InitializeComponent();
-			this.textBox1.Text = Ini.ReadValue("Option", "SkillPreview_Rule");
+			this.textBox1.Text = Ini.ReadValue("Preview", "skill#searchrule");
 
 			this.Controls.Add(this.SkillPreview);
 			this.SkillPreview.Refresh();
 		}
 
-		public Form1(Skill3 Skill) 
+		public SkillFrm(Skill3 Skill) 
 		{
 			InitializeComponent();
 			this.Controls.Add(this.SkillPreview);
@@ -33,7 +33,7 @@ namespace Xylia.Preview.Project.Core.Skill
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
-			Ini.WriteValue("Option", "SkillPreview_Rule", this.textBox1.Text);
+			Ini.WriteValue("Preview", "skill#searchrule", this.textBox1.Text);
 			this.LoadData(FileCache.Data.Skill3[this.textBox1.Text]);
 		}
 

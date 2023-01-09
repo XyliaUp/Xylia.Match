@@ -130,7 +130,7 @@ namespace Xylia.Preview.Project.Core.Map.Scene
 					var Attraction = mapunit.Attributes["attraction"].CastObject();
 					if (Attraction != null) Tooltip = $"{Attraction.GetType().Name}: " + Attraction.GetName();
 				}
-				else if (mapunit.Type == TypeSeq.Npc || mapunit.Type == TypeSeq.Boss) Tooltip = mapunit.Attributes["npc"].CastObject(nameof(FileCache.Data.Npc)).GetName();
+				else if (mapunit.Type == TypeSeq.Npc || mapunit.Type == TypeSeq.Boss) Tooltip = FileCache.Data.Npc[mapunit.Attributes["npc"]].GetName();
 
 				ToolTip.SetToolTip(temp, Tooltip);
 				#endregion

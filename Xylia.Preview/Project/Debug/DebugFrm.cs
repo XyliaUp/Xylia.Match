@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
+using Xylia.Preview.Data.Helper;
 using Xylia.Preview.Project.Core.Skill;
 
 
@@ -11,22 +12,24 @@ namespace Xylia.Preview
 {
 	public partial class DebugFrm : Form
 	{
-		public DebugFrm()
-		{
-			InitializeComponent();
-		}
+		public DebugFrm() => InitializeComponent();
 
 		private void DebugFrm_Load(object sender, EventArgs e)
 		{
 			//this.contentPanel1.Text = "<p justification=\"true\" justificationtype=\"linefeedbywidgetarea\"><link id=\"none\"/> </p><p horizontalalignment=\"center\"><br/><image enablescale=\"false\" imagesetpath=\"00027918.InterD_ChungGakjiBu\"/><br/><image enablescale=\"true\" imagesetpath=\"00009499.Field_Boss\" scalerate=\"1.4\"/>铁傀王<br/><br/>中原的海盗组织——冲角团的平南舰队支部。<br/>支部长是啸四海。</p>";
 
-			Debug.WriteLine(Util.GetDamageInfo(16000));
-
 			//Debug.WriteLine(FileCache.Data.Npc["CH_PB_WantedCoinShop_0001_Exchange_01"]?.Attributes);
 			//Debug.WriteLine(FileCache.Data.Npc.Where(o => o.Attributes["store2-1"] == "CH_BoardGacha_Grocery", true).FirstOrDefault());
 
+			//Xylia.Preview.Data.Package.Pak.Test.Scene();
+
+			Debug.WriteLine(Util.GetDamageInfo(16000));
 			Debug.WriteLine(Util.GetDuration(8000));
 
+
+
+			return;
+			new SkillFrm(FileCache.Data.Skill3[101230,3]).ShowDialog();
 
 
 			Dictionary<int, List<Data.Record.Item>> test = new();

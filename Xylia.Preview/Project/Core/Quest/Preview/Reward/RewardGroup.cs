@@ -2,24 +2,18 @@
 using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface.RecordAttribute;
+using Xylia.Preview.Data.Record;
 
 
-
-namespace Xylia.Preview.Data.Record
+namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 {
-	public enum QuestRewardGroupType
-	{
-		Fixed,
-		Optional,
-	}
-
 	/// <summary>
 	/// 任务奖励组
 	/// </summary>
-	public class QuestRewardGroup
+	public sealed class RewardGroup
 	{
 		#region 构造
-		public QuestRewardGroup(IAttributeCollection Attributes, string Group)
+		public RewardGroup(IAttributeCollection Attributes, string Group)
 		{
 			this.Faction = Attributes[Group + "-faction"];
 			this.DifficultyType = Attributes[Group + "-difficulty-type"].ToEnum<DifficultyType>();
@@ -40,11 +34,11 @@ namespace Xylia.Preview.Data.Record
 			byte.TryParse(Attributes[Group + "-skill-var-idx-4"], out this.SkillVarIdx4);
 
 
-			this.Group = Group;
+			this.GroupKey = Group;
 			this.GroupName = GetGroupName(Attributes);
 		}
 
-		public QuestRewardGroup()
+		public RewardGroup()
 		{
 
 		}
@@ -65,20 +59,18 @@ namespace Xylia.Preview.Data.Record
 		public short ItemCount3;
 		public short ItemCount4;
 
-		//optional组好像没有这个
+		//optional组没有这个
 		public byte SkillVarIdx1;
 		public byte SkillVarIdx2;
 		public byte SkillVarIdx3;
 		public byte SkillVarIdx4;
 		#endregion
 
-
-
 		#region 方法
 		/// <summary>
 		/// 归属组
 		/// </summary>
-		public string Group;
+		public string GroupKey;
 
 		public string GroupName;
 
@@ -107,7 +99,7 @@ namespace Xylia.Preview.Data.Record
 			#region 获取职业信息
 			for (int i = 1; i <= 20; i++)
 			{
-				if (!Attributes.ContainsName($"{this.Group}-job-{i}", out string job)) break;
+				if (!Attributes.ContainsName($"{this.GroupKey}-job-{i}", out string job)) break;
 
 				var CurJob = job.ToEnum<JobSeq>();
 				groupName += CurJob.GetDescription();
@@ -117,14 +109,14 @@ namespace Xylia.Preview.Data.Record
 			#region 获取性别种族信息
 			for (int i = 1; i <= 4; i++)
 			{
-				if (!Attributes.ContainsName($"{this.Group}-sex-{i}", out string sex)) break;
+				if (!Attributes.ContainsName($"{this.GroupKey}-sex-{i}", out string sex)) break;
 
 				groupName += sex.ToEnum<Sex>().GetDescription();
 			}
 
 			for (int i = 1; i <= 4; i++)
 			{
-				if (!Attributes.ContainsName($"{this.Group}-race-{i}", out string race)) break;
+				if (!Attributes.ContainsName($"{this.GroupKey}-race-{i}", out string race)) break;
 
 				groupName += race.ToEnum<Race>().GetDescription();
 			}
@@ -133,5 +125,17 @@ namespace Xylia.Preview.Data.Record
 			return groupName;
 		}
 		#endregion
+	}
+
+
+	public class RewardGroupSet
+	{
+		public RewardGroup Fixed;
+
+		public RewardGroup Optional;
+
+
+
+		public QuestSealedDungeonReward QuestSealedDungeonReward;
 	}
 }

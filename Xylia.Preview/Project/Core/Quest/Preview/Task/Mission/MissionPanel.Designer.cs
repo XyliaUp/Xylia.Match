@@ -30,7 +30,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.MissionText = new ContentPanel();
+			this.MissionText = new Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
 			// MissionText
@@ -60,6 +60,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		}
 
 		#endregion
-		private ContentPanel MissionText;
+		private Controls.ContentPanel MissionText;
 	}
 }

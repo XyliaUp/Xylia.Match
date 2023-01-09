@@ -1,7 +1,8 @@
-﻿
+﻿using Xylia.Preview.Project.Controls;
+
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 {
-	partial class TaskInfo
+	partial class DescPanel
 	{
 		/// <summary> 
 		/// 必需的设计器变量。
@@ -29,21 +30,35 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.Content = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
-			// TaskInfo
+			// Content
 			// 
-			this.GroupText = "任务";
+			this.Content.BackColor = System.Drawing.Color.Transparent;
+			this.Content.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Content.ForeColor = System.Drawing.Color.White;
+			this.Content.Location = new System.Drawing.Point(26, 32);
+			this.Content.Margin = new System.Windows.Forms.Padding(2, 7, 2, 7);
+			this.Content.Name = "Content";
+			this.Content.TabIndex = 8;
+			this.Content.Text = "PanelContent";
+			// 
+			// DescPanel
+			// 
+			this.Controls.Add(this.Content);
+			this.GroupText = "内容";
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.Name = "TaskInfo";
-			this.Size = new System.Drawing.Size(58, 26);
-			
-			this.SizeChanged += new System.EventHandler(this.ContentInfo_SizeChanged);
+			this.Name = "DescPanel";
+			this.Size = new System.Drawing.Size(123, 57);
+			this.Controls.SetChildIndex(this.Content, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
+
+		private Controls.ContentPanel Content;
 	}
 }

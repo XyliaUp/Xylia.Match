@@ -53,7 +53,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				//测试模式
 				if (QuestPreview.TestMode)
 				{
-					ContentPanel CaseContent = new();
+					Controls.ContentPanel CaseContent = new();
 					//CaseContent.BasicLineHeight += 4;
 					CaseContent.Text = $"[{t.ProgressMission}] {t.GetType()}";
 
@@ -84,7 +84,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				//图标为便于区分多个case内容
 				if (CaseContents.Count > 1 && CaseControl.Value.Count != 0)
 				{
-					this.Controls.Add(new ContentPanel()
+					this.Controls.Add(new Controls.ContentPanel()
 					{
 						Text = "▼",
 						Location = new Point(GroupBase.ContentStartX - 10, height),

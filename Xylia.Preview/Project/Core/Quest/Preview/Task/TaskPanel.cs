@@ -14,10 +14,10 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 	/// <summary>
 	/// 任务信息
 	/// </summary>
-	public partial class TaskInfo : GroupBase
+	public partial class TaskPanel : GroupBase
 	{
 		#region 构造
-		public TaskInfo()
+		public TaskPanel()
 		{
 			InitializeComponent();
 		}
@@ -45,7 +45,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			int LocY = 30;
 			if (!Quest.MissionSteps.Value.Any())
 			{
-				this.Controls.Add(new ContentPanel
+				this.Controls.Add(new Controls.ContentPanel
 				{
 					Text = "无内容，可能是废弃任务。",
 					Location = new Point(ContentStartX, LocY),

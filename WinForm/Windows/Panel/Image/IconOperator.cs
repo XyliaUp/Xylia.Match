@@ -53,21 +53,21 @@ namespace Xylia.Match.Windows.Panel
 			//初始化文本框路径
 			//this.ReadConfig(this.GetType().Name);
 
-			Path_ResultPath.Text = MySet.Core.Icon_ResultPath;
+			Path_ResultPath.Text = Ini.ReadValue(this.GetType(), "OutFolder");
 			Path_GameFolder.Text = MySet.Core.Folder_Game_Bns;
-			metroTextBox1.Text = MySet.Core.Icon_Chv;
+			metroTextBox1.Text = Ini.ReadValue(this.GetType(), "CacheList");
 
 
 			#region  读取输出格式设置
-			string FormatSel = Ini.ReadValue("IconOperator", "FormatSel");
+			string FormatSel = Ini.ReadValue(this.GetType(), "FormatSel");
 
 			if (FormatSel.IsNull() || !FormatSel.Contains('[')) FormatSelect.Text = FormatSelect.Source.First().ToString();
 			else FormatSelect.TextValue = FormatSel;
 			#endregion
 
-			if (bool.TryParse(Ini.ReadValue("IconOperator", "Mode"), out bool Result)) Switch_Mode.Checked = Result;
-			if (bool.TryParse(Ini.ReadValue("IconOperator", "HasBG"), out Result)) checkBox1.Checked = Result;
-			if (bool.TryParse(Ini.ReadValue("IconOperator", "WriteLog"), out Result)) checkBox2.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue(this.GetType(), "Mode"), out bool Result)) Switch_Mode.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue(this.GetType(), "HasBG"), out Result)) checkBox1.Checked = Result;
+			if (bool.TryParse(Ini.ReadValue(this.GetType(), "WriteLog"), out Result)) checkBox2.Checked = Result;
 		}
 		#endregion
 
@@ -80,20 +80,11 @@ namespace Xylia.Match.Windows.Panel
 			FrmAnchorTips.ShowTips(FormatSelect, Msg, AnchorTipsLocation.BOTTOM, Color.MediumOrchid, Color.FloralWhite, null, 12, 0, false);
 		}
 
-		private void FormatSelect_TextChanged(object sender, EventArgs e)
-		{
-			string SaveTxt = FormatSelect.TextValue;
-			Ini.WriteValue("IconOperator", "FormatSel", SaveTxt);
-		}
+		private void FormatSelect_TextChanged(object sender, EventArgs e) => Ini.WriteValue(this.GetType(), "FormatSel", FormatSelect.TextValue);
 
-		private void Path_ResultPath_TextChanged(object sender, EventArgs e)
-		{
-			MySet.Core.Icon_ResultPath = ((Control)sender).Text;
-		}
+		private void Path_ResultPath_TextChanged(object sender, EventArgs e) => Ini.WriteValue(this.GetType(), "OutFolder", Path_ResultPath.Text);
 
-
-
-		private void MetroTextBox1_TextChanged(object sender, EventArgs e) => MySet.Core.Icon_Chv = ((Control)sender).Text;
+		private void MetroTextBox1_TextChanged(object sender, EventArgs e) => Ini.WriteValue(this.GetType(), "CacheList", metroTextBox1.Text);
 
 		private void Path_GameFolder_TextChanged(object sender, EventArgs e)
 		{
@@ -102,7 +93,9 @@ namespace Xylia.Match.Windows.Panel
 		}
 
 
-		private void MetroButton3_Click(object sender, EventArgs e)
+
+
+		private void Btn_Search_1_Click(object sender, EventArgs e)
 		{
 			if (Folder.ShowDialog() == DialogResult.OK) Path_GameFolder.Text = Folder.SelectedPath;
 		}
@@ -116,12 +109,12 @@ namespace Xylia.Match.Windows.Panel
 		{
 			Open.Filter = "数据配置文件|*.chv|所有文件|*.*";
 
-			if (int.TryParse(Ini.ReadValue("IconOperator", "Filter1"), out int Result)) Open.FilterIndex = Result;
+			if (int.TryParse(Ini.ReadValue(this.GetType(), "CacheListFilter"), out int Result)) Open.FilterIndex = Result;
 
 			if (Open.ShowDialog() == DialogResult.OK)
 			{
 				metroTextBox1.Text = Open.FileName;
-				Ini.WriteValue("IconOperator", "Filter1", Open.FilterIndex);
+				Ini.WriteValue(this.GetType(), "CacheListFilter", Open.FilterIndex);
 			}
 		}
 
@@ -146,7 +139,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			Ini.WriteValue("IconOperator", "Mode", Switch_Mode.Checked);
+			Ini.WriteValue(this.GetType(), "Mode", Switch_Mode.Checked);
 			FrmAnchorTips.CloseLastTip();
 			Switch_Mode_MouseEnter(null, null);
 		}
@@ -218,7 +211,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			Ini.WriteValue("IconOperator", "HasBG", checkBox1.Checked);
+			Ini.WriteValue(this.GetType(), "HasBG", checkBox1.Checked);
 
 			FrmAnchorTips.CloseLastTip();
 			Switch_HasBG_MouseEnter(null, null);
@@ -226,7 +219,7 @@ namespace Xylia.Match.Windows.Panel
 
 		private void checkBox2_CheckedChanged(object sender, EventArgs e)
 		{
-			Ini.WriteValue("IconOperator", "WriteLog", checkBox2.Checked);
+			Ini.WriteValue(this.GetType(), "WriteLog", checkBox2.Checked);
 		}
 
 		private void 清除临时文件ToolStripMenuItem_Click(object sender, EventArgs e)

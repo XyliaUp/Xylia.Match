@@ -24,7 +24,6 @@ namespace Xylia.Preview.Third.Content
 			for (int idx = 0; idx <= 50; idx++) Rows.Add(this.ExcelInfo.CreateRow(idx));
 			#endregion
 
-
 			#region 输出内容
 			int CellIdx = -1;
 			foreach (var ChallengeType in ChallengeListFrm.TodayChallengeType)

@@ -1,5 +1,5 @@
 ﻿
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
+namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.RewardCell
 {
 	partial class PriceBase
 	{

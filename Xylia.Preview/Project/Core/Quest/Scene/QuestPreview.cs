@@ -19,14 +19,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 	public partial class QuestPreview : Form
 	{
 		#region 构造
-		public QuestPreview()
-		{
-			InitializeComponent();
-
-			this.AutoSize = false;
-			this.rewardInfo = new SubGroup.RewardInfo();
-			this.Controls.Add(this.rewardInfo);
-		}
+		public QuestPreview() => InitializeComponent();
 
 		public QuestPreview(QuestData QuestData) : this() => this.LoadData(QuestData);
 		#endregion
@@ -59,9 +52,9 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 		{
 			var Sections = new List<Control>
 			{
-				this.ContentInfo,
-				this.taskInfo,
-				this.rewardInfo
+				this.DescInfo,
+				this.TaskInfo,
+				this.RewardInfo
 			};
 
 
@@ -97,12 +90,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.Quest_Group.Text = value.Group2.GetText();
 
 			//处理内容部分
-			if (value.Desc is null) this.ContentInfo.Visible = false;
-			else this.ContentInfo.Text = value.Desc.GetText();
+			if (value.Desc is null) this.DescInfo.Visible = false;
+			else this.DescInfo.Text = value.Desc.GetText();
 
 
-			this.taskInfo.LoadData(value, SoundOut);
-			this.rewardInfo.LoadData(value);
+			this.TaskInfo.LoadData(value, SoundOut);
+			this.RewardInfo.LoadData(value);
 
 			if (value.Category == Category.Dungeon)
 			{

@@ -203,7 +203,6 @@ namespace Xylia.Preview.Project.Core.Skill
 						Icon = EffectAttribute.Icon?.GetIcon(),
 					};
 
-
 					EffectContent.LoadArg(EffectAttribute.ArgType1, Tooltip.EffectArg1, Tooltip);
 					EffectContent.LoadArg(EffectAttribute.ArgType2, Tooltip.EffectArg2, Tooltip);
 					EffectContent.LoadArg(EffectAttribute.ArgType3, Tooltip.EffectArg3, Tooltip);

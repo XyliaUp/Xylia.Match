@@ -9,7 +9,22 @@ namespace Xylia.Preview.Data.Record
 	public sealed class QuestBonusRewardSetting : IRecord
 	{
 		#region 属性字段
-		public Type type;
+		public TypeSeq Type;
+
+		public enum TypeSeq
+		{
+			[Signal("sealed-level")]
+			SealedLevel,
+
+			[Signal("difficulty-type")]
+			DifficultyType,
+
+			[Signal("ignore-difficulty")]
+			IgnoreDifficulty,
+		}
+
+
+
 
 		public string Quest;
 
@@ -56,22 +71,6 @@ namespace Xylia.Preview.Data.Record
 
 		[Signal("difficulty-type")]
 		public DifficultyType DifficultyType;
-		#endregion
-
-
-
-		#region 枚举
-		public enum Type
-		{
-			[Signal("sealed-level")]
-			SealedLevel,
-
-			[Signal("difficulty-type")]
-			DifficultyType,
-
-			[Signal("ignore-difficulty")]
-			IgnoreDifficulty,
-		}
 		#endregion
 	}
 }

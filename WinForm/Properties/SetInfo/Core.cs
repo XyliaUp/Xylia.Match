@@ -18,11 +18,6 @@ namespace Xylia.Match.Properties.SetInfo
 		/// </summary>
 		public string Folder_Output { get => LoadInfo(); set => SaveInfo(value); }
 
-		public string Icon_ResultPath { get => LoadInfo(); set => SaveInfo(value); }
-
-		public string Icon_Chv { get => LoadInfo(); set => SaveInfo(value); }
-
-
 		/// <summary>
 		/// 物品预览功能工作路径
 		/// </summary>

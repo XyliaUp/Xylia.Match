@@ -26,10 +26,10 @@ using Xylia.Preview.Project.Core.Skill;
 using Xylia.Preview.Project.Core.Store.Store2;
 using Xylia.Preview.Properties;
 using Xylia.Preview.Properties.AnalyseSection;
-using Xylia.Preview.Third.Content;
-using Output = Xylia.Preview.Third.Content;
 
 using static Xylia.Tip;
+
+using Output = Xylia.Preview.Third.Content;
 
 
 namespace Xylia.Match.Windows.Panel
@@ -47,7 +47,7 @@ namespace Xylia.Match.Windows.Panel
 
 			this.Switch_Mode.Checked = CommonPath.DataLoadMode;
 			this.GRoot_Path.Text = MySet.Core.Folder_Game_Bns;
-			this.ItemPreview_Search.InputText = Ini.ReadValue("Preview", "ItemSearch_Rule");
+			this.ItemPreview_Search.InputText = Ini.ReadValue("Preview", "item#searchrule");
 
 			//Logger.Write($"启用物品数据模块");
 			IsInitialization = false;
@@ -558,12 +558,12 @@ namespace Xylia.Match.Windows.Panel
 
 
 
-		private void ItemPreview_Search_TextChanged(object sender, EventArgs e) => Ini.WriteValue("Preview", "ItemSearch_Rule", this.ItemPreview_Search.InputText);
+		private void ItemPreview_Search_TextChanged(object sender, EventArgs e) => Ini.WriteValue("Preview", "item#searchrule", this.ItemPreview_Search.InputText);
 
 		private void Switch_Mode_CheckedChanged(object sender, EventArgs e)
 		{
-			this.StateInfo.Visible = this.label2.Visible = ucBtnExt3.Visible = ucBtnExt19.Visible =
-				 this.label4.Visible = this.ucBtnExt7.Visible = !Switch_Mode.Checked;
+			this.Switch_Mode.Visible = this.StateInfo.Visible = this.label2.Visible = ucBtnExt3.Visible = 
+				ucBtnExt19.Visible = this.label4.Visible = this.ucBtnExt7.Visible = !Switch_Mode.Checked;
 
 			if (IsInitialization) return;
 

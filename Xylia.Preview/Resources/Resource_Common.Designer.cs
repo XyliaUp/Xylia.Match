@@ -295,6 +295,16 @@ namespace Xylia.Preview.Resources {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap RandomItem {
+            get {
+                object obj = ResourceManager.GetObject("RandomItem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap Sewing {
             get {
                 object obj = ResourceManager.GetObject("Sewing", resourceCulture);

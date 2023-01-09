@@ -1,4 +1,4 @@
-﻿namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
+﻿namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.RewardCell
 {
 	public sealed partial class HonorExp : RewardCellBase
 	{

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
+namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.RewardCell
 {
 	public partial class RewardCellBase : Panel
 	{

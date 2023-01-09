@@ -32,8 +32,11 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSpiritPage));
 			this.ItemGrowth2Panel_AbilityDescription_WeaponName_1 = new System.Windows.Forms.PictureBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.AbilityInfo = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.GrowthState = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.ApplicablePartInfo = new Xylia.Preview.Project.Controls.ContentPanel();
+			((System.ComponentModel.ISupportInitialize)(this.MyWeapon_Icon)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrowth2Panel_AbilityDescription_WeaponName_1)).BeginInit();
 			this.ItemGrowth2Panel_AbilityDescription_WeaponName_1.SuspendLayout();
 			this.SuspendLayout();
@@ -71,16 +74,16 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.label4.TabIndex = 28;
 			this.label4.Text = "传授属性";
 			// 
-			// contentPanel1
+			// AbilityInfo
 			// 
-			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
-			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(293, 230);
-			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
-			this.contentPanel1.Name = "contentPanel1";
-			this.contentPanel1.TabIndex = 28;
-			this.contentPanel1.Text = "降魔攻击力 1~999\r\n暴击伤害 1~999";
+			this.AbilityInfo.BackColor = System.Drawing.Color.Transparent;
+			this.AbilityInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.AbilityInfo.ForeColor = System.Drawing.Color.White;
+			this.AbilityInfo.Location = new System.Drawing.Point(293, 230);
+			this.AbilityInfo.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+			this.AbilityInfo.Name = "AbilityInfo";
+			this.AbilityInfo.TabIndex = 28;
+			this.AbilityInfo.Text = "属性1 1~999\r\n属性2 1~999";
 			// 
 			// GrowthState
 			// 
@@ -93,21 +96,40 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 			this.GrowthState.TabIndex = 32;
 			this.GrowthState.Text = "<font name=\"00008130.ItemGrowth_Probability_28\">传授</font>";
 			// 
+			// ApplicablePartInfo
+			// 
+			this.ApplicablePartInfo.BackColor = System.Drawing.Color.Transparent;
+			this.ApplicablePartInfo.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.ApplicablePartInfo.ForeColor = System.Drawing.Color.White;
+			this.ApplicablePartInfo.Location = new System.Drawing.Point(333, 126);
+			this.ApplicablePartInfo.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+			this.ApplicablePartInfo.Name = "ApplicablePartInfo";
+			this.ApplicablePartInfo.TabIndex = 33;
+			this.ApplicablePartInfo.Text = "武器";
+			// 
 			// ItemSpiritPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+			this.Controls.Add(this.ApplicablePartInfo);
 			this.Controls.Add(this.GrowthState);
-			this.Controls.Add(this.contentPanel1);
+			this.Controls.Add(this.AbilityInfo);
 			this.Controls.Add(this.ItemGrowth2Panel_AbilityDescription_WeaponName_1);
 			this.Name = "ItemSpiritPage";
+			this.Controls.SetChildIndex(this.pictureBox2, 0);
+			this.Controls.SetChildIndex(this.MyWeapon_Title, 0);
+			this.Controls.SetChildIndex(this.MyWeapon_Icon, 0);
+			this.Controls.SetChildIndex(this.MyWeapon_Name, 0);
 			this.Controls.SetChildIndex(this.SubIngredientTitle, 0);
 			this.Controls.SetChildIndex(this.MoneyCostPreview, 0);
 			this.Controls.SetChildIndex(this.FixedIngredientPreview, 0);
 			this.Controls.SetChildIndex(this.SubIngredientPreview, 0);
 			this.Controls.SetChildIndex(this.WarningPreview, 0);
 			this.Controls.SetChildIndex(this.ItemGrowth2Panel_AbilityDescription_WeaponName_1, 0);
-			this.Controls.SetChildIndex(this.contentPanel1, 0);
+			this.Controls.SetChildIndex(this.AbilityInfo, 0);
 			this.Controls.SetChildIndex(this.GrowthState, 0);
+			this.Controls.SetChildIndex(this.ApplicablePartInfo, 0);
+			((System.ComponentModel.ISupportInitialize)(this.MyWeapon_Icon)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ItemGrowth2Panel_AbilityDescription_WeaponName_1)).EndInit();
 			this.ItemGrowth2Panel_AbilityDescription_WeaponName_1.ResumeLayout(false);
 			this.ItemGrowth2Panel_AbilityDescription_WeaponName_1.PerformLayout();
@@ -119,7 +141,8 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 
 		private System.Windows.Forms.PictureBox ItemGrowth2Panel_AbilityDescription_WeaponName_1;
 		private System.Windows.Forms.Label label4;
-		private Controls.ContentPanel contentPanel1;
+		private Controls.ContentPanel AbilityInfo;
 		protected Controls.ContentPanel GrowthState;
+		private Controls.ContentPanel ApplicablePartInfo;
 	}
 }

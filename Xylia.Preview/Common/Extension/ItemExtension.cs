@@ -8,7 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Xylia.Extension;
+using Xylia.Preview.Common.Cast;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Item.Scene;
 using Xylia.Preview.Project.Core.Skill;
 using Xylia.Preview.Resources;
@@ -41,10 +43,10 @@ namespace Xylia.Preview.Data.Record
 
 
 		#region 物品处理
-		public static Item GetItemInfo(this string _alias, bool IgnoreError = true)
+		public static Item GetItemInfo(this string Alias, bool IgnoreError = true)
 		{
-			var Info = FileCache.Data.Item[_alias];
-			if (Info is null && !IgnoreError) throw new Exception($"物品查询无效 ({ _alias })");
+			var Info = FileCache.Data.Item[Alias];
+			if (Info is null && !IgnoreError) throw new Exception($"物品查询无效 ({ Alias })");
 
 			return Info;
 		}
@@ -113,16 +115,50 @@ namespace Xylia.Preview.Data.Record
 		#endregion
 
 
+		public static ItemIconCell GetObjIcon(this string ObjInfo, string StackCount) => GetObjIcon(ObjInfo, StackCount.ToIntWithNull() ?? 1);
+
+		public static ItemIconCell GetObjIcon(this string ObjInfo, int StackCount)
+		{
+			if (ObjInfo is null) return null;
+
+			var Obj = ObjInfo.Contains(':') ? ObjInfo.CastObject() : ObjInfo.GetItemInfo();
+			if (Obj is null || Obj is not IPicture o) return null;
+
+			return new ItemIconCell()
+			{
+				Image = o.MainIcon(),
+				Scale = 45,
+				ShowStackCount = true,
+				StackCount = StackCount,
+				
+				ObjectRef = Obj,
+			};
+		}
+
+		public static ItemIconCell GetObjIcon(this Bitmap Image)
+		{
+			return new ItemIconCell()
+			{
+				Image = Image,
+				Scale = 45,
+				ShowStackCount = true,
+				StackCount = 1,
+			};
+		}
+
+
+
 		private static Form GetPreview(this string rule, Action<string, bool> Act = null) => GetPreview(GetItemInfo(rule, Act));
 
 		private static Form GetPreview(this IRecord obj)
 		{
 			if (obj is null) return null;
 			else if (obj is Item ItemData) return new ItemFrm(ItemData);
-			else if (obj is Skill3 Skill) return new Form1(Skill);
+			else if (obj is Skill3 Skill) return new SkillFrm(Skill);
 
 			return null;
 		}
+
 
 		public static void PreviewShow(this string rule, Action<string, bool> Act = null, IWin32Window window = null)
 		{

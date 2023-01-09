@@ -3,13 +3,13 @@ using System.Drawing.Design;
 using System.Drawing;
 namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 {
-	public partial class ContentInfo : GroupBase
+	public partial class DescPanel : GroupBase
 	{
 		#region 构造
-		public ContentInfo()
+		public DescPanel()
 		{
 			InitializeComponent();
-			this.ContentPanel.Location = new Point(ContentStartX, this.ContentPanel.Location.Y);
+			this.Content.Location = new Point(ContentStartX, this.Content.Location.Y);
 		}
 		#endregion
 
@@ -21,10 +21,10 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		[Editor("System.ComponentModel.Design.MultilineStringEditor", typeof(UITypeEditor))]
 		public override string Text
 		{
-			get => this.ContentPanel.Text;
+			get => this.Content.Text;
 			set
 			{
-				this.ContentPanel.Text = value;
+				this.Content.Text = value;
 				this.Refresh();
 			}
 		}

@@ -1,7 +1,7 @@
 ﻿
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 {
-	partial class RewardInfo
+	partial class RewardPanel
 	{
 		/// <summary> 
 		/// 必需的设计器变量。
@@ -57,15 +57,16 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			this.RewardSelect.Visible = false;
 			this.RewardSelect.SelectedChangedEvent += new System.EventHandler(this.RewardSelect_SelectedChangedEvent);
 			// 
-			// RewardInfo
+			// RewardPanel
 			// 
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.RewardSelect);
 			this.ForeColor = System.Drawing.Color.White;
 			this.GroupText = "奖励";
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-			this.Name = "RewardInfo";
+			this.Name = "RewardPanel";
 			this.Size = new System.Drawing.Size(540, 72);
+			//this.Load += new System.EventHandler(this.RewardPanel_Load);
 			this.Controls.SetChildIndex(this.RewardSelect, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();

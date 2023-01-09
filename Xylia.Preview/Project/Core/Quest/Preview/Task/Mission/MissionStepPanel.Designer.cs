@@ -31,9 +31,9 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.MissionDemand = new ContentPanel();
-			this.Panel_TaskDesc = new ContentPanel();
-			this.Content_StepID = new ContentPanel();
+			this.MissionDemand = new Controls.ContentPanel();
+			this.Panel_TaskDesc = new Controls.ContentPanel();
+			this.Content_StepID = new Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
 			// MissionDemand
@@ -91,8 +91,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 		#endregion
 
-		private ContentPanel Panel_TaskDesc;
-		private ContentPanel MissionDemand;
-		private ContentPanel Content_StepID;
+		private Controls.ContentPanel Panel_TaskDesc;
+		private Controls.ContentPanel MissionDemand;
+		private Controls.ContentPanel Content_StepID;
 	}
 }

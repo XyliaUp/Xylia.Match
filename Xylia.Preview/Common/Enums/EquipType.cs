@@ -9,25 +9,25 @@ namespace Xylia.Preview.Common.Enums
 		None,
 
 		[Description("武器")]
-		weapon,
+		Weapon,
 
 		[Description("服装")]
-		costume,
+		Costume,
 
 		[Description("耳环")]
-		earring,
+		Earring,
 
 		[Description("脸饰")]
-		eyeglass,
+		Eyeglass,
 
 		[Description("头饰")]
-		hat,
+		Hat,
 
 		[Description("戒指")]
-		ring,
+		Ring,
 
 		[Description("项链")]
-		necklace,
+		Necklace,
 
 		[Signal("Gem-1")]
 		Gem1,
@@ -54,16 +54,16 @@ namespace Xylia.Preview.Common.Enums
 		Gem8,
 
 		[Description("服饰")]
-		attach,
+		Attach,
 
 		[Description("腰带")]
-		belt,
+		Belt,
 
 		[Description("手镯")]
-		bracelet,
+		Bracelet,
 
 		[Description("魂")]
-		soul,
+		Soul,
 
 		[Description("灵")]
 		[Signal("soul-2")]
@@ -80,36 +80,46 @@ namespace Xylia.Preview.Common.Enums
 		[Signal("pet-2")]
 		Pet2,
 
+		[Description("神功牌")]
 		[Signal("rune-1")]
 		Rune1,
 
+		[Description("秘功牌")]
 		[Signal("rune-2")]
 		Rune2,
 
-		nova,
+		[Description("星")]
+		Nova,
 
+		[Description("天光石")]
 		[Signal("badge-1-premium")]
 		Badge1Premium,
 
+		[Description("地光石")]
 		[Signal("badge-2-premium")]
 		Badge2Premium,
 
+		[Description("人光石")]
 		[Signal("badge-3-premium")]
 		Badge3Premium,
 
+		[Description("天辉石")]
 		[Signal("badge-1-normal")]
 		Badge1Normal,
 
+		[Description("地辉石")]
 		[Signal("badge-2-normal")]
 		Badge2Normal,
 
+		[Description("人辉石")]
 		[Signal("badge-3-normal")]
 		Badge3Normal,
 
+		[Description("焕彩石")]
 		[Signal("badge-appearance")]
 		BadgeAppearance,
 
-
+		[Description("坐骑")]
 		Vehicle,
 	}
 }

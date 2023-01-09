@@ -1,6 +1,6 @@
 ﻿namespace Xylia.Preview.Project.Core.Skill
 {
-    partial class Form1
+    partial class SkillFrm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -40,7 +40,7 @@
 			this.textBox1.Text = "Bard_G1_Angel_Soul_Lv3";
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
-			// Form1
+			// SkillFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -54,7 +54,7 @@
 			this.ForeColor = System.Drawing.Color.DimGray;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
-			this.Name = "Form1";
+			this.Name = "SkillFrm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "查看技能";
 			this.ResumeLayout(false);

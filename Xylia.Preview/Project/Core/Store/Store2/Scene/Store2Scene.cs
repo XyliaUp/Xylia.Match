@@ -49,7 +49,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			Source.Insert(0, "全部");
 			this.JobSelector.Source = Source;
 
-			var LastJobSelect = Ini.ReadValue(this.Name, "JobFilter");
+			var LastJobSelect = Ini.ReadValue("Preview", "JobFilter");
 			this.JobSelector.TextValue = Source.Contains(LastJobSelect) ? LastJobSelect : this.JobSelector.Source.FirstOrDefault();
 			#endregion
 
@@ -235,7 +235,7 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 
 		private void JobSelector_SelectedChangedEvent(object sender, EventArgs e)
 		{
-			Ini.WriteValue(this.Name, "JobFilter", this.JobSelector.TextValue);
+			Ini.WriteValue("Preview", "JobFilter", this.JobSelector.TextValue);
 			this.TreeView_AfterSelect(null, null);
 		}
 

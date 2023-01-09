@@ -274,6 +274,8 @@ namespace Xylia.Preview.Data
 		/// <summary>
 		/// 获取全部数据临时方法
 		/// </summary>
+		/// <param name="Preload"></param>
+		/// <returns></returns>
 		private IEnumerable<T> CreateTest(bool Preload = false)
 		{
 			if (!FullLoad)
@@ -389,15 +391,16 @@ namespace Xylia.Preview.Data
 		/// 搜寻所有符合规则的对象
 		/// </summary>
 		/// <param name="SearchRule"></param>
+		/// <param name="Preload"></param>
 		/// <returns></returns>
-		public IEnumerable<T> Where(Predicate<T> SearchRule, bool TestMode = false)
+		public IEnumerable<T> Where(Predicate<T> SearchRule, bool Preload = false)
 		{
 			if (!this.HasData) this.Load();
 			if (!this.LoadFromGame) return this.Data.Where(Info => SearchRule(Info.Value)).Select(d => d.Value);
 
 
-			var result = CreateTest(TestMode).Where(Info => SearchRule(Info));
-			if (!TestMode) return result;
+			var result = CreateTest(Preload).Where(Info => SearchRule(Info));
+			if (!Preload) return result;
 
 			return result.Select(o =>
 			{

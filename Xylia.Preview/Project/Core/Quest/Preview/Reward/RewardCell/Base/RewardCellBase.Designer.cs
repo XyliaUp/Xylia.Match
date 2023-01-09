@@ -1,7 +1,7 @@
 ﻿using Xylia.Preview.Project.Controls;
 
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
+namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.RewardCell
 {
 	partial class RewardCellBase
 	{
@@ -32,7 +32,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 		private void InitializeComponent()
 		{
 			this.RewardTitle = new System.Windows.Forms.Label();
-			this.panelContent1 = new ContentPanel();
+			this.panelContent1 = new Controls.ContentPanel();
 			this.SuspendLayout();
 			// 
 			// RewardTitle
@@ -73,6 +73,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup.Reward.RewardCell
 
 		#endregion
 		private System.Windows.Forms.Label RewardTitle;
-		protected ContentPanel panelContent1;
+		protected Controls.ContentPanel panelContent1;
 	}
 }

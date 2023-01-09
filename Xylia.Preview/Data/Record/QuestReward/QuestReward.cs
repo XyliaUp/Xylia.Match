@@ -2,6 +2,7 @@
 
 using Xylia.Extension;
 using Xylia.Preview.Common.Interface;
+using Xylia.Preview.Project.Core.Quest.Preview.Reward;
 
 namespace Xylia.Preview.Data.Record
 {
@@ -32,15 +33,15 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 固定奖励
 		/// </summary>
-		public List<QuestRewardGroup> Fixeds
+		public List<RewardGroup> Fixeds
 		{
 			get
 			{
-				var Result = new List<QuestRewardGroup>();
+				var Result = new List<RewardGroup>();
 				for (int i = 1; i <= 15; i++)
 				{
 					if (!this.ContainsAttribute($"fixed-{i}-slot-1", out _)) break;
-					 Result.Add(new QuestRewardGroup(this.Attributes, $"fixed-{i}"));
+					 Result.Add(new RewardGroup(this.Attributes, $"fixed-{i}"));
 				}
 
 				return Result;
@@ -50,15 +51,15 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 可选奖励
 		/// </summary>
-		public List<QuestRewardGroup> Optionals
+		public List<RewardGroup> Optionals
 		{
 			get
 			{
-				var Result = new List<QuestRewardGroup>();
+				var Result = new List<RewardGroup>();
 				for (int i = 1; i <= 15; i++)
 				{
 					if (!this.ContainsAttribute($"optional-{i}-slot-1", out _)) break;
-					 Result.Add(new QuestRewardGroup(this.Attributes, $"fixed-{i}"));
+					 Result.Add(new RewardGroup(this.Attributes, $"fixed-{i}"));
 				}
 
 				return Result;

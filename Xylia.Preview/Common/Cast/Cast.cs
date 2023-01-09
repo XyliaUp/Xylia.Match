@@ -35,6 +35,7 @@ namespace Xylia.Preview.Common.Cast
 		/// 获得对象
 		/// </summary>
 		/// <param name="ObjInfo"></param>
+		/// <param name="DefaulDataTableName"></param>
 		/// <returns></returns>
 		public static IRecord CastObject(this string ObjInfo)
 		{
@@ -46,6 +47,10 @@ namespace Xylia.Preview.Common.Cast
 				return CastObject(Temp[1], Temp[0]);
 			}
 
+
+
+			System.Diagnostics.Debug.WriteLine("Cast失败: " + ObjInfo);
+
 			//返回无效值
 			return default;
 		}
@@ -56,7 +61,7 @@ namespace Xylia.Preview.Common.Cast
 		/// <param name="DataKey"></param>
 		/// <param name="DataTableName"></param>
 		/// <returns></returns>
-		public static IRecord CastObject(this string DataKey, string DataTableName)
+		private static IRecord CastObject(this string DataKey, string DataTableName)
 		{
 			if (string.IsNullOrWhiteSpace(DataKey)) return default;
 

@@ -12,7 +12,7 @@ namespace Xylia.Preview.Data.Package.Pak
 	{
 		public static void Scene()
 		{
-			var AssetPath = "BNSR/Content/Art/UI/GameUI/Scene/Game_ItemGrowth2/Game_ItemGrowth2Scene/ItemGrowth2Panel";
+			var AssetPath = "BNSR/Content/Art/UI/GameUI/Scene/Game_ToolTip/Game_ToolTipScene.uasset";
 			void Output(string Name, FStructFallback ImageProperty)
 			{
 				if (ImageProperty is null) return;

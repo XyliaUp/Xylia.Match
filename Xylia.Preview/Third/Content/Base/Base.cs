@@ -1,10 +1,12 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 using HZH_Controls.Forms;
 
 using NPOI.SS.UserModel;
 
+using Xylia.Configure;
 using Xylia.Files.Excel;
 
 namespace Xylia.Preview.Third.Content
@@ -33,9 +35,12 @@ namespace Xylia.Preview.Third.Content
 			{
 				Filter = "表格文件|*.xlsx",
 				FileName = $"{SheetName} ({ DateTime.Now:yy年MM月}).xlsx",
+
+				InitialDirectory = Ini.ReadValue("Folder", "DataOut"),
 			};
 
 			if (Save.ShowDialog() != DialogResult.OK) return;
+			Ini.WriteValue("Folder", "DataOut", Path.GetDirectoryName(Save.FileName));
 
 			FrmTips.ShowTipsSuccess("开始执行，请等待结束提示");
 			#endregion

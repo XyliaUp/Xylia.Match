@@ -246,7 +246,7 @@
 			this.FormatSelect.Source.Add("[name]_[id]");
 			this.FormatSelect.TabIndex = 108;
 			this.FormatSelect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.FormatSelect.TextValue = "";
+			this.FormatSelect.TextValue = "[id]";
 			this.FormatSelect.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
 			this.FormatSelect.TextChangedEvent += new System.EventHandler(this.FormatSelect_TextChanged);
 			this.FormatSelect.MouseEnter += new System.EventHandler(this.FormatSelect_MouseEnter);
@@ -340,7 +340,7 @@
 			this.Btn_Search_1.Size = new System.Drawing.Size(75, 23);
 			this.Btn_Search_1.TabIndex = 4;
 			this.Btn_Search_1.Text = "浏览";
-			this.Btn_Search_1.Click += new System.EventHandler(this.ImageCompose_Reset_Click);
+			this.Btn_Search_1.Click += new System.EventHandler(this.Btn_Search_1_Click);
 			// 
 			// Path_GameFolder
 			// 
@@ -383,7 +383,7 @@
 			this.metroTabPage2.HorizontalScrollbarBarColor = true;
 			this.metroTabPage2.Location = new System.Drawing.Point(4, 36);
 			this.metroTabPage2.Name = "metroTabPage2";
-			this.metroTabPage2.Size = new System.Drawing.Size(781, 413);
+			this.metroTabPage2.Size = new System.Drawing.Size(192, 60);
 			this.metroTabPage2.TabIndex = 3;
 			this.metroTabPage2.Text = "图标合成";
 			this.metroTabPage2.VerticalScrollbarBarColor = true;
@@ -510,7 +510,7 @@
 			this.GemPage.HorizontalScrollbarBarColor = true;
 			this.GemPage.Location = new System.Drawing.Point(4, 36);
 			this.GemPage.Name = "GemPage";
-			this.GemPage.Size = new System.Drawing.Size(781, 413);
+			this.GemPage.Size = new System.Drawing.Size(192, 60);
 			this.GemPage.TabIndex = 5;
 			this.GemPage.Text = "八卦牌合成";
 			this.GemPage.VerticalScrollbarBarColor = true;

@@ -31,6 +31,6 @@ namespace Xylia.Preview.Properties
 
 
 
-		public static bool DataLoadMode => Ini.ReadValue("Preview", "LoadMode").ToBool();
+		public static bool DataLoadMode => Ini.ReadValue("Preview", "LoadMode").ToBoolWithNull() ?? true;
 	}
 }

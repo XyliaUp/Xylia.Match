@@ -31,43 +31,38 @@ namespace Xylia.Preview.Project.Core.Skill
 			return temp.Select(o => FileCache.Data.SkillTooltip[o]);
 		}
 
-
-		public static string GetDuration(this int Duration) => Duration == 0 ? "即时" : TimeSpan.FromMilliseconds(Duration).ToMyString();
-
-
-
-
 		public static void LoadArg(this ContentPanel Panel, SkillTooltipAttribute.ArgType ArgType, string Arg, SkillTooltip Tooltip)
 		{
 			if (ArgType == SkillTooltipAttribute.ArgType.None) return;
 
-
+			#region 获取参数数值
 			int ArgValue1 = 0;
 			int ArgValue2 = 0;
 
 			//防止出现空值导致处理崩溃
-			if (!int.TryParse(Arg, out ArgValue1))
+			if (Arg != null)
 			{
-				if(Arg.Contains(','))
+				if (Arg.Contains(','))
 				{
 					var v = Arg.Split(',');
 					ArgValue1 = v[0].ToInt();
 					ArgValue2 = v[1].ToInt();
 				}
+				else int.TryParse(Arg, out ArgValue1);
 			}
+			#endregion
 
-
-
+			#region 传递参数
 			Panel.Params.Add(ArgType switch
 			{
 				SkillTooltipAttribute.ArgType.DamagePercentMinMax => GetDamageInfo(ArgValue1, ArgValue2, Tooltip.SkillAttackAttributeCoefficientPercent),
-				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(Arg.ToInt(), 0, Tooltip.SkillAttackAttributeCoefficientPercent),
+				SkillTooltipAttribute.ArgType.DamagePercent => GetDamageInfo(ArgValue1, 0, Tooltip.SkillAttackAttributeCoefficientPercent),
 				SkillTooltipAttribute.ArgType.Time => (float)ArgValue1 / 1000 + "秒",
 				SkillTooltipAttribute.ArgType.StackCount => ArgValue1,
-				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.Program.Fontset_ItemGrade_6\">{ FileCache.Data.Effect[Arg]?.NameText() ?? Arg }</font>",
+				SkillTooltipAttribute.ArgType.Effect => $"<font name=\"00008130.Program.Fontset_ItemGrade_6\">{ FileCache.Data.Effect[Arg]?.NameText() }</font>",
 				SkillTooltipAttribute.ArgType.HealPercent => ArgValue1 + "%",
 				SkillTooltipAttribute.ArgType.DrainPercent => ArgValue1 + "%",
-				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.Program.Fontset_ItemGrade_4\">{ FileCache.Data.Skill3[Arg]?.NameText() ?? Arg }</font>",
+				SkillTooltipAttribute.ArgType.Skill => $"<font name=\"00008130.Program.Fontset_ItemGrade_4\">{ FileCache.Data.Skill3[Arg]?.NameText() }</font>",
 				SkillTooltipAttribute.ArgType.ConsumePercent => ArgValue1 + "%",
 				SkillTooltipAttribute.ArgType.ProbabilityPercent => ArgValue1 + "%",
 				SkillTooltipAttribute.ArgType.StanceType => Arg.ToEnum<Stance>().GetDescription(),
@@ -80,7 +75,17 @@ namespace Xylia.Preview.Project.Core.Skill
 
 				_ => null,
 			});
+			#endregion
 		}
+
+
+
+
+
+		public static string GetDuration(this int Duration) => Duration == 0 ? "即时" : TimeSpan.FromMilliseconds(Duration).ToMyString();
+
+
+
 
 
 		public static int AttackPower = 6464;
