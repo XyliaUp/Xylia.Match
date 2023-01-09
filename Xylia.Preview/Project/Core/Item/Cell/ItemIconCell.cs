@@ -267,7 +267,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		/// </summary>
 		/// <param name="g"></param>
 		/// <param name="StackCount"></param>
-		/// <param name="Size"></param>
+		/// <param name="Border"></param>
 		private static void DrawStackCount(Graphics g, int StackCount, PointF Border)
 		{
 			var Txt = StackCount.ToString();

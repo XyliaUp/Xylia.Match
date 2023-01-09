@@ -14,6 +14,9 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 		/// </summary>
 		IEnumerable<object> Attributes { get; }
 
+		void SetAttribute(string Name,string Value) => throw new NotImplementedException();
+
+
 
 		string this[string param] { get; }
 

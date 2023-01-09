@@ -4,9 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
-using Xylia.Preview.Data.Helper;
+using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Skill;
-
 
 namespace Xylia.Preview
 {
@@ -16,8 +15,15 @@ namespace Xylia.Preview
 
 		private void DebugFrm_Load(object sender, EventArgs e)
 		{
-			//this.contentPanel1.Text = "<p justification=\"true\" justificationtype=\"linefeedbywidgetarea\"><link id=\"none\"/> </p><p horizontalalignment=\"center\"><br/><image enablescale=\"false\" imagesetpath=\"00027918.InterD_ChungGakjiBu\"/><br/><image enablescale=\"true\" imagesetpath=\"00009499.Field_Boss\" scalerate=\"1.4\"/>铁傀王<br/><br/>中原的海盗组织——冲角团的平南舰队支部。<br/>支部长是啸四海。</p>";
+			this.contentPanel1.Params.Add("2080002".GetItemInfo());
+			this.contentPanel1.Params.Add(1);
+			this.contentPanel1.Params.Add(2);
 
+			this.contentPanel1.Text = "UI.Tooltip.BonusRewardItem.Random.MinMax".GetText() + "UI.Tooltip.BonusRewardItem.Random.Tag".GetText();
+			return;
+
+
+			//this.contentPanel1.Text = "<p justification=\"true\" justificationtype=\"linefeedbywidgetarea\"><link id=\"none\"/> </p><p horizontalalignment=\"center\"><br/><image enablescale=\"false\" imagesetpath=\"00027918.InterD_ChungGakjiBu\"/><br/><image enablescale=\"true\" imagesetpath=\"00009499.Field_Boss\" scalerate=\"1.4\"/>铁傀王<br/><br/>中原的海盗组织——冲角团的平南舰队支部。<br/>支部长是啸四海。</p>";
 			//Debug.WriteLine(FileCache.Data.Npc["CH_PB_WantedCoinShop_0001_Exchange_01"]?.Attributes);
 			//Debug.WriteLine(FileCache.Data.Npc.Where(o => o.Attributes["store2-1"] == "CH_BoardGacha_Grocery", true).FirstOrDefault());
 
@@ -28,11 +34,14 @@ namespace Xylia.Preview
 
 
 
-			return;
-			new SkillFrm(FileCache.Data.Skill3[101230,3]).ShowDialog();
 
 
-			Dictionary<int, List<Data.Record.Item>> test = new();
+
+
+			new SkillFrm(FileCache.Data.Skill3[101230, 3]).ShowDialog();
+
+
+			Dictionary<int, List<Item>> test = new();
 			foreach (var Item in FileCache.Data.Item)
 			{
 				var ClosetGroupId = Item.ClosetGroupId;
@@ -42,7 +51,7 @@ namespace Xylia.Preview
 				if (!test.ContainsKey(ClosetGroupId))
 					test.Add(ClosetGroupId, new());
 
-				test[ClosetGroupId]	.Add(Item);
+				test[ClosetGroupId].Add(Item);
 			}
 
 

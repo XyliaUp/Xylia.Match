@@ -34,8 +34,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 		{
 			InitializeComponent();
 
-			this.BackColor = Color.Transparent;
-
 			//添加控件
 			this.Controls.Add(FixedCommon);
 			this.Controls.Add(OptionalCommon);
@@ -93,6 +91,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 			#endregion
 
 			#region 特别奖励
+			QuestBonusReward.INVALID = true;
 			QuestBonusRewardSettings = FileCache.Data.QuestBonusRewardSetting.Where(o => int.TryParse(o.Quest, out var QuestID) ? QuestID == Quest.id : o.Quest == Quest.Alias);
 			if (QuestBonusRewardSettings.Any())
 			{

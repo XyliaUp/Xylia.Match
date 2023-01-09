@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <table>
-	<!-- 内容限制 -->
 	<list module="ItemData" type="content-quota" version="5.0" check-version="n" >
 		<record alias="type" type="type" name="" >
 			<case alias="vitality" name="" />
@@ -365,7 +364,7 @@
 			<case alias="item-buy-350" name="" />
 			<case alias="daily-contents-reset" name="" />
 			<case alias="weekly-contents-reset" name="" />
-			<case alias="contents-reset" name="" />
+			<case alias="specific-target" name="" />
 			<case alias="trade-restrict" name="" />		
 		</record>
 
@@ -407,8 +406,8 @@
 		<!-- =============================================================== -->
 
 		<!-- =============================================================== -->
-		<record alias="unk1" type="Bool" name="" filter="contents-reset" />
-		<record alias="unk2" type="Byte" name="" filter="contents-reset" />
+		<record alias="modifiable-by-admin" type="Bool" name="" filter="specific-target" />
+		<record alias="unk2" type="Byte" name="" filter="specific-target" />
 		<!-- =============================================================== -->
 	</list>
 </table>

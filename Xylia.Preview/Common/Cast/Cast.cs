@@ -35,7 +35,6 @@ namespace Xylia.Preview.Common.Cast
 		/// 获得对象
 		/// </summary>
 		/// <param name="ObjInfo"></param>
-		/// <param name="DefaulDataTableName"></param>
 		/// <returns></returns>
 		public static IRecord CastObject(this string ObjInfo)
 		{

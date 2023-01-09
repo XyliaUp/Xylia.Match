@@ -145,7 +145,11 @@ namespace Xylia.Preview.Data.Record
 		public string ImprovePrevItem => this.Attributes["improve-prev-item"];
 
 		public string ItemName => this.Attributes["name2"].GetText();
-		public string ItemNameWithGrade => $"<font name=\"00008130.Program.Fontset_ItemGrade_{ this.ItemGrade }\">" + this.ItemName + "</font>";
+
+		public string ItemNameOnly => this.ItemName;
+		public string ItemNameWithGrade => $"<font name=\"00008130.Program.Fontset_ItemGrade_{ this.ItemGrade }\">{ this.ItemName }</font>";
+
+
 
 		public string MainInfo => this.Attributes["main-info"].GetText();
 		public string SubInfo => this.Attributes["sub-info"].GetText();
@@ -232,7 +236,7 @@ namespace Xylia.Preview.Data.Record
 		/// <summary>
 		/// 获得图标信息（包含品质）
 		/// </summary>
-		/// <param name="IconAlias"></param>
+		/// <param name="IconInfo"></param>
 		/// <param name="ItemGrade"></param>
 		/// <returns></returns>
 		public static Bitmap GetIconWithGrade(string IconInfo, byte ItemGrade)

@@ -17,16 +17,16 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 		{
 			this.Faction = Attributes[Group + "-faction"];
 			this.DifficultyType = Attributes[Group + "-difficulty-type"].ToEnum<DifficultyType>();
+
 			this.Slot1 = Attributes[Group + "-slot-1"];
 			this.Slot2 = Attributes[Group + "-slot-2"];
 			this.Slot3 = Attributes[Group + "-slot-3"];
 			this.Slot4 = Attributes[Group + "-slot-4"];
 
-			//该字段实际上是Byte类型，只是为了方便处理
-			short.TryParse(Attributes[Group + "-item-count-1"], out this.ItemCount1);
-			short.TryParse(Attributes[Group + "-item-count-2"], out this.ItemCount2);
-			short.TryParse(Attributes[Group + "-item-count-3"], out this.ItemCount3);
-			short.TryParse(Attributes[Group + "-item-count-4"], out this.ItemCount4);
+			byte.TryParse(Attributes[Group + "-item-count-1"], out this.ItemCount1);
+			byte.TryParse(Attributes[Group + "-item-count-2"], out this.ItemCount2);
+			byte.TryParse(Attributes[Group + "-item-count-3"], out this.ItemCount3);
+			byte.TryParse(Attributes[Group + "-item-count-4"], out this.ItemCount4);
 
 			byte.TryParse(Attributes[Group + "-skill-var-idx-1"], out this.SkillVarIdx1);
 			byte.TryParse(Attributes[Group + "-skill-var-idx-2"], out this.SkillVarIdx2);
@@ -36,11 +36,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 
 			this.GroupKey = Group;
 			this.GroupName = GetGroupName(Attributes);
-		}
-
-		public RewardGroup()
-		{
-
 		}
 		#endregion
 
@@ -54,10 +49,10 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 		public string Slot3;
 		public string Slot4;
 
-		public short ItemCount1;
-		public short ItemCount2;
-		public short ItemCount3;
-		public short ItemCount4;
+		public byte ItemCount1;
+		public byte ItemCount2;
+		public byte ItemCount3;
+		public byte ItemCount4;
 
 		//optional组没有这个
 		public byte SkillVarIdx1;

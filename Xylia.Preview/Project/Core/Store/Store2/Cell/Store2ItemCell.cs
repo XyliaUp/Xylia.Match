@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 
+using Xylia.bns.Modules.GameData.Enums;
 using Xylia.Extension;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Store.Cell;
@@ -44,15 +45,30 @@ namespace Xylia.Preview.Project.Core.Store.Store2
 			#region 处理限购策略信息
 			List<string> TipInfo = new();
 
-			var ContentQuota = FileCache.Data.ContentQuota[ItemBuyPrice.CheckContentQuota];
-			if (ContentQuota != null)
+			var Quota = FileCache.Data.ContentQuota[ItemBuyPrice.CheckContentQuota];
+			if (Quota != null)
 			{
 				this.quotaTxt.Visible = true;
-				this.quotaTxt.Text = ContentQuota.Info;
 				this.quotaTxt.BringToFront();
 
-				var ResetInfo = ContentQuota.ResetInfo;
-				if (ResetInfo != null) TipInfo.Add(ResetInfo);
+				//读取重置数量信息
+				string ChargeInfo = Quota.ChargeInterval == ResetType.None ? null : Quota.ChargeInterval.GetDescription() + " ";
+				this.quotaTxt.Text = $"{ Quota.TargetType.GetDescription() } { ChargeInfo }{ Quota.MaxValue }个";
+
+
+				//读取重置时间信息
+				if (Quota.ChargeInterval != ResetType.None)
+				{
+					TipInfo.Add(Quota.ChargeInterval switch
+					{
+						ResetType.None => null,
+						ResetType.Daily => $"每日{ Quota.ChargeTime }时",
+						ResetType.Weekly => $"每{ Quota.ChargeDayOfWeek.GetDescription() } { Quota.ChargeTime }时",
+
+						_ => "未知重置信息",
+
+					} + "初始化购买限制");
+				}
 			}
 			#endregion
 

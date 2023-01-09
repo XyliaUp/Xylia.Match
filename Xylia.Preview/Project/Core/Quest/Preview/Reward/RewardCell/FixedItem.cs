@@ -12,12 +12,14 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.RewardCell
 	/// </summary>
 	public partial class FixedItem : Panel
 	{
+		protected virtual int ContentStart { get; set; } = 0;
+
 		public FixedItem() => InitializeComponent();
 
 
-		protected virtual int ContentStart { get; set; } = 0;
+		
 
-		public bool INVALID = false;
+		public bool INVALID = true;
 
 		public List<ItemIconCell> Items
 		{

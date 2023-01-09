@@ -96,7 +96,6 @@ namespace Xylia.Preview.Data
 		/// <summary>
 		/// 加载资源
 		/// </summary>
-		/// <param name="Path"></param>
 		/// <param name="Reload">指示在存在数据时，是否可以重新加载</param>
 		protected void Load(bool Reload = false)
 		{
@@ -153,7 +152,6 @@ namespace Xylia.Preview.Data
 		/// <summary>
 		/// 加载外部配置文件
 		/// </summary>
-		/// <param name="Path"></param>
 		private void LoadXml()
 		{
 			var Files = new DirectoryInfo(CommonPath.WorkingDirectory).GetFiles(typeof(T).Name + "Data*");

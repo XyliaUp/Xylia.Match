@@ -28,7 +28,7 @@ namespace Xylia.Preview.Project.RunForm
 		};
 		
 
-		public static DayOfWeek WeeklyResetDayOfWeek = DayOfWeek.Friday;
+		public static System.DayOfWeek WeeklyResetDayOfWeek = System.DayOfWeek.Friday;
 
 		public static byte DailyResetTime = 6;
 
@@ -61,7 +61,7 @@ namespace Xylia.Preview.Project.RunForm
 
 
 		#region 课题处理
-		public static string GetTimeInfo(DayOfWeek DayOfWeek, DateTime TodayDate)
+		public static string GetTimeInfo(System.DayOfWeek DayOfWeek, DateTime TodayDate)
 		{
 			//获取到指定重置日期
 			var DiffDay = (int)DayOfWeek - (int)TodayDate.DayOfWeek;
@@ -95,7 +95,7 @@ namespace Xylia.Preview.Project.RunForm
 			else
 			{
 				var ChallengeType = TodayChallengeType.First(o => DaySelect.TextValue == o.Value).Key;
-				var ChallengeDayOfWeek = (DayOfWeek)(ChallengeType - 1);
+				var ChallengeDayOfWeek = (System.DayOfWeek)(ChallengeType - 1);
 				if (ChallengeDayOfWeek == TodayDate.DayOfWeek) this.RequiredTime.Text = $"今日挑战<br/><image enablescale=\"true\" imagesetpath=\"00009076.RequiredTime\" scalerate=\"1.4\"/>还剩" + GetTimeInfo(ChallengeDayOfWeek + 1, TodayDate);
 				else
 				{

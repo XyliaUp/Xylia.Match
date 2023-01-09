@@ -24,7 +24,8 @@ namespace Xylia.Match.Util.Game.ItemData.Util
 		/// <summary>
 		/// 读取旧数据
 		/// </summary>
-		/// <param name="Show"></param>
+		/// <param name="ChvPath"></param>
+		/// <param name="action"></param>
 		/// <returns></returns>
 		public static HashSet<int> LoadData(string ChvPath, Action<string> action)
 		{

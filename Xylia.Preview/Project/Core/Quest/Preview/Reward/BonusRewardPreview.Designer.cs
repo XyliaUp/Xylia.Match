@@ -28,49 +28,40 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.EventTime_FixedDate = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BonusRewardPreview));
+			this.AttractionReward_ChanceNum = new System.Windows.Forms.Label();
+			this.Title = new System.Windows.Forms.Label();
 			this.itemIconCell1 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			this.WarningPreview = new Xylia.Preview.Project.Core.ItemGrowth.ItemGrowth2.Preview.WarningPreview();
+			this.CostToggle = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.itemIconCell2 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// EventTime_FixedDate
+			// AttractionReward_ChanceNum
 			// 
-			this.EventTime_FixedDate.AutoSize = true;
-			this.EventTime_FixedDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.EventTime_FixedDate.ForeColor = System.Drawing.Color.White;
-			this.EventTime_FixedDate.Location = new System.Drawing.Point(152, 60);
-			this.EventTime_FixedDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.EventTime_FixedDate.Name = "EventTime_FixedDate";
-			this.EventTime_FixedDate.Size = new System.Drawing.Size(121, 20);
-			this.EventTime_FixedDate.TabIndex = 9;
-			this.EventTime_FixedDate.Text = "基本特别奖励次数";
+			this.AttractionReward_ChanceNum.AutoSize = true;
+			this.AttractionReward_ChanceNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.AttractionReward_ChanceNum.ForeColor = System.Drawing.Color.White;
+			this.AttractionReward_ChanceNum.Location = new System.Drawing.Point(152, 60);
+			this.AttractionReward_ChanceNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.AttractionReward_ChanceNum.Name = "AttractionReward_ChanceNum";
+			this.AttractionReward_ChanceNum.Size = new System.Drawing.Size(121, 20);
+			this.AttractionReward_ChanceNum.TabIndex = 9;
+			this.AttractionReward_ChanceNum.Text = "基本特别奖励次数";
 			// 
-			// label1
+			// Title
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(169, 11);
-			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(93, 20);
-			this.label1.TabIndex = 10;
-			this.label1.Text = "未知副本名称";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.label2.ForeColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(25, 194);
-			this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(65, 20);
-			this.label2.TabIndex = 11;
-			this.label2.Text = "获取更多";
+			this.Title.AutoSize = true;
+			this.Title.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.Title.ForeColor = System.Drawing.Color.White;
+			this.Title.Location = new System.Drawing.Point(169, 11);
+			this.Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.Title.Name = "Title";
+			this.Title.Size = new System.Drawing.Size(93, 20);
+			this.Title.TabIndex = 10;
+			this.Title.Text = "副本特别奖励";
 			// 
 			// itemIconCell1
 			// 
@@ -84,11 +75,11 @@
 			this.itemIconCell1.FrameType = true;
 			this.itemIconCell1.Location = new System.Drawing.Point(63, 87);
 			this.itemIconCell1.Name = "itemIconCell1";
-			this.itemIconCell1.Scale = 40;
+			this.itemIconCell1.Scale = 45;
 			this.itemIconCell1.ShowFrameImage = true;
 			this.itemIconCell1.ShowStackCount = false;
 			this.itemIconCell1.ShowStackCountOnlyOne = false;
-			this.itemIconCell1.Size = new System.Drawing.Size(40, 40);
+			this.itemIconCell1.Size = new System.Drawing.Size(45, 45);
 			this.itemIconCell1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.itemIconCell1.StackCount = 0;
 			this.itemIconCell1.TabIndex = 12;
@@ -107,20 +98,57 @@
 			this.WarningPreview.TabIndex = 21;
 			this.WarningPreview.Visible = false;
 			// 
+			// CostToggle
+			// 
+			this.CostToggle.BackColor = System.Drawing.Color.Transparent;
+			this.CostToggle.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.CostToggle.ForeColor = System.Drawing.Color.White;
+			this.CostToggle.Location = new System.Drawing.Point(19, 164);
+			this.CostToggle.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
+			this.CostToggle.Name = "CostToggle";
+			this.CostToggle.TabIndex = 22;
+			this.CostToggle.Text = "领取更多";
+			this.CostToggle.Visible = false;
+			// 
+			// itemIconCell2
+			// 
+			this.itemIconCell2.BackColor = System.Drawing.Color.Transparent;
+			this.itemIconCell2.ExtraBottomLeft = null;
+			this.itemIconCell2.ExtraBottomRight = null;
+			this.itemIconCell2.ExtraTopLeft = null;
+			this.itemIconCell2.ExtraTopRight = null;
+			this.itemIconCell2.ForeColor = System.Drawing.Color.Black;
+			this.itemIconCell2.FrameImage = null;
+			this.itemIconCell2.FrameType = true;
+			this.itemIconCell2.Location = new System.Drawing.Point(63, 190);
+			this.itemIconCell2.Name = "itemIconCell2";
+			this.itemIconCell2.Scale = 45;
+			this.itemIconCell2.ShowFrameImage = true;
+			this.itemIconCell2.ShowStackCount = false;
+			this.itemIconCell2.ShowStackCountOnlyOne = false;
+			this.itemIconCell2.Size = new System.Drawing.Size(45, 45);
+			this.itemIconCell2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.itemIconCell2.StackCount = 0;
+			this.itemIconCell2.TabIndex = 23;
+			this.itemIconCell2.TabStop = false;
+			this.itemIconCell2.Visible = false;
+			// 
 			// BonusRewardPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.itemIconCell2);
+			this.Controls.Add(this.CostToggle);
 			this.Controls.Add(this.WarningPreview);
 			this.Controls.Add(this.itemIconCell1);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.EventTime_FixedDate);
+			this.Controls.Add(this.Title);
+			this.Controls.Add(this.AttractionReward_ChanceNum);
 			this.Name = "BonusRewardPreview";
 			this.Size = new System.Drawing.Size(449, 339);
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -128,10 +156,11 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label EventTime_FixedDate;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label AttractionReward_ChanceNum;
+		private System.Windows.Forms.Label Title;
 		private Item.Cell.Basic.ItemIconCell itemIconCell1;
 		public ItemGrowth.ItemGrowth2.Preview.WarningPreview WarningPreview;
+		private Controls.ContentPanel CostToggle;
+		private Item.Cell.Basic.ItemIconCell itemIconCell2;
 	}
 }

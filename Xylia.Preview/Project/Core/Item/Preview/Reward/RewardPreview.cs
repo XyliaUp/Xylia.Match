@@ -227,7 +227,6 @@ namespace Xylia.Preview.Project.Core.Item
 		/// 选择奖励内容
 		/// </summary>
 		/// <param name="CurPic"></param>
-		/// <param name="UseEvent">触发事件</param>
 		private void SelectReward(ItemIconCell CurPic)
 		{
 			#region 初始化

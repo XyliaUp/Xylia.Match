@@ -20,7 +20,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		/// <summary>
 		/// 目标物品改变
 		/// </summary>
-		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		protected virtual void ResultWeaponPreview_ResultItemChanged(ResultItemChangedEventArgs e)
 		{

@@ -56,7 +56,6 @@ namespace Xylia.Preview.Project.Core.ItemGrowth.Page
 		/// <summary>
 		/// 主要祭品改变
 		/// </summary>
-		/// <param name="sender"></param>
 		/// <param name="e"></param>
 		protected virtual void SubIngredientPreview_RecipeChanged(RecipeChangedEventArgs e)
 		{

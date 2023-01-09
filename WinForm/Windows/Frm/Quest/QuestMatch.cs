@@ -48,7 +48,6 @@ namespace Xylia.Match.Windows.Panel
 				if (temp is null) return;
 
 				//创建界面
-				
 				new QuestPreview(temp).ShowDialog();
 			});
 

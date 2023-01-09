@@ -103,6 +103,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// 获取音频数据
 		/// </summary>
 		/// <param name="StepShow"></param>
+		/// <param name="StepIdx"></param>
 		/// <returns></returns>
 		public static byte[] GetWave(string StepShow, int StepIdx) => StepShow.GetUObject().GetWave(StepIdx - 1);
 

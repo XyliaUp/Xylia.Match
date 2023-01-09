@@ -121,7 +121,6 @@ namespace Xylia.Preview.Project.Core.Item.Preview.Reward
 		/// <summary>
 		/// 获取额外图标
 		/// </summary>
-		/// <param name="item2"></param>
 		/// <returns></returns>
 		public Bitmap GetExtra()
 		{

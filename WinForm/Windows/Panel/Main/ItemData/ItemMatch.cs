@@ -56,8 +56,6 @@ namespace Xylia.Match.Util.ItemList
 		/// <summary>
 		/// 读取Dat文件路径
 		/// </summary>
-		/// <param name="is64"></param>
-		/// <param name="FolderPath"></param>
 		public void GetData()
 		{
 			this.GetOutput?.Invoke("正在对比新增道具，资源文件处理耗时较长，请耐心等待。");

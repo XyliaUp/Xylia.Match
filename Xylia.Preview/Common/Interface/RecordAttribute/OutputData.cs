@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Xylia.bns.Modules.DataFormat.Analyse.Output;
@@ -22,6 +23,10 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 
 
 		public IEnumerable<object> Attributes => this.OutputCells;
+
+		public void SetAttribute(string Name, string Value) => this.OutputCells.Add(new OutputCell(Name, Value));
+
+
 
 		public string this[string param] => this.OutputCells[param]?.OutputVal;
 

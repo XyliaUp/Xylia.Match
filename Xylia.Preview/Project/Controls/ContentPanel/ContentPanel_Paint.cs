@@ -18,6 +18,7 @@ namespace Xylia.Preview.Project.Controls
 {
 	public partial class ContentPanel
 	{
+		#region 宽度控制
 		/// <summary>
 		/// 允许的最大宽度
 		/// </summary>
@@ -25,33 +26,10 @@ namespace Xylia.Preview.Project.Controls
 
 		public bool UseMaxWidth = false;
 
-		public void GoPaint(Graphics g)
-		{
-			//初始化
-			this.MaxWidth = GetMaxWidth(this);
-			float LocX = 0, LocY = 0;
 
+		float ExpectWidth;
 
-			#region 执行绘制
-			var Width = this.Execute(new()
-			{
-				g = g,
-				Font = this.Font,
-				ForeColor = this.ForeColor,
-			},
-			this.Text?.Replace("\n", "<br/>"),
-			ref LocX, ref LocY, true);
-
-			#endregion
-
-
-			//变更大小
-			if (this.AutoSize)
-			{
-				this.Width = (int)Math.Ceiling(Width + 4.0f);
-				this.Height = (int)Math.Floor(LocY);
-			}
-		}
+		void TryExtendWidth(float Width) => this.ExpectWidth = Math.Max(this.ExpectWidth, Width);
 
 		/// <summary>
 		/// 计算最大宽度
@@ -88,23 +66,50 @@ namespace Xylia.Preview.Project.Controls
 
 			return MaxWidth;
 		}
+		#endregion
+
+
+		private void PanelContent_Paint(object sender, PaintEventArgs e)
+		{
+			//初始化
+			this.MaxWidth = GetMaxWidth(this);
+			this.ExpectWidth = UseMaxWidth ? this.MaxWidth : 0;
+
+
+			#region 执行绘制
+			float LocX = 0, LocY = 0;
+
+			this.Execute(new()
+			{
+				g = e.Graphics,
+				Font = this.Font,
+				ForeColor = this.ForeColor,
+			},
+			this.Text?.Replace("\n", "<br/>"),
+			ref LocX, ref LocY, true);
+			#endregion
+
+
+			//变更大小
+			if (this.AutoSize)
+			{
+				this.Width = (int)Math.Ceiling(ExpectWidth + 4.0f);
+				this.Height = (int)Math.Floor(LocY);
+			}
+		}
 
 		/// <summary>
 		/// 执行绘制
 		/// </summary>
-		/// <param name="g"></param>
+		/// <param name="param"></param>
 		/// <param name="InfoHtml"></param>
 		/// <param name="LocX"></param>
 		/// <param name="LocY"></param>
-		/// <param name="CurLineHeight">当前行的高度</param>
-		/// <param name="param"></param>
 		/// <param name="Status">是否由主入口方法调用</param>
 		/// <returns></returns>
-		private float Execute(ExecuteParam param, string InfoHtml, ref float LocX, ref float LocY, bool Status = false)
+		private void Execute(ExecuteParam param, string InfoHtml, ref float LocX, ref float LocY, bool Status = false)
 		{
 			int CurLineHeight = param.Font.Height;
-			float CurExpextWidth = UseMaxWidth ? this.MaxWidth : 0;
-			void TryExtendWidth(float ExpextWidth) => CurExpextWidth = Math.Max(CurExpextWidth, ExpextWidth);
 
 			#region 初始化
 			var doc = new HtmlAgilityPack.HtmlDocument();
@@ -141,8 +146,6 @@ namespace Xylia.Preview.Project.Controls
 			#endregion
 
 
-
-
 			#region 处理内容
 			foreach (var Node in doc.DocumentNode.ChildNodes)
 			{
@@ -154,12 +157,7 @@ namespace Xylia.Preview.Project.Controls
 					case "ga": break;
 
 					//绘制去除转义字符的文本
-					case "#text":
-					{
-						var MultiLine = ContentPanel.DrawString(param, Node.InnerText.Decode(), ref LocX, ref LocY, this.MaxWidth);
-						if (MultiLine) CurExpextWidth = this.MaxWidth;
-					}
-					break;
+					case "#text": this.DrawString(param, Node.InnerText.Decode(), ref LocX, ref LocY); break;
 
 					//处理换行
 					case "br":
@@ -188,12 +186,12 @@ namespace Xylia.Preview.Project.Controls
 						//绘制符号图标
 						if (Bullets != null)
 						{
-							ContentPanel.DrawString(GetFont(param, BulletsFontset, DesignMode), Bullets, ref LocX, ref LocY, this.MaxWidth);
+							this.DrawString(GetFont(param, BulletsFontset), Bullets, ref LocX, ref LocY);
 							LocX += 2;
 						}
 
 						//绘制文本内容
-						TryExtendWidth(this.Execute(param, Node.InnerHtml, ref LocX, ref LocY));
+						this.Execute(param, Node.InnerHtml, ref LocX, ref LocY);
 
 						//创建新行
 						LocX = 0;
@@ -203,22 +201,32 @@ namespace Xylia.Preview.Project.Controls
 
 					case "arg":
 					{
-						var Result = ArgCore.Handle(Attribute, this.Params);
-						if (Result is Bitmap b)
+						var result = ArgCore.Handle(Attribute, this.Params);
+						if (result is Bitmap b)
 						{
 							ContentPanel.DrawImage(param.g, b, ref CurLineHeight, ref LocX, ref LocY);
-							break;
 						}
+						else
+						{
+							string TextInfo = null;
 
-						string TextInfo = "???";
-						if (Result is null) Debug.WriteLine("处理失败: " + Node.OuterHtml);
-						else TextInfo = Result.ToString();
+							if (result is null)
+							{
+								Debug.WriteLine("处理失败: " + Node.OuterHtml);
+								TextInfo = "???";
+							}
+							else
+							{
+								TextInfo = result.ToString();
 
-						//数值类型追加千位分隔符
-						if (Result is int @value || int.TryParse(TextInfo, out @value)) TextInfo = @value.ToString("N0");
+								//数值类型追加千位分隔符
+								if (result is int @value || int.TryParse(TextInfo, out @value)) TextInfo = @value.ToString("N0");
+							}
 
-						//绘制文本
-						TryExtendWidth(this.Execute(param, TextInfo, ref LocX, ref LocY));
+
+							//绘制信息
+							this.Execute(param, TextInfo, ref LocX, ref LocY);
+						}
 					}
 					break;
 
@@ -226,10 +234,10 @@ namespace Xylia.Preview.Project.Controls
 					case "font":
 					{
 						//转到 text 节点进行处理
-						var param2 = GetFont(param, Attribute["name"], DesignMode);
+						var param2 = GetFont(param, Attribute["name"]);
 						CurLineHeight = param2.Font.Height;
 
-						TryExtendWidth(this.Execute(param2, Node.InnerHtml, ref LocX, ref LocY));
+						this.Execute(param2, Node.InnerHtml, ref LocX, ref LocY);
 					}
 					break;
 
@@ -274,7 +282,7 @@ namespace Xylia.Preview.Project.Controls
 						#endregion
 
 
-						ContentPanel.DrawImage(param.g, bitmap, ref CurLineHeight, ref LocX, ref LocY, EnableScale, ScaleRate);
+						DrawImage(param.g, bitmap, ref CurLineHeight, ref LocX, ref LocY, EnableScale, ScaleRate);
 					}
 					break;
 
@@ -307,24 +315,25 @@ namespace Xylia.Preview.Project.Controls
 
 			//处理普通标签的最终宽度
 			TryExtendWidth(LocX);
-
-			return CurExpextWidth;
 		}
 
 
-
-
-
-		private static bool DrawString(ExecuteParam param, string Txt, ref float LocX, ref float LocY, int MaxWidth = 0)
+		#region 绘制方法 
+		private void DrawString(ExecuteParam param, string Text, ref float LocX, ref float LocY)
 		{
-			if (string.IsNullOrWhiteSpace(Txt)) return false;
+			var flag = DrawString(param, Text, ref LocX, ref LocY, this.MaxWidth);
+			if (flag) TryExtendWidth(this.MaxWidth);
+		}
+
+		private static bool DrawString(ExecuteParam param, string Text, ref float LocX, ref float LocY, int MaxWidth = 0)
+		{
+			if (string.IsNullOrWhiteSpace(Text)) return false;
 
 			//判断是否需要分行
-			var LineTxts = SplitMultiLine(Txt, MaxWidth, param.Font, ref LocX, ref LocY);
+			var lines = SplitMultiLine(Text, MaxWidth, param.Font, ref LocX, ref LocY);
+			lines.ForEach(l => param.g?.DrawString(l.Text, param.Font, new SolidBrush(param.ForeColor), l.Location));
 
-			//绘制文本
-			if (param.g != null) LineTxts.ForEach(t => param.g.DrawString(t.Text, param.Font, new SolidBrush(param.ForeColor), new PointF(t.Location.X, t.Location.Y)));
-			return LineTxts.Count > 1;
+			return lines.Count > 1;
 		}
 
 		/// <summary>
@@ -336,6 +345,7 @@ namespace Xylia.Preview.Project.Controls
 		/// <param name="LocX"></param>
 		/// <param name="LocY"></param>
 		/// <param name="EnableScale">适应行高</param>
+		/// <param name="ScaleRate"></param>
 		private static void DrawImage(Graphics g, Bitmap bitmap, ref int CurLineHeight, ref float LocX, ref float LocY, bool EnableScale = true, float ScaleRate = 1.0F)
 		{
 			if (bitmap is null) return;
@@ -360,8 +370,6 @@ namespace Xylia.Preview.Project.Controls
 				LocY += CurHeight;
 			}
 		}
-
-
 
 		/// <summary>
 		/// 根据最大宽度拆分文本行
@@ -451,11 +459,10 @@ namespace Xylia.Preview.Project.Controls
 		/// </summary>
 		/// <param name="LastParam"></param>
 		/// <param name="FontName"></param>
-		/// <param name="DesignMode"></param>
 		/// <returns></returns>
-		private static ExecuteParam GetFont(ExecuteParam LastParam, string FontName, bool DesignMode = false)
+		private static ExecuteParam GetFont(ExecuteParam LastParam, string FontName)
 		{
-			if (/*DesignMode || */FontName is null) return LastParam;
+			if (FontName is null) return LastParam;
 
 			var Param = (ExecuteParam)LastParam.Clone();
 
@@ -473,6 +480,7 @@ namespace Xylia.Preview.Project.Controls
 
 			return Param;
 		}
+		#endregion
 	}
 
 

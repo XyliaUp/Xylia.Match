@@ -15,7 +15,10 @@ namespace Xylia.Preview.Common.Interface.RecordAttribute
 		#endregion
 
 
-		public IEnumerable<object> Attributes => XElement.Attributes();
+		public IEnumerable<object> Attributes => this.XElement.Attributes();
+
+		public void SetAttribute(string Name, string Value) => this.XElement.Add(new XAttribute(Name, Value));
+
 
 		public string this[string param] => this.XElement.Attribute(param)?.Value;
 

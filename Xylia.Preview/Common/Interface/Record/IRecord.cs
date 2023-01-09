@@ -15,7 +15,6 @@ namespace Xylia.Preview.Common.Interface
 
 		public bool ContainsAttribute(string AttrName, out string AttrValue) => this.Attributes.ContainsName(AttrName, out AttrValue);
 
-
 		public void SetAttribute(ObjectOutput o, bool SetMember, bool ShowDebugInfo)
 		{
 			this.Attributes = new OutputData(o);

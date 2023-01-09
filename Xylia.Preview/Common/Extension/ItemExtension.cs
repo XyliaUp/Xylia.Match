@@ -128,9 +128,10 @@ namespace Xylia.Preview.Data.Record
 			{
 				Image = o.MainIcon(),
 				Scale = 45,
-				ShowStackCount = true,
 				StackCount = StackCount,
-				
+				ShowStackCount = true,
+				ShowStackCountOnlyOne = true,
+
 				ObjectRef = Obj,
 			};
 		}
@@ -141,8 +142,9 @@ namespace Xylia.Preview.Data.Record
 			{
 				Image = Image,
 				Scale = 45,
-				ShowStackCount = true,
 				StackCount = 1,
+				ShowStackCount = true,
+				ShowStackCountOnlyOne = true,
 			};
 		}
 

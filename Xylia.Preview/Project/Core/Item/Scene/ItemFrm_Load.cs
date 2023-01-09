@@ -80,7 +80,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// 加载描述 4~6
 		/// </summary>
 		/// <param name="Title"></param>
-		/// <param name="Content"></param>
+		/// <param name="Text"></param>
 		/// <returns></returns>
 		public static TitlePanel LoadDescription(string Title, string Text)
 		{
@@ -313,7 +313,6 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 		/// <summary>
 		/// 获取交易类别
 		/// </summary>
-		/// <param name="xp"></param>
 		/// <returns></returns>
 		private void LoadTrade()
 		{

@@ -8,9 +8,7 @@ using System.Windows.Forms;
 using HZH_Controls;
 
 using Xylia.bns.Modules.GameData.Enums;
-using Xylia.Extension;
 using Xylia.Preview.Common.Attribute.ArgTest;
-using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Designer;
 
 namespace Xylia.Preview.Project.Controls
@@ -95,8 +93,6 @@ namespace Xylia.Preview.Project.Controls
 
 
 		#region 界面处理方法
-		private void PanelContent_Paint(object sender, PaintEventArgs e) => GoPaint(e.Graphics);
-
 		/// <summary>
 		/// 通知界面重绘
 		/// </summary>

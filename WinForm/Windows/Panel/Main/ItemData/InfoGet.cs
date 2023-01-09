@@ -21,8 +21,6 @@ namespace Xylia.Match.Util
 		/// </summary>
 		/// <param name="Local"></param>
 		/// <param name="ItemAlias"></param>
-		/// <param name="ItemId"></param>
-		/// <param name="Result"></param>
 		/// <returns></returns>
 		public static string GetName2(this TextBinData Local, string ItemAlias)
 		{
