@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 
-using Xylia.bns.Modules.GameData.Enums;
-using Xylia.bns.Modules.Quest.Entities;
 using Xylia.Extension;
 using Xylia.Match.Windows.Controls;
 using Xylia.Preview.Data.Helper;
@@ -180,9 +178,5 @@ namespace Xylia.Match.GUI
 			this.Text = $"[{QuestData.id}] { QuestData.Name2.GetText() }";
 		}
 		#endregion
-
-
-
-
 	}
 }

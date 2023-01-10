@@ -48,8 +48,6 @@ namespace Xylia.Preview.Project.Core.Item
 		public event RewardChangedHandle SelRewardChanged;
 		#endregion
 
-
-
 		#region 字段
 		/// <summary>
 		/// 是否有奖励

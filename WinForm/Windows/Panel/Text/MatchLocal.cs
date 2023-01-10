@@ -51,25 +51,11 @@ namespace Xylia.Match.Windows.Panel
 			}
 		}
 
-		private void metroButton2_Click(object sender, EventArgs e)
-		{
-			OpenLocal(Path_Local1);
-		}
+		private void metroButton2_Click(object sender, EventArgs e) => OpenLocal(Path_Local1);
+		private void metroButton1_Click(object sender, EventArgs e) => OpenLocal(Path_Local2);
+		private void Btn_OutLocal_1_Click(object sender, EventArgs e) => OutLocal(Path_Local1.Text);
+		private void Btn_OutLocal_2_Click(object sender, EventArgs e) => OutLocal(Path_Local2.Text);
 
-		private void metroButton1_Click(object sender, EventArgs e)
-		{
-			OpenLocal(Path_Local2);
-		}
-
-		private void Btn_OutLocal_1_Click(object sender, EventArgs e)
-		{
-			OutLocal(Path_Local1.Text,!this.checkBox1.Checked);
-		}
-
-		private void Btn_OutLocal_2_Click(object sender, EventArgs e)
-		{
-			OutLocal(Path_Local2.Text, !this.checkBox1.Checked);
-		}
 
 		private void pictureBox1_Click(object sender, EventArgs e)
 		{
@@ -98,7 +84,9 @@ namespace Xylia.Match.Windows.Panel
 			else if (FrmDialog.ShowDialog("是否确认终止操作？", null, true) == DialogResult.OK) CompareEnd();
 		}
 
-		/// <summary>强制终止操作</summary>
+		/// <summary>
+		/// 强制终止操作
+		/// </summary>
 		public void CompareEnd()
 		{
 			try
@@ -109,7 +97,7 @@ namespace Xylia.Match.Windows.Panel
 					CompareThread = null;
 
 					Tip.SendMessage("操作已强制终止!");
-					metroButton2.Enabled = metroButton1.Enabled = pictureBox1.Enabled = true;
+					ucBtnFillet1.Enabled = ucBtnFillet4.Enabled = pictureBox1.Enabled = true;
 					Btn_StartWithEnd.BtnText = "开始";
 				}));
 			}
@@ -142,7 +130,7 @@ namespace Xylia.Match.Windows.Panel
 				return;
 			}
 
-			metroButton2.Enabled = metroButton1.Enabled = pictureBox1.Enabled = false;
+			ucBtnFillet1.Enabled = ucBtnFillet4.Enabled = pictureBox1.Enabled = false;
 
 			Btn_StartWithEnd.BtnText = "终止";
 
@@ -155,7 +143,7 @@ namespace Xylia.Match.Windows.Panel
 					string OutPath = MySet.Core.Folder_Output + $@"\信息导出\汉化数据\{ DateTime.Now:yyyy年MM月\\dd日\\HH时mm分}.html";
 					bool Status = Function.Compare(Path_Local1.Text, Path_Local2.Text, OutPath, o => Step1.StepIndex = o);
 
-					metroButton2.Enabled = metroButton1.Enabled = pictureBox1.Enabled = true;
+					ucBtnFillet1.Enabled = ucBtnFillet4.Enabled = pictureBox1.Enabled = true;
 					Btn_StartWithEnd.BtnText = "开始";
 					GC.Collect();
 

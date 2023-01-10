@@ -37,6 +37,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 			if (INVALID = QuestBonusRewardSetting is null) return;
 
 			#region	BasicQuota
+			ContentY = AttractionReward_ChanceNum.Bottom;
+
 			var BasicQuota = FileCache.Data.ContentQuota[QuestBonusRewardSetting.BasicQuota];
 			if (BasicQuota is null) this.WarningPreview.Visible = false;
 			else
@@ -45,12 +47,16 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				this.AttractionReward_ChanceNum.Text = "UI.AttractionReward.ChanceNum".GetText() + $" {BasicQuota.MaxValue}/{BasicQuota.MaxValue}";
 
 				var ContentsReset = FileCache.Data.ContentsReset[QuestBonusRewardSetting.ContentsReset1];
-				if (ContentsReset != null)
+				if (ContentsReset is null) this.AttractionReward_ChargeChanceNum.Visible = false;
+				else
 				{
 					var ResetItem = ContentsReset.Attributes["reset-item-1"].GetItemInfo();
 					//System.Diagnostics.Trace.WriteLine(ResetItem.NameText());
 
-					this.AttractionReward_ChanceNum.Text += "\n(+" + ResetItem.ItemNameWithGrade + ")";
+					this.AttractionReward_ChargeChanceNum.Visible = true;
+					this.AttractionReward_ChargeChanceNum.Text = "UI.AttractionReward.ChargeChanceNum".GetText() + $" ({ResetItem.ItemNameWithGrade})";
+
+					ContentY = AttractionReward_ChargeChanceNum.Bottom;
 				}
 				#endregion
 
@@ -83,6 +89,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 
 
 			#region BonusReward
+			ContentY += 15;
+
 			var Reward = FileCache.Data.QuestBonusReward[QuestBonusRewardSetting.Reward];
 			//System.Diagnostics.Trace.WriteLine(Reward.Attributes);
 
@@ -102,7 +110,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 
 
 			#region	NormalBonusReward
-			ContentY = BonusRewardPanel.Top;
 			if (Reward.NormalBonusRewardTotalCount == 0) this.BonusRewardPanel.Visible = false;
 			else
 			{
@@ -126,7 +133,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				{
 					var o = Resources.Resource_Common.RandomItem.GetObjIcon();
 					o.Click += new((s, e) => RandomItemClickEvent());
-					o.ShowStackCount = false;
 
 					items.Add(o);
 				}
@@ -181,7 +187,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 				{
 					var o = Resources.Resource_Common.RandomItem.GetObjIcon();
 					o.Click += new((s, e) => RandomItemClickEvent(true));
-					o.ShowStackCount = false;
 
 					items.Add(o);
 				}
@@ -206,7 +211,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 			#region 最后处理
 			if (BasicQuota != null)
 			{
-				this.WarningPreview.Location = new Point((this.Width - this.WarningPreview.Width) / 2, ContentY + 20);
+				this.WarningPreview.Location = new Point(this.WarningPreview.Left, ContentY + 20);
 				ContentY = this.WarningPreview.Bottom;
 			}
 

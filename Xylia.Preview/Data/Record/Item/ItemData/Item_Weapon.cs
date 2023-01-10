@@ -11,15 +11,8 @@ namespace Xylia.Preview.Data.Record
 	{
 		#region 字段
 		[Description("weapon-type")]
-		public WeaponType weaponType => this.Attributes["weapon-type"]?.ToEnum<WeaponType>() ?? 0;
-
-		[Description("weapon-appearance-change-type")]
-		public WeaponAppearanceChangeType weaponAppearanceChangeType => this.Attributes["weapon-appearance-change-type"]?.ToEnum<WeaponAppearanceChangeType>() ?? 0;
-		#endregion
-
-
-		#region 枚举
-		public enum WeaponType
+		public WeaponTypeSeq WeaponType => this.Attributes["weapon-type"]?.ToEnum<WeaponTypeSeq>() ?? 0;
+		public enum WeaponTypeSeq
 		{
 			BareHand = 1,
 			Sword,
@@ -43,7 +36,11 @@ namespace Xylia.Preview.Data.Record
 			DualBlade,
 		}
 
-		public enum WeaponAppearanceChangeType
+
+
+		[Description("weapon-appearance-change-type")]
+		public WeaponAppearanceChangeTypeSeq WeaponAppearanceChangeType => this.Attributes["weapon-appearance-change-type"]?.ToEnum<WeaponAppearanceChangeTypeSeq>() ?? 0;
+		public enum WeaponAppearanceChangeTypeSeq
 		{
 			None,
 
@@ -56,6 +53,9 @@ namespace Xylia.Preview.Data.Record
 			[Description("both")]
 			Both,
 		}
+
+
+		public SkillByEquipment SkillByEquipment => FileCache.Data.SkillByEquipment[this.Attributes["skill-by-equipment"]];
 		#endregion
 	}
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	partial class TaskPanel
 	{
@@ -33,7 +33,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// 
 			// TaskInfo
 			// 
-			this.GroupText = "任务";
+			this.Title = "任务";
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "TaskInfo";
 			this.Size = new System.Drawing.Size(58, 26);

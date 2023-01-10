@@ -8,7 +8,6 @@ using Xylia.Preview.Project.Controls.Currency;
 using Xylia.Preview.Project.Core.Item.Cell.Basic;
 using Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward;
 using Xylia.Preview.Project.Core.Quest.Preview.Reward.RewardCell;
-using Xylia.Preview.Project.Core.Quest.Preview.SubGroup;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
@@ -236,31 +235,23 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 
 
 				#region 固定奖励内容
-				//加载货币类型奖励信息
 				var FixedCommonObjs = new List<ItemIconCell>();
-
-				for (int i = 1; i <= 4; i++)
+				for (int idx = 1; idx <= 4; idx++)
 				{
-					if (value.ContainsAttribute($"fixed-skill3-{i}", out string AttrVal))
-					{
-						var SkillInfo = FileCache.Data.Skill3[AttrVal];
-						if (SkillInfo is null) continue;
-
-						FixedCommonObjs.Add(new ItemIconCell() { Image = SkillInfo.MainIcon() });
-					}
+					if (value.ContainsAttribute($"fixed-skill3-{idx}", out string Skill))
+						FixedCommonObjs.AddItem(("skill: " + Skill).GetObjIcon());
 				}
 
-				for (int i = 1; i <= 4; i++)
+				for (int idx = 1; idx <= 4; idx++)
 				{
-					if (value.ContainsAttribute($"fixed-common-slot-{i}", out string AttrVal))
-						FixedCommonObjs.AddItem(AttrVal.GetObjIcon(value.Attributes[$"fixed-common-item-count-{i}"]));
+					if (value.ContainsAttribute($"fixed-common-slot-{idx}", out string Slot))
+						FixedCommonObjs.AddItem(Slot.GetObjIcon(value.Attributes[$"fixed-common-item-count-{idx}"]));
 				}
 
 				FixedCommon.Items = FixedCommonObjs;
 				#endregion
 
 				#region 随机奖励内容
-				//加载货币类型奖励信息
 				var OptionalCommonObjs = new List<ItemIconCell>();
 				for (int i = 1; i <= 4; i++)
 				{
@@ -270,6 +261,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 
 				OptionalCommon.Items = OptionalCommonObjs;
 				#endregion
+
 
 				#region	分组奖励内容
 				void GetRewardGroup(QuestReward value, bool Fixed)

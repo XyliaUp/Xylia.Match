@@ -8,7 +8,6 @@ using CSCore.SoundOut;
 
 using Xylia.bns.Modules.Quest.Enums;
 using Xylia.Extension;
-using Xylia.Preview.Project.Core.Quest.Preview.SubGroup;
 
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
@@ -23,20 +22,22 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 		public QuestPreview()
 		{
 			InitializeComponent();
-			this.MaximumSize = new(int.MaxValue, 1000);
+			this.MaximumSize = new(2000, 1000);
 		}
 		public QuestPreview(QuestData QuestData) : this() => this.LoadData(QuestData);
 		#endregion
 
 
 		#region 字段
-		public readonly WaveOut SoundOut = new() { Latency = 100 };
+		public WaveOut SoundOut = new() { Latency = 100 };
 
 		/// <summary>
 		/// 测试模式
 		/// </summary>
 		public static bool TestMode = false;
 		#endregion
+
+
 
 		#region 界面方法
 		private void SwitchTestMode_Click(object sender, EventArgs e) => TestMode = this.SwitchTestMode.Checked;
@@ -49,8 +50,18 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 
 		private void QuestPreview_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			if (this.SoundOut.PlaybackState != PlaybackState.Stopped)
-				this.SoundOut.Stop();
+			try
+			{
+				if (this.SoundOut.PlaybackState != PlaybackState.Stopped)
+					this.SoundOut.Stop();
+
+				this.SoundOut.Dispose();
+				this.SoundOut = null;
+			}
+			catch
+			{
+
+			}	
 		}
 
 		public override void Refresh()
@@ -61,11 +72,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			{
 				if (!s.Visible) continue;
 
-				s.Width = this.Width;
 				s.Location = new Point(0, LocY);
+				//s.Width = this.Width - 15;
+
 				LocY = s.Bottom;
 			}
-			#endregion 
+			#endregion
 
 			this.Height = LocY + 45;
 			base.Refresh();
@@ -85,7 +97,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.QuestName.Text = value.Name2.GetText();
 			this.QuestName.ForeColor = value.ForeColor;
 			this.Quest_ICON.Image = value.Icon;
-
 			this.Quest_Group.Text = value.Group2.GetText();
 
 			//处理内容部分

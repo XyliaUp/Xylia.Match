@@ -117,7 +117,7 @@ namespace Xylia.Preview.Data.Record
 
 		public static ItemIconCell GetObjIcon(this string ObjInfo, string StackCount) => GetObjIcon(ObjInfo, StackCount.ToIntWithNull() ?? 1);
 
-		public static ItemIconCell GetObjIcon(this string ObjInfo, int StackCount)
+		public static ItemIconCell GetObjIcon(this string ObjInfo, int StackCount = 0)
 		{
 			if (ObjInfo is null) return null;
 
@@ -129,9 +129,7 @@ namespace Xylia.Preview.Data.Record
 				Image = o.MainIcon(),
 				Scale = 45,
 				StackCount = StackCount,
-				ShowStackCount = true,
-				ShowStackCountOnlyOne = true,
-
+				ShowStackCount = StackCount != 0,
 				ObjectRef = Obj,
 			};
 		}
@@ -142,11 +140,12 @@ namespace Xylia.Preview.Data.Record
 			{
 				Image = Image,
 				Scale = 45,
-				StackCount = 1,
-				ShowStackCount = true,
-				ShowStackCountOnlyOne = true,
+				ShowStackCount = false,
 			};
 		}
+
+
+
 
 
 

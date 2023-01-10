@@ -47,8 +47,6 @@ namespace Xylia.Match.Util
 			}
 			#endregion
 
-
-
 			#region 输出内容
 			if (Path.GetExtension(OutPath) == ".html")
 			{

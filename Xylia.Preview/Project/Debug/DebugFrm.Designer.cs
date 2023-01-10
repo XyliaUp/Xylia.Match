@@ -1,8 +1,9 @@
 ﻿using Xylia.Preview.Project.Controls;
+using Xylia.Preview.Project.Core.Quest.Preview.Desc;
 
 namespace Xylia.Preview
 {
-    partial class DebugFrm
+	partial class DebugFrm
 	{
         /// <summary>
         /// 必需的设计器变量。
@@ -31,7 +32,6 @@ namespace Xylia.Preview
         private void InitializeComponent()
         {
 			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.contentPanel1 = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.contentPanel2 = new Xylia.Preview.Project.Controls.ContentPanel();
 			this.SuspendLayout();
@@ -44,21 +44,12 @@ namespace Xylia.Preview
 			this.textBox1.TabIndex = 0;
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(430, 15);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(44, 17);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Action";
-			// 
 			// contentPanel1
 			// 
 			this.contentPanel1.BackColor = System.Drawing.Color.Transparent;
 			this.contentPanel1.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.contentPanel1.ForeColor = System.Drawing.Color.White;
-			this.contentPanel1.Location = new System.Drawing.Point(12, 136);
+			this.contentPanel1.Location = new System.Drawing.Point(12, 55);
 			this.contentPanel1.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.contentPanel1.Name = "contentPanel1";
 			this.contentPanel1.TabIndex = 2;
@@ -69,7 +60,7 @@ namespace Xylia.Preview
 			this.contentPanel2.BackColor = System.Drawing.Color.Transparent;
 			this.contentPanel2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.contentPanel2.ForeColor = System.Drawing.Color.White;
-			this.contentPanel2.Location = new System.Drawing.Point(32, 165);
+			this.contentPanel2.Location = new System.Drawing.Point(32, 84);
 			this.contentPanel2.Margin = new System.Windows.Forms.Padding(2, 5, 2, 5);
 			this.contentPanel2.Name = "contentPanel2";
 			this.contentPanel2.TabIndex = 3;
@@ -83,10 +74,9 @@ namespace Xylia.Preview
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(691, 338);
+			this.ClientSize = new System.Drawing.Size(560, 201);
 			this.Controls.Add(this.contentPanel2);
 			this.Controls.Add(this.contentPanel1);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.textBox1);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.Color.DimGray;
@@ -107,7 +97,6 @@ namespace Xylia.Preview
 
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.ListBox listBox1;
-		private System.Windows.Forms.Label label1;
 		private ContentPanel contentPanel1;
 		private ContentPanel contentPanel2;
 	}

@@ -59,19 +59,20 @@
 			this.ucBtnFillet1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet1.IsRadius = true;
 			this.ucBtnFillet1.IsShowRect = true;
-			this.ucBtnFillet1.Location = new System.Drawing.Point(493, 20);
-			this.ucBtnFillet1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet1.Location = new System.Drawing.Point(576, 27);
+			this.ucBtnFillet1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet1.Name = "ucBtnFillet1";
 			this.ucBtnFillet1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet1.RectWidth = 1;
-			this.ucBtnFillet1.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet1.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet1.TabIndex = 109;
 			this.ucBtnFillet1.BtnClick += new System.EventHandler(this.ucBtnFillet1_BtnClick);
 			// 
 			// Note_GRoot
 			// 
 			this.Note_GRoot.AutoSize = true;
-			this.Note_GRoot.Location = new System.Drawing.Point(13, 2);
+			this.Note_GRoot.Location = new System.Drawing.Point(15, 3);
+			this.Note_GRoot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Note_GRoot.Name = "Note_GRoot";
 			this.Note_GRoot.Size = new System.Drawing.Size(89, 19);
 			this.Note_GRoot.TabIndex = 104;
@@ -79,21 +80,11 @@
 			// 
 			// filePath
 			// 
-			// 
-			// 
-			// 
-
-			//this.filePath.Lines = new string[0];
-			this.filePath.Location = new System.Drawing.Point(11, 22);
-			this.filePath.MaxLength = 32767;
+			this.filePath.Location = new System.Drawing.Point(13, 31);
+			this.filePath.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.filePath.Name = "filePath";
-			this.filePath.PasswordChar = '\0';
-			this.filePath.ScrollBars = System.Windows.Forms.ScrollBars.None;
-			this.filePath.SelectedText = "";
-
-			this.filePath.Size = new System.Drawing.Size(475, 21);
+			this.filePath.Size = new System.Drawing.Size(554, 23);
 			this.filePath.TabIndex = 103;
-			//this.filePath.UseSelectable = true;
 			this.filePath.TextChanged += new System.EventHandler(this.filePath_TextChanged);
 			this.filePath.DoubleClick += new System.EventHandler(this.DoubleClickPath);
 			// 
@@ -108,12 +99,12 @@
 			this.ucBtnFillet2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet2.IsRadius = true;
 			this.ucBtnFillet2.IsShowRect = true;
-			this.ucBtnFillet2.Location = new System.Drawing.Point(582, 20);
-			this.ucBtnFillet2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet2.Location = new System.Drawing.Point(680, 27);
+			this.ucBtnFillet2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet2.Name = "ucBtnFillet2";
 			this.ucBtnFillet2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet2.RectWidth = 1;
-			this.ucBtnFillet2.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet2.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet2.TabIndex = 110;
 			this.ucBtnFillet2.BtnClick += new System.EventHandler(this.ucBtnFillet2_BtnClick);
 			// 
@@ -128,39 +119,30 @@
 			this.ucBtnFillet3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet3.IsRadius = true;
 			this.ucBtnFillet3.IsShowRect = true;
-			this.ucBtnFillet3.Location = new System.Drawing.Point(583, 68);
-			this.ucBtnFillet3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet3.Location = new System.Drawing.Point(680, 96);
+			this.ucBtnFillet3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet3.Name = "ucBtnFillet3";
 			this.ucBtnFillet3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet3.RectWidth = 1;
-			this.ucBtnFillet3.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet3.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet3.TabIndex = 111;
 			this.ucBtnFillet3.BtnClick += new System.EventHandler(this.ucBtnFillet3_BtnClick);
 			// 
 			// metroTextBox1
 			// 
-			// 
-			// 
-			// 
-
-			//this.metroTextBox1.Lines = new string[0];
-			this.metroTextBox1.Location = new System.Drawing.Point(12, 70);
-			this.metroTextBox1.MaxLength = 32767;
+			this.metroTextBox1.Location = new System.Drawing.Point(14, 99);
+			this.metroTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.metroTextBox1.Name = "metroTextBox1";
-			this.metroTextBox1.PasswordChar = '\0';
-			this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-			this.metroTextBox1.SelectedText = "";
-
-			this.metroTextBox1.Size = new System.Drawing.Size(475, 21);
+			this.metroTextBox1.Size = new System.Drawing.Size(554, 23);
 			this.metroTextBox1.TabIndex = 112;
-			//this.metroTextBox1.UseSelectable = true;
 			this.metroTextBox1.TextChanged += new System.EventHandler(this.metroTextBox1_TextChanged);
 			this.metroTextBox1.DoubleClick += new System.EventHandler(this.DoubleClickPath);
 			// 
 			// metroLabel1
 			// 
 			this.metroLabel1.AutoSize = true;
-			this.metroLabel1.Location = new System.Drawing.Point(13, 49);
+			this.metroLabel1.Location = new System.Drawing.Point(15, 69);
+			this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.metroLabel1.Name = "metroLabel1";
 			this.metroLabel1.Size = new System.Drawing.Size(65, 19);
 			this.metroLabel1.TabIndex = 113;
@@ -177,12 +159,12 @@
 			this.ucBtnFillet4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet4.IsRadius = true;
 			this.ucBtnFillet4.IsShowRect = true;
-			this.ucBtnFillet4.Location = new System.Drawing.Point(494, 68);
-			this.ucBtnFillet4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet4.Location = new System.Drawing.Point(576, 96);
+			this.ucBtnFillet4.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet4.Name = "ucBtnFillet4";
 			this.ucBtnFillet4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet4.RectWidth = 1;
-			this.ucBtnFillet4.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet4.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet4.TabIndex = 114;
 			this.ucBtnFillet4.Visible = false;
 			this.ucBtnFillet4.BtnClick += new System.EventHandler(this.ucBtnFillet4_BtnClick);
@@ -191,10 +173,11 @@
 			// 
 			this.ucCheckBox1.BackColor = System.Drawing.Color.Transparent;
 			this.ucCheckBox1.Checked = false;
-			this.ucCheckBox1.Location = new System.Drawing.Point(569, 179);
+			this.ucCheckBox1.Location = new System.Drawing.Point(664, 254);
+			this.ucCheckBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.ucCheckBox1.Name = "ucCheckBox1";
 			this.ucCheckBox1.Padding = new System.Windows.Forms.Padding(1);
-			this.ucCheckBox1.Size = new System.Drawing.Size(109, 30);
+			this.ucCheckBox1.Size = new System.Drawing.Size(127, 42);
 			this.ucCheckBox1.TabIndex = 116;
 			this.ucCheckBox1.TextValue = "替换模式";
 			this.ucCheckBox1.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox1_CheckedChangeEvent);
@@ -210,12 +193,12 @@
 			this.ucBtnFillet6.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet6.IsRadius = true;
 			this.ucBtnFillet6.IsShowRect = true;
-			this.ucBtnFillet6.Location = new System.Drawing.Point(494, 68);
-			this.ucBtnFillet6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet6.Location = new System.Drawing.Point(576, 96);
+			this.ucBtnFillet6.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet6.Name = "ucBtnFillet6";
 			this.ucBtnFillet6.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet6.RectWidth = 1;
-			this.ucBtnFillet6.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet6.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet6.TabIndex = 120;
 			this.ucBtnFillet6.BtnClick += new System.EventHandler(this.ucBtnFillet6_BtnClick);
 			// 
@@ -223,31 +206,22 @@
 			// 
 			this.SaveAsBin.BackColor = System.Drawing.Color.Transparent;
 			this.SaveAsBin.Checked = true;
-			this.SaveAsBin.Location = new System.Drawing.Point(474, 179);
+			this.SaveAsBin.Location = new System.Drawing.Point(553, 254);
+			this.SaveAsBin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.SaveAsBin.Name = "SaveAsBin";
 			this.SaveAsBin.Padding = new System.Windows.Forms.Padding(1);
-			this.SaveAsBin.Size = new System.Drawing.Size(100, 30);
+			this.SaveAsBin.Size = new System.Drawing.Size(117, 42);
 			this.SaveAsBin.TabIndex = 121;
 			this.SaveAsBin.TextValue = ".bin文件";
 			this.SaveAsBin.CheckedChangeEvent += new System.EventHandler(this.ucCheckBox2_CheckedChangeEvent);
 			// 
 			// metroTextBox2
 			// 
-			// 
-			// 
-			// 
-
-			//this.metroTextBox2.Lines = new string[0];
-			this.metroTextBox2.Location = new System.Drawing.Point(12, 120);
-			this.metroTextBox2.MaxLength = 32767;
+			this.metroTextBox2.Location = new System.Drawing.Point(14, 170);
+			this.metroTextBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.metroTextBox2.Name = "metroTextBox2";
-			this.metroTextBox2.PasswordChar = '\0';
-			this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-			this.metroTextBox2.SelectedText = "";
-
-			this.metroTextBox2.Size = new System.Drawing.Size(475, 21);
+			this.metroTextBox2.Size = new System.Drawing.Size(554, 23);
 			this.metroTextBox2.TabIndex = 122;
-			//this.metroTextBox2.UseSelectable = true;
 			this.metroTextBox2.TextChanged += new System.EventHandler(this.metroTextBox2_TextChanged);
 			this.metroTextBox2.DoubleClick += new System.EventHandler(this.DoubleClickPath);
 			// 
@@ -262,12 +236,12 @@
 			this.ucBtnFillet5.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet5.IsRadius = true;
 			this.ucBtnFillet5.IsShowRect = true;
-			this.ucBtnFillet5.Location = new System.Drawing.Point(494, 118);
-			this.ucBtnFillet5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet5.Location = new System.Drawing.Point(576, 167);
+			this.ucBtnFillet5.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet5.Name = "ucBtnFillet5";
 			this.ucBtnFillet5.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet5.RectWidth = 1;
-			this.ucBtnFillet5.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet5.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet5.TabIndex = 125;
 			this.ucBtnFillet5.BtnClick += new System.EventHandler(this.ucBtnFillet5_BtnClick);
 			// 
@@ -282,19 +256,20 @@
 			this.ucBtnFillet7.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
 			this.ucBtnFillet7.IsRadius = true;
 			this.ucBtnFillet7.IsShowRect = true;
-			this.ucBtnFillet7.Location = new System.Drawing.Point(494, 118);
-			this.ucBtnFillet7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+			this.ucBtnFillet7.Location = new System.Drawing.Point(576, 167);
+			this.ucBtnFillet7.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.ucBtnFillet7.Name = "ucBtnFillet7";
 			this.ucBtnFillet7.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
 			this.ucBtnFillet7.RectWidth = 1;
-			this.ucBtnFillet7.Size = new System.Drawing.Size(81, 26);
+			this.ucBtnFillet7.Size = new System.Drawing.Size(94, 30);
 			this.ucBtnFillet7.TabIndex = 124;
 			this.ucBtnFillet7.Visible = false;
 			// 
 			// metroLabel2
 			// 
 			this.metroLabel2.AutoSize = true;
-			this.metroLabel2.Location = new System.Drawing.Point(13, 99);
+			this.metroLabel2.Location = new System.Drawing.Point(15, 140);
+			this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.metroLabel2.Name = "metroLabel2";
 			this.metroLabel2.Size = new System.Drawing.Size(149, 19);
 			this.metroLabel2.TabIndex = 123;
@@ -304,16 +279,17 @@
 			// 
 			this.ucCheckBox2.BackColor = System.Drawing.Color.Transparent;
 			this.ucCheckBox2.Checked = false;
-			this.ucCheckBox2.Location = new System.Drawing.Point(13, 179);
+			this.ucCheckBox2.Location = new System.Drawing.Point(15, 254);
+			this.ucCheckBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.ucCheckBox2.Name = "ucCheckBox2";
 			this.ucCheckBox2.Padding = new System.Windows.Forms.Padding(1);
-			this.ucCheckBox2.Size = new System.Drawing.Size(116, 30);
+			this.ucCheckBox2.Size = new System.Drawing.Size(135, 42);
 			this.ucCheckBox2.TabIndex = 126;
 			this.ucCheckBox2.TextValue = "只显示韩文";
 			// 
 			// ModifyLocal
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Window;
 			this.Controls.Add(this.ucCheckBox2);
@@ -332,8 +308,9 @@
 			this.Controls.Add(this.ucBtnFillet4);
 			this.Controls.Add(this.ucBtnFillet3);
 			this.Controls.Add(this.metroLabel1);
+			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.Name = "ModifyLocal";
-			this.Size = new System.Drawing.Size(681, 212);
+			this.Size = new System.Drawing.Size(794, 300);
 			this.Load += new System.EventHandler(this.ModifyLocal_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();

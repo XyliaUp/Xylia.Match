@@ -1337,6 +1337,12 @@
 		    <case alias="and" name="" />	
 		</record>
 		
+		<record alias="check" name="">
+		    <case alias="and" name="" default="y" />	
+		    <case alias="or" name="" />	
+		</record>
+		
+		
 		<record alias="op2" name="">
 			<case alias="eq" name="相等" default="y" />
 			<case alias="neq" name="不等" />
@@ -1345,6 +1351,8 @@
 			<case alias="lt" name="小于" />
 			<case alias="le" name="小于等于" />
 		</record>
+		
+		
 		
 		<record alias="pouch-appearance" name="掉落物外观">
 			<case alias="none" name="" default="y" />	

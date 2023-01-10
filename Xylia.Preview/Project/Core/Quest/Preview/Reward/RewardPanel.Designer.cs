@@ -62,7 +62,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.RewardSelect);
 			this.ForeColor = System.Drawing.Color.White;
-			this.GroupText = "奖励";
+			this.Title = "奖励";
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "RewardPanel";
 			this.Size = new System.Drawing.Size(540, 72);

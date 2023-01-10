@@ -189,7 +189,6 @@ namespace Xylia.Preview.Project.Core.Store.Cell
 
 				StackCount = Count,
 				ShowStackCount = true,
-				ShowStackCountOnlyOne = true,
 
 				Location = new Point(LoX, LoY),
 				ObjectRef = ItemData,

@@ -20,7 +20,6 @@ using Xylia.Extension;
 using Xylia.Match.Util.ItemList;
 using Xylia.Preview.Common.Extension;
 using Xylia.Preview.Data.Record;
-using Xylia.Preview.Project.Core.Item.Scene;
 using Xylia.Preview.Project.Core.Map.Scene;
 using Xylia.Preview.Project.Core.Skill;
 using Xylia.Preview.Project.Core.Store.Store2;
@@ -353,10 +352,7 @@ namespace Xylia.Match.Windows.Panel
 			Forms.PublicSet Set = new(Info => { GRoot_Path.Text = Info; });
 
 			if (Set.ShowDialog() == DialogResult.OK)
-			{
 				this.GRoot_Path.Text = MySet.Core.Folder_Game_Bns;
-				Console.WriteLine("[DEBUG] 修改后导出路径为" + MySet.Core.Folder_Output);
-			}
 		}
 
 		private void Online_Searcher_BtnClick(object sender, EventArgs e)

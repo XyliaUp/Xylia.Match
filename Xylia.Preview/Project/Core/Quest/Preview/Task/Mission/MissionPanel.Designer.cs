@@ -1,6 +1,6 @@
 ﻿using Xylia.Preview.Project.Controls;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	partial class MissionPanel
 	{
@@ -30,7 +30,9 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.MissionText = new Controls.ContentPanel();
+			this.components = new System.ComponentModel.Container();
+			this.MissionText = new Xylia.Preview.Project.Controls.ContentPanel();
+			this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
 			this.SuspendLayout();
 			// 
 			// MissionText
@@ -44,6 +46,13 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			this.MissionText.TabIndex = 11;
 			this.MissionText.Text = "课题信息描述";
 			// 
+			// ToolTip
+			// 
+			this.ToolTip.AutoPopDelay = 5000;
+			this.ToolTip.InitialDelay = 500;
+			this.ToolTip.IsBalloon = true;
+			this.ToolTip.ReshowDelay = 0;
+			// 
 			// MissionPanel
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -52,8 +61,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.MissionText);
 			this.Name = "MissionPanel";
-			this.Size = new System.Drawing.Size(92, 25);
-			//this.Load += new System.EventHandler(this.MissionPanel_Load);
+			this.Size = new System.Drawing.Size(92, 23);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -61,5 +69,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 		#endregion
 		private Controls.ContentPanel MissionText;
+		private System.Windows.Forms.ToolTip ToolTip;
 	}
 }

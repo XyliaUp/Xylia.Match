@@ -258,7 +258,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 
 
 
-		#region 数据处理
+		#region Refresh
 		private void TestRefresh()
 		{
 			var param = new List<object>(ContentPanel.defaultParams) { ItemInfo };

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Xylia.Preview.Project.Core.Item.Util
+﻿namespace Xylia.Preview.Project.Core.Item.Util
 {
 	/// <summary>
 	/// 自定义信息

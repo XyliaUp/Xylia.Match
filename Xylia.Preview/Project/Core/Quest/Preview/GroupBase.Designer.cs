@@ -1,5 +1,5 @@
 ﻿
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview
 {
 	partial class GroupBase
 	{
@@ -49,7 +49,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 			this.AutoSize = true;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.BackColor = System.Drawing.Color.Black;
+			this.BackColor = System.Drawing.Color.Transparent;
 			this.Controls.Add(this.GroupName);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "Base";

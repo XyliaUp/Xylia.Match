@@ -1,4 +1,4 @@
-﻿namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+﻿namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	partial class CaseInfoPanel
 	{

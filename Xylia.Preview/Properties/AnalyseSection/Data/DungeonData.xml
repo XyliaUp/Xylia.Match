@@ -22,16 +22,13 @@
 		<record alias="arena-entrance-zone" name="" ref="Zone" />
 		<record alias="required-level" name="" type="Byte" />
 		<record alias="required-mastery-level" name="" type="Byte" />
-		<record alias="required-preceding-quest-1" name="" type="Quest" />
-		<record alias="required-preceding-quest-2" name="" type="Quest" />
-		<record alias="required-preceding-quest-3" name="" type="Quest" />
+		<record alias="required-preceding-quest" name="" type="Quest" repeat="3" />
 		<record alias="required-preceding-quest-check" name="" type="Seq" >
 			<case alias="and" name="" default="y" />
 			<case alias="or" name="" />
 		</record>
 		<record alias="enable-heart-count" name="" show-zero="y" type="bool" />
 		<record alias="max-instant-heart-count-difficulty-type" name="" show-zero="n" type="Byte" repeat="3" />
-		
 		
 		<record alias="gs-item-blade-master" name="" ref="Item" server="n" />
 		<record alias="gs-item-blade-master-hard" name="" ref="Item" server="n" />

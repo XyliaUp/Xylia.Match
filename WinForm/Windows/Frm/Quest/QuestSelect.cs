@@ -47,82 +47,6 @@ namespace Xylia.Match.Windows
 			thread.Start();
 		}
 
-		private void ListBox1_DrawItem(object sender, DrawItemEventArgs e)
-		{
-			#region 初始化
-			//防止渲染时异常
-			if (e.Index == -1 || e.Index >= listBox1.Items.Count) return;
-			if (listBox1.Items[e.Index] is not QuestData CurInfo) return;
-
-
-			Brush myBrush;
-			if ((e.State & DrawItemState.Selected) == DrawItemState.Selected) myBrush = new SolidBrush(Color.DeepSkyBlue);
-			else if (e.Index % 2 == 0) myBrush = new SolidBrush(Color.White);
-			else myBrush = new SolidBrush(Color.White);
-
-			e.Graphics.FillRectangle(myBrush, e.Bounds);
-
-			//焦点框 
-			e.DrawFocusRectangle();
-			#endregion
-
-			#region 绘制图标
-			Graphics g = e.Graphics;
-			Rectangle bounds = e.Bounds;
-			Rectangle imageRect = new(bounds.X, bounds.Y, bounds.Height, bounds.Height);
-
-			Image image = CurInfo.Icon;
-			if (image != null) g.DrawImage(image, imageRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
-			#endregion
-
-			#region 绘制文本
-			//如果颜色未赋值，则使用前景色
-			Color StrColor = CurInfo.ForeColor;
-			if (StrColor == Color.Empty) StrColor = this.ForeColor;
-
-			//获取任务名称
-			string SourceText = CurInfo.Name2.GetText();
-			string QuestName = $"[{ CurInfo.id }] " + SourceText.CutText();
-			var Font = new Font(e.Font.FontFamily, e.Font.Size, FontStyle.Bold);
-
-			Rectangle textRect = new(imageRect.Right, bounds.Y, bounds.Width - imageRect.Right, bounds.Height);
-			e.Graphics.DrawString(QuestName, Font, new SolidBrush(StrColor), textRect, new StringFormat
-			{
-				LineAlignment = StringAlignment.Center
-			});
-			#endregion
-
-
-			#region 绘制额外附加图标
-			if (SourceText is null) return;
-
-			List<Image> ExtraImage = new();
-
-			if (SourceText.Contains("\"00015590.Tag_Contents_Daily\"")) ExtraImage.Add(Resource_BNSR.Tag_024);
-
-			if (SourceText.Contains("_Superior")) ExtraImage.Add(Resource_BNSR.Tag_138);
-			if (SourceText.Contains("_Prime")) ExtraImage.Add(Resource_BNSR.Tag_138);
-			if (SourceText.Contains("_Hero")) ExtraImage.Add(Resource_BNSR.Tag_139);
-
-			if (SourceText.Contains("\"00015590.Tag_Dungeon_Two\"")) ExtraImage.Add(Resource_BNSR.Tag_164);
-			if (SourceText.Contains("\"00015590.Tag_Dungeon_Six\"")) ExtraImage.Add(Resource_BNSR.Tag_165);
-			if (SourceText.Contains("\"00015590.Tag_Dungeon_Four\"")) ExtraImage.Add(Resource_BNSR.Tag_166);
-			//if (SourceText.Contains("EventMarker")) ExtraImage.Add(BnsCommon.EventMarker);
-
-			if (ExtraImage.Any())
-			{
-				int StartX = textRect.Left + (int)QuestName.MeasureString(Font).Width;
-				foreach (var eg in ExtraImage)
-				{
-					Rectangle rect = new(StartX += eg.Width, bounds.Y, eg.Width, eg.Height);
-					g.DrawImage(eg, rect, 0, 0, eg.Width, eg.Height, GraphicsUnit.Pixel);
-				}
-			}
-
-			ExtraImage.Clear();
-			#endregion
-		}
-
 		private void QuestSelect_TextChanged(object sender, EventArgs e)
 		{
 			this.Refresh();
@@ -165,6 +89,8 @@ namespace Xylia.Match.Windows
 			this.RefreshList();
 		}
 
+
+		 	
 		/// <summary>
 		/// 显示到控件 (包括退出后)
 		/// </summary>
@@ -190,6 +116,82 @@ namespace Xylia.Match.Windows
 					}
 				}
 			}
+		}
+
+		private void ListBox1_DrawItem(object sender, DrawItemEventArgs e)
+		{
+			#region 初始化
+			//防止渲染时异常
+			if (e.Index == -1 || e.Index >= listBox1.Items.Count) return;
+			if (listBox1.Items[e.Index] is not QuestData CurQuest) return;
+
+
+			Brush myBrush;
+			if ((e.State & DrawItemState.Selected) == DrawItemState.Selected) myBrush = new SolidBrush(Color.DeepSkyBlue);
+			else if (e.Index % 2 == 0) myBrush = new SolidBrush(Color.White);
+			else myBrush = new SolidBrush(Color.White);
+
+			e.Graphics.FillRectangle(myBrush, e.Bounds);
+
+			//焦点框 
+			e.DrawFocusRectangle();
+			#endregion
+
+			#region 绘制图标
+			Graphics g = e.Graphics;
+			Rectangle bounds = e.Bounds;
+			Rectangle imageRect = new(bounds.X, bounds.Y, bounds.Height, bounds.Height);
+
+			Image image = CurQuest.Icon;
+			if (image != null) g.DrawImage(image, imageRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel);
+			#endregion
+
+			#region 绘制文本
+			//如果颜色未赋值，则使用前景色
+			Color StrColor = CurQuest.ForeColor;
+			if (StrColor == Color.Empty) StrColor = this.ForeColor;
+
+			//获取任务名称
+			string SourceText = CurQuest.Name2.GetText();
+			string QuestName = $"[{ CurQuest.id }] " + SourceText.CutText();
+			var Font = new Font(e.Font.FontFamily, e.Font.Size, FontStyle.Bold);
+
+			Rectangle textRect = new(imageRect.Right, bounds.Y, bounds.Width - imageRect.Right, bounds.Height);
+			e.Graphics.DrawString(QuestName, Font, new SolidBrush(StrColor), textRect, new StringFormat
+			{
+				LineAlignment = StringAlignment.Center
+			});
+			#endregion
+
+
+			#region 绘制额外附加图标
+			if (SourceText is null) return;
+
+			List<Image> ExtraImage = new();
+
+			if (SourceText.Contains("\"00015590.Tag_Contents_Daily\"")) ExtraImage.Add(Resource_BNSR.Tag_024);
+
+			if (SourceText.Contains("_Superior")) ExtraImage.Add(Resource_BNSR.Tag_138);
+			if (SourceText.Contains("_Prime")) ExtraImage.Add(Resource_BNSR.Tag_138);
+			if (SourceText.Contains("_Hero")) ExtraImage.Add(Resource_BNSR.Tag_139);
+
+			if (SourceText.Contains("\"00015590.Tag_Dungeon_Two\"")) ExtraImage.Add(Resource_BNSR.Tag_164);
+			if (SourceText.Contains("\"00015590.Tag_Dungeon_Six\"")) ExtraImage.Add(Resource_BNSR.Tag_165);
+			if (SourceText.Contains("\"00015590.Tag_Dungeon_Four\"")) ExtraImage.Add(Resource_BNSR.Tag_166);
+			//if (SourceText.Contains("EventMarker")) ExtraImage.Add(BnsCommon.EventMarker);
+
+			if (ExtraImage.Any())
+			{
+				int StartX = textRect.Left + (int)QuestName.MeasureString(Font).Width;
+				foreach (var eg in ExtraImage)
+				{
+					Rectangle rect = new(StartX += eg.Width, bounds.Y, eg.Width, eg.Height);
+					g.DrawImage(eg, rect, 0, 0, eg.Width, eg.Height, GraphicsUnit.Pixel);
+				}
+			}
+
+			ExtraImage.Clear();
+			#endregion
 		}
 		#endregion
 	}

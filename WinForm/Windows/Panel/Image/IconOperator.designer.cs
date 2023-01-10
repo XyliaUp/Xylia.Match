@@ -30,7 +30,7 @@
         {
 			this.components = new System.ComponentModel.Container();
 			this.Folder = new System.Windows.Forms.FolderBrowserDialog();
-			this.tabControl1 = new MetroFramework.Controls.MetroTabControl();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.metroButton9 = new MetroFramework.Controls.MetroButton();
@@ -53,6 +53,9 @@
 			this.Path_GameFolder = new System.Windows.Forms.TextBox();
 			this.Footer = new HZH_Controls.Controls.UCSplitLabel();
 			this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+			this.metroComboBox3 = new HZH_Controls.Controls.UCCombox();
+			this.metroComboBox2 = new HZH_Controls.Controls.UCCombox();
+			this.metroComboBox1 = new HZH_Controls.Controls.UCCombox();
 			this.Radio_128px = new HZH_Controls.Controls.UCRadioButton();
 			this.Radio_64px = new HZH_Controls.Controls.UCRadioButton();
 			this.ucCheckBox1 = new HZH_Controls.Controls.UCCheckBox();
@@ -60,9 +63,6 @@
 			this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
 			this.metroButton4 = new MetroFramework.Controls.MetroButton();
 			this.ImageCompose_Reset = new MetroFramework.Controls.MetroButton();
-			this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-			this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-			this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.GemPage = new MetroFramework.Controls.MetroTabPage();
 			this.ucSwitch1 = new HZH_Controls.Controls.UCSwitch();
@@ -371,6 +371,9 @@
 			// metroTabPage2
 			// 
 			this.metroTabPage2.AllowDrop = true;
+			this.metroTabPage2.Controls.Add(this.metroComboBox3);
+			this.metroTabPage2.Controls.Add(this.metroComboBox2);
+			this.metroTabPage2.Controls.Add(this.metroComboBox1);
 			this.metroTabPage2.Controls.Add(this.Radio_128px);
 			this.metroTabPage2.Controls.Add(this.Radio_64px);
 			this.metroTabPage2.Controls.Add(this.ucCheckBox1);
@@ -378,19 +381,88 @@
 			this.metroTabPage2.Controls.Add(this.metroLabel4);
 			this.metroTabPage2.Controls.Add(this.metroButton4);
 			this.metroTabPage2.Controls.Add(this.ImageCompose_Reset);
-			this.metroTabPage2.Controls.Add(this.metroComboBox3);
-			this.metroTabPage2.Controls.Add(this.metroComboBox2);
-			this.metroTabPage2.Controls.Add(this.metroComboBox1);
 			this.metroTabPage2.Controls.Add(this.pictureBox1);
 			this.metroTabPage2.HorizontalScrollbarBarColor = true;
 			this.metroTabPage2.Location = new System.Drawing.Point(4, 36);
 			this.metroTabPage2.Name = "metroTabPage2";
-			this.metroTabPage2.Size = new System.Drawing.Size(192, 60);
+			this.metroTabPage2.Size = new System.Drawing.Size(781, 413);
 			this.metroTabPage2.TabIndex = 3;
 			this.metroTabPage2.Text = "图标合成";
 			this.metroTabPage2.VerticalScrollbarBarColor = true;
 			this.metroTabPage2.DragDrop += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragDrop);
 			this.metroTabPage2.DragEnter += new System.Windows.Forms.DragEventHandler(this.IconOperator_DragEnter);
+			// 
+			// metroComboBox3
+			// 
+			this.metroComboBox3.BackColor = System.Drawing.Color.Transparent;
+			this.metroComboBox3.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.metroComboBox3.ConerRadius = 10;
+			this.metroComboBox3.DropPanelHeight = -1;
+			this.metroComboBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.metroComboBox3.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.metroComboBox3.IsRadius = true;
+			this.metroComboBox3.IsShowRect = true;
+			this.metroComboBox3.ItemWidth = 40;
+			this.metroComboBox3.Location = new System.Drawing.Point(12, 144);
+			this.metroComboBox3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.metroComboBox3.Name = "metroComboBox3";
+			this.metroComboBox3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.metroComboBox3.RectWidth = 1;
+			this.metroComboBox3.SelectedIndex = -1;
+			this.metroComboBox3.Size = new System.Drawing.Size(163, 37);
+			this.metroComboBox3.TabIndex = 112;
+			this.metroComboBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.metroComboBox3.TextValue = "";
+			this.metroComboBox3.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.metroComboBox3.SelectedChangedEvent += new System.EventHandler(this.MetroComboBox3_TextChanged);
+			// 
+			// metroComboBox2
+			// 
+			this.metroComboBox2.BackColor = System.Drawing.Color.Transparent;
+			this.metroComboBox2.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.metroComboBox2.ConerRadius = 10;
+			this.metroComboBox2.DropPanelHeight = -1;
+			this.metroComboBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.metroComboBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.metroComboBox2.IsRadius = true;
+			this.metroComboBox2.IsShowRect = true;
+			this.metroComboBox2.ItemWidth = 40;
+			this.metroComboBox2.Location = new System.Drawing.Point(12, 84);
+			this.metroComboBox2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.metroComboBox2.Name = "metroComboBox2";
+			this.metroComboBox2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.metroComboBox2.RectWidth = 1;
+			this.metroComboBox2.SelectedIndex = -1;
+			this.metroComboBox2.Size = new System.Drawing.Size(163, 37);
+			this.metroComboBox2.TabIndex = 111;
+			this.metroComboBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.metroComboBox2.TextValue = "";
+			this.metroComboBox2.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.metroComboBox2.SelectedChangedEvent += new System.EventHandler(this.MetroComboBox2_TextChanged);
+			// 
+			// metroComboBox1
+			// 
+			this.metroComboBox1.BackColor = System.Drawing.Color.Transparent;
+			this.metroComboBox1.BoxStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.metroComboBox1.ConerRadius = 10;
+			this.metroComboBox1.DropPanelHeight = -1;
+			this.metroComboBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.metroComboBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.metroComboBox1.IsRadius = true;
+			this.metroComboBox1.IsShowRect = true;
+			this.metroComboBox1.ItemWidth = 40;
+			this.metroComboBox1.Location = new System.Drawing.Point(12, 24);
+			this.metroComboBox1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.metroComboBox1.Name = "metroComboBox1";
+			this.metroComboBox1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.metroComboBox1.RectWidth = 1;
+			this.metroComboBox1.SelectedIndex = -1;
+			this.metroComboBox1.Size = new System.Drawing.Size(163, 37);
+			this.metroComboBox1.TabIndex = 110;
+			this.metroComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.metroComboBox1.TextValue = "";
+			this.metroComboBox1.TriangleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.metroComboBox1.SelectedChangedEvent += new System.EventHandler(this.MetroComboBox1_TextChanged);
 			// 
 			// Radio_128px
 			// 
@@ -429,7 +501,7 @@
 			// pictureBox4
 			// 
 			this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox4.Location = new System.Drawing.Point(395, 46);
+			this.pictureBox4.Location = new System.Drawing.Point(439, 39);
 			this.pictureBox4.Name = "pictureBox4";
 			this.pictureBox4.Size = new System.Drawing.Size(128, 128);
 			this.pictureBox4.TabIndex = 32;
@@ -438,7 +510,7 @@
 			// metroLabel4
 			// 
 			this.metroLabel4.AutoSize = true;
-			this.metroLabel4.Location = new System.Drawing.Point(175, 9);
+			this.metroLabel4.Location = new System.Drawing.Point(211, 12);
 			this.metroLabel4.Name = "metroLabel4";
 			this.metroLabel4.Size = new System.Drawing.Size(205, 19);
 			this.metroLabel4.TabIndex = 31;
@@ -462,40 +534,10 @@
 			this.ImageCompose_Reset.Text = "重置";
 			this.ImageCompose_Reset.Click += new System.EventHandler(this.ImageCompose_Reset_Click);
 			// 
-			// metroComboBox3
-			// 
-			this.metroComboBox3.FormattingEnabled = true;
-			this.metroComboBox3.ItemHeight = 23;
-			this.metroComboBox3.Location = new System.Drawing.Point(12, 145);
-			this.metroComboBox3.Name = "metroComboBox3";
-			this.metroComboBox3.Size = new System.Drawing.Size(121, 29);
-			this.metroComboBox3.TabIndex = 28;
-			this.metroComboBox3.TextChanged += new System.EventHandler(this.MetroComboBox3_TextChanged);
-			// 
-			// metroComboBox2
-			// 
-			this.metroComboBox2.FormattingEnabled = true;
-			this.metroComboBox2.ItemHeight = 23;
-			this.metroComboBox2.Location = new System.Drawing.Point(12, 81);
-			this.metroComboBox2.Name = "metroComboBox2";
-			this.metroComboBox2.Size = new System.Drawing.Size(121, 29);
-			this.metroComboBox2.TabIndex = 27;
-			this.metroComboBox2.TextChanged += new System.EventHandler(this.MetroComboBox2_TextChanged);
-			// 
-			// metroComboBox1
-			// 
-			this.metroComboBox1.FormattingEnabled = true;
-			this.metroComboBox1.ItemHeight = 23;
-			this.metroComboBox1.Location = new System.Drawing.Point(12, 22);
-			this.metroComboBox1.Name = "metroComboBox1";
-			this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-			this.metroComboBox1.TabIndex = 26;
-			this.metroComboBox1.TextChanged += new System.EventHandler(this.MetroComboBox1_TextChanged);
-			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-			this.pictureBox1.Location = new System.Drawing.Point(211, 80);
+			this.pictureBox1.Location = new System.Drawing.Point(260, 65);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(64, 64);
 			this.pictureBox1.TabIndex = 24;
@@ -512,7 +554,7 @@
 			this.GemPage.HorizontalScrollbarBarColor = true;
 			this.GemPage.Location = new System.Drawing.Point(4, 36);
 			this.GemPage.Name = "GemPage";
-			this.GemPage.Size = new System.Drawing.Size(192, 60);
+			this.GemPage.Size = new System.Drawing.Size(781, 413);
 			this.GemPage.TabIndex = 5;
 			this.GemPage.Text = "八卦牌合成";
 			this.GemPage.VerticalScrollbarBarColor = true;
@@ -640,7 +682,7 @@
 
         #endregion
         private System.Windows.Forms.FolderBrowserDialog Folder;
-        private MetroFramework.Controls.MetroTabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.ToolTip Tip;
         private System.Windows.Forms.SaveFileDialog SaveFileDialog;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
@@ -661,9 +703,6 @@
       //  private System.Windows.Forms.Label Footer;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
         private MetroFramework.Controls.MetroButton metroButton4;
         private MetroFramework.Controls.MetroButton ImageCompose_Reset;
         private MetroFramework.Controls.MetroLabel metroLabel4;
@@ -687,5 +726,8 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.CheckBox checkBox2;
 		private System.Windows.Forms.CheckBox checkBox1;
+		private HZH_Controls.Controls.UCCombox metroComboBox3;
+		private HZH_Controls.Controls.UCCombox metroComboBox2;
+		private HZH_Controls.Controls.UCCombox metroComboBox1;
 	}
 }

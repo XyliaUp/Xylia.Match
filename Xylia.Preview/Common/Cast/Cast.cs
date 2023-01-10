@@ -43,9 +43,8 @@ namespace Xylia.Preview.Common.Cast
 			if (ObjInfo.Contains(':'))
 			{
 				var Temp = ObjInfo.Split(':');
-				return CastObject(Temp[1], Temp[0]);
+				return CastObject(Temp[1]?.Trim(), Temp[0]?.Trim());
 			}
-
 
 
 			System.Diagnostics.Debug.WriteLine("Cast失败: " + ObjInfo);
@@ -63,6 +62,9 @@ namespace Xylia.Preview.Common.Cast
 		private static IRecord CastObject(this string DataKey, string DataTableName)
 		{
 			if (string.IsNullOrWhiteSpace(DataKey)) return default;
+
+
+
 
 			//特别的处理方法
 			if (DataTableName.MyEquals("Skill")) return FileCache.Data.Skill3[DataKey];

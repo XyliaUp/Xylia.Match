@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SkillPreview));
 			this.SkillName = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemNameCell();
-			this.SkillIcon = new System.Windows.Forms.PictureBox();
+			this.SkillIcon = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			this.M1_Panel = new Xylia.Preview.Project.Core.Skill.SkillTooltipPanel();
 			this.M2_Panel = new Xylia.Preview.Project.Core.Skill.SkillTooltipPanel();
 			this.SUB_Panel = new Xylia.Preview.Project.Core.Skill.SkillTooltipPanel();
@@ -67,11 +67,23 @@
 			// SkillIcon
 			// 
 			this.SkillIcon.BackColor = System.Drawing.Color.Transparent;
+			this.SkillIcon.ExtraBottomLeft = null;
+			this.SkillIcon.ExtraBottomRight = null;
+			this.SkillIcon.ExtraTopLeft = null;
+			this.SkillIcon.ExtraTopRight = null;
+			this.SkillIcon.ForeColor = System.Drawing.Color.Black;
+			this.SkillIcon.FrameImage = null;
+			this.SkillIcon.FrameType = true;
 			this.SkillIcon.Location = new System.Drawing.Point(6, 28);
 			this.SkillIcon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
 			this.SkillIcon.Name = "SkillIcon";
+			this.SkillIcon.Scale = 90;
+			this.SkillIcon.ShowFrameImage = true;
+			this.SkillIcon.ShowStackCount = false;
+			this.SkillIcon.ShowStackCountOnlyOne = true;
 			this.SkillIcon.Size = new System.Drawing.Size(90, 90);
 			this.SkillIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.SkillIcon.StackCount = 0;
 			this.SkillIcon.TabIndex = 25;
 			this.SkillIcon.TabStop = false;
 			// 
@@ -256,7 +268,7 @@
 
 		#endregion
 		private Item.Cell.Basic.ItemNameCell SkillName;
-		private System.Windows.Forms.PictureBox SkillIcon;
+		private Item.Cell.Basic.ItemIconCell SkillIcon;
 		private SkillTooltipPanel M1_Panel;
 		private SkillTooltipPanel M2_Panel;
 		private SkillTooltipPanel SUB_Panel;
@@ -268,6 +280,7 @@
 		private System.Windows.Forms.Label Reuse;
 		private System.Windows.Forms.Label Scale;
 		private System.Windows.Forms.Label UI_Tooltip_Reuse;
+
 		private System.Windows.Forms.Label UI_Tooltip_Casting;
 		private System.Windows.Forms.Label UI_Tooltip_Scale;
 		private System.Windows.Forms.Label UI_Tooltip_Distance;

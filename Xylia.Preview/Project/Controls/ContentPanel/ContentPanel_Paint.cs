@@ -34,7 +34,7 @@ namespace Xylia.Preview.Project.Controls
 		/// <summary>
 		/// 计算最大宽度
 		/// </summary>
-		private int GetMaxWidth(Control o)
+		private int GetMaxWidth(Control o, int Padding = 0)
 		{
 			int MaxWidth = 0;
 
@@ -50,21 +50,37 @@ namespace Xylia.Preview.Project.Controls
 			//计算与母容器关系
 			else if (o.Parent != null)
 			{
-				if (o.Parent is PreviewControl) return GetMaxWidth(o.Parent);
+				var e = o.Parent;
+				if (e is IPreview) return GetMaxWidth(e, o.Left);
 
+
+				var autoSize = false;
+				var autoSizeMode = AutoSizeMode.GrowOnly;
+				if (e is UserControl userControl)
+				{
+					autoSize = userControl.AutoSize;
+					autoSizeMode = userControl.AutoSizeMode;
+				}
+				else if (e is Form form)
+				{
+					autoSize = form.AutoSize;
+					autoSizeMode = form.AutoSizeMode;
+				}
 
 				//如果上级控件启用缩放，会导致大量计算。因此此时不应进行宽度处理
-				if (o.Parent is not UserControl c || c.AutoSizeMode != AutoSizeMode.GrowAndShrink)
+				if (!autoSize || autoSizeMode != AutoSizeMode.GrowAndShrink)
 				{
-					var e = o.Parent;
+					if (autoSize && e.MaximumSize.Width != 0) MaxWidth = e.MaximumSize.Width;
+					else MaxWidth = e.Width;
 
-					MaxWidth = e.Width - o.Left - 5;
-					if (e is Form) MaxWidth -= 15;
+
+					//扣减其他大小
+					Padding += o.Left + 5;
+					if (e is Form frm) Padding += 10 + (frm.AutoScroll ? 25 : 0);    //滚动条 20
 				}
 			}
 
-
-			return MaxWidth;
+			return Math.Max(0, MaxWidth - Padding);
 		}
 		#endregion
 
@@ -201,31 +217,23 @@ namespace Xylia.Preview.Project.Controls
 
 					case "arg":
 					{
-						var result = ArgCore.Handle(Attribute, this.Params);
-						if (result is Bitmap b)
+						try
 						{
-							ContentPanel.DrawImage(param.g, b, ref CurLineHeight, ref LocX, ref LocY);
-						}
-						else
-						{
-							string TextInfo = null;
-
-							if (result is null)
+							var result = ArgCore.Handle(Attribute, this.Params);
+							if (result is Bitmap b) ContentPanel.DrawImage(param.g, b, ref CurLineHeight, ref LocX, ref LocY);
+							else if (result != null)
 							{
-								Debug.WriteLine("处理失败: " + Node.OuterHtml);
-								TextInfo = "???";
-							}
-							else
-							{
-								TextInfo = result.ToString();
-
 								//数值类型追加千位分隔符
+								string TextInfo = result.ToString();
 								if (result is int @value || int.TryParse(TextInfo, out @value)) TextInfo = @value.ToString("N0");
+
+								this.Execute(param, TextInfo, ref LocX, ref LocY);
 							}
-
-
-							//绘制信息
-							this.Execute(param, TextInfo, ref LocX, ref LocY);
+						}
+						catch (Exception ex)
+						{
+							Debug.WriteLine($"处理失败: {Node.OuterHtml}  => {ex.Message}");
+							this.Execute(param, "???", ref LocX, ref LocY);
 						}
 					}
 					break;
@@ -262,6 +270,7 @@ namespace Xylia.Preview.Project.Controls
 							string v = Attribute["v"];
 							string vl = Attribute["vl"];
 							string Width = Attribute["width"];
+							string Height = Attribute["height"];
 
 							//bitmap = bitmap.Clone(new Rectangle(U, V, UL, VL));
 						}
@@ -361,14 +370,12 @@ namespace Xylia.Preview.Project.Controls
 			//绘制图像
 			g?.DrawImage(bitmap, new Rectangle((int)Math.Ceiling(LocX), (int)Math.Ceiling(LocY - 2), CurWidth, CurHeight));
 
+
 			//计算新的位置
 			LocX += CurWidth;
+			CurLineHeight = Math.Max(CurLineHeight, CurHeight);
 
-			if (!EnableScale)
-			{
-				CurLineHeight = Math.Max(CurLineHeight, CurHeight);
-				LocY += CurHeight;
-			}
+			//LocY += CurHeight;
 		}
 
 		/// <summary>

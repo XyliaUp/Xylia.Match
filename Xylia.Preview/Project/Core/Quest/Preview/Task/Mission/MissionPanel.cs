@@ -9,7 +9,7 @@ using Xylia.bns.Modules.Quest.Entities;
 using Xylia.bns.Modules.Quest.Entities.Case;
 using Xylia.Preview.Project.Controls;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	/// <summary>
 	/// 课题内容
@@ -17,10 +17,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 	public partial class MissionPanel : UserControl
 	{
 		#region 构造
-		public MissionPanel()
-		{
-			InitializeComponent();
-		}
+		public MissionPanel() => InitializeComponent();
 		#endregion
 
 
@@ -45,30 +42,27 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			#endregion
 
 			#region 处理课题信息
-			Dictionary<int, List<Control>> CaseContents = new();
+			List<CaseTest> Cases = new();
 			foreach (var t in Mission.Cases)
 			{
-				var temp = CaseContents[t.TableIndex] = new();
+				var Case = new CaseTest(t);
+				Cases.Add(Case);
+
 
 				//测试模式
 				if (QuestPreview.TestMode)
 				{
-					Controls.ContentPanel CaseContent = new();
-					//CaseContent.BasicLineHeight += 4;
-					CaseContent.Text = $"[{t.ProgressMission}] {t.GetType()}";
-
-					temp.Add(CaseContent);
+					Case.Controls.Add(new ContentPanel($"[{t.ProgressMission}] {t.GetType()}"));
 				}
 
 				//如果是对话类型
 				if (t is TalkToSelf talktoself)
 				{
-					temp.AddRange(LoadTalkMessage(talktoself.Msg, SoundOut));
+					Case.Controls.AddRange(LoadTalkMessage(talktoself.Msg, SoundOut));
 				}
 				else if (t is NpcTalkBase talk)
 				{
-					if (talk.NpcResponse != null) temp.AddRange(LoadTalkMessage(talk.NpcResponse, SoundOut));
-
+					if (talk.NpcResponse != null) Case.Controls.AddRange(LoadTalkMessage(talk.NpcResponse, SoundOut));
 				}
 			}
 			#endregion
@@ -76,33 +70,33 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 
 			#region	控件排序
 			var height = this.MissionText.Bottom;
-			foreach (var CaseControl in CaseContents)
+			foreach (var Case in Cases)
 			{
-				if (CaseControl.Value.Count == 0) continue;
+				if (Case.Controls.Count == 0) continue;
 
-
-				//图标为便于区分多个case内容
-				if (CaseContents.Count > 1 && CaseControl.Value.Count != 0)
+				#region 用于区分多个实例
+				var signal = new ContentPanel("▼")
 				{
-					this.Controls.Add(new Controls.ContentPanel()
-					{
-						Text = "▼",
-						Location = new Point(GroupBase.ContentStartX - 10, height),
-						ForeColor = Color.BlueViolet,
+					Tag = "#signal",
 
-						Tag = "#signal",
-					});
-				}
+					Location = new Point(GroupBase.ContentStartX - 10, height),
+					ForeColor = Color.BlueViolet,
+				};
 
-				foreach (var o in CaseControl.Value)
+				this.Controls.Add(signal);
+				ToolTip.SetToolTip(signal, Case.ToString());
+				#endregion
+
+				#region 界面处理
+				foreach (var o in Case.Controls)
 				{
 					if (!this.Controls.Contains(o)) this.Controls.Add(o);
 
 					o.Location = new Point(GroupBase.ContentStartX + 10, height);
 					height = o.Bottom;
 				}
-
 				height += 30;
+				#endregion
 			}
 
 			this.Height = height;
@@ -135,7 +129,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			var TalkMessage = FileCache.Data.NpcTalkMessage[Message];
 			if (TalkMessage is null) return result;
 
-			System.Diagnostics.Trace.WriteLine("EndTalkSocial: " + TalkMessage.EndTalkSocial);
+			if (TalkMessage.EndTalkSocial != null)
+				System.Diagnostics.Debug.WriteLine("EndTalkSocial: " + TalkMessage.EndTalkSocial);
 
 			for (int i = 1; i <= 30; i++)
 			{

@@ -1,4 +1,6 @@
 ﻿using Xylia.Preview.Project.Controls;
+using Xylia.Preview.Project.Core.Quest.Preview.Desc;
+using Xylia.Preview.Project.Core.Quest.Preview.Task;
 
 namespace Xylia.Preview.Project.Core.Quest.Preview
 {
@@ -35,8 +37,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.Quest_ICON = new System.Windows.Forms.PictureBox();
 			this.Quest_Group = new System.Windows.Forms.Label();
 			this.QuestName = new Xylia.Preview.Project.Controls.ContentPanel();
-			this.DescInfo = new Xylia.Preview.Project.Core.Quest.Preview.SubGroup.DescPanel();
-			this.TaskInfo = new Xylia.Preview.Project.Core.Quest.Preview.SubGroup.TaskPanel();
+			this.DescInfo = new Xylia.Preview.Project.Core.Quest.Preview.Desc.DescPanel();
+			this.TaskInfo = new Xylia.Preview.Project.Core.Quest.Preview.Task.TaskPanel();
 			this.MenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.SwitchTestMode = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,28 +84,22 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// 
 			// DescInfo
 			// 
-			this.DescInfo.AutoSize = true;
-			this.DescInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.DescInfo.BackColor = System.Drawing.Color.Transparent;
-			this.DescInfo.GroupText = "内容";
-			this.DescInfo.Location = new System.Drawing.Point(4, 66);
+			this.DescInfo.Location = new System.Drawing.Point(0, 66);
 			this.DescInfo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.DescInfo.Name = "DescInfo";
 			this.DescInfo.Size = new System.Drawing.Size(110, 57);
 			this.DescInfo.TabIndex = 12;
 			this.DescInfo.Text = "进行书信对话";
+			this.DescInfo.Title = "内容";
 			// 
 			// TaskInfo
 			// 
-			this.TaskInfo.AutoSize = true;
-			this.TaskInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.TaskInfo.BackColor = System.Drawing.Color.Transparent;
-			this.TaskInfo.GroupText = "任务";
-			this.TaskInfo.Location = new System.Drawing.Point(4, 162);
+			this.TaskInfo.Location = new System.Drawing.Point(0, 162);
 			this.TaskInfo.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
 			this.TaskInfo.Name = "TaskInfo";
 			this.TaskInfo.Size = new System.Drawing.Size(58, 26);
 			this.TaskInfo.TabIndex = 10;
+			this.TaskInfo.Title = "任务";
 			// 
 			// MenuStrip
 			// 
@@ -141,25 +137,20 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			// 
 			// RewardInfo
 			// 
-			this.RewardInfo.AutoSize = true;
-			this.RewardInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.RewardInfo.BackColor = System.Drawing.Color.Transparent;
-			this.RewardInfo.ForeColor = System.Drawing.Color.White;
-			this.RewardInfo.GroupText = "奖励";
-			this.RewardInfo.Location = new System.Drawing.Point(5, 230);
+			this.RewardInfo.Location = new System.Drawing.Point(0, 230);
 			this.RewardInfo.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.RewardInfo.Name = "RewardInfo";
 			this.RewardInfo.Size = new System.Drawing.Size(335, 50);
 			this.RewardInfo.TabIndex = 15;
+			this.RewardInfo.Title = "奖励";
 			// 
 			// QuestPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoScroll = true;
-			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(804, 318);
+			this.ClientSize = new System.Drawing.Size(846, 318);
 			this.ContextMenuStrip = this.MenuStrip;
 			this.Controls.Add(this.QuestName);
 			this.Controls.Add(this.Quest_Group);
@@ -167,7 +158,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 			this.Controls.Add(this.DescInfo);
 			this.Controls.Add(this.TaskInfo);
 			this.Controls.Add(this.RewardInfo);
-			this.ForeColor = System.Drawing.Color.DimGray;
+			this.ForeColor = System.Drawing.Color.White;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "QuestPreview";
@@ -184,9 +175,9 @@ namespace Xylia.Preview.Project.Core.Quest.Preview
 
 		#endregion
 		public System.Windows.Forms.PictureBox Quest_ICON;
-		private SubGroup.TaskPanel TaskInfo;
+		private TaskPanel TaskInfo;
 		public System.Windows.Forms.Label Quest_Group;
-		private SubGroup.DescPanel DescInfo;
+		private DescPanel DescInfo;
 	
 		private ContentPanel QuestName;
 		private System.Windows.Forms.ContextMenuStrip MenuStrip;

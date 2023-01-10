@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 
 using Xylia.Attribute.Component;
 using Xylia.bns.Modules.GameData.Enums;
@@ -85,12 +86,16 @@ namespace Xylia.Preview.Data.Record
 		public KeyCap Key1 => GetKey(0);
 		public KeyCap Key2 => GetKey(1);
 		#endregion
+
+
+
+		public string GetImage() => this.Key1?.Image.GetText();
+
+		public Bitmap GetIcon() => this.Key1?.Icon;
 	}
 
 	public static partial class Extension
 	{
 		public static KeyCommand GetKeyCommand(this KeyCommandSeq KeyCommand) => FileCache.Data.KeyCommand.Find(o => o.keyCommand == KeyCommand);
-
-		public static string GetImage(this KeyCommand KeyCommand) => KeyCommand.Key1?.Image.GetText();
 	}
 }

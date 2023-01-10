@@ -98,9 +98,9 @@ namespace Xylia.Preview.Third.Content
 			RowIdx = 1;
 			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.Weapon &&
-				item.weaponType == WeaponType.Pet1 &&
+				item.WeaponType == WeaponTypeSeq.Pet1 &&
 				item.UsableDuration == 0 &&
-				(item.weaponAppearanceChangeType == WeaponAppearanceChangeType.UsedOnlyAsApplyingWeapon || item.weaponAppearanceChangeType == WeaponAppearanceChangeType.Both)))
+				(item.WeaponAppearanceChangeType == WeaponAppearanceChangeTypeSeq.UsedOnlyAsApplyingWeapon || item.WeaponAppearanceChangeType == WeaponAppearanceChangeTypeSeq.Both)))
 
 				CreateRow(item, PetSheet);
 			#endregion
@@ -111,9 +111,9 @@ namespace Xylia.Preview.Third.Content
 
 			foreach (var item in FileCache.Data.Item.Where(item =>
 				item.Type == ItemType.Weapon &&
-				item.weaponType != WeaponType.Pet1 &&
+				item.WeaponType != WeaponTypeSeq.Pet1 &&
 				item.UsableDuration == 0 &&
-				(item.weaponAppearanceChangeType == WeaponAppearanceChangeType.UsedOnlyAsApplyingWeapon)))
+				(item.WeaponAppearanceChangeType == WeaponAppearanceChangeTypeSeq.UsedOnlyAsApplyingWeapon)))
 			{
 				var CurRow = CreateRow(item, WeaponSheet);
 				CurRow.AddCell(item.EquipJobCheck1.GetAttribute<Chinese>()?.Description);

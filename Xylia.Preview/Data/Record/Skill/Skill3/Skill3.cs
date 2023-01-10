@@ -31,6 +31,7 @@ namespace Xylia.Preview.Data.Record
 
 		public string Name2;
 
+
 		[Signal("short-cut-key")]
 		public KeyCommandSeq ShortCutKey;
 

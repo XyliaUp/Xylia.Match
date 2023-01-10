@@ -1,7 +1,7 @@
 ﻿using Xylia.Preview.Project.Controls;
 
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	partial class MissionStepPanel
 	{

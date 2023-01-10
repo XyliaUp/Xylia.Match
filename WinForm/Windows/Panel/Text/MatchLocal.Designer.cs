@@ -31,19 +31,18 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatchLocal));
 			this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
 			this.Path_Local1 = new System.Windows.Forms.TextBox();
-			this.metroButton2 = new MetroFramework.Controls.MetroButton();
 			this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-			this.metroButton1 = new MetroFramework.Controls.MetroButton();
-			this.Btn_OutLocal_2 = new MetroFramework.Controls.MetroButton();
 			this.Path_Local2 = new System.Windows.Forms.TextBox();
-			this.Btn_OutLocal_1 = new MetroFramework.Controls.MetroButton();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.Open = new System.Windows.Forms.OpenFileDialog();
 			this.Save = new System.Windows.Forms.SaveFileDialog();
 			this.Btn_StartWithEnd = new HZH_Controls.Controls.UCBtnExt();
 			this.Step1 = new HZH_Controls.Controls.UCStep();
 			this.Chk_OnlyNew = new HZH_Controls.Controls.UCSwitch();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.ucBtnFillet2 = new HZH_Controls.Controls.UCBtnFillet();
+			this.ucBtnFillet1 = new HZH_Controls.Controls.UCBtnFillet();
+			this.ucBtnFillet3 = new HZH_Controls.Controls.UCBtnFillet();
+			this.ucBtnFillet4 = new HZH_Controls.Controls.UCBtnFillet();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -66,16 +65,6 @@
 			this.Path_Local1.TabIndex = 86;
 			this.Path_Local1.TextChanged += new System.EventHandler(this.Path_Local1_TextChanged);
 			// 
-			// metroButton2
-			// 
-			this.metroButton2.Location = new System.Drawing.Point(492, 42);
-			this.metroButton2.Margin = new System.Windows.Forms.Padding(4);
-			this.metroButton2.Name = "metroButton2";
-			this.metroButton2.Size = new System.Drawing.Size(88, 33);
-			this.metroButton2.TabIndex = 87;
-			this.metroButton2.Text = "选择文件";
-			this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
-			// 
 			// metroLabel2
 			// 
 			this.metroLabel2.AutoSize = true;
@@ -86,26 +75,6 @@
 			this.metroLabel2.TabIndex = 90;
 			this.metroLabel2.Text = "请选择新版本 local.dat 文件";
 			// 
-			// metroButton1
-			// 
-			this.metroButton1.Location = new System.Drawing.Point(492, 109);
-			this.metroButton1.Margin = new System.Windows.Forms.Padding(4);
-			this.metroButton1.Name = "metroButton1";
-			this.metroButton1.Size = new System.Drawing.Size(88, 33);
-			this.metroButton1.TabIndex = 88;
-			this.metroButton1.Text = "选择文件";
-			this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
-			// 
-			// Btn_OutLocal_2
-			// 
-			this.Btn_OutLocal_2.Location = new System.Drawing.Point(597, 109);
-			this.Btn_OutLocal_2.Margin = new System.Windows.Forms.Padding(4);
-			this.Btn_OutLocal_2.Name = "Btn_OutLocal_2";
-			this.Btn_OutLocal_2.Size = new System.Drawing.Size(88, 33);
-			this.Btn_OutLocal_2.TabIndex = 95;
-			this.Btn_OutLocal_2.Text = "导出汉化";
-			this.Btn_OutLocal_2.Click += new System.EventHandler(this.Btn_OutLocal_2_Click);
-			// 
 			// Path_Local2
 			// 
 			this.Path_Local2.Location = new System.Drawing.Point(12, 110);
@@ -114,16 +83,6 @@
 			this.Path_Local2.Size = new System.Drawing.Size(473, 23);
 			this.Path_Local2.TabIndex = 92;
 			this.Path_Local2.TextChanged += new System.EventHandler(this.Path_Local2_TextChanged);
-			// 
-			// Btn_OutLocal_1
-			// 
-			this.Btn_OutLocal_1.Location = new System.Drawing.Point(597, 42);
-			this.Btn_OutLocal_1.Margin = new System.Windows.Forms.Padding(4);
-			this.Btn_OutLocal_1.Name = "Btn_OutLocal_1";
-			this.Btn_OutLocal_1.Size = new System.Drawing.Size(88, 33);
-			this.Btn_OutLocal_1.TabIndex = 94;
-			this.Btn_OutLocal_1.Text = "导出汉化";
-			this.Btn_OutLocal_1.Click += new System.EventHandler(this.Btn_OutLocal_1_Click);
 			// 
 			// pictureBox1
 			// 
@@ -211,38 +170,102 @@
 			this.Chk_OnlyNew.TrueTextColr = System.Drawing.Color.Black;
 			this.Chk_OnlyNew.Visible = false;
 			// 
-			// checkBox1
+			// ucBtnFillet2
 			// 
-			this.checkBox1.AutoSize = true;
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.checkBox1.Location = new System.Drawing.Point(597, 163);
-			this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(87, 21);
-			this.checkBox1.TabIndex = 104;
-			this.checkBox1.Text = "带编号模式";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+			this.ucBtnFillet2.BackColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet2.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet2.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet2.BtnImage")));
+			this.ucBtnFillet2.BtnText = "输出";
+			this.ucBtnFillet2.ConerRadius = 10;
+			this.ucBtnFillet2.FillColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet2.IsRadius = true;
+			this.ucBtnFillet2.IsShowRect = true;
+			this.ucBtnFillet2.Location = new System.Drawing.Point(598, 37);
+			this.ucBtnFillet2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.ucBtnFillet2.Name = "ucBtnFillet2";
+			this.ucBtnFillet2.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.ucBtnFillet2.RectWidth = 1;
+			this.ucBtnFillet2.Size = new System.Drawing.Size(94, 30);
+			this.ucBtnFillet2.TabIndex = 112;
+			this.ucBtnFillet2.BtnClick += new System.EventHandler(this.Btn_OutLocal_1_Click);
+			// 
+			// ucBtnFillet1
+			// 
+			this.ucBtnFillet1.BackColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet1.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet1.BtnImage")));
+			this.ucBtnFillet1.BtnText = "选择";
+			this.ucBtnFillet1.ConerRadius = 10;
+			this.ucBtnFillet1.FillColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet1.IsRadius = true;
+			this.ucBtnFillet1.IsShowRect = true;
+			this.ucBtnFillet1.Location = new System.Drawing.Point(494, 37);
+			this.ucBtnFillet1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.ucBtnFillet1.Name = "ucBtnFillet1";
+			this.ucBtnFillet1.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.ucBtnFillet1.RectWidth = 1;
+			this.ucBtnFillet1.Size = new System.Drawing.Size(94, 30);
+			this.ucBtnFillet1.TabIndex = 111;
+			this.ucBtnFillet1.BtnClick += new System.EventHandler(this.metroButton2_Click);
+			// 
+			// ucBtnFillet3
+			// 
+			this.ucBtnFillet3.BackColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet3.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet3.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet3.BtnImage")));
+			this.ucBtnFillet3.BtnText = "输出";
+			this.ucBtnFillet3.ConerRadius = 10;
+			this.ucBtnFillet3.FillColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet3.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet3.IsRadius = true;
+			this.ucBtnFillet3.IsShowRect = true;
+			this.ucBtnFillet3.Location = new System.Drawing.Point(598, 108);
+			this.ucBtnFillet3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.ucBtnFillet3.Name = "ucBtnFillet3";
+			this.ucBtnFillet3.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.ucBtnFillet3.RectWidth = 1;
+			this.ucBtnFillet3.Size = new System.Drawing.Size(94, 30);
+			this.ucBtnFillet3.TabIndex = 114;
+			this.ucBtnFillet3.BtnClick += new System.EventHandler(this.Btn_OutLocal_2_Click);
+			// 
+			// ucBtnFillet4
+			// 
+			this.ucBtnFillet4.BackColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet4.BtnFont = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet4.BtnImage = ((System.Drawing.Image)(resources.GetObject("ucBtnFillet4.BtnImage")));
+			this.ucBtnFillet4.BtnText = "选择";
+			this.ucBtnFillet4.ConerRadius = 10;
+			this.ucBtnFillet4.FillColor = System.Drawing.Color.Transparent;
+			this.ucBtnFillet4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+			this.ucBtnFillet4.IsRadius = true;
+			this.ucBtnFillet4.IsShowRect = true;
+			this.ucBtnFillet4.Location = new System.Drawing.Point(494, 108);
+			this.ucBtnFillet4.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+			this.ucBtnFillet4.Name = "ucBtnFillet4";
+			this.ucBtnFillet4.RectColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+			this.ucBtnFillet4.RectWidth = 1;
+			this.ucBtnFillet4.Size = new System.Drawing.Size(94, 30);
+			this.ucBtnFillet4.TabIndex = 113;
+			this.ucBtnFillet4.BtnClick += new System.EventHandler(this.metroButton1_Click);
 			// 
 			// MatchLocal
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.Controls.Add(this.checkBox1);
+			this.Controls.Add(this.ucBtnFillet3);
+			this.Controls.Add(this.ucBtnFillet4);
+			this.Controls.Add(this.ucBtnFillet2);
+			this.Controls.Add(this.ucBtnFillet1);
 			this.Controls.Add(this.Chk_OnlyNew);
 			this.Controls.Add(this.Step1);
 			this.Controls.Add(this.Btn_StartWithEnd);
 			this.Controls.Add(this.metroLabel1);
 			this.Controls.Add(this.Path_Local1);
-			this.Controls.Add(this.metroButton2);
 			this.Controls.Add(this.metroLabel2);
-			this.Controls.Add(this.metroButton1);
-			this.Controls.Add(this.Btn_OutLocal_2);
 			this.Controls.Add(this.Path_Local2);
-			this.Controls.Add(this.Btn_OutLocal_1);
 			this.Controls.Add(this.pictureBox1);
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MatchLocal";
@@ -258,18 +281,17 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.TextBox Path_Local1;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton Btn_OutLocal_2;
         private System.Windows.Forms.TextBox Path_Local2;
-        private MetroFramework.Controls.MetroButton Btn_OutLocal_1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog Open;
         private System.Windows.Forms.SaveFileDialog Save;
         private HZH_Controls.Controls.UCBtnExt Btn_StartWithEnd;
         private HZH_Controls.Controls.UCStep Step1;
         private HZH_Controls.Controls.UCSwitch Chk_OnlyNew;
-		private System.Windows.Forms.CheckBox checkBox1;
+		private HZH_Controls.Controls.UCBtnFillet ucBtnFillet2;
+		private HZH_Controls.Controls.UCBtnFillet ucBtnFillet1;
+		private HZH_Controls.Controls.UCBtnFillet ucBtnFillet3;
+		private HZH_Controls.Controls.UCBtnFillet ucBtnFillet4;
 	}
 }

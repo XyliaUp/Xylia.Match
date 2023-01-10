@@ -105,9 +105,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 		#region 方法
 		float ExpectHeight, ExpectWidth;
 
-		protected override void OnPaint(PaintEventArgs e) => GoPaint(e.Graphics);
-
-		public void GoPaint(Graphics g)
+		protected override void OnPaint(PaintEventArgs e) 
 		{
 			#region 初始化
 			ExpectWidth = ExpectHeight = 0;
@@ -123,7 +121,7 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 			foreach (var Info in ContentPanel.SplitMultiLine(this.Text, MaxWidth, this.Font, ref LocX, ref LocY))
 			{
 				ExpectWidth = Math.Max(ExpectWidth, (int)Math.Ceiling(LocX + 4.0F));
-				g?.DrawString(Info.Text, this.Font, new SolidBrush(this.ForeColor), Info.Location);
+				e.Graphics?.DrawString(Info.Text, this.Font, new SolidBrush(this.ForeColor), Info.Location);
 			}
 
 			if (LocY != 0) ExpectWidth = Math.Max(ExpectWidth, MaxWidth);
@@ -146,22 +144,18 @@ namespace Xylia.Preview.Project.Core.Item.Cell.Basic
 				ExpectWidth = Math.Max(ExpectWidth, Rectangle.X + Rectangle.Width);
 				ExpectHeight = Math.Max(ExpectHeight, Rectangle.Y + Rectangle.Height);
 
-				g?.DrawImage(Img, Rectangle);
+				e.Graphics?.DrawImage(Img, Rectangle);
 			}
 			#endregion
 
-			this.GoResize();
-		}
 
-		private void GoResize()
-		{
+
 			if (this.AutoSize)
 			{
 				this.Height = (int)Math.Ceiling(ExpectHeight);
 				this.Width = (int)Math.Ceiling(ExpectWidth);
 			}
 		}
-
 
 		public override void Refresh()
 		{

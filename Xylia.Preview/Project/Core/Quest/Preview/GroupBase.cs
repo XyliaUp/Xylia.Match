@@ -1,28 +1,24 @@
 ﻿using System.ComponentModel;
-using System.Drawing;
 using System.Windows.Forms;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+using Xylia.Preview.Common.Interface;
+
+namespace Xylia.Preview.Project.Core.Quest.Preview
 {
 	/// <summary>
 	/// 分组控件基类
 	/// </summary>
-	public partial class GroupBase : UserControl
+	public partial class GroupBase : UserControl , IPreview
 	{
 		#region 构造
-		public GroupBase()
-		{
-			InitializeComponent();
-
-			this.BackColor = Color.Transparent;
-		}
+		public GroupBase() => InitializeComponent();
 		#endregion
 
 
 		[Browsable(true)]
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
 		[EditorBrowsable(EditorBrowsableState.Always)]
-		public string GroupText { get => this.GroupName.Text; set => this.GroupName.Text = value; }
+		public string Title { get => this.GroupName.Text; set => this.GroupName.Text = value; }
 
 		/// <summary>
 		/// 内容起始横坐标

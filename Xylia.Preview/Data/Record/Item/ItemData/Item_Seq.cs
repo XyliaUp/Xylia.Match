@@ -46,29 +46,24 @@ namespace Xylia.Preview.Data.Record
 
 				if (Type == ItemType.Weapon)
 				{
-					var WeaponType = this.weaponType;
-
-					if (WeaponType != WeaponType.Pet1 && WeaponType != WeaponType.Pet2) CondTypes.Add(ConditionType.Weapon);
+					var WeaponType = this.WeaponType;
+					if (WeaponType != WeaponTypeSeq.Pet1 && WeaponType != WeaponTypeSeq.Pet2) CondTypes.Add(ConditionType.Weapon);
 
 					switch (WeaponType)
 					{
-						case WeaponType.Sword: CondTypes.Add(ConditionType.Sword); break;
-						case WeaponType.Gauntlet: CondTypes.Add(ConditionType.Gauntlet); break;
-						case WeaponType.AuraBangle: CondTypes.Add(ConditionType.AuraBangle); break;
-						case WeaponType.TwoHandedAxe: CondTypes.Add(ConditionType.Axe); break;
-						case WeaponType.Staff: CondTypes.Add(ConditionType.Staff); break;
-						case WeaponType.Dagger:
-						{
-							CondTypes.Add(ConditionType.Dagger);
-						}
-						break;
-						case WeaponType.Pet1: CondTypes.Add(ConditionType.Pet1); break;
-						case WeaponType.Pet2: CondTypes.Add(ConditionType.Pet2); break;
-						case WeaponType.Gun: CondTypes.Add(ConditionType.ShooterGun); break;
-						case WeaponType.GreatSword: CondTypes.Add(ConditionType.GreatSword); break;
-						case WeaponType.LongBow: CondTypes.Add(ConditionType.LongBow); break;
-						case WeaponType.Spear: CondTypes.Add(ConditionType.Spear); break;
-						case WeaponType.Orb: CondTypes.Add(ConditionType.Orb); break;
+						case WeaponTypeSeq.Sword: CondTypes.Add(ConditionType.Sword); break;
+						case WeaponTypeSeq.Gauntlet: CondTypes.Add(ConditionType.Gauntlet); break;
+						case WeaponTypeSeq.AuraBangle: CondTypes.Add(ConditionType.AuraBangle); break;
+						case WeaponTypeSeq.TwoHandedAxe: CondTypes.Add(ConditionType.Axe); break;
+						case WeaponTypeSeq.Staff: CondTypes.Add(ConditionType.Staff); break;
+						case WeaponTypeSeq.Dagger: CondTypes.Add(ConditionType.Dagger); break;
+						case WeaponTypeSeq.Pet1: CondTypes.Add(ConditionType.Pet1); break;
+						case WeaponTypeSeq.Pet2: CondTypes.Add(ConditionType.Pet2); break;
+						case WeaponTypeSeq.Gun: CondTypes.Add(ConditionType.ShooterGun); break;
+						case WeaponTypeSeq.GreatSword: CondTypes.Add(ConditionType.GreatSword); break;
+						case WeaponTypeSeq.LongBow: CondTypes.Add(ConditionType.LongBow); break;
+						case WeaponTypeSeq.Spear: CondTypes.Add(ConditionType.Spear); break;
+						case WeaponTypeSeq.Orb: CondTypes.Add(ConditionType.Orb); break;
 					}
 				}
 				else if (Type == ItemType.Accessory)

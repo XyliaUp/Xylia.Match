@@ -9,7 +9,7 @@ using Xylia.bns.Modules.GameData.Enums;
 using Xylia.bns.Modules.Quest.Entities;
 using Xylia.Extension;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	/// <summary>
 	/// 课题组
@@ -43,8 +43,8 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			#region 进度需求信息
 			if (this.MissionDemand.Visible = MissionStep.Missions.Count > 1)
 			{
-				if (MissionStep.CompletionType == Op2.or) this.MissionDemand.Text += $"完成下列任一课题";
-				else if (MissionStep.CompletionType == Op2.and)
+				if (MissionStep.CompletionType == OpCheck.or) this.MissionDemand.Text += $"完成下列任一课题";
+				else if (MissionStep.CompletionType == OpCheck.and)
 				{
 					this.MissionDemand.Text += $"完成下列所有课题";
 					this.MissionDemand.SetToolTip("对于同步骤中的不同课题，进度同时计算");

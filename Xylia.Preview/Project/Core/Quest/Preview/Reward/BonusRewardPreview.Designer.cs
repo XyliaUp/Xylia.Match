@@ -39,6 +39,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 			this.itemIconCell2 = new Xylia.Preview.Project.Core.Item.Cell.Basic.ItemIconCell();
 			this.PaidBonusRewardPanel = new System.Windows.Forms.Panel();
 			this.BonusRewardPanel = new System.Windows.Forms.Panel();
+			this.AttractionReward_ChargeChanceNum = new Xylia.Preview.Project.Controls.ContentPanel();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).BeginInit();
 			this.PaidBonusRewardPanel.SuspendLayout();
@@ -50,18 +51,18 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 			this.AttractionReward_ChanceNum.BackColor = System.Drawing.Color.Transparent;
 			this.AttractionReward_ChanceNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.AttractionReward_ChanceNum.ForeColor = System.Drawing.Color.White;
-			this.AttractionReward_ChanceNum.Location = new System.Drawing.Point(143, 44);
+			this.AttractionReward_ChanceNum.Location = new System.Drawing.Point(0, 35);
 			this.AttractionReward_ChanceNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.AttractionReward_ChanceNum.Name = "AttractionReward_ChanceNum";
 			this.AttractionReward_ChanceNum.TabIndex = 9;
-			this.AttractionReward_ChanceNum.Text = "基本特别奖励次数\r\n+特别奖励充值券";
+			this.AttractionReward_ChanceNum.Text = "基本特别奖励次数\r\n";
 			// 
 			// Title
 			// 
 			this.Title.AutoSize = true;
 			this.Title.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
 			this.Title.ForeColor = System.Drawing.Color.White;
-			this.Title.Location = new System.Drawing.Point(154, 11);
+			this.Title.Location = new System.Drawing.Point(0, 0);
 			this.Title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.Title.Name = "Title";
 			this.Title.Size = new System.Drawing.Size(93, 20);
@@ -96,7 +97,7 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 			this.WarningPreview.AutoSize = true;
 			this.WarningPreview.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.WarningPreview.BackColor = System.Drawing.Color.Transparent;
-			this.WarningPreview.Location = new System.Drawing.Point(152, 237);
+			this.WarningPreview.Location = new System.Drawing.Point(0, 239);
 			this.WarningPreview.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.WarningPreview.Name = "WarningPreview";
 			this.WarningPreview.Size = new System.Drawing.Size(103, 30);
@@ -158,19 +159,31 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 			this.BonusRewardPanel.Size = new System.Drawing.Size(412, 51);
 			this.BonusRewardPanel.TabIndex = 25;
 			// 
+			// AttractionReward_ChargeChanceNum
+			// 
+			this.AttractionReward_ChargeChanceNum.BackColor = System.Drawing.Color.Transparent;
+			this.AttractionReward_ChargeChanceNum.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.AttractionReward_ChargeChanceNum.ForeColor = System.Drawing.Color.White;
+			this.AttractionReward_ChargeChanceNum.Location = new System.Drawing.Point(0, 58);
+			this.AttractionReward_ChargeChanceNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.AttractionReward_ChargeChanceNum.Name = "AttractionReward_ChargeChanceNum";
+			this.AttractionReward_ChargeChanceNum.TabIndex = 26;
+			this.AttractionReward_ChargeChanceNum.Text = "充值特别奖励次数";
+			// 
 			// BonusRewardPreview
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.Transparent;
+			this.Controls.Add(this.AttractionReward_ChargeChanceNum);
 			this.Controls.Add(this.BonusRewardPanel);
 			this.Controls.Add(this.PaidBonusRewardPanel);
 			this.Controls.Add(this.WarningPreview);
 			this.Controls.Add(this.Title);
 			this.Controls.Add(this.AttractionReward_ChanceNum);
 			this.Name = "BonusRewardPreview";
-			this.Size = new System.Drawing.Size(415, 273);
+			this.Size = new System.Drawing.Size(415, 275);
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.itemIconCell2)).EndInit();
 			this.PaidBonusRewardPanel.ResumeLayout(false);
@@ -191,5 +204,6 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.Reward.QuestBonusReward
 		private Item.Cell.Basic.ItemIconCell itemIconCell2;
 		private System.Windows.Forms.Panel PaidBonusRewardPanel;
 		private System.Windows.Forms.Panel BonusRewardPanel;
+		private ContentPanel AttractionReward_ChargeChanceNum;
 	}
 }

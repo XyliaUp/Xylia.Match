@@ -69,25 +69,11 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			return null;
 		}
 
-		public static ContentPanel LoadDescription7(string Text)
-		{
-			if (Text is null) return null;
+		public static TitlePanel LoadDescription(string Title, string Text) => (Title is null || Text is null) ? null : new TitleContentPanel(Title, Text);
 
-			return new ContentPanel(Text);
-		}
+		public static ContentPanel LoadDescription7(string Text) => Text is null ? null : new ContentPanel(Text);
 
-		/// <summary>
-		/// 加载描述 4~6
-		/// </summary>
-		/// <param name="Title"></param>
-		/// <param name="Text"></param>
-		/// <returns></returns>
-		public static TitlePanel LoadDescription(string Title, string Text)
-		{
-			if (Title is null || Text is null) return null;
-
-			return new TitleContentPanel(Title, Text);
-		}
+		
 
 		/// <summary>
 		/// 载入底部控件
@@ -441,7 +427,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadPreview(new SetItemPreview().LoadInfo(this.ItemInfo));
 
 			//加载技能变更信息
-			this.LoadPreview(new SkillByEquipmentTooltip().LoadInfo("skill-by-equipment", FileCache.Data.SkillByEquipment, this.ItemInfo));
+			this.LoadPreview(new SkillByEquipmentTooltip().LoadInfo(this.ItemInfo.SkillByEquipment));
 
 			//加载奖励信息
 			this.LoadReward();
@@ -450,7 +436,7 @@ namespace Xylia.Preview.Project.Core.Item.Scene
 			this.LoadPreview(new SealPreview().LoadInfo(this.ItemInfo));
 
 			//加载刻印书信息
-			this.LoadPreview(new SlateScrollTooltip().LoadInfo("slate-scroll", FileCache.Data.SlateScroll, this.ItemInfo));
+			this.LoadPreview(new SlateScrollTooltip().LoadInfo(this.ItemInfo.SlateScroll));
 
 			//加载描述4~6
 			this.LoadPreview(LoadDescription(this.ItemInfo.Description4Title, this.ItemInfo.Description4));

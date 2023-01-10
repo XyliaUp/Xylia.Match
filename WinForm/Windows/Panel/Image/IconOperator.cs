@@ -37,9 +37,9 @@ namespace Xylia.Match.Windows.Panel
 			InitializeComponent();
 			
 			#region 初始化道具属性选择框
-			foreach (var Item in CombineOption.Grades) metroComboBox1.Items.Add(Item.Name);
-			foreach (var Item in CombineOption.BLImage) metroComboBox2.Items.Add(Item.Name);
-			foreach (var Item in CombineOption.TRImage) metroComboBox3.Items.Add(Item.Name);
+			foreach (var Item in CombineOption.Grades) metroComboBox1.Source.Add(Item.Name);
+			foreach (var Item in CombineOption.BLImage) metroComboBox2.Source.Add(Item.Name);
+			foreach (var Item in CombineOption.TRImage) metroComboBox3.Source.Add(Item.Name);
 			
 			ImageCompose_Reset_Click(null, null);
 			#endregion
@@ -360,9 +360,9 @@ namespace Xylia.Match.Windows.Panel
 
 		private void ImageCompose_Reset_Click(object sender, EventArgs e)
 		{
-			if (metroComboBox1.Items.Count > 7) metroComboBox1.Text = metroComboBox1.Items[7].ToString();
-			if (metroComboBox2.Items.Count != 0) metroComboBox2.Text = metroComboBox2.Items[0].ToString();
-			if (metroComboBox3.Items.Count != 0) metroComboBox3.Text = metroComboBox3.Items[0].ToString();
+			if (metroComboBox1.Source.Count > 7) metroComboBox1.TextValue = metroComboBox1.Source[7].ToString();
+			if (metroComboBox2.Source.Count != 0) metroComboBox2.TextValue = metroComboBox2.Source[0].ToString();
+			if (metroComboBox3.Source.Count != 0) metroComboBox3.TextValue = metroComboBox3.Source[0].ToString();
 			IsInitialization = false;
 
 
@@ -377,7 +377,7 @@ namespace Xylia.Match.Windows.Panel
 			this.MetroComboBox1_TextChanged(sender, e);
 		}
 
-		private byte ImageCompose_GetGrade() => CombineOption.Grades.Find(o => o.Name == metroComboBox1.Text)?.ItemGrade ?? 0;
+		private byte ImageCompose_GetGrade() => CombineOption.Grades.Find(o => o.Name == metroComboBox1.TextValue)?.ItemGrade ?? 0;
 
 
 
@@ -394,7 +394,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			this.ImageCompose.BottomLeft = CombineOption.BLImage.Find(o => o.Name == metroComboBox2.Text);
+			this.ImageCompose.BottomLeft = CombineOption.BLImage.Find(o => o.Name == metroComboBox2.TextValue);
 			this.ImageCompose.Refresh();
 		}
 
@@ -402,7 +402,7 @@ namespace Xylia.Match.Windows.Panel
 		{
 			if (IsInitialization) return;
 
-			this.ImageCompose.TopRight = CombineOption.TRImage.Find(o => o.Name == metroComboBox3.Text);
+			this.ImageCompose.TopRight = CombineOption.TRImage.Find(o => o.Name == metroComboBox3.TextValue);
 			this.ImageCompose.Refresh();
 		}
 

@@ -5,11 +5,9 @@ using System.Windows.Forms;
 
 using CSCore.SoundOut;
 
-using Xylia.Preview.Project.Controls;
-
 using QuestData = Xylia.bns.Modules.Quest.Entities.Quest;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	/// <summary>
 	/// 任务信息

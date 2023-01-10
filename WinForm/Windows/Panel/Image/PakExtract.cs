@@ -66,7 +66,7 @@ namespace Xylia.Match.Windows.Panel
 
 			}).Start();
 		}
-		#endregion
+		
 
 		private void ucBtnFillet1_BtnClick(object sender, EventArgs e)
 		{
@@ -80,5 +80,6 @@ namespace Xylia.Match.Windows.Panel
 		}
 
 		private void Path_OutDir_TextChanged(object sender, EventArgs e) => Ini.WriteValue(this.GetType(), nameof(this.Path_OutDir), this.Path_OutDir.Text);
+		#endregion
 	}
 }

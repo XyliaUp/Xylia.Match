@@ -35,6 +35,8 @@ namespace Xylia.Preview.Public.Attribute.arg
 			var CurParamInfo = ps[0];        //当前处理对象名称
 			#endregion
 
+
+
 			#region 获取执行对象
 			object ExecObj;
 
@@ -42,11 +44,7 @@ namespace Xylia.Preview.Public.Attribute.arg
 			if (CurParamInfo == "id")
 			{
 				ExecObj = Attrs["id"].CastObject();
-				if (ExecObj is null)
-				{
-					Debug.WriteLine("获取对象失败");
-					return null;
-				}
+				if (ExecObj is null) throw new ArgumentNullException("id");
 			}
 
 			//指向枚举
@@ -56,32 +54,18 @@ namespace Xylia.Preview.Public.Attribute.arg
 				var SeqValue = Attrs["seq"].Split(':')[1];
 
 				ExecObj = SeqValue.CastSeq(SeqName);
-				if (ExecObj is null)
-				{
-					Debug.WriteLine($"Cast Failed {SeqName} > {SeqValue}");
-					return null;
-				}
+				if (ExecObj is null) throw new InvalidCastException($"Cast Failed {SeqName} > {SeqValue}");
 			}
 
 			//指向动态对象
 			else
 			{
-				if (!byte.TryParse(CurParamInfo, out var CurParamIdx))  //获取参数编号
-				{
-					Debug.WriteLine("非法Params参数，应为数值类型: " + CurParamInfo);
-					return null;
-				}
-				else if (Params is null)
-				{
-					Debug.WriteLine("Params不存在!!");
-					return null;
-				}
-				else if (Params.Count >= CurParamIdx) ExecObj = Params[CurParamIdx - 1];
-				else
-				{
-					Debug.WriteLine("Params数量不足!!!");
-					return null;
-				}
+				//获取参数编号
+				if (!byte.TryParse(CurParamInfo, out var CurParamIdx)) throw new InvalidCastException("非法Params参数，应为数值类型: " + CurParamInfo);
+				else if (Params is null) throw new ArgumentNullException(nameof(Params));
+				else if (Params.Count < CurParamIdx) throw new ArgumentOutOfRangeException(nameof(Params));
+
+				ExecObj = Params[CurParamIdx - 1];
 			}
 			#endregion
 
@@ -123,12 +107,9 @@ namespace Xylia.Preview.Public.Attribute.arg
 			}
 			catch (Exception ee)
 			{
-				Debug.WriteLine(ee);
+				throw new Exception("树处理异常", ee);
 			}
 			#endregion
-
-
-			return null;
 		}
 
 		/// <summary>
@@ -178,7 +159,8 @@ namespace Xylia.Preview.Public.Attribute.arg
 				if (param is KeyCommandSeq KeyCommond) return KeyCommond.GetKeyCommand()?.GetInfo(ParentTarget, target);
 				else if (param is KeyCode keyCode) return FileCache.Data.KeyCap.Find(o => o.KeyCode == keyCode)?.GetInfo(ParentTarget, target);
 
-				return $"[{ @enum.GetDescription() }]";    //实际处理比这个复杂的多
+
+				return $"[{ @enum.GetDescription() }]";
 			}
 			//处理实例数据
 			else

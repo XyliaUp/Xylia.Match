@@ -33,9 +33,9 @@
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(232, -1);
+			this.textBox1.Location = new System.Drawing.Point(293, -1);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(232, 23);
+			this.textBox1.Size = new System.Drawing.Size(171, 23);
 			this.textBox1.TabIndex = 0;
 			this.textBox1.Text = "Bard_G1_Angel_Soul_Lv3";
 			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);

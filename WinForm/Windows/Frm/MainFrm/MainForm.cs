@@ -102,7 +102,7 @@ namespace Xylia.Match.Windows
 
 		private void GetUsedMemory_Tick(object sender, EventArgs e)
 		{
-			string Msg = Xylia.Sys.lib.GetProcessUsedMemory();
+			string Msg = Sys.lib.GetProcessUsedMemory();
 			Memory.ForeColor = Msg.Contains("GB") ? Color.Red : Color.MediumAquamarine;
 			Memory.Text = $"   内存 { Msg }";
 		}

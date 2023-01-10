@@ -1,6 +1,4 @@
-﻿using Xylia.Preview.Project.Controls;
-
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+﻿namespace Xylia.Preview.Project.Core.Quest.Preview.Desc
 {
 	partial class DescPanel
 	{
@@ -46,11 +44,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 			// 
 			// DescPanel
 			// 
+			//this.AutoSize = false;
 			this.Controls.Add(this.Content);
-			this.GroupText = "内容";
 			this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
 			this.Name = "DescPanel";
-			this.Size = new System.Drawing.Size(123, 57);
+			this.Size = new System.Drawing.Size(160, 64);
+			this.Title = "内容";
 			this.Controls.SetChildIndex(this.Content, 0);
 			this.ResumeLayout(false);
 			this.PerformLayout();

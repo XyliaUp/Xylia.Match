@@ -13,7 +13,7 @@ using Xylia.Preview.Data.Package.Pak;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Resources;
 
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+namespace Xylia.Preview.Project.Core.Quest.Preview.Task
 {
 	public partial class CaseInfoPanel : UserControl
 	{

@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
-using System.Drawing.Design;
 using System.Drawing;
-namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
+using System.Drawing.Design;
+
+namespace Xylia.Preview.Project.Core.Quest.Preview.Desc
 {
 	public partial class DescPanel : GroupBase
 	{
@@ -28,6 +29,12 @@ namespace Xylia.Preview.Project.Core.Quest.Preview.SubGroup
 				this.Refresh();
 			}
 		}
+
+		//public override void Refresh()
+		//{
+		//	base.Refresh();
+		//	this.Height = this.Content.Bottom;
+		//}
 		#endregion
 	}
 }

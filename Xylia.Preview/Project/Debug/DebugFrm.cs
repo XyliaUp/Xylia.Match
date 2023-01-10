@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
+using Xylia.bns.Modules.GameData.DataTable.CombatData;
+using Xylia.bns.Modules.GameData.DataTable.CombatData.Node.Decision;
+using Xylia.Extension;
+using Xylia.Files.Xml;
 using Xylia.Preview.Data.Record;
 using Xylia.Preview.Project.Core.Skill;
 
@@ -15,11 +20,36 @@ namespace Xylia.Preview
 
 		private void DebugFrm_Load(object sender, EventArgs e)
 		{
-			this.contentPanel1.Params.Add("2080002".GetItemInfo());
-			this.contentPanel1.Params.Add(1);
-			this.contentPanel1.Params.Add(2);
+			//var ContextScripts = FileCache.Data.GameData.BNSDat.FileTableList
+			//	.Where(o => o.FilePath.RegexMatch("skill3_contextscriptdata.*?"))
+			//	.SelectMany(o => o.XmlDocument.ReadFile<ContextScript>());
 
-			this.contentPanel1.Text = "UI.Tooltip.BonusRewardItem.Random.MinMax".GetText() + "UI.Tooltip.BonusRewardItem.Random.Tag".GetText();
+			//var c = ContextScripts.FirstOrDefault(o => o.Alias == "Bard_G1_Var_1");
+			//foreach (var stance in c.Stances)
+			//{
+			//	foreach (var decision in stance.Layers.SelectMany(layer => layer.Decisions))
+			//	{
+			//		var condition = decision.Condition.Find(condition => condition.Skill == 66301);
+			//		if (condition != null)
+			//		{
+			//			var Mode = decision.Result.Find(result => result.ControlMode == Result.ControlModeSeq.bns);
+
+
+			//			Debug.WriteLine(decision.OuterXml);
+			//		}
+			//	}
+			//}
+
+
+
+
+
+
+			//this.contentPanel1.Params.Add("2080002".GetItemInfo());
+			//this.contentPanel1.Params.Add(1);
+			//this.contentPanel1.Params.Add(2);
+
+			//this.contentPanel1.Text = "UI.Tooltip.BonusRewardItem.Random.MinMax".GetText() + "UI.Tooltip.BonusRewardItem.Random.Tag".GetText();
 			return;
 
 

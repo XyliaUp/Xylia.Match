@@ -55,6 +55,8 @@ namespace Xylia.Preview.Project.Core.Skill
 
 			this.SkillName.Text = Skill.NameText();   //获取技能名称
 			this.SkillIcon.Image = Skill.MainIcon();  //获取图标信息
+			//this.SkillIcon.ExtraTopLeft = Skill.CurrentShortCutKey.GetIcon();
+
 
 			this.DamageRateStandardStats.Text = ((float)Skill.DamageRateStandardStats / 1000).ToString("F3");
 			this.DamageRatePvp.Text = ((float)Skill.DamageRatePvp / 1000).ToString("F3");
